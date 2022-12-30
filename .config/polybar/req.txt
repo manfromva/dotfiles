@@ -1,0 +1,1 @@
+alacritty htop zathura rofi polybar gpick xarchiver thunar thunar-xarchiver-plugin neovim picom-animations-git pavucontrol mpv sublime-text-4 betterlockscreen nerd-fonts-complete brave-bin ttf-font-awesome ttf-font-awesome-5 xf86-input-synaptics scrot ly

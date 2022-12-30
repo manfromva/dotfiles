@@ -1,0 +1,40 @@
+menu(){
+	printf "1. Learn Linux TV - Bash\n"
+	printf "2. Learn Linux TV - Linux Commands\n"
+	printf "3. Learn Linux TV - Ansible\n"
+	printf "4. Learn Linux TV - Docker\n"
+	printf "5. TechWorld with Nana - Python\n"
+	printf "6. That DevOps Guy - Kubernetes\n"
+	printf "7. DoomCast - Emacs Doom\n"
+}
+
+main(){
+    choice=$(menu | rofi -dmenu | cut -d. -f1)
+
+	case $choice in
+		1)
+			devour mpv "https://www.youtube.com/playlist?list=PLT98CRl2KxKGj-VKtApD8-zCqSaN2mD4w"
+            ;;
+		2)
+			devour mpv "https://www.youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ"
+            ;;
+		3)
+			devour mpv "https://www.youtube.com/playlist?list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70"
+            ;;
+		4)
+           	devour mpv "https://www.youtube.com/playlist?list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t"
+            ;;
+		5)
+            devour mpv "https://www.youtube.com/watch?v=t8pPdKYpowI&t"
+            ;;
+		6)
+            devour mpv "https://youtu.be/JeAHlTYB1Qk"
+            ;;
+		7)
+            devour mpv "https://www.youtube.com/playlist?list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj"
+            ;;
+
+        esac
+}
+
+main

@@ -1,0 +1,92 @@
+
+####Terminals and Scratchpads#####
+# Terminal (alacritty)
+super + Return
+    alacritty    
+
+F12
+    ~/.local/bin/scratch
+
+##---------- Launcher & Scripts ----------##
+super + shift + d
+     dmenu_run -fn 'Mononoki Nerd Font:size=10' -nb '#292d3e' -nf '#bbc5ff' -sb '#82AAFF' -sf '#292d3e' -p 'dmenu:'
+
+alt + s
+    ~/.config/rofi/launchers/type-5/launcher.sh
+
+alt + shift + {y,s}
+     {alacritty -e ytfzf --detach -fl,alacritty -e ytfzf --detach -flcSI}            
+
+
+##-------------- Reload Bindings ----------##
+# Reload Keybindings
+super + Escape
+     pkill -USR1 -x sxhkd   
+
+##---------- Applications ----------##
+# Terminal (floating)
+super + shift + Return
+    thunar
+
+super + e; {s,c,p}
+    {subl,code,pycharm}
+
+super + b
+    qutebrowser
+
+
+# Take a screenshot
+Print
+    flameshot gui
+    
+
+#################################################################
+# Alt Keychords
+#################################################################
+##Editors
+alt + e; {e,n}
+    {emacsclient -c -a 'emacs'"--eval '(dashboard-refresh-buffer)'",alacritty -e nvim}
+
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+
+#Hide polybar
+super + y
+    polybar-msg cmd toggle
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/herbstluftwm/scripts/picom-toggle.sh
+
+
+
+#################################################################
+# HLWM Terminate Keybindings
+#################################################################
+
+#close window/application
+super + q
+    herbstclient close
+
+#close window/application
+super + shift + q
+    herbstclient close
+
+#realod herbstluftwm
+super + shift + r
+    herbstclient reload
+
+#Xkill
+#super + shift + x
+#    herbstclient quit
+

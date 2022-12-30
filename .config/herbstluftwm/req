@@ -1,0 +1,3 @@
+#!/bin/bash
+
+yay -S --needed lolcat exa rofi-emoji starship devour indicator-stickynotes obsidian koodo-reader-bin python-pywal
