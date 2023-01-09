@@ -414,8 +414,8 @@ def_key "r"
 #def_key "X"
 #  set_crossfade
 #
-#def_key "u"
-#  update_database
+def_key "u"
+  update_database
 #
 #def_key "ctrl-s"
 #  sort_playlist

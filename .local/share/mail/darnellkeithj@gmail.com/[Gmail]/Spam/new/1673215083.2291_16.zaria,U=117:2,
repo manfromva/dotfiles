@@ -1,0 +1,774 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2441816mdb;
+        Sun, 8 Jan 2023 08:12:57 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvktnfkv4iCT2JIQvBG4BNSUvMCJdvuUOe9fe4Ky0jIHph3apEjvV9zobB0+vfpbLfgw9mA
+X-Received: by 2002:a17:90a:a009:b0:226:fcf5:4d01 with SMTP id q9-20020a17090aa00900b00226fcf54d01mr3797882pjp.31.1673194377113;
+        Sun, 08 Jan 2023 08:12:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673194377; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TJlfLnkDkKBE7WtBzFwXxBA8aapIAk30NRX2AZPz+ayNq3xHcfKZWJysefasbLzdMd
+         TOFfnVWanqSmNX3eb1QE63LoiakVOjlyiTyhjZ4rAsINrp0w/vVensWqVFQQtVBJtBar
+         zuuIt9v5Uc0gAQvLphzc9MhbMN8aJPPNSzaYGLz/rLtOyEICGZxi6qV4Qr1GPhs1Bn0u
+         UjOjrt1b9Qy+SW94p69ajEeDv2x5A1784Gx5MB8HvqBXCgolBuCykEk2el1jApo1iEN0
+         iN4vvmMR8VeCt29fqOtOacJETpJIswG7HUXEnrw0LW7XEEKbzNeiXBs+hq8Rt8lldlbK
+         vD7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=TqXRT/ec75oHaQng92IEdbzMEuO333OPS3KN9PHa/sE=;
+        b=ZUxDx/Okrz663PfKcKaDRfZCW6kKpWt8icKRFgkSwCOjnC//kJVaPbr0pRfCbeF66f
+         jOrU29mE2MZv8hW8yFDxDHiRvTxksHBm4fGTIH03ebyOk15UG7+QJ4O5629p/5m4PeJJ
+         kf2ehbbD4h3K7WEf2u/CKpciFy+thg3cjX1zYQVAp/MOpnzknRp+4deNZUFxgPAGdtqn
+         slHNSwnrjkKykKEHe9Exfd3S0eReEjoC+V/VzY8NG5TZAztIvZpRiclxm42ZXgxJjAOh
+         z73eevkUvaxmDF3MT28faR/YZnJ8DPsAjx1st7LFDcukNNhJIGwHB0c2xG71WIJbrQiF
+         X+Ig==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.shoecarnival.com header.s=12dkim1 header.b="be/7+iNq";
+       spf=pass (google.com: domain of bounce-6_html-33913192-4396-534000547-8552@bounce.email.shoecarnival.com designates 13.110.219.18 as permitted sender) smtp.mailfrom=bounce-6_HTML-33913192-4396-534000547-8552@bounce.email.shoecarnival.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.shoecarnival.com
+Return-Path: <bounce-6_HTML-33913192-4396-534000547-8552@bounce.email.shoecarnival.com>
+Received: from mta2.email.shoecarnival.com (mta2.email.shoecarnival.com. [13.110.219.18])
+        by mx.google.com with ESMTPS id gn9-20020a17090ac78900b002268719b9besi10265322pjb.62.2023.01.08.08.12.56
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 08:12:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-6_html-33913192-4396-534000547-8552@bounce.email.shoecarnival.com designates 13.110.219.18 as permitted sender) client-ip=13.110.219.18;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.shoecarnival.com header.s=12dkim1 header.b="be/7+iNq";
+       spf=pass (google.com: domain of bounce-6_html-33913192-4396-534000547-8552@bounce.email.shoecarnival.com designates 13.110.219.18 as permitted sender) smtp.mailfrom=bounce-6_HTML-33913192-4396-534000547-8552@bounce.email.shoecarnival.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.shoecarnival.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=12dkim1; d=email.shoecarnival.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=ShoeCarnival@email.shoecarnival.com;
+ bh=TqXRT/ec75oHaQng92IEdbzMEuO333OPS3KN9PHa/sE=;
+ b=be/7+iNqhyn7qcvwCr9loZ4V3XRqPc6/HwmeGY3UzC5nEctWgGAx9UBdrS4ggvN0gENdO0imkBAC
+   iE3W4pXVyGoOu9ZqkTATrQkTj+tySzsjGHW3yxQmQGdR9dlYY8yL/cxUvhAb7HbLrqwnTEO/+REI
+   z80OprjUE5muDy+WKLM6B1BKzX5VO59YIpWef2VA7Nr64LcUILsTL6i3e7W49ZwN3L2SLq7EHKHs
+   6dkJ7r61/4nP9EaSbgdrTBAG8TQAH9e2QmldfVidvzbMbbTx/FmUnKb4OFgvo0f+RIaJk5L5mDdv
+   3Dw+SyQWWWoQAeeZX3tpFiNhmu8KVsEIdWxfJw==
+Received: by mta2.email.shoecarnival.com id hnblog2fmd42 for <darnellkeithj@gmail.com>; Sun, 8 Jan 2023 15:35:11 +0000 (envelope-from <bounce-6_HTML-33913192-4396-534000547-8552@bounce.email.shoecarnival.com>)
+From: "Shoe Carnival" <ShoeCarnival@email.shoecarnival.com>
+To: <darnellkeithj@gmail.com>
+Subject: Last chance to save on cozy Crocs
+Date: Sun, 08 Jan 2023 09:35:11 -0600
+List-Unsubscribe: <https://click.email.shoecarnival.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MzQwMDA1NDciLCJzIjoiMzM5MTMxOTIiLCJsaWQiOiI2IiwiaiI6IjQzOTYiLCJqYiI6Ijg1NTIiLCJkIjoiMTIwMDA1In0.d60A4srnc1IaeDyafavieqeCdBQY0R1XN8jGiDl_pHI>, <mailto:leave-fdb5121f2d205921-fe6017737c65077c7c16-ff2910737c62-fe3311737164047d701077-ff2b1c757066@leave.email.shoecarnival.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Shoe Carnival" <reply-ff2910737c62-6_HTML-33913192-534000547-8552@email.shoecarnival.com>
+List-ID: <526003496.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 12
+x-job: 534000547_4396
+Message-ID: <d36202c8-efc2-4cc0-a0c8-03ce85069b22@iad4s12mta317.xt.local>
+Feedback-ID: 534000547:4396:13.110.219.18:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="RaADGVvc8rg4=_?:"
+X-TUID: s5cfDP7kWVX6
+
+This is a multi-part message in MIME format.
+
+--RaADGVvc8rg4=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+ 
+ 
+ Shoe Carnival
+ 
+ 
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbded6bb77f9bef8473903520b5649d36a02dbf4dab3ccbd9c029109595d98306f471e26487d7eb01d1fecb524f23c100ee9cdc84323f9c7712f 
+
+
+&zwnj;
+&zwnj;
+&zwnj;
+&zwnj;
+
+
+ 
+ 
+ 
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde7ecfde8a2ad1d683f23ea2eb3f7ec7344de7d0a163061dd90367c34ebe0d550f3ce3b1ecc7879d36f9b7815c7cce7275b4d044547e8c78e8 
+
+If it's comfort you want, come over to Crocs
+
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde7ecfde8a2ad1d683f23ea2eb3f7ec7344de7d0a163061dd90367c34ebe0d550f3ce3b1ecc7879d36f9b7815c7cce7275b4d044547e8c78e8 
+SHOP CROCS 
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeb32665631450959705ff3667bc83ec22ecb5992c50963129d8761ffdc4662795a172d235679257712dbb040806861a1c63344fee5cb25b1a 
+
+Comfort in Crocs
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdef5f41c321ae5c7310adb18b6deaa8ef0991d0f26d11452d34a7fff465720aaa644c9a859a6381e98e78d2fd08e5a2679143a3cc858efa8c5 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdef5f41c321ae5c7310adb18b6deaa8ef0991d0f26d11452d34a7fff465720aaa644c9a859a6381e98e78d2fd08e5a2679143a3cc858efa8c5 
+Adults' Crocs Classic Lined Clogs
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdee9299495930f067f921f57751286452a15b2c19a8615534a248a811a05aed0439ba88c5f1baa575f0553ac2907a330d308e9e5adc178065d 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdee9299495930f067f921f57751286452a15b2c19a8615534a248a811a05aed0439ba88c5f1baa575f0553ac2907a330d308e9e5adc178065d 
+Adults' Crocs Classic Clogs
+
+
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde4bdccacbc6fc88d1850a7554861e5108ad6a44eea6444fe099998484954130412e04e187c0ddd24a3647dc4a9648e84382b7b13d99f0b3c4 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde4bdccacbc6fc88d1850a7554861e5108ad6a44eea6444fe099998484954130412e04e187c0ddd24a3647dc4a9648e84382b7b13d99f0b3c4 
+Kids' Crocs Classic 2 Clogs
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbded566fd34e00a14442284f824e2350d0fc499b3d980ae7248a2a73564dd123d8bb8b0cd3f978959d30a3b53e44455e643a1335167721a3e05 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbded566fd34e00a14442284f824e2350d0fc499b3d980ae7248a2a73564dd123d8bb8b0cd3f978959d30a3b53e44455e643a1335167721a3e05 
+Adults' Crocs Classic Lined Clogs
+
+
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeb32665631450959705ff3667bc83ec22ecb5992c50963129d8761ffdc4662795a172d235679257712dbb040806861a1c63344fee5cb25b1a 
+SEE MORE 
+
+ 
+ 
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeed6d6e20eb0f3b4daf8e6ec369f699fd939179753cbffabf7f0fe3a4711ba93458b7fbd5c7a32aa79eb9791172d981e0e98e6f2309075bae 
+WOMEN
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeb1be2259fece43dd00c046cf5b890c96aa5aaabbd9bc34d8013e5a606c3a88ce48d71e65a8224283cb5577d16e6ee894d327982638eb179d 
+MEN
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdedd280def66a0bcb4e283f480719e534ebbba81963c2e01de30d8a4944c01cbe87ec884065a009b11a3561392ea9a9e961b7660b4cfb4db5c 
+KIDS
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdec9fdd93fe0e70d7bfd7f85fcf6ed407630ee75b577f347430a4698feefbe3f608605802f31be30d25b0aceb60af4e7baa2471cd6def54a41 
+ACCESSORIES
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde89362bff70be9adad74d5772e987e91f39ee1c57511b583437025d25c1c52fa5a80346b73c2924015bef2eb8089f60b5b5733a7db8a3edee 
+CHECK MY POINTS  |  
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdec5f4a0843d8cbf3fbc49b2ed7171a3e2acce93c4639150bd8b7e4cb4dfcdcf6dc65682a306424e65668ed0052207d65599cf3641bfa8994d 
+JOIN OUR TEAM
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde9fa84886cac77f797fa18cf4a2d6c7411a3c16e25596ae49b675e8d4be36c3f705aeeef8bda16984fc0e5e43c4ed7b5d9fd45eb735753668 
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde2b6659ec3d322bc0b42bc270ec5f5aae0b381bac58ec409637aa89e64b34d8020942c955dbda16b6c2aaa4df75d654b78d0a69a3763b6bae 
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde225d53f50091a5c97d7107c0d9cfbe9897ee2022e2e67f7e33b8c732c1028220c51fc049de1688c00ce1f4ac955272f0e7e5f523afe2d912 
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdef71c218c92f12be592f91e63760595819cc46eabff05147843a705c816f0d4cc8b01676e606fb0f27d1c9959bd90f879f94446ef6577e189 
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde5c80cd4644c40fe1640e268ca318444f4fd898b0cfde82bb72ce7d3017c1458f948587f34361ca470704fb50733d2b879cd2c44941a598a9 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde29c10c423a473a50636bf85bf9017bd89d65f0b35161c10dc7221a06a6a25d5d715b63611d17ff956aa334ddbdcb9a93cfff28b0e48316ae 
+
+
+*Text: By signing up via text, you agree to receive recurring automated marketing text messages from Shoe Carnival at the cell number used when signing up. Consent is not a condition of any purchase. If you are under 18, you must get consent from your parent or guardian. For more information, view  
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde29c10c423a473a50636bf85bf9017bd89d65f0b35161c10dc7221a06a6a25d5d715b63611d17ff956aa334ddbdcb9a93cfff28b0e48316ae 
+Terms and Conditions .
+
+
+ While supplies last. Product shown may not be available in all stores.
+
+
+Crocs Sale: Pricing valid in store and online. Select styles only. Product availability may vary by store. Cannot be combined with additional discounts or coupons or used on prior purchases, refunds, or exchanges.  Discount reflected in sale price. Offer subject to change without notice. Expires 01/08/2023, 11:59 pm EST.
+
+ 
+ Make sure you're not missing out on anything! Add 
+mailto:shoecarnival@email.shoecarnival.com?subject= 
+shoecarnival@email.shoecarnival.com to your Address Book or Safe Sender List. For information about our privacy practices, see our 
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdee42eaff12be21ba862e6e0cb584a441350233bb004bd0377b8fd562e3e6eec6e9688f9ff61305301e5a4da78da850ea3be377065497c0d2f 
+Privacy Policy. If you wish to opt-out from all future emails, please 
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbde9e491514f086cd2ec824459640eda1e26d90d7dd0d90336239ebf1ece053fde4ba2571c248fbd1f542402b7980186dbd5007e98818b26c7b 
+unsubscribe here.
+
+ Shoecarnival.&zwj;com currently only delivers to the continental United States, Alaska and Hawaii. Promotional events will vary in Puerto Rico. Online shopping is not available in Puerto Rico.
+
+(c) 2023 Shoe Carnival, Inc.&zwnj; &zwnj;  7500 E. Columbia Street, Evansville, IN 47715&zwnj; &zwnj; 
+tel: 18004307463 
+1-800-430-7463 
+https://view.email.shoecarnival.com/?qs=8ec244ab6bd83ea77731f597c1b81468c1dcd1eea11e934c7b85f42d50e37860c617912770a0a249c7f92b820bb4a1a4adef1babff1485d1b42475f2e69aba846e6ae443886d2ab7 
+  View in Browser
+
+
+ 
+ 
+
+
+https://click.email.shoecarnival.com/?qs=6c418d752a02bbdee25db1bdda77ed4a249e903326e8c9b0f8a273f3050e057439827585e6694cbc6337127f61e5ad5c0e96791bceec7915444812e269116fe8Shoe Carnival, Inc.7500 E Columbia St.EvansvilleIN47715US
+ 
+
+--RaADGVvc8rg4=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"       xmlns:v="urn:schemas-microsoft-com:vml"       xmlns:o="urn:schemas-microsoft-com:office:office">
+  <!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]-->
+  <head>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style type="text/css">
+      .ReadMsgBody {
+        width: 100%;
+      }
+      /* Forces Hotmail to display emails at full width */
+      .ExternalClass {
+        width: 100%;
+      }
+      /* Hotmail table centering fix */
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+        line-height: 100%;
+      }
+      /* Forces Hotmail to display normal line spacing */
+      .ExternalClass * {
+        line-height: 100%
+      }
+      p {
+        margin: 1em 0;
+      }
+      /* Yahoo paragraph fix */
+      table td {
+        border-collapse: collapse;
+      }
+      /* This resolves the Outlook 07, 10, and Gmail td padding issue fix */
+      /* This resolves the issue when iphone puts links on dates, etc. */
+      .appleLinksWhite a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .appleLinksGray a {
+        color: #1f326f;
+        text-decoration: none;
+      }
+      .appleLinksBlack a {
+        color: #000000;
+        text-decoration: none;
+      }
+      a.mobileshow, .mobilehide {
+        display: none;
+        color: #ffffff;
+        /* for Gmail */
+      }
+      sup {
+        line-height: 0;
+        font-size: 55%;
+      }
+      /* APPLE AUTOLINK FIX */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      /* SAMSUNG AUTOLINK FIX */
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+    </style>
+    <style type="text/css"> 
+      @media only screen and (max-width: 660px) {
+        html, body {
+          width: 100% !important;
+          min-width: 100% !important;
+          margin: 0 auto !important;
+        }
+        .container, .tableBlock {
+          width: 100% !important;
+          min-width: 100% !important;
+          margin: 0 auto !important;
+        }
+        .photo, .image, .imgPlaceholder img {
+          width: 100% !important;
+          display: block !important;
+          height:auto !important;
+        }
+        .show {
+          display: block !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          width: 100% !important;
+          max-height: inherit !important;
+        }
+        .hide, .mobile-hidden {
+          display: none !important;
+        }
+        .drop, .block {
+          width: 100% !important;
+          display: block !important;
+        }
+        .drop-center {
+          width: 100% !important;
+          display: block !important;
+          text-align: center !important;
+        }
+        .pad20 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .noLeftRightPad {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
+        .padBot10 {
+          padding-bottom: 10px !important;
+        }
+        .padBot20 {
+          padding-bottom: 20px !important;
+        }
+        .padBot30 {
+          padding-bottom: 30px !important;
+        }
+        .center {
+          text-align:center !important;
+        }
+        .responsive-td {
+          width:100% !important;
+          display:block !important;
+          padding:0 !important;
+        }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 450px) {
+        body {
+          width: 100% !important;
+          min-width: 100% !important;
+          margin: 0 auto !important;
+        }
+        .body {
+          min-width: 100vw;
+        }
+        .mobile-only {
+          display: block !important;
+          max-height: none !important;
+        }
+        .pad20 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .noLeftRightPad {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
+        .padBot10 {
+          padding-bottom: 10px !important;
+        }
+        .padBot20 {
+          padding-bottom: 20px !important;
+        }
+        .padBot30 {
+          padding-bottom: 30px !important;
+        }
+        .center {
+          text-align: center !important;
+        }
+        .container, .tableBlock {
+          width: 100% !important;
+        }
+        .mobilePadding20 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .mobilePadding10 {
+          padding-left: 10px !important;
+          padding-right: 10px !important;
+        }
+        .photo, .image, .imgPlaceholder img {
+          width: 100% !important;
+          display: block !important;
+          height:auto !important;
+        }
+        .show {
+          display: block !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          width: 100% !important;
+          max-height: inherit !important;
+        }
+        .hide, .mobile-hidden {
+          display: none !important;
+        }
+        .drop, .block {
+          width: 100% !important;
+          display: block !important;
+        }
+        .responsive-td {
+          width: 100% !important;
+          display: block !important;
+          padding: 0 !important;
+        }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        /* GMAIL APP FIX */
+        u + .body .gwfw {
+          width: 100% !important;
+          width: 100vw !important;
+        }
+        /* SAMSUNG APP FIX */
+        #MessageViewBody, #MessageWebViewDiv {
+          min-width:100vw;
+          margin:0 !important;
+          zoom:1 !important;
+        }
+      }
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 320px) {
+        /* global 320 wide styles for targeting smallest iPhones */
+      }
+    </style>
+    <!-- SC Styles -->
+    <style type="text/css">
+      /*BASICS*/
+      body {
+        background:#FFFFFF;
+        -webkit-font-smoothing:antialiased;
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+      }
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active,
+      span.MsoHyperlink,
+      span.MsoHyperlinkFollowed,
+      [class*="MsoHyperlink"],
+      [class*="MsoHyperlinkFollowed"],
+      [class="ii"] a[href],
+      a[x-apple-data-detectors] {
+        mso-style-priority:99;
+        text-decoration:none !important;
+        color:inherit !important;
+        color:inherit;
+      }
+      a[href^="tel"],
+      a[href^="sms"] {
+        color:inherit !important;
+        pointer-events:none;
+        cursor:default !important;
+      }
+      table {
+        mso-table-lspace:0pt;
+        mso-table-rspace:0pt;
+      }
+      table,
+      table td {
+        border-collapse:collapse;
+      }
+      img,
+      a img {
+        border:none;
+        outline:none;
+        text-decoration:none;
+        -ms-interpolation-mode:bicubic;
+      }
+      [class*="yshortcuts"][class*="cs4-visible"],
+      [class*="yshortcuts"] a,
+      [class*="yshortcuts"] a:link,
+      [class*="yshortcuts"] a:visited,
+      [class*="yshortcuts"] a:hover,
+      [class*="yshortcuts"] a:active,
+      [class*="yshortcuts"] a:focus,
+      [class*="cs4-selecting"] *[class*="yshortcuts"][class*="cs4-visible"]:hover,
+      [class*="cs4-selecting"] *[class*="yshortcuts"][class*="cs4-visible"]:active,
+      [class*="cs4-selecting"] *[class*="yshortcuts"][class*="cs4-visible"]:focus  {
+        color:inherit !important;
+        background-color:transparent !important;
+        text-decoration:none !important;
+        border:none !important;
+      }
+      [class*="ReadMsgBody"],
+      [class*="ExternalClass"] {
+        width:100%;
+      }
+      [class*="ExternalClass"],
+      [class*="ExternalClass"] * {
+        line-height:100%;
+      }
+      th,
+      [class=*"undoreset"] th,
+      .undoreset th {
+        font-weight:normal;
+        text-align:center;
+      }
+      .undoreset a,
+      [class*="undoreset"] a {
+        outline:none !important;
+      }
+      [owa] {
+      }
+      u+.em_origBody [ELEMENT],
+      u+[class*="em_origBody"] [ELEMENT] {
+      }
+      @media only screen and (max-width:600px),
+        only screen and (max-device-width:600px),
+        only screen and (max-device-width:600px) and (orientation:portrait) {
+          table[id="em_body"],
+          table[id="em_shell"] {
+            min-width:0% !important;
+          }
+          table[id="em_shell"] {
+            width:100% !important;
+          }
+          [class*="em_hide"] {
+            display:none !important;
+          }
+          div[class*="em_show"],
+          [class*="em_mobile"] {
+            display:block !important;
+            margin:0;
+            padding:0;
+            overflow:visible !important;
+            width:auto !important;
+            max-height:inherit !important;
+            float:none !important;
+          }
+          img[class*="em_image"],
+          [class*="em_fill"],
+          [class*="em_shift"] {
+            width:100% !important;
+          }
+          img[class*="em_image"] {
+            height:auto !important;
+          }
+          td[class*="em_fill"],
+          td[class*="em_shift"],
+          th[class*="em_fill"],
+          th[class*="em_shift"] {
+            padding-top:0px !important;
+            padding-bottom:0px !important;
+            display:table !important;
+          }
+          /*HEADER*/
+          .navLinks {
+            font-size:14px !important;
+            line-height:16px !important;
+          }
+          .navPod1 {
+            width:21% !important;
+          }
+          .navPod4 {
+            width:35% !important;
+          }
+          /*FOOTER*/
+          .LH23 {
+            line-height:23px !important;
+          }
+          .em_center {
+            margin:0 auto !important;
+          }
+          .legal {
+            width:96% !important;
+          }
+          /*OUTLOOK MOBILE*/
+          body[data-outlook-cycle] .em_image {
+            width:100% !important;
+            height:auto !important;
+          }
+          body[data-outlook-cycle] .em_shift {
+            width:100% !important;
+            display:table !important;
+          }
+          body[data-outlook-cycle] .LH23 {
+            line-height:23px !important;
+          }
+          body[data-outlook-cycle] .em_hide {
+            display:none !important;
+          }
+      }
+      @viewport,
+        @-ms-viewport {
+          width:extend-to-zoom;
+          zoom:1.0;
+      }
+    </style>
+    <!--===/SC Styles===-->
+    <!--[if gte mso 9]> <style> /* Targets Outlook 2007 and 2010 - setting default fonts */ html, body, td, table, a, div, p, span { font-family: Arial, sans-serif !important; }   /* Fixes superscript’s for Outlook */ sup { font-size: 100% !important; } </style> <![endif]-->
+    <title>Shoe Carnival
+    </title>
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="width:100% !important; -webkit-text-size-adjust:none; -ms-text-size-adjust:none; margin-top:0; margin-bottom:0; margin-right:0; margin-left:0; padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; background-color:#ffffff; background-image:none; background-repeat:repeat; background-position:top left; background-attachment:scroll; min-width:100%;" class="body"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Outside or indoors, Crocs are here to give you comfort</div>
+    <img src="https://click.email.shoecarnival.com/open.aspx?ffcb10-ff2910737c62-fe5916787d60007c7210-fe3311737164047d701077-ffc912-fe6017737c65077c7c16-ff2b1c757066&d=120005&bmt=0" width="1" height="1" alt="">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="gwfw" style="background-color:#ffffff;">
+      <tr>
+        <td align="center">
+          <table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="font-family: Arial, Helvetica, sans-serif; width:600px;">
+            <tr>
+              <td>
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+	<!--===HEADER===-->
+		<tr>
+			<td align="center" valign="top">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+					
+						<tr>
+							<td align="center" style="padding:0px 0px 10px 0px;" valign="top">
+								<a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde012f6380a91d349563bf5fb42debe0cc1bfaa035bc3d990375bc6b484eba075855ec0eb9f53a726396a81f4ae8c15de930670bc3a326328c" target="_blank" title="shoecarnival.com"><img alt="Shoe Carnival" class="photo" data-assetid="35" height="83" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/0763b2ea-6758-48a5-bcfc-b9a86e10d323.jpeg" style="padding: 0px; height: 83px; width: 500px; border: 0px; text-align: center;" width="500"></a></td></tr></table></td></tr><!--===/HEADER===--><!--===MULTICOLORED LINE===--><tr>
+			<td align="center" style="padding:0px 0px 10px 0px;" valign="top">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+					
+						<tr>
+							<td align="center" bgcolor="#d70544" height="1" style="font-size:1px; height:1px; line-height:1px; mso-line-height-rule:exactly;" width="25%">
+								&zwnj;</td><td align="center" bgcolor="#ffbb00" height="1" style="font-size:1px; height:1px; line-height:1px; mso-line-height-rule:exactly;" width="25%">
+								&zwnj;</td><td align="center" bgcolor="#6ab737" height="1" style="font-size:1px; height:1px; line-height:1px; mso-line-height-rule:exactly;" width="25%">
+								&zwnj;</td><td align="center" bgcolor="#041d9b" height="1" style="font-size:1px; height:1px; line-height:1px; mso-line-height-rule:exactly;" width="25%">
+								&zwnj;</td></tr></table></td></tr><!--===/MULTICOLORED LINE===--></table></td></tr></table>
+                
+                
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbded63dc332085db024f1f74d17745157e1afed4ded0dc2659368c7dd9a8dbe2ca12674ea35809291d71068986af2ac5e5acd2424d68618c50b" title="Crocs"   data-linkto="https://"><img data-assetid="7386" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/5/b29a6ed3-cd6d-4fb5-a9f0-2b6875deafa4.jpg" alt="COZY CROCS COLLECTION" height="490" width="600" style="display: block; padding: 0px; text-align: center; height: 490px; width: 600px;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding-top: 10px; padding-right: 10px; padding-left: 10px; " class="stylingblock-content-wrapper camarker-inner"><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td valign="top" class="responsive-td" style="width: 100%;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 10px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+ <span style="font-family:Arial,Helvetica,sans-serif;font-size:18px;color:#000000;">If it's comfort you want, come over to Crocs</span></div></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 20px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+	<span style="font-size:20px;"><u><b><span style="font-family:'Jost', Arial,sans-serif;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdebeb739448f4e33c722b256bf1cae95cc274571b49d3f71ecbe493736a9a4cabe914d29fc0d864d19265ef81379cc6addf828ab81b8b5d27b" style="color:#000000;text-decoration:underline;text-transform:uppercase;" title="SHOP CROCS">SHOP CROCS</a></span></b></u></span></div></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" class="stylingblock-content-wrapper" style="min-width: 100%; "><tr><td class="stylingblock-content-margin-cell" style="padding: 15px 0px 0px; "><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner">
+<table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde57ee0b2e47e79126a6f8eab4f5e76d5e76a66aa07048061e59911b1b23d85d2af938cf9af211c9cb77cb6b46403045833d7afa3752e515b5" title="Crocs sale"   data-linkto="https://">
+<img data-assetid="7385" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/5/085a735b-c9f4-4771-8078-4b281ac82a19.jpg" alt="FINAL DAY! CROCS SELECT STYLES UP TO 50% OFF* SHOP CROCS" height="283" width="600" style="display: block; padding: 0px; text-align: center; height: 283px; width: 600px;"></a></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" class="stylingblock-content-wrapper" style="min-width: 100%; "><tr><td class="stylingblock-content-margin-cell" style="padding: 15px 0px 0px; "><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 10px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+	<span style="font-family:Arial,Helvetica,sans-serif;font-size:32px;color:#000000;text-transform:uppercase;font-weight:700;letter-spacing:.05em">Comfort in Crocs</span></div></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td valign="top" style="width: 50%; padding-right: 2.5px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #FFFFFF; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner">
+<table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde4eed061836b28b91249a33b3bea7871989bfc54bb46d93900ec4cb6baa5524eb99f9aea8141d55c88bb8e2a584dcf1e5b16e4d6a23a1e496" title="Prod Image 1"   data-linkto="https://"><img src="https://i8.amplience.net/s/scvl/125266_193885_SET/1?fmt=auto&$webPdpProduct$" alt="" width="270" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #FFFFFF; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 5px 10px 0px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+ <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbded23fa61f593d7a0d2ad9c3425da6c512378674cd944796ca7e4a9686e6872588f718641d3064bdfad72cd6bac3b4af32b3d5f5efe1b77f5e" style="color:#000000;text-decoration:none;text-transform:uppercase;" title="PRODUCT Text 1"><span style="font-size:14px;font-family:'Jost', Arial,sans-serif;">Adults' Crocs Classic Lined Clogs
+</span></a></div></td></tr></table></td><td valign="top" style="width: 50%; padding-left: 2.5px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde8b4a87ee2d00d4338a0fd365597eb449aa1cc9333506ceef2b84783ad75295841af1e9351550d2c716b219a74ac3958a149ec1d9ed5c778b" title="Prod Image 2"   data-linkto="https://"><img src="https://i8.amplience.net/s/scvl/95237_265060_SET/1?fmt=auto&$webPdpProduct$" alt="" width="270" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 5px 10px 0px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+ <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdec32155795cec541cfc8a6b77221993cbe01794bacff6cd0d7d46e821f8799ae289884449867056bab67a8d5de8f16e05a0901a63a908e661" style="color:#000000;text-decoration:none;text-transform:uppercase;" title="PRODUCT Text 2"><span style="font-size:14px;font-family:'Jost', Arial,sans-serif;">Adults' Crocs Classic Clogs
+</span></a></div></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #FFFFFF; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td valign="top" style="width: 50%; padding-right: 2.5px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #FFFFFF; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center">
+<a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeb49f9b8620621cf3daac86f1d270b0b2bd039aab6535dcd7e70b959876fc478f260ad407a9c714b95cd7a13efeecc7cd0b408961a367b409" title="Prod Image 3"   data-linkto="https://"><img src="https://i8.amplience.net/s/scvl/124990_256698_SET/1?fmt=auto&$webPdpProduct$" alt="" width="270" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #FFFFFF; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 5px 10px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+ <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde64f649f2036c768117d3e759710ca0928539024a8e78db19c4a9c156c2be8678cc6c8cec6aece3eeb6012a05ff164d3d4747c3d6cd6f1108" style="color:#000000;text-decoration:none;text-transform:uppercase;" title="PRODUCT Text 3"><span style="font-size:14px;font-family:'Jost', Arial,sans-serif;">Kids' Crocs Classic 2 Clogs
+</span></a></div></td></tr></table></td><td valign="top" style="width: 50%; padding-left: 2.5px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde7a7bcd790551548bbdce2157a52b9fbfd4caf233fd807eaf5108ab6ee109a83a4942290692d1a81f02cf96f77bdc4d3557ea57db7c0bb5ef" title="Prod Image 4"   data-linkto="https://"><img src="https://i8.amplience.net/s/scvl/99156_193888_SET/1?fmt=auto&$webPdpProduct$" alt="" width="270" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 5px 10px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+ <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde5e7024c86e42f3e14eba36cea7c33453afdd1fac302912078155e8d9dac4a1c466256c68296c89b833fc762b13053f7fba493b389f7d27f7" style="color:#000000;text-decoration:none;text-transform:uppercase;" title="PRODUCT Text 4"><span style="font-size:14px;font-family:Arial,Helvetica,sans-serif;">Adults' Crocs Classic Lined Clogs
+</span></a></div></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 20px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+	<span style="font-size:20px;"><u><b><span style="font-family:'Jost', Arial,sans-serif;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdebfeec29b998f893117e3d17720512b262ba700cf0520c71c45e5d872f4cca35780ed1c401ca2bbeef954e672943cc63dcf96fe4be79e7e62" style="color:#000000;text-decoration:underline;" title="SEE MORE">SEE MORE</a></span></b></u></span></div></td></tr></table>
+                
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 5px 0px 0px; " class="stylingblock-content-wrapper camarker-inner"><!--===NAV===--><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+	
+		<tr>
+			<td align="center" bgcolor="#000000" style="padding:10px 0px 10px 0px;" valign="top">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+					
+						<tr>
+							<td align="center" bgcolor="#000000" class="navPod1 navLinks" style="font-family:'Jost', Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; mso-line-height-rule:exactly; color:#000000; text-transform:uppercase;" width="24%">
+								<strong style="font-weight:bold; color:#ffffff;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde21b7307c0c1501d61dff5fde42afc768f906bfae2aac490cdfc3a0ed11e36401c82bbf959e888e0089e217c325a37cad1f83cf64cc94d63a" style="text-decoration:none;" target="_blank" title=""><strong style="font-weight:bold; color:#ffffff;">WOMEN</strong></a></strong></td><td align="center" bgcolor="#000000" class="navPod2 navLinks" style="font-family:'Jost', Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; mso-line-height-rule:exactly; color:#000000; text-transform:uppercase;" width="21%">
+								<strong style="font-weight:bold; color:#ffffff;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdef75ef9e772c3a19d01cc9f3aa61b3d68a996c7ea328c508828f2ac6c3ecec748048d8738f5de2eba9d87e77f891f3e518704214af4f7c2d5" style="text-decoration:none;" target="_blank" title=""><strong style="font-weight:bold; color:#ffffff;">MEN</strong></a></strong></td><td align="center" bgcolor="#000000" class="navPod3 navLinks" style="font-family:'Jost', Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; mso-line-height-rule:exactly; color:#000000; text-transform:uppercase;" width="21%">
+								<strong style="font-weight:bold; color:#ffffff;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde0b21b89febe2a73d2a7a71da2f148e79ba5d7a721c7a09b63ab365d1dc114856007a324164568ae9f66152c75e894f9cee34be8591ab23a7" style="text-decoration:none;" target="_blank" title=""><strong style="font-weight:bold; color:#ffffff;">KIDS</strong></a></strong></td><td align="center" bgcolor="#000000" class="navPod4 navLinks" style="font-family:'Jost', Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; mso-line-height-rule:exactly; color:#000000; text-transform:uppercase;">
+								<strong style="font-weight:bold; color:#ffffff;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde138fcbe5d6385888caf67b575d9ec3b7c274bce92d10543b23742cd50acb70093c1743ddf8e6e1c3e0035e20d53bc5a017a3bfcaf69f2116" style="text-decoration:none;" target="_blank" title=""><strong style="font-weight:bold; color:#ffffff;">ACCESSORIES</strong></a></strong></td></tr></table></td></tr></table><!--===/NAV===--></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--===SUBNAV===--><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" valign="middle" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding:20px 0px 5px 0px;" valign="middle">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" valign="middle" width="100%">
+     
+      <tr>
+       <td align="center" class="navPod1 navLinks" style="font-family:'Jost', Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; mso-line-height-rule:exactly; color:#000000; text-transform:uppercase;" width="100%">
+        <a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeeb83b825846b0b8ad8d503b31894ade02a699ecb53cef57ff7095efd1329370ea0fc05228ee2f449fb6059cdab254ce46aff3f61e6dc37cc" style="text-decoration:none;" target="_blank"><strong style="font-weight:bold; color:#000000;">CHECK&nbsp;MY&nbsp;POINTS&nbsp;&nbsp;|&nbsp;&nbsp;</strong></a><a href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdecc31c16c2096e2d60080bf7aea8494cd154fd49fc73e77481f3e775f4f99ab33ac21e4070f09822aabd6b356e0f7454da151f05eedcf0a15" style="text-decoration:none;" target="_blank"><strong style="font-weight:bold; color:#000000;">JOIN&nbsp;OUR&nbsp;TEAM</strong></a></td></tr></table></td></tr></table><!--===/SUBNAV===--></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--===SOCIAL===-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" valign="middle" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding:10px 0px 10px 0px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" class="em_center" role="presentation" style="width:140px;" width="140">
+     
+      <tr>
+       <td align="center">
+        <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde4c6629898404db8c4b5cbdd9f087fc3d66abe95661058626f463eed3178f837e6a3ad122fb762e6dbb8089112d8f67a8e41a7bf3f47ba3b3" style="text-decoration:none; text-align=center; display:block;" target="_blank" title="Facebook"><img alt="Facebook" data-assetid="47" height="20" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/f72cd3c4-90b6-41e2-bc0b-4943dc054452.png" style="display: block; font-family: Jost, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; border: none; padding: 0px; text-align: center; height: 20px; width: 20px;" width="20"></a></td><td align="center">
+        <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdebcb00e6597451613278685ca22f03f59a81141f8bd89666b47130401672f8d54f7883a4ffa9d2f5db54d1e3e15010eaf9b909fc697b0d007" style="text-decoration:none; text-align=center; display:block;" target="_blank" title="Instagram"><img alt="Instagram" data-assetid="42" height="20" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/5dd64349-64fd-454e-8f2f-897427727175.png" style="display: block; font-family: Jost, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; border: none; padding: 0px; text-align: center; height: 20px; width: 21px;" width="21"></a></td><td align="center">
+        <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde6d0021858d359a10b7dc666598461d534eeb1de1591b60aecfecd500d50db14963fe197967f540adb753b14114284497838724c2363c6691" style="text-decoration:none; text-align=center; display:block;" target="_blank" title="Twitter"><img alt="Twitter" data-assetid="44" height="20" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/96ae2646-2110-49c1-b596-ab2b8c6ba351.png" style="display: block; font-family: Jost, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; border: none; padding: 0px; text-align: center; height: 20px; width: 20px;" width="20"></a></td><td align="center">
+        <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde2183cf016a48989207a9b0754c080423ab3537846cb1ed0074754c61e2dee79577dcfedc97bf82a5982cae8bf54c7332ffb69f3d3d058f8a" style="text-decoration:none; text-align=center; display:block;" target="_blank" title="Pinterest"><img alt="Pinterest" data-assetid="43" height="20" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/61360151-54a8-4872-a737-aadd71d7b2bf.png" style="display: block; font-family: Jost, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; padding: 0px; text-align: center; height: 20px; width: 20px; border: none;" width="20"></a></td><td align="center">
+        <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde9730383ee7b05df16ff593018dfd96bd47600355a7f921963f7ff74437eb43463e9dc99b847757e8e82d634718da1eab3f959f2137049cba" style="text-decoration:none; text-align=center; display:block;" target="_blank" title="TikTok"><img alt="TikTok" data-assetid="45" height="20" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/51405898-58c4-4ff7-98c7-d89da793599d.jpg" style="display: block; font-family: Jost, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; border: none; padding: 0px; text-align: center; height: 20px; width: 20px;" width="20"></a></td></tr></table></td></tr></table><!--===/SOCIAL===--></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--===TEXT===-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" valign="middle" width="100%">
+	
+		<tr>
+			<td align="center" style="padding:0px 0px 0px 0px;" valign="top">
+				<a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde01cc0e79c97fdcc70c6670dea0e1ed78cd1ed2b1aa7a1e5cf4a13acab65b7ffa1e7458dd3c32689f3850a48148ac967c7ab81671a4d79321" target="_blank" title="Text SHOE to 727375 to join!"><img alt="Get all the deals straight to your phone! Text SHOE to 727375 to join!* Message and data rates may apply. View terms &amp; conditions" class="photo" height="150" src="https://image.email.shoecarnival.com/lib/fe3311737164047d701077/m/1/ebb2c4d9-4a4d-4062-8a02-9ae9834cc663.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000000; padding: 0px; height: 150px; width: 600px; text-align: center; border: none;" width="600"></a><p align="center" style="padding:0px 20px 20px 20px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#000000;" valign="top">
+					*Text: By signing up via text, you agree to receive recurring automated marketing text messages from Shoe Carnival at the cell number used when signing up. Consent is not a condition of any purchase. If you are under 18, you must get consent from your parent or guardian. For more information, view&nbsp; <a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde266545e804b847a4ef418eab608354c196441a4d5391048d377a2e60fd7c1e75094cfb8b6d2095a66938666212859226d1976ceed409f00b" style="color:#000000;text-decoration:underline;" target="_blank" title="">Terms&nbsp;and&nbsp;Conditions</a>.</p></td></tr></table><!--===/TEXT===--></td></tr></table>
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><div style="text-align: center;">
+	<span style="font-size:11px;">While supplies last. Product shown may not be available in all stores.<br>
+	<br>
+	Crocs Sale: Pricing valid in store and online. Select styles only. Product availability may vary by store. Cannot be combined with additional discounts or coupons or used on prior purchases, refunds, or exchanges. &nbsp;Discount reflected in sale price. Offer subject to change without notice. Expires 01/08/2023, 11:59 pm EST.</span></div></td></tr></table>
+                
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 10px 10px 0px; " class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" style="width:100%;" width="100%">
+	
+		<tr>
+			<td align="center">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" class="legal" role="presentation" width="100%">
+					
+						<tr>
+							<td align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#000000;" valign="top">
+								<!--===Standard legal which will not need to be edited begins here===-->Make sure you're not missing out on anything! Add <span style="color:#000000;"><strong style="color:#000000; text-decoration:underline; font-weight:normal;"><strong style="color:#000000; text-decoration:underline; font-weight:normal;"><a alias="Footer_EmailAddress" conversion="false" data-linkto="mailto:" href="mailto:shoecarnival@email.shoecarnival.com?subject=" style="color:#000000;text-decoration:underline;" target="_blank" title=""><strong style="color:#000000; text-decoration:underline; font-weight:normal;">shoecarnival@email.shoecarnival.com</strong></a></strong></strong></span> to your Address Book or Safe Sender List. For information about our privacy practices, see our 
+<strong style="text-decoration:underline; color:#000000; font-weight:normal;"><a   data-linkto="https://" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbdeedb5d219e136c4ddca5fa786aa5466844068d380f4915ce318d0854217cf5a1e1450f44b84e476a48646d7291c419fdb67b2ade66680bea4" style="text-decoration:none;" target="_blank" title=""><strong style="text-decoration:underline; color:#000000; font-weight:normal;">Privacy Policy</strong></a></strong>. If you wish to opt-out from all future emails, please <strong style="color:#000000; text-decoration:underline; font-weight:normal; white-space:nowrap;"><a   data-linkto="other" href="https://click.email.shoecarnival.com/?qs=6c418d752a02bbde61010a3367f5365357b243ed11819cc5247e34d2419f5efa583642a0682b57f44a98d8fdafce021f92742e499509651abc4d3eabc82a6ea2" style="color:#000000;text-decoration:underline;" target="_blank" title="">
+<strong style="color:#000000; text-decoration:underline; font-weight:normal; white-space:nowrap;">unsubscribe&nbsp;here</strong></a></strong>.<br>
+								<br>
+								<!--===Code such as &zwj; or &#8203; prevents blue links===--> Shoecarnival.&zwj;com currently only delivers to the continental United States, Alaska and Hawaii. Promotional events will vary in Puerto Rico. Online shopping is not available in Puerto&nbsp;Rico.</td></tr><tr>
+							<td align="center" style="padding:23px 0px 73px 0px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color:#000000;" valign="top">
+								&copy; 2023 Shoe Carnival, Inc.&zwnj;&nbsp;&zwnj;&nbsp; <a style="color:#000000; text-decoration:none; outline:none; cursor:text;"><span style="text-decoration:none; color:#000000;">7500 E. Columbia Street, <strong style="font-weight:normal; white-space:nowrap;">Evansville,&nbsp;IN&nbsp;47715&zwnj;&nbsp;&zwnj;&nbsp;</strong></span></a><strong style="font-weight:normal; white-space:nowrap;"><a href="tel: 18004307463" style="text-decoration:none; color: #000000;" target="_blank">1-800-430-7463</a></strong> <strong style="color:#000000; font-weight:normal;"><a   data-linkto="other" href="https://view.email.shoecarnival.com/?qs=8ec244ab6bd83ea77731f597c1b81468c1dcd1eea11e934c7b85f42d50e37860c617912770a0a249c7f92b820bb4a1a4adef1babff1485d1d248e28033570f3d41dca3b61f75624a" style="color:#000000;text-decoration:none;" target="_blank" title="View in Browser">
+<strong style="color:#000000; font-weight:normal;">&nbsp; View&nbsp;in&nbsp;Browser</strong></a></strong></td></tr></table></td></tr></table></td></tr></table>
+                
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!---->
+<style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?rd&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?rl&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​');}} @media print{ #_t {background-image:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?p&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​');}} div.OutlookMessageHeader {background-image:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?f&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​')} table.moz-email-headers-table {background-image:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?f&i=33913192
+&t=utm_campaign=SCA_20230108_FDCrocsSale_O​')} blockquote #_t {background-image:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?f&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​')} #MailContainerBody #_t {background-image:url('https://ieezzy5m.emltrk.com/v2/ieezzy5m?f&i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​')}</style><div id="_t"></div>
+<img src="https://ieezzy5m.emltrk.com/v2/ieezzy5m?i=33913192&t=utm_campaign=SCA_20230108_FDCrocsSale_O​" width="1" height="1" border="0" alt="" />
+<style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://0di86k1v.emltrk.com/v2/0di86k1v?rd&d=[UNIQUE]');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://0di86k1v.emltrk.com/v2/0di86k1v?rl&d=[UNIQUE]');}} @media print{ #_t {background-image:url('https://0di86k1v.emltrk.com/v2/0di86k1v?p&d=[UNIQUE]');}} div.OutlookMessageHeader {background-image:url('https://0di86k1v.emltrk.com/v2/0di86k1v?f&d=[UNIQUE]')} table.moz-email-headers-table {background-image:url('https://0di86k1v.emltrk.com/v2/0di86k1v?f&d=[UNIQUE]')} blockquote #_t {background-image:url('https://0di86k1v.emltrk.com/v2/0di86k1v?f&d=[UNIQUE]')} #MailContainerBody #_t {background-image:url('https://0di86k1v.emltrk.com/v2/0di86k1v?f&d=[UNIQUE]')}</style>
+<div id="_t"></div>
+<img src="https://0di86k1v.emltrk.com/v2/0di86k1v?d=[UNIQUE]" width="1" height="1" border="0" alt="" />
+  </body>
+</html>
+
+--RaADGVvc8rg4=_?:--
+

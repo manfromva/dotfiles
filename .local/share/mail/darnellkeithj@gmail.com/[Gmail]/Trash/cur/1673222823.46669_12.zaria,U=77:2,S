@@ -1,0 +1,610 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2444153mdb;
+        Sun, 8 Jan 2023 08:17:26 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsAQ4LyeKMzLdBBMA52nN5p3U0jSAv5sxqLE1hNbFI0QdaRtS0WEvW6sLm4Mq/cLZ/EqWbf
+X-Received: by 2002:ac8:6681:0:b0:3a8:270:c0b8 with SMTP id d1-20020ac86681000000b003a80270c0b8mr86301244qtp.15.1673194646253;
+        Sun, 08 Jan 2023 08:17:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673194646; cv=none;
+        d=google.com; s=arc-20160816;
+        b=F/7lbAwHJLpTfURoUo7ll7Zj2UJlV/jG/LBNpBNypPNvuyd/I3D1PLC9pw/fsSkZC1
+         Cf1Or7cMC77e13KulnNVKfKWd6YgxIhcT0D9eOQC/59QE/QPpZ7oPZcWqqmM7l2bvdA5
+         GMGQ8/F2/XvBzskQYPD0JckoDQDHT1zQUK0/qNzC6THPkM1kI+o5b+RM1lyEeAuZwJR5
+         /OKSXP4nVDOVbeH8f+cOtvOrluQaRkidYQGgLLYHcXfFXvYAKz43RNQQH0dQna4xIt72
+         k/a6UN9q66zHteFHq8D5Fh1Ihkb/GLgfHhYY6Wy9kYGIpcdNkCghV6DFrv5nrGet/VxJ
+         crbA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:feedback-id:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature:dkim-signature;
+        bh=vK81L5/SixZ0X/r16DWPST1+Vn/f7vJrZCI45U8wH6M=;
+        b=ZpPhqvQ2H8BJrIEwXBnPMJrDM8jobPBAob69puhj4HzDpx8Al7tWV7sB5v3HMoP6ya
+         wUgfAwQrwpM5VLAMZIrCFcZ4lVAbt1yzlLJF50r6R+HNId9ZRsthrApKdd04Du3D+YFr
+         3m5We0RwEHnTD96Rl7DMdS5QFCNGLun7ReOeZSV4A2xUlGlimVRXFwzo3BaBcbIku0Ja
+         WwoQI3dYMlLiYCU049qMeqZoDFyYCoDRPPHiP5Ph/1F3amQEEEfUvlSe+ARY0F5+hV4S
+         BMAucttaDo10piuuO9bqKjw2Tr6Zez40ktPm47eL8d8bbXJOyxNlVuRfj20jUO+oN210
+         EnrQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@goodday.theinvestinginsider.com header.s=f2eo3rxo6o4urdvnej3ixc7htsjheahi header.b=QZvkIxWt;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=mC58C5W2;
+       spf=pass (google.com: domain of 01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com designates 54.240.79.252 as permitted sender) smtp.mailfrom=01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com
+Return-Path: <01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com>
+Received: from a79-252.smtp-out.amazonses.com (a79-252.smtp-out.amazonses.com. [54.240.79.252])
+        by mx.google.com with ESMTPS id c27-20020a05620a269b00b007056237b460si3356157qkp.56.2023.01.08.08.17.26
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 08:17:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com designates 54.240.79.252 as permitted sender) client-ip=54.240.79.252;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@goodday.theinvestinginsider.com header.s=f2eo3rxo6o4urdvnej3ixc7htsjheahi header.b=QZvkIxWt;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=mC58C5W2;
+       spf=pass (google.com: domain of 01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com designates 54.240.79.252 as permitted sender) smtp.mailfrom=01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=f2eo3rxo6o4urdvnej3ixc7htsjheahi;
+	d=goodday.theinvestinginsider.com; t=1673194646;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe;
+	bh=vK81L5/SixZ0X/r16DWPST1+Vn/f7vJrZCI45U8wH6M=;
+	b=QZvkIxWtwZoIW/tzKDX2Xaw7U3HQIsRdW0CT4Evr/+jwFqWrySaAS0ajUU437kVt
+	DoxyiRKmyxTaST2Q3xGWgnv6YWofN846pD6I7trv7EhaNNnWVQ4P2JgB2xpYmmtdb22
+	8Pp3auAYOl0zUKfZkddGqZRZLR6+mCpHGUA60gns=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1673194646;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID:List-Unsubscribe;
+	bh=vK81L5/SixZ0X/r16DWPST1+Vn/f7vJrZCI45U8wH6M=;
+	b=mC58C5W2Sgloe+rKAKbLdgqhVaPZvaG7ZHnk9x8M6k/AHHF4uEpF+jHKLqJhPNcs
+	yXj8M9XMFE4b4y/Zo+n0zMVDLnGZbAmYh91dMaH94LOx61mlx9eE92IqTTKonaAGf8O
+	f4wl967poeGT/eKHLFLV94GVMyMOjq9KJEoaYcNI=
+Date: Sun, 8 Jan 2023 16:17:25 +0000
+From: =?UTF-8?Q?=F0=9F=94=B8_The_Investing_Insider?=
+ <o.grant@goodday.theinvestinginsider.com>
+Reply-To: support@theinvestinginsider.com
+To: darnellkeithj@gmail.com
+Message-ID: <01000185922c2971-a95b63d5-7860-4147-a9d7-cb7ad11ff324-000000@email.amazonses.com>
+Subject: =?UTF-8?Q?=E2=8B=99_Should_Investors_Trust_the_Fed_Af?=
+ =?UTF-8?Q?ter_This=3F_=F0=9F=A4=94_|_[?=
+ =?UTF-8?Q?=F0=9D=9F=8E=F0=9D=9F=96=E2=80=A7=F0=9D=9F=8E=F0=9D=9F=8F?=
+ =?UTF-8?Q?=E2=80=A7=F0=9D=9F=90=F0=9D=9F=8E=F0=9D=9F=90=F0=9D=9F=91]?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_37911_1490647672.1673194645765"
+X-Campaign-ID: 5876154
+Feedback-ID: 1.us-east-1.lCJVkz6+3S71MtYe1CeGk/9v1Z83C325jnahyIHJIg0=:AmazonSES
+List-Unsubscribe: <https://links.goodday.theinvestinginsider.com/e/encryptedUnsubscribe?_r=a884ae23762a4e09864eb8c20d4dc76f&_s=b6eda8697a5b493892bb46dd97ef4fa0&_t=YJR3ZN4amdfbYguPSTruO7p-8gqqBjj6PpMJAyvHRWlTXv-fLw9LUDQ_S1jjLVmsfPn5LcdsTJB2A6QnSbFUQDbIfCUYTTc7XO3CPU0dBhXQsHk6jbjKoZd6K2fYcOrB>,<mailto:unsubscribe+5876154+7924629@unsubscribe.iterable.com>
+X-Feedback-ID: 7924629:5876154:47666:iterable
+X-Message-ID: b6eda8697a5b493892bb46dd97ef4fa0
+X-SES-Outgoing: 2023.01.08-54.240.79.252
+X-TUID: FTPtDo01+1u6
+
+------=_Part_37911_1490647672.1673194645765
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Because a former CIA insider just exposed the truth about the Fed=E2=80=A6
+
+
+
+ <https://theinvestinginsider.com/>=20
+
+Sometimes, colleagues of The Investing Insider share special offers with us=
+=20
+that we think our readers should be made aware of. Below is one such specia=
+l=20
+opportunity that we believe deserves your attention.
+
+
+
+
+
+ Hello Friend!=20
+
+I am astonished and appalled by what could happen to America soon=E2=80=A6=
+=20
+<https://www.scrtprotrck.com/RYAB0285/darnellkeithj@gmail.com/theinvestingi=
+nsider.com/B/PAMS8>
+
+ Because a former CIA insider just exposed the truth about the Fed=E2=80=A6=
+=20
+
+ And what he said shook me to my core.=20
+
+ Did you see the interview yet?=20
+
+
+ If not, you can watch it here=20
+<https://www.scrtprotrck.com/RYAB0285/darnellkeithj@gmail.com/theinvestingi=
+nsider.com/B/PAMS8>
+
+
+
+
+ But I would act fast=E2=80=A6=20
+
+ Because the =E2=80=9Celites=E2=80=9D could have it taken off the internet =
+any day now.=20
+
+ It=E2=80=99s that shocking=20
+
+Click here to see the interview he gave=E2=80=A6and to find out what it cou=
+ld mean for=20
+both America and your finances.=20
+<https://www.scrtprotrck.com/RYAB0285/darnellkeithj@gmail.com/theinvestingi=
+nsider.com/B/PAMS8>
+
+
+
+ Regards,=20
+ Matt Insley=20
+ Publisher, Paradigm Press=20
+
+
+
+ <https://theinvestinginsider.com/>
+
+
+
+
+
+
+Email sent by Finance and Investing Traffic, LLC, owner and operator of The=
+=20
+Investing Insider
+
+
+
+This ad is sent on behalf of Paradigm Press, LLC, at 808 St. Paul Street,=
+=20
+Baltimore MD 21202. If you're not interested in this opportunity from Parad=
+igm=20
+Press, LLC, pleaseclick here <https://www.scrtprotrck.com/unsubpams/unsub> =
+to=20
+remove your email from these offers.
+
+
+
+This offer is brought to you by The Investing Insider. 221 W 9th St #=20
+Wilmington, DE 19801. If you would like to unsubscribe from receiving offer=
+s=20
+brought to you by The Investing Insiderclick here=20
+<https://links.goodday.theinvestinginsider.com/e/encryptedUnsubscribe?_r=3D=
+a884ae23762a4e09864eb8c20d4dc76f&_s=3Db6eda8697a5b493892bb46dd97ef4fa0&_t=
+=3DYJR3ZN4amdfbYguPSTruO7p-8gqqBjj6PpMJAyvHRWlTXv-fLw9LUDQ_S1jjLVmsfPn5Lcds=
+TJB2A6QnSbFUQDbIfCUYTTc7XO3CPU0dBhXQsHk6jbjKoZd6K2fYcOrB>
+.
+
+
+
+To be sure our emails continue reaching your email box, please add our emai=
+l=20
+address to yourwhitelist <https://theinvestinginsider.com/email-whitelistin=
+g/>.
+
+
+
+You are receiving this e-mail because you have expressed an interest in the=
+=20
+Financial Education niche on one of our landing pages or sign-up forms on o=
+ur=20
+website.
+
+
+If you received this e-mail in error and would like to report spam, simply=
+=20
+send an email to abuse@theinvestinginsider.com
+You'll receive a response within 24 hours.
+
+
+
+
+
+Privacy Policy <https://theinvestinginsider.com/privacy-policy/> | Terms &=
+=20
+Conditions <https://theinvestinginsider.com/terms-conditions/> | Unsubscrib=
+e=20
+<https://links.goodday.theinvestinginsider.com/e/encryptedUnsubscribe?_r=3D=
+a884ae23762a4e09864eb8c20d4dc76f&_s=3Db6eda8697a5b493892bb46dd97ef4fa0&_t=
+=3DYJR3ZN4amdfbYguPSTruO7p-8gqqBjj6PpMJAyvHRWlTXv-fLw9LUDQ_S1jjLVmsfPn5Lcds=
+TJB2A6QnSbFUQDbIfCUYTTc7XO3CPU0dBhXQsHk6jbjKoZd6K2fYcOrB>
+
+
+
+Copyright =C2=A9 2023 The Investing Insider. All Rights Reserved.
+
+
+------=_Part_37911_1490647672.1673194645765
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head><title></title><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><!--[if mso]><xml><o:OfficeDocumentSettings=
+><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettin=
+gs></xml><![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googlea=
+pis.com/css?family=3DUbuntu" rel=3D"stylesheet" type=3D"text/css"><link hre=
+f=3D"https://fonts.googleapis.com/css?family=3DRoboto" rel=3D"stylesheet" t=
+ype=3D"text/css"><!--<![endif]--><style>*{box-sizing:border-box}body{margin=
+:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-decorat=
+ion:inherit!important}#MessageViewBody a{color:inherit;text-decoration:none=
+}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;displ=
+ay:none;max-height:0;overflow:hidden}@media(max-width:620px){.image_block i=
+mg.big,.row-content{width:100%!important}.mobile_hide{display:none}.stack .=
+column{width:100%;display:block}.mobile_hide{min-height:0;max-height:0;max-=
+width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{displ=
+ay:table!important;max-height:none!important}}</style></head><body style=3D=
+"box-sizing: border-box; background-color: transparent; margin: 0; padding:=
+ 0; -webkit-text-size-adjust: none; text-size-adjust: none;"><span style=3D=
+"color:transparent;visibility:hidden;display:none;opacity:0;height:0;width:=
+0;font-size:0;">Because a former CIA insider just exposed the truth about t=
+he Fed=E2=80=A6</span><img src=3D"https://links.goodday.theinvestinginsider=
+.com/e/eo?_t=3Da884ae23762a4e09864eb8c20d4dc76f&amp;_m=3Db6eda8697a5b493892=
+bb46dd97ef4fa0&amp;_e=3DYJR3ZN4amdfbYguPSTruO7p-8gqqBjj6PpMJAyvHRWlTXv-fLw9=
+LUDQ_S1jjLVmsfPn5LcdsTJB2A6QnSbFUQDbIfCUYTTc7XO3CPU0dBhWU6xJ7tE941lQDIi2jtC=
+cy8dcHpQi-OeoAVDWJ9190gg%3D%3D" style=3D"border:0;width:1px;height:1px;bord=
+er-width:0px!important;display:none!important;line-height:0!important;" wid=
+th=3D"1" height=3D"1"/><table class=3D"nl-container" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; background=
+-color: transparent;" bgcolor=3D"transparent"><tbody style=3D"box-sizing: b=
+order-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: =
+border-box;"><table class=3D"row row-1" align=3D"center" width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; backg=
+round-color: #fff; background-image: url(https://d15k2d11r6t6rl.cloudfront.=
+net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a884ae237=
+62a4e09864eb8c20d4dc76f/BG-2_2.png); background-repeat: no-repeat; backgrou=
+nd-size: cover;" bgcolor=3D"#fff" background=3D"https://d15k2d11r6t6rl.clou=
+dfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8=
+84ae23762a4e09864eb8c20d4dc76f/BG-2_2.png"><tbody style=3D"box-sizing: bord=
+er-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: bor=
+der-box;"><table class=3D"row-content" align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: bo=
+rder-box; mso-table-lspace: 0; mso-table-rspace: 0; background-size: auto; =
+color: #000; width: 600px;" width=3D"600"><tbody style=3D"box-sizing: borde=
+r-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1"=
+ width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-t=
+able-rspace: 0; font-weight: 400; text-align: left; background-color: #fff;=
+ vertical-align: top; padding-top: 0; padding-bottom: 0; border-top: 0; bor=
+der-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" bgcolor=3D"=
+#fff" valign=3D"top"><table class=3D"image_block block-1" width=3D"100%" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr =
+style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: bo=
+rder-box; width: 100%; padding-right: 0; padding-left: 0;" width=3D"100%"> =
+<div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box; =
+line-height: 10px;"><a href=3D"https://links.goodday.theinvestinginsider.co=
+m/u/click?_t=3Da884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46=
+dd97ef4fa0&_e=3Djl2eZHqGkbQm_Y82z49MHPYhDVNA-LD5gvB-TEwlMUEj0FFj9t1OXL5Zvdq=
+CJx2y3-O6sNMfLbYXX2uAF6604Vss78LpamjggC8X-1v9E0zwTP59andNUbYLL70jcI6OD1o6CN=
+At-OcRxBqMQyB1zQo8tvtCpXwdPIp5zBgHC2sj3cWUGrCsR2tLXwtEJykzfr7GPDUhsMNHrqh8a=
+BvKSw%3D%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: no=
+ne;" tabindex=3D"-1"><img class=3D"big" src=3D"https://d15k2d11r6t6rl.cloud=
+front.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a88=
+4ae23762a4e09864eb8c20d4dc76f/Header-5.png" style=3D"box-sizing: border-box=
+; display: block; height: auto; border: 0; width: 600px; max-width: 100%;" =
+width=3D"600" alt=3D"The Investing Insider" title=3D"The Investing Insider"=
+></a></div> </td></tr></table><table class=3D"text_block block-2" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0=
+; word-break: break-word;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; padding-left=
+: 20px; padding-right: 20px; padding-top: 15px;"><div style=3D"box-sizing: =
+border-box; font-family: Verdana,sans-serif;"><div class style=3D"box-sizin=
+g: border-box; font-size: 14px; font-family: 'Lucida Sans Unicode','Lucida =
+Grande','Lucida Sans',Geneva,Verdana,sans-serif; mso-line-height-alt: 16.8p=
+x; color: #828282; line-height: 1.2;"><p style=3D"box-sizing: border-box; l=
+ine-height: inherit; margin: 0; font-size: 10px; text-align: center; mso-li=
+ne-height-alt: 12px;">Sometimes, colleagues of The Investing Insider share =
+special offers with us that we think our readers should be made aware of. B=
+elow is one such special opportunity that we believe deserves your attentio=
+n.</p></div></div></td></tr></table><table class=3D"image_block block-3" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rs=
+pace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"=
+box-sizing: border-box; width: 100%; padding-right: 0; padding-left: 0;" wi=
+dth=3D"100%"><div class=3D"alignment" align=3D"center" style=3D"box-sizing:=
+ border-box; line-height: 10px;"><img class=3D"big" src=3D"https://d15k2d11=
+r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542=
+cff6dd6a/a884ae23762a4e09864eb8c20d4dc76f/Divider.png" style=3D"box-sizing:=
+ border-box; display: block; height: auto; border: 0; width: 600px; max-wid=
+th: 100%;" width=3D"600"></div></td></tr></table><table class=3D"html_block=
+ block-4" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; =
+mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pa=
+d" style=3D"box-sizing: border-box;"><div style=3D"box-sizing: border-box; =
+font-family: Arial,Helvetica Neue,Helvetica,sans-serif; text-align: center;=
+" align=3D"center"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+class=3D"body" style=3D"box-sizing: border-box; border-collapse: separate; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Roboto', sans-s=
+erif; font-weight: normal; font-size: 16px; line-height: 1.5; text-align: l=
+eft; width: 100%;" width=3D"100%" align=3D"left"> <tr style=3D"box-sizing: =
+border-box;"> <td align=3D"left" valign=3D"top" style=3D"box-sizing: border=
+-box; font-weight: normal; line-height: 1.5; text-align: left; font-family:=
+ 'Roboto', sans-serif; font-size: 16px; vertical-align: top;"> <table align=
+=3D"left" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+table-container" width=3D"100%" style=3D"box-sizing: border-box; border-col=
+lapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;=
+ font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 16px; l=
+ine-height: 1.5; text-align: left; max-width: 600px;"> <tr style=3D"box-siz=
+ing: border-box;"> <td height=3D"20" style=3D"box-sizing: border-box; font-=
+weight: normal; line-height: 1.5; text-align: left; font-family: 'Roboto', =
+sans-serif; font-size: 16px; vertical-align: top;" align=3D"left" valign=3D=
+"top"></td> </tr> <tr style=3D"box-sizing: border-box;"> <td class=3D"td-pa=
+dding_copies" style=3D"box-sizing: border-box; font-weight: normal; line-he=
+ight: 1.5; text-align: left; font-size: 16px; vertical-align: top; padding-=
+left: 20px; padding-right: 20px; font-family: 'Roboto', sans-serif; color: =
+#000000;" align=3D"left" valign=3D"top"> Hello Friend! <br style=3D"box-siz=
+ing: border-box;"><br style=3D"box-sizing: border-box;"> <a href=3D"https:/=
+/links.goodday.theinvestinginsider.com/u/click?_t=3Da884ae23762a4e09864eb8c=
+20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97ef4fa0&_e=3Djl2eZHqGkbQm_Y82z49MHG=
+0SdBgzeM7Nij2gaHKjKS0sdGWHCzy_hnJOpsPyNnKMilsE4Ls-fPWYczmSJT8fdcdEhoJtdpC_Q=
+oAcF_H_ZvbRM1ffQE37WTtydaimACej7Otx8Ca9VsaLBCa-v8rr8HQhhdjdolql-m-7PIk_lv_k=
+aMDlitUKKM3lF_LCbd83GPn1HK5pmELijNc8dJCfnVX17PPcldbbKTXFlHQZtRMPFxeWj7t2RUe=
+vDnHXGC4BqYsCNfiHbP6a1hrm2Q5Eg2ehcblL_DWj7BqJZUXckMs%3D" style=3D"box-sizin=
+g: border-box; font-family: 'Roboto', sans-serif; font-weight: 900; font-si=
+ze: 16px; line-height: 1.5; text-align: left; text-decoration: underline;">=
+I am astonished and appalled by what could happen to America soon=E2=80=A6<=
+/a> <br style=3D"box-sizing: border-box;"><br style=3D"box-sizing: border-b=
+ox;"> Because a former CIA insider just exposed the truth about the Fed=E2=
+=80=A6 <br style=3D"box-sizing: border-box;"><br style=3D"box-sizing: borde=
+r-box;"> And what he said shook me to my core. <br style=3D"box-sizing: bor=
+der-box;"><br style=3D"box-sizing: border-box;"> Did you see the interview =
+yet? </td></tr></table></td></tr></table></div></td></tr></table><table cla=
+ss=3D"html_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"=
+><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"box-sizi=
+ng: border-box; font-family: Arial,Helvetica Neue,Helvetica,sans-serif; tex=
+t-align: center;" align=3D"center"> <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"box-sizing: border-box; width: 1=
+00%;" width=3D"100%"> <tbody style=3D"box-sizing: border-box;"> <tr style=
+=3D"box-sizing: border-box;"> <td height=3D"20" style=3D"box-sizing: border=
+-box;">=C2=A0</td> </tr> <tr style=3D"box-sizing: border-box;"> <td align=
+=3D"center" style=3D"box-sizing: border-box;"> <div style=3D"box-sizing: bo=
+rder-box;"><a href=3D"https://links.goodday.theinvestinginsider.com/u/click=
+?_t=3Da884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97ef4fa=
+0&_e=3Djl2eZHqGkbQm_Y82z49MHG0SdBgzeM7Nij2gaHKjKS0sdGWHCzy_hnJOpsPyNnKMilsE=
+4Ls-fPWYczmSJT8fdcdEhoJtdpC_QoAcF_H_ZvbRM1ffQE37WTtydaimACej7Otx8Ca9VsaLBCa=
+-v8rr8IKC04NVrTogt2YD2fUU0MbUTH_rJGRNiPsM41OjfLPgEISzK4aL-xuV9lXTGhwKG7PrXA=
+TFM5IjkOoTVTPDUNOI1JpOC1rBq9tGkW3S6idXotv6Ia1b3ZF5G5UJqrngWUCkfFWSB7vYrCEzq=
+mq2rRg%3D" style=3D"box-sizing: border-box; background-color: #ffd835; back=
+ground-image: url('https://d15k2d11r6t6rl.cloudfront.net/public/users/Integ=
+rators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a884ae23762a4e09864eb8c20d4dc76=
+f/The%20Investing%20Insider%203.gif'); border: none; border-radius: 4px; co=
+lor: #ffffff; display: inline-block; font-family: sans-serif; font-size: 20=
+px; font-weight: bold; line-height: 44px; text-align: center; text-decorati=
+on: none; width: 100%; max-width: 300px; -webkit-text-size-adjust: none; ms=
+o-hide: all; background-size: cover;"> If not, you can watch it here</a></d=
+iv> </td> </tr> <tr style=3D"box-sizing: border-box;"> <td class=3D"md-hori=
+zontal-space" height=3D"20" style=3D"box-sizing: border-box; max-width: 100=
+%;" width=3D"100%">=C2=A0</td> </tr> </tbody> </table> </div></td></tr></ta=
+ble><table class=3D"html_block block-6" width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: bor=
+der-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing=
+: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div sty=
+le=3D"box-sizing: border-box; font-family: Arial,Helvetica Neue,Helvetica,s=
+ans-serif; text-align: center;" align=3D"center"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"body" style=3D"box-sizing: border-bo=
+x; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+ font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 16px; l=
+ine-height: 1.5; text-align: left; width: 100%;" width=3D"100%" align=3D"le=
+ft"> <tr style=3D"box-sizing: border-box;"> <td align=3D"left" valign=3D"to=
+p" style=3D"box-sizing: border-box; font-weight: normal; line-height: 1.5; =
+text-align: left; font-family: 'Roboto', sans-serif; font-size: 16px; verti=
+cal-align: top;"> <table align=3D"left" bgcolor=3D"#ffffff" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"table-container" width=3D"100%" style=3D"box-=
+sizing: border-box; border-collapse: separate; mso-table-lspace: 0pt; mso-t=
+able-rspace: 0pt; width: 100%; font-family: 'Roboto', sans-serif; font-weig=
+ht: normal; font-size: 16px; line-height: 1.5; text-align: left; max-width:=
+ 600px;"> <tr style=3D"box-sizing: border-box;"> <td height=3D"0" style=3D"=
+box-sizing: border-box; font-weight: normal; line-height: 1.5; text-align: =
+left; font-family: 'Roboto', sans-serif; font-size: 16px; vertical-align: t=
+op;" align=3D"left" valign=3D"top"></td> </tr> <tr style=3D"box-sizing: bor=
+der-box;"> <td class=3D"td-padding_copies" style=3D"box-sizing: border-box;=
+ font-weight: normal; line-height: 1.5; text-align: left; font-size: 16px; =
+vertical-align: top; padding-left: 20px; padding-right: 20px; font-family: =
+'Roboto', sans-serif; color: #000000;" align=3D"left" valign=3D"top"> But I=
+ would act fast=E2=80=A6 <br style=3D"box-sizing: border-box;"><br style=3D=
+"box-sizing: border-box;"> Because the =E2=80=9Celites=E2=80=9D could have =
+it taken off the internet any day now. <br style=3D"box-sizing: border-box;=
+"><br style=3D"box-sizing: border-box;"> It=E2=80=99s that shocking <br sty=
+le=3D"box-sizing: border-box;"><br style=3D"box-sizing: border-box;"> <a hr=
+ef=3D"https://links.goodday.theinvestinginsider.com/u/click?_t=3Da884ae2376=
+2a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97ef4fa0&_e=3Djl2eZHqGk=
+bQm_Y82z49MHG0SdBgzeM7Nij2gaHKjKS0sdGWHCzy_hnJOpsPyNnKMilsE4Ls-fPWYczmSJT8f=
+dcdEhoJtdpC_QoAcF_H_ZvbRM1ffQE37WTtydaimACej7Otx8Ca9VsaLBCa-v8rr8GVwb_GKB2E=
+SUQmO8GahJHfng475xWSPkjIxw60omiZf4WBfQkF1NTbUVJoCEbXXeqcI0A_biJu_E11C5KyGmN=
+E3p6-JzTqcSUpFMGNVDd_k6aJbmWFxlbM6-3FGJijArOk_j59wrux4iHMXTX8ZTEA%3D" style=
+=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; font-weight:=
+ 900; font-size: 16px; line-height: 1.5; text-align: left; text-decoration:=
+ underline;">Click here to see the interview he gave=E2=80=A6and to find ou=
+t what it could mean for both America and your finances.</a></td></tr></tab=
+le></td></tr></table></div></td></tr></table><table class=3D"html_block blo=
+ck-7" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" =
+style=3D"box-sizing: border-box;"><div style=3D"box-sizing: border-box; fon=
+t-family: Arial,Helvetica Neue,Helvetica,sans-serif; text-align: center;" a=
+lign=3D"center"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"body" style=3D"box-sizing: border-box; border-collapse: separate; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Roboto', sans-seri=
+f; font-weight: normal; font-size: 16px; line-height: 1.5; text-align: left=
+; width: 100%;" width=3D"100%" align=3D"left"> <tr style=3D"box-sizing: bor=
+der-box;"> <td align=3D"left" valign=3D"top" style=3D"box-sizing: border-bo=
+x; font-weight: normal; line-height: 1.5; text-align: left; font-family: 'R=
+oboto', sans-serif; font-size: 16px; vertical-align: top;"> <table align=3D=
+"left" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" class=3D"tab=
+le-container" width=3D"100%" style=3D"box-sizing: border-box; border-collap=
+se: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; fo=
+nt-family: 'Roboto', sans-serif; font-weight: normal; font-size: 16px; line=
+-height: 1.5; text-align: left; max-width: 600px;"> <tr style=3D"box-sizing=
+: border-box;"> <td height=3D"20" style=3D"box-sizing: border-box; font-wei=
+ght: normal; line-height: 1.5; text-align: left; font-family: 'Roboto', san=
+s-serif; font-size: 16px; vertical-align: top;" align=3D"left" valign=3D"to=
+p"></td> </tr> <tr style=3D"box-sizing: border-box;"> <td class=3D"td-paddi=
+ng_copies" style=3D"box-sizing: border-box; font-weight: normal; line-heigh=
+t: 1.5; text-align: left; font-size: 16px; vertical-align: top; padding-lef=
+t: 20px; padding-right: 20px; font-family: 'Roboto', sans-serif; color: #00=
+0000;" align=3D"left" valign=3D"top"> Regards, <br style=3D"box-sizing: bor=
+der-box;"> Matt Insley <br style=3D"box-sizing: border-box;"> Publisher, Pa=
+radigm Press <br style=3D"box-sizing: border-box;"><br style=3D"box-sizing:=
+ border-box;"> </td> </tr> </table> </td> </tr> </table></div></td></tr></t=
+able><table class=3D"icons_block block-8" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: b=
+order-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizi=
+ng: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; vertica=
+l-align: middle; color: #000; font-family: inherit; font-size: 13px; letter=
+-spacing: 10px; padding-bottom: 1px; padding-left: 1px; padding-right: 1px;=
+ padding-top: 16px; text-align: center;" valign=3D"middle" align=3D"center"=
+><table class=3D"alignment" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" align=3D"center" style=3D"box-sizing: border-box; mso-table-lspa=
+ce: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box; vertical-align: middle; text-align: center; pa=
+dding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;=
+" valign=3D"middle" align=3D"center"><a href=3D"https://links.goodday.thein=
+vestinginsider.com/u/click?_t=3Da884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda=
+8697a5b493892bb46dd97ef4fa0&_e=3Djl2eZHqGkbQm_Y82z49MHPYhDVNA-LD5gvB-TEwlMU=
+Ej0FFj9t1OXL5ZvdqCJx2y_SLSCvl8-aMaaq0N5DvrDx_SQnN34wl-CFxjJohqlOsc30gA6y9Ef=
+YzVJ-5zUpdWy6wTThqEU3wb4naJ8UUPBGGuujB1Ycjw7PHotKy4XuiTnQSyp33Brtc8A_tr1kc5=
+D8kZ0xkCum0Pq5NPtL0rXA%3D%3D" target=3D"_self" style=3D"box-sizing: border-=
+box; text-decoration: none;"><img class=3D"icon" src=3D"https://d15k2d11r6t=
+6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff=
+6dd6a/a884ae23762a4e09864eb8c20d4dc76f/270_62_9492cd87-2adb-4ba8-a8b4-776eb=
+7ebbaae-8add4c5d-fdcc-4336-9265-f84fd2fdc502.gif" alt=3D"logo" height=3D"64=
+" width=3D"64" align=3D"center" style=3D"box-sizing: border-box; display: b=
+lock; height: auto; margin: 0 auto; border: 0;"></a></td></tr></table></td>=
+</tr></table><table class=3D"image_block block-9" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-s=
+izing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"=
+box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;=
+ width: 100%; padding-right: 0; padding-left: 0;" width=3D"100%"><div class=
+=3D"alignment" align=3D"center" style=3D"box-sizing: border-box; line-heigh=
+t: 10px;"><img class=3D"big" src=3D"https://d15k2d11r6t6rl.cloudfront.net/p=
+ublic/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a884ae23762a4e=
+09864eb8c20d4dc76f/Footer-4.png" style=3D"box-sizing: border-box; display: =
+block; height: auto; border: 0; width: 600px; max-width: 100%;" width=3D"60=
+0" alt=3D"TII" title=3D"TII"></div></td></tr></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table><table class=3D"row row-2" align=3D"center" w=
+idth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; background-size: auto;"><tbody style=3D"box-sizing: border-box;">=
+<tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"=
+><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0; background-size: auto; bor=
+der-radius: 0; color: #000; width: 600px;" width=3D"600"><tbody style=3D"bo=
+x-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"c=
+olumn column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-l=
+space: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; vertical=
+-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0; border-r=
+ight: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><=
+table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr=
+ style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: b=
+order-box; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; p=
+adding-top: 10px;"><div style=3D"box-sizing: border-box; font-family: Verda=
+na,sans-serif;"><div class style=3D"box-sizing: border-box; font-size: 12px=
+; font-family: Verdana,Geneva,sans-serif; mso-line-height-alt: 18px; color:=
+ #fff; line-height: 1.5;"><p style=3D"box-sizing: border-box; line-height: =
+inherit; margin: 0; font-size: 11px; text-align: center; mso-line-height-al=
+t: 16.5px;"><span style=3D"box-sizing: border-box; color: #000000;">&nbsp;<=
+/span></p><p style=3D"box-sizing: border-box; line-height: inherit; margin:=
+ 0; font-size: 11px; text-align: center; mso-line-height-alt: 16.5px;"> <sp=
+an style=3D"box-sizing: border-box; color: #000000; font-size: 11px;"><span=
+ style=3D"box-sizing: border-box;">Email sent by Finance and Investing Traf=
+fic, LLC, owner and operator of The Investing Insider</span></span></p><p s=
+tyle=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size:=
+ 11px; text-align: center; mso-line-height-alt: 18px;">&nbsp;</p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 11p=
+x; text-align: center; mso-line-height-alt: 16.5px;"> <span style=3D"box-si=
+zing: border-box; color: #000000; font-size: 11px;"><span style=3D"box-sizi=
+ng: border-box;">This ad is sent on behalf of Paradigm Press, LLC, at 808 S=
+t. Paul Street, Baltimore MD 21202. If you're not interested in this opport=
+unity from Paradigm Press, LLC, please <span style=3D"box-sizing: border-bo=
+x;"><a href=3D"https://links.goodday.theinvestinginsider.com/u/click?_t=3Da=
+884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97ef4fa0&_e=3D=
+jl2eZHqGkbQm_Y82z49MHG0SdBgzeM7Nij2gaHKjKS0eDhQ4CZ7_T4x4uz2kC53nys7j-bjGyGW=
+7GbCIpvfsrq21AKoPr3MrcK6EH3kHsatOxW_Z3JBicNQixIiylZl0dwzrF1NwMZ0KlQj1cfMUCB=
+S7j1xe8ju0QCgmxDeuwPlgDZCRMDkvzAFArbnupjTzUWeVRqH2GgAmU-N-8Rbd2oEodJG0m_Rd-=
+Z6L0Rsd6UQ%3D" target=3D"_blank" style=3D"box-sizing: border-box; text-deco=
+ration: underline; color: #000000;" rel=3D"noopener">click here</a></span> =
+to remove your email from these offers.</span></span></p><p style=3D"box-si=
+zing: border-box; line-height: inherit; margin: 0; font-size: 11px; text-al=
+ign: center; mso-line-height-alt: 18px;">&nbsp;</p><p style=3D"box-sizing: =
+border-box; line-height: inherit; margin: 0; font-size: 11px; text-align: c=
+enter; mso-line-height-alt: 16.5px;"> <span style=3D"box-sizing: border-box=
+; color: #000000; font-size: 11px;"><span style=3D"box-sizing: border-box;"=
+>This offer is brought to you by The Investing Insider. 221 W 9th St # Wilm=
+ington, DE 19801. If you would like to unsubscribe from receiving offers br=
+ought to you by The Investing Insider <a href=3D"https://links.goodday.thei=
+nvestinginsider.com/e/encryptedUnsubscribe?_r=3Da884ae23762a4e09864eb8c20d4=
+dc76f&_s=3Db6eda8697a5b493892bb46dd97ef4fa0&_t=3DYJR3ZN4amdfbYguPSTruO7p-8g=
+qqBjj6PpMJAyvHRWlTXv-fLw9LUDQ_S1jjLVmsfPn5LcdsTJB2A6QnSbFUQDbIfCUYTTc7XO3CP=
+U0dBhXQsHk6jbjKoZd6K2fYcOrB" target=3D"_blank" style=3D"box-sizing: border-=
+box; text-decoration: underline; color: #000000;" rel=3D"noopener"><span st=
+yle=3D"box-sizing: border-box;">click here</span></a>.</span></span></p><p =
+style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size=
+: 11px; text-align: center; mso-line-height-alt: 18px;">&nbsp;</p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 11p=
+x; text-align: center; mso-line-height-alt: 16.5px;"> <span style=3D"box-si=
+zing: border-box; color: #000000; font-size: 11px;"><span style=3D"box-sizi=
+ng: border-box;"><span style=3D"box-sizing: border-box;">To be sure our ema=
+ils continue reaching your email box, </span><span style=3D"box-sizing: bor=
+der-box;">please add our email address to your <a href=3D"https://links.goo=
+dday.theinvestinginsider.com/u/click?_t=3Da884ae23762a4e09864eb8c20d4dc76f&=
+_m=3Db6eda8697a5b493892bb46dd97ef4fa0&_e=3Djl2eZHqGkbQm_Y82z49MHPYhDVNA-LD5=
+gvB-TEwlMUGnJ4zVYTS60XBH70SO2gcbmu56AICR8ShXkfBZzS17Da-XcfyiLgpYgIgYJlxi4BU=
+4O1fl4DhnKLRxP-hgvoPVelbX3ISBNu6pAa4GgUxDAhxCkYfPgMUqmkTxxfKOSIJ9ANpicf6LZi=
+x0ELYvvASmHYzNQ0gT-b5uc104OhzJrXzI5mE_taeSNp5ywJg_nI9ameKRAAraRrNfWehOUUY2"=
+ target=3D"_blank" style=3D"box-sizing: border-box; text-decoration: underl=
+ine; color: #000000;" rel=3D"noopener">whitelist</a>.<br style=3D"box-sizin=
+g: border-box;"><br style=3D"box-sizing: border-box;"></span></span></span>=
+</p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; te=
+xt-align: center; mso-line-height-alt: 16.5px;"> <span style=3D"box-sizing:=
+ border-box; color: #000000;">You are receiving this e-mail because you hav=
+e expressed an interest in the Financial Education niche on one of our land=
+ing pages or sign-up forms on our website.</span></p><p style=3D"box-sizing=
+: border-box; line-height: inherit; margin: 0; text-align: center; mso-line=
+-height-alt: 16.5px;"><br style=3D"box-sizing: border-box;"><span style=3D"=
+box-sizing: border-box; color: #000000;">If you received this e-mail in err=
+or and would like to report spam, simply send an email to abuse@theinvestin=
+ginsider.com</span><br style=3D"box-sizing: border-box;"> <span style=3D"bo=
+x-sizing: border-box; color: #000000;">You'll receive a response within 24 =
+hours.</span></p><p style=3D"box-sizing: border-box; line-height: inherit; =
+margin: 0; font-size: 11px; text-align: center; mso-line-height-alt: 16.5px=
+;"><span style=3D"box-sizing: border-box; color: #000000; font-size: 11px;"=
+><span style=3D"box-sizing: border-box;"><span style=3D"box-sizing: border-=
+box;">&nbsp;</span></span></span></p><p style=3D"box-sizing: border-box; li=
+ne-height: inherit; margin: 0; font-size: 11px; text-align: center; mso-lin=
+e-height-alt: 18px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-hei=
+ght: inherit; margin: 0; font-size: 11px; text-align: center; mso-line-heig=
+ht-alt: 16.5px;"> <span style=3D"box-sizing: border-box; font-size: 11px; c=
+olor: #000000;"><a href=3D"https://links.goodday.theinvestinginsider.com/u/=
+click?_t=3Da884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97=
+ef4fa0&_e=3Djl2eZHqGkbQm_Y82z49MHPYhDVNA-LD5gvB-TEwlMUHTyratbYGJv6bccPM8ibv=
+FDfLlpuVR5uM2gqcfUH21U2X4sBTs7mRheCwruIfQQtoo_xbPgJIkbh0feKy0LZJPhWrFZcMI9X=
+f3ibMIUuw90AbeGoaEXC_XVtYrrcXFvWl6BrjnG1QBRvfOGTfydJ20skBpKjLMDkUID0MThvpaL=
+L-3-xs0lTsmZqYP8kmTieE%3D" target=3D"_blank" style=3D"box-sizing: border-bo=
+x; text-decoration: underline; color: #000000;" rel=3D"noopener">Privacy Po=
+licy</a> | <a href=3D"https://links.goodday.theinvestinginsider.com/u/click=
+?_t=3Da884ae23762a4e09864eb8c20d4dc76f&_m=3Db6eda8697a5b493892bb46dd97ef4fa=
+0&_e=3Djl2eZHqGkbQm_Y82z49MHPYhDVNA-LD5gvB-TEwlMUFaNyaJk1nVnmXl2khl1czkOgXE=
+LDEuH-jloGnNkDEYZSSlnL2b5A0P7nxsa1HGZpcDdUaDsI1dXQoSoevyApdy2Kb4fqVqdh5Xnz8=
+YizlssWkSliH_Yd2ny9E5mbu_qoEg_16AYIBx-vmxIC8Ryx4o_paSDtsT65CB4uNsGne6S-qhKj=
+eVz3ffNS2oZmzQMkE%3D" target=3D"_blank" style=3D"box-sizing: border-box; te=
+xt-decoration: underline; color: #000000;" rel=3D"noopener">Terms & Conditi=
+ons</a> | <a href=3D"https://links.goodday.theinvestinginsider.com/e/encryp=
+tedUnsubscribe?_r=3Da884ae23762a4e09864eb8c20d4dc76f&_s=3Db6eda8697a5b49389=
+2bb46dd97ef4fa0&_t=3DYJR3ZN4amdfbYguPSTruO7p-8gqqBjj6PpMJAyvHRWlTXv-fLw9LUD=
+Q_S1jjLVmsfPn5LcdsTJB2A6QnSbFUQDbIfCUYTTc7XO3CPU0dBhXQsHk6jbjKoZd6K2fYcOrB"=
+ target=3D"_blank" style=3D"box-sizing: border-box; text-decoration: underl=
+ine; color: #000000;" rel=3D"noopener"><span style=3D"box-sizing: border-bo=
+x;">Unsubscribe</span></a>&nbsp;</span></p><p style=3D"box-sizing: border-b=
+ox; line-height: inherit; margin: 0; font-size: 11px; text-align: center; m=
+so-line-height-alt: 18px;"> &nbsp;</p><p style=3D"box-sizing: border-box; l=
+ine-height: inherit; margin: 0; font-size: 11px; text-align: center; mso-li=
+ne-height-alt: 16.5px;"><span style=3D"box-sizing: border-box; font-size: 1=
+1px; color: #000000;">Copyright =C2=A9 2023 The Investing Insider. All Righ=
+ts Reserved.<br style=3D"box-sizing: border-box;"></span></p></div></div></=
+td></tr></table></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table><!-- End --></body></html>
+------=_Part_37911_1490647672.1673194645765--

@@ -1,0 +1,446 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3033821mdb;
+        Mon, 9 Jan 2023 06:43:57 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsfTuASgAGb+c0Zz0p5m/zmhRA/7r+5TC6Ag5OGo+chfFN2BY+lG9iP4AkbvZtxjt3X7m1Q
+X-Received: by 2002:a05:622a:1c09:b0:3a8:1e9f:47f5 with SMTP id bq9-20020a05622a1c0900b003a81e9f47f5mr88078294qtb.45.1673275437126;
+        Mon, 09 Jan 2023 06:43:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673275437; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Q45cksLU5GSs7iUl1ZPx/PVkCJ+DZOrIgVy/ejLypkOth2TObBP2yGRnXmh3a4ShqR
+         xPB4K7p8KNUe3BUDl2OING5GOkn+i5c7LiEWRUlGobnIvc//ux/ZBYA00V7RePld+VVH
+         pDNLVoVtNgYWMqbLjN+RhRAxTgHjFKM2Q1moMsNFjcwX7+lAjHX2RNeT/Q7pWeZNrt6I
+         T3afquS3m6bPby2qLVX4XovEhZuivhRWHC43y7ZJqpTHXQoXiWoIXFv5FqapkYNlxEtJ
+         rXRN+7h9NhkznEPV9caHQhdXPjlWdn0wyasHNiiquFHhR3OP+ZQKospbA8zxjQ/Y6VKD
+         9ZSA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id:list-id:reply-to
+         :mime-version:list-unsubscribe-post:list-unsubscribe:date:subject:to
+         :from:dkim-signature;
+        bh=4cS1vw8CdKkObsukQ6gaL01lvC2fjcSgIbaMdZf8o3k=;
+        b=jLKHqSHjKvoor9v/9DTpUrXup15lePSF5P+5SpLJmgN63PhabUwbMXObkGdyTNrJV/
+         5lW8q929ZK/hwISWBRzeHMl3zmXWcGwQGP2S+5NE8YW/OQfvZFjyMK1RKQ7mtxH/uPDZ
+         I1D2rezJKBof9frwr6ImoptsOV1WEemBAXMWArvFa4K9SOMyWBDv8Qli7PLidHebK2rH
+         d555tqCuxWepDPBD8HujRsPXoA1FgqGjUjBszw27UQ45Yql0oyuC011PALWQxmbz4AZ6
+         WkQX+sh2PXAamA73AHKg3r1s76SCd+6RTaeV44AfElc6go/b74Q+EjeluKTj3/unCuoW
+         ISuA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@personalcapital.com header.s=200608 header.b=UgZAOuDg;
+       spf=pass (google.com: domain of bounce-231840_html-302903477-9035923-6424950-157762@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) smtp.mailfrom=bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=personalcapital.com
+Return-Path: <bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com>
+Received: from mta.email.personalcapital.com (mta.email.personalcapital.com. [198.245.83.86])
+        by mx.google.com with ESMTPS id ga26-20020a05622a591a00b00393d3e3decdsi1744811qtb.22.2023.01.09.06.43.56
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:43:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-231840_html-302903477-9035923-6424950-157762@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) client-ip=198.245.83.86;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@personalcapital.com header.s=200608 header.b=UgZAOuDg;
+       spf=pass (google.com: domain of bounce-231840_html-302903477-9035923-6424950-157762@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) smtp.mailfrom=bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=personalcapital.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=personalcapital.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type:
+ Content-Transfer-Encoding; i=service@personalcapital.com;
+ bh=4cS1vw8CdKkObsukQ6gaL01lvC2fjcSgIbaMdZf8o3k=;
+ b=UgZAOuDg6NG7UC86qVxi/ThSJAJRm9hAr3k9UWhoRH6PWqIs4qRHdITnDlwmoTl87YUIYQvmzHdq
+   f2/DRh6MFkQhsIKPHllgaIwsJQS6x8ErhxwnReLL7FSCOnAoGKd05jLfn8gH0Y7IsYIij3nhFQ17
+   d3YlV6ElqGmRX/7fVhY=
+Received: by mta.email.personalcapital.com id hngk2q2fmd48 for <darnellkeithj@gmail.com>; Mon, 9 Jan 2023 14:43:48 +0000 (envelope-from <bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com>)
+From: "Personal Capital" <service@personalcapital.com>
+To: <darnellkeithj@gmail.com>
+Subject: Your Daily Financial Monitor
+Date: Mon, 09 Jan 2023 08:43:48 -0600
+List-Unsubscribe: <https://click.email.personalcapital.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI2NDI0OTUwIiwicyI6IjMwMjkwMzQ3NyIsImxpZCI6IjIzMTg0MCIsImoiOiI5MDM1OTIzIiwiamIiOiIxNTc3NjIiLCJkIjoiNjAyMDYifQ.D83jibQRiiM9EZO7xT4OnU6eKSBosypIDmh_BkRvk-A>, <mailto:leave-fcb91673746c007d1a4c342838-fe2c1770776d047e711377-fe901d7076610d7f76-fe91127477600d7875-fec315757263027f@leave.email.personalcapital.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Personal Capital" <service@personalcapital.com>
+List-ID: <6424007.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 6
+x-job: 6424950_9035923
+Message-ID: <bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com>
+X-Return-Path: bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com
+Feedback-ID: 6424950:9035923:198.245.83.86:sfmktgcld
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+X-TUID: upJceUa/ZP0h
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:v="urn:schemas-microsoft-com:vml"  xmlns:o="urn:schemas-microsoft-com:office:office" lang="en" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<![endif]-->
+    <style type="text/css">
+      ReadMsgBody{width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0 !important;}
+      p {margin: 1em 0;}
+      table td {border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      a[x-apple-data-detectors] {color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important;}
+      td, p, a, span, img{font-family:'sofia-pro',Helvetica, Arial, sans-serif;font-size:16px; line-height: 24px;color:#000000;font-weight: 400;}
+      h1{font-family: 'clarendon-urw', Georgia, serif; font-size: 30px; line-height: 34px; color: #000000;font-weight:500;}
+   h2{font-family: 'clarendon-urw', Georgia, serif; font-size: 24px; line-height: 28px; color: #000000; font-weight:500;}
+   h3{font-family:'sofia-pro',Helvetica, Arial, sans-serif;font-size:18px; line-height: 22px;color:#000000;font-weight: 400;}
+   h4 {font-family: 'clarendon-urw', Georgia, serif; font-size: 18px; line-height: 22px; color: #000000; font-weight:500;}
+   p {margin:0;padding:0px;margin-bottom:20px;}
+   a {color:#1396B3; text-decoration: none;}
+   
+      @media screen {
+   @font-face {
+   font-family:'sofia-pro';
+   src:url('https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2');
+   font-display:auto;font-style:normal;font-weight:400;}
+
+   @font-face {
+   font-family:'sofia-pro';
+   src:url('https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2');
+   font-display:auto;font-style:normal;font-weight:700;}
+   
+  @font-face {
+  font-family:'clarendon-urw';
+  src:url('https://use.typekit.net/af/889892/0000000000000000000178e9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3') format('woff2');
+  font-display:auto;font-style:normal;font-weight:500;}
+  }
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 480px) {
+        .container {width: 100% !important;}
+        .footer {width:auto !important; margin-left:0;}
+        .mobile-hidden {display:none !important;}
+        .logo { display:block !important; padding:0 !important;}
+        img {max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important;max-height:auto !important;}
+        .photo img {width:100% !important;max-width:100% !important;height:auto !important;}
+        .drop {display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo {display:block !important; width: 100% !important;padding-top:15px;float:left;clear:both; }
+        .nav4, .nav5, .nav6 {display: none !important;}
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding:0 !important;}
+        .fluid, .fluid-centered {width: 100% !important; max-width: 100% !important; height: auto !important; margin-left: auto !important;margin-right: auto !important;}
+        .fluid-centered { margin-left: auto !important; margin-right: auto !important; }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+  body, .tb_properties{font-family:'sofia-pro',Helvetica, Arial,sans-serif !important; font-size: 16px !important; color: #000000 !important; line-height: 1.5 !important; padding: 0px !important; }
+  .buttonstyles{font-family:'sofia-pro',Helvetica, Arial,sans-serif !important; font-size: 16px !important; color: #FFFFFF !important; padding: 14px !important; }
+  a:not(.buttonstyles){line-height: 1.15 !important; }
+  .mobile-hidden{display: none !important; }
+  .responsive-td {width: 100% !important; display: block !important; padding: 0 !important;}
+  /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+  /*SS Modules */
+  .mw100 {max-width:100% !important;}
+     .w100 {width:100% !important;}
+     .w90{width:90%!important;}
+     .w320p {width: 330px !important;}
+     .txt-center {text-align: center !important;}
+     .mbl-center {margin:0 auto !important; float:none !important;text-align: center !important;}
+     .txt-40 {font-size: 40px !important; line-height: 44px !important;}
+      }
+      /* WHY ARE THESE NOT IN THE PARENT? WHY IS MOBILE HIDDEN HIDDEN FROM ALL? */
+      @media only screen and (max-width: 640px) {
+        .container {width:100% !important;}
+        .mobile-hidden {display:none !important;}
+        .logo {display:block !important;padding:0 !important;}
+        .photo img {width:100% !important;height:auto !important;}
+        .nav5, .nav6 {display: none !important;}
+        .fluid, .fluid-centered {width: 100% !important; max-width: 100% !important; height: auto !important; margin-left: auto !important; margin-right: auto !important;}
+        .fluid-centered {margin-left: auto !important;margin-right: auto !important;}
+      }
+    </style>
+<!--[if mso]><style type="text/css">body, table, td, p, a, span, h1, h2, h3 {font-family: Century Gothic, Arial, sans-serif !important;}</style><![endif]-->
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+  </head>
+  <body bgcolor="#F9F9F9" text="#000000" style="margin: 0px; -webkit-text-size-adjust:none;background-color : #F9F9F9; font-family : Arial, helvetica, sans-serif; line-height : 115%; font-size : 14px; color : #424242; padding : 0px; ">
+ <style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">As of 01/09/23. Helping you stay on top of your transactions and account activity each day.</div> 
+ <div style="font-size:0; line-height:0;">
+ <img src="https://click.email.personalcapital.com/open.aspx?ffcb10-fe901d7076610d7f76-fe281c72736402757d1570-fe91127477600d7875-fecd1673746c007d-fe2c1770776d047e711377-fec315757263027f&d=60206&bmt=0" width="1" height="1" alt="">
+ 
+ </div>
+  
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+ <tr>
+  <td align="center" valign="top"></td>
+ </tr>
+ <tr>
+  <td align="center">
+   <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+    <tr>
+     <td>
+      <!-- added the border style here -->
+      <table cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" width="100%" style="background-color : #FFFFFF; border : 0px;font-size : 14px; font-family : Arial, helvetica, sans-serif; line-height : 115%; color : #424242; " class="tb_properties">
+       <tr>
+        <td align="center" valign="top">
+         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <!-- added padding here -->
+           <td class="content_padding" style="border:0px;padding : 0px; ">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+             <tr>
+              <td align="left" class="header" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" style="background-color: transparent; border: 0px none transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner">
+</td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" style="border: 0px none transparent; background-color: transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<table cellspacing="0" border="0" height="100%" bgcolor="#f5f5f5" style="width: 100%; height: 100%; background-color: #f5f5f5;" width="100%" cellpadding="0">
+  <tr>
+    <td width="100%" align="center">
+      <table cellspacing="0" border="0" bgcolor="#ffffff" style="margin: 0px; background-color: #ffffff; border: 1px solid #cccccc; padding: 0px; height: 0px; border-top: none; width: 600px;" cellpadding="0">
+        <tr class="top-row" style="margin: 0px; border: none; padding: 0px; height: 0px; background-color: #eef3f5">
+          <td style="margin: 0px; border: none; padding: 15px;" width="40%">
+            <img class="pc-logo" title="Personal Capital" src="https://www.personalcapital.com/static/images/ace/PC_EM_Logo_BG_Email.png" alt="Personal Capital" style="display: block; border: none; text-decoration: none; max-height: 56px; max-width: 130px;" width="130">
+          </td>
+          <td style="margin: 0px; border: none; text-align: right; padding: 0px;" width="60%">
+            <h2 class="header-row-td" style="margin-right: 20px; margin-bottom: 10px; color: #333e48; font-family: 'sofia-pro', 'Trebuchet MS'; color: black; font-size: 18px; font-weight: 700;">Your Daily Financial Monitor
+            </h2>
+          </td>
+        </tr>
+        <tr class="as-off-row" bgcolor="#eeeeee" style="margin: 0px; padding: 0px; border: none; height: 0px; background-color: white; color: black;">
+          <td align="center" height="30px" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px;" width="600px" colspan="2">
+            <p style="font-size: 14px !important; line-height: 20px; color: #2c3d48; margin: 0px 0px 0px 20px; padding: 0px;">As of 01/09/23
+            </p>
+          </td>
+        </tr>
+        <!-- TRANSACTIONS -->
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td class="section-header-row-td transactions-row-td" align="left" bgcolor="#0078b9" style="margin: 0px; background-repeat: repeat-x; background-color: #dae0e2; border: none; padding: 0px; text-align: left; height: 30px; background-image: url('images/d1_bg_title.png'); background-position: 0px 0px; border-top: 1px solid black" colspan="2">
+            <table cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+              <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                <td class="data-cell" style="margin: 0px; border: none; padding: 0px; height: 0px; padding-top: 8px; padding-bottom: 8px;">
+                  <p style="font-size: 13px; line-height: 20px; color: #FFFFFF; margin: 0px 0px 0px 20px; padding: 0px;">
+                    <strong class="section-header" style="font-size: 14px; font-family: 'clarendon-urw', 'Georgia'; font-size: 16px; color: black;">Transactions</strong>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td style="margin: 0px; border: none; padding: 0px; height: 0px;" colspan="2">
+            <table cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+            
+              <tr bgcolor="ffffff" style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                <td class="data-cell" width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px; padding-top: 8px; padding-bottom: 8px;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 0px 0px 0px 20px; padding: 0px;">No transactions to show
+                  </p>
+                </td>
+              </tr>
+                          
+            </table>
+          </td>
+        </tr>
+        <!-- /TRANSACTIONS -->
+        <!-- G/L -->
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100% !important" colspan="2">
+            <table cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100% !important;" cellpadding="0">
+              <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                <td class="section-header-row-td" width="50%" align="left" bgcolor="#0078b9" style="margin: 0px; background-repeat: repeat-x; background-color: #dae0e2; border: none; border-right: 1px solid #FFFFFF; padding: 0px; text-align: left; height: 30px; background-image: url('images/d1_bg_title.png'); background-position: 0px 0px;">
+                  <table width="100%" cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+                    <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                      <td class="data-cell" width="290" style="margin: 0px; border: none; padding: 0px; height: 0px; padding-top: 8px; padding-bottom: 8px;">
+                        <p style="font-size: 13px; line-height: 20px; color: #FFFFFF; margin: 0px 0px 0px 20px; padding: 0px;">
+                          <strong class="section-header" style="font-family: 'clarendon-urw', 'Georgia'; font-size: 16px; color: black;">Top Gainers</strong>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td class="section-header-row-td" width="50%" align="left" bgcolor="#0078b9" style="margin: 0px; background-repeat: repeat-x; background-color: #dae0e2; border: none; padding: 0px; text-align: left; height: 30px; background-image: url('images/d1_bg_title.png'); background-position: 0px 0px;">
+                  <table width="100%" cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+                    <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                      <td class="data-cell" width="310" style="margin: 0px; border: none; padding: 0px; height: 0px; padding-top: 8px; padding-bottom: 8px;">
+                        <p style="font-size: 13px; line-height: 20px; color: #FFFFFF; margin: 0px 0px 0px 20px; padding: 0px;">
+                          <strong class="section-header" style="font-family: 'clarendon-urw', 'Georgia'; font-size: 16px; color: black;">Top Losers</strong>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                <td valign="top" width="50%" style="margin: 0px; padding: 0px; border-right: 1px solid #CCCCCC; border: none; height: 0px; width: 50% !important;">
+                  <!-- GAINERS TABLE -->
+                  <table cellspacing="0" width="100%" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100% !important;;" cellpadding="0">
+                  
+                  
+                    <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                      <td class="data-cell" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px; padding-top: 8px; padding-bottom: 8px; width: 30% !important; border-bottom: none;">
+                        <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 0px 0px 0px 20px; padding: 0px;">ZM</p>
+                      </td>
+                      <td class="data-cell" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px; padding-top: 8px; padding-bottom: 8px; width: 30% !important; border-bottom: none;">
+                        <p align="right" style="font-size: 14px; margin: 0px 0px 0px 20px; padding: 0px; line-height: 20px; color: #2c3d48; text-align: right;">$69.51</p>
+                      </td>
+                      <td class="data-cell" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px; padding-top: 8px; padding-bottom: 8px; width: 40% !important; border-bottom: none;">
+                        <p align="right" style="font-size: 14px; margin: 0px 20px; padding: 0px; line-height: 20px; color: #00b140 !important; text-align: right;">+5.93%</p>
+                      </td>
+                    </tr>
+                  
+                  </table>
+                  <!-- /GAINERS TABLE -->
+                </td>
+                <td valign="top" width="50%" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 50% !important;">
+                  <!-- LOSERS TABLE -->
+                  <table cellspacing="0" width="100%" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100% !important;;" cellpadding="0">
+                  
+                    <tr bgcolor="ffffff" style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                      <td class="data-cell" width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; height: 30px; padding-top: 8px; padding-bottom: 8px;">
+                        <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 0px 0px 0px 20px; padding: 0px;">No losers to show
+                        </p>
+                      </td>
+                    </tr>
+                                      
+                  </table>
+                  <!-- /LOSERS TABLE -->
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- /G/L -->
+        <!-- ACCOUNTS -->
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td class="section-header-row-td" align="left" bgcolor="#0078b9" style="margin: 0px; background-repeat: repeat-x; background-color: #dae0e2; border: none; padding: 0px; text-align: left; height: 30px; background-image: url('images/d1_bg_title.png'); background-position: 0px 0px;" colspan="2">
+            <table cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+              <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+                <td class="data-cell" style="margin: 0px; border: none; padding: 0px; height: 0px; padding-top: 8px; padding-bottom: 8px;">
+                  <p style="font-size: 13px; line-height: 20px; color: #FFFFFF; margin: 0px 0px 0px 20px; padding: 0px;">
+                    <strong class="section-header" style="font-family: 'clarendon-urw', 'Georgia'; font-size: 16px; color: black;">Accounts That Need Your Attention</strong>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100% !important" colspan="2">
+            <table cellspacing="0" border="0" style="margin: 0px; border: none; padding: 0px; width: 100% !important;" cellpadding="0">
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: none">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">Fidelity Investments: Individual - Ending in 6054</p>
+                </td>
+              </tr>
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: 1px solid #abb0b2;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">Fidelity Investments: Individual - Ending in 4747</p>
+                </td>
+              </tr>
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: 1px solid #abb0b2;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">Fidelity Investments: Individual - Ending in 0581</p>
+                </td>
+              </tr>
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: 1px solid #abb0b2;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">US Bank: Credit Card - Ending in 0852</p>
+                </td>
+              </tr>
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: 1px solid #abb0b2;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">US Bank: Checking - Ending in 0497</p>
+                </td>
+              </tr>
+            
+
+              <tr bgcolor="#ffffff" style="margin: 0px; border: none; padding: 0px; min-height: 30px !important;">
+                <td width="100%" align="left" style="margin: 0px; border: none; padding: 0px; text-align: left; min-height: 30px !important; border-top: 1px solid #abb0b2;">
+                  <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 5px 20px; padding: 0px;">Citizens Bank: One Deposit Checking - Ending in 0589</p>
+                </td>
+              </tr>
+            
+            </table>
+          </td>
+        </tr>
+        <!-- /ACCOUNTS -->
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td style="margin: 0px; border: none; padding: 30px 0px 0px 0px; height: 0px;" align="center" colspan="2">
+            <a class="sign-in-button" href="https://click.email.personalcapital.com/?qs=2cdbd47093eb33af4ff723d835b027d8fecc2b8508c82e21048f509b0a75cf3b2adb836fcad14132d7d305268d074cee8b2e2fdd3543e423" style="text-decoration: none; padding: 6px 12px; display: inline-block; background: black; font-size: 16px; color: white; border-radius: 4px; padding: 10px 25px 11px 25px;" target="_blank">View My Accounts</a>
+            <table width="100%" cellspacing="12px" border="0" style="margin: 0px; border: none; padding: 0px; height: 0px; width: 100%;" cellpadding="0">
+              <tr style="margin: 0px; border: none; padding: 24px; height: 0px; text-align: center">
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr style="margin: 0px; border: none; padding: 0px; height: 0px;">
+          <td style="margin: 0px; border: none; padding: 0 20px 20px; height: 0px;" width="100%" colspan="2">
+            <h3 style="font-size: 18px; font-weight: normal; margin: 0px 0px 20px; line-height: 24px; color: #000000;">How does this email help me?
+            </h3>
+            <p style="font-size: 14px; line-height: 20px; color: #2c3d48; margin: 0px 0px 20px; padding: 0px;">By presenting your financial transactions and account activity each day, Personal Capital helps you look out for unauthorized activity in any of your financial accounts.
+            </p>
+            <p style="font-size: 14px !important; line-height: 20px; color: #2c3d48; margin: 0px; padding: 0px;">You can disable these daily emails 
+              <a href="https://click.email.personalcapital.com/?qs=a347e641256d1c599b60b64de6e0a0e89c31014dd82fb98808c0447bf1f564f5b164709e96378724107db6198e063b814c778e1838f6c4df72326e5b4e03aaa1"  style="text-decoration: underline; color: #0078b9; font-size: 14px;">here</a>.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" height="100px">
+    </td>
+  </tr>
+</table>
+</td></tr></table></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" style="background-color: transparent; border: 0px solid transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9F9F9; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          
+        </td>
+      </tr>
+    </table>
+  
+<!--
+X-Return-Path: bounce-231840_HTML-302903477-9035923-6424950-157762@bounce.email.personalcapital.com
+-->
+</body>
+</html>

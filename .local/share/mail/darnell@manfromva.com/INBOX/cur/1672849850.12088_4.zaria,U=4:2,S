@@ -1,0 +1,81 @@
+Return-Path: <administrator@mail.manfromva.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id cRDtI5UKqGPILwMAdh2gHA
+	(envelope-from <administrator@mail.manfromva.com>)
+	for <darnell@manfromva.com>; Sun, 25 Dec 2022 03:32:21 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.0 required=5.0 tests=ALL_TRUSTED,DKIM_INVALID,
+	DKIM_SIGNED,FROM_FMBLA_NEWDOM28,HTML_MESSAGE autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+	*  0.8 FROM_FMBLA_NEWDOM28 From domain was registered in last 14-28
+	*      days
+X-Spam-Score: -0.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.manfromva.com;
+	s=mail; t=1671957141;
+	bh=kxJgqNaMeDKx/UaaEebC0A+7eBWRqz03xd3n6BpVbJU=;
+	h=From:To:Subject:Date:From;
+	b=G/qrgEpbO/1QUjkvWXmBmqr8sv0Ft4rhp45B/6qP0P0j3XCsSbAIvrNZTO1/p3f8s
+	 nY0ifK7pF9Frf8H4uffH9DQYV3kWwKe6JrhzEzQpAeBEBRYRblkrUte1rnk0b10RXc
+	 6VQZyvSdWIqWa2hbJ748+rYWfOflZpAzmkFzDvmJJ6pLohYD/MDzkNFKkvFVdbNOLz
+	 Hw1RzzVGoDNNMWjWdAlf04Bdgk3iD1KF0HX0bwNes46HZIDGEuQcNMDPWzHrHuEXBE
+	 49+hK8Jdk0LcKhbMxKVXyA11h5gFzO0j+/wyqnfcsQrC8IFbvvd9OPfE0jW4KZ+awG
+	 L3V0yfSrpC1Ww==
+Received: from mail.manfromva.com (localhost [127.0.0.1])
+	by mail.manfromva.com (Postfix) with ESMTP id 73F9BBF00F
+	for <administrator@mail.manfromva.com>; Sun, 25 Dec 2022 03:32:21 -0500 (EST)
+Content-Type: multipart/alternative; boundary="===============4900655468160163090=="
+MIME-Version: 1.0
+From: "mail.manfromva.com" <administrator@mail.manfromva.com>
+To: administrator@mail.manfromva.com
+Subject: [mail.manfromva.com] Status Checks Change Notice
+Message-Id: <20221225083221.73F9BBF00F@mail.manfromva.com>
+Date: Sun, 25 Dec 2022 03:32:21 -0500 (EST)
+X-TUID: 0LYfim59HLml
+
+--===============4900655468160163090==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+bWFuZnJvbXZhLmNvbSAtLSBQcmV2aW91c2x5Ogo9PT09PT09PT09PT09PT09PT09PT09PT09PT09
+CuKcliAgVGhpcyBkb21haW4ncyBETlMgTVggcmVjb3JkIGlzIG5vdCBzZXQuIEl0IHNob3VsZCBi
+ZSAnMTAgbWFpbC5tYW5mcm9tdmEuY29tJy4gTWFpbCB3aWxsIG5vdCBiZSBkZWxpdmVyZWQgdG8g
+dGhpcyBib3guIEl0IG1heSB0YWtlIHNldmVyYWwgaG91cnMgZm9yIHB1YmxpYyBETlMgdG8gdXBk
+YXRlIGFmdGVyIGEgY2hhbmdlLiBUaGlzIHByb2JsZW0gbWF5IHJlc3VsdCBmcm9tIG90aGVyIGlz
+c3VlcyBsaXN0ZWQgaGVyZS4KCm1hbmZyb212YS5jb20gLS0gQ3VycmVudGx5Ogo9PT09PT09PT09
+PT09PT09PT09PT09PT09PT0K4pyWICBUaGlzIGRvbWFpbidzIEROUyBNWCByZWNvcmQgaXMgaW5j
+b3JyZWN0LiBJdCBpcyBjdXJyZW50bHkgc2V0IHRvICcxMCBtYWlsLm1hZnJvbXZhLmNvbScgYnV0
+IHNob3VsZCBiZSAnMTAgbWFpbC5tYW5mcm9tdmEuY29tJy4gTWFpbCB3aWxsIG5vdCBiZSBkZWxp
+dmVyZWQgdG8gdGhpcyBib3guIEl0IG1heSB0YWtlIHNldmVyYWwgaG91cnMgZm9yIHB1YmxpYyBE
+TlMgdG8gdXBkYXRlIGFmdGVyIGEgY2hhbmdlLiBUaGlzIHByb2JsZW0gbWF5IHJlc3VsdCBmcm9t
+IG90aGVyIGlzc3VlcyBsaXN0ZWQgaGVyZS4=
+
+--===============4900655468160163090==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+PHByZT5tYW5mcm9tdmEuY29tIC0tIFByZXZpb3VzbHk6Cj09PT09PT09PT09
+PT09PT09PT09PT09PT09PT0K4pyWICBUaGlzIGRvbWFpbiYjeDI3O3MgRE5TIE1YIHJlY29yZCBp
+cyBub3Qgc2V0LiBJdCBzaG91bGQgYmUgJiN4Mjc7MTAgbWFpbC5tYW5mcm9tdmEuY29tJiN4Mjc7
+LiBNYWlsIHdpbGwgbm90IGJlIGRlbGl2ZXJlZCB0byB0aGlzIGJveC4gSXQgbWF5IHRha2Ugc2V2
+ZXJhbCBob3VycyBmb3IgcHVibGljIEROUyB0byB1cGRhdGUgYWZ0ZXIgYSBjaGFuZ2UuIFRoaXMg
+cHJvYmxlbSBtYXkgcmVzdWx0IGZyb20gb3RoZXIgaXNzdWVzIGxpc3RlZCBoZXJlLgoKbWFuZnJv
+bXZhLmNvbSAtLSBDdXJyZW50bHk6Cj09PT09PT09PT09PT09PT09PT09PT09PT09PQrinJYgIFRo
+aXMgZG9tYWluJiN4Mjc7cyBETlMgTVggcmVjb3JkIGlzIGluY29ycmVjdC4gSXQgaXMgY3VycmVu
+dGx5IHNldCB0byAmI3gyNzsxMCBtYWlsLm1hZnJvbXZhLmNvbSYjeDI3OyBidXQgc2hvdWxkIGJl
+ICYjeDI3OzEwIG1haWwubWFuZnJvbXZhLmNvbSYjeDI3Oy4gTWFpbCB3aWxsIG5vdCBiZSBkZWxp
+dmVyZWQgdG8gdGhpcyBib3guIEl0IG1heSB0YWtlIHNldmVyYWwgaG91cnMgZm9yIHB1YmxpYyBE
+TlMgdG8gdXBkYXRlIGFmdGVyIGEgY2hhbmdlLiBUaGlzIHByb2JsZW0gbWF5IHJlc3VsdCBmcm9t
+IG90aGVyIGlzc3VlcyBsaXN0ZWQgaGVyZS48L3ByZT48L2JvZHk+PC9odG1sPg==
+
+--===============4900655468160163090==--

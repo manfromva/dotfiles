@@ -1,3 +1,44 @@
 #!/bin/bash
 
-yay -S --needed lolcat exa rofi-emoji starship devour indicator-stickynotes obsidian koodo-reader-bin python-pywal
+yay -S --needed 
+lolcat 
+exa 
+rofi-emoji 
+starship 
+devour 
+indicator-stickynotes 
+obsidian 
+koodo-reader-bin 
+python-pywal 
+volumeicon 
+lxappearance 
+ttf-material-design-iconic-font 
+ttf-iosevka-nerd 
+acpi
+rofi-emoji
+rofi
+rofi-calc
+mopidy
+mopidy-mpd
+mopidy-youtube
+mopidy-jellyfin
+ncmpcpp
+virt-manager
+ebtables
+ansible
+cronie
+mutt-wizard-git
+nfs-utils
+neovim
+emacs
+indicator-stickynotes
+zsh-theme-powerlevel10k
+gitstatus
+zsh-autosuggestions
+zsh-syntax-highlighting
+nerd-fonts-fantasque-sans-mono
+
+
+
+#git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+#~/.emacs.d/bin/doom install

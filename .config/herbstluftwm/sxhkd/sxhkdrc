@@ -2,7 +2,10 @@
 ####Terminals and Scratchpads#####
 # Terminal (alacritty)
 super + Return
-    alacritty    
+    alacritty 
+
+alt + F1
+    ~/.config/rofi/launchers/type-1/launcher.sh       
 
 F12
     ~/.local/bin/scratch
@@ -11,8 +14,6 @@ F12
 super + shift + d
      dmenu_run -fn 'Mononoki Nerd Font:size=10' -nb '#292d3e' -nf '#bbc5ff' -sb '#82AAFF' -sf '#292d3e' -p 'dmenu:'
 
-alt + s
-    ~/.config/rofi/launchers/type-5/launcher.sh
 
 alt + shift + {y,s}
      {alacritty -e ytfzf --detach -fl,alacritty -e ytfzf --detach -flcSI}            

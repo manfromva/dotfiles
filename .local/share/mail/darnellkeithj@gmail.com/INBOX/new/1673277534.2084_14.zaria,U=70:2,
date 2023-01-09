@@ -1,0 +1,697 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3007202mdb;
+        Mon, 9 Jan 2023 06:06:41 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXuqkpmQ/cuQqVaHbfxtLD1NbQ6RERqaJXMMfz98JhlTPU/Jx7Il862lghIMEno0jwFQdZ8h
+X-Received: by 2002:a05:6870:cd14:b0:155:dde8:3ec4 with SMTP id qk20-20020a056870cd1400b00155dde83ec4mr4766795oab.22.1673273201475;
+        Mon, 09 Jan 2023 06:06:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673273201; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hdcgoNVcaSMKf3WVFh2rsdKrLMdlZvHCDIHlNgLe3JMHYSgYjng6WR5VUsZn31KoN7
+         /RJ3/XXcn+N7ellY9CNyzWDqejZjqx0rrfc2lsPiMu0WY+LMNgwlFqe0rKXZy+6/VPwe
+         bTzgm49ctI6ILXU4esqp5c0UmB48tlZH7MaTd0q4+Bq3Kkwn3tHiYqKbhleBz5lDpDQu
+         AsAE6keH7wCeE8okRAguvk0BrpYJb/NQg4jVsNurIU9SiQ7rPUQC+JVRe5C1Sct1FZjo
+         0oFNwie8UQD+BPl0hkNUWx7eakSo0jl5+AOQg12Qj7tNgVMS9aJcvqzXRkz6a02Mm0cG
+         c2uQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:reply-to:list-unsubscribe-post
+         :list-unsubscribe:list-id:mime-version:date:subject:to:from
+         :dkim-signature;
+        bh=zKXL1Cv7754mc+DlhSvcvN31EGZWEv7WJeUyK+jVRLg=;
+        b=twbfQ7Yu4puB9TPJJtlMpkFV19jL9fQ4JunL7v5sBYnaqigKWa0RoSOPfp+wxH9TCg
+         pHfBqJv83XyicXMuKSmhTJ1d5rJYotOHpmlbY6GyjBCPCpKk6gPsS9FnIz6lEwhTjL1a
+         CVJadBeslrmDJGX6MsOEt2mQ8gR6avLc5PyaK6YsDAc1SyDvezBGOz2qtakjcpXOus7F
+         /tBe6cXhddmx+HfjKf6q6Kf21ioTNK6W9krQDH+bgHtOnDYGRYV8t2O1VJ7peVrAUkF3
+         gtfBr80a2QGsSj7BJPY209CcZbAfGblzw3Fr/7grK142RgWp9v/PKNbCmNkta0dRGqUr
+         jvJg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.ebaypartnernetwork.com header.s=200608 header.b=eaftnC6s;
+       spf=pass (google.com: domain of bounce-9986_html-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com designates 13.111.54.22 as permitted sender) smtp.mailfrom=bounce-9986_HTML-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.ebaypartnernetwork.com
+Return-Path: <bounce-9986_HTML-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com>
+Received: from fg22.mta.exacttarget.com (fg22.mta.exacttarget.com. [13.111.54.22])
+        by mx.google.com with ESMTPS id q8-20020a056870328800b0013bfe985468si8459642oac.300.2023.01.09.06.06.41
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:06:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-9986_html-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com designates 13.111.54.22 as permitted sender) client-ip=13.111.54.22;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.ebaypartnernetwork.com header.s=200608 header.b=eaftnC6s;
+       spf=pass (google.com: domain of bounce-9986_html-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com designates 13.111.54.22 as permitted sender) smtp.mailfrom=bounce-9986_HTML-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.ebaypartnernetwork.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=mail.ebaypartnernetwork.com;
+ h=From:To:Subject:Date:MIME-Version:List-ID:X-CSA-Complaints:List-Unsubscribe:
+ List-Unsubscribe-Post:Reply-To:Message-ID:Content-Type;
+ i=AskEPN@mail.ebaypartnernetwork.com;
+ bh=zKXL1Cv7754mc+DlhSvcvN31EGZWEv7WJeUyK+jVRLg=;
+ b=eaftnC6shLLMxvK5C2asTmQxz5HH8Fb6YC1/bFAWYIUl/2dQ3sEF5gd6XZkg/GQZz4exDTtMgHNK
+   OSEt/3F/C4shDH3zNVUpRUfd7baSxUSP5rEJlYryZB//4mcO9lOf4G3J9ez02vvLbCDPp7GqtQ2Q
+   BMTvD2cWzWeloP06rKQ=
+Received: by fg22.mta.exacttarget.com id hngfn22fmd4u for <darnellkeithj@gmail.com>; Mon, 9 Jan 2023 14:06:39 +0000 (envelope-from <bounce-9986_HTML-1060870036-60521-100013832-257421@bounce.s10.mc.pd25.com>)
+From: "eBay Partner Network" <AskEPN@mail.ebaypartnernetwork.com>
+To: <darnellkeithj@gmail.com>
+Subject: eBay Coupon Alert
+Date: Mon, 09 Jan 2023 08:06:39 -0600
+MIME-Version: 1.0
+List-ID: <100013832.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+x-messageKey: 563182-2354901055-26025512
+X-Delivery: Transactional
+X-SFMC-Stack: 10
+x-job: 100013832_60521
+List-Unsubscribe: <https://go.ebaypn.ebay.com/listUnsubscribeHeader/u/563182/408bc363d82c1eae5c0a0bc2482973d18272812fcf491613bd02260cbf4bea42/2357648281>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Report-Abuse-To: abuse@pd25.com
+Reply-To: EPNHelp@ebay.com
+Message-ID: <8ed8f649-7288-4647-bd63-6f1e6265574d@dfw1s10mta52.xt.local>
+Feedback-ID: 100013832:60521:13.111.54.22:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="7HWBA6tenlEn=_?:"
+X-TUID: gn9ddL4eMg2W
+
+This is a multi-part message in MIME format.
+
+--7HWBA6tenlEn=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Take 20% off select must-haves
+
+https://go.ebaypn.ebay.com/e/563182/2023-01-09/lmsh4n/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU
+
+eBay Coupon Alert
+
+Hi Darnell,
+
+We're your source for great deals and coupons that your shoppers love, and today we're rolling out a coupon for an extra 20% off select must-haves! (https://go.ebaypn.ebay.com/e/563182/e-daily-deals-23-nyny-sfc-main/lmsh4r/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU)
+
+Code: NEWYEARTWENTY
+Offer Details: 20% off, no min spend, $500 max discount, 2x use
+Starts: 1/9/23 5:00am PST
+Ends: 1/15/23 11:59pm PST
+
+Check it out  ➔ (https://go.ebaypn.ebay.com/e/563182/e-daily-deals-23-nyny-sfc-main/lmsh4r/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU)
+
+
+Terms & Conditions apply.
+
+To create an affiliate link for your website, blog, or social media post, we recommend using our collection of link building tools. Check out Smart Share (https://go.ebaypn.ebay.com/e/563182/ing-affiliate-links-smartshare/lmsh4v/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU), the Bookmarklet Tool (https://go.ebaypn.ebay.com/e/563182/ffiliate-links-bookmarklettool/lmsh4y/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU), or the Link Generator (https://go.ebaypn.ebay.com/e/563182/-affiliate-links-linkgenerator/lmsh52/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU).
+
+Thank you for being a part of the eBay Partner Network. We're here to help so feel free to contact us (https://go.ebaypn.ebay.com/e/563182/resources-contact-us/lmsh55/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU) with any questions you may have.
+
+The eBay Partner Network team
+
+The information in this email is subject to change.
+
+You are receiving this email because of your association with or interest in the eBay Partner Network (EPN). Visit our Privacy Notice and Network Agreement if you have any questions. If you no longer wish to receive promotional communications from EPN, unsubscribe here ( https://go.ebaypn.ebay.com/unsubscribe/u/563182/408bc363d82c1eae5c0a0bc2482973d18272812fcf491613bd02260cbf4bea42/2357648281 ) .  Please note that even if you elect to stop receiving promotional emails by unsubscribing, EPN may continue to periodically send required, transactional e-mails to you about your EPN account and the EPN program.
+
+| Network Agreement (https://go.ebaypn.ebay.com/e/563182/page-network-agreement/lmsh58/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU) | Code of Conduct (https://go.ebaypn.ebay.com/e/563182/work-agreement-code-of-conduct/lmsh5c/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU) | Privacy Notice (https://go.ebaypn.ebay.com/e/563182/twork-agreement-privacy-notice/lmsh5g/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU) |
+
+Copyright © 2023 eBay Partner Network Inc.  All Rights Reserved.  Designated trademarks and brands are the property of their respective owners. 2145 Hamilton Avenue, San Jose, CA 95125.
+
+--7HWBA6tenlEn=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office" lang="en-GB" xml:lang="en-GB">
+<head>
+	<!--[if !mso]><!-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!--<![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="ProgId" content="Word.Document" />
+	<meta name="color-scheme" content="light dark only" />
+	<meta name="supported-color-schemes" content="light dark only" />
+<title>eBay Newsletter</title>
+	<!--| START: style/style |-->
+	<style type="text/css">
+@media handheld, only screen and (-webkit-min-device-pixel-ratio:3.0) and (max-width:1080px), screen and (max-width:480px){@media {div.generic{min-width:100vw!important;}}}
+</style>
+<style type="text/css">
+[class~="x_fallbackfont"]{font-family:Arial,sans-serif!important;}
+</style>
+<style type="text/css">
+:root{color-scheme:light dark only;supported-color-schemes:light dark only;}
+</style>
+<style type="text/css">
+body{margin:0;padding:0;}
+table,td{border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;}
+.ExternalClass *{line-height:100%;margin:0px;padding:0px;}
+img{display:block!important;}
+a{text-decoration:none;}
+a,td{-webkit-text-size-adjust:none;}
+th{font-weight:normal;padding:0px;margin:0px;}
+button{font-weight:normal;padding:0px;margin:0px;}
+h1,h2,h3,h4,h5,h6,p{margin:0;}
+a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important;font-size:inherit!important;font-family:inherit!important;font-weight:inherit!important;line-height:inherit!important;}
+@font-face{
+font-family:"Market Sans";
+src:url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.eot');
+src:url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.eot?#iefix') format('embedded-opentype'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.woff2') format('woff2'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.woff') format('woff'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.ttf') format('truetype'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-Regular-WebS.svg#MarketSans-Regular-WebS') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+@font-face {
+font-family:"Market Sans";
+src:url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.eot');
+src:url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.eot?#iefix') format('embedded-opentype'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.woff2') format('woff2'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.woff') format('woff'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.ttf') format('truetype'), url('https://ir.ebaystatic.com/cr/v/c1/market-sans/v1.0/MarketSans-SemiBold-WebS.svg#MarketSans-SemiBold-WebS') format('svg');
+font-weight:bold;
+font-style:normal;
+}
+[style*='Market Sans']{font-family:'Market Sans',Helvetica,Arial,sans-serif!important;}
+div.WordSection1 > div > table.MsoNormalTable > tbody > tr > td > div > table.MsoNormalTable{width:600px!important;}
+div.WordSection1 table.MsoNormalTable{width:initial!important;}
+.noWrap{white-space:nowrap!important;}
+.d-noWrap{white-space:nowrap;}
+.show_on_mobile,.de_footer{display:none!important;height:0px;max-height:0px;mso-hide:all;}
+@media handheld, only screen and (-webkit-min-device-pixel-ratio:3.0) and (max-width:1080px), screen and (max-width:480px){
+  img{display:block!important;}
+  div.generic{min-width:calc(100vw - 30px)!important;}
+  .backgroundnone{background-image:none!important;background-color:#ffffff!important;background:#ffffff!important;}
+  .hide{display:none!important;font-size:0!important;max-height:0!important;line-height:0!important;}
+  .de_footer{display:block!important;width:100%!important;max-height:none!important;height:auto!important;overflow:visible!important;float:none!important;}
+  .show_on_mobile{display:block!important;width:auto!important;max-height:none!important;height:auto!important;overflow:visible!important;float:none!important;}
+  .de_footer table,.de_footer td{max-height: none!important;height: auto!important;overflow: visible!important;float: none!important;}
+  .de_footer table{display:table!important;width:100%!important;}
+  .de_footer td{display:block!important;}
+  .break{display:block!important;width:100%!important;height:1px!important;line-height:1px!important;min-height:1px!important;max-height:1px!important;}
+  .linebreak{display:block!important;width:100%!important;}
+  .floatleft{float:left!important;}
+  .floatright{float:right!important;}
+  .floatoff{float:none!important;}
+  .heightauto{height:auto!important;}
+  .fullheight{height:100%!important;}
+  .widthauto{width:auto!important;}
+  .fullwidth{width:100%!important;}
+  .halfwidth{width:50%!important;}
+  .imgfullwidth{width:100%!important;height:auto!important;}
+  .imgfullheight{width:auto!important;height:100%!important;}
+  .perc10{width:10%!important;}
+  .perc20{width:20%!important;}
+  .perc30{width:30%!important;}
+  .alc{text-align:center!important;}
+  .all{text-align:left!important;}
+  .alr{text-align:right!important;}
+  .m-noWrap{white-space:nowrap!important;}
+  .d-noWrap{white-space:normal!important;}
+  .tablewidth300{width:300px!important;}
+  .tablewidth280{width:280px!important;}
+  .fs12{font-size:12px!important;line-height:1.3!important;}
+  .fs14{font-size:14px!important;line-height:1.3!important;}
+  .fs16{font-size:16px!important;line-height:1.3!important;}
+  .fs20{font-size:20px!important;line-height:1.3!important;}
+  .fs22{font-size:22px!important;line-height:1.3!important;}
+  .fs24{font-size:24px!important;line-height:1.3!important;}
+  .fs30{font-size:30px!important;line-height:1.3!important;}
+  .fs48{font-size:48px!important;line-height:1.3!important;}
+  .lhHl{line-height:1.3!important;}
+  .lhSl{line-height:1.5!important;}
+  .w50{width:50px!important;}
+  .w60{width:60px!important;}
+  .w97{width:97px!important;}
+  .w100{width:100px!important;}
+  .w110{width:110px!important;}
+  .w150{width:150px!important;}
+  .w178{width:178px!important;}
+  .w180{width:180px!important;}
+  .w200{width:200px!important;}
+  .w250{width:250px!important;}
+  .w260{width:260px!important;}
+  .w268{width:268px!important;}
+  .w280{width:280px!important;}
+  .w300{width:300px!important;}
+  .h50{height:50px!important;}
+  .h100{height:100px!important;}
+  .h150{height:150px!important;}
+  .h160{height:160px!important;}
+  .mt16{margin-top:16px!important;}
+  .mt24{margin-top:24px!important;}
+  .mt32{margin-top:32px!important;}
+  .mb16{margin-bottom:16px!important;}
+  .mb24{margin-bottom:24px!important;}
+  .mb32{margin-bottom:32px!important;}
+  .p0{padding:0px!important;}
+  .p4{padding:4px!important;}
+  .p5{padding:5px!important;}
+  .p8{padding:8px!important;}
+  .p10{padding:10px!important;}
+  .p15{padding:15px!important;}
+  .p16{padding:16px!important;}
+  .p20{padding:20px!important;}
+  .p24{padding:24px!important;}
+  .p25{padding:25px!important;}
+  .p30{padding:30px!important;}
+  .p32{padding:32px!important;}
+  .p35{padding:35px!important;}
+  .pt0{padding-top:0px!important;}
+  .pt4{padding-top:4px!important;}
+  .pt5{padding-top:5px!important;}
+  .pt8{padding-top:8px!important;}
+  .pt10{padding-top:10px!important;}
+  .pt15{padding-top:15px!important;}
+  .pt16{padding-top:16px!important;}
+  .pt20{padding-top:20px!important;}
+  .pt24{padding-top:24px!important;}
+  .pt25{padding-top:25px!important;}
+  .pt30{padding-top:30px!important;}
+  .pt32{padding-top:32px!important;}
+  .pt35{padding-top:35px!important;}
+  .pt40{padding-top:40px!important;}
+  .pr0{padding-right:0px!important;}
+  .pr4{padding-right:4px!important;}
+  .pr5{padding-right:5px!important;}
+  .pr8{padding-right:8px!important;}
+  .pr10{padding-right:10px!important;}
+  .pr15{padding-right:15px!important;}
+  .pr16{padding-right:16px!important;}
+  .pr20{padding-right:20px!important;}
+  .pr24{padding-right:24px!important;}
+  .pr25{padding-right:25px!important;}
+  .pr30{padding-right:30px!important;}
+  .pr32{padding-right:32px!important;}
+  .pr35{padding-right:35px!important;}
+  .pb0{padding-bottom:0px!important;}
+  .pb4{padding-bottom:4px!important;}
+  .pb5{padding-bottom:5px!important;}
+  .pb8{padding-bottom:8px!important;}
+  .pb10{padding-bottom:10px!important;}
+  .pb15{padding-bottom:15px!important;}
+  .pb16{padding-bottom:16px!important;}
+  .pb20{padding-bottom:20px!important;}
+  .pb24{padding-bottom:24px!important;}
+  .pb25{padding-bottom:25px!important;}
+  .pb30{padding-bottom:30px!important;}
+  .pb32{padding-bottom:32px!important;}
+  .pb35{padding-bottom:35px!important;}
+  .pb40{padding-bottom:40px!important;}
+  .pl0{padding-left:0px!important;}
+  .pl4{padding-left:4px!important;}
+  .pl5{padding-left:5px!important;}
+  .pl8{padding-left:8px!important;}
+  .pl10{padding-left:10px!important;}
+  .pl15{padding-left:15px!important;}
+  .pl16{padding-left:16px!important;}
+  .pl20{padding-left:20px!important;}
+  .pl24{padding-left:24px!important;}
+  .pl25{padding-left:25px!important;}
+  .pl30{padding-left:30px!important;}
+  .pl32{padding-left:32px!important;}
+  .pl35{padding-left:35px!important;}
+  .borderleft{border-left:1px solid #C7C7C7!important;}
+  .borderright{border-right:1px solid #C7C7C7!important;}
+  .bl0{border-left:0px solid transparent!important;}
+  .br0{border-right:0px solid transparent!important;}
+  .bt0{border-top:0px solid transparent!important;}
+  .bb0{border-bottom:0px solid transparent!important;}
+  .bb10{border-bottom:10px!important;border-style:solid!important;}
+  .bb16{border-bottom:16px!important;border-style:solid!important;}
+  .bb24{border-bottom:24px!important;border-style:solid!important;}
+  .bb32{border-bottom:32px!important;border-style:solid!important;}
+  .noradius{border-radius:initial!important;}
+  .radius8{border-radius:8px!important;}
+  .radius20{border-radius:20px!important;}
+  .topradius8{border-top-left-radius:8px!important;border-top-right-radius:8px!important;}
+  .bottomradius8{border-bottom-left-radius:8px!important;border-bottom-right-radius:8px!important;}
+  img.imgval{min-height:0px!important;max-height:calc(0px + 160% - 1.59px)!important;}
+  .opacity{opacity:0!important;}
+  .valignbottom{vertical-align:bottom!important;}
+  .valignmiddle{vertical-align:middle!important;}
+  .valigntop{vertical-align:top!important;}
+  .th{display:table-header-group!important;}
+} 
+</style>
+<style type="text/css">
+a:-webkit-any-link:focus{outline-offset:0px!important;}
+a:focus,.focus:focus{outline:3px solid #000000!important;padding:0px!important;}
+.focusFb:focus{outline:3px solid #00FF00!important;}
+.focusTw:focus,.focusPin:focus,.focusInst:focus,.focusYt:focus{outline:3px solid #000000!important;padding:0px!important;}
+img.focus{display:inline-block!important;}
+.button tr td p a:focus{transition:none;}
+.focus__content:focus{outline:none;}
+@media handheld, only screen and (-webkit-min-device-pixel-ratio:3.0) and (max-width:1080px), screen and (max-width:480px){a.focus,img.focus{display:inline-block!important;}}
+</style>
+<style type="text/css">
+.button,.button tr td p a{transition:0.4s;animation-duration:1.3s;animation-timing-function:ease-in-out;animation-iteration-count:1;}
+.button tr td p a{transition:0.4s;}
+</style>
+<style type="text/css">
+@media (prefers-color-scheme: dark) {
+.generic,.wrapperMod{background-color:#333333;}
+a:focus,.focus:focus{outline:3px solid #FFFFFF!important;padding:0px!important;}
+.focusFb:focus,.focusTw:focus,.focusPin:focus,.focusInst:focus,.focusYt:focus{outline:3px solid #FFFFFF!important;padding:0px!important;}
+img{color:#FFFFFF!important;}
+.headerMod,.preheaderMod,.preheaderMod+table[class~="imgfullwidth"],.preheaderMod+table[class~="x_imgfullwidth"],.placeholderMod,.footerNavModAU,.footerNavModDE,.footerDividerMod,.footerSocialMod,.footerTermsMod,.footerMod,.gmailFixMod{background-color:#171717;}
+.preheaderMod a,.headerMod a,.footerMod div,.footerMod p,.footerNavModAU p,.footerNavModAU a,.footerNavModDE a{color:#FFFFFF!important;}
+.footerMod a{color:#5CABFF!important;}
+.whiteText{color:#FFFFFF!important;}
+.dark-image{display:block!important;width:auto!important;overflow:visible!important;float:none!important;max-height:inherit!important;max-width:inherit!important;line-height:auto!important;margin-top:0px!important;visibility:inherit!important;}
+.light-image,img.light-image{display:none!important;}
+}
+</style> 
+	<style type="text/css">.gmaildate span, .gmaildate span:hover {border-bottom:0px none transparent!important;}
+.gmaildate a {color:inherit!important; text-decoration:none!important; white-space: nowrap;border-bottom:none!important;}
+
+.button1:hover {
+background-color: #ffffff!important;
+-webkit-box-shadow: inset 0 0 0 25px #ffffff;
+box-shadow: inset 0 0 0 25px #ffffff;
+border-color:#0E4A6C!important;
+}
+.button1:hover tr td p a {
+color: #0E4A6C!important;
+}
+
+.button2:hover {
+    background-color: #C2F2EF!important;
+    -webkit-box-shadow: inset 0 0 0 25px #C2F2EF;
+    box-shadow: inset 0 0 0 25px #C2F2EF;
+    border-color:#0E4A6C!important;
+    }
+    .button2:hover tr td p a {
+    color: #0E4A6C!important;
+    }
+
+
+.focus1:focus {
+outline:3px solid #ffffff!important;
+padding:0px!important;
+}
+.focus2:focus {
+outline:3px solid #000000!important;
+padding:0px!important;
+}
+
+@media handheld,
+only screen and (-webkit-min-device-pixel-ratio:3) and (max-width:1080px),
+screen and (max-width:480px) {
+.h0{height:0!important;}
+.pt19{padding-top:19px!important;}
+.pb60 {padding-bottom:60px!important;}
+
+}</style>
+	<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+</head>
+<body class="generic" bgcolor="#ffffff">
+<!--| START: preheaders |-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td height="0" style="font-size:1px;line-height:1px;" class="">
+			<p aria-hidden="true" style="margin:0;font-size:1px;line-height:1px;color:#ffffff;visibility:hidden;">Take 20% off select must-haves</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: header3 |-->
+
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;padding:0px 16px 14px 16px;">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" style="font-size:1px;line-height:1px;">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+							<tbody>
+								<tr>
+									<th align="left" class="floatleft fullwidth" style="font-size:1px;line-height:1px;vertical-align:bottom;" valign="bottom" width="80">
+									<table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" width="80">
+									</table>
+									</th>
+									<th align="right" class="hide" style="font-size:1px;line-height:1px;vertical-align:bottom;" valign="bottom">
+									<table align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" width="488">
+										<tbody>
+											<tr>
+												<td align="right" style="font-size:1px;line-height:1px;">
+												<table align="right" border="0" cellpadding="0" cellspacing="0" role="presentation">
+													<tbody>
+														<tr>
+															<td align="right" height="18" style="font-size:1px;line-height:1px;vertical-align:bottom;padding-bottom:1px;" valign="bottom" class="">
+															<p align="right" style="mso-line-height-rule:exactly;margin:0;line-height:18px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:12px;color:#999999;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"><a class="focus" href="https://go.ebaypn.ebay.com/webmail/563182/2357648281/408bc363d82c1eae5c0a0bc2482973d18272812fcf491613bd02260cbf4bea42" style="color:#999999;text-decoration:none;"><span class="focus__content" tabindex="-1">View in Browser </span> </a></p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| eBay partner network |-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="head" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;padding:0px 0px 0px 0px;">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" style="font-size:1px;line-height:1px;">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+							<tbody>
+								<tr>
+									<td align="left" class="floatleft fullwidth" style="font-size:1px;line-height:1px;vertical-align:middle;padding: 0px 0px 30px 0px;" valign="middle" width="64">
+									<table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" width="64">
+										<tbody>
+											<tr>
+												<td class="pb20" style="font-size:1px;line-height:1px;padding:0px 0px 0px 16px;"><a href="https://go.ebaypn.ebay.com/e/563182/2023-01-09/lmsh4n/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="font-decoration:none;" target="_blank"><img alt="eBay partner network" border="0" height="28" src="https://uploads.feed.xyz/mercury/EB-3774-EPN/img/partner_dt.png" style="display:block;" title="eBay partner network" width="241"> </a></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: coupon |--><!--| START: MODULE 1 - Hero copy box with colour background |-->
+
+<table align="center" bgcolor="#C2F2EF" border="0" cellpadding="0" cellspacing="0" class="fullwidth fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;vertical-align:top;" valign="top">
+			<table align="left" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="400">
+				<tbody>
+					<tr>
+						<td align="center" class="pl16 pr16" height="40" style="font-size:1px;line-height:1px;padding:24px 16px 24px 16px;">
+						<h1 align="left" style="mso-line-height-rule:exactly;margin:0;line-height:40px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:30px;color:#0E4A6C;font-weight:bold;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">eBay Coupon Alert</h1>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: MODULE 2 - main copy info and cta |-->
+
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="fullwidth fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;vertical-align:top;" valign="top">
+			<table align="left" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+				<tbody>
+					<tr>
+						<td align="center" class="pl16 pr16" height="21" style="font-size:1px;line-height:1px;padding:24px 16px 8px 16px;">
+						<p align="left" style="mso-line-height-rule:exactly;margin:0;line-height:21px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:14px;color:#0E4A6C;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">Hi&nbsp;Darnell,</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" height="21" pardot-data="link-color:#0E4A6C;" style="font-size:1px;line-height:1px;padding:8px 16px 8px 16px;">
+						<p align="left" style="mso-line-height-rule:exactly;margin:0;line-height:21px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:14px;color:#0E4A6C;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">We're your source for great deals and coupons that your shoppers love, and today we're rolling out a coupon for&nbsp;<a href="https://go.ebaypn.ebay.com/e/563182/e-daily-deals-23-nyny-sfc-main/lmsh4r/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="text-decoration:underline;color:#0e4a6c;">an extra 20% off select must-haves!</a></p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" height="21" style="font-size:1px;line-height:1px;padding:8px 16px 8px 16px;"><p align="left" style="mso-line-height-rule:exactly;margin:0;line-height:21px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:14px;color:#0E4A6C;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">Code:&nbsp;NEWYEARTWENTY<br>
+Offer Details: 20% off, no min spend, $500 max discount, 2x use<br>
+Starts: 1/9/23&nbsp;5:00am PST<br>
+Ends: 1/15/23&nbsp;11:59pm PST</p>
+</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" style="font-size:1px;line-height:1px;padding:16px 16px 0px 16px;">
+						<div align="left" class="all" style="font-size:1px;line-height:1px;">
+						<table bgcolor="#0E4A6C" border="0" cellpadding="0" cellspacing="0" class="button button1" role="presentation" style="display:inline-table;">
+							<tbody>
+								<tr>
+									<td align="center" height="39" style="font-size:1px;line-height:1px;vertical-align:middle;border:1px solid #0E4A6C;padding:0px 15px 0px 15px;" valign="middle" class="">
+									<p align="center" style="mso-line-height:exactly;margin:0;line-height:16px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:14px;font-weight:bold;color:#ffffff;text-align:center;vertical-align:middle;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"><a class="focus focus1" href="https://go.ebaypn.ebay.com/e/563182/e-daily-deals-23-nyny-sfc-main/lmsh4r/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="text-decoration:none;color:#ffffff;"><span class="focus__content" tabindex="-1">Check it out&nbsp;&nbsp;<span aria-hidden="true" style="font-weight:normal;">➔</span> </span> </a></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" height="21" pardot-data="link-color:#0E4A6C;link-underline:underline;" style="font-size:1px;line-height:1px;padding:24px 16px 24px 16px;">
+						<p align="left" style="mso-line-height-rule:exactly;margin:0;line-height:21px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:14px;color:#0E4A6C;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">Terms &amp; Conditions apply.<br>
+						<br>
+						To create an affiliate link for your website, blog, or social media post, we recommend using our collection of link building tools. Check out&nbsp;<a href="https://go.ebaypn.ebay.com/e/563182/ing-affiliate-links-smartshare/lmsh4v/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="color: rgb(14, 74, 108); text-decoration: underline;">Smart Share</a>, the&nbsp;<a href="https://go.ebaypn.ebay.com/e/563182/ffiliate-links-bookmarklettool/lmsh4y/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="color: rgb(14, 74, 108); text-decoration: underline;">Bookmarklet Tool</a>, or the&nbsp;<a href="https://go.ebaypn.ebay.com/e/563182/-affiliate-links-linkgenerator/lmsh52/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="color: rgb(14, 74, 108); text-decoration: underline;">Link Generator</a>.&nbsp;<br>
+						<br>
+						Thank you for being a part of the eBay Partner Network. We're here to help so feel free to <a href="https://go.ebaypn.ebay.com/e/563182/resources-contact-us/lmsh55/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU" style="color: rgb(14, 74, 108); text-decoration: underline;">contact us</a> with any questions you may have.<br>
+						<br>
+						The eBay Partner Network team<br>
+						&nbsp;&nbsp;<br>
+						<em>The information in this email is subject to change.</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: MODULE 3 - full width hero image |-->
+
+<table align="center" bgcolor="#F2F2F2" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;vertical-align:top;" valign="top">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+				<tbody>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: MODULE 4 - copy |-->
+
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="fullwidth fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;vertical-align:top;" valign="top">
+			<table align="left" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+				<tbody>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: spacer |-->
+
+<table align="center" bgcolor="#666666" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="568">
+	<tbody>
+		<tr>
+			<td align="center" aria-hidden="true" style="font-size:1px;line-height:1px;padding:0px,0px,24px,0px;" class=""><img alt="" border="0" height="1" role="presentation" src="https://uploads.feed.xyz/mercury/EB-3774-EPN/img/spacer.gif" style="display:block;visibility:hidden;" title="" width="24"></td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: global_v3_2/partial/spacer |-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" aria-hidden="true" style="font-size:1px;line-height:1px;" class=""><img alt="" border="0" height="28" role="presentation" src="https://uploads.feed.xyz/mercury/EB-3774-EPN/img/spacer.gif" style="display:block;visibility:hidden;" width="24"></td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: footer5 |--><!--| START: Terms |-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;padding:0px 0px 15px 0px;">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="568">
+				<tbody>
+					<tr>
+						<td align="center" class="pl16 pr16" height="15" style="font-size:1px;line-height:1px;padding:0px 0px 0px 0px;">
+						<p style="margin: 0px; line-height: 15px; font-family: Helvetica, Arial, sans-serif, &quot;Market Sans&quot;; font-size: 10px; color: rgb(118, 118, 118); font-weight: normal; text-decoration: none; -webkit-font-smoothing: antialiased; text-align: justify;">You are receiving this email because of your association with or interest in the eBay Partner Network (EPN). Visit our Privacy Notice and Network Agreement if you have any questions. If you no longer wish to receive promotional communications from EPN, unsubscribe <a href="https://go.ebaypn.ebay.com/unsubscribe/u/563182/408bc363d82c1eae5c0a0bc2482973d18272812fcf491613bd02260cbf4bea42/2357648281" rel="nofollow,noreferrer">here</a>. &nbsp;Please note that even if you elect to stop receiving promotional emails by unsubscribing, EPN may continue to periodically send required, transactional e-mails to you about your EPN account and
+the EPN program. &nbsp;</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" height="15" style="font-size:1px;line-height:1px;padding:10px 0px 0px 0px;">
+						<p align="left" style="mso-line-height-rule:exactly;margin:0;line-height:15px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:10px;color:#767676;font-weight:normal;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">| <a href="https://go.ebaypn.ebay.com/e/563182/page-network-agreement/lmsh58/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU">Network Agreement</a> | <a href="https://go.ebaypn.ebay.com/e/563182/work-agreement-code-of-conduct/lmsh5c/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU">Code of Conduct</a> | <a href="https://go.ebaypn.ebay.com/e/563182/twork-agreement-privacy-notice/lmsh5g/2357648281?h=DhWNaJp1ChZyxJSuAky12ylkXwTR_6eZCiSQFukfpQU">Privacy Notice</a> |</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="pl16 pr16" height="15" style="font-size:1px;line-height:1px;padding:10px 0px 0px 0px;">
+						<p style="margin: 0px; line-height: 15px; font-family: Helvetica, Arial, sans-serif, &quot;Market Sans&quot;; font-size: 10px; color: rgb(118, 118, 118); font-weight: normal; text-decoration: none; -webkit-font-smoothing: antialiased; text-align: justify;">Copyright ©&nbsp;2023 eBay Partner Network Inc. &nbsp;All Rights Reserved. &nbsp;Designated trademarks and brands are the property of their respective owners. 2145 Hamilton Avenue, San Jose, CA 95125.</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| END: Terms |-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td align="center" style="font-size:1px;line-height:1px;padding:0px 16px 30px 16px;">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="fullwidth" role="presentation" width="568">
+				<tbody>
+					<tr>
+						<td align="center" height="15" style="font-size:1px;line-height:1px;padding:0px 0px 0px 0px;" class="">
+						<div align="left" style="line-height:15px;font-family:Helvetica,Arial,sans-serif,'Market Sans';font-size:10px;color:#333333;font-weight:normal;text-decoration:none;">&nbsp;</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--| START: global_v3_2/gmailfix_simple |-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="gmailFixMod hide" role="presentation">
+	<tbody>
+		<tr>
+			<td aria-hidden="true" style="font-size:1px;line-height:1px;min-width:600px;width:600px;" class=""><img alt="" border="0" height="1" role="presentation" src="https://uploads.feed.xyz/mercury/EB-3774-EPN/img/spacer.gif" style="display:block;min-width:600px;width:600px;visibility:hidden;" width="600"></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="gmailFixMod fullwidth" role="presentation" width="600">
+	<tbody>
+		<tr>
+			<td aria-hidden="true" class="hide" height="5" style="font-size:1px;line-height:1px;min-width:600px;" width="600"><img alt="" border="0" class="hide" height="5" role="presentation" src="https://uploads.feed.xyz/mercury/EB-3774-EPN/img/spacer.gif" style="display:block;max-height:5px;min-height:5px;width:600px;min-width:600px;visibility:hidden;" width="600"></td>
+		</tr>
+	</tbody>
+</table>
+<!-- gmail on ios fix -->
+
+<div style="display:none;white-space:nowrap;font:15px courier;line-height:0;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+<!--| START: global_v3_2/wrapper_bottom |-->
+<img alt="" src="https://go.ebaypn.ebay.com/r/563182/1/2357648281/open/1" /><style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?rd&d=[UNIQUE]');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?rl&d=[UNIQUE]');}} @media print{ #_t {background-image:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?p&d=[UNIQUE]');}} div.OutlookMessageHeader {background-image:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?f&d=[UNIQUE]')} table.moz-email-headers-table {background-image:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?f&d=[UNIQUE]')} blockquote #_t {background-image:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?f&d=[UNIQUE]')} #MailContainerBody #_t {background-image:url('https://2iivhd6f.emltrk.com/v2/2iivhd6f?f&d=[UNIQUE]')}</style><div id="_t"></div>
+<img src="https://2iivhd6f.emltrk.com/v2/2iivhd6f?d=[UNIQUE]" width="1" height="1" border="0" alt="" /></body>
+
+</html>
+
+
+--7HWBA6tenlEn=_?:--
+

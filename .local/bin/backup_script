@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Darnell Keith
+# Date Created: 12-31-2022
+# Last Modified: 12-31-2022
+
+# Description: Backs up the home directory and saves it in a .tar file. 
+
+# Usage: Run ./backup_script in the terminal
+
+
+tar -cvf ~/projects/bash/bash_course/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+
+exit 0
+

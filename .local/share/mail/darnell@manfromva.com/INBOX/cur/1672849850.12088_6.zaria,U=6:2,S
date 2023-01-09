@@ -1,0 +1,77 @@
+Return-Path: <administrator@mail.manfromva.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id oJHWMxdcqWMRoAUAdh2gHA
+	(envelope-from <administrator@mail.manfromva.com>)
+	for <darnell@manfromva.com>; Mon, 26 Dec 2022 03:32:23 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.0 required=5.0 tests=ALL_TRUSTED,DKIM_INVALID,
+	DKIM_SIGNED,FROM_FMBLA_NEWDOM28,HTML_MESSAGE autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+	*  0.8 FROM_FMBLA_NEWDOM28 From domain was registered in last 14-28
+	*      days
+X-Spam-Score: -0.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.manfromva.com;
+	s=mail; t=1672043543;
+	bh=t+56GFCn3qlmiA0kgrzjSAHxtrq4oIVtSkztIh5Se2s=;
+	h=From:To:Subject:Date:From;
+	b=aaUpoJZU5gi2O/T52JcKezWQ4lDR4vieZvjmQnvJnaYWdvV5Qi7NvAQHGd+VImwFl
+	 if34q0m9Xl+4CyzDvmdo5YsyvtEpqqF+K2NYQ0nlsastrObFeW2Fw2hcVyOjd4L0dJ
+	 yvxr5yIEQSLXrdZMKLN8I/FrZ5aPrVQb/enVjCoNzeJFaqKufZdzW0LF44U82LUtRt
+	 aYy8nuQfZT4q+MZvVhb9TDul7CLmodSbbBz4jtRQnPDiKGUNMt5AhroO/7hrGiq1rH
+	 4qYfdkdg8BQZbLnQzZ8CLqXv/td7Btq7XEIIdyshJHaWkL2+uXPba8ExCkkmF0Bfq5
+	 lzrMhehnFqihw==
+Received: from mail.manfromva.com (localhost [127.0.0.1])
+	by mail.manfromva.com (Postfix) with ESMTP id B3840BF063
+	for <administrator@mail.manfromva.com>; Mon, 26 Dec 2022 03:32:23 -0500 (EST)
+Content-Type: multipart/alternative; boundary="===============2920804340337789341=="
+MIME-Version: 1.0
+From: "mail.manfromva.com" <administrator@mail.manfromva.com>
+To: administrator@mail.manfromva.com
+Subject: [mail.manfromva.com] Status Checks Change Notice
+Message-Id: <20221226083223.B3840BF063@mail.manfromva.com>
+Date: Mon, 26 Dec 2022 03:32:23 -0500 (EST)
+X-TUID: XDj4TNGK1/Z0
+
+--===============2920804340337789341==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+bWFuZnJvbXZhLmNvbSAtLSBQcmV2aW91c2x5Ogo9PT09PT09PT09PT09PT09PT09PT09PT09PT09
+CuKcliAgVGhpcyBkb21haW4ncyBETlMgTVggcmVjb3JkIGlzIGluY29ycmVjdC4gSXQgaXMgY3Vy
+cmVudGx5IHNldCB0byAnMTAgbWFpbC5tYWZyb212YS5jb20nIGJ1dCBzaG91bGQgYmUgJzEwIG1h
+aWwubWFuZnJvbXZhLmNvbScuIE1haWwgd2lsbCBub3QgYmUgZGVsaXZlcmVkIHRvIHRoaXMgYm94
+LiBJdCBtYXkgdGFrZSBzZXZlcmFsIGhvdXJzIGZvciBwdWJsaWMgRE5TIHRvIHVwZGF0ZSBhZnRl
+ciBhIGNoYW5nZS4gVGhpcyBwcm9ibGVtIG1heSByZXN1bHQgZnJvbSBvdGhlciBpc3N1ZXMgbGlz
+dGVkIGhlcmUuCgptYW5mcm9tdmEuY29tIC0tIEN1cnJlbnRseToKPT09PT09PT09PT09PT09PT09
+PT09PT09PT09CuKckyAgRG9tYWluJ3MgZW1haWwgaXMgZGlyZWN0ZWQgdG8gdGhpcyBkb21haW4u
+IFttYW5mcm9tdmEuY29tIOKGpiAxMCBtYWlsLm1hbmZyb212YS5jb21dCuKcliAgTVRBLVNUUyBw
+b2xpY3kgaXMgbWlzc2luZzogU1RTRmV0Y2hSZXN1bHQuTk9ORQ==
+
+--===============2920804340337789341==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+PHByZT5tYW5mcm9tdmEuY29tIC0tIFByZXZpb3VzbHk6Cj09PT09PT09PT09
+PT09PT09PT09PT09PT09PT0K4pyWICBUaGlzIGRvbWFpbiYjeDI3O3MgRE5TIE1YIHJlY29yZCBp
+cyBpbmNvcnJlY3QuIEl0IGlzIGN1cnJlbnRseSBzZXQgdG8gJiN4Mjc7MTAgbWFpbC5tYWZyb212
+YS5jb20mI3gyNzsgYnV0IHNob3VsZCBiZSAmI3gyNzsxMCBtYWlsLm1hbmZyb212YS5jb20mI3gy
+NzsuIE1haWwgd2lsbCBub3QgYmUgZGVsaXZlcmVkIHRvIHRoaXMgYm94LiBJdCBtYXkgdGFrZSBz
+ZXZlcmFsIGhvdXJzIGZvciBwdWJsaWMgRE5TIHRvIHVwZGF0ZSBhZnRlciBhIGNoYW5nZS4gVGhp
+cyBwcm9ibGVtIG1heSByZXN1bHQgZnJvbSBvdGhlciBpc3N1ZXMgbGlzdGVkIGhlcmUuCgptYW5m
+cm9tdmEuY29tIC0tIEN1cnJlbnRseToKPT09PT09PT09PT09PT09PT09PT09PT09PT09CuKckyAg
+RG9tYWluJiN4Mjc7cyBlbWFpbCBpcyBkaXJlY3RlZCB0byB0aGlzIGRvbWFpbi4gW21hbmZyb212
+YS5jb20g4oamIDEwIG1haWwubWFuZnJvbXZhLmNvbV0K4pyWICBNVEEtU1RTIHBvbGljeSBpcyBt
+aXNzaW5nOiBTVFNGZXRjaFJlc3VsdC5OT05FPC9wcmU+PC9ib2R5PjwvaHRtbD4=
+
+--===============2920804340337789341==--

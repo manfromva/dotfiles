@@ -1,0 +1,2670 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2762221mdb;
+        Sun, 8 Jan 2023 21:33:28 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvaBqLUEpD8gvDaNT0087eIXZAKrxeQFbCaR+nxCK9e+zKPjVtDcqOIQZa0kfT9zOZIhyu3
+X-Received: by 2002:a17:906:85d9:b0:842:1627:77b4 with SMTP id i25-20020a17090685d900b00842162777b4mr54687857ejy.3.1673242408634;
+        Sun, 08 Jan 2023 21:33:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673242408; cv=none;
+        d=google.com; s=arc-20160816;
+        b=t31Qngo70XBFk2ZyxN9MmFVU8vuZxsjQnfkZ1TR+TxB7n73LIQDpVGF5wuiOhg4wBl
+         XIBSPsqVKmL9sL28naveXn48/RNVDUiBnLpgAcDUKQCZAlFkBdfn27m8BmjptP8RqD5w
+         61nq2Vsn0/BsZbfrJtwM51p2x5s2/PBBDTxV1p8zi2pjqSgjL83fF+d4xHHLp3K4vfiM
+         4M23zUjpND7vF6laecFrEfGKd5WdJfqmRkMKkFxG2qGBgbk2vBGFXLoU4jn98OeG/3tJ
+         nxATmq0ZORYaCym2OJQdTDU9iodhcTyrV2pixUVSP8in4ROWvb5BpzBEbv76M0mOhlia
+         TFuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:date:message-id:to:from:reply-to
+         :list-unsubscribe-post:list-unsubscribe:submitter:dkim-signature
+         :domainkey-signature:dkim-signature;
+        bh=aJYuPQZQWOWG7tT2LRnzTyYCnjNoVVb5A90n3Eu2iF0=;
+        b=TM6TsJ1njJaDhnxe3lje9m6FA/E+QCmEn7S6C7lk3r10zmnlJa9D1x/zg6dWB7MkzU
+         OsEW6OP2qc2H6ZiKzOpnyBl6VJ1sPk2Um4vrMxHMIzALkRuV0tDv8nfC1gudmuwAgomo
+         s8gWm0PDKsHQypNRLu2bgwHCtEBzu5p+Yce54s26HQIy+UHz+UhbtAJxhKJtgxs3s0eF
+         R4sUr6gGyPRAxQq6m1Psh8JywsjFsr09MqHEHfXddxAaH6LiHbjfeXdlE866xQ89UW21
+         8UuH1zfRIVzLD0gQHuD5PIJ4Z/tLp8R77sImFEsCD6AOEBrGSWi2rNy4LjRtGVrqv8z4
+         Ul2w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@activetrail.com header.s=at header.b=R7uTgNGZ;
+       dkim=pass header.i=@club50.co.il header.s=at header.b=E9uyyPg+;
+       spf=pass (google.com: domain of reply@activetrail.com designates 91.199.29.223 as permitted sender) smtp.mailfrom=reply@activetrail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=club50.co.il
+Return-Path: <reply@activetrail.com>
+Received: from i2.ms223.atmailsvr.net (i2.ms223.atmailsvr.net. [91.199.29.223])
+        by mx.google.com with ESMTPS id dt10-20020a170907728a00b00783e7d72fc0si8073361ejc.272.2023.01.08.21.33.28
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Jan 2023 21:33:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of reply@activetrail.com designates 91.199.29.223 as permitted sender) client-ip=91.199.29.223;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@activetrail.com header.s=at header.b=R7uTgNGZ;
+       dkim=pass header.i=@club50.co.il header.s=at header.b=E9uyyPg+;
+       spf=pass (google.com: domain of reply@activetrail.com designates 91.199.29.223 as permitted sender) smtp.mailfrom=reply@activetrail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=club50.co.il
+X-IADB-IP: 91.199.29.223
+X-IADB-IP-REVERSE: 223.29.199.91
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; q=dns/txt;
+ d=activetrail.com; s=at;
+ h=X-BBounce:X-IADB-URL:Sender:Submitter:X-Feedback-ID:From:To:Date:Subject:MIME-Version:Content-type:Content-Transfer-Encoding;
+ bh=aJYuPQZQWOWG7tT2LRnzTyYCnjNoVVb5A90n3Eu2iF0=;
+ b=R7uTgNGZdXuG0QZyK0dQ9NQ4AraXuu3PF/K4izxW1lL9Ie04ERG21ayjUPw5pNKaHphQ
+ seNACx2fMVqolEyg8tcLrSWVrSybGbyFB8/sHp81PxkCzJGCuMZpIR9CldiwcE/Ca7TSLe
+ 5xQkHtcI95NAxU26AOd71L4oegvrqBTg4=
+DomainKey-Signature: q=dns; a=rsa-sha1; c=nofws;
+ d=club50.co.il; s=at;
+ h=x-bbounce:x-iadb-url:submitter:x-feedback-id:from:to:date:subject:mime-version:content-type;
+ b=Y/4WK6DYzsXGB2JlCKmG9sH0XZjezKYuXxAJfuYh1el3f7dyGf/uv88moYEGYdgpA/CE
+ FxLazBQqh8LY6+s+o2k4Cy/EG0BtjmjuOyC5bxxvvF/GK6kU2FIrCVJbXAd48qAJU6s55Y
+ 6zNbgH/poG8PsEBM0gbvjYlWrM3H+jWXk=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; q=dns/txt;
+ d=club50.co.il; s=at;
+ h=X-BBounce:X-IADB-URL:Sender:Submitter:X-Feedback-ID:From:To:Date:Subject:MIME-Version:Content-type:Content-Transfer-Encoding;
+ bh=aJYuPQZQWOWG7tT2LRnzTyYCnjNoVVb5A90n3Eu2iF0=;
+ b=E9uyyPg+ZenRaJijGU2p+Bz+UwETria/ksl59jJz5WQC+eWzl7oALUNkpaeQFt+3SztN
+ t7ucm5YmyX1t/DBL+LK0Z4DE8er66YthqCEG+qE7Gffye/JKjLh6R4OA9/f3oRBmWlO/qp
+ 8yifeH5ZRSKAw8iJ0Rf7EGgqrc0RDnFFk=
+X-BBounce: 213727474|10180978|darnellkeithj@gmail.com|99|0|90628|3
+X-IADB-URL: http://www.isipp.com/iadb.php
+Submitter: reply@activetrail.com
+X-Feedback-ID: 90628:90628.10180978.0:G3:atgfbl
+List-Unsubscribe: <https://trailer.web-view.net/unsubscribe/0X7EF45589FBC1F3B853D62C66AD108DB50858F77B4F7EDBA4BA735D77702FFCCB68A470794BE6D1BC.htm>, <mailto:unsubscribe-0X7EF45589FBC1F3B853D62C66AD108DB50858F77B4F7EDBA4BA735D77702FFCCB68A470794BE6D1BC@atmailsvr.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Reply-To: Events@club50.co.il
+From: "=?utf-8?B?16jXmdeR15kg15zXlNeR?=" <events@club50.co.il>
+To: "darnellkeithj@gmail.com" <darnellkeithj@gmail.com>
+Message-ID: <8f4d174885dc4937ab8a0e2c7465f8ed@club50.co.il>
+Date: Mon, 09 Jan 2023 07:33:24 +0200
+Subject: =?utf-8?B?dHNidWxreWpxcywg16DXldek16kg15HXntec15XXnyDXldeo15gsINeh15nXldeoINeY16LXmdee15XXqiDXkdeT15zXmdeZ16og15DXnCDXm9eo157XnCDXldei15XXkyDXmNeZ15XXnNeZ150g15HXnteZ?==?utf-8?B?15XXl9eTINeR16nXkdeZ15zXmiDwn6ehICAo16TXqNeh15XXnteqKQ==?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----820B6A32957441B98C86751112BBB7B7"
+X-TUID: y1LgCFx2aUDk
+
+------820B6A32957441B98C86751112BBB7B7
+Content-type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+=D7=9B=D7=9C =D7=94=D7=A1=D7=99=D7=95=D7=A8=D7=99=D7=9D =D7=95=D7=94=D7=
+=98=D7=99=D7=95=D7=9C=D7=99=D7=9D =D7=A9=D7=90=D7=A1=D7=95=D7=A8 =D7=9C=
+=D7=9A =D7=9C=D7=A4=D7=A1=D7=A4=D7=A1=20
+
+
+
+
+
+
+
+
+=D7=9C=D7=90 =D7=A8=D7=95=D7=90=D7=94 =D7=90=D7=AA =D7=94=D7=9E=D7=99=D7=
+=99=D7=9C =D7=9B=D7=9E=D7=95 =D7=A9=D7=A6=D7=A8=D7=99=D7=9A? =D7=9C=D7=97=
+=D7=99=D7=A6=D7=94 =D7=9B=D7=90=D7=9F =D7=95=D7=96=D7=94 =D7=99=D7=A1=D7=
+=AA=D7=93=D7=A8: https://trailer=2Eweb-view=2Enet/Show/0X7986F91C555A59=
+50D123301D3FD940387B9640E8EECB939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Eht=
+m=20
+: https://trailer=2Eweb-view=2Enet/Links/0XA305FAC0283152136267F1C56579=
+9EB04C62C381324FDF5011157A5C9B6A9743268D76D43F6BE92C2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+
+
+=D7=94=D7=98=D7=91=D7=95=D7=AA =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=
+=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=9D: https://trailer=2Eweb-view=2En=
+et/Links/0XC6967722C902EEA4231FC28F421E86881CD6CEB074580DC878C774A663EB=
+9F4C0A25490626395EB72B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679=
+E16487F38B849=2Ehtm =C2=A0=C2=A0=C2=A0=C2=A0 | =C2=A0=C2=A0=C2=A0=C2=A0=
+=20
+=D7=A2=D7=93=D7=99=D7=99=D7=9F =D7=9C=D7=90 =D7=A8=D7=A9=D7=95=D7=9D? =D7=
+=9C=D7=97=D7=A5 =D7=9B=D7=90=D7=9F: https://trailer=2Eweb-view=2Enet/Li=
+nks/0X5C58FDC350CC6DD5D684E20D33588215DB53F7D1A997B5A8BB2BC5C44683DFC6E=
+DA0024FE574EBF52B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E1648=
+7F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0X41D66BB650059D6BCDB956D83CF5=
+F2ED656FDEB850736AC83BB5F132429B920F3F971D93D1BAF1792B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=A1=D7=95=D7=A4=D7=A9=D7=91=D7=95=D7=A2 =D7=9E=D7=90=D7=99=D7=98=D7=9C=
+=D7=99=D7=94 =D7=91=D7=90=D7=94=D7=91=D7=94=20
+=D7=90=D7=AA=D7=9D =D7=97=D7=99=D7=99=D7=91=D7=99=D7=9D =D7=9C=D7=A2=D7=
+=A6=D7=9E=D7=9B=D7=9D=20
+=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D=20
+=D7=A1=D7=95=D7=A3 =D7=A9=D7=91=D7=95=D7=A2 =D7=A9=D7=9C =D7=A4=D7=95=D7=
+=9C=D7=A7=D7=9C=D7=95=D7=A8 =D7=90=D7=99=D7=98=D7=9C=D7=A7=D7=99, =D7=A1=
+=D7=99=D7=A4=D7=95=D7=A8=D7=99 =D7=90=D7=94=D7=91=D7=94, =D7=9E=D7=95=D7=
+=A4=D7=A2 =D7=A4=D7=A1=D7=98=D7=99=D7=91=D7=9C =D7=A1=D7=9F =D7=A8=D7=9E=
+=D7=95, =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99=D7=94 =D7=9E=D7=A9=D7=
+=95=D7=91=D7=97=D7=AA =D7=95=D7=97=D7=91=D7=A8=D7=95=D7=AA=D7=90 =D7=A0=
+=D7=94=D7=93=D7=A8=D7=AA =D7=91=D7=A1=D7=95=D7=95=D7=99=D7=98=D7=95=D7=AA=
+ =D7=94=D7=9E=D7=A4=D7=A0=D7=A7=D7=95=D7=AA =D7=A9=D7=9C =D7=9E=D7=9C=D7=
+=95=D7=9F =D7=95=D7=A8=D7=98 =D7=91=D7=A0=D7=AA=D7=A0=D7=99=D7=94=20
+=C2=A0 =D7=94' - =D7=A9', 9-11=2E2=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0XF10CFC99E046E2869C8288C4EB0A9EA3C28D613E5AAB=
+64B31FF49E5F1340804A9C658B172D327FD32B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm =D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=
+=D7=95=D7=A1=D7=A3=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0X1186533709884968A60ACC219B9F=
+AF1FE9C9BD940CA3D792BD8C8A63A48F0CC9FC84F96EA84D0E432B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=93=D7=9C=D7=99=D7=99=D7=AA =D7=90=D7=9C =D7=9B=D7=A8=D7=9E=D7=9C=20
+=D7=9E=D7=A7=D7=95=D7=9E=D7=95=D7=AA =D7=90=D7=97=D7=A8=D7=95=D7=A0=D7=99=
+=D7=9D!=20
+=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=98=D7=A2=D7=99=D7=9E=D7=95=D7=AA =D7=A9=D7=
+=9C =D7=90=D7=95=D7=9B=D7=9C =D7=90=D7=95=D7=AA=D7=A0=D7=98=D7=99=20
+=D7=95=D7=9E=D7=A1=D7=95=D7=A8=D7=AA=D7=99 =D7=94=D7=9E=D7=A9=D7=9C=D7=91=
+ =D7=92=D7=9D =D7=A1=D7=99=D7=A4=D7=95=D7=A8=D7=99=D7=9D,=20
+=D7=90=D7=A0=D7=A9=D7=99=D7=9D =D7=95=D7=A1=D7=9E=D7=98=D7=90=D7=95=D7=AA=
+ =D7=A0=D7=A1=D7=AA=D7=A8=D7=95=D7=AA =D7=91=D7=9B=D7=A4=D7=A8=20
+=D7=94=D7=93=D7=A8=D7=95=D7=96=D7=99 =D7=93=D7=9C=D7=99=D7=99=D7=AA =D7=
+=90=D7=9C =D7=9B=D7=A8=D7=9E=D7=9C =D7=99=D7=95=D7=9D =D7=95', 13=2E1=20
+
+
+=D7=9C=D7=94=D7=A8=D7=A9=D7=9E=D7=94: https://trailer=2Eweb-view=2Enet/=
+Links/0XAC51ABB1163E6BF4F26FD57C04BD24F49B0732BB89311C2736ADB08B328B88E=
+772994263C98FE0C32B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16=
+487F38B849=2Ehtm=20
+: https://trailer=2Eweb-view=2Enet/Links/0X51AC8FA40B1507CCD2DC181EB191=
+E2EB84FA040D107276F09B2493D0263D6997A44EEC16C2F3A02E2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0XF9F1E15909B2EC42ECA2A91F6286=
+54C47B09BAA264F52B33BE2F20B61E55C11FDD978C5E73FC83312B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=99=D7=95=D7=93=D7=A4=D7=AA =D7=90=D7=A8=D7=99=D7=92=D7=99=D7=9D =D7=
+=95=D7=A2=D7=A8=D7=92=D7=95=D7=A0=D7=95=D7=AA=20
+=D7=97=D7=91=D7=9C =D7=90=D7=A8=D7=A5 =D7=A0=D7=A4=D7=9C=D7=90 - =D7=92=
+=D7=95=D7=A9 =D7=A9=D7=92=D7=91=20
+90 =E2=82=AA =D7=91=D7=9C=D7=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=
+=99=D7=9D=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=9E=D7=A8=D7=AA=D7=A7 =D7=95=D7=9E=D7=A2=D7=
+=A9=D7=99=D7=A8 =D7=A2=D7=9D =D7=91=D7=9F=20
+=D7=94=D7=9E=D7=A7=D7=95=D7=9D =D7=A2=D7=9C =D7=94=D7=94=D7=99=D7=A1=D7=
+=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=A2=D7=9C =D7=94=D7=94=D7=95=D7=95=
+=D7=94 =D7=91=D7=97=D7=91=D7=9C =D7=90=D7=A8=D7=A5 =D7=A0=D7=A4=D7=9C=D7=
+=90 =D7=96=D7=94, =D7=9B=D7=95=D7=9C=D7=9C =D7=91=D7=99=D7=A7=D7=95=D7=A8=
+=20
+=D7=91=D7=A1=D7=98=D7=95=D7=93=D7=99=D7=95 =D7=A9=D7=9C =D7=90=D7=95=D7=
+=A8=D7=92=D7=AA=2E=20
+
+=C2=A0 =D7=99=D7=95=D7=9D =D7=A9', 21=2E1=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0X7655E4D47914E1D8FC99491A7D31265E0385AF06F1E3=
+BB5BD41DBB05D346D44639E4810FD08D92BD2B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0XE39F2AD1330626615D2A6FE6E2B8=
+E1E94B15244DF6F4853E9B840173FBF400112712F129431B6B622B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=9E=D7=92=D7=9C=D7=95=D7=AA =D7=9C=D7=92=D7=90=D7=95=D7=9C=D7=94 - =D7=
+=99=D7=94=D7=93=D7=95=D7=AA =D7=9C=D7=95=D7=91=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=97=D7=95=D7=95=D7=99=D7=AA=D7=99 =D7=95=D7=
+=9E=D7=99=D7=95=D7=97=D7=93=20
+=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=9E=D7=A4=D7=AA=D7=99=D7=A2 =D7=91=D7=90=D7=
+=95=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=94 =D7=A9=D7=91=D7=95 =D7=A0=D7=92=
+=D7=99=D7=A2 =D7=90=D7=9C =D7=A8=D7=90=D7=A9=D7=99=D7=AA =D7=94=D7=A2=D7=
+=9C=D7=99=D7=99=D7=94 =D7=9E=D7=9C=D7=95=D7=91,=C2=A0=D7=A0=D7=91=D7=A7=
+=D7=A8 =D7=91=D7=9E=D7=A8=D7=9B=D7=96 =D7=9E=D7=95=D7=A8=D7=A9=D7=AA =D7=
+=99=D7=94=D7=93=D7=95=D7=AA =D7=9C=D7=95=D7=91 =D7=95=D7=A0=D7=98=D7=A2=
+=D7=9D =D7=9E=D7=94=D7=9E=D7=90=D7=A4=D7=99=D7=9D =D7=A9=D7=9E=D7=9B=D7=
+=99=D7=A0=D7=99=D7=9D =D7=97=D7=91=D7=A8=D7=99 =D7=94=D7=A7=D7=94=D7=99=
+=D7=9C=D7=94=2E=20
+
+=C2=A0 =D7=99=D7=95=D7=9D =D7=91', 23=2E1=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0X7FA3B08C04DD5763851A053B41F401A29C4ACAE3628A=
+31ABF4ABA5A0E0931143C6487B166145E8792B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+: https://trailer=2Eweb-view=2Enet/Links/0X3E8EC1FD0DD64542A563DCA2E45C=
+36E10A7EE88B8CE037C46E65F7ED980B492419938A91EAD219122B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+
+=D7=9C=D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95=D7=AA =D7=9C=D7=A7=D7=91=D7=95=
+=D7=A6=D7=95=D7=AA =D7=94=D7=95=D7=95=D7=90=D7=98=D7=A1=D7=90=D7=A4 =D7=
+=A9=D7=9C=D7=A0=D7=95 =D7=9C=D7=97=D7=A6=D7=95 =D7=9B=D7=90=D7=9F &gt;&=
+gt;: https://trailer=2Eweb-view=2Enet/Links/0X974B161D4D6F60D24C54AD311=
+E15FE1FB477576C90E0098077EEB4D5DFFCCD14582DAB490720C0102B7FB7AB6764E43A=
+A9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0XCF1D4958FC82BCE4A4E7AEB371B0=
+2157A6EAF42D721C75E28342FB158E3C19635C203740A2440CA72B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=9E=D7=92=D7=93=D7=9C =D7=A9=D7=9C=D7=95=D7=9D - =D7=94=D7=99=D7=A1=D7=
+=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=94=D7=95=D7=95=D7=94=20
+=D7=97=D7=95=D7=95=D7=99=D7=94 =D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=91=D7=
+=99=D7=AA=20
+65 =E2=82=AA =D7=91=D7=9C=D7=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=
+=99=D7=9D=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=9E=D7=A8=D7=AA=D7=A7 =D7=91=D7=9E=D7=92=D7=
+=93=D7=9C =D7=A9=D7=9C=D7=95=D7=9D =D7=91=D7=AA=D7=9C =D7=90=D7=91=D7=99=
+=D7=91=2E =D7=A0=D7=92=D7=9C=D7=94 =D7=90=D7=AA =D7=AA=D7=95=D7=9C=D7=93=
+=D7=95=D7=AA =D7=94=D7=A2=D7=99=D7=A8 =D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=
+=91 =D7=91=D7=90=D7=9E=D7=A6=D7=A2=D7=95=D7=AA =D7=94=D7=A4=D7=A1=D7=99=
+=D7=A4=D7=A1=D7=99=D7=9D =D7=A9=D7=9C =D7=A0=D7=97=D7=95=D7=9D =D7=92=D7=
+=95=D7=98=D7=9E=D7=9F =D7=95=D7=93=D7=95=D7=93 =D7=A9=D7=A8=D7=99=D7=A8=
+ =D7=95=D7=A0=D7=91=D7=A7=D7=A8 =D7=91=D7=AA=D7=A2=D7=A8=D7=95=D7=9B=D7=
+=95=D7=AA =D7=A6=D7=99=D7=9C=D7=95=D7=9E=D7=99=D7=9D=2E=20
+
+=C2=A0 =D7=99=D7=95=D7=9D =D7=95', 3=2E2=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0X74F0FDAD570BDC421975D0B1E4F15BD061C288442962=
+5307120DAAA988F228E2E195472B2A8681452B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0X7F4904E01064DE0C8D361682514A=
+9F60314CF2513A8239D6A16CB5813D965E75D8ADF2D89FECA1962B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=9E=D7=93=D7=91=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=94 - =D7=9B=D7=A0=D7=
+=A1=D7=99=D7=95=D7=AA =D7=95=D7=9E=D7=A0=D7=96=D7=A8=D7=99=D7=9D=20
+=D7=97=D7=95=D7=95=D7=99=D7=94 =D7=9E=D7=93=D7=91=D7=A8=D7=99=D7=AA=20
+=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D=20
+=D7=9C=D7=90=D7=95=D7=A8 =D7=94=D7=91=D7=99=D7=A7=D7=95=D7=A9 =D7=94=D7=
+=95=D7=A1=D7=A4=D7=A0=D7=95 =D7=9E=D7=95=D7=A2=D7=93 =D7=A0=D7=95=D7=A1=
+=D7=A3,=20
+=D7=98=D7=99=D7=95=D7=9C =D7=97=D7=95=D7=95=D7=99=D7=99=D7=AA=D7=99 =D7=
+=91=D7=9E=D7=93=D7=91=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=94 =D7=91=D7=95=
+ =D7=A0=D7=A1=D7=99=D7=99=D7=A8 =D7=95=D7=A0=D7=97=D7=A7=D7=95=D7=A8 =D7=
+=9B=D7=A0=D7=A1=D7=99=D7=95=D7=AA =D7=95=D7=9E=D7=A0=D7=96=D7=A8=D7=99=D7=
+=9D =D7=9B=D7=95=D7=9C=D7=9C =D7=90=D7=95=D7=98=D7=95=D7=91=D7=95=D7=A1=
+ =D7=9E=D7=90=D7=95=D7=A8=D7=92=D7=9F =D7=95=D7=90=D7=A8=D7=95=D7=97=D7=
+=AA =D7=A6=D7=94=D7=A8=D7=99=D7=99=D7=9D=20
+
+=C2=A0 =D7=99=D7=95=D7=9D =D7=A9', 4=2E2=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0XE552073E9BDA7EF1A1B3FD6C8A73FEF724EE7B1E6879=
+06E914C8E81F5FD0085D859EF25DACCD85202B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0XDFF2D3A8E6EC351050A46D924988=
+1A579781F3736028A9A8F6EFF678421D25E7FC4D1090BA15AD692B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=A4=D7=90=D7=A8=D7=A7 =D7=94=D7=9E=D7=A1=D7=99=D7=9C=D7=94 =D7=95=D7=
+=9E=D7=AA=D7=97=D7=9D =D7=94=D7=AA=D7=97=D7=A0=D7=94=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=99=D7=99=D7=97=D7=95=D7=93=D7=99=C2=A0=20
+72 =E2=82=AA =D7=91=D7=9C=D7=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=
+=99=D7=9D=20
+=D7=A1=D7=99=D7=95=D7=A8 =D7=A9=D7=9C =D7=A9=D7=91=D7=AA =D7=91=D7=91=D7=
+=95=D7=A7=D7=A8 =D7=91=D7=A4=D7=90=D7=A8=D7=A7=20
+=D7=94=D7=9E=D7=A1=D7=99=D7=9C=D7=94 =D7=95=D7=9E=D7=AA=D7=97=D7=9D =D7=
+=94=D7=AA=D7=97=D7=A0=D7=94 =D7=91=D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=91=
+,=20
+=D7=94=D7=9E=D7=97=D7=91=D7=A8 =D7=91=D7=99=D7=9F =D7=94=D7=99=D7=A1=D7=
+=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=9E=D7=95=D7=A8=D7=A9=D7=AA=20
+=D7=95=D7=91=D7=99=D7=9F =D7=A2=D7=91=D7=A8=C2=A0=D7=9C=D7=94=D7=95=D7=95=
+=D7=94 =D7=94=D7=9E=D7=95=D7=93=D7=A8=D7=A0=D7=99=20
+=C2=A0 =D7=99=D7=95=D7=9D =D7=A9', 11=2E2=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0XE6DAE4E72A8BBD662ACA8BB660F3DA55D1D439B97C36=
+5F7576C540DAE474602E117DC1861EC360EF2B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm =D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=
+=D7=95=D7=A1=D7=A3=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0XB1643AD7B69E43CDAF37E487EAC8=
+23D3AD6FE1E7C28AB617F2973EE26F72DCC80011B665AC5E4CBF2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=93=D7=A8=D7=95=D7=9D =D7=90=D7=93=D7=95=D7=9D=C2=A0=20
+=D7=A4=D7=A8=D7=99=D7=97=D7=94 =D7=95=D7=9E=D7=95=D7=A8=D7=A9=D7=AA - =D7=
+=98=D7=99=D7=95=D7=9C =D7=91=D7=90=D7=95=D7=98=D7=95=D7=91=D7=95=D7=A1=20
+=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D=20
+=D7=94=D7=98=D7=99=D7=95=D7=9C =D7=94=D7=A9=D7=A0=D7=AA=D7=99 =D7=A9=D7=
+=9C =D7=A4=D7=A8=D7=99=D7=97=D7=AA =D7=94=D7=9B=D7=9C=D7=A0=D7=99=D7=95=
+=D7=AA =D7=94=D7=9E=D7=A8=D7=94=D7=99=D7=91=D7=95=D7=AA =D7=94=D7=9E=D7=
+=A7=D7=A9=D7=98=D7=95=D7=AA =D7=91=D7=90=D7=93=D7=95=D7=9D =D7=90=D7=AA=
+ =D7=9E=D7=A8=D7=97=D7=91=D7=99 =D7=94=D7=93=D7=A8=D7=95=D7=9D, =D7=91=D7=
+=A9=D7=99=D7=9C=D7=95=D7=91 =D7=A1=D7=99=D7=A4=D7=95=D7=A8=D7=99=20
+=D7=94=D7=92=D7=91=D7=95=D7=A8=D7=94 =D7=95=D7=94=D7=9E=D7=95=D7=A8=D7=A9=
+=D7=AA =D7=91=D7=99=D7=99=D7=A9=D7=95=D7=91=D7=99 =D7=94=D7=90=D7=99=D7=
+=96=D7=95=D7=A8=20
+
+=C2=A0 =D7=99=D7=95=D7=9D =D7=93', 15=2E2=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0X2DDFDD48C2304B7C533F1A9F71B2E2D0C6F180FA7CF9=
+164AE10D740DF0F795BF91990ADDB486F5E72B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+
+=D7=9C=D7=9B=D7=9C =D7=94=D7=98=D7=99=D7=95=D7=9C=D7=99=D7=9D =D7=A9=D7=
+=9C=D7=A0=D7=95 =D7=9C=D7=97=D7=A6=D7=95 =D7=9B=D7=90=D7=9F &gt;&gt;: h=
+ttps://trailer=2Eweb-view=2Enet/Links/0XD2EADFC2025874A9FDFE38DF6C8B722=
+DB5B1E2455D8F35268EA033C43A64F18262DAD1B32EBE5DF42B7FB7AB6764E43AA9D470=
+381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+=D7=98=D7=95=D7=91 =D7=9C=D7=93=D7=A2=D7=AA=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0X5582CB4BCF3449C33F0494D93CBB=
+5A0C7B9D93D07B2AA1F135A3EC7447C2F4836E85B627F90557782B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+vertica=20
+=D7=96=D7=94 =D7=94=D7=96=D7=9E=D7=9F =D7=9C=D7=94=D7=9B=D7=99=D7=A8=20
+=D7=A4=D7=AA=D7=A8=D7=95=D7=9F =D7=A8=D7=A4=D7=95=D7=90=D7=99 =D7=99=D7=
+=95=D7=A6=D7=90 =D7=93=D7=95=D7=A4=D7=9F =D7=A9=D7=99=D7=97=D7=96=D7=99=
+=D7=A8 =D7=90=D7=AA =D7=94=D7=A1=D7=A4=D7=95=D7=A0=D7=98=D7=A0=D7=99=D7=
+=95=D7=AA =D7=9C=D7=97=D7=99=D7=99 =D7=94=D7=96=D7=95=D7=92=D7=99=D7=95=
+=D7=AA =D7=A9=D7=9C=D7=9B=D7=9D=2E=20
+=D7=9E=D7=9B=D7=A9=D7=99=D7=A8 =D7=91=D7=99=D7=AA=D7=99 =D7=9C=D7=A9=D7=
+=99=D7=A4=D7=95=D7=A8 =D7=94=D7=AA=D7=A4=D7=A7=D7=95=D7=93 =D7=94=D7=9E=
+=D7=99=D7=A0=D7=99 =D7=9C=D7=9C=D7=90 =D7=AA=D7=A8=D7=95=D7=A4=D7=95=D7=
+=AA, =D7=9C=D7=AA=D7=95=D7=A6=D7=90=D7=95=D7=AA =D7=90=D7=A8=D7=95=D7=9B=
+=D7=95=D7=AA =D7=98=D7=95=D7=95=D7=97=20
+=D7=9C=D7=A9=D7=99=D7=A4=D7=95=D7=A8 =D7=90=D7=99=D7=9B=D7=95=D7=AA =D7=
+=94=D7=97=D7=99=D7=99=D7=9D=2E=20
+
+
+=D7=9C=D7=A4=D7=A8=D7=98=D7=99=D7=9D =D7=A0=D7=95=D7=A1=D7=A4=D7=99=D7=9D=
+: https://trailer=2Eweb-view=2Enet/Links/0XCCBD4AB46B12163A4CFE8B906F26=
+601ED4F9E353B4F597219F3AA0294E259AC382580612478F87AC2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+: https://trailer=2Eweb-view=2Enet/Links/0X82207D9868EBF39F39A13E2988C4=
+0B267B3BF98C462405E5C46F8F9A0C301C66C9771B92CC15C1DC2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+=D7=A1=D7=99=D7=95=D7=A8 =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99 =D7=
+=91=D7=A9=D7=93=D7=A8=D7=95=D7=AA=20
+=D7=90=D7=99=D7=9E=D7=A4=D7=A8=D7=99=D7=94 =D7=A9=D7=9C =D7=90=D7=95=D7=
+=9B=D7=9C =D7=95=D7=A6=D7=9E=D7=99=D7=97=D7=94=20
+=D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95 =D7=9C=D7=99=D7=95=D7=9D =D7=A9=D7=
+=9C =D7=A1=D7=99=D7=95=D7=A8 =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99=
+=20
+=D7=9E=D7=99=D7=95=D7=97=D7=93 =D7=91=D7=A9=D7=93=D7=A8=D7=95=D7=AA=2E =
+=D7=A2=D7=99=D7=A8 =D7=A6=D7=A2=D7=99=D7=A8=D7=94 =D7=A9=D7=95=D7=A7=D7=
+=A7=D7=AA =D7=97=D7=99=D7=99=D7=9D =D7=A9=D7=97=D7=95=D7=95=D7=94 =D7=A4=
+=D7=A8=D7=99=D7=97=D7=94 =D7=91=D7=9C=D7=AA=D7=99 =D7=A8=D7=92=D7=99=D7=
+=9C=D7=94 =D7=91=D7=99=D7=9F =D7=94=D7=99=D7=AA=D7=A8 =D7=91=D7=96=D7=9B=
+=D7=95=D7=AA =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99=D7=94 =D7=A2=D7=
+=A9=D7=99=D7=A8=D7=94 =D7=A9=D7=A6=D7=9E=D7=97=D7=94 =D7=91=D7=A9=D7=A0=
+=D7=99=D7=9D =D7=94=D7=90=D7=97=D7=A8=D7=95=D7=A0=D7=95=D7=AA=2E=20
+
+
+=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3: https://traile=
+r=2Eweb-view=2Enet/Links/0X09F59DB9F2F4720DC754F092C0711FC8AB65B8AD1316=
+D0C9C240D202FDB61324E574A551DFB79FD22B7FB7AB6764E43AA9D470381807A733E9A=
+674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+
+=D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95 =D7=9C=D7=A7=D7=94=D7=99=D7=9C=D7=AA=
+ =D7=94=D7=A4=D7=99=D7=99=D7=A1=D7=91=D7=95=D7=A7 =D7=A9=D7=9C =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D =D7=95=D7=AA=D7=AA=D7=97=D7=99=D7=9C=D7=
+=95 =D7=9C=D7=97=D7=99=D7=99=D7=9A &gt;&gt;: https://trailer=2Eweb-view=
+=2Enet/Links/0XF871A05F2D4ED4DF0B93973E54F57DEBB71C97B5B68D01B67AB82CA9=
+A02BFD6EF15B71B2E77A52C32B7FB7AB6764E43AA9D470381807A733E9A674A945001D2=
+8679E16487F38B849=2Ehtm =D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95 =D7=9C=D7=A7=
+=D7=94=D7=99=D7=9C=D7=AA =D7=94=D7=A4=D7=99=D7=99=D7=A1=D7=91=D7=95=D7=A7=
+ =D7=A9=D7=9C =D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=9D =D7=95=D7=AA=D7=
+=AA=D7=97=D7=99=D7=9C=D7=95 =D7=9C=D7=97=D7=99=D7=99=D7=9A >>=20
+: https://trailer=2Eweb-view=2Enet/Links/0XB0F65CE0852269989E48CF4C32BD=
+503364E94ECAD5E01106D62727C8BA5AE66BBB820E6AA015D4DA2B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+: mailto:events@club50=2Eco=2Eil=20
+: https://trailer=2Eweb-view=2Enet/Links/0X2054F99B781047253CCAC96D2DE6=
+31AFD9E5C5401238EDC0D0795E8A414CD6B673793A9C9A3F0E732B7FB7AB6764E43AA9D=
+470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+=D7=9C=D7=9E=D7=94 =D7=A7=D7=99=D7=91=D7=9C=D7=AA =D7=90=D7=AA =D7=94=D7=
+=9E=D7=99=D7=99=D7=9C =D7=94=D7=96=D7=94?=20
+tsbulkyjqs, =D7=94=D7=9E=D7=99=D7=99=D7=9C =D7=94=D7=96=D7=94 =D7=94=D7=
+=92=D7=99=D7=A2 =D7=90=D7=9C=D7=99=D7=9A =D7=9B=D7=99 =D7=A0=D7=A8=D7=A9=
+=D7=9E=D7=AA =D7=9C=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=D7=A4=D7=
+=95=D7=A6=D7=94 =D7=A9=D7=9C=D7=A0=D7=95=2E=20
+
+=D7=A0=D7=99=D7=AA=D7=9F =D7=9C=D7=9C=D7=97=D7=95=D7=A5 =D7=9B=D7=90=D7=
+=9F =D7=9B=D7=93=D7=99 =D7=9C=D7=A2=D7=93=D7=9B=D7=9F =D7=90=D7=AA =D7=A4=
+=D7=A8=D7=98=D7=99=D7=9A =D7=95=D7=9C=D7=A7=D7=91=D7=9C =D7=AA=D7=95=D7=
+=9B=D7=9F =D7=A8=D7=9C=D7=95=D7=95=D7=A0=D7=98=D7=99 =D7=99=D7=95=D7=AA=
+=D7=A8&gt;: https://trailer=2Eweb-view=2Enet/Links/0X579F2DAE45F84D44E9=
+791D597A073CE27003EE3903B830BE92E76A01F132CF158EFB8ED7445114792B7FB7AB6=
+764E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm=20
+
+
+
+=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=93=D7=
+=99=D7=95=D7=95=D7=A8:=20
+=D7=9B=D7=93=D7=90=D7=99 =D7=9C=D7=93=D7=A2=D7=AA: =D7=91=D7=9E=D7=99=D7=
+=93=D7=94 =D7=95=D7=AA=D7=91=D7=A7=D7=A9 =D7=9C=D7=94=D7=A1=D7=99=D7=A8=
+ =D7=90=D7=AA =D7=A4=D7=A8=D7=98=D7=99=D7=9A =D7=9E=D7=A8=D7=A9=D7=99=D7=
+=9E=D7=AA =D7=94=D7=93=D7=99=D7=95=D7=95=D7=A8, =D7=9C=D7=90 =D7=AA=D7=A7=
+=D7=91=D7=9C =D7=94=D7=A6=D7=A2=D7=95=D7=AA =D7=99=D7=99=D7=97=D7=95=D7=
+=93=D7=99=D7=95=D7=AA,=20
+=D7=90=D7=99=D7=A9=D7=95=D7=A8=D7=99 =D7=94=D7=96=D7=9E=D7=A0=D7=95=D7=AA=
+ =D7=95=D7=A2=D7=93=D7=9B=D7=95=D7=A0=D7=99=D7=9D =D7=97=D7=A9=D7=95=D7=
+=91=D7=99=D7=9D =D7=9C=D7=9E=D7=99=D7=99=D7=9C =D7=95=D7=91=D7=9E=D7=A1=
+=D7=A8=D7=95=D7=A0=D7=99=D7=9D=2E=20
+
+=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A7=D7=91=D7=9C=D7=AA =D7=9E=D7=
+=99=D7=99=D7=9C=D7=99=D7=9D =D7=95=D7=9E=D7=A1=D7=A8=D7=95=D7=A0=D7=99=D7=
+=9D =D7=99=D7=A9 =D7=9C=D7=9C=D7=97=D7=95=D7=A5 =D7=9B=D7=90=D7=9F&gt;&=
+gt;: https://trailer=2Eweb-view=2Enet/Out_0X7986F91C555A5950D123301D3FD=
+940387B9640E8EECB939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Ehtm=20
+
+
+
+=D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=9D 60+ | =D7=94=D7=91=D7=A8=D7=96=
+=D7=9C 19 =D7=90', =D7=A8=D7=9E=D7=AA =D7=94=D7=97=D7=99=D7=99=D7=9C | =
+=D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=91 | 6971025=C2=A0 | =D7=99=D7=A9=D7=
+=A8=D7=90=D7=9C | 03-6939393=20
+
+=D7=9C=D7=AA=D7=A9=D7=95=D7=9E=D7=AA =D7=9C=D7=99=D7=91=D7=9A, =D7=94=D7=
+=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=
+=D7=A4=D7=95=D7=A6=D7=94 =D7=94=D7=99=D7=90 =D7=9C=D7=A6=D7=9E=D7=99=D7=
+=AA=D7=95=D7=AA =D7=95=D7=9C=D7=90 =D7=A0=D7=99=D7=AA=D7=9F =D7=9C=D7=97=
+=D7=96=D7=95=D7=A8 =D7=90=D7=9C=D7=99=D7=94=2E =D7=94=D7=94=D7=A1=D7=A8=
+=D7=94 =D7=94=D7=99=D7=90 =D7=9E=D7=9E=D7=99=D7=99=D7=9C=D7=99=D7=9D =D7=
+=95=D7=9E=D7=A1=D7=A8=D7=95=D7=A0=D7=99=D7=9D =D7=A9=D7=99=D7=95=D7=95=D7=
+=A7=D7=99=D7=99=D7=9D=2E=20
+=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A7=D7=91=D7=9C=D7=AA =D7=9E=D7=
+=99=D7=99=D7=9C=D7=99=D7=9D =D7=95=D7=9E=D7=A1=D7=A8=D7=95=D7=A0=D7=99=D7=
+=9D : https://trailer=2Eweb-view=2Enet/Out_0X7986F91C555A5950D123301D3F=
+D940387B9640E8EECB939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Ehtm |=C2=A0=20
+=D7=93=D7=95=D7=95=D7=97 =D7=9B=D7=A1=D7=A4=D7=90=D7=9D: https://traile=
+r=2Eweb-view=2Enet/SpamAbuse_0X7986F91C555A5950D123301D3FD940387B9640E8=
+EECB939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Ehtm=20
+Sent=C2=A0with=C2=A0=20
+ActiveTrail: https://trailer=2Eweb-view=2Enet/nslinks/0XA7B345C74AEB82B=
+7BA022830AA129F80AE751E8DF83E5340E4BFFD330542F007611C4BB201023B1BE9EAE0=
+C8757F801AA61B8B6A2E9AAA5F6AC8439C50C8F64C9483F19A0E95007CA3E04678B4F98=
+47189C04B2C8B1246637BD8DF5E5D5721ED94E37ED4A11095E5=2Ehtm =C2=A0softwar=
+e=20
+
+<div style=3D"font-size: 12px; font-family: Arial, Tahoma; text-align: =
+center; color: #606060; padding-top: 7px;" dir=3D"ltr">Sent&nbsp;with&n=
+bsp;<a href=3D"https://trailer=2Eweb-view=2Enet/nslinks/0XA7B345C74AEB8=
+2B7BA022830AA129F80AE751E8DF83E5340E4BFFD330542F007611C4BB201023B1BE9EA=
+E0C8757F801AA61B8B6A2E9AAA5F6AC8439C50C8F64C9483F19A0E95007CA3E04678B4F=
+9847189C04B2C8B1246637BD8DF5E5D5721ED94E37ED4A11095E5=2Ehtm" rel=3D"nof=
+ollow" style=3D"font-size: 12px; font-family: Arial, Tahoma; color: #08=
+c; text-decoration: none;">ActiveTrail</a>&nbsp;software</div>
+
+------820B6A32957441B98C86751112BBB7B7
+Content-type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1=2E0 Transitional//EN" "http:=
+//www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd"><html><head><=
+meta HTTP-EQUIV=3D'Content-Type' CONTENT=3D'text/html; charset=3Dutf-8'=
+><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1=2E0"><link href=3D'https://fonts=2Egoogleapis=2Ecom/css?family=3DA=
+ssistant:l,r,b,i,bi' rel=3D'stylesheet' type=3D'text/css' /><link href=3D=
+'https://fonts=2Egoogleapis=2Ecom/earlyaccess/opensanshebrew=2Ecss' rel=
+=3D'stylesheet' type=3D'text/css' /><style type=3D'text/css'>@media scr=
+een and (min-width: 600px) {=2Ebl-two-cols{display: inline-block !impor=
+tant; width: 295px !important; min-width: 295px !important;}}</style><s=
+tyle type=3D'text/css'>@media screen and (min-width: 600px) {=2Ebl-two-=
+cols =2Ebl-content-wrapper{width: 277px !important; min-width: 277px !i=
+mportant;}}</style><style type=3D'text/css'>@media screen and (min-widt=
+h: 600px) {=2Ebl-four-cols{display: inline-block !important; width: 145=
+px !important; min-width: 145px !important;}}</style><style type=3D'tex=
+t/css'>@media screen and (min-width: 600px) {=2Ebl-four-cols =2Ebl-cont=
+ent-wrapper{width: 127px !important; min-width: 127px !important;}}</st=
+yle><style type=3D'text/css'>@media screen and (min-width: 600px) {=2Eb=
+l-three-cols{display: inline-block !important; width: 195px !important;=
+ min-width: 195px !important;}}</style><style type=3D'text/css'>@media =
+screen and (min-width: 600px) {=2Ebl-three-cols =2Ebl-content-wrapper{w=
+idth: 177px !important; min-width: 177px !important;}}</style><style ty=
+pe=3D'text/css'>=2EExternalClass {width: 100%;}=2EExternalClass p, =2EE=
+xternalClass span, =2EExternalClass font, =2EExternalClass td {line-hei=
+ght: 100%}</style>                                                     =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                                       =
+                                                         </head><body l=
+eftmargin=3D'0' marginwidth=3D'0' topmargin=3D'0' marginheight=3D'0' of=
+fset=3D'0' style=3D'margin: 0;padding: 0; margin: 0;font-family: "Helve=
+tica Neue",Helvetica,Arial,sans-serif;font-size: 14px;line-height: 20px=
+;color: #333;background-color: #fff;'/><img src=3D"https://trailer=2Ewe=
+b-view=2Enet/Open/0X7986F91C555A5950D123301D3FD940387B9640E8EECB939E8C3=
+ABD9356C3BA1B16F95EB13E48CCAB=2Egif" width=3D"1" height=3D"1" border=3D=
+"0" style=3D"display:none" alt=3D""/><div style=3D'display:block !impor=
+tant;'><style>=2Epreheader { display:none !important; visibility:hidden=
+; opacity:0; color:transparent; height:0; width:0; }</style><span class=
+=3D'preheader' style=3D'display: none !important; visibility: hidden; o=
+pacity: 0; color: transparent; height: 0; width: 0;'>=D7=9B=D7=9C =D7=94=
+=D7=A1=D7=99=D7=95=D7=A8=D7=99=D7=9D =D7=95=D7=94=D7=98=D7=99=D7=95=D7=9C=
+=D7=99=D7=9D =D7=A9=D7=90=D7=A1=D7=95=D7=A8 =D7=9C=D7=9A =D7=9C=D7=A4=D7=
+=A1=D7=A4=D7=A1</span><table style=3D'width:100%'><tbody><tr width=3D"1=
+00%"><td width=3D"100%" style=3D"padding:0;"><div><div align=3D"center"=
+ class=3D"bt bl-content-removable bt-version-2" id=3D"template-body" st=
+yle=3D"width:100%;font-style:normal;font-weight:normal;font-family:aria=
+l, sans-serif;font-size:15px;color:#606060;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"bt-main-wrapper" style=3D"width:=
+100%;background-color:#ffffff;border-collapse:collapse;line-height:0px =
+!important;" align=3D"center" valign=3D"top" is-new-template=3D"0"><tbo=
+dy><tr><td class=3D"bt-margin" width=3D"100%" align=3D"center" style=3D=
+"margin:0px;padding:7px 10px 5px;" valign=3D"top"> <!--[if gte mso 9 | =
+(IE)]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" width=3D"600" style=3D"width:600px;"><tr><td valign=3D"top" wid=
+th=3D"600" style=3D"width:600px;"> <![endif]--><table class=3D"template=
+-main-table bt-background template-direction-right" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"width:100%;text-align:right;back=
+ground-color:#ffffff;min-width:0px;max-width:600px;" valign=3D"top" wid=
+th=3D"100%" template-direction=3D"rtl"><tbody><tr><td class=3D"bt-borde=
+r msoBorderWidthAlt" style=3D"width:100%;padding:0px;border:1px solid #=
+e5e5e5;" valign=3D"top" width=3D"100%"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:100%;" valign=3D"top" width=3D"100=
+%"><tbody><tr><td class=3D"bl-zone bl-zone-dropable" name=3D"FrameworkZ=
+one" style=3D"width:100%;" width=3D"100%" valign=3D"top" height=3D""><d=
+iv class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" style=3D"display:block;font-style:normal;fon=
+t-family:arial, sans-serif;font-size:15px;color:#606060;"><div class=3D=
+"bbc" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><t=
+body><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr b=
+bclr" style=3D"width:100%;min-width:100%;"><tbody><tr class=3D"bbcr-out=
+er"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text=
+-align:center;vertical-align:top;direction:ltr;padding-left:9px;padding=
+-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" va=
+lign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"mar=
+gin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"t=
+op" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-a=
+lign:top;padding-top:9px;padding-bottom:9px;width:100%;padding-left:9px=
+;padding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"=
+bbcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx =
+bl-in-edit-mode-single" style=3D"text-align:right;direction:rtl;line-he=
+ight:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-ser=
+if;font-size:15px;color:#606060;" data-gramm=3D"false"><div style=3D"te=
+xt-align: center;"><strong><a href=3D"https://trailer=2Eweb-view=2Enet/=
+Show/0X7986F91C555A5950D123301D3FD940387B9640E8EECB939E8C3ABD9356C3BA1B=
+16F95EB13E48CCAB=2Ehtm" style=3D"text-decoration:underline;word-wrap:br=
+eak-word !important;color:#00008C;border:0;outline:none;">=D7=9C=D7=90 =
+=D7=A8=D7=95=D7=90=D7=94 =D7=90=D7=AA =D7=94=D7=9E=D7=99=D7=99=D7=9C =D7=
+=9B=D7=9E=D7=95 =D7=A9=D7=A6=D7=A8=D7=99=D7=9A? =D7=9C=D7=97=D7=99=D7=A6=
+=D7=94 =D7=9B=D7=90=D7=9F =D7=95=D7=96=D7=94 =D7=99=D7=A1=D7=AA=D7=93=D7=
+=A8</a></strong></div></div></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></div></di=
+v><div class=3D"bb bbi" name=3D"image" style=3D"width: 100%; min-width:=
+ 100%;" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-w=
+idth:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D=
+"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;"><tbody><tr clas=
+s=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides n=
+sp" style=3D"text-align:center;vertical-align:top;padding-right:0px !im=
+portant;padding-left:0px !important;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" wid=
+th=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:100%;"><t=
+body><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides nsp" width=3D=
+"100%" style=3D"vertical-align:top;padding-top:7px;padding-bottom:6px;w=
+idth:100%;padding-right:0px !important;padding-left:0px !important;"><d=
+iv class=3D"bbci bbcii bl-in-edit-mode-single" style=3D"text-align:left=
+;font-style:normal;font-family:arial, sans-serif;font-size:15px;color:#=
+606060;"><a href=3D"https://trailer=2Eweb-view=2Enet/Links/0XA305FAC028=
+3152136267F1C565799EB04C62C381324FDF5011157A5C9B6A9743268D76D43F6BE92C2=
+B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" =
+target=3D"_blank" style=3D"text-decoration:none;word-wrap:break-word !i=
+mportant;color:#00008C;border:0;outline:none;"><img border=3D"0" src=3D=
+"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/Edited_Photos/BIGTIME_=
+60__LOGO_4_1_1_2_3_4=2Epng?dummy=3D8172" width=3D"180" alt=3D"Green_Pho=
+to_=2E=2E=2E" style=3D"display: inline; max-width: 180px; width: 100%;"=
+ max-width-back=3D"200" class=3D""></a></div></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></div></div><div cl=
+ass=3D"bb bb-menu" name=3D"menu" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" style=3D"display:block;line-height:1=2E2 !imp=
+ortant;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;backgrou=
+nd-color:#e5e5e5;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" c=
+lass=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-a=
+lign:top;padding-left:9px;padding-right:9px;"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-co=
+lumn" width=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:=
+100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" w=
+idth=3D"100%" style=3D"vertical-align:top;padding-top:9px;padding-botto=
+m:9px;width:100%;padding-left:9px;padding-right:9px;"><table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" s=
+tyle=3D";"><tbody><tr><td class=3D"bbcici" style=3D"direction:rtl;"><di=
+v class=3D"bbci bbci-menu bl-in-edit-mode-single" style=3D"font-style:n=
+ormal;font-family:arial, sans-serif;font-size:15px;color:#606060;"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%=
+;"><tbody><tr><td class=3D"bl-menu-item-container" style=3D"text-align:=
+center;direction:rtl;"><span class=3D"menu-item" style=3D"display:inlin=
+e-block;"><a href=3D"https://trailer=2Eweb-view=2Enet/Links/0XC6967722C=
+902EEA4231FC28F421E86881CD6CEB074580DC878C774A663EB9F4C0A25490626395EB7=
+2B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm"=
+ style=3D"text-decoration:none;font-weight:normal;font-style:normal;col=
+or:#000000;background-color:rgba(0, 0, 0, 0);font-size:18px;font-family=
+:Assistant;word-wrap:break-word !important;border:0;outline:none;">=D7=94=
+=D7=98=D7=91=D7=95=D7=AA =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D</a> <span class=3D"bl-menu-space">&nb=
+sp;&nbsp;&nbsp;&nbsp;</span><span class=3D"bl-menu-break " sep-type=3D"=
+line" style=3D"color:#000000">|</span><span class=3D"bl-menu-space">&nb=
+sp;&nbsp;&nbsp;&nbsp;</span></span> <span class=3D"menu-item" style=3D"=
+display:inline-block;"><a href=3D"https://trailer=2Eweb-view=2Enet/Link=
+s/0X5C58FDC350CC6DD5D684E20D33588215DB53F7D1A997B5A8BB2BC5C44683DFC6EDA=
+0024FE574EBF52B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F=
+38B849=2Ehtm" style=3D"text-decoration:none;font-weight:normal;font-sty=
+le:normal;color:#000000;background-color:rgba(0, 0, 0, 0);font-size:18p=
+x;font-family:Assistant;word-wrap:break-word !important;border:0;outlin=
+e:none;">=D7=A2=D7=93=D7=99=D7=99=D7=9F =D7=9C=D7=90 =D7=A8=D7=A9=D7=95=
+=D7=9D? =D7=9C=D7=97=D7=A5 =D7=9B=D7=90=D7=9F</a></span></td></tr></tbo=
+dy></table></div></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></div></div><div clas=
+s=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);di=
+splay:block;font-style:normal;font-family:arial, sans-serif;font-size:1=
+5px;color:#606060;"><div class=3D"bbc" contenteditable=3D"false"><table=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D=
+"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" st=
+yle=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%=
+;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D=
+"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;ver=
+tical-align:top;direction:ltr;padding-left:9px;padding-right:9px;"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" clas=
+s=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;vert=
+ical-align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw =
+bl-padding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-=
+top:3px;padding-bottom:0px;width:100%;padding-left:9px;padding-right:9p=
+x;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bb=
+cic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"=
+rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode=
+-single" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-=
+height:8px;font-style:normal;font-family:arial, sans-serif;font-size:15=
+px;color:#606060;"></div></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></div></div><=
+div class=3D"bb bb-articleright" name=3D"articleright" style=3D"width: =
+100%; min-width: 100%; display: block; background-color: rgba(255, 243,=
+ 165, 0);" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;mi=
+n-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-co=
+lor:#f9f9f9;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D=
+"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-align:to=
+p;padding-left:9px;padding-right:9px;"><table align=3D"left" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bb=
+c-new-column" width=3D"282" style=3D"width:282px;vertical-align:top;dis=
+play:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-paddi=
+ng-2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;p=
+adding-bottom:9px;width:264px;padding-left:9px;padding-right:9px;"><div=
+ class=3D"bbci bbcii" style=3D"text-align:center;font-style:normal;font=
+-family:arial, sans-serif;font-size:15px;color:#606060;"><a href=3D"htt=
+ps://trailer=2Eweb-view=2Enet/Links/0X41D66BB650059D6BCDB956D83CF5F2ED6=
+56FDEB850736AC83BB5F132429B920F3F971D93D1BAF1792B7FB7AB6764E43AA9D47038=
+1807A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_blank" style=
+=3D"text-decoration:none;color:inherit;word-wrap:break-word !important;=
+border:0;outline:none;" data-link-type=3D"url"><img border=3D"0" src=3D=
+"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________(28)_2=2E=
+jpg?cache=3D1673174506152" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" =
+style=3D"display: inline; max-width: 264px; width: 264px;"></a></div></=
+td></tr></tbody></table><table align=3D"right" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" =
+width=3D"282" style=3D"width:282px;vertical-align:top;display:inline-bl=
+ock;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" wi=
+dth=3D"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:=
+9px;width:264px;padding-left:9px;padding-right:9px;" align=3D"left"><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" wi=
+dth=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" st=
+yle=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D"text-=
+align:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:n=
+ormal;font-family:arial, sans-serif;font-size:15px;color:#606060;" data=
+-gramm=3D"false"><h2 style=3D"display:block;margin:0;padding:0;font-wei=
+ght:bold;background-color:transparent;border:0px;color:#606060 !importa=
+nt;font-size:26px;letter-spacing:normal !important;line-height:1=2E2;">=
+<span style=3D"color:#000000;"><span style=3D"font-size:20px;"><span st=
+yle=3D"font-family:'Open Sans Hebrew';">=D7=A1=D7=95=D7=A4=D7=A9=D7=91=D7=
+=95=D7=A2 =D7=9E=D7=90=D7=99=D7=98=D7=9C=D7=99=D7=94 =D7=91=D7=90=D7=94=
+=D7=91=D7=94</span></span></span></h2></div></td></tr></tbody></table><=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" =
+width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" =
+style=3D"background-color:transparent;padding-top:9px;direction:rtl;"><=
+div class=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl;line-=
+height:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-s=
+erif;font-size:15px;color:#606060;" data-gramm=3D"false"><div><span sty=
+le=3D"font-size:18px;"><font color=3D"#ff0000" face=3D"open sans hebrew=
+"><b>=D7=90=D7=AA=D7=9D =D7=97=D7=99=D7=99=D7=91=D7=99=D7=9D =D7=9C=D7=A2=
+=D7=A6=D7=9E=D7=9B=D7=9D</b></font></span><br><span style=3D"color:#000=
+000;"><font face=3D"open sans hebrew"><span style=3D"font-size: 18px;">=
+<b><span style=3D"background-color:#f9f9f9;">=D7=94=D7=98=D7=91=D7=94 =D7=
+=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=
+=9D</span></b></span></font></span><br><font color=3D"#000000" face=3D"=
+open sans hebrew"><span style=3D"font-size: 18px;">=D7=A1=D7=95=D7=A3 =D7=
+=A9=D7=91=D7=95=D7=A2 =D7=A9=D7=9C =D7=A4=D7=95=D7=9C=D7=A7=D7=9C=D7=95=
+=D7=A8 =D7=90=D7=99=D7=98=D7=9C=D7=A7=D7=99, =D7=A1=D7=99=D7=A4=D7=95=D7=
+=A8=D7=99 =D7=90=D7=94=D7=91=D7=94, =D7=9E=D7=95=D7=A4=D7=A2 =D7=A4=D7=A1=
+=D7=98=D7=99=D7=91=D7=9C =D7=A1=D7=9F =D7=A8=D7=9E=D7=95, =D7=A7=D7=95=D7=
+=9C=D7=99=D7=A0=D7=A8=D7=99=D7=94 =D7=9E=D7=A9=D7=95=D7=91=D7=97=D7=AA =
+=D7=95=D7=97=D7=91=D7=A8=D7=95=D7=AA=D7=90 =D7=A0=D7=94=D7=93=D7=A8=D7=AA=
+ =D7=91=D7=A1=D7=95=D7=95=D7=99=D7=98=D7=95=D7=AA =D7=94=D7=9E=D7=A4=D7=
+=A0=D7=A7=D7=95=D7=AA =D7=A9=D7=9C =D7=9E=D7=9C=D7=95=D7=9F =D7=95=D7=A8=
+=D7=98 =D7=91=D7=A0=D7=AA=D7=A0=D7=99=D7=94</span></font><br>&nbsp;</di=
+v><div></div><div><span style=3D"font-size:17px;"><b style=3D"font-size=
+: 18px; color: #000000; font-family: &quot;open sans hebrew&quot;; text=
+-align: center; background-color: transparent;">=D7=94' - =D7=A9', 9-11=
+=2E2</b></span></div></div></td></tr></tbody></table><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;" class=3D"bb=
+cic"><tbody><tr><td align=3D"left" class=3D"bbcici" style=3D"display:ta=
+ble-cell;padding-top:9px;direction:rtl;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"border-radius:0px;background-color:#=
+ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"center" valign=3D"middl=
+e" style=3D"font-size:16px;padding:12px;" class=3D""><div class=3D"bbci=
+ bbcib" style=3D"min-width:1px;min-height:16px;display:block;line-heigh=
+t:100%;text-align:center;text-decoration:none;direction:rtl;font-style:=
+normal;font-family:arial, sans-serif;font-size:15px;color:#606060;" dat=
+a-gramm=3D"false"><strong><span style=3D"font-size:17px;"><font face=3D=
+"open sans hebrew"><a data-link-type=3D"url" href=3D"https://trailer=2E=
+web-view=2Enet/Links/0XF10CFC99E046E2869C8288C4EB0A9EA3C28D613E5AAB64B3=
+1FF49E5F1340804A9C658B172D327FD32B7FB7AB6764E43AA9D470381807A733E9A674A=
+945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:none;color:#f=
+fffff;word-wrap:break-word !important;border:0;outline:none;" target=3D=
+"_blank"><span style=3D"color:#FFFFFF;">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =
+=D7=A0=D7=95=D7=A1=D7=A3</span></a></font></span></strong></div></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></div></div><div cl=
+ass=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);=
+display:block;font-style:normal;font-family:arial, sans-serif;font-size=
+:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D"false"><tab=
+le width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr=
+" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:=
+100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td val=
+ign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:cent=
+er;vertical-align:top;direction:ltr;padding-left:9px;padding-right:9px;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top=
+" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px aut=
+o;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D=
+"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-align:top;pad=
+ding-top:3px;padding-bottom:0px;width:100%;padding-left:9px;padding-rig=
+ht:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mod=
+e-single" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min=
+-height:8px;font-style:normal;font-family:arial, sans-serif;font-size:1=
+5px;color:#606060;"></div></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></div></div>=
+<div class=3D"bb bb-articleright" name=3D"articleright" style=3D"width:=
+ 100%; min-width: 100%; display: block;" width=3D"100%" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0"><div class=3D"bbc" contenteditable=3D=
+"false"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bb=
+c-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100=
+%;min-width:100%;background-color:#f9f9f9;"><tbody><tr class=3D"bbcr-ou=
+ter"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"tex=
+t-align:center;vertical-align:top;padding-left:9px;padding-right:9px;">=
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"282" style=3D"wi=
+dth:282px;vertical-align:top;display:inline-block;"><tbody><tr><td vali=
+gn=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"264" style=3D"vert=
+ical-align:top;padding-top:9px;padding-bottom:9px;width:264px;padding-l=
+eft:9px;padding-right:9px;"><div class=3D"bbci bbcii" style=3D"text-ali=
+gn:center;font-style:normal;font-family:arial, sans-serif;font-size:15p=
+x;color:#606060;"><a href=3D"https://trailer=2Eweb-view=2Enet/Links/0X1=
+186533709884968A60ACC219B9FAF1FE9C9BD940CA3D792BD8C8A63A48F0CC9FC84F96E=
+A84D0E432B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F38B84=
+9=2Ehtm" target=3D"_blank" style=3D"text-decoration:none;color:inherit;=
+word-wrap:break-word !important;border:0;outline:none;" data-link-type=3D=
+"url"><img border=3D"0" src=3D"https://cdn-media=2Eweb-view=2Enet/i/jtw=
+xa8hcsu/_____________-_2022-12-11T105547=2E576=2Ejpg?cache=3D1670748958=
+471" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" style=3D"display: inli=
+ne; max-width: 264px; width: 264px;"></a></div></td></tr></tbody></tabl=
+e><table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"282" style=3D=
+"width:282px;vertical-align:top;display:inline-block;"><tbody><tr><td v=
+align=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"264" style=3D"v=
+ertical-align:top;padding-top:9px;padding-bottom:9px;width:264px;paddin=
+g-left:9px;padding-right:9px;" align=3D"left"><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D"=
+;"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;"=
+><div class=3D"bbci bbcitx bbcitt" style=3D"text-align:right;direction:=
+rtl;line-height:1=2E2;min-height:8px;font-style:normal;font-family:aria=
+l, sans-serif;font-size:15px;color:#606060;" data-gramm=3D"false"><h2 s=
+tyle=3D"display:block;margin:0;padding:0;font-weight:bold;background-co=
+lor:transparent;border:0px;color:#606060 !important;font-size:26px;lett=
+er-spacing:normal !important;line-height:1=2E2;"></h2><div></div><div><=
+font color=3D"#15171f" face=3D"Open Sans Hebrew"><span style=3D"font-si=
+ze: 20px;"><b>=D7=93=D7=9C=D7=99=D7=99=D7=AA =D7=90=D7=9C =D7=9B=D7=A8=D7=
+=9E=D7=9C</b></span></font></div><div></div><div></div></div></td></tr>=
+</tbody></table><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbc=
+ici" dir=3D"rtl" style=3D"background-color:transparent;padding-top:9px;=
+direction:rtl;"><div class=3D"bbci bbcitx" style=3D"text-align:right;di=
+rection:rtl;line-height:1=2E2;min-height:8px;font-style:normal;font-fam=
+ily:arial, sans-serif;font-size:15px;color:#606060;" data-gramm=3D"fals=
+e"><div><span style=3D"font-size:20px;"><span style=3D"font-size:18px;"=
+><font color=3D"#ed1a3b" face=3D"open sans hebrew"><b>=D7=9E=D7=A7=D7=95=
+=D7=9E=D7=95=D7=AA =D7=90=D7=97=D7=A8=D7=95=D7=A0=D7=99=D7=9D!</b></fon=
+t></span><br><font color=3D"#000000" face=3D"open sans hebrew"><span st=
+yle=3D"font-size:18px;"><strong>=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=
+=A0=D7=95=D7=99=D7=99 =D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=9D</stron=
+g></span></font></span><br><span style=3D"font-size:20px;"><font color=3D=
+"#000000" face=3D"open sans hebrew"><span style=3D"font-size:18px;">=D7=
+=A1=D7=99=D7=95=D7=A8 =D7=98=D7=A2=D7=99=D7=9E=D7=95=D7=AA =D7=A9=D7=9C=
+ =D7=90=D7=95=D7=9B=D7=9C =D7=90=D7=95=D7=AA=D7=A0=D7=98=D7=99<br>=D7=95=
+=D7=9E=D7=A1=D7=95=D7=A8=D7=AA=D7=99 =D7=94=D7=9E=D7=A9=D7=9C=D7=91 =D7=
+=92=D7=9D =D7=A1=D7=99=D7=A4=D7=95=D7=A8=D7=99=D7=9D,<br>=D7=90=D7=A0=D7=
+=A9=D7=99=D7=9D =D7=95=D7=A1=D7=9E=D7=98=D7=90=D7=95=D7=AA =D7=A0=D7=A1=
+=D7=AA=D7=A8=D7=95=D7=AA =D7=91=D7=9B=D7=A4=D7=A8<br>=D7=94=D7=93=D7=A8=
+=D7=95=D7=96=D7=99 =D7=93=D7=9C=D7=99=D7=99=D7=AA =D7=90=D7=9C =D7=9B=D7=
+=A8=D7=9E=D7=9C</span></font></span></div><div></div><div><span style=3D=
+"font-size:17px;"><strong style=3D"text-align: center; background-color=
+: transparent;"><font color=3D"#000000" face=3D"open sans hebrew">=D7=99=
+=D7=95=D7=9D =D7=95', 13=2E1</font></strong></span></div><div style=3D"=
+text-align: center;"></div></div></td></tr></tbody></table><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;" class=
+=3D"bbcic"><tbody><tr><td align=3D"left" class=3D"bbcici" style=3D"disp=
+lay:table-cell;padding-top:9px;direction:rtl;"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"border-radius:0px;background-c=
+olor:#ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"center" valign=3D=
+"middle" style=3D"font-size:16px;padding:12px;" class=3D""><div class=3D=
+"bbci bbcib" style=3D"min-width:1px;min-height:16px;display:block;line-=
+height:100%;text-align:center;text-decoration:none;direction:rtl;font-s=
+tyle:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;=
+" data-gramm=3D"false"><span style=3D"font-size:20px;"><strong><font fa=
+ce=3D"open sans hebrew"><a data-link-type=3D"url" href=3D"https://trail=
+er=2Eweb-view=2Enet/Links/0XAC51ABB1163E6BF4F26FD57C04BD24F49B0732BB893=
+11C2736ADB08B328B88E772994263C98FE0C32B7FB7AB6764E43AA9D470381807A733E9=
+A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:none;col=
+or:#ffffff;word-wrap:break-word !important;border:0;outline:none;" targ=
+et=3D"_blank">=D7=9C=D7=94=D7=A8=D7=A9=D7=9E=D7=94</a></font></strong><=
+/span></div></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>=
+</div></div><div class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:rgba=
+(255, 243, 165, 0);display:block;font-style:normal;font-family:arial, s=
+ans-serif;font-size:15px;color:#606060;"><div class=3D"bbc" contentedit=
+able=3D"false"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td clas=
+s=3D"bbc-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"wi=
+dth:100%;min-width:100%;background-color:#ffffff;"><tbody><tr class=3D"=
+bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=
+=3D"text-align:center;vertical-align:top;direction:ltr;padding-left:9px=
+;padding-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D=
+"margin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D=
+"top" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical=
+-align:top;padding-top:3px;padding-bottom:0px;width:100%;padding-left:9=
+px;padding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=
+=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbc=
+itx bl-in-edit-mode-single" style=3D"text-align:right;direction:rtl;lin=
+e-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans=
+-serif;font-size:15px;color:#606060;"></div></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></div></div><div class=3D"bb bbi" name=3D"image" style=3D"width: =
+100%; min-width: 100%;" width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0"><div class=3D"bbc" contenteditable=3D"false"><table wi=
+dth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"=
+width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" sty=
+le=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;">=
+<tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-pa=
+dding-2-sides nsp" style=3D"text-align:center;vertical-align:top;paddin=
+g-right:0px !important;padding-left:0px !important;"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc=
+-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-align:top=
+;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-s=
+ides nsp" width=3D"100%" style=3D"vertical-align:top;padding-top:9px;pa=
+dding-bottom:9px;width:100%;padding-right:0px !important;padding-left:0=
+px !important;"><div class=3D"bbci bbcii bl-in-edit-mode-single" style=3D=
+"text-align:center;font-style:normal;font-family:arial, sans-serif;font=
+-size:15px;color:#606060;"><a href=3D"https://trailer=2Eweb-view=2Enet/=
+Links/0X51AC8FA40B1507CCD2DC181EB191E2EB84FA040D107276F09B2493D0263D699=
+7A44EEC16C2F3A02E2B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16=
+487F38B849=2Ehtm" target=3D"_blank" style=3D"text-decoration:none;color=
+:inherit;word-wrap:break-word !important;border:0;outline:none;" data-l=
+ink-type=3D"url"><img border=3D"0" src=3D"https://cdn-media=2Eweb-view=2E=
+net/i/jtwxa8hcsu/_____________________1100_300_(1100_x_500_px)_(12)=2Ep=
+ng?cache=3D1673164123812" style=3D"display: inline; max-width: 600px; w=
+idth: 100%;" width=3D"600" alt=3D"healthsmilem=2E=2E=2E" max-width-back=
+=3D"600"></a></div></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table></div></div><div class=3D"bb bbt" name=3D"tex=
+t" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"background-color:rgba(255, 243, 165, 0);display:block;font-style:n=
+ormal;font-family:arial, sans-serif;font-size:15px;color:#606060;"><div=
+ class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:=
+100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbc=
+r bbcfr bbclr" style=3D"width:100%;min-width:100%;background-color:#fff=
+fff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri=
+ bl-padding-2-sides" style=3D"text-align:center;vertical-align:top;dire=
+ction:ltr;padding-left:9px;padding-right:9px;"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-c=
+olumn" width=3D"100%" style=3D"margin:0px auto;vertical-align:top;width=
+:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" =
+width=3D"100%" style=3D"vertical-align:top;padding-top:3px;padding-bott=
+om:0px;width:100%;padding-left:9px;padding-right:9px;"><table cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" =
+style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direct=
+ion:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-single" style=3D"te=
+xt-align:right;direction:rtl;line-height:1=2E2;min-height:8px;font-styl=
+e:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;"><=
+/div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></div></div><div class=3D"bb bb-a=
+rticleright" name=3D"articleright" style=3D"width: 100%; min-width: 100=
+%; display: block; background-color: rgba(255, 243, 165, 0);" width=3D"=
+100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><div class=3D"bb=
+c" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><tbod=
+y><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbcl=
+r" style=3D"width:100%;min-width:100%;background-color:#f9f9f9;"><tbody=
+><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-=
+2-sides" style=3D"text-align:center;vertical-align:top;padding-left:9px=
+;padding-right:9px;"><table align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" widt=
+h=3D"282" style=3D"width:282px;vertical-align:top;display:inline-block;=
+"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D=
+"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:9px;wi=
+dth:264px;padding-left:9px;padding-right:9px;"><div class=3D"bbci bbcii=
+" style=3D"text-align:center;font-style:normal;font-family:arial, sans-=
+serif;font-size:15px;color:#606060;"><a href=3D"https://trailer=2Eweb-v=
+iew=2Enet/Links/0XF9F1E15909B2EC42ECA2A91F628654C47B09BAA264F52B33BE2F2=
+0B61E55C11FDD978C5E73FC83312B7FB7AB6764E43AA9D470381807A733E9A674A94500=
+1D28679E16487F38B849=2Ehtm" target=3D"_blank" style=3D"text-decoration:=
+none;color:inherit;word-wrap:break-word !important;border:0;outline:non=
+e;" data-link-type=3D"url"><img border=3D"0" src=3D"https://cdn-media=2E=
+web-view=2Enet/i/jtwxa8hcsu/_____________-_2022-12-11T110616=2E989=2Ejp=
+g?cache=3D1670749592529" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" st=
+yle=3D"display: inline; max-width: 264px; width: 264px;"></a></div></td=
+></tr></tbody></table><table align=3D"right" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" wid=
+th=3D"282" style=3D"width:282px;vertical-align:top;display:inline-block=
+;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=
+=3D"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:9px=
+;width:264px;padding-left:9px;padding-right:9px;" align=3D"left"><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=
+=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=
+=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D"text-ali=
+gn:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:norm=
+al;font-family:arial, sans-serif;font-size:15px;color:#606060;" data-gr=
+amm=3D"false"><h2 style=3D"display:block;margin:0;padding:0;font-weight=
+:bold;background-color:transparent;border:0px;color:#606060 !important;=
+font-size:26px;letter-spacing:normal !important;line-height:1=2E2;"></h=
+2><div></div><div><span style=3D"font-size:18px;"><strong><span style=3D=
+"font-family:'Open Sans Hebrew';"><span style=3D"color: #15171f;">=D7=99=
+=D7=95=D7=93=D7=A4=D7=AA =D7=90=D7=A8=D7=99=D7=92=D7=99=D7=9D =D7=95=D7=
+=A2=D7=A8=D7=92=D7=95=D7=A0=D7=95=D7=AA</span></span></strong></span></=
+div><div></div><div></div></div></td></tr></tbody></table><table cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100=
+%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"bac=
+kground-color:transparent;padding-top:9px;direction:rtl;"><div class=3D=
+"bbci bbcitx" style=3D"text-align:right;direction:rtl;line-height:1=2E2=
+;min-height:8px;font-style:normal;font-family:arial, sans-serif;font-si=
+ze:15px;color:#606060;" data-gramm=3D"false"><div><span style=3D"font-s=
+ize:18px;"><span style=3D"color:#ef1a3b;"><font face=3D"open sans hebre=
+w"><strong>=D7=97=D7=91=D7=9C =D7=90=D7=A8=D7=A5 =D7=A0=D7=A4=D7=9C=D7=90=
+ - =D7=92=D7=95=D7=A9 =D7=A9=D7=92=D7=91</strong></font></span><br><spa=
+n style=3D"color: #000000; font-family: &quot;open sans hebrew&quot;;">=
+<strong>90 =E2=82=AA =D7=91=D7=9C=D7=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=
+=99=D7=99=D7=9D</strong><br>=D7=A1=D7=99=D7=95=D7=A8 =D7=9E=D7=A8=D7=AA=
+=D7=A7 =D7=95=D7=9E=D7=A2=D7=A9=D7=99=D7=A8 =D7=A2=D7=9D =D7=91=D7=9F<b=
+r>=D7=94=D7=9E=D7=A7=D7=95=D7=9D =D7=A2=D7=9C =D7=94=D7=94=D7=99=D7=A1=D7=
+=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=A2=D7=9C =D7=94=D7=94=D7=95=D7=95=
+=D7=94 =D7=91=D7=97=D7=91=D7=9C =D7=90=D7=A8=D7=A5 =D7=A0=D7=A4=D7=9C=D7=
+=90 =D7=96=D7=94, =D7=9B=D7=95=D7=9C=D7=9C =D7=91=D7=99=D7=A7=D7=95=D7=A8=
+<br>=D7=91=D7=A1=D7=98=D7=95=D7=93=D7=99=D7=95 =D7=A9=D7=9C =D7=90=D7=95=
+=D7=A8=D7=92=D7=AA=2E</span></span><br><br><span style=3D"font-size:20p=
+x;"><font color=3D"#000000" face=3D"open sans hebrew"><span style=3D"di=
+splay: none;">&nbsp;</span></font></span></div><div></div><div><span st=
+yle=3D"font-size:18px;"><strong style=3D"text-align: center; background=
+-color: transparent;"><font color=3D"#000000" face=3D"open sans hebrew"=
+>=D7=99=D7=95=D7=9D =D7=A9', 21=2E1</font></strong></span></div><div st=
+yle=3D"text-align: center;"></div></div></td></tr></tbody></table><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;=
+" class=3D"bbcic"><tbody><tr><td align=3D"left" class=3D"bbcici" style=3D=
+"display:table-cell;padding-top:9px;direction:rtl;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"border-radius:0px;backgro=
+und-color:#ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"center" vali=
+gn=3D"middle" style=3D"font-size:16px;padding:12px;" class=3D""><div cl=
+ass=3D"bbci bbcib" style=3D"min-width:1px;min-height:16px;display:block=
+;line-height:100%;text-align:center;text-decoration:none;direction:rtl;=
+font-style:normal;font-family:arial, sans-serif;font-size:15px;color:#6=
+06060;" data-gramm=3D"false"><span style=3D"font-size:17px;"><strong><f=
+ont face=3D"open sans hebrew"><a data-link-type=3D"url" href=3D"https:/=
+/trailer=2Eweb-view=2Enet/Links/0X7655E4D47914E1D8FC99491A7D31265E0385A=
+F06F1E3BB5BD41DBB05D346D44639E4810FD08D92BD2B7FB7AB6764E43AA9D470381807=
+A733E9A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:no=
+ne;color:#ffffff;word-wrap:break-word !important;border:0;outline:none;=
+" target=3D"_blank">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=
+=A3</a></font></strong></span></div></td></tr></tbody></table></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table></div></div><div class=3D"bb bbt" name=3D"text"=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D=
+"background-color:rgba(255, 243, 165, 0);display:block;font-style:norma=
+l;font-family:arial, sans-serif;font-size:15px;color:#606060;"><div cla=
+ss=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"=
+><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcf=
+r bbclr" style=3D"width:100%;min-width:100%;background-color:#ffffff;">=
+<tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-pa=
+dding-2-sides" style=3D"text-align:center;vertical-align:top;direction:=
+ltr;padding-left:9px;padding-right:9px;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column"=
+ width=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:100%;=
+"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D=
+"100%" style=3D"vertical-align:top;padding-top:3px;padding-bottom:0px;w=
+idth:100%;padding-left:9px;padding-right:9px;"><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D=
+";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;=
+"><div class=3D"bbci bbcitx bl-in-edit-mode-single" style=3D"text-align=
+:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:normal=
+;font-family:arial, sans-serif;font-size:15px;color:#606060;"></div></t=
+d></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table></div></div><div class=3D"bb bb-articleri=
+ght" name=3D"articleright" style=3D"width: 100%; min-width: 100%; displ=
+ay: block; background-color: rgba(255, 243, 165, 0);" width=3D"100%" ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0"><div class=3D"bbc" conte=
+nteditable=3D"false"><table width=3D"100%" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><t=
+d class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D=
+"width:100%;min-width:100%;background-color:#f9f9f9;"><tbody><tr class=3D=
+"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" styl=
+e=3D"text-align:center;vertical-align:top;padding-left:9px;padding-righ=
+t:9px;"><table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"282" sty=
+le=3D"width:282px;vertical-align:top;display:inline-block;"><tbody><tr>=
+<td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"264" style=
+=3D"vertical-align:top;padding-top:9px;padding-bottom:9px;width:264px;p=
+adding-left:9px;padding-right:9px;"><div class=3D"bbci bbcii" style=3D"=
+text-align:center;font-style:normal;font-family:arial, sans-serif;font-=
+size:15px;color:#606060;"><a href=3D"https://trailer=2Eweb-view=2Enet/L=
+inks/0XE39F2AD1330626615D2A6FE6E2B8E1E94B15244DF6F4853E9B840173FBF40011=
+2712F129431B6B622B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E164=
+87F38B849=2Ehtm" target=3D"_blank" style=3D"text-decoration:none;color:=
+inherit;word-wrap:break-word !important;border:0;outline:none;" data-li=
+nk-type=3D"url"><img border=3D"0" src=3D"https://cdn-media=2Eweb-view=2E=
+net/i/jtwxa8hcsu/_____________(62)_0=2Ejpg?cache=3D1671903260018" width=
+=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" style=3D"display: inline; max-wi=
+dth: 264px; width: 264px;"></a></div></td></tr></tbody></table><table a=
+lign=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D=
+"top" class=3D"bbccl bbc-new-column" width=3D"282" style=3D"width:282px=
+;vertical-align:top;display:inline-block;"><tbody><tr><td valign=3D"top=
+" class=3D"bcw bl-padding-2-sides" width=3D"264" style=3D"vertical-alig=
+n:top;padding-top:9px;padding-bottom:9px;width:264px;padding-left:9px;p=
+adding-right:9px;" align=3D"left"><table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr>=
+<td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D=
+"bbci bbcitx bbcitt" style=3D"text-align:right;direction:rtl;line-heigh=
+t:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;=
+font-size:15px;color:#606060;" data-gramm=3D"false"><h2 style=3D"displa=
+y:block;margin:0;padding:0;font-weight:bold;background-color:transparen=
+t;border:0px;color:#606060 !important;font-size:26px;letter-spacing:nor=
+mal !important;line-height:1=2E2;"></h2><div></div><div><span style=3D"=
+font-size:18px;"><strong><span style=3D"font-family:'Open Sans Hebrew';=
+"><span style=3D"color: #15171f;">=D7=9E=D7=92=D7=9C=D7=95=D7=AA =D7=9C=
+=D7=92=D7=90=D7=95=D7=9C=D7=94 - =D7=99=D7=94=D7=93=D7=95=D7=AA =D7=9C=D7=
+=95=D7=91</span></span></strong></span></div><div></div><div></div></di=
+v></td></tr></tbody></table><table cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td =
+class=3D"bbcici" dir=3D"rtl" style=3D"background-color:transparent;padd=
+ing-top:9px;direction:rtl;"><div class=3D"bbci bbcitx" style=3D"text-al=
+ign:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:nor=
+mal;font-family:arial, sans-serif;font-size:15px;color:#606060;" data-g=
+ramm=3D"false"><div><span style=3D"font-size:18px;"><span style=3D"colo=
+r:#ef1a3b;"><font face=3D"open sans hebrew"><strong>=D7=A1=D7=99=D7=95=D7=
+=A8 =D7=97=D7=95=D7=95=D7=99=D7=AA=D7=99 =D7=95=D7=9E=D7=99=D7=95=D7=97=
+=D7=93</strong></font></span><br><span style=3D"color: #000000; font-fa=
+mily: &quot;open sans hebrew&quot;;"><strong>=D7=94=D7=98=D7=91=D7=94 =D7=
+=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=
+=9D</strong><br>=D7=A1=D7=99=D7=95=D7=A8 =D7=9E=D7=A4=D7=AA=D7=99=D7=A2=
+ =D7=91=D7=90=D7=95=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=94 =D7=A9=D7=91=D7=
+=95 =D7=A0=D7=92=D7=99=D7=A2 =D7=90=D7=9C =D7=A8=D7=90=D7=A9=D7=99=D7=AA=
+ =D7=94=D7=A2=D7=9C=D7=99=D7=99=D7=94 =D7=9E=D7=9C=D7=95=D7=91,&nbsp;=D7=
+=A0=D7=91=D7=A7=D7=A8 =D7=91=D7=9E=D7=A8=D7=9B=D7=96 =D7=9E=D7=95=D7=A8=
+=D7=A9=D7=AA =D7=99=D7=94=D7=93=D7=95=D7=AA =D7=9C=D7=95=D7=91 =D7=95=D7=
+=A0=D7=98=D7=A2=D7=9D =D7=9E=D7=94=D7=9E=D7=90=D7=A4=D7=99=D7=9D =D7=A9=
+=D7=9E=D7=9B=D7=99=D7=A0=D7=99=D7=9D =D7=97=D7=91=D7=A8=D7=99 =D7=94=D7=
+=A7=D7=94=D7=99=D7=9C=D7=94=2E</span></span><br><br><span style=3D"font=
+-size:20px;"><font color=3D"#000000" face=3D"open sans hebrew"><span st=
+yle=3D"display: none;">&nbsp;</span></font></span></div><div></div><div=
+><span style=3D"font-size:18px;"><strong style=3D"text-align: center; b=
+ackground-color: transparent;"><font color=3D"#000000" face=3D"open san=
+s hebrew">=D7=99=D7=95=D7=9D =D7=91', 23=2E1</font></strong></span></di=
+v><div style=3D"text-align: center;"></div></div></td></tr></tbody></ta=
+ble><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"wi=
+dth:100%;" class=3D"bbcic"><tbody><tr><td align=3D"left" class=3D"bbcic=
+i" style=3D"display:table-cell;padding-top:9px;direction:rtl;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-radius:=
+0px;background-color:#ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"c=
+enter" valign=3D"middle" style=3D"font-size:16px;padding:12px;" class=3D=
+""><div class=3D"bbci bbcib" style=3D"min-width:1px;min-height:16px;dis=
+play:block;line-height:100%;text-align:center;text-decoration:none;dire=
+ction:rtl;font-style:normal;font-family:arial, sans-serif;font-size:15p=
+x;color:#606060;" data-gramm=3D"false"><span style=3D"font-size:17px;">=
+<strong><font face=3D"open sans hebrew"><a data-link-type=3D"url" href=3D=
+"https://trailer=2Eweb-view=2Enet/Links/0X7FA3B08C04DD5763851A053B41F40=
+1A29C4ACAE3628A31ABF4ABA5A0E0931143C6487B166145E8792B7FB7AB6764E43AA9D4=
+70381807A733E9A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decor=
+ation:none;color:#ffffff;word-wrap:break-word !important;border:0;outli=
+ne:none;" target=3D"_blank">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=
+=D7=A1=D7=A3</a></font></strong></span></div></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></div></div><div class=3D"bb bbt" name=
+=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" style=3D"background-color:rgba(255, 243, 165, 0);display:block;font-=
+style:normal;font-family:arial, sans-serif;font-size:15px;color:#606060=
+;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min=
+-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=
+=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-col=
+or:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D=
+"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-align:to=
+p;direction:ltr;padding-left:9px;padding-right:9px;"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc=
+-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-align:top=
+;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-s=
+ides" width=3D"100%" style=3D"vertical-align:top;padding-top:3px;paddin=
+g-bottom:0px;width:100%;padding-left:9px;padding-right:9px;"><table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"=
+100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"=
+direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-single" style=
+=3D"text-align:right;direction:rtl;line-height:1=2E2;min-height:8px;fon=
+t-style:normal;font-family:arial, sans-serif;font-size:15px;color:#6060=
+60;"></div></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table></td></tr></tbody></table></div></div><div><div class=
+=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"=
+><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcf=
+r bbclr" style=3D"width:100%;min-width:100%;"><tbody><tr class=3D"bbcr-=
+outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides nsp" style=3D=
+"text-align:center;vertical-align:top;padding-right:0px !important;padd=
+ing-left:0px !important;"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%"=
+ style=3D"margin:0px auto;vertical-align:top;width:100%;"><tbody><tr><t=
+d valign=3D"top" class=3D"bcw bl-padding-2-sides nsp" width=3D"100%" st=
+yle=3D"vertical-align:top;padding-top:9px;padding-bottom:9px;width:100%=
+;padding-right:0px !important;padding-left:0px !important;"><div class=3D=
+"bbci bbcii bl-in-edit-mode-single" style=3D"text-align:center;font-sty=
+le:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;">=
+<a href=3D"https://trailer=2Eweb-view=2Enet/Links/0X3E8EC1FD0DD64542A56=
+3DCA2E45C36E10A7EE88B8CE037C46E65F7ED980B492419938A91EAD219122B7FB7AB67=
+64E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D=
+"_blank" style=3D"text-decoration:none;color:inherit;word-wrap:break-wo=
+rd !important;border:0;outline:none;" data-link-type=3D"url"><img borde=
+r=3D"0" src=3D"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/________=
+__________1100_300_(1100_x_500_px)_-_2022-12-14T101119=2E604_0=2Epng?ca=
+che=3D1671367417788" style=3D"display: inline; max-width: 600px; width:=
+ 100%;" width=3D"600" alt=3D"healthsmilem=2E=2E=2E" max-width-back=3D"6=
+00"></a></div></td></tr></tbody></table></td></tr></tbody></table></td>=
+</tr></tbody></table></div></div><div><div class=3D"bbc" contenteditabl=
+e=3D"false"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D=
+"bbc-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:=
+100%;min-width:100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr=
+-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"=
+text-align:center;vertical-align:top;direction:ltr;padding-left:9px;pad=
+ding-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D=
+"margin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D=
+"top" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical=
+-align:top;padding-top:3px;padding-bottom:0px;width:100%;padding-left:9=
+px;padding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=
+=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbc=
+itx bl-in-edit-mode-single" style=3D"text-align:right;direction:rtl;lin=
+e-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans=
+-serif;font-size:15px;color:#606060;"></div></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></div></div><div class=3D"bb bbt" name=3D"text" width=3D"100%" ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"display:block;f=
+ont-style:normal;font-family:arial, sans-serif;font-size:15px;color:#60=
+6060;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%=
+;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" c=
+lass=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background=
+-color:#4ca41c;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" cla=
+ss=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-ali=
+gn:top;direction:ltr;padding-left:9px;padding-right:9px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbcc=
+l bbc-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-alig=
+n:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-paddin=
+g-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-top:6px;p=
+adding-bottom:6px;width:100%;padding-left:9px;padding-right:9px;"><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" widt=
+h=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" styl=
+e=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-single" =
+data-gramm=3D"false" style=3D"text-align:right;direction:rtl;line-heigh=
+t:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;=
+font-size:15px;color:#606060;"><div style=3D"text-align: center;"><span=
+ style=3D"font-size:24px;"><strong><span style=3D"color:#FFFFFF;"><span=
+ style=3D"font-family:'Open Sans Hebrew';"><a data-link-type=3D"url" hr=
+ef=3D"https://trailer=2Eweb-view=2Enet/Links/0X974B161D4D6F60D24C54AD31=
+1E15FE1FB477576C90E0098077EEB4D5DFFCCD14582DAB490720C0102B7FB7AB6764E43=
+AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-=
+decoration:none;color:#ffffff;word-wrap:break-word !important;border:0;=
+outline:none;" target=3D"_blank">=D7=9C=D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=
+=95=D7=AA =D7=9C=D7=A7=D7=91=D7=95=D7=A6=D7=95=D7=AA =D7=94=D7=95=D7=95=
+=D7=90=D7=98=D7=A1=D7=90=D7=A4 =D7=A9=D7=9C=D7=A0=D7=95 =D7=9C=D7=97=D7=
+=A6=D7=95 =D7=9B=D7=90=D7=9F &gt;&gt;</a></span></span></strong></span>=
+</div></div></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table></td></tr></tbody></table></div></div><div class=3D"=
+bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);display=
+:block;font-style:normal;font-family:arial, sans-serif;font-size:15px;c=
+olor:#606060;"><div class=3D"bbc" contenteditable=3D"false"><table widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=
+=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;ba=
+ckground-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"=
+top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vert=
+ical-align:top;direction:ltr;padding-left:9px;padding-right:9px;"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=
+=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;verti=
+cal-align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw b=
+l-padding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-t=
+op:3px;padding-bottom:0px;width:100%;padding-left:9px;padding-right:9px=
+;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbc=
+ic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"r=
+tl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-=
+single" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-h=
+eight:8px;font-style:normal;font-family:arial, sans-serif;font-size:15p=
+x;color:#606060;"></div></td></tr></tbody></table></td></tr></tbody></t=
+able></td></tr></tbody></table></td></tr></tbody></table></div></div><d=
+iv class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243, 165=
+, 0);display:block;font-style:normal;font-family:arial, sans-serif;font=
+-size:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D"false"=
+><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table=
+ bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-w=
+idth:100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><t=
+d valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align=
+:center;vertical-align:top;direction:ltr;padding-left:9px;padding-right=
+:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D=
+"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px=
+ auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"top" cla=
+ss=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-align:to=
+p;padding-top:3px;padding-bottom:0px;width:100%;padding-left:9px;paddin=
+g-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" c=
+lass=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcic=
+i" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in=
+-edit-mode-single" style=3D"text-align:right;direction:rtl;line-height:=
+1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;fo=
+nt-size:15px;color:#606060;"></div></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table></d=
+iv></div><div class=3D"bb bb-articleright" name=3D"articleright" style=3D=
+"width: 100%; min-width: 100%; display: block; background-color: rgba(2=
+55, 243, 165, 0);" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0"><div class=3D"bbc" contenteditable=3D"false"><table width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:=
+100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D"=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;backgr=
+ound-color:#f9f9f9;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top"=
+ class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical=
+-align:top;padding-left:9px;padding-right:9px;"><table align=3D"left" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D=
+"bbccl bbc-new-column" width=3D"282" style=3D"width:282px;vertical-alig=
+n:top;display:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw=
+ bl-padding-2-sides" width=3D"264" style=3D"vertical-align:top;padding-=
+top:9px;padding-bottom:9px;width:264px;padding-left:9px;padding-right:9=
+px;"><div class=3D"bbci bbcii" style=3D"text-align:center;font-style:no=
+rmal;font-family:arial, sans-serif;font-size:15px;color:#606060;"><a hr=
+ef=3D"https://trailer=2Eweb-view=2Enet/Links/0XCF1D4958FC82BCE4A4E7AEB3=
+71B02157A6EAF42D721C75E28342FB158E3C19635C203740A2440CA72B7FB7AB6764E43=
+AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_bla=
+nk" style=3D"text-decoration:none;color:inherit;word-wrap:break-word !i=
+mportant;border:0;outline:none;" data-link-type=3D"url"><img border=3D"=
+0" src=3D"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________=
+(7)_0=2Ejpg?cache=3D1672505540523" width=3D"264" alt=3D"Copy_of_Copy=2E=
+=2E=2E" style=3D"display: inline; max-width: 264px; width: 264px;"></a>=
+</div></td></tr></tbody></table><table align=3D"right" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-=
+column" width=3D"282" style=3D"width:282px;vertical-align:top;display:i=
+nline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-s=
+ides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;padding=
+-bottom:9px;width:264px;padding-left:9px;padding-right:9px;" align=3D"l=
+eft"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"b=
+bcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D=
+"text-align:right;direction:rtl;line-height:1=2E2;min-height:8px;font-s=
+tyle:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;=
+" data-gramm=3D"false"><h2 style=3D"display:block;margin:0;padding:0;fo=
+nt-weight:bold;background-color:transparent;border:0px;color:#606060 !i=
+mportant;font-size:26px;letter-spacing:normal !important;line-height:1=2E=
+2;"></h2><div></div><div><span style=3D"font-size:18px;"><strong><span =
+style=3D"font-family:'Open Sans Hebrew';"><span style=3D"color: #15171f=
+;">=D7=9E=D7=92=D7=93=D7=9C =D7=A9=D7=9C=D7=95=D7=9D - =D7=94=D7=99=D7=A1=
+=D7=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=94=D7=95=D7=95=D7=94</span></s=
+pan></strong></span></div><div></div><div></div></div></td></tr></tbody=
+></table><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"background-color:transparent;padding-top:9px;direction:r=
+tl;"><div class=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl=
+;line-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, =
+sans-serif;font-size:15px;color:#606060;" data-gramm=3D"false"><div><sp=
+an style=3D"font-size:18px;"><font color=3D"#ef1a3b" face=3D"open sans =
+hebrew"><b>=D7=97=D7=95=D7=95=D7=99=D7=94 =D7=AA=D7=9C =D7=90=D7=91=D7=99=
+=D7=91=D7=99=D7=AA</b></font><br><span style=3D"color: #000000; font-fa=
+mily: &quot;open sans hebrew&quot;;"><strong>65 =E2=82=AA =D7=91=D7=9C=D7=
+=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99=D7=9D</strong><br>=D7=A1=
+=D7=99=D7=95=D7=A8 =D7=9E=D7=A8=D7=AA=D7=A7 =D7=91=D7=9E=D7=92=D7=93=D7=
+=9C =D7=A9=D7=9C=D7=95=D7=9D =D7=91=D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=91=
+=2E =D7=A0=D7=92=D7=9C=D7=94 =D7=90=D7=AA =D7=AA=D7=95=D7=9C=D7=93=D7=95=
+=D7=AA =D7=94=D7=A2=D7=99=D7=A8 =D7=AA=D7=9C =D7=90=D7=91=D7=99=D7=91 =D7=
+=91=D7=90=D7=9E=D7=A6=D7=A2=D7=95=D7=AA =D7=94=D7=A4=D7=A1=D7=99=D7=A4=D7=
+=A1=D7=99=D7=9D =D7=A9=D7=9C =D7=A0=D7=97=D7=95=D7=9D =D7=92=D7=95=D7=98=
+=D7=9E=D7=9F =D7=95=D7=93=D7=95=D7=93 =D7=A9=D7=A8=D7=99=D7=A8 =D7=95=D7=
+=A0=D7=91=D7=A7=D7=A8 =D7=91=D7=AA=D7=A2=D7=A8=D7=95=D7=9B=D7=95=D7=AA =
+=D7=A6=D7=99=D7=9C=D7=95=D7=9E=D7=99=D7=9D=2E</span></span><br><br><spa=
+n style=3D"font-size:20px;"><font color=3D"#000000" face=3D"open sans h=
+ebrew"><span style=3D"display: none;">&nbsp;</span></font></span></div>=
+<div></div><div><span style=3D"font-size:18px;"><strong style=3D"text-a=
+lign: center; background-color: transparent;"><font color=3D"#000000" f=
+ace=3D"open sans hebrew">=D7=99=D7=95=D7=9D =D7=95', 3=2E2</font></stro=
+ng></span></div><div style=3D"text-align: center;"></div></div></td></t=
+r></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"width:100%;" class=3D"bbcic"><tbody><tr><td align=3D"left" =
+class=3D"bbcici" style=3D"display:table-cell;padding-top:9px;direction:=
+rtl;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+border-radius:0px;background-color:#ed1a3b;" width=3D"100%"><tbody><tr>=
+<td align=3D"center" valign=3D"middle" style=3D"font-size:16px;padding:=
+12px;" class=3D""><div class=3D"bbci bbcib" style=3D"min-width:1px;min-=
+height:16px;display:block;line-height:100%;text-align:center;text-decor=
+ation:none;direction:rtl;font-style:normal;font-family:arial, sans-seri=
+f;font-size:15px;color:#606060;" data-gramm=3D"false"><span style=3D"fo=
+nt-size:17px;"><strong><font face=3D"open sans hebrew"><a data-link-typ=
+e=3D"url" href=3D"https://trailer=2Eweb-view=2Enet/Links/0X74F0FDAD570B=
+DC421975D0B1E4F15BD061C2884429625307120DAAA988F228E2E195472B2A8681452B7=
+FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" st=
+yle=3D"text-decoration:none;color:#ffffff;word-wrap:break-word !importa=
+nt;border:0;outline:none;" target=3D"_blank">=D7=9C=D7=9E=D7=99=D7=93=D7=
+=A2 =D7=A0=D7=95=D7=A1=D7=A3</a></font></strong></span></div></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table></t=
+d></tr></tbody></table></td></tr></tbody></table></div></div><div class=
+=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);displ=
+ay:block;font-style:normal;font-family:arial, sans-serif;font-size:15px=
+;color:#606060;"><div class=3D"bbc" contenteditable=3D"false"><table wi=
+dth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"=
+width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" sty=
+le=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;ba=
+ckground-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"=
+top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vert=
+ical-align:top;direction:ltr;padding-left:9px;padding-right:9px;"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=
+=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;verti=
+cal-align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw b=
+l-padding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-t=
+op:3px;padding-bottom:0px;width:100%;padding-left:9px;padding-right:9px=
+;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbc=
+ic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"r=
+tl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-=
+single" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-h=
+eight:8px;font-style:normal;font-family:arial, sans-serif;font-size:15p=
+x;color:#606060;"></div></td></tr></tbody></table></td></tr></tbody></t=
+able></td></tr></tbody></table></td></tr></tbody></table></div></div><d=
+iv class=3D"bb bb-articleright" name=3D"articleright" style=3D"width: 1=
+00%; min-width: 100%; display: block; background-color: rgba(255, 243, =
+165, 0);" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min=
+-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=
+=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-col=
+or:#f9f9f9;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D=
+"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-align:to=
+p;padding-left:9px;padding-right:9px;"><table align=3D"left" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bb=
+c-new-column" width=3D"282" style=3D"width:282px;vertical-align:top;dis=
+play:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-paddi=
+ng-2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;p=
+adding-bottom:9px;width:264px;padding-left:9px;padding-right:9px;"><div=
+ class=3D"bbci bbcii" style=3D"text-align:center;font-style:normal;font=
+-family:arial, sans-serif;font-size:15px;color:#606060;"><a href=3D"htt=
+ps://trailer=2Eweb-view=2Enet/Links/0X7F4904E01064DE0C8D361682514A9F603=
+14CF2513A8239D6A16CB5813D965E75D8ADF2D89FECA1962B7FB7AB6764E43AA9D47038=
+1807A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_blank" style=
+=3D"text-decoration:none;color:inherit;word-wrap:break-word !important;=
+border:0;outline:none;" data-link-type=3D"url"><img border=3D"0" src=3D=
+"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________(20)_3=2E=
+jpg?cache=3D1672925975787" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" =
+style=3D"display: inline; max-width: 264px; width: 264px;"></a></div></=
+td></tr></tbody></table><table align=3D"right" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" =
+width=3D"282" style=3D"width:282px;vertical-align:top;display:inline-bl=
+ock;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" wi=
+dth=3D"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:=
+9px;width:264px;padding-left:9px;padding-right:9px;" align=3D"left"><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" wi=
+dth=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" st=
+yle=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D"text-=
+align:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:n=
+ormal;font-family:arial, sans-serif;font-size:15px;color:#606060;" data=
+-gramm=3D"false"><h2 style=3D"display:block;margin:0;padding:0;font-wei=
+ght:bold;background-color:transparent;border:0px;color:#606060 !importa=
+nt;font-size:26px;letter-spacing:normal !important;line-height:1=2E2;">=
+</h2><div></div><div><span style=3D"font-size:18px;"><strong><span styl=
+e=3D"font-family:'Open Sans Hebrew';"><span style=3D"color: #15171f;">=D7=
+=9E=D7=93=D7=91=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=94 - =D7=9B=D7=A0=D7=A1=
+=D7=99=D7=95=D7=AA =D7=95=D7=9E=D7=A0=D7=96=D7=A8=D7=99=D7=9D</span></s=
+pan></strong></span></div><div></div><div></div></div></td></tr></tbody=
+></table><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"background-color:transparent;padding-top:9px;direction:r=
+tl;"><div class=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl=
+;line-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, =
+sans-serif;font-size:15px;color:#606060;" data-gramm=3D"false"><div><sp=
+an style=3D"font-size:18px;"><font color=3D"#ef1a3b" face=3D"open sans =
+hebrew"><b>=D7=97=D7=95=D7=95=D7=99=D7=94 =D7=9E=D7=93=D7=91=D7=A8=D7=99=
+=D7=AA</b></font><br><span style=3D"color: #000000; font-family: &quot;=
+open sans hebrew&quot;;"><strong>=D7=94=D7=98=D7=91=D7=94 =D7=9C=D7=9E=D7=
+=A0=D7=95=D7=99=D7=99 =D7=91=D7=99=D7=92=D7=98=D7=99=D7=99=D7=9D</stron=
+g><br>=D7=9C=D7=90=D7=95=D7=A8 =D7=94=D7=91=D7=99=D7=A7=D7=95=D7=A9 =D7=
+=94=D7=95=D7=A1=D7=A4=D7=A0=D7=95 =D7=9E=D7=95=D7=A2=D7=93 =D7=A0=D7=95=
+=D7=A1=D7=A3,<br>=D7=98=D7=99=D7=95=D7=9C =D7=97=D7=95=D7=95=D7=99=D7=99=
+=D7=AA=D7=99 =D7=91=D7=9E=D7=93=D7=91=D7=A8 =D7=99=D7=94=D7=95=D7=93=D7=
+=94 =D7=91=D7=95 =D7=A0=D7=A1=D7=99=D7=99=D7=A8 =D7=95=D7=A0=D7=97=D7=A7=
+=D7=95=D7=A8 =D7=9B=D7=A0=D7=A1=D7=99=D7=95=D7=AA =D7=95=D7=9E=D7=A0=D7=
+=96=D7=A8=D7=99=D7=9D =D7=9B=D7=95=D7=9C=D7=9C =D7=90=D7=95=D7=98=D7=95=
+=D7=91=D7=95=D7=A1 =D7=9E=D7=90=D7=95=D7=A8=D7=92=D7=9F =D7=95=D7=90=D7=
+=A8=D7=95=D7=97=D7=AA =D7=A6=D7=94=D7=A8=D7=99=D7=99=D7=9D</span></span=
+><br><br><span style=3D"font-size:20px;"><font color=3D"#000000" face=3D=
+"open sans hebrew"><span style=3D"display: none;">&nbsp;</span></font><=
+/span></div><div></div><div><span style=3D"font-size:18px;"><strong sty=
+le=3D"text-align: center; background-color: transparent;"><font color=3D=
+"#000000" face=3D"open sans hebrew">=D7=99=D7=95=D7=9D =D7=A9', 4=2E2</=
+font></strong></span></div><div style=3D"text-align: center;"></div></d=
+iv></td></tr></tbody></table><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" style=3D"width:100%;" class=3D"bbcic"><tbody><tr><td alig=
+n=3D"left" class=3D"bbcici" style=3D"display:table-cell;padding-top:9px=
+;direction:rtl;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"border-radius:0px;background-color:#ed1a3b;" width=3D"100%">=
+<tbody><tr><td align=3D"center" valign=3D"middle" style=3D"font-size:16=
+px;padding:12px;" class=3D""><div class=3D"bbci bbcib" style=3D"min-wid=
+th:1px;min-height:16px;display:block;line-height:100%;text-align:center=
+;text-decoration:none;direction:rtl;font-style:normal;font-family:arial=
+, sans-serif;font-size:15px;color:#606060;" data-gramm=3D"false"><span =
+style=3D"font-size:17px;"><strong><font face=3D"open sans hebrew"><a da=
+ta-link-type=3D"url" href=3D"https://trailer=2Eweb-view=2Enet/Links/0XE=
+552073E9BDA7EF1A1B3FD6C8A73FEF724EE7B1E687906E914C8E81F5FD0085D859EF25D=
+ACCD85202B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F38B84=
+9=2Ehtm" style=3D"text-decoration:none;color:#ffffff;word-wrap:break-wo=
+rd !important;border:0;outline:none;" target=3D"_blank">=D7=9C=D7=9E=D7=
+=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3</a></font></strong></span></di=
+v></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></div></di=
+v><div class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243,=
+ 165, 0);display:block;font-style:normal;font-family:arial, sans-serif;=
+font-size:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D"fa=
+lse"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-ta=
+ble bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;mi=
+n-width:100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"=
+><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-al=
+ign:center;vertical-align:top;direction:ltr;padding-left:9px;padding-ri=
+ght:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valig=
+n=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin=
+:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"top"=
+ class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-alig=
+n:top;padding-top:3px;padding-bottom:0px;width:100%;padding-left:9px;pa=
+dding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"b=
+bcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx b=
+l-in-edit-mode-single" style=3D"text-align:right;direction:rtl;line-hei=
+ght:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-seri=
+f;font-size:15px;color:#606060;"></div></td></tr></tbody></table></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></div></div><div class=3D"bb bb-articleright" name=3D"articleright" st=
+yle=3D"width: 100%; min-width: 100%; display: block; background-color: =
+rgba(255, 243, 165, 0);" width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0"><div class=3D"bbc" contenteditable=3D"false"><table wi=
+dth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"=
+width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" sty=
+le=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;ba=
+ckground-color:#f9f9f9;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"=
+top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vert=
+ical-align:top;padding-left:9px;padding-right:9px;"><table align=3D"lef=
+t" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" clas=
+s=3D"bbccl bbc-new-column" width=3D"282" style=3D"width:282px;vertical-=
+align:top;display:inline-block;"><tbody><tr><td valign=3D"top" class=3D=
+"bcw bl-padding-2-sides" width=3D"264" style=3D"vertical-align:top;padd=
+ing-top:9px;padding-bottom:9px;width:264px;padding-left:9px;padding-rig=
+ht:9px;"><div class=3D"bbci bbcii" style=3D"text-align:center;font-styl=
+e:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;"><=
+a href=3D"https://trailer=2Eweb-view=2Enet/Links/0XDFF2D3A8E6EC351050A4=
+6D9249881A579781F3736028A9A8F6EFF678421D25E7FC4D1090BA15AD692B7FB7AB676=
+4E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"=
+_blank" style=3D"text-decoration:none;color:inherit;word-wrap:break-wor=
+d !important;border:0;outline:none;" data-link-type=3D"url"><img border=
+=3D"0" src=3D"https://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_________=
+____(21)=2Ejpg?cache=3D1672926695741" width=3D"264" alt=3D"Copy_of_Copy=
+=2E=2E=2E" style=3D"display: inline; max-width: 264px; width: 264px;"><=
+/a></div></td></tr></tbody></table><table align=3D"right" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-n=
+ew-column" width=3D"282" style=3D"width:282px;vertical-align:top;displa=
+y:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-=
+2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;padd=
+ing-bottom:9px;width:264px;padding-left:9px;padding-right:9px;" align=3D=
+"left"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D=
+"text-align:right;direction:rtl;line-height:1=2E2;min-height:8px;font-s=
+tyle:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;=
+" data-gramm=3D"false"><h2 style=3D"display:block;margin:0;padding:0;fo=
+nt-weight:bold;background-color:transparent;border:0px;color:#606060 !i=
+mportant;font-size:26px;letter-spacing:normal !important;line-height:1=2E=
+2;"><span style=3D"font-size:20px;"><span style=3D"color:#000000;"><fon=
+t face=3D"Open Sans Hebrew">=D7=A4=D7=90=D7=A8=D7=A7 =D7=94=D7=9E=D7=A1=
+=D7=99=D7=9C=D7=94 =D7=95=D7=9E=D7=AA=D7=97=D7=9D =D7=94=D7=AA=D7=97=D7=
+=A0=D7=94</font></span></span></h2></div></td></tr></tbody></table><tab=
+le cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" wid=
+th=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" sty=
+le=3D"background-color:transparent;padding-top:9px;direction:rtl;"><div=
+ class=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl;line-hei=
+ght:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-seri=
+f;font-size:15px;color:#606060;" data-gramm=3D"false"><div><font face=3D=
+"open sans hebrew"><span style=3D"font-size: 18px;"><strong style=3D"">=
+<font color=3D"#ff0000">=D7=A1=D7=99=D7=95=D7=A8 =D7=99=D7=99=D7=97=D7=95=
+=D7=93=D7=99&nbsp;</font><br><font color=3D"#000000">72 =E2=82=AA =D7=91=
+=D7=9C=D7=91=D7=93 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99=D7=9D</font></s=
+trong></span></font><br><font face=3D"open sans hebrew"><span style=3D"=
+font-size: 18px;"><font color=3D"#000000">=D7=A1=D7=99=D7=95=D7=A8 =D7=A9=
+=D7=9C =D7=A9=D7=91=D7=AA =D7=91=D7=91=D7=95=D7=A7=D7=A8 =D7=91=D7=A4=D7=
+=90=D7=A8=D7=A7<br>=D7=94=D7=9E=D7=A1=D7=99=D7=9C=D7=94 =D7=95=D7=9E=D7=
+=AA=D7=97=D7=9D =D7=94=D7=AA=D7=97=D7=A0=D7=94 =D7=91=D7=AA=D7=9C =D7=90=
+=D7=91=D7=99=D7=91,<br>=D7=94=D7=9E=D7=97=D7=91=D7=A8 =D7=91=D7=99=D7=9F=
+ =D7=94=D7=99=D7=A1=D7=98=D7=95=D7=A8=D7=99=D7=94 =D7=95=D7=9E=D7=95=D7=
+=A8=D7=A9=D7=AA<br>=D7=95=D7=91=D7=99=D7=9F =D7=A2=D7=91=D7=A8&nbsp;=D7=
+=9C=D7=94=D7=95=D7=95=D7=94 =D7=94=D7=9E=D7=95=D7=93=D7=A8=D7=A0=D7=99<=
+/font></span></font><br>&nbsp;</div><div><b style=3D"background-color: =
+transparent; font-size: 18px; color: #000000; font-family: &quot;open s=
+ans hebrew&quot;; text-align: center;">=D7=99=D7=95=D7=9D =D7=A9', 11=2E=
+2</b></div></div></td></tr></tbody></table><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"width:100%;" class=3D"bbcic"><tbod=
+y><tr><td align=3D"left" class=3D"bbcici" style=3D"display:table-cell;p=
+adding-top:9px;direction:rtl;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"border-radius:0px;background-color:#ed1a3b;" w=
+idth=3D"100%"><tbody><tr><td align=3D"center" valign=3D"middle" style=3D=
+"font-size:16px;padding:12px;" class=3D""><div class=3D"bbci bbcib" sty=
+le=3D"min-width:1px;min-height:16px;display:block;line-height:100%;text=
+-align:center;text-decoration:none;direction:rtl;font-style:normal;font=
+-family:arial, sans-serif;font-size:15px;color:#606060;" data-gramm=3D"=
+false"><strong><span style=3D"font-size:17px;"><font face=3D"open sans =
+hebrew"><a data-link-type=3D"url" href=3D"https://trailer=2Eweb-view=2E=
+net/Links/0XE6DAE4E72A8BBD662ACA8BB660F3DA55D1D439B97C365F7576C540DAE47=
+4602E117DC1861EC360EF2B7FB7AB6764E43AA9D470381807A733E9A674A945001D2867=
+9E16487F38B849=2Ehtm" style=3D"text-decoration:none;color:#ffffff;word-=
+wrap:break-word !important;border:0;outline:none;" target=3D"_blank"><s=
+pan style=3D"color:#FFFFFF;">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=
+=D7=A1=D7=A3</span></a></font></span></strong></div></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr></tbody></table></div></div><div class=3D"bb bb=
+t" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);display:bloc=
+k;font-style:normal;font-family:arial, sans-serif;font-size:15px;color:=
+#606060;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D"=
+100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:1=
+00%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;backgro=
+und-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" =
+class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical-=
+align:top;direction:ltr;padding-left:9px;padding-right:9px;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"b=
+bccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-a=
+lign:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-pad=
+ding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-top:3p=
+x;padding-bottom:0px;width:100%;padding-left:9px;padding-right:9px;"><t=
+able cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" w=
+idth=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" s=
+tyle=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-singl=
+e" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-height=
+:8px;font-style:normal;font-family:arial, sans-serif;font-size:15px;col=
+or:#606060;"></div></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></div></div><div cl=
+ass=3D"bb bb-articleright" name=3D"articleright" style=3D"width: 100%; =
+min-width: 100%; display: block; background-color: rgba(255, 243, 165, =
+0);" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><d=
+iv class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-widt=
+h:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"b=
+bcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-color:#f=
+9f9f9;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbc=
+ri bl-padding-2-sides" style=3D"text-align:center;vertical-align:top;pa=
+dding-left:9px;padding-right:9px;"><table align=3D"left" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-ne=
+w-column" width=3D"282" style=3D"width:282px;vertical-align:top;display=
+:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2=
+-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;paddi=
+ng-bottom:9px;width:264px;padding-left:9px;padding-right:9px;"><div cla=
+ss=3D"bbci bbcii" style=3D"text-align:center;font-style:normal;font-fam=
+ily:arial, sans-serif;font-size:15px;color:#606060;"><a href=3D"https:/=
+/trailer=2Eweb-view=2Enet/Links/0XB1643AD7B69E43CDAF37E487EAC823D3AD6FE=
+1E7C28AB617F2973EE26F72DCC80011B665AC5E4CBF2B7FB7AB6764E43AA9D470381807=
+A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_blank" style=3D"=
+text-decoration:none;color:inherit;word-wrap:break-word !important;bord=
+er:0;outline:none;" data-link-type=3D"url"><img border=3D"0" src=3D"htt=
+ps://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________(22)_1=2Ejpg?=
+cache=3D1672926990533" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" styl=
+e=3D"display: inline; max-width: 264px; width: 264px;"></a></div></td><=
+/tr></tbody></table><table align=3D"right" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" widt=
+h=3D"282" style=3D"width:282px;vertical-align:top;display:inline-block;=
+"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D=
+"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:9px;wi=
+dth:264px;padding-left:9px;padding-right:9px;" align=3D"left"><table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D=
+"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D=
+"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D"text-align:=
+right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:normal;=
+font-family:arial, sans-serif;font-size:15px;color:#606060;" data-gramm=
+=3D"false"><h2 style=3D"display:block;margin:0;padding:0;font-weight:bo=
+ld;background-color:transparent;border:0px;color:#606060 !important;fon=
+t-size:26px;letter-spacing:normal !important;line-height:1=2E2;"></h2><=
+div></div><div><span style=3D"font-size:18px;"><strong><span style=3D"f=
+ont-family:'Open Sans Hebrew';"><span style=3D"color: #15171f;">=D7=93=D7=
+=A8=D7=95=D7=9D =D7=90=D7=93=D7=95=D7=9D&nbsp;</span></span></strong></=
+span></div><div></div><div></div></div></td></tr></tbody></table><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=
+=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=
+=3D"background-color:transparent;padding-top:9px;direction:rtl;"><div c=
+lass=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl;line-heigh=
+t:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;=
+font-size:15px;color:#606060;" data-gramm=3D"false"><div><span style=3D=
+"font-size:18px;"><span style=3D"color:#ef1a3b;"><font face=3D"open san=
+s hebrew"><strong>=D7=A4=D7=A8=D7=99=D7=97=D7=94 =D7=95=D7=9E=D7=95=D7=A8=
+=D7=A9=D7=AA - =D7=98=D7=99=D7=95=D7=9C =D7=91=D7=90=D7=95=D7=98=D7=95=D7=
+=91=D7=95=D7=A1</strong></font></span><br><span style=3D"color: #000000=
+; font-family: &quot;open sans hebrew&quot;;"><strong>=D7=94=D7=98=D7=91=
+=D7=94 =D7=9C=D7=9E=D7=A0=D7=95=D7=99=D7=99 =D7=91=D7=99=D7=92=D7=98=D7=
+=99=D7=99=D7=9D</strong></span></span><br><span style=3D"font-size:18px=
+;"><span style=3D"color: #000000; font-family: &quot;open sans hebrew&q=
+uot;;">=D7=94=D7=98=D7=99=D7=95=D7=9C =D7=94=D7=A9=D7=A0=D7=AA=D7=99 =D7=
+=A9=D7=9C =D7=A4=D7=A8=D7=99=D7=97=D7=AA =D7=94=D7=9B=D7=9C=D7=A0=D7=99=
+=D7=95=D7=AA =D7=94=D7=9E=D7=A8=D7=94=D7=99=D7=91=D7=95=D7=AA =D7=94=D7=
+=9E=D7=A7=D7=A9=D7=98=D7=95=D7=AA =D7=91=D7=90=D7=93=D7=95=D7=9D =D7=90=
+=D7=AA =D7=9E=D7=A8=D7=97=D7=91=D7=99 =D7=94=D7=93=D7=A8=D7=95=D7=9D, =D7=
+=91=D7=A9=D7=99=D7=9C=D7=95=D7=91 =D7=A1=D7=99=D7=A4=D7=95=D7=A8=D7=99<=
+br>=D7=94=D7=92=D7=91=D7=95=D7=A8=D7=94 =D7=95=D7=94=D7=9E=D7=95=D7=A8=D7=
+=A9=D7=AA =D7=91=D7=99=D7=99=D7=A9=D7=95=D7=91=D7=99 =D7=94=D7=90=D7=99=
+=D7=96=D7=95=D7=A8</span></span><br><br><span style=3D"font-size:20px;"=
+><font color=3D"#000000" face=3D"open sans hebrew"><span style=3D"displ=
+ay: none;">&nbsp;</span></font></span></div><div></div><div><span style=
+=3D"font-size:18px;"><strong style=3D"text-align: center; background-co=
+lor: transparent;"><font color=3D"#000000" face=3D"open sans hebrew">=D7=
+=99=D7=95=D7=9D =D7=93', 15=2E2</font></strong></span></div><div style=3D=
+"text-align: center;"></div></div></td></tr></tbody></table><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;" clas=
+s=3D"bbcic"><tbody><tr><td align=3D"left" class=3D"bbcici" style=3D"dis=
+play:table-cell;padding-top:9px;direction:rtl;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-radius:0px;background-=
+color:#ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"center" valign=3D=
+"middle" style=3D"font-size:16px;padding:12px;" class=3D""><div class=3D=
+"bbci bbcib" style=3D"min-width:1px;min-height:16px;display:block;line-=
+height:100%;text-align:center;text-decoration:none;direction:rtl;font-s=
+tyle:normal;font-family:arial, sans-serif;font-size:15px;color:#606060;=
+" data-gramm=3D"false"><span style=3D"font-size:17px;"><strong><font fa=
+ce=3D"open sans hebrew"><a data-link-type=3D"url" href=3D"https://trail=
+er=2Eweb-view=2Enet/Links/0X2DDFDD48C2304B7C533F1A9F71B2E2D0C6F180FA7CF=
+9164AE10D740DF0F795BF91990ADDB486F5E72B7FB7AB6764E43AA9D470381807A733E9=
+A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:none;col=
+or:#ffffff;word-wrap:break-word !important;border:0;outline:none;" targ=
+et=3D"_blank">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=A0=D7=95=D7=A1=D7=A3</=
+a></font></strong></span></div></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table></div></div><div class=3D"bb bbt" name=3D"text" widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"ba=
+ckground-color:rgba(255, 243, 165, 0);display:block;font-style:normal;f=
+ont-family:arial, sans-serif;font-size:15px;color:#606060;"><div class=3D=
+"bbc" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><t=
+body><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr b=
+bclr" style=3D"width:100%;min-width:100%;background-color:#ffffff;"><tb=
+ody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-paddi=
+ng-2-sides" style=3D"text-align:center;vertical-align:top;direction:ltr=
+;padding-left:9px;padding-right:9px;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" wid=
+th=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:100%;"><t=
+body><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"1=
+00%" style=3D"vertical-align:top;padding-top:3px;padding-bottom:0px;wid=
+th:100%;padding-left:9px;padding-right:9px;"><table cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D";=
+"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;">=
+<div class=3D"bbci bbcitx bl-in-edit-mode-single" style=3D"text-align:r=
+ight;direction:rtl;line-height:1=2E2;min-height:8px;font-style:normal;f=
+ont-family:arial, sans-serif;font-size:15px;color:#606060;"></div></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table></div></div><div class=3D"bb bbt" name=3D"t=
+ext" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"background-color:rgba(255, 243, 165, 0);font-style:normal;font-f=
+amily:arial, sans-serif;font-size:15px;color:#606060;"><div class=3D"bb=
+c" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><tbod=
+y><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbcl=
+r" style=3D"width:100%;min-width:100%;background-color:#ec1c3c;"><tbody=
+><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-=
+2-sides" style=3D"text-align:center;vertical-align:top;direction:ltr;pa=
+dding-left:9px;padding-right:9px;"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" width=
+=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:100%;"><tbo=
+dy><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"100=
+%" style=3D"vertical-align:top;padding-top:13px;padding-bottom:13px;wid=
+th:100%;padding-left:9px;padding-right:9px;"><table cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D";=
+"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;">=
+<div class=3D"bbci bbcitx bl-in-edit-mode-single" data-gramm=3D"false" =
+style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-height:8p=
+x;font-style:normal;font-family:arial, sans-serif;font-size:15px;color:=
+#606060;"><div style=3D"text-align: center;"><span style=3D"font-size:2=
+4px;"><strong><span style=3D"color:#FFFFFF;"><span style=3D"font-family=
+:'Open Sans Hebrew';"><a href=3D"https://trailer=2Eweb-view=2Enet/Links=
+/0XD2EADFC2025874A9FDFE38DF6C8B722DB5B1E2455D8F35268EA033C43A64F18262DA=
+D1B32EBE5DF42B7FB7AB6764E43AA9D470381807A733E9A674A945001D28679E16487F3=
+8B849=2Ehtm" style=3D"text-decoration:none;color:#ffffff;word-wrap:brea=
+k-word !important;border:0;outline:none;" target=3D"_blank">=D7=9C=D7=9B=
+=D7=9C =D7=94=D7=98=D7=99=D7=95=D7=9C=D7=99=D7=9D =D7=A9=D7=9C=D7=A0=D7=
+=95 =D7=9C=D7=97=D7=A6=D7=95 =D7=9B=D7=90=D7=9F &gt;&gt;</a></span></sp=
+an></strong></span></div></div></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></div><=
+/div><div class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" style=3D"background-color:rgba(255, 2=
+43, 165, 0);display:block;font-style:normal;font-family:arial, sans-ser=
+if;font-size:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D=
+"false"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bb=
+c-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100=
+%;min-width:100%;background-color:#fff2f4;"><tbody><tr class=3D"bbcr-ou=
+ter"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"tex=
+t-align:center;vertical-align:top;direction:ltr;padding-left:9px;paddin=
+g-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" v=
+align=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"ma=
+rgin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"=
+top" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-=
+align:top;padding-top:9px;padding-bottom:9px;width:100%;padding-left:9p=
+x;padding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D=
+"bbcici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx=
+ bl-in-edit-mode-single" style=3D"text-align:right;direction:rtl;line-h=
+eight:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-se=
+rif;font-size:15px;color:#606060;" data-gramm=3D"false"><div style=3D"t=
+ext-align: center;"><span style=3D"font-size:22px;"><strong><span style=
+=3D"color:#000000;"><span style=3D"font-family:open sans hebrew;">=D7=98=
+=D7=95=D7=91 =D7=9C=D7=93=D7=A2=D7=AA</span></span></strong></span></di=
+v></div></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></td></tr></tbody></table></div></div><div class=3D"bb b=
+b-articleright" name=3D"articleright" style=3D"width: 100%; min-width: =
+100%;" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=
+<div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-wi=
+dth:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D=
+"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-color:=
+#fff2f4;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"b=
+bcri bl-padding-2-sides" style=3D"text-align:center;vertical-align:top;=
+padding-left:9px;padding-right:9px;"><table align=3D"left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-=
+new-column" width=3D"282" style=3D"width:282px;vertical-align:top;displ=
+ay:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding=
+-2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;pad=
+ding-bottom:9px;width:264px;padding-left:9px;padding-right:9px;"><div c=
+lass=3D"bbci bbcii" style=3D"text-align:center;font-style:normal;font-f=
+amily:arial, sans-serif;font-size:15px;color:#606060;"><a href=3D"https=
+://trailer=2Eweb-view=2Enet/Links/0X5582CB4BCF3449C33F0494D93CBB5A0C7B9=
+D93D07B2AA1F135A3EC7447C2F4836E85B627F90557782B7FB7AB6764E43AA9D4703818=
+07A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_blank" style=3D=
+"text-decoration:none;color:inherit;word-wrap:break-word !important;bor=
+der:0;outline:none;" data-link-type=3D"url"><img border=3D"0" src=3D"ht=
+tps://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________-_2022-12-12=
+T152316=2E637=2Ejpg?cache=3D1670851407909" width=3D"264" alt=3D"Copy_of=
+_Copy=2E=2E=2E" style=3D"display: inline; max-width: 264px; width: 264p=
+x;"></a></div></td></tr></tbody></table><table align=3D"right" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl b=
+bc-new-column" width=3D"282" style=3D"width:282px;vertical-align:top;di=
+splay:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padd=
+ing-2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;=
+padding-bottom:9px;width:264px;padding-left:9px;padding-right:9px;" ali=
+gn=3D"left"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" cla=
+ss=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici"=
+ dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt"=
+ style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-height:8=
+px;font-style:normal;font-family:arial, sans-serif;font-size:15px;color=
+:#606060;" data-gramm=3D"false"><font color=3D"#000000" face=3D"Open Sa=
+ns Hebrew"><span style=3D"font-size: 20px;"><b>vertica</b></span></font=
+><h2 style=3D"display:block;margin:0;padding:0;font-weight:bold;backgro=
+und-color:transparent;border:0px;color:#606060 !important;font-size:26p=
+x;letter-spacing:normal !important;line-height:1=2E2;"></h2><div></div>=
+<div></div><div></div><div></div></div></td></tr></tbody></table><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=
+=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=
+=3D"background-color:transparent;padding-top:9px;direction:rtl;"><div c=
+lass=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl;line-heigh=
+t:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;=
+font-size:15px;color:#606060;" data-gramm=3D"false"><div><font color=3D=
+"#ed1a3b" face=3D"open sans hebrew" style=3D"font-size: 20px;"><b>=D7=96=
+=D7=94 =D7=94=D7=96=D7=9E=D7=9F =D7=9C=D7=94=D7=9B=D7=99=D7=A8</b></fon=
+t><br><font color=3D"#000000" face=3D"open sans hebrew" style=3D"font-s=
+ize: 19px;">=D7=A4=D7=AA=D7=A8=D7=95=D7=9F =D7=A8=D7=A4=D7=95=D7=90=D7=99=
+ =D7=99=D7=95=D7=A6=D7=90 =D7=93=D7=95=D7=A4=D7=9F =D7=A9=D7=99=D7=97=D7=
+=96=D7=99=D7=A8 =D7=90=D7=AA =D7=94=D7=A1=D7=A4=D7=95=D7=A0=D7=98=D7=A0=
+=D7=99=D7=95=D7=AA =D7=9C=D7=97=D7=99=D7=99 =D7=94=D7=96=D7=95=D7=92=D7=
+=99=D7=95=D7=AA =D7=A9=D7=9C=D7=9B=D7=9D=2E</font><br><font color=3D"#0=
+00000" face=3D"open sans hebrew" style=3D"font-size: 19px;">=D7=9E=D7=9B=
+=D7=A9=D7=99=D7=A8 =D7=91=D7=99=D7=AA=D7=99 =D7=9C=D7=A9=D7=99=D7=A4=D7=
+=95=D7=A8 =D7=94=D7=AA=D7=A4=D7=A7=D7=95=D7=93 =D7=94=D7=9E=D7=99=D7=A0=
+=D7=99 =D7=9C=D7=9C=D7=90 =D7=AA=D7=A8=D7=95=D7=A4=D7=95=D7=AA, =D7=9C=D7=
+=AA=D7=95=D7=A6=D7=90=D7=95=D7=AA =D7=90=D7=A8=D7=95=D7=9B=D7=95=D7=AA =
+=D7=98=D7=95=D7=95=D7=97<br>=D7=9C=D7=A9=D7=99=D7=A4=D7=95=D7=A8 =D7=90=
+=D7=99=D7=9B=D7=95=D7=AA =D7=94=D7=97=D7=99=D7=99=D7=9D=2E</font></div>=
+<div style=3D"text-align: center;"></div></div></td></tr></tbody></tabl=
+e><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"widt=
+h:100%;" class=3D"bbcic"><tbody><tr><td align=3D"left" class=3D"bbcici"=
+ style=3D"display:table-cell;padding-top:9px;direction:rtl;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-radius:0p=
+x;background-color:#ed1a3b;" width=3D"100%"><tbody><tr><td align=3D"cen=
+ter" valign=3D"middle" style=3D"font-size:16px;padding:12px;" class=3D"=
+"><div class=3D"bbci bbcib" style=3D"min-width:1px;min-height:16px;disp=
+lay:block;line-height:100%;text-align:center;text-decoration:none;direc=
+tion:rtl;font-style:normal;font-family:arial, sans-serif;font-size:15px=
+;color:#606060;" data-gramm=3D"false"><strong><span style=3D"font-size:=
+20px;"><font color=3D"#ffffff"><a data-link-type=3D"url" href=3D"https:=
+//trailer=2Eweb-view=2Enet/Links/0XCCBD4AB46B12163A4CFE8B906F26601ED4F9=
+E353B4F597219F3AA0294E259AC382580612478F87AC2B7FB7AB6764E43AA9D47038180=
+7A733E9A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:n=
+one;color:#ffffff;word-wrap:break-word !important;border:0;outline:none=
+;" target=3D"_blank">=D7=9C=D7=A4=D7=A8=D7=98=D7=99=D7=9D =D7=A0=D7=95=D7=
+=A1=D7=A4=D7=99=D7=9D</a></font></span></strong></div></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></div></div><div class=3D"bb =
+bb-articleright" name=3D"articleright" style=3D"width: 100%; min-width:=
+ 100%;" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+><div class=3D"bbc" contenteditable=3D"false"><table width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;min-w=
+idth:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D=
+"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;background-color:=
+#fff2f4;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"b=
+bcri bl-padding-2-sides" style=3D"text-align:center;vertical-align:top;=
+padding-left:9px;padding-right:9px;"><table align=3D"left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-=
+new-column" width=3D"282" style=3D"width:282px;vertical-align:top;displ=
+ay:inline-block;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding=
+-2-sides" width=3D"264" style=3D"vertical-align:top;padding-top:9px;pad=
+ding-bottom:9px;width:264px;padding-left:9px;padding-right:9px;"><div c=
+lass=3D"bbci bbcii" style=3D"text-align:center;font-style:normal;font-f=
+amily:arial, sans-serif;font-size:15px;color:#606060;"><a href=3D"https=
+://trailer=2Eweb-view=2Enet/Links/0X82207D9868EBF39F39A13E2988C40B267B3=
+BF98C462405E5C46F8F9A0C301C66C9771B92CC15C1DC2B7FB7AB6764E43AA9D4703818=
+07A733E9A674A945001D28679E16487F38B849=2Ehtm" target=3D"_blank" style=3D=
+"text-decoration:none;color:inherit;word-wrap:break-word !important;bor=
+der:0;outline:none;" data-link-type=3D"url"><img border=3D"0" src=3D"ht=
+tps://cdn-media=2Eweb-view=2Enet/i/jtwxa8hcsu/_____________(23)_0=2Ejpg=
+?cache=3D1672927409417" width=3D"264" alt=3D"Copy_of_Copy=2E=2E=2E" sty=
+le=3D"display: inline; max-width: 264px; width: 264px;"></a></div></td>=
+</tr></tbody></table><table align=3D"right" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" wid=
+th=3D"282" style=3D"width:282px;vertical-align:top;display:inline-block=
+;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=
+=3D"264" style=3D"vertical-align:top;padding-top:9px;padding-bottom:9px=
+;width:264px;padding-left:9px;padding-right:9px;" align=3D"left"><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" width=
+=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=
+=3D"direction:rtl;"><div class=3D"bbci bbcitx bbcitt" style=3D"text-ali=
+gn:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:norm=
+al;font-family:arial, sans-serif;font-size:15px;color:#606060;" data-gr=
+amm=3D"false"><font color=3D"#000000" face=3D"Open Sans Hebrew"><span s=
+tyle=3D"font-size: 20px;"><b>=D7=A1=D7=99=D7=95=D7=A8 =D7=A7=D7=95=D7=9C=
+=D7=99=D7=A0=D7=A8=D7=99 =D7=91=D7=A9=D7=93=D7=A8=D7=95=D7=AA</b></span=
+></font><h2 style=3D"display:block;margin:0;padding:0;font-weight:bold;=
+background-color:transparent;border:0px;color:#606060 !important;font-s=
+ize:26px;letter-spacing:normal !important;line-height:1=2E2;"></h2><div=
+></div><div></div><div></div><div></div></div></td></tr></tbody></table=
+><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic=
+" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl=
+" style=3D"background-color:transparent;padding-top:9px;direction:rtl;"=
+><div class=3D"bbci bbcitx" style=3D"text-align:right;direction:rtl;lin=
+e-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans=
+-serif;font-size:15px;color:#606060;" data-gramm=3D"false"><div><font f=
+ace=3D"open sans hebrew"><font color=3D"#ed1a3b"><span style=3D"font-si=
+ze: 20px;"><b>=D7=90=D7=99=D7=9E=D7=A4=D7=A8=D7=99=D7=94 =D7=A9=D7=9C =D7=
+=90=D7=95=D7=9B=D7=9C =D7=95=D7=A6=D7=9E=D7=99=D7=97=D7=94</b></span></=
+font><br><font color=3D"#000000"><span style=3D"font-size: 19px;">=D7=94=
+=D7=A6=D7=98=D7=A8=D7=A4=D7=95 =D7=9C=D7=99=D7=95=D7=9D =D7=A9=D7=9C =D7=
+=A1=D7=99=D7=95=D7=A8 =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99<br>=D7=
+=9E=D7=99=D7=95=D7=97=D7=93 =D7=91=D7=A9=D7=93=D7=A8=D7=95=D7=AA=2E =D7=
+=A2=D7=99=D7=A8 =D7=A6=D7=A2=D7=99=D7=A8=D7=94 =D7=A9=D7=95=D7=A7=D7=A7=
+=D7=AA =D7=97=D7=99=D7=99=D7=9D =D7=A9=D7=97=D7=95=D7=95=D7=94 =D7=A4=D7=
+=A8=D7=99=D7=97=D7=94 =D7=91=D7=9C=D7=AA=D7=99 =D7=A8=D7=92=D7=99=D7=9C=
+=D7=94 =D7=91=D7=99=D7=9F =D7=94=D7=99=D7=AA=D7=A8 =D7=91=D7=96=D7=9B=D7=
+=95=D7=AA =D7=A7=D7=95=D7=9C=D7=99=D7=A0=D7=A8=D7=99=D7=94 =D7=A2=D7=A9=
+=D7=99=D7=A8=D7=94 =D7=A9=D7=A6=D7=9E=D7=97=D7=94 =D7=91=D7=A9=D7=A0=D7=
+=99=D7=9D =D7=94=D7=90=D7=97=D7=A8=D7=95=D7=A0=D7=95=D7=AA=2E</span></f=
+ont></font></div><div style=3D"text-align: center;"></div></div></td></=
+tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"width:100%;" class=3D"bbcic"><tbody><tr><td align=3D"left"=
+ class=3D"bbcici" style=3D"display:table-cell;padding-top:9px;direction=
+:rtl;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"border-radius:0px;background-color:#ed1a3b;" width=3D"100%"><tbody><tr=
+><td align=3D"center" valign=3D"middle" style=3D"font-size:16px;padding=
+:12px;" class=3D""><div class=3D"bbci bbcib" style=3D"min-width:1px;min=
+-height:16px;display:block;line-height:100%;text-align:center;text-deco=
+ration:none;direction:rtl;font-style:normal;font-family:arial, sans-ser=
+if;font-size:15px;color:#606060;" data-gramm=3D"false"><strong><span st=
+yle=3D"font-size:20px;"><font color=3D"#ffffff"><a data-link-type=3D"ur=
+l" href=3D"https://trailer=2Eweb-view=2Enet/Links/0X09F59DB9F2F4720DC75=
+4F092C0711FC8AB65B8AD1316D0C9C240D202FDB61324E574A551DFB79FD22B7FB7AB67=
+64E43AA9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" style=3D"=
+text-decoration:none;color:#ffffff;word-wrap:break-word !important;bord=
+er:0;outline:none;" target=3D"_blank">=D7=9C=D7=9E=D7=99=D7=93=D7=A2 =D7=
+=A0=D7=95=D7=A1=D7=A3</a></font></span></strong></div></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></div></div><div class=3D"bb =
+bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" style=3D"background-color:rgba(255, 243, 165, 0);display:bl=
+ock;font-style:normal;font-family:arial, sans-serif;font-size:15px;colo=
+r:#606060;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:=
+100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D"=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;backgr=
+ound-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top"=
+ class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical=
+-align:top;direction:ltr;padding-left:9px;padding-right:9px;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"=
+bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-=
+align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-pa=
+dding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-top:3=
+px;padding-bottom:0px;width:100%;padding-left:9px;padding-right:9px;"><=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" =
+width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" =
+style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-sing=
+le" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-heigh=
+t:8px;font-style:normal;font-family:arial, sans-serif;font-size:15px;co=
+lor:#606060;"></div></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></td></tr></tbody></table></div></div><div c=
+lass=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243, 165, 0)=
+;display:block;font-style:normal;font-family:arial, sans-serif;font-siz=
+e:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D"false"><ta=
+ble width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" sty=
+le=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbd=
+r" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width=
+:100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td va=
+lign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align:cen=
+ter;vertical-align:top;direction:ltr;padding-left:9px;padding-right:9px=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"to=
+p" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px au=
+to;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D=
+"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-align:top;pad=
+ding-top:3px;padding-bottom:0px;width:100%;padding-left:9px;padding-rig=
+ht:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D=
+"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mod=
+e-single" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min=
+-height:8px;font-style:normal;font-family:arial, sans-serif;font-size:1=
+5px;color:#606060;"></div></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></div></div>=
+<div class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"background-color:rgba(255, 243, 1=
+65, 0);display:block;font-style:normal;font-family:arial, sans-serif;fo=
+nt-size:15px;color:#606060;"><div class=3D"bbc" contenteditable=3D"fals=
+e"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D"bbc-tab=
+le bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-w=
+idth:100%;background-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><t=
+d valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"text-align=
+:center;vertical-align:top;direction:ltr;padding-left:9px;padding-right=
+:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D=
+"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px=
+ auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D"top" cla=
+ss=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical-align:to=
+p;padding-top:3px;padding-bottom:0px;width:100%;padding-left:9px;paddin=
+g-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" c=
+lass=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcic=
+i" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in=
+-edit-mode-single" style=3D"text-align:right;direction:rtl;line-height:=
+1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif;fo=
+nt-size:15px;color:#606060;"></div></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table></d=
+iv></div><div class=3D"bb bbt" name=3D"text" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:rgba(25=
+5, 243, 165, 0);display:block;font-style:normal;font-family:arial, sans=
+-serif;font-size:15px;color:#606060;"><div class=3D"bbc" contenteditabl=
+e=3D"false"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" style=3D"width:100%;min-width:100%;"><tbody><tr><td class=3D=
+"bbc-table bbdr" style=3D";"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbclr" style=3D"width:=
+100%;min-width:100%;background-color:#3b5998;"><tbody><tr class=3D"bbcr=
+-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sides" style=3D"=
+text-align:center;vertical-align:top;direction:ltr;padding-left:9px;pad=
+ding-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D=
+"margin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D=
+"top" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical=
+-align:top;padding-top:9px;padding-bottom:9px;width:100%;padding-left:9=
+px;padding-right:9px;"><table cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"><tbody><tr><td class=
+=3D"bbcici" style=3D"background-color:#ffffff;direction:rtl;" dir=3D"rt=
+l"><div class=3D"bbci bbcitx bl-in-edit-mode-single" style=3D"text-alig=
+n:right;direction:rtl;line-height:1=2E2;min-height:8px;font-style:norma=
+l;font-family:arial, sans-serif;font-size:15px;color:#606060;" data-gra=
+mm=3D"false"><div style=3D"text-align: center;"><span style=3D"font-siz=
+e:18px;"><span style=3D"font-family:assistant;"><a href=3D"https://trai=
+ler=2Eweb-view=2Enet/Links/0XF871A05F2D4ED4DF0B93973E54F57DEBB71C97B5B6=
+8D01B67AB82CA9A02BFD6EF15B71B2E77A52C32B7FB7AB6764E43AA9D470381807A733E=
+9A674A945001D28679E16487F38B849=2Ehtm" style=3D"text-decoration:none;wo=
+rd-wrap:break-word !important;color:#00008C;border:0;outline:none;" tar=
+get=3D"_blank"><span style=3D"color:#000000;"><b>=D7=94=D7=A6=D7=98=D7=A8=
+=D7=A4=D7=95 =D7=9C=D7=A7=D7=94=D7=99=D7=9C=D7=AA =D7=94=D7=A4=D7=99=D7=
+=99=D7=A1=D7=91=D7=95=D7=A7 =D7=A9=D7=9C =D7=91=D7=99=D7=92=D7=98=D7=99=
+=D7=99=D7=9D =D7=95=D7=AA=D7=AA=D7=97=D7=99=D7=9C=D7=95 =D7=9C=D7=97=D7=
+=99=D7=99=D7=9A &gt;&gt;</b></span></a></span></span></div></div></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></div></div><div class=3D"bb bb-findus" name=
+=3D"findus" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" style=3D"display: block;"><div class=3D"bbc"><table width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;mi=
+n-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;"><tbody><tr =
+class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding-2-sid=
+es" style=3D"text-align:center;vertical-align:top;padding-left:9px;padd=
+ing-right:9px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ valign=3D"top" class=3D"bbccl bbc-new-column" width=3D"100%" style=3D"=
+margin:0px auto;vertical-align:top;width:100%;"><tbody><tr><td valign=3D=
+"top" class=3D"bcw bl-padding-2-sides" width=3D"100%" style=3D"vertical=
+-align:top;padding-top:9px;padding-bottom:9px;width:100%;padding-left:9=
+px;padding-right:9px;"><div class=3D"bbci bbci-social bl-in-edit-mode-s=
+ingle" data-links-type=3D"FindUs" data-img-size=3D"small" data-img-styl=
+e=3D"circle_flat" style=3D"font-style:normal;font-family:arial, sans-se=
+rif;font-size:15px;color:#606060;"><table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" width=3D"100%" style=3D"width:100%;"><tbody><tr><td=
+ style=3D";"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wi=
+dth=3D"100%" style=3D"width:100%;"><tbody><tr><td class=3D"social-items=
+-container" align=3D"center" style=3D";"><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" class=3D"social-table" style=3D";"><tbody><tr=
+><td style=3D"width:26px;padding:2px;" class=3D"social-padding"><a href=
+=3D"https://trailer=2Eweb-view=2Enet/Links/0XB0F65CE0852269989E48CF4C32=
+BD503364E94ECAD5E01106D62727C8BA5AE66BBB820E6AA015D4DA2B7FB7AB6764E43AA=
+9D470381807A733E9A674A945001D28679E16487F38B849=2Ehtm" data-service-nam=
+e=3D"facebook" target=3D"_blank" style=3D"word-wrap:break-word !importa=
+nt;color:#00008C;border:0;outline:none;text-decoration:none;"><img data=
+-original-width=3D"26" data-original-height=3D"26" alt=3D"Facebook" tit=
+le=3D"Facebook" height=3D"26" width=3D"26" border=3D"0" style=3D"border=
+:0pt none;max-width:26px;width:26px;height:26px;padding:0px;" src=3D"ht=
+tps://cdn-media=2Eweb-view=2Enet/templates/builder/public/Social/FindUs=
+/FindUs_small_fb_circle_flat=2Epng"></a></td><td style=3D"width:px;padd=
+ing:2px;" class=3D"social-padding"><a href=3D"mailto:events@club50=2Eco=
+=2Eil" data-service-name=3D"mail" target=3D"_blank" style=3D"word-wrap:=
+break-word !important;color:#00008C;border:0;outline:none;text-decorati=
+on:none;"><img data-original-width=3D"" data-original-height=3D"" alt=3D=
+"Email Us" title=3D"Email Us" height=3D"" width=3D"" border=3D"0" style=
+=3D"border:0pt none;max-width:px;width:px;height:px;padding:0px;" src=3D=
+"https://cdn-media=2Eweb-view=2Enet/templates/builder/public/Social/Fin=
+dUs/FindUs_small_ma_circle_flat=2Epng"></a></td><td style=3D"width:px;p=
+adding:2px;" class=3D"social-padding"><a href=3D"https://trailer=2Eweb-=
+view=2Enet/Links/0X2054F99B781047253CCAC96D2DE631AFD9E5C5401238EDC0D079=
+5E8A414CD6B673793A9C9A3F0E732B7FB7AB6764E43AA9D470381807A733E9A674A9450=
+01D28679E16487F38B849=2Ehtm" data-service-name=3D"website" target=3D"_b=
+lank" style=3D"word-wrap:break-word !important;color:#00008C;border:0;o=
+utline:none;text-decoration:none;"><img data-original-width=3D"" data-o=
+riginal-height=3D"" alt=3D"Website" title=3D"Website" height=3D"" width=
+=3D"" border=3D"0" style=3D"border:0pt none;max-width:px;width:px;heigh=
+t:px;padding:0px;" src=3D"https://cdn-media=2Eweb-view=2Enet/templates/=
+builder/public/Social/FindUs/FindUs_small_we_circle_flat=2Epng"></a></t=
+d></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble></div></td></tr></tbody></table></td></tr></tbody></table></td></tr=
+></tbody></table></div></div><div class=3D"bb bbt" name=3D"text" width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"backgr=
+ound-color:rgba(255, 243, 165, 0);display:block;font-style:normal;font-=
+family:arial, sans-serif;font-size:15px;color:#606060;"><div class=3D"b=
+bc" contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" style=3D"width:100%;min-width:100%;"><tbo=
+dy><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bbcfr bbc=
+lr" style=3D"width:100%;min-width:100%;background-color:#ffffff;"><tbod=
+y><tr class=3D"bbcr-outer"><td valign=3D"top" class=3D"bbcri bl-padding=
+-2-sides" style=3D"text-align:center;vertical-align:top;direction:ltr;p=
+adding-left:9px;padding-right:9px;"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" valign=3D"top" class=3D"bbccl bbc-new-column" widt=
+h=3D"100%" style=3D"margin:0px auto;vertical-align:top;width:100%;"><tb=
+ody><tr><td valign=3D"top" class=3D"bcw bl-padding-2-sides" width=3D"10=
+0%" style=3D"vertical-align:top;padding-top:0px;padding-bottom:0px;widt=
+h:100%;padding-left:9px;padding-right:9px;"><table cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" class=3D"bbcic" width=3D"100%" style=3D";"=
+><tbody><tr><td class=3D"bbcici" dir=3D"rtl" style=3D"direction:rtl;"><=
+div class=3D"bbci bbcitx bl-in-edit-mode-single" style=3D"text-align:ri=
+ght;direction:rtl;line-height:1=2E2;min-height:8px;font-style:normal;fo=
+nt-family:arial, sans-serif;font-size:15px;color:#606060;"></div></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></div></div><div class=3D"bb bbt" name=3D"te=
+xt" style=3D"width:100%;min-width:100%;font-style:normal;font-family:ar=
+ial, sans-serif;font-size:15px;color:#606060;" width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" dir=3D"rtl"><div class=3D"bbc" =
+contenteditable=3D"false"><table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" dir=3D"rtl" style=3D"width:100%;min-width:100=
+%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D";"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"bbcr bb=
+cfr bbclr" style=3D"width:100%;min-width:100%;"><tbody><tr class=3D"bbc=
+r-outer"><td valign=3D"top" class=3D"bbcri" align=3D"left" width=3D"600=
+" style=3D"width:600px;direction:ltr;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"bbccl bbc-new-column b1c" align=3D"left"=
+ width=3D"600" style=3D"width:600px;"><tbody><tr><td valign=3D"top" cla=
+ss=3D"bp1c bcw" width=3D"600" style=3D"width:600px;padding:0px 18px 0px=
+ 18px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D=
+"bbcic" width=3D"100%" style=3D"width:100%;"><tbody><tr><td class=3D"bb=
+cici" dir=3D"rtl" style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl=
+-in-edit-mode-single" style=3D"direction:rtl;text-align:right;line-heig=
+ht:1=2E2;min-height:8px;font-style:normal;font-family:arial, sans-serif=
+;font-size:15px;color:#606060;" data-gramm=3D"false"><div style=3D"text=
+-align: center;"><span style=3D"font-size:15px;"><span style=3D"color:#=
+000000;"><b>=D7=9C=D7=9E=D7=94 =D7=A7=D7=99=D7=91=D7=9C=D7=AA =D7=90=D7=
+=AA =D7=94=D7=9E=D7=99=D7=99=D7=9C =D7=94=D7=96=D7=94?</b><br>tsbulkyjq=
+s, =D7=94=D7=9E=D7=99=D7=99=D7=9C =D7=94=D7=96=D7=94 =D7=94=D7=92=D7=99=
+=D7=A2 =D7=90=D7=9C=D7=99=D7=9A =D7=9B=D7=99 =D7=A0=D7=A8=D7=A9=D7=9E=D7=
+=AA =D7=9C=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=D7=A4=D7=95=D7=A6=
+=D7=94 =D7=A9=D7=9C=D7=A0=D7=95=2E<br><a href=3D"https://trailer=2Eweb-=
+view=2Enet/Links/0X579F2DAE45F84D44E9791D597A073CE27003EE3903B830BE92E7=
+6A01F132CF158EFB8ED7445114792B7FB7AB6764E43AA9D470381807A733E9A674A9450=
+01D28679E16487F38B849=2Ehtm" style=3D"text-decoration:underline;word-wr=
+ap:break-word !important;color:#00008C;border:0;outline:none;" target=3D=
+"_blank">=D7=A0=D7=99=D7=AA=D7=9F =D7=9C=D7=9C=D7=97=D7=95=D7=A5 =D7=9B=
+=D7=90=D7=9F =D7=9B=D7=93=D7=99 =D7=9C=D7=A2=D7=93=D7=9B=D7=9F =D7=90=D7=
+=AA =D7=A4=D7=A8=D7=98=D7=99=D7=9A =D7=95=D7=9C=D7=A7=D7=91=D7=9C =D7=AA=
+=D7=95=D7=9B=D7=9F =D7=A8=D7=9C=D7=95=D7=95=D7=A0=D7=98=D7=99 =D7=99=D7=
+=95=D7=AA=D7=A8&gt;</a></span></span></div></div></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbo=
+dy></table></div></div><div class=3D"bb bbt" name=3D"text" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"display:bl=
+ock;font-style:normal;font-family:arial, sans-serif;font-size:15px;colo=
+r:#606060;"><div class=3D"bbc" contenteditable=3D"false"><table width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:=
+100%;min-width:100%;"><tbody><tr><td class=3D"bbc-table bbdr" style=3D"=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" class=3D"bbcr bbcfr bbclr" style=3D"width:100%;min-width:100%;backgr=
+ound-color:#ffffff;"><tbody><tr class=3D"bbcr-outer"><td valign=3D"top"=
+ class=3D"bbcri bl-padding-2-sides" style=3D"text-align:center;vertical=
+-align:top;direction:ltr;padding-left:9px;padding-right:9px;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"top" class=3D"=
+bbccl bbc-new-column" width=3D"100%" style=3D"margin:0px auto;vertical-=
+align:top;width:100%;"><tbody><tr><td valign=3D"top" class=3D"bcw bl-pa=
+dding-2-sides" width=3D"100%" style=3D"vertical-align:top;padding-top:9=
+px;padding-bottom:9px;width:100%;padding-left:9px;padding-right:9px;"><=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bbcic" =
+width=3D"100%" style=3D";"><tbody><tr><td class=3D"bbcici" dir=3D"rtl" =
+style=3D"direction:rtl;"><div class=3D"bbci bbcitx bl-in-edit-mode-sing=
+le" style=3D"text-align:right;direction:rtl;line-height:1=2E2;min-heigh=
+t:8px;font-style:normal;font-family:arial, sans-serif;font-size:15px;co=
+lor:#606060;" data-gramm=3D"false"><div style=3D"text-align: center;"><=
+span style=3D"color:#ed1a3b;"><strong><span style=3D"font-size:15px;">=D7=
+=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=93=D7=99=
+=D7=95=D7=95=D7=A8:</span></strong></span><br><span style=3D"color:#000=
+000;"><span style=3D"font-size:15px;">=D7=9B=D7=93=D7=90=D7=99 =D7=9C=D7=
+=93=D7=A2=D7=AA: =D7=91=D7=9E=D7=99=D7=93=D7=94 =D7=95=D7=AA=D7=91=D7=A7=
+=D7=A9 =D7=9C=D7=94=D7=A1=D7=99=D7=A8 =D7=90=D7=AA =D7=A4=D7=A8=D7=98=D7=
+=99=D7=9A =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=94=D7=93=D7=99=D7=95=
+=D7=95=D7=A8, =D7=9C=D7=90 =D7=AA=D7=A7=D7=91=D7=9C =D7=94=D7=A6=D7=A2=D7=
+=95=D7=AA =D7=99=D7=99=D7=97=D7=95=D7=93=D7=99=D7=95=D7=AA,<br>=D7=90=D7=
+=99=D7=A9=D7=95=D7=A8=D7=99 =D7=94=D7=96=D7=9E=D7=A0=D7=95=D7=AA =D7=95=
+=D7=A2=D7=93=D7=9B=D7=95=D7=A0=D7=99=D7=9D =D7=97=D7=A9=D7=95=D7=91=D7=99=
+=D7=9D =D7=9C=D7=9E=D7=99=D7=99=D7=9C =D7=95=D7=91=D7=9E=D7=A1=D7=A8=D7=
+=95=D7=A0=D7=99=D7=9D=2E</span></span><br><u><span style=3D"color:#2938=
+b4;"><u><a data-link-type=3D"SystemLinks" href=3D"https://trailer=2Eweb=
+-view=2Enet/Out_0X7986F91C555A5950D123301D3FD940387B9640E8EECB939E8C3AB=
+D9356C3BA1B16F95EB13E48CCAB=2Ehtm" style=3D"text-decoration:underline;c=
+olor:#2938b4;word-wrap:break-word !important;border:0;outline:none;" ta=
+rget=3D"_blank">=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A7=D7=91=D7=9C=
+=D7=AA =D7=9E=D7=99=D7=99=D7=9C=D7=99=D7=9D =D7=95=D7=9E=D7=A1=D7=A8=D7=
+=95=D7=A0=D7=99=D7=9D =D7=99=D7=A9 =D7=9C=D7=9C=D7=97=D7=95=D7=A5 =D7=9B=
+=D7=90=D7=9F&gt;&gt;</a></u></span></u></div></div></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr></t=
+body></table></div></div></td></tr></tbody></table></td></tr></tbody></=
+table><table class=3D"bl-new-footer-container" style=3D"width:100%;dire=
+ction:ltr;text-align:left;min-width:0px;max-width:600px;" valign=3D"top=
+" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tbod=
+y><tr><td class=3D"bl-new-footer-wrapper" style=3D"width:100%;padding:0=
+px;" valign=3D"top" width=3D"100%"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"width:100%;" valign=3D"top" width=3D"100%"=
+><tbody class=3D"bl-new-footer-content"><tr><td class=3D"bl-zone" name=3D=
+"FooterZone" style=3D"width:100%;" width=3D"100%" valign=3D"top" height=
+=3D""><div class=3D"bb bbf" name=3D"Footer Block" style=3D""><div class=
+=3D"bbc" contenteditable=3D"false"><div class=3D"bbc-table bbcl0 bbdl">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+class=3D"bbcr bbcfr bbclr" style=3D"background-color:transparent;width:=
+100%;min-width:100%;"><tbody><tr><td valign=3D"top" class=3D"bbcri" sty=
+le=3D";"><table align=3D"left" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"bbccl b1c" style=3D";"><tbody><tr><td va=
+lign=3D"top" class=3D"bp1c" style=3D"padding:0px 18px 0px 18px;"><div c=
+lass=3D"bbci bbcitx bbci-canspam canspam-info-uninit item-uneditable bl=
+-content-item-unremovable" data-gramm=3D"false" style=3D"padding-top:0p=
+x !important;font-size:12px !important;text-align:center;direction:rtl;=
+line-height:1=2E2;min-height:8px;font-style:normal;font-family:arial, s=
+ans-serif;color:#606060;"><span class=3D"canspam-companyname">=D7=91=D7=
+=99=D7=92=D7=98=D7=99=D7=99=D7=9D 60+</span> | <span class=3D"canspam-a=
+ddress1">=D7=94=D7=91=D7=A8=D7=96=D7=9C 19 =D7=90', =D7=A8=D7=9E=D7=AA =
+=D7=94=D7=97=D7=99=D7=99=D7=9C</span> | <span class=3D"canspam-city">=D7=
+=AA=D7=9C =D7=90=D7=91=D7=99=D7=91</span> | <span class=3D"canspam-zipc=
+ode">6971025&nbsp;</span>| <span class=3D"canspam-country">=D7=99=D7=A9=
+=D7=A8=D7=90=D7=9C</span> | <span class=3D"canspam-phone">03-6939393<br=
+><br>=D7=9C=D7=AA=D7=A9=D7=95=D7=9E=D7=AA =D7=9C=D7=99=D7=91=D7=9A, =D7=
+=94=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=AA =D7=94=
+=D7=AA=D7=A4=D7=95=D7=A6=D7=94 =D7=94=D7=99=D7=90 =D7=9C=D7=A6=D7=9E=D7=
+=99=D7=AA=D7=95=D7=AA =D7=95=D7=9C=D7=90 =D7=A0=D7=99=D7=AA=D7=9F =D7=9C=
+=D7=97=D7=96=D7=95=D7=A8 =D7=90=D7=9C=D7=99=D7=94=2E =D7=94=D7=94=D7=A1=
+=D7=A8=D7=94 =D7=94=D7=99=D7=90 =D7=9E=D7=9E=D7=99=D7=99=D7=9C=D7=99=D7=
+=9D =D7=95=D7=9E=D7=A1=D7=A8=D7=95=D7=A0=D7=99=D7=9D =D7=A9=D7=99=D7=95=
+=D7=95=D7=A7=D7=99=D7=99=D7=9D=2E</span></div><div class=3D"bbci bbcitx=
+ bbci-unsubscribe bl-content-item-unremovable" data-gramm=3D"false" sty=
+le=3D"padding-top:7px !important;text-align:center;font-size:14px;direc=
+tion:rtl;line-height:1=2E2;min-height:8px;font-style:normal;font-family=
+:arial, sans-serif;color:#606060;"><a class=3D"unsubscribe-link" href=3D=
+"https://trailer=2Eweb-view=2Enet/Out_0X7986F91C555A5950D123301D3FD9403=
+87B9640E8EECB939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Ehtm" id=3D"unsubscr=
+ibe-link" style=3D"color:#08C;word-wrap:break-word !important;border:0;=
+outline:none;text-decoration:none;">=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=
+=D7=A7=D7=91=D7=9C=D7=AA =D7=9E=D7=99=D7=99=D7=9C=D7=99=D7=9D =D7=95=D7=
+=9E=D7=A1=D7=A8=D7=95=D7=A0=D7=99=D7=9D </a><span class=3D"bl-link-sep"=
+>|&nbsp;</span><a class=3D"report-spam-link" href=3D"https://trailer=2E=
+web-view=2Enet/SpamAbuse_0X7986F91C555A5950D123301D3FD940387B9640E8EECB=
+939E8C3ABD9356C3BA1B16F95EB13E48CCAB=2Ehtm" style=3D"color:#08C;word-wr=
+ap:break-word !important;border:0;outline:none;text-decoration:none;">=D7=
+=93=D7=95=D7=95=D7=97 =D7=9B=D7=A1=D7=A4=D7=90=D7=9D</a></div></td></tr=
+></tbody></table></td></tr></tbody></table></div></div></div></td></tr>=
+</tbody></table></td></tr></tbody></table> <div><!--[if gte mso 9 | (IE=
+)]></td></tr></table> <![endif]--></div><div><style title=3D"resp" type=
+=3D"text/css">@media screen and (max-width: 480px) {
+
+    div[class*=3D"bt"] td[class*=3D"bt-border"] {
+        min-width: 0px !important;
+    }
+
+    div[class*=3D"bt-version-2"] div[class*=3D"bbtunderimage"] table[cl=
+ass*=3D"b2c"]
+    div[class*=3D"bt-version-2"] div[class*=3D"bbtimage"] table[class*=3D=
+"b2c"]
+    div[class*=3D"bt-version-2"] div[class*=3D"bbitext"] table[class*=3D=
+"b2c"]
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleright"] table[=
+class*=3D"b2c"]
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleleft"] table[c=
+lass*=3D"b2c"]
+    div[class*=3D"bt-version-2"] div[class*=3D"bbp-v2"] table[class*=3D=
+"b2c"]
+    /*, div[class*=3D"bt-version-2"] td[class*=3D"bbcri"]*/ {
+        display: block !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /*div[class*=3D"bt-version-2"] table[class*=3D"b2c"],
+      div[class*=3D"bt-version-2"] td[class*=3D"bbcri"]
+      {display: table !important; max-width: 100% !important; width: 10=
+0% !important;}*/
+
+
+
+    div[class*=3D"bt-version-2"] table[class*=3D"b2c"] > table {
+        padding-bottom: 36px;
+    }
+
+    div[class*=3D"bt-version-2"] table[class*=3D"bl-4-columns"], div[cl=
+ass*=3D"bt-version-2"] td[class*=3D"bbcri"] { /*display: table !importa=
+nt;*/
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+
+        div[class*=3D"bt-version-2"] table[class*=3D"bl-4-columns"] > t=
+able {
+            padding-bottom: 36px;
+        }
+
+    body, table, td, p, a, li, blockquote {
+        -webkit-text-size-adjust: 100% !important;
+    }
+
+    /*new social share*/
+    /*div[class*=3D"bt-version-2"] div[class*=3D"bb-share"] td[class*=3D=
+"bbcri"] { width: 360px !important; }*/
+
+    div[class*=3D"bt-version-2"] div[class*=3D"bbt"] td[class*=3D"bbcic=
+i"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleright"] td[cla=
+ss*=3D"bbcici"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbitext"] td[class*=3D"b=
+bcici"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbtimage"] td[class*=3D"=
+bbcici"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleleft"] td[clas=
+s*=3D"bbcici"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleright"] td[cla=
+ss*=3D"bbcici"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbtunderimage"] td[class=
+*=3D"bbcici"] {
+        width: 100% !important;
+    }
+
+
+
+
+    div[class*=3D"bt-version-2"] div[class*=3D"bbp-v2"] td[class*=3D"bp=
+2cl"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbp-v2"] td[class*=3D"bp=
+2cr"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbd"] td[class*=3D"bp2cl=
+"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbd"] td[class*=3D"bp2cr=
+"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbt"] td[class*=3D"bp2cl=
+"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbt"] td[class*=3D"bp2cr=
+"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleleft"] td[clas=
+s*=3D"bp2cl"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleleft"] td[clas=
+s*=3D"bp2cr"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleright"] td[cla=
+ss*=3D"bp2cl"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bb-articleright"] td[cla=
+ss*=3D"bp2cr"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbitext"] td[class*=3D"b=
+p2cl"],
+    div[class*=3D"bt-version-2"] div[class*=3D"bbitext"] td[class*=3D"b=
+p2cr"] {
+        width: 100% !important;
+    }
+    /*div[class*=3D"bt-version-2"] div[class*=3D"bb-button"] td[class*=3D=
+"bbcri"] {display: inline-block !important; }*/
+
+
+
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"bbcitbc"] {
+        padding-top: 0px;
+    }
+
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"] td[=
+class*=3D"bbcitttc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"] td[=
+class*=3D"bbcitttc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td[cla=
+ss*=3D"bbcitttc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"] td[=
+class*=3D"bbcittxc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"] td[=
+class*=3D"bbcittxc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td[cla=
+ss*=3D"bbcittxc"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"] td[=
+class*=3D"bbciti"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"] td[=
+class*=3D"bbciti"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td[cla=
+ss*=3D"bbciti"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"] td[=
+class*=3D"bbcitd-priceContent"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"] td[=
+class*=3D"bbcitd-priceContent"],
+    div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td[cla=
+ss*=3D"bbcitd-priceContent"] {
+        height: auto !important;
+    }
+
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"]=
+ td[class*=3D"bbcitttc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"]=
+ td[class*=3D"bbcitttc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td=
+[class*=3D"bbcitttc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"]=
+ td[class*=3D"bbcittxc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"]=
+ td[class*=3D"bbcittxc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td=
+[class*=3D"bbcittxc"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"]=
+ td[class*=3D"bbciti"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"]=
+ td[class*=3D"bbciti"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td=
+[class*=3D"bbciti"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b1c"]=
+ td[class*=3D"bbcitd-priceContent"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] table[class*=3D"b2c"]=
+ td[class*=3D"bbcitd-priceContent"] td[class*=3D"bbcitd-wrapper"],
+        div[class*=3D"bt"] div[class*=3D"bbp-v2"] td[class*=3D"b3c"] td=
+[class*=3D"bbcitd-priceContent"] td[class*=3D"bbcitd-wrapper"] {
+            height: auto !important;
+            padding: 9px;
+        }
+
+    div[class*=3D"bt"] td[class*=3D"bt-margin"] {
+        padding: 0 0 !important;
+    }
+
+    div[class*=3D"bt"] table[class*=3D"template-main-table"] {
+        max-width: 600px !important;
+        width: 100% !important;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    div[class*=3D"bt"] table[class*=3D"template-main-table"],
+    div[class*=3D"bt"] td[class*=3D"bt-border"],
+    div[class*=3D"bt"] td[class*=3D"bt-border"] > table,
+    div[class*=3D"bt"] table[class*=3D"bl-new-footer-container"],
+    div[class*=3D"bt"] td[class*=3D"bl-new-footer-wrapper"],
+    div[class*=3D"bt"] td[class*=3D"bl-new-footer-wrapper"] > table,
+    div[class*=3D"bt"] td[class*=3D"bl-zone"],
+    div[class*=3D"bt"] td[class*=3D"bl-zone"] > table,
+    div[class*=3D"bt"] td[class*=3D"bbcri"] table[class*=3D"bbccl"] {
+        width: 100% !important;
+        display: table !important;
+    }
+
+
+    div[class*=3D"bt"] td[class*=3D"bt-border"],
+    table[class*=3D"bl-new-footer-container"] td[class*=3D"bl-zone"] {
+        border-width: 0px !important;
+    }
+
+
+    div[class*=3D"bt"] =2Ebcw {
+        width: 100% !important;
+    }
+
+    div[class*=3D"bt"] div[class*=3D"bbcii"] img {
+        width: 100% !important;
+    }
+
+    div[class*=3D"bt"] div[class*=3D"bbci-countdown"] img {
+        width: 100% !important;
+    }
+
+    div[class*=3D"bt"] div[class*=3D"bb-Share"] td[class*=3D"bcw"] {
+        padding: 0px !important;
+    }
+
+    div[class*=3D"bt"] td[class*=3D"bbccl"] {
+        display: block !important;
+        max-width: 600px !important;
+        width: 100% !important;
+    }
+
+        div[class*=3D"bt"] table[class*=3D"bbcct"],
+        div[class*=3D"bt"] td[class*=3D"bbccl"] > table {
+            max-width: 600px !important;
+            width: 100% !important;
+        }
+
+
+
+
+    /*Keep these styles here so they will be included in all campaigns =
+(inliner will not remove them)*/
+    body {
+        width: 100% !important;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        margin: 0;
+        padding: 0
+    }
+
+    #outlook a {
+        padding: 0;
+    }
+
+    =2EReadMsgBody {
+        width: 100%;
+    }
+
+    =2EExternalClass {
+        width: 100% !important;
+        line-height: 100% !important;
+    }
+
+    =2Eyshortcuts {
+        color: #5187bd;
+    }
+
+        =2Eyshortcuts a span {
+            color: #5187bd;
+            border-bottom: none !important;
+            background: none !important;
+        }
+
+    =2Ebt =2Ebbpcartitems =2Ebbcl1 =2Ebbci-product-item-name {
+        text-align: center !important;
+    }
+
+    =2Ebt =2Ebbpcartitems =2Ebbcl1 =2Ebbci-product-item-price {
+        text-align: center !important;
+    }
+
+    =2Ebt =2Ebbporderitems =2Ebbcl1 =2Ebbci-product-item-name {
+        text-align: center !important;
+    }
+
+    =2Ebt =2Ebbporderitems =2Ebbcl1 =2Ebbci-product-item-price {
+        text-align: center !important;
+    }
+}
+</style> <style type=3D"text/css"> =2EmsoBorderWidthAlt {
+=09mso-border-width-alt: 3px !important;
+} =2Ebt table {
+=09border-collapse: collapse !important;
+=09mso-table-lspace: 0pt !important;
+=09mso-table-rspace: 0pt !important;
+} =2Ebt td {
+=09border-collapse: collapse !important;
+=09mso-table-lspace: 0pt !important;
+=09mso-table-rspace: 0pt !important;
+} =2Ebt =2Ebt-border {
+=09border-collapse: collapse !important;
+=09mso-table-lspace: 0pt !important;
+=09mso-table-rspace: 0pt !important;
+} </style></div></div></td></tr><tr width=3D"100%"><td width=3D"100%" s=
+tyle=3D"padding:0;"><div style=3D"font: 11px Arial; color: black; text-=
+align: center" dir=3D"ltr"></div><div style=3D"font-size: 12px; font-fa=
+mily: Arial, Tahoma; text-align: center; color: #606060; padding-top: 7=
+px;" dir=3D"ltr">Sent&nbsp;with&nbsp;<a href=3D"https://trailer=2Eweb-v=
+iew=2Enet/nslinks/0XA7B345C74AEB82B7BA022830AA129F80AE751E8DF83E5340E4B=
+FFD330542F007611C4BB201023B1BE9EAE0C8757F801AA61B8B6A2E9AAA5F6AC8439C50=
+C8F64C9483F19A0E95007CA3E04678B4F9847189C04B2C8B1246637BD8DF5E5D5721ED9=
+4E37ED4A11095E5=2Ehtm" rel=3D"nofollow" style=3D"font-size: 12px; font-=
+family: Arial, Tahoma; color: #08c; text-decoration: none;">ActiveTrail=
+</a>&nbsp;software</div></td></tr></tbody></table></div></body></html>
+------820B6A32957441B98C86751112BBB7B7--
+
+
+

@@ -1,0 +1,889 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2450611mdb;
+        Sun, 8 Jan 2023 08:31:08 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvFinMce0FZKbWqNbOgXptorQBrurUovKVZwz7HWJNQHQ1S6MqjEYv4nlU+E+qo3G4HEwOI
+X-Received: by 2002:a17:906:2a05:b0:7c1:e7a:62e6 with SMTP id j5-20020a1709062a0500b007c10e7a62e6mr23892314eje.71.1673195468578;
+        Sun, 08 Jan 2023 08:31:08 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1673195468; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=0wT1vXPJGhq0va1r+yTHPPBU9zPvs0FAlLC/wVsGoFAcsMnqJ39uXHMB5Ic2B0klGx
+         z+aoVGBvShPolhfy5DHxTuhE2bLB6djidvFTTaMc2LN+6b/yk3m5EFBt1BmY0/cjrQc6
+         h9O8nFhn7IqzqsCXWXbYdAC/zvVdD0J4LSlzdWAEcKFZqSqprs/NC/3gua3yrXXdEAcQ
+         BcgEZSTFwgUuesMJR+Yph9GGxa4FhSrqQM77pVm0Z75WvvU7H+QzmLfNg8fY7K2qvbyj
+         XL8Nvlx5VhluxpuG+AK4hpAJu+iIzkgpLyR9vhc8t7BostvXwHDx+IcJLR3Buol1MiqF
+         eSeQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:cc:from:list-id:list-unsubscribe:mime-version:feedback-id
+         :message-id:precedence:date:to:list-id:dkim-signature;
+        bh=wMltPjUlZPC0b1LxLwmYiz5dk8GuVjPwxjU1ApDUtbQ=;
+        b=kPB4kKd2lWhpjrz/7uLNDi47caqGuzu24Y46J+vwmX3HBmii+VLPNqh0bJRkvmJp8d
+         SzTpPO9o5SBMWjxwotvx5ossKnK18QLXYVZytK/hsrmT9YounX9KuS/hxRjbikoTwNva
+         B9qlMfgtJJBme3rbfNJl9Fcwkrtw7QBOrfPjJCfA5R2KYBiMgA7N6qyuzixoXaSDPDc4
+         GerfwmE0edLqSaDunr3ylnYLn4xnPqcxYw5a1paMCeMxwvaPmIwVo+1BbKxPRj7zEc+F
+         CFbmXCB9xhYw1X7klDIKOrx9NGlAjI16huNIBq+oU94HxSDTRs7qsk8Yq04cJdcQSYig
+         75eQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@NETORGFT12581165.onmicrosoft.com header.s=selector1-NETORGFT12581165-onmicrosoft-com header.b=uZ6Mu2za;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of mail-90969748233795808301@alternatives-economiques.fr designates 40.93.13.23 as permitted sender) smtp.mailfrom=mail-90969748233795808301@alternatives-economiques.fr
+Return-Path: <mail-90969748233795808301@alternatives-economiques.fr>
+Received: from DM4PR02CU001-vft-obe.outbound.protection.outlook.com (mail-centralusazlp17012023.outbound.protection.outlook.com. [40.93.13.23])
+        by mx.google.com with ESMTPS id h9-20020a05640250c900b0046abe52aca7si7688978edb.486.2023.01.08.08.31.08
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 08:31:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of mail-90969748233795808301@alternatives-economiques.fr designates 40.93.13.23 as permitted sender) client-ip=40.93.13.23;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@NETORGFT12581165.onmicrosoft.com header.s=selector1-NETORGFT12581165-onmicrosoft-com header.b=uZ6Mu2za;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of mail-90969748233795808301@alternatives-economiques.fr designates 40.93.13.23 as permitted sender) smtp.mailfrom=mail-90969748233795808301@alternatives-economiques.fr
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KMZ7eysGdft2/yCPUqA8+UQqtrYpHx28DREvR83BConkcdrLjVZomNQRuK8K023AdAAE4ZA2xRgCEET4t//YJdC1jeoomDE/KJZ41EYISShVVtLpgbfPxE4Yo4IWJxezfAmKXZ+XgxteKV8XPza0J9nW2IyI6O7++JrktR0kEjE6wqCDM1FiZhx3r79WZARZiG9DUdtrjKUxF0fq+B2IpbKwKgE9rVPUxF2stXPM+FPr5rW4KCQf6oNjaTuRzgTeOKgPz2JG4cp0vZnLNChDuKtvgFpmas9bfyj6JeVmNQoAGRI0XspG39/AOKsXYIt6NstqbERJkQ3fTGMJyVMUXg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wMltPjUlZPC0b1LxLwmYiz5dk8GuVjPwxjU1ApDUtbQ=;
+ b=l62D/KogxDxW6gQIEgAQT+LueG9H4xfl0LXAiRwYf9YI45YC/yhVzpz1fJu/JnkDydETLSGylgYwjxHwLeD9Mhw/AXro6vl5f94sItOxXEzaqS8d9F8bL2go7HYNtAW6dmUX470tZ3D28fYavghMpqmIRS3aga1uMnvkRMO/J79sO68a6ayEH/f5O3xjLXouvgxXTUdjVUbQ/l+BQ0WFdncJzoiiPalZUQ1uVJDhaZ1ZHfHTQHjzCijoi6YQyT4TIbjMyItQFmD4FE//JbnnwXwGrwCd03YhTqumS0xLSEf/xYwtE0oyZKKiKYrEFro5w6pR+vIIeHRdBq/WyhBmHQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=permerror (sender ip
+ is 168.61.172.115) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=alternatives-economiques.fr; dmarc=none action=none
+ header.from=jpreprymzn.climatekids.net; dkim=none (message not signed);
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=NETORGFT12581165.onmicrosoft.com;
+ s=selector1-NETORGFT12581165-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wMltPjUlZPC0b1LxLwmYiz5dk8GuVjPwxjU1ApDUtbQ=;
+ b=uZ6Mu2zam8Bf7J5WCipqY4rkRvcl9HDUAuRE2XSF28w+sQ0HJbDiSpYIoQrFzys4ZCVf09knZGFkMvw8TtZHVRRAAr5/dW/5H5Kc61+qPQE60+9cFEJE/6JUPysS1s4XDshE1/3D/eu3KbXxWyN1WiM+1I66EpwH3E/HzdOpOuoEm0HmmKqbjWPm7CqVYoZGcjIdsSLx1qzCB/ttaELjELqAYgZvsvtFYwh/hsgsscTDSs6QzPtt0E9HEplIenjAc65djInC8pRo10HpUG6jtvFwcnj2ZOWOOqNpwWgFM/gIbJpp8U+SUYKJ5+/s7CQW1ewShWRhOkIrwiJB9HVDKQ==
+X-MS-Exchange-Authentication-Results: spf=permerror (sender IP is
+ 168.61.172.115) smtp.mailfrom=alternatives-economiques.fr; dkim=none (message
+ not signed) header.d=none;dmarc=none action=none
+ header.from=jpreprymzn.climatekids.net;
+Received-SPF: PermError (protection.outlook.com: domain of
+ alternatives-economiques.fr used an invalid SPF mechanism)
+List-ID: <.7289367.xt.local>
+To: <darnellkeithj@aol.com>, <darnellkeithj@aol.com>
+Date: Sun, 08 Jan 2023 16:19:03 +0000
+Precedence: bulk
+X-Feedback-ID: 1781223:SG
+Message-ID: <e01f7ce7-c7fb-47fb-gveesyodertxqqwppgz-743d24f27996@atl1s07mta2411.xt.local>
+X-campaignID: bm23_bbmqygzqgjagoxvmonhfgymqygehbfg
+Feedback-ID: 325-anexp#nret-fa:account-notifier
+MIME-Version: 2.0
+List-Unsubscribe: <mailto:1cxmbct2tak6nvi21ervzy8rnkqzt5f-u@comms.teamsnap.com>, <http://comms.teamsnap.com/public/webform/render_form/default/03e1f7db10a6e20cb30f4bde23bc8830/unsub/bbc7u625d1mkirkwerj9nk2loye30/bbmqyivpfgjvoxvervzygymqygehbfg?td=9y6qv010589lkw6nSMKFjg0rsAuNWY75HL8GX6QuFhkzXSlROVj-rrla0Tq39_7hkc6AJcLs0bpbfqAKoXDjW4O0xWvG38xo0cBxh1hOyOeezXiuscelkuHk3E7eSnWKBy9S0y7KvlYe1kElJmg9l2EhAJgdH3ePVDSSjB1OCwrniRLMBJAajph2mJInNzdayiY1AdFaO4Z74&tid=202075884976000178703684532713727709696976058385276393196934917373644329742533891695437>
+List-ID: <7202588.xt.local>
+Content-Type: multipart/encrypted;
+	boundary="_9cdf7680-2c5e-4e5f-a179-31e16e5fbb03_"
+From: "Endurance Auto Warranty Partners"<neoakexihewnxinhaxklq@jpreprymzn.climatekids.net>
+Cc: <darnellkeithj@gmail.com>
+Subject: Endurance Promo - $3OO off any new policy
+X-Mailer: BM23 Mail
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM6NAM12FT094:EE_|CH2PR05MB6872:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7cc19e17-f3ec-4baf-5fbf-08daf195bb9d
+X-MS-Exchange-SenderADCheck: 2
+X-MS-Exchange-AntiSpam-Relay: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?eHVHTVBYNjhxWFU1RFJtQlYvNUJyQUg1ZSsxazFqVkExcE9VZTlBMGZpL0Y1?=
+ =?utf-8?B?VStMbmtnYXgrbmpRYzhOTUo0NndpT1VMQlZiS21BaGFqWFVteXZTanA3S0J1?=
+ =?utf-8?B?L0dyZ3ZjZVVpb293M1dVZjJYaG9CZXhsYm8yUDV0THFFblVmRDRGS1dNeDFy?=
+ =?utf-8?B?YTVWd3QvZVF1TWtZNlowM2RkN0s3SmxIbVpIZ3pwb3BzNkc0M2Vqc0V6SFlw?=
+ =?utf-8?B?aDJxWlZXV041Ujc0TElybTA4SkNmNUpIZWdwcktCK2lGR3haaHNjT3o2SkdG?=
+ =?utf-8?B?eEZ4RzNkaHh3eXRqbHdjcVFFdHBrcVFRaE9KVUIzN2pRSHZWU3ducTE4YzdR?=
+ =?utf-8?B?eHRQN3JNblA5Z1lwYjE5RlR6cWpmbEt6SmVzY3pDZHhsZ3FCK1FJNFJvZkF2?=
+ =?utf-8?B?MFEzdURjNVNhakRQVG9KaDBmUUdyU0JPNVNMMTVlc1d5YlFVck1DZjNuZi9s?=
+ =?utf-8?B?eGFTd0R3WTBIUmxuMjhnQ2o0R3ZoK3JsWjJXVlJxanQ4TkRYZ1R6NllBL3Z2?=
+ =?utf-8?B?VzRwQ2dQWVpidDUyb3NSMUhaWkNIN0lhZU42Mk9FdjFSL3hoWDJwbUN3NkZB?=
+ =?utf-8?B?UUg3Uzc3WUo3aXdsUVh3V2grSGY1YmdyVTIwWTZaNmNSNDhzVUVkR2xjRHRl?=
+ =?utf-8?B?U2xPMWdKTzVNb1NPMEpBcGdTbnVWR0RCa24wVDJqUmowRFA3Vjd3MXQrZ2ps?=
+ =?utf-8?B?OWwwVTRnNkozcmxRMWw5SytiYkdoMFpJTnIvRldxL09MbFZaNVVhQzhtZmtu?=
+ =?utf-8?B?TWZhaS9rMnZQT0s2YzlPVG1GR1RoeTJ3ZlJZNEt5dHN2dld1eDJoMVdlVUw0?=
+ =?utf-8?B?S25MQUVsRkFRRHZTYURGSVpSc092dytYUUV4MzQ1a21CYThJTjRrYVNaM3JU?=
+ =?utf-8?B?SzFUeExNT1Q0R3JSL3h0aTM5Nk5qUVpZb2R5VzE2b0dGSXM3bERJbHIxZitE?=
+ =?utf-8?B?Q0dHRkN0VTZGY0pKSnNwcmw3dXRSWithanpIZWFtZi9xWnUzZ1pkWUhRSFNG?=
+ =?utf-8?B?UktoRzVHcmcxTWNGVDZhSWIzbVU5L2dPRjZiL0lGbit4T3pta0pWM3hWTThM?=
+ =?utf-8?B?OUF5WVN1aTRTazh3VmtIVytUcmdQOWlFRExQV1VPMFFvZERnZUx2M1RWY1N1?=
+ =?utf-8?B?QzdtbzMyaDlmVkI3bm9MYmRONXVYTlpibkQ5VHhTOEd1Z1pKeTI5SDdrVGUr?=
+ =?utf-8?B?b2JtTm16OGVuVk9xWmlrNjlGd1JEOEl4NWpiV2xlZnRjR1RJcFBTYjhFYktC?=
+ =?utf-8?B?dDdLWWZJSUs4d2QwNW1aMzQ4MXRoVGQ1U1ZoZlUyc2RQaDJJdDdSbVNaaS9Z?=
+ =?utf-8?Q?jmsDWvQinS7UI=3D?=
+X-Forefront-Antispam-Report:
+	CIP:168.61.172.115;CTRY:US;LANG:en;SCL:5;SRV:;IPV:NLI;SFV:SPM;H:microsoftonline.com;PTR:InfoDomainNonexistent;CAT:OSPM;SFS:(13230022)(376002)(136003)(396003)(39480400003)(346002)(34096005)(39510400003)(39830400003)(448600002)(6400799009)(5400799009)(6200799037)(451199015)(40470700004)(46966006)(40140700001)(2906002)(84850400001)(84870400001)(81166007)(83170400001)(5660300002)(8936002)(82310400005)(41300700001)(30864003)(34020700004)(83380400001)(47076005)(66574015)(35950700001)(36200700002)(110136005)(70586007)(42186006)(70206006)(38610400001)(586005)(19810500001)(66899015)(33964004)(40580700002)(40460700003)(40480700001)(966005)(8676002)(26005)(4326008)(18074004)(9686003)(336012)(42882007)(104086003);DIR:OUT;SFP:1023;
+X-OriginatorOrg: NETORGFT12581165.onmicrosoft.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jan 2023 16:31:02.5951
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7cc19e17-f3ec-4baf-5fbf-08daf195bb9d
+X-MS-Exchange-CrossTenant-Id: 0e9ce913-40e3-4008-b55c-6d1f1a420ab4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0e9ce913-40e3-4008-b55c-6d1f1a420ab4;Ip=[168.61.172.115];Helo=[microsoftonline.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DM6NAM12FT094.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR05MB6872
+X-TUID: sTePvmpf+eQ2
+
+--_9cdf7680-2c5e-4e5f-a179-31e16e5fbb03_
+Content-Type: multipart/parallel;
+	boundary="_54f36345-0236-4234-9bf5-0b484ad104f1_"
+
+--_54f36345-0236-4234-9bf5-0b484ad104f1_
+Content-Type: multipart/alternative; boundary="_----------=bollineneYhlNmKicccRK.KqicNa8jSt"
+
+--_----------=bollineneYhlNmKicccRK.KqicNa8jSt
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Hexa
+
+
+Confirm Your Email
+ 
+Hey Smiles Davis,
+ 
+We received a request to set your HireClub email to hello@. If this is correct, please confirm by clicking the button below.
+ 
+Confirm Email 
+
+https:///FTcCaR9PI
+ 
+
+
+--_----------=0O4JcH3_--==mimepart_bRYj3jiRjXeSo5cMKY_aoLwVzxgeHhFOVfVrKgsZpRW7lwuB8em7yoqMZUq
+Content-Type: text/html; charset=utf-8
+
+
+
+CYWNMVgzqgjag-629 -- 629 -- 629 --629 --629 <DIv<dI/V>
+<DIv DIR=ltrdata-sETdIR=false stYlE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></div>
+
+--_----------=bollineneYhlNmKicccRK.KqicNa8jSt
+Content-Type: text/html; charset=utf-8
+
+
+
+<CENTER>
+<img SRC="https://assets.unlayer.com/stock-templates1673033214853-xlkfdjhkfdjgkh.png" usemap="#image-map">
+<map name="image-map">
+    <area target="" alt="" title="" coords="2,0,600,2230"    HREF="yjhkgyuk.aybit.ch/cl/113844_md/31/48545/3663/143/239856" >
+    <area target="" alt="" title="" coords="269,2295,334,2308"  HREF="yjhkgyuk.aybit.ch/un/113844_md/31/48545/3663/143/239856" >
+<ObJECT>
+<title>10.0.0.5
+<ObJECT>
+<title>10.0.0.5
+<DIv DIR=ltrdata-sETdiR=false sTyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></Div>
+<DIV DIr=ltrdata-SeTDIR=false STyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></diV>
+<DiV dir=ltrdata-sEtDIr=false STyLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></dIv>
+<dIV DiR=ltrdata-sETDiR=false Style="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></DIv>
+
+<DIv diR=ltrdata-SeTdiR=false StYLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></Div>
+<div DIR=ltrdata-sEtdIR=false StylE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe"></DiV>
+
+
+
+You can manually confirm your account by pasting the following code into the empty field at
+
+ 
+Dear diMMD,
+
+To continue your application for ConsignO Cloud please confirm your email address.
+
+Confirm your email address. 
+
+Border
+We respect your privacy and will not divulge your personal information to any third parties.
+Do not reply to this message. This return email address is not valid and you will not receive a response. 
+
+***********************************
+
+Confirm Your Email
+ 
+Hey Smiles Davis,
+ 
+We received a request to set your HireClub email to hello@. If this is correct, please confirm by clicking the button below.
+ 
+Confirm Email 
+
+https:///dUzWHA3oH
+ 
+
+ 
+
+
+--_----------=bollineneYhlNmKicccRK.KqicNa8jSt--
+--_54f36345-0236-4234-9bf5-0b484ad104f1_--
+--_9cdf7680-2c5e-4e5f-a179-31e16e5fbb03_
+Content-Type: text/html;
+Content-Transfer-Encoding: Hexa
+
+
+
+
+SkD--Fsvoe--krd---------------------------------------szs--vEBgR--bWR
+
+Bonjour kNlCP AJyoX,
+
+----0NDVEtKs;jPLSfo
+
+Start a Photography Business...and Save 50%.
+ 
+
+
+ Gas is nearly $6 a gallon. Milk is $6 a gallon. But you can start a photography business to earn income for as little as $3 a month. Whether you're getting started or getting busier this summer season, save 50% now.
+
+<div>
+<SXHvIZGuewTCa><jVEnqRTEFIBgsoBnuDz><rteMSEiDwlTFhO></NRihsCZHjehiKpW>_-_<SXHvIZGuewTCa><=
+><VeShlRUCXi></rteMSEiDwlTFhO>_-_<HSbOSTQlkcYq><NRihsCZHjehiKpW><LWaYTtrALTdLfgJSzT=
+></uZgErKanTIXUmJdmA>_____________________________LWaYTtrALTdLfgJSzT____________________=
+______________<uZgErKanTIXUmJdmA><LWaYTtrALTdLfgJSzT><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>_-_<ZevoOhBqMBKcnwKp><=
+><LWaYTtrALTdLfgJSzT></LWaYTtrALTdLfgJSzT>__________________________________________=
+_____________________<dQbEUhMMiAT><HSbOSTQlkcYq><dQbEUhMMiAT></=
+>_-_<jVEnqRTEFIBgsoBnuDz><LWaYTtrALTdLfgJSzT><LWaYTtrALTdLfgJSzT></uZgErKanTIXUmJdmA>_-_<=
+><LWaYTtrALTdLfgJSzT><rteMSEiDwlTFhO></VeShlRUCXi>
+<jVEnqRTEFIBgsoBnuDz><NRihsCZHjehiKpW><dQbEUhMMiAT></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><HSbOSTQlkcYq></SXHvIZGuewTCa>_-_<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><ZevoOhBqMBKcnwKp=
+></ZevoOhBqMBKcnwKp>_____________________________rteMSEiDwlTFhO____________________=
+______________<jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT><LWaYTtrALTdLfgJSzT></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<dQbEUhMMiAT><=
+><dQbEUhMMiAT></dQbEUhMMiAT>__________________________________________=
+_____________________<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></=
+>_-_<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<=
+><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></dQbEUhMMiAT>
+<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><HSbOSTQlkcYq></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz=
+></jVEnqRTEFIBgsoBnuDz>_____________________________jVEnqRTEFIBgsoBnuDz____________________=
+______________<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>__________________________________________=
+_____________________<SXHvIZGuewTCa><VeShlRUCXi><[amirak]></=
+>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></HSbOSTQlkcYq>_-_<=
+><uZgErKanTIXUmJdmA><uZgErKanTIXUmJdmA></SXHvIZGuewTCa>
+<ZevoOhBqMBKcnwKp><HSbOSTQlkcYq><NRihsCZHjehiKpW></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><jVEnqRTEFIBgsoBnuDz></rteMSEiDwlTFhO>_-_<dQbEUhMMiAT><NRihsCZHjehiKpW><rteMSEiDwlTFhO=
+></LWaYTtrALTdLfgJSzT>_____________________________rteMSEiDwlTFhO____________________=
+______________<NRihsCZHjehiKpW><rteMSEiDwlTFhO><NRihsCZHjehiKpW></HSbOSTQlkcYq>_-_<=
+><LWaYTtrALTdLfgJSzT><SXHvIZGuewTCa></uZgErKanTIXUmJdmA>_-_<VeShlRUCXi><=
+><VeShlRUCXi></jVEnqRTEFIBgsoBnuDz>__________________________________________=
+_____________________<VeShlRUCXi><rteMSEiDwlTFhO><HSbOSTQlkcYq></=
+>_-_<NRihsCZHjehiKpW><rteMSEiDwlTFhO><LWaYTtrALTdLfgJSzT></VeShlRUCXi>_-_<=
+><SXHvIZGuewTCa><ZevoOhBqMBKcnwKp></LWaYTtrALTdLfgJSzT>_-_</div>
+----LMQMYjOJ;dL1RLo
+gDK--sxZMy--GwQ---------------------------------------tMt--ttVpG--fei
+----OUEjqisB;jmVPD4
+
+----CuHzrmun;185CMB
+
+Hello Ubygd,
+
+SHOW. SHARE. SELL. SCHEDULE.
+
+ Advanced AI technology is your virtual team with automated multi‑tasking while you're behind the camera.
+ 
+
+
+
+
+ Save 50% off all plans right now.
+ 
+
+
+ Zenfolio has built a community of more than a half million photographers. Join us today and save 50%. 
+ 
+We're here for you.Have questions? Reach out to our amazing support team who are photographers just like you and experts on all things Zenfolio.
+
+
+jOA--DZIqx--zpR---------------------------------------Jvi--OErGN--FDS
+
+
+
+----EPwkMzZG;WaFEe6
+
+ufa--kRCZE--WoN---------------------------------------mnO--ayZQC--tog
+
+
+----XsAAvAD0;i98xzI
+
+
+----AlT2GilQ;EG9m2v----prJ1LTxk;01At8N
+----9vLp3nz4;e5HfwP
+
+----oJoxRhQc;8mMlw2----j3BcPnEs;RUoAwp
+
+kDz--yxUsS--qci---------------------------------------THJ--vDHho--Afp
+
+
+
+ 
+
+Skip to content
+
+Free North American Shipping - Free Canadian Returns* - We Ship Worldwide
+
+    Brands
+
+Men
+
+Women
+
+SALE
+
+What's New
+Faded Soul
+
+    Account Search Cart (0) 
+
+Men's Footwear
+
+-
+Bugatti Morino I Dress shoe in BlackBugatti Morino I Dress shoe in Black
+
+Bugatti
+Bugatti Morino I Dress shoe in Black
+$225.00
+BOSS Titanium KNSTA Sock TrainersBOSS Titanium KNSTA Sock Trainers
+
+BOSS
+BOSS Titanium KNSTA Sock Trainers
+From $248.00
+BOSS Surfley Twin-Strap Sandals with Structured UppersBOSS Surfley Twin-Strap Sandals with Structured Uppers
+
+BOSS
+BOSS Surfley Twin-Strap Sandals with Structured Uppers
+$138.00
+BOSS Darrel Leather SlidesBOSS Darrel Leather Slides
+On sale
+<div>
+<SXHvIZGuewTCa><jVEnqRTEFIBgsoBnuDz><rteMSEiDwlTFhO></NRihsCZHjehiKpW>_-_<SXHvIZGuewTCa><=
+><VeShlRUCXi></rteMSEiDwlTFhO>_-_<HSbOSTQlkcYq><NRihsCZHjehiKpW><LWaYTtrALTdLfgJSzT=
+></uZgErKanTIXUmJdmA>_____________________________LWaYTtrALTdLfgJSzT____________________=
+______________<uZgErKanTIXUmJdmA><LWaYTtrALTdLfgJSzT><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>_-_<ZevoOhBqMBKcnwKp><=
+><LWaYTtrALTdLfgJSzT></LWaYTtrALTdLfgJSzT>__________________________________________=
+_____________________<dQbEUhMMiAT><HSbOSTQlkcYq><dQbEUhMMiAT></=
+>_-_<jVEnqRTEFIBgsoBnuDz><LWaYTtrALTdLfgJSzT><LWaYTtrALTdLfgJSzT></uZgErKanTIXUmJdmA>_-_<=
+><LWaYTtrALTdLfgJSzT><rteMSEiDwlTFhO></VeShlRUCXi>
+<jVEnqRTEFIBgsoBnuDz><NRihsCZHjehiKpW><dQbEUhMMiAT></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><HSbOSTQlkcYq></SXHvIZGuewTCa>_-_<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><ZevoOhBqMBKcnwKp=
+></ZevoOhBqMBKcnwKp>_____________________________rteMSEiDwlTFhO____________________=
+______________<jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT><LWaYTtrALTdLfgJSzT></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<dQbEUhMMiAT><=
+><dQbEUhMMiAT></dQbEUhMMiAT>__________________________________________=
+_____________________<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></=
+>_-_<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<=
+><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></dQbEUhMMiAT>
+<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><HSbOSTQlkcYq></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz=
+></jVEnqRTEFIBgsoBnuDz>_____________________________jVEnqRTEFIBgsoBnuDz____________________=
+______________<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>__________________________________________=
+_____________________<SXHvIZGuewTCa><VeShlRUCXi><[amirak]></=
+>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></HSbOSTQlkcYq>_-_<=
+><uZgErKanTIXUmJdmA><uZgErKanTIXUmJdmA></SXHvIZGuewTCa>
+<ZevoOhBqMBKcnwKp><HSbOSTQlkcYq><NRihsCZHjehiKpW></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><jVEnqRTEFIBgsoBnuDz></rteMSEiDwlTFhO>_-_<dQbEUhMMiAT><NRihsCZHjehiKpW><rteMSEiDwlTFhO=
+></LWaYTtrALTdLfgJSzT>_____________________________rteMSEiDwlTFhO____________________=
+______________<NRihsCZHjehiKpW><rteMSEiDwlTFhO><NRihsCZHjehiKpW></HSbOSTQlkcYq>_-_<=
+><LWaYTtrALTdLfgJSzT><SXHvIZGuewTCa></uZgErKanTIXUmJdmA>_-_<VeShlRUCXi><=
+><VeShlRUCXi></jVEnqRTEFIBgsoBnuDz>__________________________________________=
+_____________________<VeShlRUCXi><rteMSEiDwlTFhO><HSbOSTQlkcYq></=
+>_-_<NRihsCZHjehiKpW><rteMSEiDwlTFhO><LWaYTtrALTdLfgJSzT></VeShlRUCXi>_-_<=
+><SXHvIZGuewTCa><ZevoOhBqMBKcnwKp></LWaYTtrALTdLfgJSzT>_-_</div>
+BOSS
+BOSS Darrel Leather Slides
+$128.70 $198.00
+Bugatti Quetzal Lace ShoeBugatti Quetzal Lace Shoe
+On sale
+
+Bugatti
+Bugatti Quetzal Lace Shoe
+$126.75 $195.00
+Bugatti Morino Derby ShoesBugatti Morino Derby Shoes
+Sold out
+
+Bugatti
+Bugatti Morino Derby Shoes
+$128.70 $198.00
+BOSS Italian-made slides with contrast-logo strapBOSS Italian-made slides with contrast-logo strap
+On sale
+
+BOSS
+BOSS Italian-made slides with contrast-logo strap
+$57.20 $88.00
+Bugatti Morino I Derby ShoesBugatti Morino I Derby Shoes
+On sale
+
+Bugatti
+Bugatti Morino I Derby Shoes
+$128.70 $198.00
+Bugatti Carmelo SneakerBugatti Carmelo Sneaker
+On sale
+
+Bugatti
+Bugatti Carmelo Sneaker
+$146.25 $225.00
+BOSS Glaze low-top trainers in leather, suede and technical fabricBOSS Glaze low-top trainers in leather, suede and technical fabric
+On sale
+
+BOSS
+BOSS Glaze low-top trainers in leather, suede and technical fabric
+$117.00 $195.00
+Breeze Wave Penny Keeper LoaferBreeze Wave Penny Keeper Loafer
+Sold out
+<div>
+<SXHvIZGuewTCa><jVEnqRTEFIBgsoBnuDz><rteMSEiDwlTFhO></NRihsCZHjehiKpW>_-_<SXHvIZGuewTCa><=
+><VeShlRUCXi></rteMSEiDwlTFhO>_-_<HSbOSTQlkcYq><NRihsCZHjehiKpW><LWaYTtrALTdLfgJSzT=
+></uZgErKanTIXUmJdmA>_____________________________LWaYTtrALTdLfgJSzT____________________=
+______________<uZgErKanTIXUmJdmA><LWaYTtrALTdLfgJSzT><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>_-_<ZevoOhBqMBKcnwKp><=
+><LWaYTtrALTdLfgJSzT></LWaYTtrALTdLfgJSzT>__________________________________________=
+_____________________<dQbEUhMMiAT><HSbOSTQlkcYq><dQbEUhMMiAT></=
+>_-_<jVEnqRTEFIBgsoBnuDz><LWaYTtrALTdLfgJSzT><LWaYTtrALTdLfgJSzT></uZgErKanTIXUmJdmA>_-_<=
+><LWaYTtrALTdLfgJSzT><rteMSEiDwlTFhO></VeShlRUCXi>
+<jVEnqRTEFIBgsoBnuDz><NRihsCZHjehiKpW><dQbEUhMMiAT></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><HSbOSTQlkcYq></SXHvIZGuewTCa>_-_<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><ZevoOhBqMBKcnwKp=
+></ZevoOhBqMBKcnwKp>_____________________________rteMSEiDwlTFhO____________________=
+______________<jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT><LWaYTtrALTdLfgJSzT></jVEnqRTEFIBgsoBnuDz>_-_<=
+><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<dQbEUhMMiAT><=
+><dQbEUhMMiAT></dQbEUhMMiAT>__________________________________________=
+_____________________<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></=
+>_-_<dQbEUhMMiAT><dQbEUhMMiAT><dQbEUhMMiAT></dQbEUhMMiAT>_-_<=
+><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></dQbEUhMMiAT>
+<rteMSEiDwlTFhO><jVEnqRTEFIBgsoBnuDz><HSbOSTQlkcYq></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz=
+></jVEnqRTEFIBgsoBnuDz>_____________________________jVEnqRTEFIBgsoBnuDz____________________=
+______________<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<=
+><jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz></jVEnqRTEFIBgsoBnuDz>_-_<jVEnqRTEFIBgsoBnuDz><=
+><jVEnqRTEFIBgsoBnuDz></ZevoOhBqMBKcnwKp>__________________________________________=
+_____________________<SXHvIZGuewTCa><VeShlRUCXi><[amirak]></=
+>_-_<jVEnqRTEFIBgsoBnuDz><jVEnqRTEFIBgsoBnuDz><dQbEUhMMiAT></HSbOSTQlkcYq>_-_<=
+><uZgErKanTIXUmJdmA><uZgErKanTIXUmJdmA></SXHvIZGuewTCa>
+<ZevoOhBqMBKcnwKp><HSbOSTQlkcYq><NRihsCZHjehiKpW></jVEnqRTEFIBgsoBnuDz>_-_<LWaYTtrALTdLfgJSzT><=
+><jVEnqRTEFIBgsoBnuDz></rteMSEiDwlTFhO>_-_<dQbEUhMMiAT><NRihsCZHjehiKpW><rteMSEiDwlTFhO=
+></LWaYTtrALTdLfgJSzT>_____________________________rteMSEiDwlTFhO____________________=
+______________<NRihsCZHjehiKpW><rteMSEiDwlTFhO><NRihsCZHjehiKpW></HSbOSTQlkcYq>_-_<=
+><LWaYTtrALTdLfgJSzT><SXHvIZGuewTCa></uZgErKanTIXUmJdmA>_-_<VeShlRUCXi><=
+><VeShlRUCXi></jVEnqRTEFIBgsoBnuDz>__________________________________________=
+_____________________<VeShlRUCXi><rteMSEiDwlTFhO><HSbOSTQlkcYq></=
+>_-_<NRihsCZHjehiKpW><rteMSEiDwlTFhO><LWaYTtrALTdLfgJSzT></VeShlRUCXi>_-_<=
+><SXHvIZGuewTCa><ZevoOhBqMBKcnwKp></LWaYTtrALTdLfgJSzT>_-_</div>
+SWIMS
+Breeze Wave Penny Keeper Loafer
+$195.00
+Breeze Wave Penny Keeper LoaferBreeze Wave Penny Keeper Loafer
+Sold out
+
+SWIMS
+Breeze Wave Penny Keeper Loafer
+$195.00
+Breeze Wave Lace LoaferBreeze Wave Lace Loafer
+Sold out
+
+SWIMS
+Breeze Wave Lace Loafer
+$195.00
+Breeze Wave Lace LoaferBreeze Wave Lace Loafer
+Sold out
+
+SWIMS
+Breeze Wave Lace Loafer
+$195.00
+Breeze Wave Lace LoaferBreeze Wave Lace Loafer
+Sold out
+
+SWIMS
+Breeze Wave Lace Loafer
+$195.00
+Breeze Wave Boat LoaferBreeze Wave Boat Loafer
+Sold out
+
+SWIMS
+Breeze Wave Boat Loafer
+$195.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+Sold out
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit Sneaker
+Sold out
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+Sold out
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+Sold out
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Breeze Tennis Knit SneakerBreeze Tennis Knit Sneaker
+
+SWIMS
+Breeze Tennis Knit Sneaker
+$200.00
+Braided Lace Lux Loafer DriverBraided Lace Lux Loafer Driver
+Sold out
+
+SWIMS
+Braided Lace Lux Loafer Driver
+$235.00
+12
+Menu
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>????DLdlFHVHeK????</th><th>????q6VfBWWLT6????</th>
+        <th>????47rjT7Y4dE????</th><th>????HfiCVTC6Jc????</th>
+        <th>????ZLHkfnui7x????</th><th>????VGZ9jTbZQp????</th>
+        <th>????2WlxSSdY7C????</th><th>????Jn26eebojl????</th>
+        <th>????kk3pQyhhQh????</th><th>????6ekC5NBlgp????</th>
+        <th>????JAL24gF4hi????</th><th>????puJUeYjJJh????</th>
+        <th>????VkQ7eRe2nV????</th><th>????DUrAc2IrGC????</th>
+        <th>????bzD6zDQ0r4????</th><th>????gyJNYoxduJ????</th>
+        <th>????ld7ToUapij????</th><th>????sEjze1hwd2????</th>
+        <th>????NUKeIZtLd4????</th><th>????C6R8GA85fw????</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>????KFfuOl4adZ????</td><td>????qm6DIowzeY????</td>
+        <td>????OwmgTVu89t????</td><td>????g8VdLlWGmW????</td>
+        <td>????nyKtZy3pDW????</td><td>????6ybB0QwhJb????</td>
+        <td>????IehbITI01D???? York</td>
+        <td>????etIjPplY3b????</td><td>????BLclb5JywB????</td>
+        <td>????Ax3zcd3JXc????</td><td>????CCFFjslpqE????</td>
+        <td>????wMQ9ijirS4????</td><td>????3ah6a7rhpV????</td>
+        <td>????mNGmmV94Dv????</td><td>????UDr94HDo6F????</td>
+        <td>????oAHRi5ncfH????</td><td>????OUzBqzXNjT????</td>
+        <td>????ZJbB9LRC6n????</td><td>????pZorI2loaX????</td>
+      </tr>
+      <tr>
+        <th>#</th>
+        <th>????0I9UAOft7E????</th><th>????uXCUGcKI8S????</th>
+        <th>????vJrONQlEF5????</th><th>????9RwJwZ8muV????</th>
+        <th>????w5FHxHvZPy????</th><th>????0vNspkgv7d????</th>
+        <th>????dUGrHJl5Ol????</th><th>????ByTqCSszMD????</th>
+        <th>????lOqriSb6SV????</th><th>????G6JIGDnVm1????</th>
+        <th>????yZtx1OPHxA????</th><th>????5oVSfpNDaH????</th>
+        <th>????DFRjv9ffus????</th><th>????V1WL6u7ggu????</th>
+        <th>????VPHuWBiuyo????</th><th>????DkBowmR4oW????</th>
+        <th>????7yEs4PrdOy????</th><th>????c1bD0CnETG????</th>
+        <th>????OooglPjgRP????</th><th>????Kx6LhKtqgm????</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>????o5Ob9BE2h8????</td><td>????4cTl8lNhi9????</td>
+        <td>????FAU69izgQh????</td><td>????tVPrInGkJM????</td>
+        <td>????nEtZrFrfza????</td><td>????oj9pLoW7w2????</td>
+        <td>????PrNEwY45fh???? York</td>
+        <td>????1PPxsZ1h0w????</td><td>????32XA19YckF????</td>
+        <td>????Mn1kIVNPlH????</td><td>????NmkvHepxZs????</td>
+        <td>????GwEOEgVJtb????</td><td>????VNHOUZ7rV0????</td>
+        <td>????zDg38rniwP????</td><td>????KKsqF3m4j6????</td>
+        <td>????nZKeMMiJf5????</td><td>????s2w3xLrXnH????</td>
+        <td>????uZPyH2r9Zo????</td><td>????gEs1TF4WZ0????</td>
+      </tr>
+    </tbody>
+  </table>
+
+    About Us
+    Contact Us
+    Search
+    Shipping Policy
+    Returns and Exchange Policy
+    Terms of Service
+    Refund policy
+
+About Faded Soul
+
+With retail roots going back more than a century, we pride ourselves in bringing the boutique shopping experience online. Faded Soul offers one of the widest selections of premium Canadian outerwear on the internet, all with competitive pricing and free North American shipping. If you find a better price, we'll match it. 
+Join our newsletter
+
+Save 15% off your next purchase by joining!
+© Faded Soul
+
+Powered by Shopify
+
+Please confirm this E-Mail and you will receive our news messages.
+To do this click on following link:
+
+
+Best regards
+
+ROSTA USA CORP.
+8098 Kalamazoo Street
+US - South Haven, Michigan 90964
+Phone: +1 (0)269 841-5550
+Fax: +1 (0)269 924-6701
+E-Mail: info@
+
+
+
+
+
+----zIRLTkaS;oFLImg
+
+Bonjour n6MCA AD5DmDL,
+
+¡Gracias por suscribirte! | Thanks for subscribing! | Merci pour votre subscription!
+Oui, inscris moi sur cette liste.
+Merci de l'intérêt que vous portez à notre contenu ! Cliquez sur le bouton pour confirmer votre inscription à la newsletter Easygrrnqi.
+
+Nous vous remercions de votre confiance.
+
+activation de compte sur Inscription-Facile
+
+Votre compte a été créé, mais il doit encore être activé.
+
+<P>Thanks for asking. There’s a “forgot password” link on the login screen in the app. (see image beside when login).
+
+<p>In addition to that, there are a couple other options on the web (but not in the app):
+
+
+<P>Please Reset Your Password For your security, we are strengthening our password requirements and as a result, your existing password has been disabled.
+
+<p>.</P>
+
+<p>Please enter your email and click "Continue" below to send a password reset message to the email associated with your account. This email will contain a link to reset your password that will expire within 24 hours.
+
+YfD--qxNHN--pWs---------------------------------------MyZ--zSrNb--bfK
+
+Welcome to your new Microsoft 365 E5 instant sandbox
+
+Your new Microsoft 365 instant sandbox comes pre-provisioned with Microsoft Teams, SharePoint, Outlook, and Office. It also includes licenses for 24 test users plus one admin, and the latest Microsoft 365 apps for your PC and Mac, including Power Apps, Power BI, Enterprise Mobility + Security, Office 365 Advanced Threat Protection, and Azure Active Directory.
+
+In addition, you get pre-installed sample data, including the new Teams sample data pack, which simulate a small corporate environment to help you build solutions across the Microsoft 365 platform. This includes:
+
+    Microsoft Graph user, mail, and calendar data - 16 sample users with user data and content to help you model your solutions. This includes user mailboxes, calendar events, and integration into a Teams developer environment with simulated chats and team memberships.
+    Teams sample data pack with the following customized developer environment:
+        App sideloading pre-configured.
+        Five sample teams, channels, tabs, and chat sessions built around the 16 sample users.
+        App Studio / Teams Developer Portal pre-installed and pinned to help you streamline the creation of your Teams app manifest and app package, plus the card editor and a React control library.
+    SharePoint Framework sample data – Choose from six site templates that you can install and evaluate as custom solutions for your organization (with one pre-installed). 
+
+Next steps
+
+Go to your Microsoft 365 Developer Program dashboard to manage your sandbox subscription and get personalized recommendations based on your preferences.
+
+Explore documentation and training for:
+
+    Microsoft Teams
+    Microsoft Graph
+    Office Add-ins for Excel, Word, Outlook, and moe
+    SharePoint Framework
+    Power Apps 
+
+Reminder: Your Microsoft 365 E5 subscription is for development purposes only. It can be revoked at any time if it is used for purposes other than development. For more information, review the Microsoft 365 Developer Program Terms and Conditions.
+
+Thank you for your membership in the Microsoft 365 Developer Program.
+
+The Microsoft 365 Developer Program Team
+
+YpL--hwGzk--KeE---------------------------------------lhe--qXrMd--PAi
+
+<p>Thanks for signing up to receive emails from the Children's Museum of Phoenix. Now you won't miss out on our special events, programs, discounts and so much more!</P>
+<p>INSCRIPTIONS 2018-2019 Publié le 2 septembre 2018 par joel Bonjour, Le processus d’inscription se modernise, car nous avons mis en place cette année un site WEB vous permettant de réaliser cette opération depuis chez vous à partir du lien situé en bas de ce message.Cependant, si vous rencontrez des difficultés, des permanences sont mises en places au gymnase Henri Barbusse, tous les soirs de 17h00 à 19h00 pour vous aider en cas de besoin, pour faire votre inscription en ligne.
+
+
+<P>Madame, Monsieur,
+<P>Please remember to drop your regalia back to the regalia room at Claudelands.
+<P>Xfinity Forum Archive...
+<p>Also, make sure to bookmark (Your Seller ID) as a favorite seller.
+<P>Thank you again, it has been a pleasure doing business with you. If you have any questions, please contact me directly at (your email address).
+
+<p>This is an archived section of the community.
+
+<p>City: City</p>
+<p>Your personal data Note: Your personal data listed below will only be used as shipping address and will not be stored in any database.
+<P>Your personal data Note: Your personal data listed below will only be used as shipping address and will not be stored in any database.
+<P>(Your Seller ID) 
+<P> Ordered Publications in printed form publications
+<p>Bonjour Hugo nous n'envoyons plus de courriels car nous tenons à ce que les chauffeurs se connectent sur le site, regardent les noms des passagers et déclarent le départ complet. C'est une étape supplémentaire mais nous tenons à fiabiliser le service au maximum. Merci pour votre commentaire Myriam Agente AmigoExpress
+<p>Dear CUSTOMER NAME,
+
+<P>This is an archived section of the community.
+<P>Mardi 2 et Mercredi 3 février auront lieu les élections des représentants étudiants à l'université de Bourgogne.  ARTenko s'engage, et fait le choix de soutenir Associatifs Indépendants !
+<p>Company: Company
+<P>Les étudiants d'A&I sont issus d'associations étudiantes ce qui permet de cibler au mieux les problématiques de chaque filière. Ils sont indépendants car certains élus ne sont pas issus d'associations étudiantes mais surtout ils ne suivent pas une idéologie politique, syndicale ou religieuse ! Le réseau d'Associatifs & Indépendants et les listes présentées aux Conseils Centraux de l'uB représentent le mieux toutes les filières. L'histoire de l'art et archéologie aussi !
+
+<P>Street: Street
+<p>This change was done in an effort to make the forum easier to use and to keep only the most helpful and recent content active.
+
+
+<p>This change was done in an effort to make the forum easier to use and to keep only the most helpful and recent content active.
+<p>Last name: Last name
+<P>Chers étudiants, chères étudiantes,
+
+<p> </p>
+
+
+
+<p>Thank you for your order! Your order has been successfully transmitted. 
+<p>Regards,</p>
+
+<P>Nous avons reu votre demande d'inscription la newsletter.
+<P>First name: First name
+<P>La page n'existe pas La page que vous recherchez n'existe pas ou a été supprimée. Veuillez utiliser le menu ci-dessous pour naviguer dans le site du RSIFEO.</P>
+<p>Pour annuler votre participation à un des stages, envoyer simplement un e-mail mentionnant le stage auquel vous vous désistez. Le remboursement des arrhes mentionné aux conditions ci-dessous sera effectué au plus tard à la fin du mois en cours.
+
+
+<p>Company: Company
+<p>Bonjour Hugo nous n'envoyons plus de courriels car nous tenons à ce que les chauffeurs se connectent sur le site, regardent les noms des passagers et déclarent le départ complet. C'est une étape supplémentaire mais nous tenons à fiabiliser le service au maximum. Merci pour votre commentaire Myriam Agente AmigoExpress
+
+
+
+
+
+<P>Xfinity Forum Archive...
+<p>Chers Etudiants On vous souhaite une chaleureuse bienvenue sur le site internet de l'Institut Supérieur des Beaux Arts de Sousse Cet espace a pour but de vous donner un aperçu général des divers informations concernant les emplois des temps, les calendriers des examens, les cours, les inscriptions, l'orientation...
+<p>Thank you very much for your order. I hope you enjoy this yellow sundress. I see you’re in southern California so you’ll have many chances to use it. We’re here if you need anything.
+<P> 
+
+
+<p>Post your questions in the Xfinity Community
+
+<P>RENDEZ-VOUS MARDI & MERCREDI (muni de votre carte étudiante, salle Maurice Cozian autour du patio droit-lettres pour l'UFR Sciences Humaines)
+
+<P>Last name: Last name
+
+SeP--zsegq--dOM---------------------------------------zqc--yrTNN--euM
+Confirm Your Email
+ 
+Hey Smiles Davis,
+ 
+We received a request to set your HireClub email to hello@. If this is correct, please confirm by clicking the button below.
+ 
+Confirm Email 
+
+https:///aLk5q9XfxrxFYrS
+ 
+Confirm your account
+
+Click the button below to confirm your Dauntless account.
+
+Click here to confirm your account
+
+— or —
+
+You can manually confirm your account by pasting the following code into the empty field at
+
+OBi--whpdV--rPr---------------------------------------Dtd--mBHgz--egf
+Sehr geehrte Frau chjud
+
+Herzlichen Dank für Ihr Interesse am Denner Newsletter!
+
+Bestätigen Sie Ihre Anmeldung bitte durch Anklicken dieses Links.
+
+
+Sollten Sie diese Anmeldung des Newsletters nicht angefordert haben, dann bitten wir Sie, den Link zu ignorieren. Sie werden dann in Zukunft keine weiteren E-Mails von uns erhalten.
+
+Freundliche Grüsse
+Denner
+hmU--SmdDN--Sbr---------------------------------------llg--fRcOu--iNq
+
+
+Thank you for your interest in Portland Center Stage at The Armory!
+
+To complete your subscription, click below.
+
+
+
+If you've changed your mind or received this in error, please disregard. You will not be added to our list unless you click the link.
+
+
+Thank you for registering to WYF
+We need a little more information to complete your registration, including confirmation of your email address.
+Click below to confirm your email address
+
+Verify
+
+Button not working? Copy and paste this link to your address bar
+
+
+
+This is an auto-generated email from  in response to your recent  account registration.
+
+Thank you for registering. Click here to activate your account.
+
+If you did not register for a  account or feel you received this email in error, please contact Utility Customer Service at 850.891.4YOU (4968) Monday – Sunday from 7 a.m. – 11 p.m. or email us.
+
+
+Please click the green button to verify that this is your email address or enter your verification code into the page you were just on:
+click here to verify your email address			OR enter your
+verification code:
+
+Welcome to Parchment! We are really happy to have you here.
+
+Thank you,
+The Parchment Team 
+
+qbp--UHAau--msi---------------------------------------OxP--wKkhe--ZyO
+Evw--AvLum--pNt---------------------------------------swB--rKZRB--pCO
+----J4oujyoA;MDFrW3
+
+----gHMqIj6m;PZDmzY
+
+Hello XqZaH,
+
+SHOW. SHARE. SELL. SCHEDULE.
+
+ Advanced AI technology is your virtual team with automated multi‑tasking while you're behind the camera.
+ 
+
+
+
+
+ Save 50% off all plans right now.
+ 
+
+
+ Zenfolio has built a community of more than a half million photographers. Join us today and save 50%. 
+ 
+We're here for you.Have questions? Reach out to our amazing support team who are photographers just like you and experts on all things Zenfolio.
+
+
+----OSh39zNI;kAAOlg
+Hi KWjd NDO,
+
+Thanks for subscribing and going your own way!
+
+We promise to keep you up to date with the latest on everything HEe ENX including news, tips and stories – everything you need delivered straight to your inbox.
+EXPERIENCE  : 
+
+Thank you for joining the FXPTU & WZLKY newsletter. We know life with horses can be non-stop, but now you can relax as everything you need to know from the equestrian world is sent directly to your inbox. If you can’t wait until our next update, visit our website for the latest news, reports, features and much more.
+VISIT uz & : 
+
+Thank you for subscribing to ni!
+
+We’re excited to have you as part of our community. XYIc covers all breeds and riding disciplines, and our main interest is providing important information about uyzyc in the most interesting and enjoyable way possible.
+
+----pILL8A4Z;35kbLi
+
+
+WUj--bUoZL--oiH---------------------------------------TNz--kAtVU--POt
+
+ksz--gPlmD--wir---------------------------------------Gcy--BIraa--Nzi
+
+--_9cdf7680-2c5e-4e5f-a179-31e16e5fbb03_--

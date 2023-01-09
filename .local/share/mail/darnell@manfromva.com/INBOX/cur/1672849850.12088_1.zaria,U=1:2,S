@@ -1,0 +1,96 @@
+Return-Path: <administrator@mail.manfromva.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id 2peJMRW5pmM9yQAAdh2gHA
+	(envelope-from <administrator@mail.manfromva.com>)
+	for <darnell@manfromva.com>; Sat, 24 Dec 2022 03:32:21 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=5.0 tests=ALL_TRUSTED,DKIM_INVALID,
+	DKIM_SIGNED,FROM_FMBLA_NEWDOM28,HTML_MESSAGE autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.8 FROM_FMBLA_NEWDOM28 From domain was registered in last 14-28
+	*      days
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+X-Spam-Score: 0.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.manfromva.com;
+	s=mail; t=1671870741;
+	bh=sko5ZZYHDXi4DTPz3VSTImq2dqR5xVT6wPfyqEDEZN4=;
+	h=From:To:Subject:Date:From;
+	b=FF3u3QXPzORqOXRZZgtCHBAcGwXClBg9j3SlIqK24YaLbLkZgw3B0nlp1XngT04uR
+	 M5xYBmci65yRRteNy8qtM9sHyEYb0SmVobpTXtVOtYqZlfWXFUP5MplEDNPA/DtSrU
+	 V7rokD7y/go9JkHhVjQq1e0UkTCVZSdsTWjU0B1yAiCm6P50yb3ZnLa4SOmeP0Snfl
+	 RPknBeskiV6MlTf0v5ON6dyxuvZf97EKQXEqyKVHxBFt+aOiQfUgIl2vgYehEV96eR
+	 +mduKcIgp/7K4jpde2qpM3LoPfUbCZOvpwNnQZ2eSnQJ9YBQhp6uLfZqCswcaesLIc
+	 PcNOlL76jg9Mg==
+Received: from mail.manfromva.com (localhost [127.0.0.1])
+	by mail.manfromva.com (Postfix) with ESMTP id 97A0EBE936
+	for <administrator@mail.manfromva.com>; Sat, 24 Dec 2022 03:32:21 -0500 (EST)
+Content-Type: multipart/alternative; boundary="===============3124504870779376591=="
+MIME-Version: 1.0
+From: "mail.manfromva.com" <administrator@mail.manfromva.com>
+To: administrator@mail.manfromva.com
+Subject: [mail.manfromva.com] TLS Certificate Provisioning Result
+Message-Id: <20221224083221.97A0EBE936@mail.manfromva.com>
+Date: Sat, 24 Dec 2022 03:32:21 -0500 (EST)
+X-TUID: jqKm78JIa0Hg
+
+--===============3124504870779376591==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Provisioning TLS certificates for mta-sts.mail.manfromva.com.
+installed: mta-sts.mail.manfromva.com:
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Requesting a certificate for mta-sts.mail.manfromva.com
+
+Successfully received certificate.
+Certificate is saved at:            /tmp/tmpd2_0mar1/cert
+Intermediate CA chain is saved at:  /tmp/tmpd2_0mar1/chain
+Full certificate chain is saved at: /tmp/tmpd2_0mar1/cert_and_chain.pem
+This certificate expires on 2023-03-24.
+NEXT STEPS:
+- Certificates created using --csr will not be renewed automatically by Certbot. You will need to renew the certificate before it expires, by running the same Certbot command again.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+web updated
+--===============3124504870779376591==
+Content-Type: text/html; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<html><body><pre>Provisioning TLS certificates for mta-sts.mail.manfromva.com.
+installed: mta-sts.mail.manfromva.com:
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Requesting a certificate for mta-sts.mail.manfromva.com
+
+Successfully received certificate.
+Certificate is saved at:            /tmp/tmpd2_0mar1/cert
+Intermediate CA chain is saved at:  /tmp/tmpd2_0mar1/chain
+Full certificate chain is saved at: /tmp/tmpd2_0mar1/cert_and_chain.pem
+This certificate expires on 2023-03-24.
+NEXT STEPS:
+- Certificates created using --csr will not be renewed automatically by Certbot. You will need to renew the certificate before it expires, by running the same Certbot command again.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let&#x27;s Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+web updated</pre></body></html>
+--===============3124504870779376591==--

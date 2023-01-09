@@ -1,0 +1,128 @@
+Return-Path: <noreply@github.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id +00ZKEgOvGNNcSgAdh2gHA
+	(envelope-from <noreply@github.com>)
+	for <darnell@manfromva.com>; Mon, 09 Jan 2023 07:53:28 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.6 required=5.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DMARC_PASS,HTML_IMAGE_ONLY_20,HTML_MESSAGE,
+	MAILING_LIST_MULTI,RCVD_IN_DNSWL_HI,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,
+	SPF_PASS,T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Report: 
+	* -0.1 DMARC_PASS DMARC check passed
+	* -0.1 SPF_PASS SPF check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.7 HTML_IMAGE_ONLY_20 BODY: HTML: images with 1600-2000 bytes of
+	*      words
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [192.30.252.206 listed in wl.mailspike.net]
+	* -5.0 RCVD_IN_DNSWL_HI RBL: Sender listed at https://www.dnswl.org/,
+	*      high trust
+	*      [192.30.252.206 listed in list.dnswl.org]
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	* -1.0 MAILING_LIST_MULTI Multiple indicators imply a widely-seen list
+	*       manager
+	* -0.0 DKIMWL_WL_HIGH DKIMwl.org - High trust sender
+X-Spam-Score: -5.6
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=reject dis=none) header.from=github.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=github.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (1024-bit key; unprotected) header.d=github.com header.i=@github.com header.a=rsa-sha256 header.s=pf2014 header.b=XimsW9mE;
+	dkim-atps=neutral
+Received: from out-23.smtp.github.com (out-23.smtp.github.com [192.30.252.206])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id 759FBBD4B1
+	for <darnell@manfromva.com>; Mon,  9 Jan 2023 07:53:28 -0500 (EST)
+Received: from github-lowworker-7cc224c.ash1-iad.github.net (github-lowworker-7cc224c.ash1-iad.github.net [10.56.216.11])
+	by smtp.github.com (Postfix) with ESMTP id E46C7600712
+	for <darnell@manfromva.com>; Mon,  9 Jan 2023 04:53:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1673268807;
+	bh=qYDRw7ymR+fFVzcQMqjRBen5dwep4Dh30+GhJ+In7yE=;
+	h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:List-ID:
+	 List-Archive:List-Post:List-Unsubscribe:From;
+	b=XimsW9mEinX+72V2dfghSVursZhRo+DvGhlgQDXYM8sZXZmYqpjKDZJVJJ6RJl9yB
+	 PqScFsSkhRHXJ2TBKxb9xpOL+x8sMUGtZ0Bks0wrUl0OwYAzC5nPMxv8sw85lZl9YQ
+	 NeCvSFRr/AcMdb+itIC1eArFeE+EkrRBS0hW9pw4=
+Date: Mon, 09 Jan 2023 04:53:27 -0800
+From: Benjamin Klettbach <notifications@github.com>
+Reply-To: "acmesh-official/acme.sh" <reply+A4RKTHD2WT75PEX4GWFAQMGBZFAMPEVBNHHFPRJMZY@reply.github.com>
+To: "acmesh-official/acme.sh" <acme.sh@noreply.github.com>
+Cc: Subscribed <subscribed@noreply.github.com>
+Message-ID: <acmesh-official/acme.sh/issues/4423/1375581368@github.com>
+In-Reply-To: <acmesh-official/acme.sh/issues/4423@github.com>
+References: <acmesh-official/acme.sh/issues/4423@github.com>
+Subject: Re: [acmesh-official/acme.sh] Add Support for Keyhelp DNS Api (Issue
+ #4423)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bc0e47d6af7_120ac5bc130160";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: benklett
+X-GitHub-Recipient: manfromva
+X-GitHub-Reason: subscribed
+List-ID: acmesh-official/acme.sh <acme.sh.acmesh-official.github.com>
+List-Archive: https://github.com/acmesh-official/acme.sh
+List-Post: <mailto:reply+A4RKTHD2WT75PEX4GWFAQMGBZFAMPEVBNHHFPRJMZY@reply.github.com>
+List-Unsubscribe: <mailto:unsub+A4RKTHD2WT75PEX4GWFAQMGBZFAMPEVBNHHFPRJMZY@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/A4RKTHBOAM3JDCQDZKHJLMLWRQC4PANCNFSM6AAAAAASRWCH3I>
+X-Auto-Response-Suppress: All
+X-GitHub-Recipient-Address: darnell@manfromva.com
+X-TUID: MD2NYHAmu3/o
+
+
+----==_mimepart_63bc0e47d6af7_120ac5bc130160
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+@Neilpang Can you help me to find out what is wrong with the build?
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/acmesh-official/acme.sh/issues/4423#issuecomment-1375581368
+You are receiving this because you are subscribed to this thread.
+
+Message ID: <acmesh-official/acme.sh/issues/4423/1375581368@github.com>
+----==_mimepart_63bc0e47d6af7_120ac5bc130160
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p></p>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Neilpang/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Neilpang">@Neilpang</a> Can you help me to find out what is wrong with the build?</p>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />Reply to this email directly, <a href="https://github.com/acmesh-official/acme.sh/issues/4423#issuecomment-1375581368">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/A4RKTHHTJIH4CXJSMEGHMK3WRQC4PANCNFSM6AAAAAASRWCH3I">unsubscribe</a>.<br />You are receiving this because you are subscribed to this thread.<img src="https://github.com/notifications/beacon/A4RKTHGURJSN2GICBZELIS3WRQC4PA5CNFSM6AAAAAASRWCH3KWGG33NNVSW45C7OR4XAZNMJFZXG5LFINXW23LFNZ2KUY3PNVWWK3TUL5UWJTSR7W2LQ.gif" height="1" width="1" alt="" /><span style="color: transparent; font-size: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message ID: <span>&lt;acmesh-official/acme</span><span>.</span><span>sh/issues/4423/1375581368</span><span>@</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/acmesh-official/acme.sh/issues/4423#issuecomment-1375581368",
+"url": "https://github.com/acmesh-official/acme.sh/issues/4423#issuecomment-1375581368",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+----==_mimepart_63bc0e47d6af7_120ac5bc130160--

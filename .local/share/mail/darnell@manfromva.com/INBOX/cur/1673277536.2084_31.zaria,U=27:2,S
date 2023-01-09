@@ -1,0 +1,207 @@
+Return-Path: <noreply@github.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id HrZ8F/lzu2N5TycAdh2gHA
+	(envelope-from <noreply@github.com>)
+	for <darnell@manfromva.com>; Sun, 08 Jan 2023 20:55:05 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-3.6 required=5.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DMARC_PASS,HTML_MESSAGE,MAILING_LIST_MULTI,
+	RCVD_IN_DNSWL_MED,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS,
+	T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -2.3 RCVD_IN_DNSWL_MED RBL: Sender listed at https://www.dnswl.org/,
+	*       medium trust
+	*      [192.30.252.205 listed in list.dnswl.org]
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [192.30.252.205 listed in wl.mailspike.net]
+	* -0.1 DMARC_PASS DMARC check passed
+	* -0.1 SPF_PASS SPF check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	* -1.0 MAILING_LIST_MULTI Multiple indicators imply a widely-seen list
+	*       manager
+	* -0.0 DKIMWL_WL_HIGH DKIMwl.org - High trust sender
+X-Spam-Score: -3.6
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=reject dis=none) header.from=github.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=github.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (1024-bit key; unprotected) header.d=github.com header.i=@github.com header.a=rsa-sha256 header.s=pf2014 header.b=zMhY5iB5;
+	dkim-atps=neutral
+Received: from smtp.github.com (out-22.smtp.github.com [192.30.252.205])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id 2CDD1BD4B2
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 20:55:04 -0500 (EST)
+Received: from github-lowworker-65e4a37.va3-iad.github.net (github-lowworker-65e4a37.va3-iad.github.net [10.48.119.82])
+	by smtp.github.com (Postfix) with ESMTP id B43C4720D01
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 17:55:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1673229304;
+	bh=zz6R7i/u5qdrleSlw78RIN8VT3rxirEApohB1dwhkF4=;
+	h=Date:From:Reply-To:To:Cc:Subject:List-ID:List-Archive:List-Post:
+	 List-Unsubscribe:From;
+	b=zMhY5iB5NkCV46dO09g/+CTgyqrG7HgB0+HqgGjcysN+lvNrWICNsCW6skQIJBxMm
+	 s4hMf/1MLUA3Wg2FkJid3j9LkG61puwquSW4pOXzALn2h1mr6t3c/TrohBViw1hqLZ
+	 gkcuAS6g/vyS5qskPivpJis/sk1xeyFVK487p+5w=
+Date: Sun, 08 Jan 2023 17:55:04 -0800
+From: u2n <notifications@github.com>
+Reply-To: "acmesh-official/acme.sh" <reply+A4RKTHHV42FVRXTSEL4IFWWBZCTHREVBNHHFVYUUDY@reply.github.com>
+To: "acmesh-official/acme.sh" <acme.sh@noreply.github.com>
+Cc: Subscribed <subscribed@noreply.github.com>
+Message-ID: <acmesh-official/acme.sh/issues/4461@github.com>
+Subject: [acmesh-official/acme.sh] Error with Wildcards on Namecheap Web
+ Servers (Issue #4461)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bb73f8a5ce2_5e09c5bc5411f2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: u2n
+X-GitHub-Recipient: manfromva
+X-GitHub-Reason: subscribed
+List-ID: acmesh-official/acme.sh <acme.sh.acmesh-official.github.com>
+List-Archive: https://github.com/acmesh-official/acme.sh
+List-Post: <mailto:reply+A4RKTHHV42FVRXTSEL4IFWWBZCTHREVBNHHFVYUUDY@reply.github.com>
+List-Unsubscribe: <mailto:unsub+A4RKTHHV42FVRXTSEL4IFWWBZCTHREVBNHHFVYUUDY@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/A4RKTHBY735QI6FVRMHYQLDWRNVXRANCNFSM6AAAAAATU5DVDU>
+X-Auto-Response-Suppress: All
+X-GitHub-Recipient-Address: darnell@manfromva.com
+X-TUID: +kjsfKzXYIBU
+
+
+----==_mimepart_63bb73f8a5ce2_5e09c5bc5411f2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Many thanks for this awesome project, deployed in only a few minutes.
+
+This on namecheap webhost (not domain registration) server. Worked fine with base domain alone:
+
+`acme.sh --issue --webroot ~/public_html -d example.com --force`
+
+
+But then found no TLDs were covered (mail., www., etc.) in _SSL/TLS Status_ of cpanel.
+
+So tried similar example I found online:
+
+`acme.sh --issue --webroot ~/public_html -d example.com -d *.example.com --staging`
+
+Result:
+```
+Error, can not get domain token entry *.example.com for http-01
+The supported validation types are: dns-01 , but you specified: http-01
+```
+Appending _--debug 2_ to the foregoing:
+
+```
+Lets find script dir.
+_SCRIPT_='/home/username/.acme.sh/acme.sh'
+_script='/home/username/.acme.sh/acme.sh'
+_script_home='/home/username/.acme.sh'
+Using config home:/home/username/.acme.sh
+LE_WORKING_DIR='/home/username/.acme.sh'
+https://github.com/acmesh-official/acme.sh
+v3.0.5
+Running cmd: issue
+_main_domain='example.com'
+_alt_domains='*.example.com'
+Using config home:/home/username/.acme.sh
+Using ACME_DIRECTORY: https://acme-staging-v02.api.letsencrypt.org/directory
+ACME_DIRECTORY='https://acme-staging-v02.api.letsencrypt.org/directory'
+_ACME_SERVER_HOST='acme-staging-v02.api.letsencrypt.org'
+_ACME_SERVER_PATH='directory'
+DOMAIN_PATH='/home/username/.acme.sh/example.com'
+'/home/username/public_html' does not contain 'dns'
+Le_NextRenewTime='1678317556'
+_saved_domain='example.com'
+_saved_alt='*.example.com'
+_normized_saved_domains='*.example.com,example.com,'
+_normized_domains='*.example.com,example.com,'
+Domains not changed.
+Skip, Next renewal time is: 2023-03-08T...Z
+```
+Can it be that wildcards are not supported in this situation? No worries if each TLD has to be listed separately on the command line, just wanted to be sure I'm using the script correctly.
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/acmesh-official/acme.sh/issues/4461
+You are receiving this because you are subscribed to this thread.
+
+Message ID: <acmesh-official/acme.sh/issues/4461@github.com>
+----==_mimepart_63bb73f8a5ce2_5e09c5bc5411f2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p></p>
+<p dir="auto">Many thanks for this awesome project, deployed in only a few minutes.</p>
+<p dir="auto">This on namecheap webhost (not domain registration) server. Worked fine with base domain alone:</p>
+<p dir="auto"><code class="notranslate">acme.sh --issue --webroot ~/public_html -d example.com --force</code></p>
+<p dir="auto">But then found no TLDs were covered (mail., <a href="http://www" rel="nofollow">www</a>., etc.) in <em>SSL/TLS Status</em> of cpanel.</p>
+<p dir="auto">So tried similar example I found online:</p>
+<p dir="auto"><code class="notranslate">acme.sh --issue --webroot ~/public_html -d example.com -d *.example.com --staging</code></p>
+<p dir="auto">Result:</p>
+<pre class="notranslate"><code class="notranslate">Error, can not get domain token entry *.example.com for http-01
+The supported validation types are: dns-01 , but you specified: http-01
+</code></pre>
+<p dir="auto">Appending <em>--debug 2</em> to the foregoing:</p>
+<pre class="notranslate"><code class="notranslate">Lets find script dir.
+_SCRIPT_='/home/username/.acme.sh/acme.sh'
+_script='/home/username/.acme.sh/acme.sh'
+_script_home='/home/username/.acme.sh'
+Using config home:/home/username/.acme.sh
+LE_WORKING_DIR='/home/username/.acme.sh'
+https://github.com/acmesh-official/acme.sh
+v3.0.5
+Running cmd: issue
+_main_domain='example.com'
+_alt_domains='*.example.com'
+Using config home:/home/username/.acme.sh
+Using ACME_DIRECTORY: https://acme-staging-v02.api.letsencrypt.org/directory
+ACME_DIRECTORY='https://acme-staging-v02.api.letsencrypt.org/directory'
+_ACME_SERVER_HOST='acme-staging-v02.api.letsencrypt.org'
+_ACME_SERVER_PATH='directory'
+DOMAIN_PATH='/home/username/.acme.sh/example.com'
+'/home/username/public_html' does not contain 'dns'
+Le_NextRenewTime='1678317556'
+_saved_domain='example.com'
+_saved_alt='*.example.com'
+_normized_saved_domains='*.example.com,example.com,'
+_normized_domains='*.example.com,example.com,'
+Domains not changed.
+Skip, Next renewal time is: 2023-03-08T...Z
+</code></pre>
+<p dir="auto">Can it be that wildcards are not supported in this situation? No worries if each TLD has to be listed separately on the command line, just wanted to be sure I'm using the script correctly.</p>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />Reply to this email directly, <a href="https://github.com/acmesh-official/acme.sh/issues/4461">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/A4RKTHG3YI6JZUGSSO3Q45LWRNVXRANCNFSM6AAAAAATU5DVDU">unsubscribe</a>.<br />You are receiving this because you are subscribed to this thread.<img src="https://github.com/notifications/beacon/A4RKTHBNEE65M4CX3HTL57DWRNVXRA5CNFSM6AAAAAATU5DVDWWGG33NNVSW45C7OR4XAZNFJFZXG5LFVJRW63LNMVXHIX3JMTHFVYUUDY.gif" height="1" width="1" alt="" /><span style="color: transparent; font-size: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message ID: <span>&lt;acmesh-official/acme</span><span>.</span><span>sh/issues/4461</span><span>@</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/acmesh-official/acme.sh/issues/4461",
+"url": "https://github.com/acmesh-official/acme.sh/issues/4461",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+----==_mimepart_63bb73f8a5ce2_5e09c5bc5411f2--

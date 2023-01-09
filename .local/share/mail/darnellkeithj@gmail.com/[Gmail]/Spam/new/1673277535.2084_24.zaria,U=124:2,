@@ -1,0 +1,218 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2857793mdb;
+        Mon, 9 Jan 2023 01:45:17 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXs72YtHqz3DgN9U0n0qTjZRZWyZmOX0a2u7z0vmUTu2c+g8dteoZHHSRvmPP6LGiKrmOBcw
+X-Received: by 2002:a05:6808:99:b0:35e:aef6:2d99 with SMTP id s25-20020a056808009900b0035eaef62d99mr26519313oic.30.1673257517254;
+        Mon, 09 Jan 2023 01:45:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673257517; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TtEPbe99AnH356TMwJN0jNmpTw9qLlJVLNaLXDKvIPUwuRPifG5piIWfbpF7wG14De
+         sqYwJp2E4vT2NMddbhwzGcyZ6a+x7eS6VZuTm6nT9W5FPGdda2Qk5QUvRgMHpuhzUv0k
+         FluqoegpC0prC3tlJKiIqq1lDuu1kdjS+qJNMXfYh7gBnqCLnNn8K3GKbbnQbTOZU8xU
+         XPlQpBVUl60aJvh7qMiRi8g/lYqdmwTJW20gRAkph71vArp6iyVmV4Ig2ojbudriXqmY
+         lgz/4r/8H9YGgYNDEFbe7TyLJjwPSWGAyf1gcRfcw0wlmQy4gOBiS3o9T/QnngKxY2zM
+         KOrQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:user-agent:content-transfer-encoding:mime-version
+         :subject:message-id:to:from:date:dkim-signature:precedence;
+        bh=TmSfNCJbLGYlRWVUZa1iuV6p1Q0QyI4dumzpu+ljCMI=;
+        b=mER3JszTMt1vqWVbHhAla+Cr/JGSHotow91yu/4uJghlPlLYpbdrlnAxXBLZYH5FAN
+         gLSqosR1uv+IihGXB9PJwIbHmrocax4/rIJcPWaD8Ex6dz2w8QRzWasVFsXiLBO5CJLl
+         NyhCRGV3rHik4SSDngLVNf+7mWpWy8NXT1WubJ/sja9/8PvNXSFYJs2Ar0SXk4cBxG7k
+         L5wJafVnjW5ohTE511QbXsXkfUduRwFxe/e8vJ0/4YiDMRYJlSSQyNvkCyhl0kYzwM4B
+         F1VOdY2uohoG+FhXCLeJ9+xSVz8+JSn7r1bjHtIkchazoq2uQQUJ/PCWWokxu4IhDAJx
+         W9pw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bme.jp header.s=20181023 header.b="bSIT/dxQ";
+       spf=pass (google.com: domain of spmlerror-005.btp2012.646.30346@err.e.bme.jp designates 52.68.116.186 as permitted sender) smtp.mailfrom=spmlerror-005.btp2012.646.30346@err.e.bme.jp
+Return-Path: <spmlerror-005.btp2012.646.30346@err.e.bme.jp>
+Received: from ks0002-001.tnbt.jp (ks0002-001.tnbt.jp. [52.68.116.186])
+        by mx.google.com with ESMTPS id f7-20020a056830264700b0066eafc3ca74si7628712otu.222.2023.01.09.01.45.16
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 01:45:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of spmlerror-005.btp2012.646.30346@err.e.bme.jp designates 52.68.116.186 as permitted sender) client-ip=52.68.116.186;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bme.jp header.s=20181023 header.b="bSIT/dxQ";
+       spf=pass (google.com: domain of spmlerror-005.btp2012.646.30346@err.e.bme.jp designates 52.68.116.186 as permitted sender) smtp.mailfrom=spmlerror-005.btp2012.646.30346@err.e.bme.jp
+Precedence: bulk
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1673257509;
+	s=20181023; d=bme.jp;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=TmSfNCJbLGYlRWVUZa1iuV6p1Q0QyI4dumzpu+ljCMI=;
+	b=bSIT/dxQm8WyAwXbcrMeQ+n18Cl/joLQVKz5aQH4Zfnt6bvjP/p1vQ1txpT7ceFL
+	o3IWJhRFdRal4GGOOUI4/Su7qPZSkOlMPowVIY1WlZ4TSY/MHs/HQugWmXRxuRwoSN3
+	bEXsXue7eCbycmQVJdwP+d05+sf1EILMA6FL2LHU=
+Date: Mon, 9 Jan 2023 18:45:09 +0900 (JST)
+From: =?ISO-2022-JP?B?GyRCQFYxKU06RnMhWiVWJWwhPCUvGyhC?= =?ISO-2022-JP?B?GyRCJTklayE8JVEhPCVIJUohPCU6IVsbKEI=?= <akaba@b-t-partners.com>
+To: darnellkeithj@gmail.com
+Message-ID: <463076297.612412.1673257509172.Mail.root@bjvm-1-e.prd.bm.internal>
+Subject: =?ISO-2022-JP?B?GyRCOiNGfBsoQjIwGyRCO34kKyRpISIhViFaGyhC?=
+ =?ISO-2022-JP?B?GyRCPzc9VUZDSFYhW0cvPWkkTjdoMFUbKEI=?=
+ =?ISO-2022-JP?B?GyRCJHI8QjlUJDkkaxsoQjcbJEIkRCROJTklRhsoQg==?=
+ =?ISO-2022-JP?B?GyRCJUMlVyFXJHIkKkF3JGokNyReJDkbKEI=?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-2022-JP
+Content-Transfer-Encoding: 7bit
+User-Agent: Mail/10.0.0
+Feedback-ID: e.bme.jp-btp2012:e.bme.jp-btp2012-mno646:e.bme.jp-btp2012-gno1:blastmail
+X-TUID: XLe8JyNzKBxE
+
+[ブレークスルーメール No.620]
+このメールは、ブレークスルーパートナーズ赤羽がこれまでお会いしたり、メールのやり取りをさせていただいた方、メルマガ等にご登録いただいた方にお送りしています。配信先の変更や配信停止は、文末をご覧ください。
+───────────────────
+今日20:00-21:00に「【新春特番】年初の決意を実行する7つのステップ」をClubhouseでお送りします。6名の方がそれぞれの決意を発表されます。
+https://www.clubhouse.com/event/xBR52XJ7
+
+『ゼロ秒思考』赤羽雄二の「2023年新春シリーズ」第1弾です。
+
+2023年元旦、わずか8日前ですが、今年はこれをやろうと決意されたことがあるのではないでしょうか。
+
+さて、その決意を実行する、具体的な手段は明確でしょうか。
+
+今晩は、「今年こそ、年初の決意を実行する」ための7つのステップをお話しできればと思います。実際に書いていただきますので、紙を1枚ご用意ください。
+
+1．年初の決意を3月末、6月末、9月末にどこまで実行するか、箇条書きする
+2．今書いた四半期の必達目標を、毎月の必達目標2〜3個に分解して箇条書きする
+3．年初の決意、四半期・毎月の必達目標をSNS、ブログに投稿する。親しい同僚、仲間、友人、家族にも宣言する
+4．仲間を作り、それぞれの実施状況を週次で報告しあう
+5．各月に実行できなければ、翌月、優先的に実行する〜1ヶ月以上積み残ししない
+6．3月末に一度、2023年の目標、四半期・各月の必達目標を見直す
+7．12/31の結果発表の時間を先にアナウンスしておく
+
+ぜひご参加ください。
+
+ブレークスルーパートナーズ
+赤羽雄二
+
+
+
+★★★8ヶ月フルサポートの『ブレークスルー講座 第4期』募集開始★★★
+https://breakthrough-training-course4.peatix.com/
+
+第4期を1/25（水）から開始します。20代半ば〜60代の本気で成長したい方、akaba@b-t-partners.comまでご連絡ください。
+
+第1、2期の参加者は6ヶ月の実践フェーズに突入し、ブレークスルーを起こしつつあります。
+
+第3期の参加者は連日、宿題に取り組み、急成長中です。頑張っている仲間が大変な刺激になっています。私と毎日メール、Facebookでやりとりさせていただいています。
+
+仕事もプライベートもすべての不安が消えていきます。
+
+▼　こんな方にお勧め
+・本気で成長し、自分の人生をコントロールしたい方
+・本気で昇進、昇格をねらっている方
+・本気で転職を考えている方
+・本気で起業しようとしている方
+・人とのコミュニケーションを抜本的に改善し、自信を持ちたい方
+・プライベートの問題を解決し、仕事に集中して結果を出したい方
+・人生をリセットして、ここから大きく加速していきたい方
+
+
+
+★★★6ヶ月フルサポートの『コンサルタント強化特訓コース 第2期』募集開始★★★
+https://consultant-training-course2.peatix.com/view
+
+第2期を1/21（土）から開始します。20代半ば〜60代の本気でコンサルタントとして成功されたい方、akaba@b-t-partners.com までご連絡ください。
+
+
+★★★Voicyを毎朝放送中。19.7万再生突破★★★
+
+音声プラットフォーム、Voicyを始めました。開始8ヶ月で、フォロワー4268人、再生回数19.7万回になりました。
+
+どうすれば自信をつけて成長できるか、最速で仕事の成果を出せるか、仕事とプライベートの人間関係を飛躍的に改善できるか、などについてお話していけたらと思います。お勧めの本などもご紹介していきます。
+
+1テーマ10分弱ですので、ちょっと空いた時間、移動時間などにさっと要点をつかんでいただけると思います。
+
+本やClubhouseよりかなり速いので、お勧めです。
+
+毎日朝7時に放送します。フォローいただけると嬉しいです。
+https://voicy.jp/channel/2885
+
+質問や、聞いてみたいテーマを募集しています。akaba@b-t-partners.com まで、ご連絡ください。
+
+まとめサイト：https://b-t-partners.com/news/11677
+
+
+★★インスタも毎日投稿中、フォロワー2700名突破★★★
+
+インスタ：https://www.instagram.com/yujiakaba/?hl=ja
+
+【考え方・思考法】【仕事術】【人間関係・コミュニケーション】の3カテゴリーを毎晩、順次投稿しています。
+
+まとめサイト：https://b-t-partners.com/news/11677
+
+
+★★★『ゼロ秒思考』赤羽雄二のオンラインサロン★★★
+
+月2回各1時間のオンラインセッションとそこでの活発な質疑応答、メールでの相談し放題で、もやもやをなくし、自信を持って何事にも取り組み、どんどん成長していただくことに特化しています。
+
+現在、全国各地に加えて海外からも、220名以上の方が参加しておられます。
+
+成長への手応えを感じていただけるまで徹底的にフォローする点が、他のオンラインサロンにはない特長です。Facebookグループでの投稿も大変に活発で、数多くのイベント・勉強会も開催されています。
+
+励まし合う仲間、気の合う仲間、刺激になる仲間がすぐにできます。
+
+★詳しいご説明： https://community.camp-fire.jp/projects/view/318299
+
+★迷っておられる方はぜひこちらを：https://lin.ee/20Kdy9L
+
+
+★★★23冊目『マッキンゼー式 人を動かす話し方』★★★
+https://www.amazon.co.jp/dp/4295405787/　
+
+人や組織にどうアプローチし、どう想いを伝え、どう働きかけたら、反対・無関心の状況から関心を持ち、合意し、熱狂し、実際に動いてくれるようになるのか、できるだけわかりやすく説明したものです。
+
+マッキンゼーでの14年間を含む過去35年、企業の意識・行動改革に取り組んできた経験に基づき、こだわるべきポイントを整理しました。
+
+ここまで体系的かつ具体的な説明は、今まであまりなかったかと思います。
+
+一人でも多くの方に実践いただけると嬉しいです。大変好評で、すでに2度増刷されています。
+
+
+★★★24冊目『最強の「独学」仕事術』★★★
+https://www.amazon.co.jp/dp/4299018761　　
+
+コロナ禍でリモートワークが定着し、上司、先輩の助言を得にくい状況で、私たちは成長し、仕事の成果を出していかなければなりません。その具体的な方法を詳しくご説明しています。
+
+人生の羅針盤です。
+
+
+★★★Clubhouse『ゼロ秒思考』赤羽雄二の「何でも相談カフェ」
+
+平日20:00-21:00に数日、土曜日9時、日曜日21時に開催しています。
+https://www.clubhouse.com/@yujiakaba
+
+Clubhouseに飽きた方、あるいはまだ始めていない方、Clubhouseは1〜4月のバブルが終わり、まともな議論のできる素晴らしいコミュニティに生まれ変わりました。今は参加する価値が大変にあります。招待制はなくなりました。Androidでも可能になりました。
+
+
+★★★メルマガを始めました★★★
+
+『ゼロ秒思考』赤羽雄二の「成長を加速する人生相談」
+https://www.mag2.com/m/0001694638
+
+
+
+ブレークスルーパートナーズ株式会社
+マネージングディレクター
+
+赤羽雄二
+
+
+メールアドレス（ご質問などお気軽にご連絡ください）
+akaba@b-t-partners.com　
+
+ブレークスルーブログ
+https://b-t-partners.com/blog
+
+著書国内24冊、海外26冊のご紹介
+https://b-t-partners.com/book
+
+講演会・セミナーのご紹介
+https://b-t-partners.com/event
+
+
+■ メール配信の登録・解除はこちらからお願いします：
+　https://e.bme.jp/bm/p/f/tf.php?id=btp2012 　
+
+■ バックナンバーはこちらから：
+　 https://e.bme.jp/bm/p/bn/list.php?i=btp2012&no=all

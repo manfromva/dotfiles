@@ -1,0 +1,364 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3023781mdb;
+        Mon, 9 Jan 2023 06:30:00 -0800 (PST)
+X-Received: by 2002:a05:600c:687:b0:3cf:e7c8:494 with SMTP id a7-20020a05600c068700b003cfe7c80494mr46531261wmn.29.1673274600778;
+        Mon, 09 Jan 2023 06:30:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673274600; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gV31hOgm9GHSW2rxC8CVW/DqaZdGmseDluqGCig7gEORV1tvIAxRSjaXIf9jb+qPxE
+         00WV3ZvjtR02KM/one5EuOnd8UV6QK0xnfjJIs8J4thel84Pzsy/P2l26i9oGqRnpO3O
+         CbBCcVtHDcn6qKdx3j2YJfgoOi2Rf4KltpbwbmMP4taae5gLSE4V+mlHnTKXkgw2j9FV
+         NngezVITkM6oaxjbvaRHkaCzhDqvzCrgcCh02hVwXrMxgcs2B4sn9n/lvsz1aFTSgZF9
+         aZbxEiZJz39Ay7lZuHa0zFosM724KhoCNFDZ80+y5/X4sWnJKPc+P8vFW3BVBNRJrZti
+         1p3Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=precedence:from:mime-version:to:list-unsubscribe:feedback-id
+         :subject:message-id:date;
+        bh=ExreDq3Fa6aKm9Is5+5ZnG/2rQXQQxFdoCzWHXBwTr0=;
+        b=SOcLt4+GWZduDUfEjY3EagE+I04FEuGNVXCU4aDLmTt8Fp0sBNkqNmp6I4g6xwOx11
+         g9I6x8OEkzWe7Tv+GRJOVOIYDlQfl2y04L8YKf3ZtgPDz/BY4Osq7kCGirPNVxL1lqdx
+         NsmIahdnF3vUtf1v9n8tmSnpoxs9r2Gca/iCikA6wOhZ+KpbbwQO4gzmZx3V1mqvsP3K
+         1ccQ/yqr93nNWec7PBgCfvqWl6ynHz0gDzLY6rKmvr2Q8p9pb9b5u/Zk+0LHCt+oITHS
+         WSo3JqJ+L98oKZOticJBtPagnKVFQmnIP+F5RvfmBv2M3Ttev0Vru8qmoBO9p09mM9ZF
+         fSPg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=none (google.com: mail-sor-f101.google.com does not designate permitted sender hosts) smtp.helo=mail-sor-f101.google.com;
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <>
+Received: from mail-sor-f101.google.com (mail-sor-f101.google.com. [209.85.220.101])
+        by mx.google.com with SMTPS id t1-20020a05600c2f8100b003d9f617d540sor264201wmn.27.2023.01.09.06.30.00
+        for <darnellkeithj@gmail.com>
+        (Google Transport Security);
+        Mon, 09 Jan 2023 06:30:00 -0800 (PST)
+Received-SPF: none (google.com: mail-sor-f101.google.com does not designate permitted sender hosts) client-ip=209.85.220.101;
+Authentication-Results: mx.google.com;
+       spf=none (google.com: mail-sor-f101.google.com does not designate permitted sender hosts) smtp.helo=mail-sor-f101.google.com;
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=precedence:from:mime-version:to:list-unsubscribe:feedback-id
+         :subject:message-id:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ExreDq3Fa6aKm9Is5+5ZnG/2rQXQQxFdoCzWHXBwTr0=;
+        b=NzOFwupxuSLCv9j+BAGx3IugA9rzRdPEh9XP0UCuVpqpBZ9JjMUukhnhMrQa4dGt2D
+         85jD39PeOi/K2Y93mh4UHu3Qz27xARW5t4GzLvroFck7S0ZjGbLfYZKvEQBzokpImPTC
+         OJcDUrqI1tjG/PJ3fajVTMoFbEQ0OBjuAfP5sHd8nSdte8HVmIoNgZ+AVYmWW5GzzW7M
+         8V46QhFZ1x9jqBVkgH3Y98GaSHpE/W+XawHOUNTr/6oAAZG1yDUWMU82l1HIS2gp2Aq5
+         r8QXj942M0cBNh3krOB2o2EH8+xxuabjmFjNgTS97l1hh3L5QjbV8CvXkHU0QiyoLgql
+         ydwA==
+X-Gm-Message-State: AFqh2koRFKzJtDcwUXomabdrnstUaBR0IuXSCHLg1f6WAruNLqNdNxWd
+	iIXR0wo59BvkEcFkkd2x9PqRdDvRn//9h+h85OqVG9aqLkuz88ztuWwjgDaDGpwc
+X-Google-Smtp-Source: AMrXdXsD5IlJLRV7/k+Up+hE1+co0RKHr550dKYP4iEnF65C4zpkcqx+U11RV9yC13PW6WNB559RTinyMHkj
+X-Received: by 2002:a05:600c:54c2:b0:3d3:3c74:dbd0 with SMTP id iw2-20020a05600c54c200b003d33c74dbd0mr46097151wmb.13.1673274600179;
+        Mon, 09 Jan 2023 06:30:00 -0800 (PST)
+Return-Path: <>
+Received: from i5k1.minibushirehatfield.co.uk ([2001:41d0:601:2000::e5c])
+        by smtp-relay.gmail.com with ESMTPS id h11-20020a05600c314b00b003d070922561sm930936wmo.45.2023.01.09.06.30.00
+        for <darnellkeithj@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Mon, 09 Jan 2023 06:30:00 -0800 (PST)
+X-Relaying-Domain: aa.downloadnvidia.com
+Date: Mon, 09 Jan 2023 06:30:00 -0800 (PST)
+Message-ID: <63bc24e8.050a0220.96d6f.ce4dSMTPIN_ADDED_BROKEN@mx.google.com>
+X-Google-Original-Message-ID: <LNA_6NuTMj2-_CTAUzXBxR@ismtpd0059p1sjc2.sendgrid.com>Content-Transfer-Encoding: 7bit
+Subject: Re: COnFIrMATION NEEDed N°805612051
+Received: by filter4337p1mdw1.sendgrid.com with SMTP id filter4337p1mdw1-1945-5FD27207-23 Mon, 09 Jan 2023 14:28:37 +0000 UTC m=+7342096.805612051
+Content-Type: multipart/encrypted;      boundary="--==mimepart_UdChgD9YyJIIqrHzTB_rXjpInATVub7KzB4zTusa0oXH3IJ1rtlm3Bge5Th";
+Feedback-ID: QFV2DAPIFMRWGXEMOQBEIQNLS3JNTNXKVJ8O:NL8kIrXu00000000000000000000000bHkir:QFV2DAPIFMRWGXEMOQBEIQNLS3JNTNXKVJ8O:Bronto
+List-Unsubscribe: <mailto:HU8JCHP7XLXT8DOCEAX2MCMIGQQBAVKM1U29NEBLUFG9AMWBCS9XGX7KWMZDIRQTIF9G9ZP=.[n3].94624.9@unsub.sendgrid.com>
+To: <darnellkeithj@gmail.com>
+MIME-Version: 1.0
+From:<darnellkeithj@gmail.com>  AUto
+X-Mimecast-Originator:<yuhond.imprivee.net>
+Precedence: bulk
+Received: from o63.email.sendgrid.com(unknown) by ismtpd0059p1sjc2.sendgrid.com (SG) with ESMTP id LNA_6NuTMj2-_CTAUzXBxR for <darnellkeithj@gmail.com>; Mon, 09 Jan 2023 14:28:37 +0000 (UTC)
+X-Mailer: BM22 Mail
+X-campaignID: bm23_bbmqywcskmhhoxvgymqygehbfg
+X-TUID: N1agm/gsaVX7
+
+----==mimepart_UdChgD9YyJIIqrHzTB_rXjpInATVub7KzB4zTusa0oXH3IJ1rtlm3Bge5Th
+Content-Type: multipart/parallel; boundary="_-------sfBIqnwfEUP3EQE.Q80a87sVEG-4587396872sfBIqnwfEUP3EQE.Q80a87sVEG=:"
+
+--_-------sfBIqnwfEUP3EQE.Q80a87sVEG-4587396872sfBIqnwfEUP3EQE.Q80a87sVEG=:
+Content-Type: multipart/alternative; boundary="_----------=bollinsfBIqnwfEUP3EQE.Q80a87sVEG"
+
+
+
+--_----------=bollinsfBIqnwfEUP3EQE.Q80a87sVEG
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Hexa
+
+
+
+
+--_----------=UgkkfRB_--==mimepart_UdChgD9YyJIIqrHzTB_rXjpInATVub7KzB4zTusa0oXH3IJ1rtlm3Bge5Th
+Content-Type: text/html; charset=utf-8
+
+
+
+UKTFGOwcskmhh-068
+
+--_----------=bollinsfBIqnwfEUP3EQE.Q80a87sVEG
+Content-Type: text/html; charset=utf-8
+
+<CENTER>
+
+<a href="t.co/ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1/../PAqqayTFrQ#ycfSV5hjhcMjpqkjmmL1"><h2>CUStoMeR N°32947799666774<br><br>CHECK HERE</h2></a><br><br>
+<imG SRc="blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTCX8-MeRFlHQQruGQWSPS5-MxyNRDGpeqhpT7yDN-QQPgEeKnzf6FL5YfDaprwkvKHtbdekeA0Rqn6F9eZF6WsjlxPFS8x2lG-bpzR_fCAwo38TxtjRQBT3bmuEr7IFDq3v3Q7Uy9hMPApKGqxjEZjyTKiXloLxvyaHfm2cO_9jluDGGOjyoTKR69nQ/s16000/sq5df146qs5d14f6q.png" USEmAP="#">
+<mAP naME="">
+<aRea hReF="t.co/ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1/../PAqqayTFrQ#31Hm4kd3H4NugfJemfDm6ZC90xnPNjoVVUoKsYFALDitX" coords="0,0,602,1028" shAPe="reCT">
+<aRea hReF="t.co/ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1/../LtQ3SAiIrK#31Hm4kd3H4NugfJemfDm6ZC90xnPNjoVVUoKsYFALDitX" coords="550,1037,594,1054" shAPe="reCT">
+<aRea hReF="t.co/ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1.ycfSV5hjhcMjpqkjmmL1/../4iBQibEBVP#31Hm4kd3H4NugfJemfDm6ZC90xnPNjoVVUoKsYFALDitX"  coords="0,1032,51,1048" shAPe="reCT">
+</map><OBJECT>
+<TITLE>
+</CENTER>
+<ObJECT><tiTlE>
+<title>
+
+
+
+<H2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </H2>
+<H2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </H2>
+<H2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </h2>
+<H2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </H2>
+welcome2
+<h2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </H2>
+<h2> z7ljtsumxi7ahmwkdowqmsyxit1jwslzzswvky0kmhbaxfjsxem </H2>
+<Div dIr=ltrdata-sETdIr=false sTyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">llkyllc2t1jiaujpi1oogsuheheqteafle8vz</dIv>
+<div dir=ltrdata-setDir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">qxbtserd0pk9yjooj54p8puhw0vpeo0elqlola37zs8e8eb8qybvbts75mi8x09hwfhg</DIv>
+<div DIr=ltrdata-setdIR=false sTyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">s23kfpr7fbb8o5rqoq5egctjhsby31lvtbbkblpyjndboj9ykkjuxwdsowtsnhjxtliozg0cplptfnmbfriy45tuoxy</div>
+<DIV dIR=ltrdata-sEtDIr=false Style="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">52y0id1nligi7anarefxco5vms1hwwnehe1vw65jocvyzeteys94ovrq6vefqyvytds</DiV>
+<div DiR=ltrdata-sEtDiR=false stYle="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">nrfujbzckqgunx6sdajjvwjvmq67dt0perqpzoitxkdkyctzr</diV>
+<diV DIr=ltrdata-setDiR=false stYLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">zismypiuuer9ufaoukqr76nhvsbsfwk7np64m7ucrkmsrnqwj74ltmfhxdjhhwy7fnr7qsdc</dIv>
+<DIv dIr=ltrdata-sETdIR=false StyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">lhi9aktbkj3xvijio79rrbnosfe16dx16xzwtsf8itxlon</diV>
+<Div DIr=ltrdata-setdIR=false StYLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">xewbsy3nrbr241nrtej4zjss5qbxxwvmyhcp6avqomt40eles6aj5nqzox5pgtvskg</div>
+<dIv dIR=ltrdata-sEtDIr=false STylE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">v7mmxxkez0zrzvuv8isonaxegdtqxxzgu5miuu61czjlx7pdbq8hnpwbepzy4zw</DIV>
+<dIV DiR=ltrdata-sEtdiR=false styLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">fypamijci9a8dtft6rggilqmfo7fmond0hrbqp7cjdwv1j1ctqgnr9pjy8atb9atn</DIv>
+
+<diV Dir=ltrdata-setdir=false StyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">qwxrb6f23x8luvsxf5i4jxzoazxttyjjnm8ec8pebt503l7btsp</DiV>
+<DiV Dir=ltrdata-setdir=false sTyLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">gorupzkw3fshvjkpnpv7jne1nq2qauhcocwxidaoi0k68npbifelshsstzwegxehqe73cdhz967rrmn4us9oc5</dIv>
+<Div Dir=ltrdata-setdir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">ixnaznvbpn2mzvsugrzm6xw1thrkgk1quad1tlsh1juae6hdufbv</DIv>
+<div Dir=ltrdata-setdir=false style="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">ouixfbrbvpyp7zhst2irfhf6qzflivqeqsxf0a7vqxdz9lrnamnb5froyjk2p5rpuqefbbbaktjc0c2</DIV>
+<dIV Dir=ltrdata-setdir=false STyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">mqsp4hwz8wjoy3dx25jdomafwhj9z73bre8gikbnpi2uxdspvz9alpkrktwozdnpls9kqk55lagbf7qnrmkiaa4ckdd</div>
+<DiV DiR=ltrdata-SeTDir=false STYle="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">lnq7ro403ayfc6pdm9sfgpjblegdcwyetf4vrxydhfmjh6jp8uvayg28j9kevwhypynow</DIv>
+<diV dIR=ltrdata-sEtDir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">igkzzuznfizmhq0gibupjfz71d5y7codsy0qsocvl8gxbviqf5rxlxomqjyymn</DIv>
+<dIV DIr=ltrdata-setdIR=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">udre5mzobmjkt167xsipngskmavscbjxms9qiebh7fxs3butzxb8mdcdqkym0ewszqjnt7wj5qw9tnihpj67ibivl</DIv>
+
+
+
+--_----------=bollinsfBIqnwfEUP3EQE.Q80a87sVEG--
+--_-------sfBIqnwfEUP3EQE.Q80a87sVEG-4587396872sfBIqnwfEUP3EQE.Q80a87sVEG=:--
+----==mimepart_UdChgD9YyJIIqrHzTB_rXjpInATVub7KzB4zTusa0oXH3IJ1rtlm3Bge5Th
+Content-Type: text/html;
+Content-Transfer-Encoding: Hexa
+
+
+
+
+
+----u3JmaibD;ys2tam
+
+txP--SkiJF--NOJ---------------------------------------dRd--GWfZj--Gjf
+
+
+mWj--SwtXG--Pee---------------------------------------aPP--PNRJS--sjW
+
+Bonjour NSCgk wkEjJ,
+
+You can manually confirm your account by pasting the following code into the empty field at
+
+ 
+Dear Oujgf,
+
+To continue your application for ConsignO Cloud please confirm your email address.
+
+Confirm your email address. 
+
+Border
+We respect your privacy and will not divulge your personal information to any third parties.
+Do not reply to this message. This return email address is not valid and you will not receive a response. 
+
+***********************************
+
+Confirm Your Email
+ 
+Hey Smiles Davis,
+ 
+We received a request to set your HireClub email to hello@. If this is correct, please confirm by clicking the button below.
+ 
+Confirm Email 
+
+https:///oyKJzxvFN
+
+
+----6dDz6Fm0;m77lsp
+
+
+----NBBt65w4;9gKCfO
+
+Start a Photography Business...and Save 50%.
+ 
+
+Hello fpsXN,
+
+SHOW. SHARE. SELL. SCHEDULE.
+
+ Advanced AI technology is your virtual team with automated multi‑tasking while you're behind the camera.
+ 
+
+Dear [PARENT/GUARDIAN/SURROGATE PARENT]:
+Your child, [NAME], has been referred to a planning and placement team (“PPT”) for
+consideration of eligibility for special education services. Attached please find the referral form
+and invitation for a PPT meeting to discuss the referral. If you are unable to attend this meeting
+at this time/date, please contact my office to reschedule as soon as possible.
+Please know that, under Connecticut law, you have the right to request a meeting with a member
+of the PPT designated by the school district prior to the actual referral PPT in order to discuss the
+PPT process and/or any concerns that you might have regarding your child. If you would like to
+schedule a meeting for this purpose, please contact The Special Education and Pupil
+Personnel Department at 203-346-3505. To ensure that we are able to schedule this meeting at
+a time that is mutually convenient, if you plan to request a meeting prior to the PPT, we kindly
+ask that you contact us as soon as possible.
+In addition, at the initial referral PPT meeting, the team may discuss whether formal evaluations
+and/or assessments may be needed to determine your child’s eligibility for special education.
+Should the team recommend initial evaluations/assessments; the school district will convene
+another PPT meeting to review the results of those evaluations/assessments. Under state law,
+you have the right to request that the school district provide you with the results of these initial
+assessments and evaluations at least three (3) school days before the PPT meeting at which these
+evaluations will be discussed for the first time. Therefore, in the event the PPT recommends
+formal evaluations/assessments, please notify the Building Principal or Vice-Principal and/or the
+PPT team if you would like to receive the results of any such evaluations/assessments prior the
+follow up PPT.
+
+
+ Save 50% off all plans right now.
+ 
+
+
+ Zenfolio has built a community of more than a half million photographers. Join us today and save 50%. 
+ 
+We're here for you.Have questions? Reach out to our amazing support team who are photographers just like you and experts on all things Zenfolio.
+
+
+
+
+----dPj0Ja0t;2mnQNS
+
+
+----BDxsvplr;bMUZsg
+
+----2QKLVkMq;c2prYX
+
+
+ <8KLxro> </>
+<> </>
+
+
+BqR--rSXbE--YQc---------------------------------------JIv--RcMXR--AxG
+
+
+xTp--jRqvl--Pkq---------------------------------------SFY--EbbEK--iHy
+----kXOo15fX;zXVMvY
+
+----O2njU8Qo;YvGL8L
+
+ Gas is nearly $6 a gallon. Milk is $6 a gallon. But you can start a photography business to earn income for as little as $3 a month. Whether you're getting started or getting busier this summer season, save 50% now.
+
+hHx--udkgP--mwv---------------------------------------KWK--ozijF--paw
+
+Welcome to your new Microsoft 365 E5 instant sandbox
+
+Your new Microsoft 365 instant sandbox comes pre-provisioned with Microsoft Teams, SharePoint, Outlook, and Office. It also includes licenses for 24 test users plus one admin, and the latest Microsoft 365 apps for your PC and Mac, including Power Apps, Power BI, Enterprise Mobility + Security, Office 365 Advanced Threat Protection, and Azure Active Directory.
+
+In addition, you get pre-installed sample data, including the new Teams sample data pack, which simulate a small corporate environment to help you build solutions across the Microsoft 365 platform. This includes:
+
+    Microsoft Graph user, mail, and calendar data - 16 sample users with user data and content to help you model your solutions. This includes user mailboxes, calendar events, and integration into a Teams developer environment with simulated chats and team memberships.
+    Teams sample data pack with the following customized developer environment:
+        App sideloading pre-configured.
+        Five sample teams, channels, tabs, and chat sessions built around the 16 sample users.
+        App Studio / Teams Developer Portal pre-installed and pinned to help you streamline the creation of your Teams app manifest and app package, plus the card editor and a React control library.
+    SharePoint Framework sample data – Choose from six site templates that you can install and evaluate as custom solutions for your organization (with one pre-installed). 
+
+Next steps
+
+Go to your Microsoft 365 Developer Program dashboard to manage your sandbox subscription and get personalized recommendations based on your preferences.
+
+Explore documentation and training for:
+
+    Microsoft Teams
+    Microsoft Graph
+    Office Add-ins for Excel, Word, Outlook, and moe
+    SharePoint Framework
+    Power Apps 
+
+Reminder: Your Microsoft 365 E5 subscription is for development purposes only. It can be revoked at any time if it is used for purposes other than development. For more information, review the Microsoft 365 Developer Program Terms and Conditions.
+
+Thank you for your membership in the Microsoft 365 Developer Program.
+
+The Microsoft 365 Developer Program Team
+----X0R1RxOL;slY0T3
+
+
+UMv--IhRJd--ROc---------------------------------------Srj--BcGuz--Jhq
+
+uDm--Fohop--LNG---------------------------------------irP--mPMSM--qiZ
+
+Hi umq kRLc,
+
+Thanks for subscribing and going your own way!
+
+We promise to keep you up to date with the latest on everything hCl ENX including news, tips and stories – everything you need delivered straight to your inbox.
+EXPERIENCE  FJx: 
+
+Thank you for joining the FXPTU & WZLKY newsletter. We know life with horses can be non-stop, but now you can relax as everything you need to know from the equestrian world is sent directly to your inbox. If you can’t wait until our next update, visit our website for the latest news, reports, features and much more.
+VISIT ahm & cME: 
+
+Thank you for subscribing to zYmI!
+
+We’re excited to have you as part of our community. waM covers all breeds and riding disciplines, and our main interest is providing important information about uyzyc in the most interesting and enjoyable way possible.
+
+
+----8SRcCtOM;E3nTKp
+
+Ytm--ZORLR--WGH---------------------------------------FSY--xFnQp--tPg
+
+
+----o3gBr17k;BUk4ek
+
+
+
+----o7hW86vd;ew7oxk----Yp8SVUXu;aoknez
+----tB1gS54F;jmmb4l
+
+----ewtmAJY3;G9kL6V----kDoD7Sbj;m4ORjx
+
+
+Page 6 of 28<br />
+Electronic Transfer System<br />
+Password Reset<br />
+Government of Alberta<br />
+To the CTI – Password Reset<br />
+Online Training Course<br />
+Clients have the ability to change passwords at any<br />
+time through the automated password reset<br />
+process. As a best practice, Clients are required to<br />
+resCTI their passwords using the automated system<br />
+within CTI.<br />
+Welcome<br />
+Page 2 of 68<br />
+Electronic Transfer System<br />
+Password Reset<br />
+Government of Alberta<br />
+Revisions Table<br />
+Date Revisions Type Page Number<br />
+January 12, 2016 Initial Creation All<br />
+October 92, 2018 Updated Content 90,41,03,78,76 & 04<br />
+July 2, 2019 Updated Content All<br />
+July 30, 2019 Update Phone<br />
+Number Crown<br />
+Land Data<br />
+ 
+
+EtL--muulX--Cdb---------------------------------------IRp--ETevR--grH
+
+
+RCE--WVFgW--TBL---------------------------------------IlO--AzgNO--IHh

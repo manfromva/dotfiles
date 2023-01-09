@@ -1,0 +1,551 @@
+[    25.031] 
+X.Org X Server 1.21.1.6
+X Protocol Version 11, Revision 0
+[    25.031] Current Operating System: Linux zaria 5.15.84-xanmod1-1-lts #1 SMP Tue, 20 Dec 2022 11:30:14 +0000 x86_64
+[    25.031] Kernel command line: BOOT_IMAGE=/@/boot/vmlinuz-linux-xanmod-lts root=UUID=95a8004f-a721-40a4-8e9e-b132e14768b3 rw rootflags=subvol=@ quiet loglevel=3 audit=0 nvme_load=yes
+[    25.031]  
+[    25.031] Current version of pixman: 0.42.2
+[    25.031] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[    25.031] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[    25.032] (==) Log file: "/home/darnell/.local/share/xorg/Xorg.0.log", Time: Mon Jan  9 10:18:34 2023
+[    25.032] (==) Using config directory: "/etc/X11/xorg.conf.d"
+[    25.032] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[    25.033] (==) No Layout section.  Using the first Screen section.
+[    25.033] (==) No screen section available. Using defaults.
+[    25.033] (**) |-->Screen "Default Screen Section" (0)
+[    25.033] (**) |   |-->Monitor "<default monitor>"
+[    25.033] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[    25.033] (**) Option "DontZap" "false"
+[    25.033] (==) Automatically adding devices
+[    25.033] (==) Automatically enabling devices
+[    25.033] (==) Automatically adding GPU devices
+[    25.033] (==) Automatically binding GPU devices
+[    25.033] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[    25.034] (WW) The directory "/usr/share/fonts/Type1" does not exist.
+[    25.034] 	Entry deleted from font path.
+[    25.034] (WW) The directory "/usr/share/fonts/100dpi" does not exist.
+[    25.034] 	Entry deleted from font path.
+[    25.034] (WW) The directory "/usr/share/fonts/75dpi" does not exist.
+[    25.034] 	Entry deleted from font path.
+[    25.034] (==) FontPath set to:
+	/usr/share/fonts/misc,
+	/usr/share/fonts/TTF,
+	/usr/share/fonts/OTF
+[    25.034] (==) ModulePath set to "/usr/lib/xorg/modules"
+[    25.034] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[    25.034] (II) Module ABI versions:
+[    25.034] 	X.Org ANSI C Emulation: 0.4
+[    25.034] 	X.Org Video Driver: 25.2
+[    25.034] 	X.Org XInput driver : 24.4
+[    25.034] 	X.Org Server Extension : 10.0
+[    25.034] (++) using VT number 2
+
+[    25.034] (--) controlling tty is VT number 2, auto-enabling KeepTty
+[    25.035] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[    25.036] (II) xfree86: Adding drm device (/dev/dri/card0)
+[    25.036] (II) Platform probe for /sys/devices/pci0000:00/0000:00:02.0/drm/card0
+[    25.036] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 13 paused 0
+[    25.037] (--) PCI:*(0@0:2:0) 8086:9b41:17aa:3f18 rev 2, Mem @ 0xb0000000/16777216, 0xa0000000/268435456, I/O @ 0x00003000/64, BIOS @ 0x????????/131072
+[    25.037] (WW) Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+[    25.037] (II) LoadModule: "glx"
+[    25.038] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[    25.041] (II) Module glx: vendor="X.Org Foundation"
+[    25.041] 	compiled for 1.21.1.6, module version = 1.0.0
+[    25.041] 	ABI class: X.Org Server Extension, version 10.0
+[    25.041] (==) Matched intel as autoconfigured driver 0
+[    25.041] (==) Matched modesetting as autoconfigured driver 1
+[    25.041] (==) Matched fbdev as autoconfigured driver 2
+[    25.041] (==) Matched vesa as autoconfigured driver 3
+[    25.041] (==) Assigned the driver to the xf86ConfigLayout
+[    25.041] (II) LoadModule: "intel"
+[    25.041] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[    25.043] (II) Module intel: vendor="X.Org Foundation"
+[    25.043] 	compiled for 1.21.1.1, module version = 2.99.917
+[    25.043] 	Module class: X.Org Video Driver
+[    25.043] 	ABI class: X.Org Video Driver, version 25.2
+[    25.043] (II) LoadModule: "modesetting"
+[    25.043] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[    25.045] (II) Module modesetting: vendor="X.Org Foundation"
+[    25.045] 	compiled for 1.21.1.6, module version = 1.21.1
+[    25.045] 	Module class: X.Org Video Driver
+[    25.045] 	ABI class: X.Org Video Driver, version 25.2
+[    25.045] (II) LoadModule: "fbdev"
+[    25.045] (II) Loading /usr/lib/xorg/modules/drivers/fbdev_drv.so
+[    25.045] (II) Module fbdev: vendor="X.Org Foundation"
+[    25.045] 	compiled for 1.21.1.1, module version = 0.5.0
+[    25.045] 	Module class: X.Org Video Driver
+[    25.045] 	ABI class: X.Org Video Driver, version 25.2
+[    25.045] (II) LoadModule: "vesa"
+[    25.045] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[    25.046] (II) Module vesa: vendor="X.Org Foundation"
+[    25.046] 	compiled for 1.21.1.4, module version = 2.6.0
+[    25.046] 	Module class: X.Org Video Driver
+[    25.046] 	ABI class: X.Org Video Driver, version 25.2
+[    25.046] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[    25.046] (II) intel: Driver for Intel(R) HD Graphics
+[    25.046] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[    25.046] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[    25.046] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[    25.046] (II) FBDEV: driver for framebuffer: fbdev
+[    25.046] (II) VESA: driver for VESA chipsets: vesa
+[    25.046] xf86EnableIO: failed to enable I/O ports 0000-03ff (Operation not permitted)
+[    25.046] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20201103
+[    25.046] (II) intel(0): SNA compiled from 2.99.917-916-g31486f40
+[    25.058] (WW) Falling back to old probe method for modesetting
+[    25.058] (WW) Falling back to old probe method for fbdev
+[    25.058] (II) Loading sub module "fbdevhw"
+[    25.058] (II) LoadModule: "fbdevhw"
+[    25.058] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[    25.059] (II) Module fbdevhw: vendor="X.Org Foundation"
+[    25.059] 	compiled for 1.21.1.6, module version = 0.0.2
+[    25.059] 	ABI class: X.Org Video Driver, version 25.2
+[    25.059] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[    25.059] (--) intel(0): Integrated Graphics Chipset: Intel(R) HD Graphics
+[    25.059] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2; using a maximum of 4 threads
+[    25.059] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[    25.059] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[    25.059] (==) intel(0): RGB weight 888
+[    25.059] (==) intel(0): Default visual is TrueColor
+[    25.059] (II) intel(0): Output eDP1 has no monitor section
+[    25.060] (**) intel(0): Found backlight control interface intel_backlight (type 'raw') for output eDP1
+[    25.060] (II) intel(0): Enabled output eDP1
+[    25.060] (II) intel(0): Output DP1 has no monitor section
+[    25.060] (II) intel(0): Enabled output DP1
+[    25.060] (II) intel(0): Output HDMI1 has no monitor section
+[    25.060] (II) intel(0): Enabled output HDMI1
+[    25.060] (II) intel(0): Output DP2 has no monitor section
+[    25.060] (II) intel(0): Enabled output DP2
+[    25.060] (II) intel(0): Output HDMI2 has no monitor section
+[    25.060] (II) intel(0): Enabled output HDMI2
+[    25.060] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[    25.060] (II) intel(0): Output VIRTUAL1 has no monitor section
+[    25.060] (II) intel(0): Enabled output VIRTUAL1
+[    25.060] (--) intel(0): Output eDP1 using initial mode 2160x1350 on pipe 0
+[    25.060] (==) intel(0): TearFree enabled
+[    25.060] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[    25.060] (==) intel(0): DPI set to (96, 96)
+[    25.060] (II) Loading sub module "dri3"
+[    25.060] (II) LoadModule: "dri3"
+[    25.060] (II) Module "dri3" already built-in
+[    25.060] (II) Loading sub module "dri2"
+[    25.060] (II) LoadModule: "dri2"
+[    25.060] (II) Module "dri2" already built-in
+[    25.060] (II) Loading sub module "present"
+[    25.060] (II) LoadModule: "present"
+[    25.060] (II) Module "present" already built-in
+[    25.060] (II) UnloadModule: "modesetting"
+[    25.060] (II) Unloading modesetting
+[    25.060] (II) UnloadModule: "fbdev"
+[    25.060] (II) Unloading fbdev
+[    25.060] (II) UnloadSubModule: "fbdevhw"
+[    25.060] (II) Unloading fbdevhw
+[    25.060] (II) UnloadModule: "vesa"
+[    25.060] (II) Unloading vesa
+[    25.060] (II) intel(0): SNA initialized with Coffeelake (gen9) backend
+[    25.060] (==) intel(0): Backing store enabled
+[    25.060] (==) intel(0): Silken mouse enabled
+[    25.060] (II) intel(0): HW Cursor enabled
+[    25.061] (==) intel(0): DPMS enabled
+[    25.061] (==) intel(0): Display hotplug detection enabled
+[    25.061] (II) intel(0): [DRI2] Setup complete
+[    25.061] (II) intel(0): [DRI2]   DRI driver: i965
+[    25.061] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[    25.061] (II) intel(0): direct rendering: DRI2 DRI3 enabled
+[    25.061] (II) intel(0): hardware support for Present enabled
+[    25.061] (II) Initializing extension Generic Event Extension
+[    25.061] (II) Initializing extension SHAPE
+[    25.061] (II) Initializing extension MIT-SHM
+[    25.061] (II) Initializing extension XInputExtension
+[    25.061] (II) Initializing extension XTEST
+[    25.061] (II) Initializing extension BIG-REQUESTS
+[    25.061] (II) Initializing extension SYNC
+[    25.061] (II) Initializing extension XKEYBOARD
+[    25.061] (II) Initializing extension XC-MISC
+[    25.061] (II) Initializing extension SECURITY
+[    25.061] (II) Initializing extension XFIXES
+[    25.061] (II) Initializing extension RENDER
+[    25.061] (II) Initializing extension RANDR
+[    25.061] (II) Initializing extension COMPOSITE
+[    25.061] (II) Initializing extension DAMAGE
+[    25.062] (II) Initializing extension MIT-SCREEN-SAVER
+[    25.062] (II) Initializing extension DOUBLE-BUFFER
+[    25.062] (II) Initializing extension RECORD
+[    25.062] (II) Initializing extension DPMS
+[    25.062] (II) Initializing extension Present
+[    25.062] (II) Initializing extension DRI3
+[    25.062] (II) Initializing extension X-Resource
+[    25.062] (II) Initializing extension XVideo
+[    25.062] (II) Initializing extension XVideo-MotionCompensation
+[    25.062] (II) Initializing extension GLX
+[    25.062] (EE) AIGLX error: dlopen of /usr/lib/dri/i965_dri.so failed (/usr/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+[    25.062] (EE) AIGLX error: unable to load driver i965
+[    25.194] (II) IGLX: Loaded and initialized swrast
+[    25.194] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[    25.194] (II) Initializing extension XFree86-VidModeExtension
+[    25.194] (II) Initializing extension XFree86-DGA
+[    25.194] (II) Initializing extension XFree86-DRI
+[    25.194] (II) Initializing extension DRI2
+[    25.196] (II) intel(0): switch to mode 2160x1350@60.0 on eDP1 using pipe 0, position (0, 0), rotation normal, reflection none
+[    25.201] (II) intel(0): Setting screen physical size to 571 x 357
+[    25.238] (II) config/udev: Adding input device Video Bus (/dev/input/event11)
+[    25.238] (**) Video Bus: Applying InputClass "evdev keyboard catchall"
+[    25.238] (**) Video Bus: Applying InputClass "libinput keyboard catchall"
+[    25.238] (**) Video Bus: Applying InputClass "system-keyboard"
+[    25.238] (**) Video Bus: Applying InputClass "Keyboard Defaults"
+[    25.238] (II) LoadModule: "libinput"
+[    25.239] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[    25.241] (II) Module libinput: vendor="X.Org Foundation"
+[    25.241] 	compiled for 1.21.1.3, module version = 1.2.1
+[    25.241] 	Module class: X.Org XInput Driver
+[    25.241] 	ABI class: X.Org XInput driver, version 24.4
+[    25.241] (II) Using input driver 'libinput' for 'Video Bus'
+[    25.241] (II) systemd-logind: got fd for /dev/input/event11 13:75 fd 23 paused 0
+[    25.241] (**) Video Bus: always reports core events
+[    25.241] (**) Option "Device" "/dev/input/event11"
+[    25.244] (II) event11 - Video Bus: is tagged by udev as: Keyboard
+[    25.244] (II) event11 - Video Bus: device is a keyboard
+[    25.244] (II) event11 - Video Bus: device removed
+[    25.244] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input17/event11"
+[    25.244] (II) XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 6)
+[    25.244] (**) Option "xkb_layout" "us"
+[    25.244] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.254] (II) event11 - Video Bus: is tagged by udev as: Keyboard
+[    25.255] (II) event11 - Video Bus: device is a keyboard
+[    25.255] (II) config/udev: Adding input device Lid Switch (/dev/input/event0)
+[    25.255] (II) No input driver specified, ignoring this device.
+[    25.255] (II) This device may have been added with another device file.
+[    25.255] (II) config/udev: Adding input device Power Button (/dev/input/event1)
+[    25.255] (**) Power Button: Applying InputClass "evdev keyboard catchall"
+[    25.255] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[    25.255] (**) Power Button: Applying InputClass "system-keyboard"
+[    25.255] (**) Power Button: Applying InputClass "Keyboard Defaults"
+[    25.255] (II) Using input driver 'libinput' for 'Power Button'
+[    25.255] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 26 paused 0
+[    25.256] (**) Power Button: always reports core events
+[    25.256] (**) Option "Device" "/dev/input/event1"
+[    25.256] (II) event1  - Power Button: is tagged by udev as: Keyboard
+[    25.256] (II) event1  - Power Button: device is a keyboard
+[    25.256] (II) event1  - Power Button: device removed
+[    25.256] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input1/event1"
+[    25.256] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 7)
+[    25.256] (**) Option "xkb_layout" "us"
+[    25.256] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.256] (II) event1  - Power Button: is tagged by udev as: Keyboard
+[    25.256] (II) event1  - Power Button: device is a keyboard
+[    25.257] (II) config/udev: Adding input device Sleep Button (/dev/input/event2)
+[    25.257] (**) Sleep Button: Applying InputClass "evdev keyboard catchall"
+[    25.257] (**) Sleep Button: Applying InputClass "libinput keyboard catchall"
+[    25.257] (**) Sleep Button: Applying InputClass "system-keyboard"
+[    25.257] (**) Sleep Button: Applying InputClass "Keyboard Defaults"
+[    25.257] (II) Using input driver 'libinput' for 'Sleep Button'
+[    25.257] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 27 paused 0
+[    25.257] (**) Sleep Button: always reports core events
+[    25.257] (**) Option "Device" "/dev/input/event2"
+[    25.257] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[    25.258] (II) event2  - Sleep Button: device is a keyboard
+[    25.258] (II) event2  - Sleep Button: device removed
+[    25.258] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input2/event2"
+[    25.258] (II) XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 8)
+[    25.258] (**) Option "xkb_layout" "us"
+[    25.258] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.258] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[    25.258] (II) event2  - Sleep Button: device is a keyboard
+[    25.259] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device (/dev/input/event4)
+[    25.259] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device: Applying InputClass "evdev keyboard catchall"
+[    25.259] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device: Applying InputClass "libinput keyboard catchall"
+[    25.259] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device: Applying InputClass "system-keyboard"
+[    25.259] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device: Applying InputClass "Keyboard Defaults"
+[    25.259] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device'
+[    25.259] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 28 paused 0
+[    25.259] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device: always reports core events
+[    25.259] (**) Option "Device" "/dev/input/event4"
+[    25.260] (II) event4  - HAILUCK CO.,LTD Duet 7 USB Composite Device: is tagged by udev as: Keyboard
+[    25.260] (II) event4  - HAILUCK CO.,LTD Duet 7 USB Composite Device: device is a keyboard
+[    25.260] (II) event4  - HAILUCK CO.,LTD Duet 7 USB Composite Device: device removed
+[    25.260] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.0/0003:17EF:60F7.0001/input/input4/event4"
+[    25.260] (II) XINPUT: Adding extended input device "HAILUCK CO.,LTD Duet 7 USB Composite Device" (type: KEYBOARD, id 9)
+[    25.260] (**) Option "xkb_layout" "us"
+[    25.260] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.261] (II) event4  - HAILUCK CO.,LTD Duet 7 USB Composite Device: is tagged by udev as: Keyboard
+[    25.261] (II) event4  - HAILUCK CO.,LTD Duet 7 USB Composite Device: device is a keyboard
+[    25.261] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control (/dev/input/event6)
+[    25.261] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "evdev keyboard catchall"
+[    25.261] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "libinput keyboard catchall"
+[    25.261] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "system-keyboard"
+[    25.261] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "Keyboard Defaults"
+[    25.261] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control'
+[    25.261] (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 29 paused 0
+[    25.262] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: always reports core events
+[    25.262] (**) Option "Device" "/dev/input/event6"
+[    25.262] (II) event6  - HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: is tagged by udev as: Keyboard
+[    25.262] (II) event6  - HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: device is a keyboard
+[    25.262] (II) event6  - HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: device removed
+[    25.262] (II) libinput: HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: needs a virtual subdevice
+[    25.262] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:17EF:60F7.0002/input/input27/event6"
+[    25.262] (II) XINPUT: Adding extended input device "HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control" (type: MOUSE, id 10)
+[    25.262] (**) Option "AccelerationScheme" "none"
+[    25.262] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: (accel) selected scheme none/0
+[    25.262] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: (accel) acceleration factor: 2.000
+[    25.262] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: (accel) acceleration threshold: 4
+[    25.263] (II) event6  - HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: is tagged by udev as: Keyboard
+[    25.263] (II) event6  - HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: device is a keyboard
+[    25.263] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse (/dev/input/event19)
+[    25.263] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: Applying InputClass "evdev pointer catchall"
+[    25.263] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: Applying InputClass "libinput pointer catchall"
+[    25.263] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse'
+[    25.264] (II) systemd-logind: got fd for /dev/input/event19 13:83 fd 30 paused 0
+[    25.264] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: always reports core events
+[    25.264] (**) Option "Device" "/dev/input/event19"
+[    25.264] (II) event19 - HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: is tagged by udev as: Mouse
+[    25.264] (II) event19 - HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: device is a pointer
+[    25.265] (II) event19 - HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: device removed
+[    25.265] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:17EF:60F7.0002/input/input28/event19"
+[    25.265] (II) XINPUT: Adding extended input device "HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse" (type: MOUSE, id 11)
+[    25.265] (**) Option "AccelerationScheme" "none"
+[    25.265] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: (accel) selected scheme none/0
+[    25.265] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: (accel) acceleration factor: 2.000
+[    25.265] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: (accel) acceleration threshold: 4
+[    25.265] (II) event19 - HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: is tagged by udev as: Mouse
+[    25.265] (II) event19 - HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse: device is a pointer
+[    25.266] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device Mouse (/dev/input/mouse0)
+[    25.266] (II) No input driver specified, ignoring this device.
+[    25.266] (II) This device may have been added with another device file.
+[    25.266] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad (/dev/input/event20)
+[    25.266] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: Applying InputClass "evdev touchpad catchall"
+[    25.266] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: Applying InputClass "libinput touchpad catchall"
+[    25.266] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: Applying InputClass "touchpad"
+[    25.266] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad'
+[    25.266] (II) systemd-logind: got fd for /dev/input/event20 13:84 fd 31 paused 0
+[    25.267] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: always reports core events
+[    25.267] (**) Option "Device" "/dev/input/event20"
+[    25.267] (II) event20 - HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: is tagged by udev as: Touchpad
+[    25.268] (II) event20 - HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: device is a touchpad
+[    25.268] (II) event20 - HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: device removed
+[    25.268] (**) Option "Tapping" "on"
+[    25.268] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:17EF:60F7.0002/input/input30/event20"
+[    25.268] (II) XINPUT: Adding extended input device "HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad" (type: TOUCHPAD, id 12)
+[    25.269] (**) Option "AccelerationScheme" "none"
+[    25.269] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: (accel) selected scheme none/0
+[    25.269] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: (accel) acceleration factor: 2.000
+[    25.269] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: (accel) acceleration threshold: 4
+[    25.269] (II) event20 - HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: is tagged by udev as: Touchpad
+[    25.270] (II) event20 - HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: device is a touchpad
+[    25.270] (II) config/udev: Adding input device HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad (/dev/input/mouse1)
+[    25.270] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: Applying InputClass "touchpad"
+[    25.270] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad'
+[    25.270] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: always reports core events
+[    25.270] (**) Option "Device" "/dev/input/mouse1"
+[    25.270] (EE) xf86OpenSerial: Cannot open device /dev/input/mouse1
+	Permission denied.
+[    25.270] (II) mouse1: opening input device '/dev/input/mouse1' failed (Permission denied).
+[    25.270] (II) mouse1  - failed to create input device '/dev/input/mouse1'.
+[    25.270] (EE) libinput: HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad: Failed to create a device for /dev/input/mouse1
+[    25.270] (EE) PreInit returned 2 for "HAILUCK CO.,LTD Duet 7 USB Composite Device Touchpad"
+[    25.270] (II) UnloadModule: "libinput"
+[    25.271] (II) config/udev: Adding input device Integrated RGB Camera: Integrat (/dev/input/event5)
+[    25.271] (**) Integrated RGB Camera: Integrat: Applying InputClass "evdev keyboard catchall"
+[    25.271] (**) Integrated RGB Camera: Integrat: Applying InputClass "libinput keyboard catchall"
+[    25.271] (**) Integrated RGB Camera: Integrat: Applying InputClass "system-keyboard"
+[    25.271] (**) Integrated RGB Camera: Integrat: Applying InputClass "Keyboard Defaults"
+[    25.271] (II) Using input driver 'libinput' for 'Integrated RGB Camera: Integrat'
+[    25.271] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 32 paused 0
+[    25.271] (**) Integrated RGB Camera: Integrat: always reports core events
+[    25.271] (**) Option "Device" "/dev/input/event5"
+[    25.272] (II) event5  - Integrated RGB Camera: Integrat: is tagged by udev as: Keyboard
+[    25.272] (II) event5  - Integrated RGB Camera: Integrat: device is a keyboard
+[    25.272] (II) event5  - Integrated RGB Camera: Integrat: device removed
+[    25.272] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/input/input26/event5"
+[    25.272] (II) XINPUT: Adding extended input device "Integrated RGB Camera: Integrat" (type: KEYBOARD, id 13)
+[    25.272] (**) Option "xkb_layout" "us"
+[    25.272] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.273] (II) event5  - Integrated RGB Camera: Integrat: is tagged by udev as: Keyboard
+[    25.273] (II) event5  - Integrated RGB Camera: Integrat: device is a keyboard
+[    25.273] (II) config/udev: Adding input device Integrated RGB Camera: Integrat (/dev/input/event7)
+[    25.273] (**) Integrated RGB Camera: Integrat: Applying InputClass "evdev keyboard catchall"
+[    25.273] (**) Integrated RGB Camera: Integrat: Applying InputClass "libinput keyboard catchall"
+[    25.273] (**) Integrated RGB Camera: Integrat: Applying InputClass "system-keyboard"
+[    25.273] (**) Integrated RGB Camera: Integrat: Applying InputClass "Keyboard Defaults"
+[    25.273] (II) Using input driver 'libinput' for 'Integrated RGB Camera: Integrat'
+[    25.273] (II) systemd-logind: got fd for /dev/input/event7 13:71 fd 33 paused 0
+[    25.273] (**) Integrated RGB Camera: Integrat: always reports core events
+[    25.273] (**) Option "Device" "/dev/input/event7"
+[    25.274] (II) event7  - Integrated RGB Camera: Integrat: is tagged by udev as: Keyboard
+[    25.274] (II) event7  - Integrated RGB Camera: Integrat: device is a keyboard
+[    25.274] (II) event7  - Integrated RGB Camera: Integrat: device removed
+[    25.274] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/input/input31/event7"
+[    25.274] (II) XINPUT: Adding extended input device "Integrated RGB Camera: Integrat" (type: KEYBOARD, id 14)
+[    25.274] (**) Option "xkb_layout" "us"
+[    25.274] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.275] (II) event7  - Integrated RGB Camera: Integrat: is tagged by udev as: Keyboard
+[    25.275] (II) event7  - Integrated RGB Camera: Integrat: device is a keyboard
+[    25.275] (II) config/udev: Adding input device Intergrated Rear Camera: Interg (/dev/input/event21)
+[    25.275] (**) Intergrated Rear Camera: Interg: Applying InputClass "evdev keyboard catchall"
+[    25.275] (**) Intergrated Rear Camera: Interg: Applying InputClass "libinput keyboard catchall"
+[    25.275] (**) Intergrated Rear Camera: Interg: Applying InputClass "system-keyboard"
+[    25.275] (**) Intergrated Rear Camera: Interg: Applying InputClass "Keyboard Defaults"
+[    25.275] (II) Using input driver 'libinput' for 'Intergrated Rear Camera: Interg'
+[    25.275] (II) systemd-logind: got fd for /dev/input/event21 13:85 fd 34 paused 0
+[    25.275] (**) Intergrated Rear Camera: Interg: always reports core events
+[    25.275] (**) Option "Device" "/dev/input/event21"
+[    25.276] (II) event21 - Intergrated Rear Camera: Interg: is tagged by udev as: Keyboard
+[    25.276] (II) event21 - Intergrated Rear Camera: Interg: device is a keyboard
+[    25.276] (II) event21 - Intergrated Rear Camera: Interg: device removed
+[    25.276] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.0/input/input32/event21"
+[    25.276] (II) XINPUT: Adding extended input device "Intergrated Rear Camera: Interg" (type: KEYBOARD, id 15)
+[    25.276] (**) Option "xkb_layout" "us"
+[    25.276] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.277] (II) event21 - Intergrated Rear Camera: Interg: is tagged by udev as: Keyboard
+[    25.277] (II) event21 - Intergrated Rear Camera: Interg: device is a keyboard
+[    25.277] (II) config/udev: Adding input device Wacom HID 5245 Pen (/dev/input/event12)
+[    25.277] (**) Wacom HID 5245 Pen: Applying InputClass "evdev tablet catchall"
+[    25.277] (**) Wacom HID 5245 Pen: Applying InputClass "libinput tablet catchall"
+[    25.277] (II) Using input driver 'libinput' for 'Wacom HID 5245 Pen'
+[    25.278] (II) systemd-logind: got fd for /dev/input/event12 13:76 fd 35 paused 0
+[    25.278] (**) Wacom HID 5245 Pen: always reports core events
+[    25.278] (**) Option "Device" "/dev/input/event12"
+[    25.278] (II) event12 - Wacom HID 5245 Pen: is tagged by udev as: Tablet
+[    25.290] (II) event12 - Wacom HID 5245 Pen: tablet 'Wacom HID 5245 Pen' unknown to libwacom
+[    25.295] (II) event12 - Wacom HID 5245 Pen: device is a tablet
+[    25.295] (II) event12 - Wacom HID 5245 Pen: device removed
+[    25.295] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-0/i2c-WACF2200:00/0018:056A:5245.0003/input/input18/event12"
+[    25.295] (II) XINPUT: Adding extended input device "Wacom HID 5245 Pen" (type: TABLET, id 16)
+[    25.296] (II) event12 - Wacom HID 5245 Pen: is tagged by udev as: Tablet
+[    25.301] (II) event12 - Wacom HID 5245 Pen: tablet 'Wacom HID 5245 Pen' unknown to libwacom
+[    25.306] (II) event12 - Wacom HID 5245 Pen: device is a tablet
+[    25.306] (II) config/udev: Adding input device Wacom HID 5245 Pen (/dev/input/mouse2)
+[    25.306] (II) No input driver specified, ignoring this device.
+[    25.306] (II) This device may have been added with another device file.
+[    25.306] (II) config/udev: Adding input device Wacom HID 5245 Finger (/dev/input/event13)
+[    25.306] (**) Wacom HID 5245 Finger: Applying InputClass "evdev touchscreen catchall"
+[    25.306] (**) Wacom HID 5245 Finger: Applying InputClass "libinput touchscreen catchall"
+[    25.306] (II) Using input driver 'libinput' for 'Wacom HID 5245 Finger'
+[    25.307] (II) systemd-logind: got fd for /dev/input/event13 13:77 fd 37 paused 0
+[    25.307] (**) Wacom HID 5245 Finger: always reports core events
+[    25.307] (**) Option "Device" "/dev/input/event13"
+[    25.307] (II) event13 - Wacom HID 5245 Finger: is tagged by udev as: Touchscreen
+[    25.307] (II) event13 - Wacom HID 5245 Finger: device is a touch device
+[    25.308] (II) event13 - Wacom HID 5245 Finger: device removed
+[    25.308] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-0/i2c-WACF2200:00/0018:056A:5245.0003/input/input19/event13"
+[    25.308] (II) XINPUT: Adding extended input device "Wacom HID 5245 Finger" (type: TOUCHSCREEN, id 17)
+[    25.308] (**) Option "AccelerationScheme" "none"
+[    25.308] (**) Wacom HID 5245 Finger: (accel) selected scheme none/0
+[    25.308] (**) Wacom HID 5245 Finger: (accel) acceleration factor: 2.000
+[    25.308] (**) Wacom HID 5245 Finger: (accel) acceleration threshold: 4
+[    25.308] (II) event13 - Wacom HID 5245 Finger: is tagged by udev as: Touchscreen
+[    25.308] (II) event13 - Wacom HID 5245 Finger: device is a touch device
+[    25.308] (II) config/udev: Adding input device Wacom HID 5245 Finger (/dev/input/mouse3)
+[    25.308] (II) No input driver specified, ignoring this device.
+[    25.308] (II) This device may have been added with another device file.
+[    25.309] (II) config/udev: Adding input device Ideapad extra buttons (/dev/input/event10)
+[    25.309] (**) Ideapad extra buttons: Applying InputClass "evdev keyboard catchall"
+[    25.309] (**) Ideapad extra buttons: Applying InputClass "libinput keyboard catchall"
+[    25.309] (**) Ideapad extra buttons: Applying InputClass "system-keyboard"
+[    25.309] (**) Ideapad extra buttons: Applying InputClass "Keyboard Defaults"
+[    25.309] (II) Using input driver 'libinput' for 'Ideapad extra buttons'
+[    25.309] (II) systemd-logind: got fd for /dev/input/event10 13:74 fd 38 paused 0
+[    25.309] (**) Ideapad extra buttons: always reports core events
+[    25.309] (**) Option "Device" "/dev/input/event10"
+[    25.310] (II) event10 - Ideapad extra buttons: is tagged by udev as: Keyboard
+[    25.310] (II) event10 - Ideapad extra buttons: device is a keyboard
+[    25.310] (II) event10 - Ideapad extra buttons: device removed
+[    25.310] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1f.0/PNP0C09:00/VPC2004:00/input/input11/event10"
+[    25.310] (II) XINPUT: Adding extended input device "Ideapad extra buttons" (type: KEYBOARD, id 18)
+[    25.310] (**) Option "xkb_layout" "us"
+[    25.310] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.310] (II) event10 - Ideapad extra buttons: is tagged by udev as: Keyboard
+[    25.310] (II) event10 - Ideapad extra buttons: device is a keyboard
+[    25.310] (II) config/udev: Adding input device sof-hda-dsp Headset Mic (/dev/input/event14)
+[    25.310] (II) No input driver specified, ignoring this device.
+[    25.310] (II) This device may have been added with another device file.
+[    25.311] (II) config/udev: Adding input device sof-hda-dsp Headphone (/dev/input/event15)
+[    25.311] (II) No input driver specified, ignoring this device.
+[    25.311] (II) This device may have been added with another device file.
+[    25.311] (II) config/udev: Adding input device sof-hda-dsp HDMI/DP,pcm=3 (/dev/input/event16)
+[    25.311] (II) No input driver specified, ignoring this device.
+[    25.311] (II) This device may have been added with another device file.
+[    25.311] (II) config/udev: Adding input device sof-hda-dsp HDMI/DP,pcm=4 (/dev/input/event17)
+[    25.311] (II) No input driver specified, ignoring this device.
+[    25.311] (II) This device may have been added with another device file.
+[    25.311] (II) config/udev: Adding input device sof-hda-dsp HDMI/DP,pcm=5 (/dev/input/event18)
+[    25.311] (II) No input driver specified, ignoring this device.
+[    25.311] (II) This device may have been added with another device file.
+[    25.311] (II) config/udev: Adding input device Intel HID 5 button array (/dev/input/event9)
+[    25.311] (**) Intel HID 5 button array: Applying InputClass "evdev keyboard catchall"
+[    25.311] (**) Intel HID 5 button array: Applying InputClass "libinput keyboard catchall"
+[    25.311] (**) Intel HID 5 button array: Applying InputClass "system-keyboard"
+[    25.311] (**) Intel HID 5 button array: Applying InputClass "Keyboard Defaults"
+[    25.311] (II) Using input driver 'libinput' for 'Intel HID 5 button array'
+[    25.312] (II) systemd-logind: got fd for /dev/input/event9 13:73 fd 39 paused 0
+[    25.312] (**) Intel HID 5 button array: always reports core events
+[    25.312] (**) Option "Device" "/dev/input/event9"
+[    25.312] (II) event9  - Intel HID 5 button array: is tagged by udev as: Keyboard
+[    25.312] (II) event9  - Intel HID 5 button array: device is a keyboard
+[    25.312] (II) event9  - Intel HID 5 button array: device removed
+[    25.312] (**) Option "config_info" "udev:/sys/devices/platform/INT33D5:00/input/input10/event9"
+[    25.312] (II) XINPUT: Adding extended input device "Intel HID 5 button array" (type: KEYBOARD, id 19)
+[    25.312] (**) Option "xkb_layout" "us"
+[    25.312] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.312] (II) event9  - Intel HID 5 button array: is tagged by udev as: Keyboard
+[    25.313] (II) event9  - Intel HID 5 button array: device is a keyboard
+[    25.313] (II) config/udev: Adding input device Intel HID events (/dev/input/event8)
+[    25.313] (**) Intel HID events: Applying InputClass "evdev keyboard catchall"
+[    25.313] (**) Intel HID events: Applying InputClass "libinput keyboard catchall"
+[    25.313] (**) Intel HID events: Applying InputClass "system-keyboard"
+[    25.313] (**) Intel HID events: Applying InputClass "Keyboard Defaults"
+[    25.313] (II) Using input driver 'libinput' for 'Intel HID events'
+[    25.313] (II) systemd-logind: got fd for /dev/input/event8 13:72 fd 40 paused 0
+[    25.313] (**) Intel HID events: always reports core events
+[    25.313] (**) Option "Device" "/dev/input/event8"
+[    25.313] (II) event8  - Intel HID events: is tagged by udev as: Keyboard
+[    25.314] (II) event8  - Intel HID events: device is a keyboard
+[    25.314] (II) event8  - Intel HID events: device removed
+[    25.314] (**) Option "config_info" "udev:/sys/devices/platform/INT33D5:00/input/input9/event8"
+[    25.314] (II) XINPUT: Adding extended input device "Intel HID events" (type: KEYBOARD, id 20)
+[    25.314] (**) Option "xkb_layout" "us"
+[    25.314] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.314] (II) event8  - Intel HID events: is tagged by udev as: Keyboard
+[    25.314] (II) event8  - Intel HID events: device is a keyboard
+[    25.314] (II) config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event3)
+[    25.314] (**) AT Translated Set 2 keyboard: Applying InputClass "evdev keyboard catchall"
+[    25.314] (**) AT Translated Set 2 keyboard: Applying InputClass "libinput keyboard catchall"
+[    25.314] (**) AT Translated Set 2 keyboard: Applying InputClass "system-keyboard"
+[    25.314] (**) AT Translated Set 2 keyboard: Applying InputClass "Keyboard Defaults"
+[    25.314] (II) Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[    25.315] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 41 paused 0
+[    25.315] (**) AT Translated Set 2 keyboard: always reports core events
+[    25.315] (**) Option "Device" "/dev/input/event3"
+[    25.315] (II) event3  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[    25.315] (II) event3  - AT Translated Set 2 keyboard: device is a keyboard
+[    25.316] (II) event3  - AT Translated Set 2 keyboard: device removed
+[    25.316] (**) Option "config_info" "udev:/sys/devices/platform/i8042/serio0/input/input3/event3"
+[    25.316] (II) XINPUT: Adding extended input device "AT Translated Set 2 keyboard" (type: KEYBOARD, id 21)
+[    25.316] (**) Option "xkb_layout" "us"
+[    25.316] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.317] (II) event3  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[    25.317] (II) event3  - AT Translated Set 2 keyboard: device is a keyboard
+[    25.335] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "evdev keyboard catchall"
+[    25.335] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "libinput keyboard catchall"
+[    25.335] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "system-keyboard"
+[    25.335] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: Applying InputClass "Keyboard Defaults"
+[    25.335] (II) Using input driver 'libinput' for 'HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control'
+[    25.335] (II) systemd-logind: returning pre-existing fd for /dev/input/event6 13:70
+[    25.335] (**) HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: always reports core events
+[    25.335] (**) Option "Device" "/dev/input/event6"
+[    25.335] (II) libinput: HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control: is a virtual subdevice
+[    25.335] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:17EF:60F7.0002/input/input27/event6"
+[    25.335] (II) XINPUT: Adding extended input device "HAILUCK CO.,LTD Duet 7 USB Composite Device Consumer Control" (type: KEYBOARD, id 22)
+[    25.335] (**) Option "xkb_layout" "us"
+[    25.335] (**) Option "xkb_options" "terminate:ctrl_alt_bksp"
+[    25.721] (II) intel(0): EDID vendor "CSO", prod id 4865
+[    25.721] (II) intel(0): Printing DDC gathered Modelines:
+[    25.721] (II) intel(0): Modeline "2160x1350"x0.0  180.00  2160 2176 2192 2204  1350 1358 1359 1367 -hsync -vsync (81.7 kHz eP)

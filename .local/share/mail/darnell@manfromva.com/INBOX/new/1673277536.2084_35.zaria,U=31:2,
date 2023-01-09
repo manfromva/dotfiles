@@ -1,0 +1,133 @@
+Return-Path: <noreply@github.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id 4vFvFpLku2MRICgAdh2gHA
+	(envelope-from <noreply@github.com>)
+	for <darnell@manfromva.com>; Mon, 09 Jan 2023 04:55:30 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DMARC_PASS,HTML_IMAGE_ONLY_20,HTML_MESSAGE,
+	MAILING_LIST_MULTI,RCVD_IN_DNSWL_MED,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,
+	SPF_PASS,T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Report: 
+	* -0.1 DMARC_PASS DMARC check passed
+	* -0.1 SPF_PASS SPF check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.7 HTML_IMAGE_ONLY_20 BODY: HTML: images with 1600-2000 bytes of
+	*      words
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [192.30.252.202 listed in wl.mailspike.net]
+	* -2.3 RCVD_IN_DNSWL_MED RBL: Sender listed at https://www.dnswl.org/,
+	*       medium trust
+	*      [192.30.252.202 listed in list.dnswl.org]
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	* -1.0 MAILING_LIST_MULTI Multiple indicators imply a widely-seen list
+	*       manager
+	* -0.0 DKIMWL_WL_HIGH DKIMwl.org - High trust sender
+X-Spam-Score: -2.9
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=reject dis=none) header.from=github.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=github.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (1024-bit key; unprotected) header.d=github.com header.i=@github.com header.a=rsa-sha256 header.s=pf2014 header.b=bMp0OLRt;
+	dkim-atps=neutral
+Received: from out-19.smtp.github.com (out-19.smtp.github.com [192.30.252.202])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id 2F4B9BD510
+	for <darnell@manfromva.com>; Mon,  9 Jan 2023 04:55:29 -0500 (EST)
+Received: from github-lowworker-b28ef28.ash1-iad.github.net (github-lowworker-b28ef28.ash1-iad.github.net [10.56.116.68])
+	by smtp.github.com (Postfix) with ESMTP id 23C3EE061B
+	for <darnell@manfromva.com>; Mon,  9 Jan 2023 01:55:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1673258129;
+	bh=1VQD3crPg2YOGMqdNmA7zwg+7NQ1HrMRwIfnX9y4Y4Y=;
+	h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:List-ID:
+	 List-Archive:List-Post:List-Unsubscribe:From;
+	b=bMp0OLRt+2bgoJLczG9suvpR8MsrR1KN0prQLcRkcmzYUfeB8BRL31E52mQBjTnPl
+	 dCoz+GZSW8UzX+0OLqsD+2/ycu7t6/46+b04dV77OaNHHHXqjDP39cFobflKvTA/LW
+	 YOK8FURtSFNw646oPb1hxBb3E6gQrQVaK4evyhHg=
+Date: Mon, 09 Jan 2023 01:55:29 -0800
+From: jampy <notifications@github.com>
+Reply-To: "acmesh-official/acme.sh" <reply+A4RKTHDRF73K5HRBF5XWIRGBZELRDEVBNHHD72FF3M@reply.github.com>
+To: "acmesh-official/acme.sh" <acme.sh@noreply.github.com>
+Cc: Subscribed <subscribed@noreply.github.com>
+Message-ID: <acmesh-official/acme.sh/issues/3842/1375354909@github.com>
+In-Reply-To: <acmesh-official/acme.sh/issues/3842@github.com>
+References: <acmesh-official/acme.sh/issues/3842@github.com>
+Subject: Re: [acmesh-official/acme.sh] ZeroSSL is terrible - Timeout: The CA
+ is processing your order, please just wait. (Issue #3842)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bbe49115116_21fdc5bc702793";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: jampy
+X-GitHub-Recipient: manfromva
+X-GitHub-Reason: subscribed
+List-ID: acmesh-official/acme.sh <acme.sh.acmesh-official.github.com>
+List-Archive: https://github.com/acmesh-official/acme.sh
+List-Post: <mailto:reply+A4RKTHDRF73K5HRBF5XWIRGBZELRDEVBNHHD72FF3M@reply.github.com>
+List-Unsubscribe: <mailto:unsub+A4RKTHDRF73K5HRBF5XWIRGBZELRDEVBNHHD72FF3M@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/A4RKTHCJZZNUNLMAD52H4VTWRPOBDANCNFSM5JOX6LSQ>
+X-Auto-Response-Suppress: All
+X-GitHub-Recipient-Address: darnell@manfromva.com
+X-TUID: hIyuC21tDxkF
+
+
+----==_mimepart_63bbe49115116_21fdc5bc702793
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+> I'm here to remind anyone who encounters this problem later to check the Token at the same time, if HTTP-01 mode is being used.
+
+@kocoler how can I check / invalidate the token?
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/acmesh-official/acme.sh/issues/3842#issuecomment-1375354909
+You are receiving this because you are subscribed to this thread.
+
+Message ID: <acmesh-official/acme.sh/issues/3842/1375354909@github.com>
+----==_mimepart_63bbe49115116_21fdc5bc702793
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p></p>
+<blockquote>
+<p dir="auto">I'm here to remind anyone who encounters this problem later to check the Token at the same time, if HTTP-01 mode is being used.</p>
+</blockquote>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/kocoler/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/kocoler">@kocoler</a> how can I check / invalidate the token?</p>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />Reply to this email directly, <a href="https://github.com/acmesh-official/acme.sh/issues/3842#issuecomment-1375354909">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/A4RKTHGWXHH6JLON5JG4KFLWRPOBDANCNFSM5JOX6LSQ">unsubscribe</a>.<br />You are receiving this because you are subscribed to this thread.<img src="https://github.com/notifications/beacon/A4RKTHGHDW52NLHHF7WUQQ3WRPOBDA5CNFSM5JOX6LS2YY3PNVWWK3TUL52HS4DFVREXG43VMVBW63LNMVXHJKTDN5WW2ZLOORPWSZGOKH5EAHI.gif" height="1" width="1" alt="" /><span style="color: transparent; font-size: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message ID: <span>&lt;acmesh-official/acme</span><span>.</span><span>sh/issues/3842/1375354909</span><span>@</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/acmesh-official/acme.sh/issues/3842#issuecomment-1375354909",
+"url": "https://github.com/acmesh-official/acme.sh/issues/3842#issuecomment-1375354909",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+----==_mimepart_63bbe49115116_21fdc5bc702793--

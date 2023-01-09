@@ -1,0 +1,412 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3016907mdb;
+        Mon, 9 Jan 2023 06:19:39 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXufbr3O8RfD8b3aZbsVsekUbuqrAPE2Kdk203RONrCnHqIY+bq+R0j3qKh43zDksjmprEij
+X-Received: by 2002:a17:902:6b89:b0:18f:6cb:1730 with SMTP id p9-20020a1709026b8900b0018f06cb1730mr64743396plk.26.1673273979246;
+        Mon, 09 Jan 2023 06:19:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673273979; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Hrox1fsvcg2M7GFfkjQnOLiNQRR2E9rGp6HafoZIFKuj0VVRskY4fLWg2XVWJwZAoO
+         FL9Ke7vdE+HoUCbQNHZ75rWIvREEf0ktddUdBuqTlstzk2Fl4APuLpGROUqUqDpq8a1T
+         YTe1rbYgvPKZGfYQh3Ka/xgmi2enCbxHP8KLEunBvlzmsvnoF4M5lGgjgC/BLGDBdUC1
+         08ZxoAX272qWWm3MsRNUQZneFFPqsgYrjHjmvxe6vZwBNxusKrLupviXAryTZYUE2TbE
+         mO31k5g4zmgfmQRs6N9LrRCYfyPyOxyOhmonTPRvczAqnso0hTizpgnrFZ1qCfUFkgRE
+         nhnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:from:message-id:subject:reply-to:date:list-unsubscribe
+         :mime-version:to:dkim-signature;
+        bh=dOujAf0R+24FLN+I8j6/AcjIMUrzoptpG2H4LUBImG4=;
+        b=S8XQpGjC2MJ43DIMgfY5TFmezedEaj9mYfF3DbUf22RNOefSHjI6nglN7vZcnYXBan
+         KA5Fr4ssIvEHHGWTX3301qbGP80tDZ8bSRWbzDNZUxaIzo3GEWPYRP48RlK6NiaE/RFk
+         LOTNM40Rb6GvfJzdQ00wWNWUbNZeN/Q8UvUfUTK121J4GQNXTUEV1cYDc2tGWo9o1kTY
+         DDYVYwJ5xJ3vbSfN4Z7pMGVbcFJ8pjksZNsNLHF6B2mp5a73ga1s3ISrWT3LCGPUBejK
+         HRCPUmm4q41q06Fy9tiz4yNM9whYvK1NDsnERGhOCz3TFfCwFvKX+bAkcXyMHa6h6VOO
+         EdMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@itpro.tv header.s=intercom header.b=DQYxdr7a;
+       spf=pass (google.com: domain of bounces+38319219787057@outbound.intercom.itpro.tv designates 192.174.84.119 as permitted sender) smtp.mailfrom=bounces+38319219787057@outbound.intercom.itpro.tv
+Return-Path: <bounces+38319219787057@outbound.intercom.itpro.tv>
+Received: from mta-174-84-119.intercom.com.sparkpostmail.com (mta-174-84-119.intercom.com.sparkpostmail.com. [192.174.84.119])
+        by mx.google.com with ESMTPS id p8-20020a170902ebc800b00189b7f50e78si9222191plg.134.2023.01.09.06.19.39
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:19:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+38319219787057@outbound.intercom.itpro.tv designates 192.174.84.119 as permitted sender) client-ip=192.174.84.119;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@itpro.tv header.s=intercom header.b=DQYxdr7a;
+       spf=pass (google.com: domain of bounces+38319219787057@outbound.intercom.itpro.tv designates 192.174.84.119 as permitted sender) smtp.mailfrom=bounces+38319219787057@outbound.intercom.itpro.tv
+X-MSFBL: kVeoklDikaY2AU/Nh/dxGM+uJxhBFtHU3JGMvC43qMs=|eyJjdXN0b21lcl9pZCI
+	6IjEiLCJ0ZW5hbnRfaWQiOiJpbnRlcmNvbSIsIm1lc3NhZ2VfaWQiOiI2M2I1Nzg
+	yMmJjNjM5NGE0MzdjMCIsInN1YmFjY291bnRfaWQiOiIzNjg2IiwiciI6ImRhcm5
+	lbGxrZWl0aGpAZ21haWwuY29tIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=itpro.tv;
+	s=intercom; t=1673273976; i=@itpro.tv;
+	bh=dOujAf0R+24FLN+I8j6/AcjIMUrzoptpG2H4LUBImG4=;
+	h=To:Content-Type:List-Unsubscribe:Date:Subject:Message-ID:From:
+	 From:To:Cc:Subject;
+	b=DQYxdr7a+xGdRSHazQrizgjbdo109LpgAm9pzYeRKetLqTRACzsqyGEWkEQv5Qm2O
+	 qe+STl0QAPjEhMdPSk22Vr8nGJFVOtIQZ/MB180kf5NrDxi+t3YXIID54jILct73+V
+	 OFhxjux8zTMQ9zXyUX6exO8fKjySVyjbStYU29CE=
+To: darnellkeithj@gmail.com
+Content-Type: multipart/alternative; boundary="_----+t0t+WJg6RlLrRDTdwV6fw===_23/0C-29412-8722CB36"
+MIME-Version: 1.0
+List-Unsubscribe: <mailto:unsubscribe_38319219787057_62d8b1f96a7513481d0be8d4@aci-learning-ab4d3f1d2127.intercom-mail.com>, <https://aci-learning-ab4d3f1d2127.intercom-mail.com/subscriptions/unsubscribe?app_id=g400n3to&conversation_id=38319219787057&user_id=62d8b1f96a7513481d0be8d4&source=header>
+Date: Mon, 09 Jan 2023 14:19:35 +0000
+Reply-To: Team from ITProTV <team@itpro.tv>
+X-Mailgun-Tag: user-custom
+X-Intercom-App-Id: g400n3to
+X-Intercom-Bin: 150
+Subject: Last Chance - ITPro New Year Sale!
+Message-ID: <de26f892-b2e29df9-1673273975-38319219787057@outbound.intercom.itpro.tv>
+X-Report-Abuse: Please report spam or abuse to abuse@intercom.io
+From: "Team from ITProTV" <team@itpro.tv>
+X-Auto-Response-Suppress: OOF, AutoReply
+X-Mailgun-Variables: {"app_id":"g400n3to","conversation_id":"38319219787057","user_id":"62d8b1f96a7513481d0be8d4","intercom_localized_email_content_id":"28975156"}
+Feedback-ID: email:92015503:g400n3to:intercom
+X-TUID: 41NSZbNbgnSi
+
+--_----+t0t+WJg6RlLrRDTdwV6fw===_23/0C-29412-8722CB36
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+[Image "Email_v02+%281%29.png"] =0A LAST CHANCE! =0A Your friends here at I=
+TPro are going to make 2023 your easiest, most successful year yet: We know=
+ - based on overwhelming potential and demand - that you are ready for a ca=
+reer in cybersecurity! You'll get the best, most fun IT training available =
+from our team of veteran edutainers. We'll get you ready to test for skills=
+-affirming certifications and we'll do it all at a discount of 35% off an a=
+nnual plan. This is YOUR year, and we're your wingman every step of the way=
+. =0A Upgrade Now! =0A =0A USE CODE : NEWYEAR35 =0A =0A *Offer expires Janu=
+ary 9 at 11:59 pm. Code valid on ANNUAL personal plans only. 35% off the fi=
+rst year of a standard or premium annual plan.
+--_----+t0t+WJg6RlLrRDTdwV6fw===_23/0C-29412-8722CB36
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Email Template</title>
+    <style type="text/css" data-premailer="ignore">
+        .ReadMsgBody { width: 100%; background-color: #ebebeb;}
+        .ExternalClass {width: 100%; background-color: #ebebeb;}
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
+        body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+        body {margin:0; padding:0;}
+        table {border-spacing:0;}
+        table td {border-collapse:collapse;}
+        .yshortcuts a {border-bottom: none !important;}
+        @media screen and (max-width: 600px), screen and (max-device-width: 600px) {
+            table[class="container"] { width: 95% !important; }
+        }
+        @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
+            td[class="container-padding"] { padding-left: 12px !important; padding-right: 12px !important; }
+        }
+    </style>
+    <style type="text/css">
+        body { background-color: #f0f0f0; padding: 10px 0; margin: 10px 0; }
+        table.container { box-shadow: 0 0 3px #ddd; border-bottom: 1px solid #e0e0e0; font-family: Verdana, Helvetica, sans-serif; color: #525656; }
+        table.container td { border-left: 1px solid #e0e0e0; }
+   
+        table.container td.logo { text-align: left; padding: 10px; }
+        h1, h2, h3, h4, h5, h6 { line-height: 1.5; margin: 0 0 25px 0; }
+h1 { font-size: 22px; color: #151746; }
+h2 { font-size: 18px; color: #00a3e0; }
+h3 { font-size: 16px; color: #00a3e0; }
+h4 { font-size: 14px; color: #00a3e0; }
+h5, h6 {  color: #ff671f; font-size: 12px; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 25px 0; color: #525656; }
+        a { color: #151746; text-decoration: underline; }
+        a.intercom-h2b-button { background-color: #ff671f; border-radius: 4px; color:#fff; display: inline-block; font-size: 16px; font-weight: bold; min-height: 20px; padding: 13px 18px; text-decoration: none; }
+        ul li, ol li { font-size: 14px; line-height: 1.5; }
+hr.blue { border-top: 4px solid #00a3e0; border-left: 0; border-right: 0; border-bottom: 8px solid #F2F2F6; background-color: #00a3e0; width: 100%;}
+.small { font-size: 6px; }
+table.footer { width: 100%; }
+        table.footer td { vertical-align: middle; text-align: center; color: #434343; font-size: 12px; margin: 0 auto; }
+        table.footer td.logo-footer { padding: 10px 0; text-align: center; }
+        table.footer td.social img { border-left: none; vertical-align: middle; }
+        table.footer td.subscription { padding: 40px 10px 20px 10px; text-align: center;}
+        table.footer td.subscription a { color: #525656; text-decoration: none; }
+</style>
+<style>.intercom-align-right {
+  text-align: right !important;
+}
+.intercom-align-center {
+  text-align: center !important;
+}
+.intercom-align-left {
+  text-align: left !important;
+}
+/* Over-ride for RTL */
+.right-to-left .intercom-align-right{
+  text-align: left !important;
+}
+.right-to-left .intercom-align-left{
+  text-align: right !important;
+}
+.right-to-left .intercom-align-left {
+  text-align:right !important;
+}
+.right-to-left li {
+  text-align:right !important;
+  direction: rtl;
+}
+.right-to-left .intercom-align-left img,
+.right-to-left .intercom-align-left .intercom-h2b-button {
+  margin-left: 0 !important;
+}
+.intercom-attachment,
+.intercom-attachments,
+.intercom-attachments td,
+.intercom-attachments th,
+.intercom-attachments tr,
+.intercom-attachments tbody,
+.intercom-attachments .icon,
+.intercom-attachments .icon img {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.intercom-attachments {
+  margin: 10px 0 !important;
+}
+.intercom-attachments .icon,
+.intercom-attachments .icon img {
+  width: 16px !important;
+  height: 16px !important;
+}
+.intercom-attachments .icon {
+  padding-right: 5px !important;
+}
+.intercom-attachment {
+  display: inline-block !important;
+  margin-bottom: 5px !important;
+}
+
+.intercom-interblocks-content-card {
+  width: 334px !important;
+  max-height: 136px !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  font-size: 16px !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.intercom-interblocks-link,
+.intercom-interblocks-article-card {
+  text-decoration: none !important;
+}
+
+.intercom-interblocks-article-icon {
+  width: 22.5% !important;
+  height: 136px !important;
+  float: left !important;
+  background-color: #fafafa !important;
+  background-image: url('https://aci-learning-ab4d3f1d2127.intercom-mail.com/assets/article_book-1a595be287f73c0d02f548f513bfc831.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 32px !important;
+  background-position: center !important;
+}
+
+.intercom-interblocks-article-text {
+  width: 77.5% !important;
+  float: right !important;
+  background-color: #fff !important;
+}
+
+.intercom-interblocks-link-title,
+.intercom-interblocks-article-title {
+  color: #519dd4 !important;
+  font-size: 15px !important;
+  margin: 16px 18px 12px !important;
+  line-height: 1.3em !important;
+  overflow: hidden !important;
+}
+
+.intercom-interblocks-link-description,
+.intercom-interblocks-article-body {
+  margin: 0 18px 12px !important;
+  font-size: 14px !important;
+  color: #65757c !important;
+  line-height: 1.3em !important;
+}
+
+.intercom-interblocks-link-author,
+.intercom-interblocks-article-author {
+  margin: 10px 15px !important;
+  height: 24px !important;
+  line-height: normal !important;
+}
+
+.intercom-interblocks-link-author-avatar,
+.intercom-interblocks-article-author-avatar {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  float: left;
+  margin-right: 5px;
+}
+
+.intercom-interblocks-link-author-avatar-image,
+.intercom-interblocks-article-author-avatar-image {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  margin: 0 !important;
+  vertical-align: top !important;
+  font-size: 12px !important;
+}
+
+.intercom-interblocks-link-author-name,
+.intercom-interblocks-article-author-name {
+  color: #74848b !important;
+  margin: 0 0 0 5px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  overflow: hidden !important;
+}
+
+.intercom-interblocks-article-written-by {
+  color: #8897a4 !important;
+  margin: 1px 0 0 5px !important;
+  font-size: 12px !important;
+  overflow: hidden !important;
+  vertical-align: middle !important;
+  float: left !important;
+}
+</style>
+</head>
+<body style="background-color: #f0f0f0; margin: 0; padding: 10px 0" bgcolor="#f0f0f0">
+<div style="color:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:none!important;line-height:0px!important;"><img border="0" width="1" height="1" src="https://aci-learning-ab4d3f1d2127.intercom-mail.com/q/ZaBdbiUY5h_HpegwcbVTaw~~/AAAAAQA~/RgRlnqd4PVcIaW50ZXJjb21CCmO1eCK8Y5SkN8BSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAA5m" alt=""/></div>
+
+<style type="text/css">
+body {
+background-color: #f0f0f0; padding: 10px 0; margin: 10px 0;
+}
+</style>
+<br>
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#f0f0f0">
+  <tbody>
+<tr>
+    <td align="center" valign="top" bgcolor="#f0f0f0" style="background-color: #f0f0f0">
+      <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" bgcolor="#ffffff" style="border-bottom-color: #e0e0e0; border-bottom-style: solid; border-bottom-width: 1px; box-shadow: 0 0 3px #ddd; color: #525656; font-family: Verdana, Helvetica, sans-serif">
+        <tbody>
+<tr>
+            <td class="header" style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px">
+
+            </td>
+        </tr>
+<tr>
+            <td class="logo" style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; padding: 10px; text-align: left" align="left">
+                <img height="40" style="height: 40px; width: auto" src="https://go.itpro.tv/l/425902/2022-11-11/8xhpzj/425902/1668178708wfWdzTZB/ITPRO_Color.png">
+            </td>
+        </tr>
+<tr>
+<td style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px"></td>
+</tr>
+
+        <tr>
+          <td class="container-padding" bgcolor="#ffffff" style="background-color: #ffffff; border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px">
+            <br>
+            <!-- ### BEGIN CONTENT ### -->
+            <div class="intercom-container"><img src="https://aci-learning-ab4d3f1d2127.intercom-mail.com/i/o/644633538/1a0e6b3bf8107df24730543b/Email_v02+%281%29.png"></div>
+<p class="intercom-align-center" style="color: #525656; font-size: 14px; line-height: 1.5; margin: 0 0 25px; text-align: center !important" align="center"> </p>
+<h2 class="intercom-align-center" style="color: #0a1e80; font-size: 18px; line-height: 1.5; margin: 0 0 25px; text-align: center !important" align="center"><b>LAST CHANCE!</b></h2>
+<p style="color: #000000; font-size: 14px; line-height: 1.5; margin: 0 0 25px">Your friends here at ITPro are going to make 2023 your easiest, most successful year yet: We know - based on overwhelming potential and demand - that you are ready for a career in cybersecurity!<br><br>You'll get the best, most fun IT training available from our team of veteran edutainers. We'll get you ready to test for skills-affirming certifications and we'll do it all at a discount of 35% off an annual plan. This is YOUR year, and we're your wingman every step of the way.</p>
+<div class="intercom-container intercom-align-center" style="text-align: center !important" align="center"><a class="intercom-h2b-button" target="_blank" href="https://aci-learning-ab4d3f1d2127.intercom-clicks.com/via/e?ob=FU82pHBlxtlkJmHekuFy7Kn3f1tZ9TovqQtEnFmKGVqACEk1PZHCwTEhnk8kPTLv&h=05e970ea6000aff7b1b434d95832e4fcec452fbb-g400n3to_38319219787057&l=92c548fbad3328b74f1aa786ff6dc074a9077300-42391448" style="background-color: #ff671f; border-radius: 4px; color: #fff; display: inline-block; font-size: 16px; font-weight: bold; min-height: 20px; padding: 13px 18px; text-decoration: none">Upgrade Now!</a></div>
+<p class="intercom-align-center" style="color: #000000; font-size: 14px; line-height: 1.5; margin: 0 0 25px; text-align: center !important" align="center"> </p>
+<p class="intercom-align-center" style="color: #000000; font-size: 14px; line-height: 1.5; margin: 0 0 25px; text-align: center !important" align="center"><b>USE CODE : NEWYEAR35</b></p>
+<p style="color: #000000; font-size: 14px; line-height: 1.5; margin: 0 0 25px"> </p>
+<p style="color: #000000; font-size: 14px; line-height: 1.5; margin: 0 0 25px"><i>*Offer expires January 9 at 11:59 pm. Code valid on ANNUAL personal plans only. 35% off the first year of a standard or premium annual plan.</i></p>
+            <!-- ### END CONTENT ### -->
+          </td>
+        </tr>
+            <tr>
+<td style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px">
+<hr class="blue" style="background-color: #00a3e0; border-bottom-color: #F2F2F6; border-bottom-style: solid; border-top-color: #00a3e0; border-top-style: solid; border-width: 4px 0 8px; width: 100%">
+
+                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#FFF" class="footer" style="width: 100%">
+                    <tbody>
+<tr>
+                        <td class="logo-footer" style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; color: #434343; font-size: 12px; margin: 0 auto; padding: 10px 0; text-align: center; vertical-align: middle" align="center" valign="middle">
+                            <a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=Y%2Bcbb8VGO%2FgvPspiN6r6LRfMbLZ1iqkP%2BVnsRrSwffI%3D&h=5c69ade276cb536a2373fac3bdb1868b4d27fb6c-g400n3to_38319219787057&l=63fc77f8c88378e6d0df5109ac0179f5fe0c8f49-42391449" style="color: #151746; text-decoration: underline"><img src="https://go.itpro.tv/l/425902/2022-11-11/8xhpzj/425902/1668178708wfWdzTZB/ITPRO_Color.png" width="115"></a>
+
+</td>
+</tr>
+<tr><td style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; color: #434343; font-size: 12px; margin: 0 auto; text-align: center; vertical-align: middle" align="center" valign="middle"><h5 style="color: #ff671f; font-size: 12px; line-height: 1.5; margin: 0 0 25px">Where IT Pros Watch &amp; Learn</h5></td></tr>
+<tr>
+<td class="social" style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; color: #434343; font-size: 12px; margin: 0 auto; text-align: center; vertical-align: middle" align="center" valign="middle">
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=By1ybefbmWeSImVe%2FokH%2BEBW0gvfRtopChyUb6LGRXk%3D&h=c0f56a8af50fa3c71bf605efc9cab7c99c694bc1-g400n3to_38319219787057&l=3ec3fe2c289ee8ebcb501885504e914ec06cdfc9-42391450" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/twitter.png" height="20" style="border-left-style: none; padding: 8px 14px 0; vertical-align: middle"></a>
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=21VUIYYuT65nFA%2BuZKaVp3IGKx6wjaEXEH48a8hqD24%3D&h=a98e1cdff17ea089b31ca7d569241741e19ee466-g400n3to_38319219787057&l=a96571541c21ec8189aacaef6c96cf297a89c4ee-42391451" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/facebook.png" height="20" style="border-left-style: none; padding: 8px 14px 0 0; vertical-align: middle"></a>
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=9FbCjeB1MtL%2BhpjIU4hGPME2mU40LOxmsUGAhcvrtxkjEc3dwAhaWeiwKwQJITgD&h=d32771aa05eb464261b4de8d32c8769954149e86-g400n3to_38319219787057&l=08af3fec9614452c26a6342e6a925aa5a8c8fbd7-42391452" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/youtube.png" height="20" style="border-left-style: none; padding: 8px 14px 0 0; vertical-align: middle"></a>
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=u%2BhavExpwgcv1L40k56bBHNyHxU%2FYaiw8FsXUjYzkmdyJwPVZwy0eLLEV9ku6MXD&h=f21b74ac1548289057127b0678c1cbe6fd80404d-g400n3to_38319219787057&l=8cf4db5fb8572f597e49292260957ad0cee823a3-42391453" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/linkedin.png" height="20" style="border-left-style: none; padding: 8px 14px 0 0; vertical-align: middle"></a>
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=e1F%2BM6QG6WUichnnIp8GGhjbwW%2Fvi3PQ0vuU8YL8fcTkxqL3kiNJpmZHAp3yRKg3&h=5b35b86577582f50e9f36e8984bf2ec722324fb2-g400n3to_38319219787057&l=49c1de7e407561e3694200aaf2fd4cc5d6bbc28d-42391454" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/reddit.png" height="20" style="border-left-style: none; padding: 8px 14px 0 0; vertical-align: middle; width: auto"></a>
+<a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/e?ob=fnCrXElK1hBU91%2F7%2FUfCPPGPpI%2BNPHZ9uXHjTl4fM%2BxorqHGVO%2BJE0TXUVTnP%2Bl5&h=f631fbfa2e4ea9860cab68347009a1f3d4174c3c-g400n3to_38319219787057&l=6c2f703588b8344519ed23f3c396db060c608240-42391455" target="_blank" style="color: #151746; text-decoration: underline"><img src="https://assets.itpro.tv/email/social/instagram.png" height="20" style="border-left-style: none; padding: 8px 14px 0 0; vertical-align: middle; width: auto"></a>
+                        </td>
+                        
+                    </tr>
+<tr>
+<td class="subscription" style="border-left-color: #e0e0e0; border-left-style: solid; border-left-width: 1px; color: #434343; font-size: 12px; margin: 0 auto; padding: 40px 10px 20px; text-align: center; vertical-align: middle" align="center" valign="middle">
+                            <a href="https://aci-learning-ab4d3f1d2127.intercom-mail.com/subscriptions/unsubscribe?app_id=g400n3to&conversation_id=38319219787057&user_id=62d8b1f96a7513481d0be8d4&source=body" style="color: #525656; text-decoration: none">Unsubscribe from our emails</a>
+                        </td>
+</tr>
+                </tbody>
+</table>
+            </td>
+        </tr>
+      </tbody>
+</table>
+    </td>
+  </tr>
+</tbody>
+</table>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="https://aci-learning-ab4d3f1d2127.intercom-mail.com/via/o?h=847b683bc177b2f9e3a18f366190deec66ae307a-g400n3to_38319219787057" width="1" height="1" style="display: block;" alt="intercom">
+
+<img border="0" width="1" height="1" alt="" src="https://aci-learning-ab4d3f1d2127.intercom-mail.com/q/q0NO6BM6SrasG6R8yzAFIQ~~/AAAAAQA~/RgRlnqd4PlcIaW50ZXJjb21CCmO1eCK8Y5SkN8BSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAA5m">
+</body>
+</html>
+--_----+t0t+WJg6RlLrRDTdwV6fw===_23/0C-29412-8722CB36--
+

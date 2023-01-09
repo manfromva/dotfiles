@@ -1,0 +1,1605 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2983830mdb;
+        Mon, 9 Jan 2023 05:32:14 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtkInqktNuZ/spsKFNU/L50LSAbq2Vksw+4gAEwl+2v8jC01oF4wnwr+QWlpa9xf+P/h/Pl
+X-Received: by 2002:a17:90b:2688:b0:225:f8ce:5cd8 with SMTP id pl8-20020a17090b268800b00225f8ce5cd8mr49515201pjb.4.1673271134024;
+        Mon, 09 Jan 2023 05:32:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673271134; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JmLeeY3pQyIlyecOY5E6ymtWz25rp340tDMzvzooe2ZQPi+CK6GheEVr6kUpWqCQaw
+         NfhOpDQjlcw9IUcS+b+SgADi07XFDkEHEDaNR7pugkLi3EeTt3VvoL4Q8kH0boB1Qpr9
+         sXB/lixOJbcf8+4Fy+FFJH795StYMzmyhSKaRpnQV1X0aImTre3pAh5G3ome3u7ncZIc
+         o7cqn2rQ+EkINcNmZ6YQjKTfCdWUJcccInV5KoR85Ne7cYQMuOhAqrzkMhNe1ippjMkw
+         11KO69DhZFAImxc9l0UGd/4gpudggfUGOYnRT+2ZQDkVp/hUunXoxwud+1qkhsepGDZv
+         /s1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:from:subject:mime-version:date:message-id
+         :to:dkim-signature;
+        bh=GjQxUSP6n6ieJgIL7g0Iet1hqxrWvw2O2LsPk4DE2bs=;
+        b=SNe2o+AtBxbFoJ6S4M3gIbIvCCy6c+jPwtf1GCkMu8imZ8O3QwBbB1JaUesfFvjQBZ
+         6GUwxjAXJRuZs19xR+r+ouzksONT02DB6vp4pgOvx7auqZ9WsG1fTJ3DPlTYHveAJFcI
+         ew19yedF1fhB6gvm3QTyL7ahWTMDS3Rfeag9uC8Ul+L8ywbJzLuK1tjLDXAkZzHzheVE
+         GWeCVX8/GwdrXcScGWSAgArGS158AZiruYH/PmExdQyrSsiGBd0HGRg7nJ2I3vsh+XTi
+         IbHLKRl0wboYNaUaDFPerD07HKEfd79oVTJyIRV08wESeXqgRLusuaqTEpnrjU6DFr6e
+         03dg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sites.careerbuilder.com header.s=s0215 header.b=XXwQB9ge;
+       spf=pass (google.com: domain of bounces-456@sites.careerbuilder.com designates 192.174.83.95 as permitted sender) smtp.mailfrom=bounces-456@sites.careerbuilder.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sites.careerbuilder.com
+Return-Path: <bounces-456@sites.careerbuilder.com>
+Received: from mta-83-95.sparkpostmail.com (mta-83-95.sparkpostmail.com. [192.174.83.95])
+        by mx.google.com with ESMTPS id n20-20020a635914000000b00498688359b6si9391417pgb.287.2023.01.09.05.32.13
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 05:32:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces-456@sites.careerbuilder.com designates 192.174.83.95 as permitted sender) client-ip=192.174.83.95;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sites.careerbuilder.com header.s=s0215 header.b=XXwQB9ge;
+       spf=pass (google.com: domain of bounces-456@sites.careerbuilder.com designates 192.174.83.95 as permitted sender) smtp.mailfrom=bounces-456@sites.careerbuilder.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sites.careerbuilder.com
+X-MSFBL: 0SFM+OF9Z9uAYptVWQxH22q9k014NcGxi6XFhvkFtRw=|eyJjdXN0b21lcl9pZCI
+	6IjEiLCJtZXNzYWdlX2lkIjoiNjNiNTVkMTdiYzYzYzMzNjJmMDEiLCJ0ZW5hbnR
+	faWQiOiJjYXJlZXJiIiwic3ViYWNjb3VudF9pZCI6IjAiLCJyIjoiZGFybmVsbGt
+	laXRoakBnbWFpbC5jb20ifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=sites.careerbuilder.com; s=s0215; t=1673271133;
+	i=@sites.careerbuilder.com;
+	bh=GjQxUSP6n6ieJgIL7g0Iet1hqxrWvw2O2LsPk4DE2bs=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=XXwQB9gee6h4YkPG7oy2Q0L4DR7MBerq+ClX3eo9UuZSY1NybNEGC0Up/331ecUI6
+	 77DlhjQfGOC9ru88MpCEyuGRjM+m37ksCSnp/h7DP5DHUrVffBul5ggzGY3je2dqFE
+	 ZpUTG4yUbNzyMbTaWaU3iCdgcxMlFYix+e+JkJ7o=
+To: darnellkeithj@gmail.com
+Message-ID: <F2.10.35335.D571CB36@hh.mta2vrest.cc.prd.sparkpost>
+Date: Mon, 09 Jan 2023 13:32:13 +0000
+Content-Type: multipart/alternative; boundary="_----4r/AIt1XDiLSy07gkKMfZA===_B2/68-45511-2FEE6B36"
+MIME-Version: 1.0
+Subject: New beginnings: how to get (or keep) a job in 2023
+From: "CareerBuilder" <no-reply@sites.careerbuilder.com>
+List-Unsubscribe: <mailto:unsubscribe@sites.careerbuilder.com?subject=unsubscribe:1x_zPdEqNe3atLOIRbBxQL5-zVhKrbJnnef8es67j9c~|eyAicmNwdF90byI6ICJkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbSIsICJ0ZW5hbnRfaWQiOiAiY2FyZWVyYiIsICJjdXN0b21lcl9pZCI6ICIxIiwgInN1YmFjY291bnRfaWQiOiAiMCIsICJtZXNzYWdlX2lkIjogIjYzYjU1ZDE3YmM2M2MzMzYyZjAxIiB9>
+List-Id: <careerb.1.0.sparkpostmail.com>
+X-TUID: GexuC/DUlEzd
+
+--_----4r/AIt1XDiLSy07gkKMfZA===_B2/68-45511-2FEE6B36
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+--_----4r/AIt1XDiLSy07gkKMfZA===_B2/68-45511-2FEE6B36
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>=0D=0A<html lang=3D"en">=0D=0A<head>=0D=0A<meta http-equiv=
+=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=0D=0A<meta name=
+=3D"x-apple-disable-message-reformatting" />=0D=0A<meta http-equiv=3D"X-UA-=
+Compatible" content=3D"IE=3Dedge">=0D=0A<meta name=3D"viewport" content=3D"=
+width=3Ddevice-width, initial-scale=3D1.0">=0D=0A<meta name=3D"color-scheme=
+" content=3D"light dark">=0D=0A<meta name=3D"supported-color-schemes" conte=
+nt=3D"light dark">=0D=0A<title>CareerBuilder Newsletter</title>=0D=0A<style=
+ type=3D"text/css">=0D=0A@import url('https://fonts.googleapis.com/css2=3Ff=
+amily=3DBarlow:wght@400;700;800&family=3DRoboto:wght@400;700&display=3Dswap=
+');=0D=0A/* latin */=0D=0A@font-face {=0D=0A    font-family: 'Barlow';=0D=
+=0A    font-style: normal;=0D=0A    font-weight: 400;=0D=0A    font-display=
+: swap;=0D=0A    src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgo=
+GqM7E_DMs5.woff2) format('woff2');=0D=0Aunicode-range: U+0000-00FF, U+0131,=
+ U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+2=
+0AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;=0D=0A}=0D=0A/*=
+ latin */=0D=0A@font-face {=0D=0A    font-family: 'Barlow';=0D=0A    font-s=
+tyle: normal;=0D=0A    font-weight: 700;=0D=0A    font-display: swap;=0D=0A=
+    src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s51o=
+s.woff2) format('woff2');=0D=0Aunicode-range: U+0000-00FF, U+0131, U+0152-0=
+153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+21=
+22, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;=0D=0A}=0D=0A/* latin */=
+=0D=0A@font-face {=0D=0A    font-family: 'Barlow';=0D=0A    font-style: nor=
+mal;=0D=0A    font-weight: 800;=0D=0A    font-display: swap;=0D=0A    src: =
+url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3q-0s51os.woff2) =
+format('woff2');=0D=0Aunicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02=
+BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+219=
+1, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;=0D=0A}=0D=0A/* latin */=0D=0A@fo=
+nt-face {=0D=0A    font-family: 'Roboto';=0D=0A    font-style: normal;=0D=
+=0A    font-weight: 400;=0D=0A    font-display: swap;=0D=0A    src: url(htt=
+ps://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format('wof=
+f2');=0D=0Aunicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+=
+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, =
+U+2212, U+2215, U+FEFF, U+FFFD;=0D=0A}=0D=0A/* latin */=0D=0A@font-face {=
+=0D=0A    font-family: 'Roboto';=0D=0A    font-style: normal;=0D=0A    font=
+-weight: 700;=0D=0A    font-display: swap;=0D=0A    src: url(https://fonts.=
+gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');=
+=0D=0Aunicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,=
+ U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+221=
+2, U+2215, U+FEFF, U+FFFD;=0D=0A}=0D=0A.ExternalClass, .ReadMsgBody {=0D=0A=
+    width: 100%;=0D=0A    background-color: #ffffff;=0D=0A}=0D=0A.ExternalC=
+lass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .External=
+Class td, .ExternalClass div {=0D=0A    line-height: 100%;=0D=0A}=0D=0Ahtml=
+ {=0D=0A    width: 100%;=0D=0A}=0D=0Abody {=0D=0A    -webkit-text-size-adju=
+st: none;=0D=0A    -ms-text-size-adjust: none;=0D=0A    margin: 0;=0D=0A   =
+ padding: 0;=0D=0A}=0D=0Atable {=0D=0A    border-spacing: 0;=0D=0A}=0D=0Aim=
+g {=0D=0A    display: block !important;=0D=0A}=0D=0A.img2 {=0D=0A    border=
+-radius: 20px !important;=0D=0A    -webkit-border-radius: 20px !important;=
+=0D=0A    -moz-border-radius: 20px !important;=0D=0A}=0D=0A.img5 {=0D=0A   =
+ display: block !important;=0D=0A    margin: auto !important;=0D=0A    text=
+-align: center !important;=0D=0A}=0D=0A.social img.light-img {=0D=0A    dis=
+play: inline-block !important;=0D=0A}=0D=0Ap {=0D=0A    margin: 0px;=0D=0A =
+   padding: 0px;=0D=0A}=0D=0Atable, table td {=0D=0A    border-collapse: co=
+llapse;=0D=0A}=0D=0Aa:link {=0D=0A    text-decoration: none;=0D=0A    color=
+: #2F4BA0;=0D=0A}=0D=0Aa:hover {=0D=0A    text-decoration: underline !impor=
+tant;=0D=0A    color: #596FB3 !important;=0D=0A}=0D=0Ah1 a:hover, h2 a:hove=
+r {=0D=0A    color: #000000 !important;=0D=0A}=0D=0A.button-blue a {=0D=0A =
+   color: white !important;=0D=0A    text-decoration: none !important;=0D=
+=0A}=0D=0A.button-blue:link {=0D=0A    text-align: center;=0D=0A    cursor:=
+ pointer;=0D=0A    -webkit-appearance: none;=0D=0A    background: #2F4BA0;=
+=0D=0A    box-sizing: border-box;=0D=0A    color: #FFFFFF !important;=0D=0A=
+    font-family: 'Barlow', 'Arial', sans-serif;=0D=0A    font-size: 16px;=
+=0D=0A    font-weight: bold;=0D=0A    text-decoration: none;=0D=0A    posit=
+ion: relative;=0D=0A    border: none;=0D=0A    -webkit-border-radius: 5px;=
+=0D=0A    -moz-border-radius: 5px;=0D=0A    border-radius: 5px;=0D=0A    ma=
+rgin: 0;=0D=0A    line-height: 16px;=0D=0A    outline: none;=0D=0A    paddi=
+ng: 15px 30px;=0D=0A    white-space: normal;=0D=0A    height: auto;=0D=0A  =
+  min-height: 45px;=0D=0A    display: inline-block;=0D=0A}=0D=0A.button-blu=
+e:hover {=0D=0A    background: #596FB3 !important;=0D=0A    color: #FFFFFF =
+!important;=0D=0A}=0D=0A.button-blue:focus, .button-blue:active {=0D=0A    =
+background: #263C80 !important;=0D=0A    color: #FFFFFF !important;=0D=0A}=
+=0D=0A.button-neutral a {=0D=0A    color: #0E0E24;=0D=0A    text-decoration=
+: none !important;=0D=0A}=0D=0A.button-neutral:link {=0D=0A    text-align: =
+center;=0D=0A    cursor: pointer;=0D=0A    -webkit-appearance: none;=0D=0A =
+   background: #FFFFFF;=0D=0A    box-sizing: border-box;=0D=0A    color: #0=
+E0E24 !important;=0D=0A    font-family: 'Barlow', 'Arial', sans-serif;=0D=
+=0A    font-size: 16px;=0D=0A    font-weight: bold;=0D=0A    text-decoratio=
+n: none;=0D=0A    position: relative;=0D=0A    border: 2px;=0D=0A    border=
+-style: solid;=0D=0A    border-color: #0E0E24;=0D=0A    -webkit-border-radi=
+us: 5px;=0D=0A    -moz-border-radius: 5px;=0D=0A    border-radius: 5px;=0D=
+=0A    margin: 0;=0D=0A    line-height: 16px;=0D=0A    outline: none;=0D=0A=
+    padding: 15px 30px;=0D=0A    white-space: normal;=0D=0A    height: auto=
+;=0D=0A    min-height: 45px;=0D=0A    display: inline-block;=0D=0A}=0D=0A.b=
+utton-neutral:hover {=0D=0A    background: #E7E7E9 !important;=0D=0A    col=
+or: #0E0E24 !important;=0D=0A}=0D=0A.button-neutral a:hover {=0D=0A    colo=
+r: #0E0E24 !important;=0D=0A}=0D=0A.button-neutral a:focus {=0D=0A    color=
+: #FFFFFF !important;=0D=0A}=0D=0A.button-neutral:focus, .button-neutral:ac=
+tive {=0D=0A    background: #0E0E24 !important;=0D=0A    color: #FFFFFF !im=
+portant;=0D=0A}=0D=0A=0D=0A@media only screen and (max-width: 640px) {=0D=
+=0Ah1 {=0D=0A    font-size: 30px !important;=0D=0A    line-height: 30px !im=
+portant;=0D=0A}=0D=0Abody {=0D=0A    width: auto !important;=0D=0A}=0D=0A.t=
+able600 {=0D=0A    width: 479px !important;=0D=0A    text-align: center !im=
+portant;=0D=0A}=0D=0A.table-inner {=0D=0A    width: 86% !important;=0D=0A}=
+=0D=0A.table2-2 {=0D=0A    width: 45% !important;=0D=0A}=0D=0A.table1-3 {=
+=0D=0A    width: 29.4% !important;=0D=0A}=0D=0A.table3-1 {=0D=0A    width: =
+64% !important;=0D=0A    text-align: center !important;=0D=0A}=0D=0A.breaka=
+part2 {=0D=0A    width: 100% !important;=0D=0A    display: block !important=
+;=0D=0A    text-align: center !important;=0D=0A}=0D=0A.td3-1 {=0D=0A    wid=
+th: 64% !important;=0D=0A}=0D=0A.img2 {=0D=0A    width: 100% !important;=0D=
+=0A    height: auto !important;=0D=0A}=0D=0A}=0D=0A=0D=0A@media only screen=
+ and (max-width: 479px) {=0D=0Abody {=0D=0A    width: auto !important;=0D=
+=0A}=0D=0A.table600 {=0D=0A    width: 100% !important;=0D=0A}=0D=0A.table-i=
+nner {=0D=0A    width: 85.45% !important;=0D=0A    float: none !important;=
+=0D=0A    text-align: center !important;=0D=0A}=0D=0A.breakapart {=0D=0A   =
+ width: 100% !important;=0D=0A    display: block !important;=0D=0A    text-=
+align: center !important;=0D=0A}=0D=0A.breakapart {=0D=0A    width: 100% !i=
+mportant;=0D=0A    display: block !important;=0D=0A    text-align: center !=
+important;=0D=0A}=0D=0A.breakapart2 {=0D=0A    width: 100% !important;=0D=
+=0A    display: block !important;=0D=0A    text-align: center !important;=
+=0D=0A}=0D=0A.table1-3 {=0D=0A    width: 100% !important;=0D=0A}=0D=0A.tabl=
+e2-2 {=0D=0A    width: 100% !important;=0D=0A    float: none !important;=0D=
+=0A    text-align: center !important;=0D=0A}=0D=0A.table3-1 {=0D=0A    widt=
+h: 100% !important;=0D=0A    text-align: center !important;=0D=0A}=0D=0A.td=
+center, .center {=0D=0A    text-align: center !important;=0D=0A}=0D=0A.mobi=
+leheight {=0D=0A    /*height: 30px !important;*/=0D=0A    padding: 14.5px !=
+important;=0D=0A}=0D=0A.hide-mobile {=0D=0A    display: none !important;=0D=
+=0A}=0D=0A.show-mobile {=0D=0A    display: contents !important;=0D=0A}=0D=
+=0A.webinar-top {=0D=0A    -webkit-border-radius: 5px 5px 0 0 !important;=
+=0D=0A    -moz-border-radius: 5px 5px 0 0 !important;=0D=0A    border-radiu=
+s: 5px 5px 0 0 !important;=0D=0A}=0D=0A.webinar-bottom {=0D=0A    -webkit-b=
+order-radius: 0 0 5px 5px !important;=0D=0A    -moz-border-radius: 0 0 5px =
+5px !important;=0D=0A    border-radius: 0 0 5px 5px !important;=0D=0A}=0D=
+=0A.td3-1 {=0D=0A    width: 60% !important;=0D=0A    text-align: center !im=
+portant;=0D=0A}=0D=0A/* image */=0D=0A.img2 {=0D=0A    width: auto !importa=
+nt;=0D=0A    height: 141px !important;=0D=0A    margin: auto !important;=0D=
+=0A}=0D=0A.img4 {=0D=0A    display: block !important;=0D=0A    margin: auto=
+ !important;=0D=0A}=0D=0A}=0D=0A/*EMAIL TEMPLATES CSS=09*/=0D=0Au+.body .gl=
+ist {=0D=0A    margin-left: 0 !important;=0D=0A}=0D=0A=0D=0A@media only scr=
+een and (max-width: 640px) {=0D=0Au+.body .glist {=0D=0A    margin-left: 25=
+px !important;=0D=0A}=0D=0A}=0D=0A=0D=0A/* Dark mode styles*/=0D=0A@media (=
+prefers-color-scheme: dark) {=0D=0A/* Custom Dark Mode Background Color */=
+=0D=0A.darkmode {=0D=0A    background-color: #0E0E24 !important;=0D=0A}=0D=
+=0A.darkmode-blue {=0D=0A    background-color: #2F4BA0 !important;=0D=0A}=
+=0D=0A.darkmode-grey {=0D=0A    background-color: #565666!important;=0D=0A}=
+=0D=0A.button-blue a {=0D=0A    color: white !important;=0D=0A}=0D=0A.keep-=
+dark {=0D=0A    color: #0E0E24 !important=0D=0A}=0D=0A#darkmode-border-yell=
+ow {=0D=0A    background-color: #0E0E24 !important;=0D=0A    border: 2px so=
+lid #00b2a3 !important;=0D=0A    border-collapse: separate !important;=0D=
+=0A}=0D=0A/* Custom Dark Mode Font Colors */=0D=0Ah1, h2, h3, h4, h5, h6, p=
+, span, a, b {=0D=0A    color: #ffffff !important;=0D=0A}=0D=0A.button-neut=
+ral {=0D=0A    background: #0E0E24 !important;=0D=0A    border-color: #FFFF=
+FF !important;=0D=0A    color: #FFFFFF;=0D=0A}=0D=0A.button-neutral a {=0D=
+=0A    color: #FFFFFF;=0D=0A}=0D=0A.button-neutral:hover {=0D=0A    color: =
+#FFFFFF !important;=0D=0A    background: #6E6E7C !important;=0D=0A}=0D=0A.b=
+utton-neutral a:hover {=0D=0A    color: #FFFFFF !important;=0D=0A}=0D=0A.bu=
+tton-neutral:focus, .button-neutral:active {=0D=0A    background: #3E3E50 !=
+important;=0D=0A    color: #FFFFFF !important;=0D=0A}=0D=0A/* Shows Dark Mo=
+de-Only Content, Like Images */=0D=0A.dark-img {=0D=0A    display: inline-b=
+lock !important;=0D=0A    width: auto !important;=0D=0A    overflow: visibl=
+e !important;=0D=0A    float: none !important;=0D=0A    max-height: inherit=
+ !important;=0D=0A    max-width: inherit !important;=0D=0A    line-height: =
+auto !important;=0D=0A    margin-top: 0px !important;=0D=0A    visibility: =
+inherit !important;=0D=0A}=0D=0A/* Hides Light Mode-Only Content, Like Imag=
+es */=0D=0A.light-img, .social img.light-img {=0D=0A    display: none;=0D=
+=0A    display: none !important;=0D=0A}=0D=0A.border-white {=0D=0A    borde=
+r-color: white !important;=0D=0A}=0D=0A/* Outlook app Android */=0D=0A     =
+ /* Custom Dark Mode Background Color */=0D=0A[data-ogsc].darkmode {=0D=0A =
+   background-color: #0E0E24 !important;=0D=0A}=0D=0A[data-ogsc] .darkmode-=
+blue {=0D=0A    background-color: #2F4BA0 !important;=0D=0A}=0D=0A[data-ogs=
+c] .darkmode-teal {=0D=0A    background-color: #00b2a3 !important;=0D=0A}=
+=0D=0A/* Custom Dark Mode Font Colors */=0D=0A[data-ogsc] h1, [data-ogsc] h=
+2, [data-ogsc] h3, [data-ogsc] h4, [data-ogsc] h5, [data-ogsc] h6, [data-og=
+sc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b {=0D=0A    color: #ff=
+ffff !important;=0D=0A}=0D=0A/* Shows Dark Mode-Only Content, Like Images *=
+/=0D=0A[data-ogsc] .dark-img {=0D=0A    display: inline !important;=0D=0A  =
+  width: auto !important;=0D=0A    overflow: visible !important;=0D=0A    f=
+loat: none !important;=0D=0A    max-height: inherit !important;=0D=0A    ma=
+x-width: inherit !important;=0D=0A    line-height: auto !important;=0D=0A  =
+  margin-top: 0px !important;=0D=0A    visibility: inherit !important;=0D=
+=0A}=0D=0A/* Hides Light Mode-Only Content, Like Images */=0D=0A[data-ogsc]=
+ .light-img {=0D=0A    display: none;=0D=0A    display: none !important;=0D=
+=0A}=0D=0A[data-ogsc] .border-white {=0D=0A    border-color: white !importa=
+nt;=0D=0A}=0D=0A}=0D=0A</style>=0D=0A<!--[if gte mso 9]>=0D=0A<style type=
+=3D"text/css">=0D=0Ah1,h2,h3,h4,h5,h6,p,a,span,td,strong{font-family: Arial=
+, sans-serif !important;mso-line-height-rule: exactly;}=0D=0Atd,table{overf=
+low:hidden;}=0D=0Atd, table{=09border-collapse: collapse;}=0D=0A</style>=0D=
+=0A<![endif]-->=0D=0A</head>=0D=0A=0D=0A<body bgcolor=3D"#F8F8F8" margin=3D=
+"0" style=3D"background-color:#F8F8F8;margin:0;">=0D=0A<div style=3D"color:=
+transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1=
+px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:none=
+!important;line-height:0px!important;"><img border=3D"0" width=3D"1" height=
+=3D"1" src=3D"http://careerbuilder.et.e.sparkpost.com/q/8u1NxT0rkNuHdboabiv=
+Lxg~~/AAAAAQA~/RgRlnpxdPVcHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBn=
+bWFpbC5jb21YBAAAAAA~" alt=3D""/></div>=0D=0A=0D=0A<!--START Preview text-->=
+=0D=0A<div style=3D"display: none; max-height: 0px; overflow: hidden; mso-h=
+ide:all;">Happy New Year from CareerBuilder.=0D=0A  <div style=3D"display: =
+none; max-height: 0px; overflow: hidden;"> &#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp; </div>=0D=0A</div>=0D=
+=0A<!--END Preview text-->=0D=0A<div style=3D"margin: 0 auto; max-width: 60=
+0px;"> =0D=0A  <!--[if (gte mso 9)|(IE)]><table width=3D"600" align=3D"cent=
+er"><tr><td><![endif]-->=0D=0A  <table bgcolor=3D"" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"border:2px solid #F8F8F8;" width=3D"100%=
+">=0D=0A    <!--Header Nav-->=0D=0A    =0D=0A    <tbody>=0D=0A    =0D=0A   =
+ <tr>=0D=0A      <td align=3D"center" valign=3D"top"><table bgcolor=3D"" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A       =
+   <!--Header Nav-->=0D=0A          <tbody>=0D=0A            <tr>=0D=0A    =
+          <td align=3D"center" valign=3D"top"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A                  <tbody>=
+=0D=0A                    <tr>=0D=0A                      <td bgcolor=3D"" =
+valign=3D"top"><table align=3D"center" bgcolor=3D"#0E0E24" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"table600" width=3D"600">=0D=0A   =
+                       <tbody>=0D=0A                            <tr>=0D=0A =
+                             <td align=3D"center"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-inner" width=
+=3D"520">=0D=0A                                  <tbody>=0D=0A             =
+                       <tr>=0D=0A                                      <td =
+style=3D"font-size:1px;line-height:1px; -webkit-text-size-adjust:none;paddi=
+ng:7.5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A=
+                                    <tr>=0D=0A                             =
+         <td><!--View Browser Box-->=0D=0A                                 =
+       =0D=0A                                        <!--<table align=3D"ri=
+ght" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table1-3" wi=
+dth=3D"300px">=0D=0A                                          <tbody>=0D=0A=
+                                            <tr>=0D=0A                     =
+                         <td class=3D"tdcenter" style=3D"font-family: 'Barl=
+ow', 'Arial', sans-serif; font-size:14px; font-weight: 400; color:#ffffff; =
+line-height:28px;text-align:right;" valign=3D"middle"><a href=3D"" style=3D=
+"color:#ffffff; font-weight: 400; text-decoration:none;" target=3D"_blank">=
+<span style=3D"color:#ffffff;"><font color=3D"#ffffff">View in browser</fon=
+t></span></a></td>=0D=0A                                            </tr>=
+=0D=0A                                          </tbody>=0D=0A             =
+                           </table>-->=0D=0A                               =
+         =0D=0A                                        <!--End View Browser=
+ Box--><!--Space-->=0D=0A                                        =0D=0A    =
+                                    <table align=3D"right" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" height=3D"5" width=3D"1">=0D=0A           =
+                               <tbody>=0D=0A                               =
+             <tr>=0D=0A                                              <td st=
+yle=3D"font-size: 0;line-height: 0;border-collapse: collapse;"><p style=3D"=
+padding-left: 20px; font-size:1px;line-height:1px; -webkit-text-size-adjust=
+:none;">&nbsp;</p></td>=0D=0A                                            </=
+tr>=0D=0A                                          </tbody>=0D=0A          =
+                              </table>=0D=0A                               =
+         =0D=0A                                        <!--End Space--><!--=
+Logo-->=0D=0A                                        =0D=0A                =
+                        <table align=3D"left" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"table1-3" width=3D"200">=0D=0A                =
+                          <tbody>=0D=0A                                    =
+        <tr>=0D=0A                                              <td align=
+=3D"center"><a data-widget=3D"image" href=3D"http://careerbuilder.et.e.spar=
+kpost.com/f/a/aTkHEQaOE_ql1RwFIlOZ_w~~/AAAAAQA~/RgRlnpxdP0ShaHR0cHM6Ly93d3c=
+uY2FyZWVyYnVpbGRlci5jb20vP3NpdGVpZD1uZXdzbGV0dGVyJnV0bV9zb3VyY2U9bmV3c2xldH=
+RlciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1qYW4yMy1zcC1ub2pyX25vc2FsaW4tY=
+SZ1dG1fdGVybT0yMDIzMDEwOSZ1dG1fY29udGVudD1DYmxvZ29XB2NhcmVlcmJCCmO1XRe8Y8M2=
+LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA" target=3D"_blank"><img alt=3D=
+"CareerBuilder Logo" border=3D"0" src=3D"https://hiring-assets.careerbuilde=
+r.com/marketing/assets/images/pardot/Images/2x/CareerBuilder_logo_horizonta=
+l-desktop_WHITE_R.png" style=3D"width: 200px; border-width: 0px; border-sty=
+le: solid; font-family: 'Roboto', 'Arial', sans-serif; font-size:16px; font=
+-weight: 400; color:#FFFFFF; line-height:24px;text-align:left;" width=3D"20=
+0"></a></td>=0D=0A                                            </tr>=0D=0A  =
+                                        </tbody>=0D=0A                     =
+                   </table>=0D=0A                                        =
+=0D=0A                                        <!--End Logo--></td>=0D=0A   =
+                                 </tr>=0D=0A                               =
+     <tr>=0D=0A                                      <td style=3D"font-size=
+:1px;line-height:1px; -webkit-text-size-adjust:none;padding:7.5px;">&nbsp;<=
+/td>=0D=0A                                    </tr>=0D=0A                  =
+                </tbody>=0D=0A                                </table></td>=
+=0D=0A                            </tr>=0D=0A                          </tb=
+ody>=0D=0A                        </table></td>=0D=0A                    </=
+tr>=0D=0A                  </tbody>=0D=0A                </table></td>=0D=
+=0A            </tr>=0D=0A            <!--End Header Nav--><!--START Headin=
+g Section-->=0D=0A            <tr>=0D=0A              <td align=3D"center" =
+valign=3D"top"><!--Start CBCB Hero-->=0D=0A                =0D=0A          =
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" pardot-removable=3D"">=0D=0A                  <tbody>=0D=0A              =
+      <tr>=0D=0A                      <td valign=3D"top"><table align=3D"ce=
+nter" bgcolor=3D"#00b2a3" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+class=3D"table600" width=3D"600">=0D=0A                          <tbody>=0D=
+=0A                            <tr>=0D=0A                              <td =
+align=3D"center" class=3D"darkmode"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"table-inner" width=3D"520">=0D=0A                =
+                  <tbody>=0D=0A                                    <tr>=0D=
+=0A                                      <td class=3D"mobileheight" style=
+=3D"font-size:1px;line-height:1px; -webkit-text-size-adjust:none;padding:19=
+=2E5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A  =
+                                  <tr>=0D=0A                               =
+       <td><!--Text-->=0D=0A                                        =0D=0A =
+                                       <table align=3D"right" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"table3-1" width=3D"340">=0D=0A=
+                                          <tbody>=0D=0A                    =
+                        <tr>=0D=0A                                         =
+     <td class=3D"hide-mobile" style=3D"font-size:1px;line-height:1px; -web=
+kit-text-size-adjust:none;padding:24.5px;">&nbsp;</td>=0D=0A               =
+                             </tr>=0D=0A                                   =
+         <tr class=3D"table-inner">=0D=0A                                  =
+            <td valign=3D"top" pardot-region=3D""><h1 style=3D"font-family:=
+ 'Barlow', 'Arial', sans-serif; font-size:40px; color:#0E0E24; font-weight:=
+800; line-height:40px; text-align:center; text-transform: uppercase; margin=
+: 0px;"><a style=3D"color: #0E0E24"=0D=0A                                  =
+            href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/sjhKnKDIvx5=
+tEDHcCyC-qA~~/AAAAAQA~/RgRlnpxdP0TZaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20v=
+YWR2aWNlL3RoZS1uZXctb2ZmaWNlLWV0aXF1ZXR0ZS1ydWxlcy1mb3ItdG9kYXlzLXdvcmtwbGF=
+jZT9zaXRlaWQ9bmV3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbW=
+FpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxM=
+DkmdXRtX2NvbnRlbnQ9aGVyb1cHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBn=
+bWFpbC5jb21YBAAAAAA~"=0A                                              targe=
+t=3D"_blank" rel=3D"noopener">New year, new beginnings</a></h1></td>=0D=0A =
+                                           </tr>=0D=0A                     =
+                       <tr>=0D=0A                                          =
+    <td style=3D"font-size:1px;line-height:10px;-webkit-text-size-adjust:no=
+ne;padding:2.5px;display: none; max-height: 0px" class=3D"show-mobile">&nbs=
+p;</td>=0D=0A                                            </tr>=0D=0A       =
+                                     <tr>=0D=0A                            =
+                  <td height=3D"5" style=3D"font-size:0; line-height: 0" va=
+lign=3D"bottom">&nbsp;</td>=0D=0A                                          =
+  </tr>=0D=0A                                          </tbody>=0D=0A      =
+                                  </table>=0D=0A                           =
+             =0D=0A                                        <!--End Text--><=
+!--Image-->=0D=0A                                        =0D=0A            =
+                            <table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"table1-3" width=3D"160">=0D=0A           =
+                               <tbody>=0D=0A                               =
+             <tr>=0D=0A                                              <td pa=
+rdot-region=3D"" align=3D"center" valign=3D"top"><div class=3D"light-img"><=
+a=0D=0A                                              href=3D"http://careerb=
+uilder.et.e.sparkpost.com/f/a/sjhKnKDIvx5tEDHcCyC-qA~~/AAAAAQA~/RgRlnpxdP0T=
+ZaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3RoZS1uZXctb2ZmaWNlLWV0aX=
+F1ZXR0ZS1ydWxlcy1mb3ItdG9kYXlzLXdvcmtwbGFjZT9zaXRlaWQ9bmV3c2xldHRlciZ1dG1fc=
+291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3At=
+bm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnRlbnQ9aGVyb1cHY2FyZWV=
+yYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBAAAAAA~"=0A          =
+                                    target=3D"_blank" rel=3D"noopener"><img=
+ alt=3D"2023 day planner and calendar set" border=3D"0" class=3D"img2" src=
+=3D"https://hiring-assets.careerbuilder.com/marketing/assets/campaigns/NL_J=
+an23/b2c_nl_jan23_hero_alt.png" style=3D"font-family: 'Roboto', 'Arial', sa=
+ns-serif; font-size:16px; font-weight: 400; color:#0E0E24; line-height:24px=
+;text-align:left;" width=3D"160"></a></div>=0D=0A                          =
+                      =0D=0A                                               =
+ <!--[if !mso]><! -->=0D=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<di=
+v align=3D"center" class=3D"dark-img" style=3D"display:none; overflow:hidde=
+n; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; v=
+isibility:hidden;"><a=0D=0A                                              hr=
+ef=3D"http://careerbuilder.et.e.sparkpost.com/f/a/sjhKnKDIvx5tEDHcCyC-qA~~/=
+AAAAAQA~/RgRlnpxdP0TZaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3RoZS=
+1uZXctb2ZmaWNlLWV0aXF1ZXR0ZS1ydWxlcy1mb3ItdG9kYXlzLXdvcmtwbGFjZT9zaXRlaWQ9b=
+mV3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2Ft=
+cGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnR=
+lbnQ9aGVyb1cHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBA=
+AAAAA~"=0A                                              target=3D"_blank" r=
+el=3D"noopener"><img class=3D"img2" alt=3D"2023 day planner and calendar se=
+t" border=3D"0" width=3D"160" src=3D"https://hiring-assets.careerbuilder.co=
+m/marketing/assets/campaigns/NL_Jan23/b2c_nl_jan23_hero_alt_dark.png"></a><=
+/div>=0D=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<!--<![endif]--></t=
+d>=0D=0A                                            </tr>=0D=0A            =
+                              </tbody>=0D=0A                               =
+         </table>=0D=0A                                        =0D=0A      =
+                                  <!--End Image--></td>=0D=0A              =
+                      </tr>=0D=0A                                    <tr>=
+=0D=0A                                      <td class=3D"mobileheight" styl=
+e=3D"font-size:1px;line-height:1px; -webkit-text-size-adjust:none;padding:1=
+9.5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A   =
+                               </tbody>=0D=0A                              =
+  </table></td>=0D=0A                            </tr>=0D=0A               =
+           </tbody>=0D=0A                        </table></td>=0D=0A       =
+             </tr>=0D=0A                  </tbody>=0D=0A                </t=
+able>=0D=0A                =0D=0A                <!--END CBCB Hero--></td>=
+=0D=0A            </tr>=0D=0A            <!--END Heading Section-->=0D=0A  =
+        </tbody>=0D=0A        </table>=0D=0A        =0D=0A        <!--START=
+ Profile Section-->=0D=0A        =0D=0A        <table class=3D"table600" bo=
+rder=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r"=0D=0A              bgcolor=3D"#E7E7E9">=0D=0A          <tbody>=0D=0A    =
+      =0D=0A          <tr>=0D=0A            <td class=3D"darkmode-grey" val=
+ign=3D"top"><!--START Profile Inner-->=0D=0A              =0D=0A           =
+   <table class=3D"table-inner" border=3D"0" width=3D"520" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"center"=0D=0A                      bgcolor=3D"=
+">=0D=0A                <tbody>=0D=0A                =0D=0A                =
+<tr>=0D=0A                  <td=0D=0A                            style=3D"f=
+ont-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 1=
+9.5px;">&nbsp;</td>=0D=0A                </tr>=0D=0A                <tr>=0D=
+=0A                  <td class=3D"darkmode"=0D=0A                          =
+  style=3D"background: #FFFFFF; -webkit-border-radius: 5px; -moz-border-rad=
+ius: 5px; border-radius: 5px;"=0D=0A                            align=3D"ce=
+nter"><table class=3D"table-inner" border=3D"0" width=3D"480" cellspacing=
+=3D"0" cellpadding=3D"0"=0D=0A                              align=3D"center=
+" bgcolor=3D"">=0D=0A                      <tbody>=0D=0A                   =
+   =0D=0A                      <tr>=0D=0A                        <td=0D=0A =
+                                   style=3D"font-size: 1px; line-height: 1p=
+x; -webkit-text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A      =
+                </tr>=0D=0A                      <tr>=0D=0A                =
+        <td align=3D"center" class=3D"darkmode"><!--Edit Profile Link Box--=
+>=0D=0A                          =0D=0A                          <table cla=
+ss=3D"table1-3" border=3D"0" width=3D"" cellspacing=3D"0" cellpadding=3D"0"=
+=0D=0A                                      align=3D"right" bgcolor=3D"">=
+=0D=0A                            <tbody>=0D=0A                            =
+  <tr>=0D=0A                                <td class=3D"tdcenter"=0D=0A   =
+                                         style=3D"font-family: 'Barlow', 'A=
+rial', sans-serif; font-size: 20px; font-weight: bold; color: #ffffff; line=
+-height: 20px; text-align: right;"=0D=0A                                   =
+         valign=3D"middle"><h5=0D=0A                                       =
+       style=3D"font-family: 'Barlow', 'Arial', sans-serif; font-size: 20px=
+; color: #0e0e24; font-weight: bold; line-height: 20px; margin: 0px;"> <a s=
+tyle=3D"color: #2f4ba0;"=0D=0A                                             =
+   href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/CRSu_fNvKQUKgtaWCIFN=
+0Q~~/AAAAAQA~/RgRlnpxdP0SwaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vdXNlci9lZ=
+Gl0P3NpdGVpZD1uZXdzbGV0dGVyJnV0bV9zb3VyY2U9bmV3c2xldHRlciZ1dG1fbWVkaXVtPWVt=
+YWlsJnV0bV9jYW1wYWlnbj1qYW4yMy1zcC1ub2pyX25vc2FsaW4tYSZ1dG1fdGVybT0yMDIzMDE=
+wOSZ1dG1fY29udGVudD1wcm9maWxlLWVkaXRXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbG=
+xrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A                                         =
+       target=3D"_blank">Edit Profile</a></h5></td>=0D=0A                  =
+            </tr>=0D=0A                            </tbody>=0D=0A          =
+                </table>=0D=0A                          =0D=0A             =
+             <!--End Edit Profile Link Box--> =0D=0A                       =
+   <!--Space-->=0D=0A                          =0D=0A                      =
+    <table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"20"=0D=0A                                      width=3D"1">=0D=
+=0A                            <tbody>=0D=0A                              <=
+tr>=0D=0A                                <td style=3D"font-size: 0;line-hei=
+ght: 0;border-collapse: collapse;"><p=0D=0A                                =
+              style=3D"padding-left: 20px; font-size:1px;line-height:1px; -=
+webkit-text-size-adjust:none;">&nbsp; </p></td>=0D=0A                      =
+        </tr>=0D=0A                            </tbody>=0D=0A              =
+            </table>=0D=0A                          =0D=0A                 =
+         <!--End Space--> =0D=0A                          <!--Text--> =0D=
+=0A                                                    <table class=3D"tabl=
+e3-1" border=3D"0" width=3D"" cellspacing=3D"0" cellpadding=3D"0"=0D=0A    =
+                                  align=3D"left">=0D=0A                    =
+        <tbody>=0D=0A                              <tr>=0D=0A              =
+                  <td=0D=0A                                            styl=
+e=3D"font-family: 'Barlow', 'Arial', sans-serif; font-size: 24px; font-weig=
+ht: bold; text-transform: uppercase; color: #0e0e24; line-height: 24px; tex=
+t-align: left;"=0D=0A                                            valign=3D"=
+middle"><p>Darnell Keith</p></td>=0D=0A                              </tr>=
+=0D=0A                              <tr>=0D=0A                             =
+   <td=0D=0A                                            style=3D"font-famil=
+y: 'Barlow', sans-serif; font-size: 14px; font-weight: bold; color: #3e3e50=
+; line-height: 21px; text-align: left; padding-top: 5px;"=0D=0A            =
+                                valign=3D"middle"><p>Providence, RI</p></td=
+>=0D=0A                              </tr>=0D=0A                           =
+ </tbody>=0D=0A                          </table>=0D=0A                    =
+                                <!--End Text--></td>=0D=0A                 =
+     </tr>=0D=0A                      <tr>=0D=0A                        <td=
+=0D=0A                                    style=3D"font-size: 1px; line-hei=
+ght: 1px; -webkit-text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=
+=0A                      </tr>=0D=0A                      <tr>=0D=0A       =
+                 <td><!--START Bottom Section Wrapper of profile-->=0D=0A  =
+                        =0D=0A                          <table border=3D"0"=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">=0D=0A=
+                            <tbody>=0D=0A                            =0D=0A=
+                                                                           =
+                                     <!--Start Resume Last Updated-->=0D=0A=
+                            <tr>=0D=0A                              <td><ta=
+ble border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0"=0D=0A  =
+                                            align=3D"center" bgcolor=3D"">=
+=0D=0A                                  <tbody>=0D=0A                      =
+              <tr>=0D=0A                                      <td><h5=0D=0A=
+                                                      style=3D"font-family:=
+ 'Barlow', 'Arial', sans-serif; font-size: 18px; color: #0e0e24; font-weigh=
+t: bold; line-height: 18px; text-align: center; text-transform: uppercase; =
+margin: 0px; padding-bottom: 5px;"> RESUME LAST UPDATED: <a style=3D"color:=
+ #2f4ba0;"=0D=0A                                                        hre=
+f=3D"http://careerbuilder.et.e.sparkpost.com/f/a/YXjxUD5ejP3zuyRF4bMZ3Q~~/A=
+AAAAQA~/RgRlnpxdP0S5aHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vdXNlci9yZXN1bWV=
+fb3B0aW9ucz9zaXRlaWQ9bmV3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZG=
+l1bT1lbWFpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09M=
+jAyMzAxMDkmdXRtX2NvbnRlbnQ9cHJvZmlsZS11cGRXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rh=
+cm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A                                   =
+                     target=3D"_blank">Aug 24, 2015</a></h5></td>=0D=0A    =
+                                </tr>=0D=0A                                =
+    <tr>=0D=0A                                      <td><table border=3D"0"=
+ width=3D"20" cellspacing=3D"0" cellpadding=3D"0"=0D=0A                    =
+                                  align=3D"left" bgcolor=3D"">=0D=0A       =
+                                   <tbody>=0D=0A                           =
+                 <tr>=0D=0A                                              <t=
+d><div class=3D"light-img"><img=0D=0A                                      =
+                          style=3D"width: 20px; height: 20px; margin: auto;=
+ font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal; c=
+olor: #0e0e24; line-height: 20px; text-align: left;"=0D=0A                 =
+                                               src=3D"https://hiring-assets=
+=2Ecareerbuilder.com/marketing/assets/images/pardot/Images/2x/lightbulb_ico=
+n@2x.png"=0D=0A                                                            =
+    alt=3D"lightbulb icon" width=3D"20" height=3D"20"></div>=0D=0A         =
+                                       =0D=0A                              =
+                  <!--[if !mso]><! -->=0D=0A                               =
+                             <div class=3D"dark-img"=0D=0A                 =
+                                             style=3D"display: none; overfl=
+ow: hidden; float: left; width: 0px; max-height: 0px; max-width: 0px; line-=
+height: 0px; visibility: hidden;"=0D=0A                                    =
+                          align=3D"center"><img=0D=0A                      =
+                                          style=3D"width: 20px; height: 20p=
+x; margin: auto; font-family: 'Roboto', sans-serif; font-size: 16px; font-w=
+eight: normal; color: #0e0e24; line-height: 20px; text-align: left;"=0D=0A =
+                                                               src=3D"https=
+://hiring-assets.careerbuilder.com/marketing/assets/images/pardot/Images/2x=
+/lightbulb_white_icon@2x.png"=0D=0A                                        =
+                        alt=3D"lightbulb icon" width=3D"20" height=3D"20"><=
+/div>=0D=0A                                                            <!--=
+<![endif]--></td>=0D=0A                                            </tr>=0D=
+=0A                                          </tbody>=0D=0A                =
+                        </table>=0D=0A                                     =
+   <table border=3D"0" width=3D"91.66666666666667%" cellspacing=3D"0"=0D=0A=
+                                                      cellpadding=3D"0" ali=
+gn=3D"right" bgcolor=3D"">=0D=0A                                          <=
+tbody>=0D=0A                                            <tr>=0D=0A         =
+                                     <td=0D=0A                             =
+                               style=3D"font-family: 'Roboto', 'Arial', san=
+s-serif; font-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24=
+px; text-align: left;"=0D=0A                                               =
+             width=3D""><p>60% percent of recruiters view only resumes that=
+ are less=0D=0A                                                  than 6 mon=
+ths old. Update your skills now to get noticed=0D=0A                       =
+                           by more employers.</p></td>=0D=0A               =
+                             </tr>=0D=0A                                   =
+       </tbody>=0D=0A                                        </table></td>=
+=0D=0A                                    </tr>=0D=0A                      =
+              <tr>=0D=0A                                      <td>&nbsp;</t=
+d>=0D=0A                                    </tr>=0D=0A                    =
+              </tbody>=0D=0A                                </table></td>=
+=0D=0A                            </tr>=0D=0A                            <!=
+--End Resume Last Updated--> =0D=0A                                        =
+                                                                        </t=
+body>=0D=0A                            =0D=0A                          </ta=
+ble>=0D=0A                          =0D=0A                          <!--END=
+ Bottom Section Wrapper Profile--></td>=0D=0A                      </tr>=0D=
+=0A                      </tbody>=0D=0A                      =0D=0A        =
+            </table></td>=0D=0A                </tr>=0D=0A                <=
+tr>=0D=0A                  <td=0D=0A                            style=3D"fo=
+nt-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 19=
+=2E5px;">&nbsp;</td>=0D=0A                </tr>=0D=0A                </tbod=
+y>=0D=0A                =0D=0A              </table>=0D=0A              =0D=
+=0A              <!--END Profile Inner--></td>=0D=0A          </tr>=0D=0A  =
+        </tbody>=0D=0A          =0D=0A        </table>=0D=0A        =0D=0A =
+       <!--END Profile Section--> =0D=0A        <!--START Two Column Articl=
+e Section-->=0D=0A        =0D=0A        <table class=3D"table600" border=3D=
+"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">=0D=
+=0A          <tbody>=0D=0A            <tr>=0D=0A              <td valign=3D=
+"top" bgcolor=3D"#ffffff"><!--START Heading Section-->=0D=0A               =
+ =0D=0A                <table border=3D"0" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0">=0D=0A                  <tbody>=0D=0A                   =
+ <tr>=0D=0A                      <td valign=3D"top"><table class=3D"table60=
+0" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0"=0D=0A    =
+                          align=3D"center">=0D=0A                          =
+<tbody>=0D=0A                            <tr>=0D=0A                        =
+      <td class=3D"darkmode" align=3D"center"><table class=3D"table-inner" =
+border=3D"0" width=3D"520" cellspacing=3D"0" cellpadding=3D"0">=0D=0A      =
+                            <tbody>=0D=0A                                  =
+  <tr>=0D=0A                                      <td class=3D"mobileheight=
+"=0D=0A                                            style=3D"font-size: 1px;=
+ line-height: 1px; -webkit-text-size-adjust: none; padding: 19.5px;">&nbsp;=
+</td>=0D=0A                                    </tr>=0D=0A                 =
+                   <tr>=0D=0A                                      <td><h2=
+=0D=0A                                              style=3D"font-family: '=
+Barlow', 'Arial', sans-serif; font-size: 30px; color: #0e0e24; font-weight:=
+ 800; line-height: 30px; text-align: center; text-transform: uppercase; mar=
+gin: 0px;"> <a style=3D"font-weight: bold; color: #0e0e24;"=0D=0A          =
+                                      href=3D"http://careerbuilder.et.e.spa=
+rkpost.com/f/a/Ku8qrhsdsNdaV2rgQpWEiw~~/AAAAAQA~/RgRlnpxdP0TZaHR0cHM6Ly93d3=
+cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3RoZS1uZXctb2ZmaWNlLWV0aXF1ZXR0ZS1ydWxlc=
+y1mb3ItdG9kYXlzLXdvcmtwbGFjZT9zaXRlaWQ9bmV3c2xldHRlciZ1dG1fc291cmNlPW5ld3Ns=
+ZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGl=
+uLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnRlbnQ9czFoMVcHY2FyZWVyYkIKY7VdF7xjwz=
+YvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBAAAAAA~"=0A                         =
+                       target=3D"_blank" rel=3D"noopener">The New Normal: T=
+oday=E2=80=99s Office Etiquette Rules</a> </h2></td>=0D=0A                 =
+                   </tr>=0D=0A                                  </tbody>=0D=
+=0A                                </table></td>=0D=0A                     =
+       </tr>=0D=0A                          </tbody>=0D=0A                 =
+       </table></td>=0D=0A                    </tr>=0D=0A                  =
+</tbody>=0D=0A                </table>=0D=0A                =0D=0A         =
+       <!--END Heading Section--> =0D=0A                <!--START Article S=
+ection-->=0D=0A                =0D=0A                <table class=3D"table6=
+00" style=3D"width: 600px;" border=3D"0" width=3D"600" cellspacing=3D"0" ce=
+llpadding=3D"0"=0D=0A                      align=3D"center" bgcolor=3D"">=
+=0D=0A                  <tbody>=0D=0A                    <tr>=0D=0A        =
+              <td class=3D"darkmode" align=3D"center"><table class=3D"table=
+-inner" border=3D"0" width=3D"520" cellspacing=3D"0" cellpadding=3D"0">=0D=
+=0A                          <tbody>=0D=0A                            <tr>=
+=0D=0A                              <td=0D=0A                              =
+      style=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: =
+none; padding: 9.5px;">&nbsp;</td>=0D=0A                            </tr>=
+=0D=0A                            <tr>=0D=0A                              <=
+td><!--Image-->=0D=0A                                =0D=0A                =
+                <table class=3D"table2-2" border=3D"0" width=3D"250" cellsp=
+acing=3D"0" cellpadding=3D"0"=0D=0A                                      al=
+ign=3D"right">=0D=0A                                  <tbody>=0D=0A        =
+                            <tr>=0D=0A                                     =
+ <td align=3D"center"><a=0D=0A                                             =
+ href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/48tx4zYZhS6fKmZnyWr8lA=
+~~/AAAAAQA~/RgRlnpxdP0TaaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3R=
+oZS1uZXctb2ZmaWNlLWV0aXF1ZXR0ZS1ydWxlcy1mb3ItdG9kYXlzLXdvcmtwbGFjZT9zaXRlaW=
+Q9bmV3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY=
+2FtcGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2Nv=
+bnRlbnQ9czFpbWdXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29=
+tWAQAAAAA"=0A                                              target=3D"_blank=
+" rel=3D"noopener"><img class=3D"img2"=0D=0A                               =
+                 style=3D"font-family: 'Roboto', 'Arial', sans-serif; font-=
+size: 16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-align=
+: left;"=0D=0A                                                src=3D"https:=
+//hiring-assets.careerbuilder.com/marketing/assets/campaigns/NL_Jan23/b2c_n=
+l_jan23_art1.png"=0D=0A                                                alt=
+=3D"Article image" width=3D"250" height=3D"188" border=3D"0"></a></td>=0D=
+=0A                                    </tr>=0D=0A                         =
+         </tbody>=0D=0A                                </table>=0D=0A      =
+                          =0D=0A                                <!--End Ima=
+ge--> =0D=0A                                <!--Space-->=0D=0A             =
+                   =0D=0A                                <table align=3D"ri=
+ght" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"20"=0D=0A  =
+                                    width=3D"1">=0D=0A                     =
+             <tbody>=0D=0A                                    <tr>=0D=0A   =
+                                   <td style=3D"font-size: 0;line-height: 0=
+;border-collapse: collapse;"><p style=3D"padding-left: 20px;">&nbsp;</p></t=
+d>=0D=0A                                    </tr>=0D=0A                    =
+              </tbody>=0D=0A                                </table>=0D=0A =
+                               =0D=0A                                <!--En=
+d Space--> =0D=0A                                <!--Text-->=0D=0A         =
+                       =0D=0A                                <table class=
+=3D"table2-2" border=3D"0" width=3D"250" cellspacing=3D"0" cellpadding=3D"0=
+"=0D=0A                                      align=3D"left">=0D=0A         =
+                         <tbody>=0D=0A                                    <=
+tr class=3D"table-inner">=0D=0A                                      <td=0D=
+=0A                                            style=3D"font-family: 'Robot=
+o', 'Arial', sans-serif; font-size: 16px; font-weight: 400; color: #0e0e24;=
+ line-height: 24px; text-align: left;"><p>In an ever-changing world of soci=
+al norms and manners, it=E2=80=99s best to be in the know before you go in =
+the wrong direction. These 12 office etiquette tips can help you either adj=
+ust to a new office environment or clean up your behavior in a place you=E2=
+=80=99ve worked for years.</p></td>=0D=0A                                  =
+  </tr>=0D=0A                                    <tr>=0D=0A                =
+                      <td=0D=0A                                            =
+style=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; =
+padding: 9.5px;">&nbsp;</td>=0D=0A                                    </tr>=
+=0D=0A                                    <tr>=0D=0A                       =
+               <td class=3D"tdcenter" align=3D"left"><!--CTA Button-->=0D=
+=0A                                        =0D=0A                          =
+              <table class=3D"button-blue"=0D=0A                           =
+                   style=3D"text-align: center; cursor: pointer; -webkit-ap=
+pearance: none; background: #2F4BA0; box-sizing: border-box; color: #0e0e24=
+; font-family: 'Barlow', 'Arial', sans-serif; font-size: 16px; font-weight:=
+ bold; text-decoration: none; position: relative; border: none; -webkit-bor=
+der-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin: 0; li=
+ne-height: 16px; outline: none; white-space: normal; height: auto; min-heig=
+ht: 45px; display: inline-block;"=0D=0A                                    =
+          border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#2F4B=
+A0">=0D=0A                                          <tbody>=0D=0A          =
+                                  <tr>=0D=0A                               =
+               <td valign=3D"middle"=0D=0A                                 =
+                   style=3D"padding-left: 30px; padding-right: 30px; paddin=
+g-top: 15px; padding-bottom: 15px;"><a style=3D"color: #ffffff; text-decora=
+tion: none;"=0D=0A                                                      hre=
+f=3D"http://careerbuilder.et.e.sparkpost.com/f/a/sXKpDuQjHwF0JwgR05j0zg~~/A=
+AAAAQA~/RgRlnpxdP0TaaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3RoZS1=
+uZXctb2ZmaWNlLWV0aXF1ZXR0ZS1ydWxlcy1mb3ItdG9kYXlzLXdvcmtwbGFjZT9zaXRlaWQ9bm=
+V3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2Ftc=
+GFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnRl=
+bnQ9czFjdGFXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQ=
+AAAAA" target=3D"_blank">Get The 12 Tips</a></td>=0D=0A                    =
+     =09=09          </tr>=0D=0A                                          <=
+/tbody>=0D=0A                                        </table>=0D=0A        =
+                                =0D=0A                                     =
+   <!--End CTA Button--></td>=0D=0A                                    </tr=
+>=0D=0A                                  </tbody>=0D=0A                    =
+            </table>=0D=0A                                =0D=0A           =
+                     <!--End Text--></td>=0D=0A                            =
+</tr>=0D=0A                            <tr>=0D=0A                          =
+    <td class=3D"mobileheight"=0D=0A                                    sty=
+le=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; pad=
+ding: 19.5px;">&nbsp;</td>=0D=0A                            </tr>=0D=0A    =
+                      </tbody>=0D=0A                        </table></td>=
+=0D=0A                    </tr>=0D=0A                  </tbody>=0D=0A      =
+          </table>=0D=0A                =0D=0A                <!--END Artic=
+le Section--></td>=0D=0A            </tr>=0D=0A          </tbody>=0D=0A    =
+    </table>=0D=0A        =0D=0A        <!--END Two Column Article Section-=
+-> =0D=0A        <!--START Two Column Article Section-->=0D=0A        =0D=
+=0A        <table class=3D"table600" border=3D"0" width=3D"600" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"center">=0D=0A          <tbody>=0D=0A    =
+        <tr>=0D=0A              <td valign=3D"top"><!--START Heading Sectio=
+n-->=0D=0A                =0D=0A                <table border=3D"0" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=0D=0A                  <tbod=
+y>=0D=0A                    <tr>=0D=0A                      <td valign=3D"t=
+op"><table class=3D"table600" border=3D"0" width=3D"600" cellspacing=3D"0" =
+cellpadding=3D"0"=0D=0A                              align=3D"center" bgcol=
+or=3D"#FFFFFF">=0D=0A                          <tbody>=0D=0A               =
+             <tr>=0D=0A                              <td class=3D"darkmode"=
+ align=3D"center"><table class=3D"table-inner" border=3D"0" width=3D"520" c=
+ellspacing=3D"0" cellpadding=3D"0">=0D=0A                                  =
+<tbody>=0D=0A                                    <tr>=0D=0A                =
+                      <td class=3D"mobileheight"=0D=0A                     =
+                       style=3D"font-size: 1px; line-height: 1px; -webkit-t=
+ext-size-adjust: none; padding: 19.5px;">&nbsp;</td>=0D=0A                 =
+                   </tr>=0D=0A                                    <!--START=
+ Partner logo--> =0D=0A                                    <!--            =
+                    <tr>=0D=0A                                  <td><h5 sty=
+le=3D"font-family: 'Barlow', 'Arial', sans-serif; font-size: 16px; color: #=
+0e0e24; font-weight: bold; line-height: 16px; text-align: center; text-tran=
+sform: uppercase; margin: 0px;">SPONSORED BY</h5></td>=0D=0A               =
+                 </tr>=0D=0A                                <tr>=0D=0A     =
+                             <td style=3D"font-size: 1px; line-height: 1px;=
+ -webkit-text-size-adjust: none; padding: 4.5px;">&nbsp;</td>=0D=0A        =
+                        </tr>=0D=0A                                <tr>=0D=
+=0A                                  <td align=3D"center"><a href=3D"#"><im=
+g style=3D"font-family: 'Roboto', 'Arial', sans-serif; font-size: 16px; fon=
+t-weight: 400; color: #0e0e24; line-height: 1.5em; text-align: left;" src=
+=3D"https://hiring-assets.careerbuilder.com/media/attachments/careerbuilder=
+-original-4760.jpg=3F1661884937" alt=3D"Bartech Staffing" height=3D"30" bor=
+der=3D"0"></a></td>=0D=0A                                </tr>=0D=0A       =
+                         <tr>=0D=0A                                  <td st=
+yle=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; pa=
+dding: 9.5px;">&nbsp;</td>=0D=0A                                </tr>--> =
+=0D=0A                                    <!--END Partner logo-->=0D=0A    =
+                                <tr>=0D=0A                                 =
+     <td><h2=0D=0A                                              style=3D"fo=
+nt-family: 'Barlow', 'Arial', sans-serif; font-size: 30px; color: #0e0e24; =
+font-weight: 800; line-height: 30px; text-align: center; text-transform: up=
+percase; margin: 0px;"> <a href=3D"http://careerbuilder.et.e.sparkpost.com/=
+f/a/lAp-1bGgGzbLDayK5KZGtA~~/AAAAAQA~/RgRlnpxdP0TgaHR0cHM6Ly93d3cuY2FyZWVyY=
+nVpbGRlci5jb20vYWR2aWNlL3ByZXBhcmUtYW5zd2Vycy10by10aGVzZS03LXNraWxsc2Jhc2Vk=
+LWludGVydmlldy1xdWVzdGlvbnM_c2l0ZWlkPW5ld3NsZXR0ZXImdXRtX3NvdXJjZT1uZXdzbGV=
+0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIzLXNwLW5vanJfbm9zYWxpbi=
+1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PXMzaDFXB2NhcmVlcmJCCmO1XRe8Y8M2L=
+wFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A                            =
+                    target=3D"_blank" rel=3D"noopener" style=3D"color: #0e0=
+e24;">Answers to 7 Skills-based Interview Questions</a></h2></td>=0D=0A    =
+                                </tr>=0D=0A                                =
+  </tbody>=0D=0A                                </table></td>=0D=0A        =
+                    </tr>=0D=0A                          </tbody>=0D=0A    =
+                    </table></td>=0D=0A                    </tr>=0D=0A     =
+             </tbody>=0D=0A                </table>=0D=0A                =
+=0D=0A                <!--END Heading Section--> =0D=0A                <!--=
+START Article Section-->=0D=0A                =0D=0A                <table =
+class=3D"table600" style=3D"width: 600px;" border=3D"0" width=3D"600" cells=
+pacing=3D"0" cellpadding=3D"0"=0D=0A                      align=3D"center" =
+bgcolor=3D"#FFFFFF">=0D=0A                  <tbody>=0D=0A                  =
+  <tr>=0D=0A                      <td class=3D"darkmode" align=3D"center"><=
+table class=3D"table-inner" border=3D"0" width=3D"520" cellspacing=3D"0" ce=
+llpadding=3D"0">=0D=0A                          <tbody>=0D=0A              =
+              <tr>=0D=0A                              <td=0D=0A            =
+                        style=3D"font-size: 1px; line-height: 1px; -webkit-=
+text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A                 =
+           </tr>=0D=0A                            <tr>=0D=0A               =
+               <td><!--Image-->=0D=0A                                =0D=0A=
+                                <table class=3D"table2-2" border=3D"0" widt=
+h=3D"250" cellspacing=3D"0" cellpadding=3D"0"=0D=0A                        =
+              align=3D"left">=0D=0A                                  <tbody=
+>=0D=0A                                    <tr>=0D=0A                      =
+                <td align=3D"center"><a style=3D"text-decoration: none;"=0D=
+=0A                                              href=3D"http://careerbuild=
+er.et.e.sparkpost.com/f/a/-qEeALYGBn0EqGAPQDS3wg~~/AAAAAQA~/RgRlnpxdP0ThaHR=
+0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3ByZXBhcmUtYW5zd2Vycy10by10aG=
+VzZS03LXNraWxsc2Jhc2VkLWludGVydmlldy1xdWVzdGlvbnM_c2l0ZWlkPW5ld3NsZXR0ZXImd=
+XRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIz=
+LXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PXMzaW1nVwd=
+jYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A  =
+                                            target=3D"_blank"><img class=3D=
+"img2"=0D=0A                                                src=3D"https://=
+hiring-assets.careerbuilder.com/marketing/assets/campaigns/NL_Jan23/b2c_nl_=
+jan23_art2.png"=0D=0A                                                alt=3D=
+"Article image" width=3D"250" border=3D"0" data-widget=3D"image"></a></td>=
+=0D=0A                                    </tr>=0D=0A                      =
+            </tbody>=0D=0A                                </table>=0D=0A   =
+                             =0D=0A                                <!--End =
+Image--> =0D=0A                                <!--Space-->=0D=0A          =
+                      =0D=0A                                <table align=3D=
+"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"20"=0D=0A=
+                                      width=3D"1">=0D=0A                   =
+               <tbody>=0D=0A                                    <tr>=0D=0A =
+                                     <td style=3D"font-size: 0;line-height:=
+ 0;border-collapse: collapse;"><p style=3D"padding-left: 20px;">&nbsp;</p><=
+/td>=0D=0A                                    </tr>=0D=0A                  =
+                </tbody>=0D=0A                                </table>=0D=
+=0A                                =0D=0A                                <!=
+--End Space--> =0D=0A                                <!--Text-->=0D=0A     =
+                           =0D=0A                                <table cla=
+ss=3D"table2-2" border=3D"0" width=3D"250" cellspacing=3D"0" cellpadding=3D=
+"0"=0D=0A                                      align=3D"right">=0D=0A      =
+                            <tbody>=0D=0A                                  =
+  <tr class=3D"table-inner">=0D=0A                                      <td=
+=0D=0A                                            style=3D"font-family: 'Ro=
+boto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; color: #0e0e=
+24; line-height: 24px; text-align: left;"><p>Understanding what to expect w=
+ith skills-based interview questions can help you feel more prepared when y=
+ou sit down with the interviewer. But what counts as a =E2=80=9Cskills-base=
+d interview,=E2=80=9D anyway=3F A skills-based interview helps test applica=
+nts' skills.</p></td>=0D=0A                                    </tr>=0D=0A =
+                                   <tr>=0D=0A                              =
+        <td=0D=0A                                            style=3D"font-=
+size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 9.5px=
+;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A        =
+                            <tr>=0D=0A                                     =
+ <td class=3D"tdcenter" align=3D"left"><!--CTA Button-->=0D=0A             =
+                           =0D=0A                                        <t=
+able class=3D"button-blue"=0D=0A                                           =
+   style=3D"text-align: center; cursor: pointer; -webkit-appearance: none; =
+background: #2F4BA0; box-sizing: border-box; color: #0e0e24; font-family: '=
+Barlow', 'Arial', sans-serif; font-size: 16px; font-weight: bold; text-deco=
+ration: none; position: relative; border: none; -webkit-border-radius: 5px;=
+ -moz-border-radius: 5px; border-radius: 5px; margin: 0; line-height: 16px;=
+ outline: none; white-space: normal; height: auto; min-height: 45px; displa=
+y: inline-block;"=0D=0A                                              border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#2F4BA0">=0D=0A      =
+                                    <tbody>=0D=0A                          =
+                  <tr>=0D=0A                                              <=
+td valign=3D"middle"=0D=0A                                                 =
+   style=3D"padding-left: 30px; padding-right: 30px; padding-top: 15px; pad=
+ding-bottom: 15px;"><a style=3D"color: #ffffff; text-decoration: none;"=0D=
+=0A                                                      href=3D"http://car=
+eerbuilder.et.e.sparkpost.com/f/a/TLnenkK9-kD3-MUBVnTwSA~~/AAAAAQA~/RgRlnpx=
+dP0ThaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL3ByZXBhcmUtYW5zd2Vycy=
+10by10aGVzZS03LXNraWxsc2Jhc2VkLWludGVydmlldy1xdWVzdGlvbnM_c2l0ZWlkPW5ld3NsZ=
+XR0ZXImdXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWdu=
+PWphbjIzLXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PXM=
+zY3RhVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA=
+~~"=0A                                                      target=3D"_blan=
+k">Learn More</a></td>=0D=0A                                            </t=
+r>=0D=0A                                          </tbody>=0D=0A           =
+                             </table>=0D=0A                                =
+        =0D=0A                                        <!--End CTA Button-->=
+</td>=0D=0A                                    </tr>=0D=0A                 =
+                 </tbody>=0D=0A                                </table>=0D=
+=0A                                =0D=0A                                <!=
+--End Text--></td>=0D=0A                            </tr>=0D=0A            =
+                <tr>=0D=0A                              <td class=3D"mobile=
+height"=0D=0A                                    style=3D"font-size: 1px; l=
+ine-height: 1px; -webkit-text-size-adjust: none; padding: 19.5px;">&nbsp;</=
+td>=0D=0A                            </tr>=0D=0A                          <=
+/tbody>=0D=0A                        </table></td>=0D=0A                   =
+ </tr>=0D=0A                  </tbody>=0D=0A                </table>=0D=0A =
+               =0D=0A                <!--END Article Section--></td>=0D=0A =
+           </tr>=0D=0A          </tbody>=0D=0A        </table>=0D=0A       =
+ =0D=0A        <!--END Two Column Article Section--> =0D=0A        <!--STAR=
+T Two Column Article Section-->=0D=0A        =0D=0A        <table class=3D"=
+table600" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"center">=0D=0A          <tbody>=0D=0A            <tr>=0D=0A         =
+     <td valign=3D"top" bgcolor=3D"#ffffff"><!--START Heading Section-->=0D=
+=0A                =0D=0A                <table border=3D"0" width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0">=0D=0A                  <tbody>=0D=0A =
+                   <tr>=0D=0A                      <td valign=3D"top"><tabl=
+e class=3D"table600" border=3D"0" width=3D"600" cellspacing=3D"0" cellpaddi=
+ng=3D"0"=0D=0A                              align=3D"center">=0D=0A        =
+                  <tbody>=0D=0A                            <tr>=0D=0A      =
+                        <td class=3D"darkmode" align=3D"center"><table clas=
+s=3D"table-inner" border=3D"0" width=3D"520" cellspacing=3D"0" cellpadding=
+=3D"0">=0D=0A                                  <tbody>=0D=0A               =
+                     <tr>=0D=0A                                      <td cl=
+ass=3D"mobileheight"=0D=0A                                            style=
+=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; paddi=
+ng: 19.5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=
+=0A                                    <tr>=0D=0A                          =
+            <td><h2=0D=0A                                              styl=
+e=3D"font-family: 'Barlow', 'Arial', sans-serif; font-size: 30px; color: #0=
+e0e24; font-weight: 800; line-height: 30px; text-align: center; text-transf=
+orm: uppercase; margin: 0px;"> <a style=3D"font-weight: bold; color: #0e0e2=
+4;"=0D=0A                                                href=3D"http://car=
+eerbuilder.et.e.sparkpost.com/f/a/qg44e8S95W5ldI7OCQD1Jw~~/AAAAAQA~/RgRlnpx=
+dP0TjaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlLzUtdHlwZXMtb2YtcHJvYm=
+xlbS1jb3dvcmtlcnMtYW5kLWhvdy10by1hbG1vc3QtZGVhbC13aXRoLXRoZW0_c2l0ZWlkPW5ld=
+3NsZXR0ZXImdXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBh=
+aWduPWphbjIzLXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW5=
+0PXM1aDFXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAA=
+AA"=0A                                                target=3D"_blank" rel=
+=3D"noopener">How to Deal with 5 Kinds of Difficult Co-workers</a> </h2></t=
+d>=0D=0A                                    </tr>=0D=0A                    =
+              </tbody>=0D=0A                                </table></td>=
+=0D=0A                            </tr>=0D=0A                          </tb=
+ody>=0D=0A                        </table></td>=0D=0A                    </=
+tr>=0D=0A                  </tbody>=0D=0A                </table>=0D=0A    =
+            =0D=0A                <!--END Heading Section--> =0D=0A        =
+        <!--START Article Section-->=0D=0A                =0D=0A           =
+     <table class=3D"table600" style=3D"width: 600px;" border=3D"0" width=
+=3D"600" cellspacing=3D"0" cellpadding=3D"0"=0D=0A                      ali=
+gn=3D"center" bgcolor=3D"">=0D=0A                  <tbody>=0D=0A           =
+         <tr>=0D=0A                      <td class=3D"darkmode" align=3D"ce=
+nter"><table class=3D"table-inner" border=3D"0" width=3D"520" cellspacing=
+=3D"0" cellpadding=3D"0">=0D=0A                          <tbody>=0D=0A     =
+                       <tr>=0D=0A                              <td=0D=0A   =
+                                 style=3D"font-size: 1px; line-height: 1px;=
+ -webkit-text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A        =
+                    </tr>=0D=0A                            <tr>=0D=0A      =
+                        <td><!--Image-->=0D=0A                             =
+   =0D=0A                                <table class=3D"table2-2" border=
+=3D"0" width=3D"250" cellspacing=3D"0" cellpadding=3D"0"=0D=0A             =
+                         align=3D"right">=0D=0A                            =
+      <tbody>=0D=0A                                    <tr>=0D=0A          =
+                            <td align=3D"center"><a=0D=0A                  =
+                            href=3D"http://careerbuilder.et.e.sparkpost.com=
+/f/a/BN3GSKsihK5hRE0vgABjSA~~/AAAAAQA~/RgRlnpxdP0TkaHR0cHM6Ly93d3cuY2FyZWVy=
+YnVpbGRlci5jb20vYWR2aWNlLzUtdHlwZXMtb2YtcHJvYmxlbS1jb3dvcmtlcnMtYW5kLWhvdy1=
+0by1hbG1vc3QtZGVhbC13aXRoLXRoZW0_c2l0ZWlkPW5ld3NsZXR0ZXImdXRtX3NvdXJjZT1uZX=
+dzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIzLXNwLW5vanJfbm9zY=
+Wxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PXM1aW1nVwdjYXJlZXJiQgpjtV0X=
+vGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A                   =
+                           target=3D"_blank" rel=3D"noopener"><img class=3D=
+"img2"=0D=0A                                                style=3D"font-f=
+amily: 'Roboto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; co=
+lor: #0e0e24; line-height: 24px; text-align: left;"=0D=0A                  =
+                              src=3D"https://hiring-assets.careerbuilder.co=
+m/marketing/assets/campaigns/NL_Jan23/b2c_nl_jan23_art3.png"=0D=0A         =
+                                       alt=3D"Article image" width=3D"250" =
+height=3D"188" border=3D"0"></a></td>=0D=0A                                =
+    </tr>=0D=0A                                  </tbody>=0D=0A            =
+                    </table>=0D=0A                                =0D=0A   =
+                             <!--End Image--> =0D=0A                       =
+         <!--Space-->=0D=0A                                =0D=0A          =
+                      <table align=3D"right" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" height=3D"20"=0D=0A                                     =
+ width=3D"1">=0D=0A                                  <tbody>=0D=0A         =
+                           <tr>=0D=0A                                      =
+<td style=3D"font-size: 0;line-height: 0;border-collapse: collapse;"><p sty=
+le=3D"padding-left: 20px;">&nbsp;</p></td>=0D=0A                           =
+         </tr>=0D=0A                                  </tbody>=0D=0A       =
+                         </table>=0D=0A                                =0D=
+=0A                                <!--End Space--> =0D=0A                 =
+               <!--Text-->=0D=0A                                =0D=0A     =
+                           <table class=3D"table2-2" border=3D"0" width=3D"=
+250" cellspacing=3D"0" cellpadding=3D"0"=0D=0A                             =
+         align=3D"left">=0D=0A                                  <tbody>=0D=
+=0A                                    <tr class=3D"table-inner">=0D=0A    =
+                                  <td=0D=0A                                =
+            style=3D"font-family: 'Roboto', 'Arial', sans-serif; font-size:=
+ 16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-align: lef=
+t;"><p>Workplaces will have occasional interpersonal issues or disagreement=
+s. Other times, though, it might be one specific co-worker who creates prob=
+lems, such as through gossip or negativity. Read our guide on how to deal w=
+ith 5  of the most common types of difficult co-workers.</p></td>=0D=0A    =
+                                </tr>=0D=0A                                =
+    <tr>=0D=0A                                      <td=0D=0A              =
+                              style=3D"font-size: 1px; line-height: 1px; -w=
+ebkit-text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A           =
+                         </tr>=0D=0A                                    <tr=
+>=0D=0A                                      <td class=3D"tdcenter" align=
+=3D"left"><!--CTA Button-->=0D=0A                                        =
+=0D=0A                                        <table class=3D"button-blue"=
+=0D=0A                                              style=3D"text-align: ce=
+nter; cursor: pointer; -webkit-appearance: none; background: #2F4BA0; box-s=
+izing: border-box; color: #0e0e24; font-family: 'Barlow', 'Arial', sans-ser=
+if; font-size: 16px; font-weight: bold; text-decoration: none; position: re=
+lative; border: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; =
+border-radius: 5px; margin: 0; line-height: 16px; outline: none; white-spac=
+e: normal; height: auto; min-height: 45px; display: inline-block;"=0D=0A   =
+                                           border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#2F4BA0">=0D=0A                                =
+          <tbody>=0D=0A                                            <tr>=0D=
+=0A                                              <td valign=3D"middle"=0D=
+=0A                                                    style=3D"padding-lef=
+t: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 15px;"><a =
+style=3D"color: #ffffff; text-decoration: none;"=0D=0A                     =
+                                 href=3D"http://careerbuilder.et.e.sparkpos=
+t.com/f/a/odRPo2NFbGH5IrhoxP0Myg~~/AAAAAQA~/RgRlnpxdP0TkaHR0cHM6Ly93d3cuY2F=
+yZWVyYnVpbGRlci5jb20vYWR2aWNlLzUtdHlwZXMtb2YtcHJvYmxlbS1jb3dvcmtlcnMtYW5kLW=
+hvdy10by1hbG1vc3QtZGVhbC13aXRoLXRoZW0_c2l0ZWlkPW5ld3NsZXR0ZXImdXRtX3NvdXJjZ=
+T1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIzLXNwLW5vanJf=
+bm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PXM1Y3RhVwdjYXJlZXJiQgp=
+jtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A              =
+                                        target=3D"_blank">Learn How to Deal=
+</a></td>=0D=0A                                            </tr>=0D=0A     =
+                                     </tbody>=0D=0A                        =
+                </table>=0D=0A                                        =0D=
+=0A                                        <!--End CTA Button--></td>=0D=0A=
+                                    </tr>=0D=0A                            =
+      </tbody>=0D=0A                                </table>=0D=0A         =
+                       =0D=0A                                <!--End Text--=
+></td>=0D=0A                            </tr>=0D=0A                        =
+    <tr>=0D=0A                              <td class=3D"mobileheight"=0D=
+=0A                                    style=3D"font-size: 1px; line-height=
+: 1px; -webkit-text-size-adjust: none; padding: 19.5px;">&nbsp;</td>=0D=0A =
+                           </tr>=0D=0A                          </tbody>=0D=
+=0A                        </table></td>=0D=0A                    </tr>=0D=
+=0A                  </tbody>=0D=0A                </table>=0D=0A          =
+      =0D=0A                <!--END Article Section--></td>=0D=0A          =
+  </tr>=0D=0A          </tbody>=0D=0A        </table>=0D=0A        =0D=0A  =
+      <!--END Two Column Article Section--> =0D=0A        <!--START Insight=
+s, Tips, Trends Section-->=0D=0A        =0D=0A        <table class=3D"table=
+600" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center">=0D=0A          <tbody>=0D=0A            <tr>=0D=0A            =
+  <td><!--START Heading Section-->=0D=0A                =0D=0A             =
+   <table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=
+=0D=0A                  <tbody>=0D=0A                    <tr>=0D=0A        =
+              <td valign=3D"top"><table class=3D"table600" border=3D"0" wid=
+th=3D"600" cellspacing=3D"0" cellpadding=3D"0"=0D=0A                       =
+       align=3D"center" bgcolor=3D"#FFFFFF">=0D=0A                         =
+ <tbody>=0D=0A                            <tr>=0D=0A                       =
+       <td class=3D"darkmode" align=3D"center"><table class=3D"table-inner"=
+ border=3D"0" width=3D"520" cellspacing=3D"0" cellpadding=3D"0">=0D=0A     =
+                             <tbody>=0D=0A                                 =
+   <tr>=0D=0A                                      <td class=3D"mobileheigh=
+t"=0D=0A                                            style=3D"font-size: 1px=
+; line-height: 1px; -webkit-text-size-adjust: none; padding: 19.5px;">&nbsp=
+;</td>=0D=0A                                    </tr>=0D=0A                =
+                    <tr>=0D=0A                                      <td><h2=
+=0D=0A                                              style=3D"font-family: '=
+Barlow', 'Arial', sans-serif; font-size: 30px; color: #0e0e24; font-weight:=
+ 800; line-height: 30px; text-align: center; text-transform: uppercase; mar=
+gin: 0px;"> More insights, tips, and trends</h2></td>=0D=0A                =
+                    </tr>=0D=0A                                    <tr>=0D=
+=0A                                      <td align=3D"center"><img=0D=0A   =
+                                           style=3D"font-family: 'Roboto', =
+'Arial', sans-serif; font-size: 16px; font-weight: 400; color: #0e0e24; lin=
+e-height: 24px; text-align: left;"=0D=0A                                   =
+           src=3D"https://hiring-assets.careerbuilder.com/marketing/assets/=
+images/pardot/Images/2x/underline_red@2x.png"=0D=0A                        =
+                      alt=3D"Underline" width=3D"200"></td>=0D=0A          =
+                          </tr>=0D=0A                                  </tb=
+ody>=0D=0A                                </table></td>=0D=0A              =
+              </tr>=0D=0A                          </tbody>=0D=0A          =
+              </table></td>=0D=0A                    </tr>=0D=0A           =
+       </tbody>=0D=0A                </table>=0D=0A                =0D=0A  =
+              <!--END Heading Section--> =0D=0A                <!--START Re=
+source Link-->=0D=0A                =0D=0A                <table class=3D"t=
+able600" style=3D"width: 600px;" border=3D"0" width=3D"600" cellspacing=3D"=
+0" cellpadding=3D"0"=0D=0A                      align=3D"center" bgcolor=3D=
+"#FFFFFF">=0D=0A                  <tbody>=0D=0A                    <tr>=0D=
+=0A                      <td class=3D"darkmode"=0D=0A                      =
+      style=3D"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: =
+none; padding: 9.5px;">&nbsp;</td>=0D=0A                    </tr>=0D=0A    =
+                <tr>=0D=0A                      <td class=3D"darkmode" alig=
+n=3D"center"><table class=3D"table-inner" border=3D"0" width=3D"339" cellsp=
+acing=3D"0" cellpadding=3D"0">=0D=0A                          <tbody>=0D=0A=
+                            <tr>=0D=0A                              <th cla=
+ss=3D"breakapart" align=3D"center"><a=0D=0A                                =
+      href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/wiBLaYUJFmm8XLwyA=
+RzlLQ~~/AAAAAQA~/RgRlnpxdP0TgaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aW=
+NlL2NvbW1vbi1qb2ItYXBwbGljYXRpb24tbWlzdGFrZXMtYW5kLWhvdy10by1hdm9pZC10aGVtP=
+3NpdGVpZD1uZXdzbGV0dGVyJnV0bV9zb3VyY2U9bmV3c2xldHRlciZ1dG1fbWVkaXVtPWVtYWls=
+JnV0bV9jYW1wYWlnbj1qYW4yMy1zcC1ub2pyX25vc2FsaW4tYSZ1dG1fdGVybT0yMDIzMDEwOSZ=
+1dG1fY29udGVudD1pdHQtbGluazFXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aG=
+pAZ21haWwuY29tWAQAAAAA"=0A                                      target=3D"_=
+blank" rel=3D"noopener"><img=0D=0A                                        s=
+tyle=3D"width: 70px; height: 70px; margin: auto; font-family: 'Arial', sans=
+-serif; font-size: 16px; font-weight: normal; color: #0e0e24; line-height: =
+1.5em; text-align: left;"=0D=0A                                        src=
+=3D"https://hiring-assets.careerbuilder.com/marketing/assets/campaigns/NL_J=
+an23/b2c_nl_jan23_thumb1.png"=0D=0A                                        =
+alt=3D"Article image" width=3D"70" height=3D"70" data-widget=3D"image"></a>=
+</th>=0D=0A                              <th class=3D"breakapart"=0D=0A    =
+                                style=3D"width: 5%; font-size: 1px; line-he=
+ight: 1px; -webkit-text-size-adjust: none;"=0D=0A                          =
+          height=3D"10">&nbsp;</th>=0D=0A                              <th =
+class=3D"breakapart"=0D=0A                                    style=3D"widt=
+h: 85%; font-family: 'Roboto', 'Arial', sans-serif; font-size: 16px; color:=
+ #2f4ba0; font-weight: bold; line-height: 24px; text-align: left;"> <a styl=
+e=3D"font-family: 'Roboto', 'Arial', sans-serif; font-size: 16px; color: #2=
+f4ba0; font-weight: bold; line-height: 24px; text-decoration: underline;"=
+=0D=0A                                      href=3D"http://careerbuilder.et=
+=2Ee.sparkpost.com/f/a/wiBLaYUJFmm8XLwyARzlLQ~~/AAAAAQA~/RgRlnpxdP0TgaHR0cH=
+M6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL2NvbW1vbi1qb2ItYXBwbGljYXRpb24tb=
+WlzdGFrZXMtYW5kLWhvdy10by1hdm9pZC10aGVtP3NpdGVpZD1uZXdzbGV0dGVyJnV0bV9zb3Vy=
+Y2U9bmV3c2xldHRlciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1qYW4yMy1zcC1ub2p=
+yX25vc2FsaW4tYSZ1dG1fdGVybT0yMDIzMDEwOSZ1dG1fY29udGVudD1pdHQtbGluazFXB2Nhcm=
+VlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A         =
+                             target=3D"_blank">Stay away from the most comm=
+on resume mistakes</a></th>=0D=0A                            </tr>=0D=0A   =
+                       </tbody>=0D=0A                        </table></td>=
+=0D=0A                    </tr>=0D=0A                  </tbody>=0D=0A      =
+          </table>=0D=0A                =0D=0A                <!--END Resou=
+rce Link--> =0D=0A                <!--START Resource Link-->=0D=0A         =
+       =0D=0A                <table class=3D"table600" style=3D"width: 600p=
+x;" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0"=0D=0A   =
+                   align=3D"center" bgcolor=3D"#FFFFFF">=0D=0A             =
+     <tbody>=0D=0A                    <tr>=0D=0A                      <td c=
+lass=3D"darkmode"=0D=0A                            style=3D"font-size: 1px;=
+ line-height: 1px; -webkit-text-size-adjust: none; padding: 9.5px;">&nbsp;<=
+/td>=0D=0A                    </tr>=0D=0A                    <tr>=0D=0A    =
+                  <td class=3D"darkmode" align=3D"center"><table class=3D"t=
+able-inner" border=3D"0" width=3D"339" cellspacing=3D"0" cellpadding=3D"0">=
+=0D=0A                          <tbody>=0D=0A                            <t=
+r>=0D=0A                              <th class=3D"breakapart" align=3D"cen=
+ter"><a=0D=0A                                      href=3D"http://careerbui=
+lder.et.e.sparkpost.com/f/a/RJi1x_rSwiJQZK2z-_Kh7Q~~/AAAAAQA~/RgRlnpxdP0TSa=
+HR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL2hvdy10by1leGNlbC1pbi1ldmVy=
+eS10eXBlLW9mLWludGVydmlldz9zaXRlaWQ9bmV3c2xldHRlciZ1dG1fc291cmNlPW5ld3NsZXR=
+0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3Atbm9qcl9ub3NhbGluLW=
+EmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnRlbnQ9aXR0LWxpbmsyVwdjYXJlZXJiQgpjtV0Xv=
+GPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A                    =
+                  target=3D"_blank" rel=3D"noopener"><img=0D=0A            =
+                            style=3D"width: 70px; height: 70px; margin: aut=
+o; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: normal; =
+color: #0e0e24; line-height: 1.5em; text-align: left;"=0D=0A               =
+                         src=3D"https://hiring-assets.careerbuilder.com/mar=
+keting/assets/campaigns/NL_Jan23/b2c_nl_jan23_thumb2.png"=0D=0A            =
+                            alt=3D"Article Image" width=3D"70" height=3D"70=
+" data-widget=3D"image"></a></th>=0D=0A                              <th cl=
+ass=3D"breakapart"=0D=0A                                    style=3D"width:=
+ 5%; font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none;"=0D=
+=0A                                    height=3D"10">&nbsp;</th>=0D=0A     =
+                         <th class=3D"breakapart"=0D=0A                    =
+                style=3D"width: 85%; font-family: 'Roboto', 'Arial', sans-s=
+erif; font-size: 16px; color: #2f4ba0; font-weight: bold; line-height: 24px=
+; text-align: left;"> <a style=3D"font-family: 'Roboto', 'Arial', sans-seri=
+f; font-size: 16px; color: #2f4ba0; font-weight: bold; line-height: 24px; t=
+ext-decoration: underline;"=0D=0A                                      href=
+=3D"http://careerbuilder.et.e.sparkpost.com/f/a/RJi1x_rSwiJQZK2z-_Kh7Q~~/AA=
+AAAQA~/RgRlnpxdP0TSaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL2hvdy10=
+by1leGNlbC1pbi1ldmVyeS10eXBlLW9mLWludGVydmlldz9zaXRlaWQ9bmV3c2xldHRlciZ1dG1=
+fc291cmNlPW5ld3NsZXR0ZXImdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249amFuMjMtc3=
+Atbm9qcl9ub3NhbGluLWEmdXRtX3Rlcm09MjAyMzAxMDkmdXRtX2NvbnRlbnQ9aXR0LWxpbmsyV=
+wdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A=
+                                      target=3D"_blank">Different types of =
+job interviews and how to prepare</a></th>=0D=0A                           =
+ </tr>=0D=0A                          </tbody>=0D=0A                       =
+ </table></td>=0D=0A                    </tr>=0D=0A                  </tbod=
+y>=0D=0A                </table>=0D=0A                =0D=0A               =
+ <!--END Resource Link--> =0D=0A                <!--START Resource Link-->=
+=0D=0A                =0D=0A                <table class=3D"table600" style=
+=3D"width: 600px;" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=
+=3D"0"=0D=0A                      align=3D"center" bgcolor=3D"#FFFFFF">=0D=
+=0A                  <tbody>=0D=0A                    <tr>=0D=0A           =
+           <td class=3D"darkmode"=0D=0A                            style=3D=
+"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding:=
+ 9.5px;">&nbsp;</td>=0D=0A                    </tr>=0D=0A                  =
+  <tr>=0D=0A                      <td class=3D"darkmode" align=3D"center"><=
+table class=3D"table-inner" border=3D"0" width=3D"339" cellspacing=3D"0" ce=
+llpadding=3D"0">=0D=0A                          <tbody>=0D=0A              =
+              <tr>=0D=0A                              <th class=3D"breakapa=
+rt" align=3D"center"><a=0D=0A                                      href=3D"=
+http://careerbuilder.et.e.sparkpost.com/f/a/BNo-JibciA4PYk4o9rSUzA~~/AAAAAQ=
+A~/RgRlnpxdP0TWaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5jb20vYWR2aWNlL2hvdy10by1z=
+cGVhay11cC1pbi1tZWV0aW5ncy13aXRoLWNvbmZpZGVuY2U_c2l0ZWlkPW5ld3NsZXR0ZXImdXR=
+tX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIzLX=
+NwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PWl0dC1saW5rM=
+1cHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBAAAAAA~"=0A=
+                                      target=3D"_blank" rel=3D"noopener"><i=
+mg=0D=0A                                        style=3D"width: 70px; heigh=
+t: 70px; margin: auto; font-family: 'Arial', sans-serif; font-size: 16px; f=
+ont-weight: normal; color: #0e0e24; line-height: 1.5em; text-align: left;"=
+=0D=0A                                        src=3D"https://hiring-assets.=
+careerbuilder.com/marketing/assets/campaigns/NL_Jan23/b2c_nl_jan23_thumb3.p=
+ng"=0D=0A                                        alt=3D"Article image" widt=
+h=3D"70" height=3D"70" data-widget=3D"image"></a></th>=0D=0A               =
+               <th class=3D"breakapart"=0D=0A                              =
+      style=3D"width: 5%; font-size: 1px; line-height: 1px; -webkit-text-si=
+ze-adjust: none;"=0D=0A                                    height=3D"10">&n=
+bsp;</th>=0D=0A                              <th class=3D"breakapart"=0D=0A=
+                                    style=3D"width: 85%; font-family: 'Robo=
+to', 'Arial', sans-serif; font-size: 16px; color: #2f4ba0; font-weight: bol=
+d; line-height: 24px; text-align: left;"> <a style=3D"font-family: 'Roboto'=
+, 'Arial', sans-serif; font-size: 16px; color: #2f4ba0; font-weight: bold; =
+line-height: 24px; text-decoration: underline;"=0D=0A                      =
+                href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/BNo-Jib=
+ciA4PYk4o9rSUzA~~/AAAAAQA~/RgRlnpxdP0TWaHR0cHM6Ly93d3cuY2FyZWVyYnVpbGRlci5j=
+b20vYWR2aWNlL2hvdy10by1zcGVhay11cC1pbi1tZWV0aW5ncy13aXRoLWNvbmZpZGVuY2U_c2l=
+0ZWlkPW5ld3NsZXR0ZXImdXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdX=
+RtX2NhbXBhaWduPWphbjIzLXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0b=
+V9jb250ZW50PWl0dC1saW5rM1cHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBn=
+bWFpbC5jb21YBAAAAAA~"=0A                                      target=3D"_bl=
+ank">How to speak up in meetings with confidence</a></th>=0D=0A            =
+                </tr>=0D=0A                          </tbody>=0D=0A        =
+                </table></td>=0D=0A                    </tr>=0D=0A         =
+         </tbody>=0D=0A                </table>=0D=0A                =0D=0A=
+                <!--END Resource Link--> =0D=0A                <!--START Ca=
+ll To Action Section-->=0D=0A                =0D=0A                <table b=
+order=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=0D=0A      =
+            <tbody>=0D=0A                    <tr>=0D=0A                    =
+  <td valign=3D"top" bgcolor=3D""><table class=3D"table600" style=3D"width:=
+ 600px;" border=3D"0" width=3D"600" cellspacing=3D"0"=0D=0A                =
+              cellpadding=3D"0" align=3D"center" bgcolor=3D"#ffffff">=0D=0A=
+                          <tbody>=0D=0A                            <tr>=0D=
+=0A                              <td class=3D"darkmode" align=3D"center"><t=
+able class=3D"table-inner" border=3D"0" width=3D"520" cellspacing=3D"0" cel=
+lpadding=3D"0">=0D=0A                                  <tbody>=0D=0A       =
+                             <tr>=0D=0A                                    =
+  <td=0D=0A                                            style=3D"font-size: =
+1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 9.5px;">&nb=
+sp;</td>=0D=0A                                    </tr>=0D=0A              =
+                      <tr>=0D=0A                                      <td a=
+lign=3D"center"><!--CTA Button-->=0D=0A                                    =
+    =0D=0A                                        <table class=3D"button-bl=
+ue"=0D=0A                                              style=3D"text-align:=
+ center; cursor: pointer; -webkit-appearance: none; background: #2F4BA0; bo=
+x-sizing: border-box; color: #0e0e24; font-family: 'Barlow', 'Arial', sans-=
+serif; font-size: 16px; font-weight: bold; text-decoration: none; position:=
+ relative; border: none; -webkit-border-radius: 5px; -moz-border-radius: 5p=
+x; border-radius: 5px; margin: 0; line-height: 16px; outline: none; white-s=
+pace: normal; height: auto; min-height: 45px; display: inline-block;"=0D=0A=
+                                              border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" bgcolor=3D"#2F4BA0">=0D=0A                             =
+             <tbody>=0D=0A                                            <tr>=
+=0D=0A                                              <td valign=3D"middle"=
+=0D=0A                                                    style=3D"padding-=
+left: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 15px;">=
+<a style=3D"color: #ffffff; text-decoration: none;"=0D=0A                  =
+                                    href=3D"http://careerbuilder.et.e.spark=
+post.com/f/a/DLRz9SWG_ew4PHkWBCWHZA~~/AAAAAQA~/RgRlnpxdP0SoaHR0cHM6Ly93d3cu=
+Y2FyZWVyYnVpbGRlci5jb20vYWR2aWNlP3NpdGVpZD1uZXdzbGV0dGVyJnV0bV9zb3VyY2U9bmV=
+3c2xldHRlciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1qYW4yMy1zcC1ub2pyX25vc2=
+FsaW4tYSZ1dG1fdGVybT0yMDIzMDEwOSZ1dG1fY29udGVudD1pdHQtY3RhVwdjYXJlZXJiQgpjt=
+V0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A                =
+                                      target=3D"_blank">More Career Advice<=
+/a></td>=0D=0A                                            </tr>=0D=0A      =
+                                    </tbody>=0D=0A                         =
+               </table>=0D=0A                                        =0D=0A=
+                                        <!--End CTA Button--></td>=0D=0A   =
+                                 </tr>=0D=0A                               =
+     <tr>=0D=0A                                      <td class=3D"mobilehei=
+ght"=0D=0A                                            style=3D"font-size: 1=
+px; line-height: 1px; -webkit-text-size-adjust: none; padding: 19.5px;">&nb=
+sp;</td>=0D=0A                                    </tr>=0D=0A              =
+                    </tbody>=0D=0A                                </table><=
+/td>=0D=0A                            </tr>=0D=0A                          =
+</tbody>=0D=0A                        </table></td>=0D=0A                  =
+  </tr>=0D=0A                  </tbody>=0D=0A                </table>=0D=0A=
+                =0D=0A                <!--END Call To Action Section--></td=
+>=0D=0A            </tr>=0D=0A          </tbody>=0D=0A        </table>=0D=
+=0A        =0D=0A        <!--END Tips, Trends Section--> =0D=0A        <!--=
+START Footer Section-->=0D=0A        =0D=0A        <table border=3D"0" widt=
+h=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=0D=0A          <tbody>=0D=
+=0A            <tr>=0D=0A              <td valign=3D"top"><table class=3D"t=
+able600" style=3D"width: 600px;" border=3D"0" width=3D"600" cellspacing=3D"=
+0" cellpadding=3D"0"=0D=0A                      align=3D"center" bgcolor=3D=
+"#FFFFFF">=0D=0A                  <!--3:3 -->=0D=0A                  <tbody=
+>=0D=0A                    <tr>=0D=0A                      <td class=3D"dar=
+kmode" valign=3D"top" bgcolor=3D""><table class=3D"table600" style=3D"width=
+: 600px;" border=3D"0" width=3D"600" cellspacing=3D"0"=0D=0A               =
+               cellpadding=3D"0" align=3D"center">=0D=0A                   =
+       <tbody>=0D=0A                            <tr>=0D=0A                 =
+             <td><table class=3D"table-inner" border=3D"0" width=3D"520" ce=
+llspacing=3D"0" cellpadding=3D"0"=0D=0A                                    =
+  align=3D"center">=0D=0A                                  <tbody>=0D=0A   =
+                                 <tr>=0D=0A                                =
+      <td class=3D"border-white"=0D=0A                                     =
+       style=3D"border-top: 1px solid #0E0E24; font-size: 0; line-height: 0=
+;"=0D=0A                                            height=3D"1">&nbsp;</td=
+>=0D=0A                                    </tr>=0D=0A                     =
+               <tr>=0D=0A                                      <td class=3D=
+"mobileheight"=0D=0A                                            style=3D"fo=
+nt-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 19=
+=2E5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A  =
+                                  <!--Social-->=0D=0A                      =
+              <tr>=0D=0A                                      <td><table bo=
+rder=3D"0" width=3D"" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">=
+=0D=0A                                          <tbody>=0D=0A              =
+                              <tr>=0D=0A                                   =
+           <td><h5=0D=0A                                                   =
+   style=3D"font-family: 'Barlow', 'Arial', sans-serif; font-size: 16px; co=
+lor: #0e0e24; font-weight: bold; line-height: 16px; text-align: center; tex=
+t-transform: uppercase; margin: 0px;"> Search On The Go</h5></td>=0D=0A    =
+                                        </tr>=0D=0A                        =
+                    <tr>=0D=0A                                             =
+ <td=0D=0A                                                    style=3D"font=
+-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding: 9.5p=
+x;">&nbsp;</td>=0D=0A                                            </tr>=0D=
+=0A                                            <tr>=0D=0A                  =
+                            <td style=3D"text-align: center;" class=3D"soci=
+al"><a=0D=0A                                                      style=3D"=
+text-decoration: none;"=0D=0A                                              =
+        href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/yKkIM37NR47-Pir=
+T44-7Ag~~/AAAAAQA~/RgRlnpxdP0RTaHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBw=
+cy9kZXRhaWxzP2lkPWNvbS5jYXJlZXJidWlsZGVyLlN1Z2FyRHJvbmUmaGw9ZW5fVVNXB2NhcmV=
+lcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A          =
+                                            target=3D"_blank"><img class=3D=
+"light-img"=0D=0A                                                        st=
+yle=3D"font-family: 'Roboto', 'Arial', sans-serif; font-size: 16px; font-we=
+ight: 400; color: #0e0e24; line-height: 24px; text-align: left;"=0D=0A     =
+                                                   src=3D"https://hiring-as=
+sets.careerbuilder.com/marketing/assets/images/pardot/Images/2x/google-play=
+_icon@2x.png"=0D=0A                                                        =
+alt=3D"Get It On Google Play" width=3D"107" height=3D"35"=0D=0A            =
+                                            border=3D"0"></a> =0D=0A       =
+                                         <!--[if !mso]><! -->=0D=0A        =
+                                            <div class=3D"dark-img"=0D=0A  =
+                                                    style=3D"display: none;=
+ overflow: hidden; float: left; width: 0px; max-height: 0px; max-width: 0px=
+; line-height: 0px; visibility: hidden;"=0D=0A                             =
+                         align=3D"center"><a style=3D"text-decoration: none=
+;"=0D=0A                                                        href=3D"htt=
+p://careerbuilder.et.e.sparkpost.com/f/a/yKkIM37NR47-PirT44-7Ag~~/AAAAAQA~/=
+RgRlnpxdP0RTaHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWN=
+vbS5jYXJlZXJidWlsZGVyLlN1Z2FyRHJvbmUmaGw9ZW5fVVNXB2NhcmVlcmJCCmO1XRe8Y8M2Lw=
+FSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A                             =
+                           target=3D"_blank"><img=0D=0A                    =
+                                      style=3D"display: inline; font-family=
+: 'Roboto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; color: =
+#0e0e24; line-height: 24px; text-align: left;"=0D=0A                       =
+                                   src=3D"https://hiring-assets.careerbuild=
+er.com/marketing/assets/images/pardot/Images/2x/google-play_white_icon@2x.p=
+ng"=0D=0A                                                          alt=3D"G=
+et It On Google Play" width=3D"107" height=3D"35"=0D=0A                    =
+                                      border=3D"0"></a></div>=0D=0A        =
+                                            <!--<![endif]--> &nbsp;&nbsp;<a=
+ style=3D"text-decoration: none;"=0D=0A                                    =
+                  href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/0mZ5V=
+jhGOPz0nVXid9dcag~~/AAAAAQA~/RgRlnpxdP0Q_aHR0cHM6Ly9hcHBzLmFwcGxlLmNvbS91cy=
+9hcHAvam9icy1ieS1jYXJlZXJidWlsZGVyL2lkNTI0MTIzNjcwVwdjYXJlZXJiQgpjtV0XvGPDN=
+i8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~"=0A                        =
+                              target=3D"_blank"><img class=3D"light-img"=0D=
+=0A                                                        style=3D"font-fa=
+mily: 'Roboto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; col=
+or: #0e0e24; line-height: 24px; text-align: left;"=0D=0A                   =
+                                     src=3D"https://hiring-assets.careerbui=
+lder.com/marketing/assets/images/pardot/Images/2x/appstore_icon@2x.png"=0D=
+=0A                                                        alt=3D"Download =
+on the App Store" width=3D"107" height=3D"35"=0D=0A                        =
+                                border=3D"0"></a> =0D=0A                   =
+                             <!--[if !mso]><! -->=0D=0A                    =
+                                <div class=3D"dark-img"=0D=0A              =
+                                        style=3D"display: none; overflow: h=
+idden; float: left; width: 0px; max-height: 0px; max-width: 0px; line-heigh=
+t: 0px; visibility: hidden;"=0D=0A                                         =
+             align=3D"center"><a style=3D"text-decoration: none;"=0D=0A    =
+                                                    href=3D"http://careerbu=
+ilder.et.e.sparkpost.com/f/a/0mZ5VjhGOPz0nVXid9dcag~~/AAAAAQA~/RgRlnpxdP0Q_=
+aHR0cHM6Ly9hcHBzLmFwcGxlLmNvbS91cy9hcHAvam9icy1ieS1jYXJlZXJidWlsZGVyL2lkNTI=
+0MTIzNjcwVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAA=
+AAAA~~"=0A                                                        target=3D=
+"_blank"><img=0D=0A                                                        =
+  style=3D"display: inline; font-family: 'Roboto', 'Arial', sans-serif; fon=
+t-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-ali=
+gn: left;"=0D=0A                                                          s=
+rc=3D"https://hiring-assets.careerbuilder.com/marketing/assets/images/pardo=
+t/Images/2x/appstore_icon@2x.png"=0D=0A                                    =
+                      alt=3D"Download on the App Store" width=3D"107" heigh=
+t=3D"35"=0D=0A                                                          bor=
+der=3D"0"></a></div>=0D=0A                                                 =
+   <!--<![endif]--></td>=0D=0A                                            <=
+/tr>=0D=0A                                            <tr>=0D=0A           =
+                                   <td=0D=0A                               =
+                     style=3D"font-size: 1px; line-height: 1px; -webkit-tex=
+t-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A                    =
+                        </tr>=0D=0A                                        =
+    <tr>=0D=0A                                              <td><h5=0D=0A  =
+                                                    style=3D"font-family: '=
+Barlow', 'Arial', sans-serif; font-size: 16px; color: #0e0e24; font-weight:=
+ bold; line-height: 16px; text-align: center; text-transform: uppercase; ma=
+rgin: 0px;"> Connect with us</h5></td>=0D=0A                               =
+             </tr>=0D=0A                                            <tr>=0D=
+=0A                                              <td=0D=0A                 =
+                                   style=3D"font-size: 1px; line-height: 1p=
+x; -webkit-text-size-adjust: none; padding: 9.5px;">&nbsp;</td>=0D=0A      =
+                                      </tr>=0D=0A                          =
+                  <tr>=0D=0A                                              <=
+td style=3D"text-align: center;" class=3D"social"><a=0D=0A                 =
+                                     style=3D"text-decoration: none;"=0D=0A=
+                                                      href=3D"http://career=
+builder.et.e.sparkpost.com/f/a/-PdHfOZVAiLzk30UUQXq5A~~/AAAAAQA~/RgRlnpxdP0=
+QxaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvY2FyZWVyYnVpbGRlcmNvbVcHY2FyZ=
+WVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBAAAAAA~"=0A        =
+                                              target=3D"_blank"><img class=
+=3D"light-img"=0D=0A                                                       =
+ style=3D"font-family: 'Roboto', 'Arial', sans-serif; font-size: 16px; font=
+-weight: 400; color: #0e0e24; line-height: 24px; text-align: left;"=0D=0A  =
+                                                      src=3D"https://hiring=
+-assets.careerbuilder.com/marketing/assets/images/pardot/Images/2x/linkedin=
+_icon@2x.png"=0D=0A                                                        =
+alt=3D"LinkedIn" width=3D"15" height=3D"21" border=3D"0"> </a> =0D=0A      =
+                                          <!--[if !mso]><! -->=0D=0A       =
+                                             <div class=3D"dark-img"=0D=0A =
+                                                     style=3D"display: none=
+; overflow: hidden; float: left; width: 0px; max-height: 0px; max-width: 0p=
+x; line-height: 0px; visibility: hidden;"=0D=0A                            =
+                          align=3D"center"><a style=3D"text-decoration: non=
+e;"=0D=0A                                                        href=3D"ht=
+tp://careerbuilder.et.e.sparkpost.com/f/a/-PdHfOZVAiLzk30UUQXq5A~~/AAAAAQA~=
+/RgRlnpxdP0QxaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvY2FyZWVyYnVpbGRlcm=
+NvbVcHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoakBnbWFpbC5jb21YBAAAAAA~"=
+=0A                                                        target=3D"_blank=
+"><img=0D=0A                                                          style=
+=3D"display: inline font-family: 'Roboto', 'Arial', sans-serif; font-size: =
+16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-align: left=
+;"=0D=0A                                                          src=3D"ht=
+tps://hiring-assets.careerbuilder.com/marketing/assets/images/pardot/Images=
+/2x/linkedin_white_icon@2x.png"=0D=0A                                      =
+                    alt=3D"LinkedIn" width=3D"15" height=3D"21" border=3D"0=
+"> </a></div>=0D=0A                                                    <!--=
+<![endif]--> &nbsp;&nbsp; <a style=3D"text-decoration: none;"=0D=0A        =
+                                              href=3D"http://careerbuilder.=
+et.e.sparkpost.com/f/a/_hpUTk1DjeNBRrbMreVfng~~/AAAAAQA~/RgRlnpxdP0QhaHR0cH=
+M6Ly90d2l0dGVyLmNvbS9jYXJlZXJidWlsZGVyVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZ=
+Wxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~" target=3D"_blank"> <img=0D=0A         =
+                                               class=3D"light-img"=0D=0A   =
+                                                     style=3D"font-family: =
+'Roboto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; color: #0=
+e0e24; line-height: 24px; text-align: left;"=0D=0A                         =
+                               src=3D"https://hiring-assets.careerbuilder.c=
+om/marketing/assets/images/pardot/Images/2x/twitter_icon@2x.png"=0D=0A     =
+                                                   alt=3D"twitter" width=3D=
+"20" height=3D"21" border=3D"0"> </a> =0D=0A                               =
+                 <!--[if !mso]><! -->=0D=0A                                =
+                    <div class=3D"dark-img"=0D=0A                          =
+                            style=3D"display: none; overflow: hidden; float=
+: left; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visi=
+bility: hidden;"=0D=0A                                                     =
+ align=3D"center"><a style=3D"text-decoration: none;"=0D=0A                =
+                                        href=3D"http://careerbuilder.et.e.s=
+parkpost.com/f/a/_hpUTk1DjeNBRrbMreVfng~~/AAAAAQA~/RgRlnpxdP0QhaHR0cHM6Ly90=
+d2l0dGVyLmNvbS9jYXJlZXJidWlsZGVyVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2V=
+pdGhqQGdtYWlsLmNvbVgEAAAAAA~~" target=3D"_blank"><img=0D=0A                =
+                                          style=3D"display: inline; font-fa=
+mily: 'Roboto', 'Arial', sans-serif; font-size: 16px; font-weight: 400; col=
+or: #0e0e24; line-height: 24px; text-align: left;"=0D=0A                   =
+                                       src=3D"https://hiring-assets.careerb=
+uilder.com/marketing/assets/images/pardot/Images/2x/twitter_white_icon@2x.p=
+ng"=0D=0A                                                          alt=3D"t=
+witter" width=3D"18" height=3D"21" border=3D"0"> </a></div>=0D=0A          =
+                                          <!--<![endif]--> &nbsp;&nbsp; <a =
+style=3D"text-decoration: none;"=0D=0A                                     =
+                 href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/B9A_2j=
+QvL1aSPMfUy7cL1g~~/AAAAAQA~/RgRlnpxdP0QuaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9=
+jYXJlZXJidWlsZGVyLz9obD1lblcHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRoak=
+BnbWFpbC5jb21YBAAAAAA~"=0A                                                 =
+     target=3D"_blank"><img class=3D"light-img"=0D=0A                      =
+                                  style=3D"font-family: 'Roboto', 'Arial', =
+sans-serif; font-size: 16px; font-weight: 400; color: #0e0e24; line-height:=
+ 24px; text-align: left;"=0D=0A                                            =
+            src=3D"https://hiring-assets.careerbuilder.com/marketing/assets=
+/images/pardot/Images/2x/instagram_icon@2x.png"=0D=0A                      =
+                                  alt=3D"Instagram" width=3D"18" height=3D"=
+21" border=3D"0"> </a> =0D=0A                                              =
+  <!--[if !mso]><! -->=0D=0A                                               =
+     <div class=3D"dark-img"=0D=0A                                         =
+             style=3D"display: none; overflow: hidden; float: left; width: =
+0px; max-height: 0px; max-width: 0px; line-height: 0px; visibility: hidden;=
+"=0D=0A                                                      align=3D"cente=
+r"><a style=3D"text-decoration: none;"=0D=0A                               =
+                         href=3D"http://careerbuilder.et.e.sparkpost.com/f/=
+a/B9A_2jQvL1aSPMfUy7cL1g~~/AAAAAQA~/RgRlnpxdP0QuaHR0cHM6Ly93d3cuaW5zdGFncmF=
+tLmNvbS9jYXJlZXJidWlsZGVyLz9obD1lblcHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbG=
+tlaXRoakBnbWFpbC5jb21YBAAAAAA~"=0A                                         =
+               target=3D"_blank"><img=0D=0A                                =
+                          style=3D"display: inline; font-family: 'Roboto', =
+'Arial', sans-serif; font-size: 16px; font-weight: 400; color: #0e0e24; lin=
+e-height: 24px; text-align: left;"=0D=0A                                   =
+                       src=3D"https://hiring-assets.careerbuilder.com/marke=
+ting/assets/images/pardot/Images/2x/instagram_white_icon@2x.png"=0D=0A     =
+                                                     alt=3D"Instagram" widt=
+h=3D"18" height=3D"21" border=3D"0"> </a></div>=0D=0A                      =
+                              <!--<![endif]--> &nbsp;&nbsp; <a style=3D"tex=
+t-decoration: none;"=0D=0A                                                 =
+     href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/veeh4LH0n5pQRXlFnI=
+t3Nw~~/AAAAAQA~/RgRlnpxdP0QmaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2NhcmVlcmJ1aWx=
+kZXJXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA" =
+target=3D"_blank"> <img class=3D"light-img"=0D=0A                          =
+                              style=3D"font-family: 'Roboto', 'Arial', sans=
+-serif; font-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24p=
+x; text-align: left;"=0D=0A                                                =
+        src=3D"https://hiring-assets.careerbuilder.com/marketing/assets/ima=
+ges/pardot/Images/2x/facebook_icon@2x.png"=0D=0A                           =
+                             alt=3D"Facebook" width=3D"8" height=3D"21" bor=
+der=3D"0"> </a> =0D=0A                                                <!--[=
+if !mso]><! -->=0D=0A                                                    <d=
+iv class=3D"dark-img"=0D=0A                                                =
+      style=3D"display: none; overflow: hidden; float: left; width: 0px; ma=
+x-height: 0px; max-width: 0px; line-height: 0px; visibility: hidden;"=0D=0A=
+                                                      align=3D"center"><a s=
+tyle=3D"text-decoration: none;"=0D=0A                                      =
+                  href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/veeh4=
+LH0n5pQRXlFnIt3Nw~~/AAAAAQA~/RgRlnpxdP0QmaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2=
+NhcmVlcmJ1aWxkZXJXB2NhcmVlcmJCCmO1XRe8Y8M2LwFSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY=
+29tWAQAAAAA"=0A                                                        targ=
+et=3D"_blank"><img=0D=0A                                                   =
+       style=3D"display: inline; font-family: 'Roboto', 'Arial', sans-serif=
+; font-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24px; tex=
+t-align: left;"=0D=0A                                                      =
+    src=3D"https://hiring-assets.careerbuilder.com/marketing/assets/images/=
+pardot/Images/2x/facebook_white_icon@2x.png"=0D=0A                         =
+                                 alt=3D"Facebook" width=3D"8" height=3D"21"=
+ border=3D"0"> </a></div>=0D=0A                                            =
+        <!--<![endif]--> &nbsp;&nbsp; <a style=3D"text-decoration: none;"=
+=0D=0A                                                      href=3D"http://=
+careerbuilder.et.e.sparkpost.com/f/a/BLmf9YAkl2HKshC9szkhcA~~/AAAAAQA~/RgRl=
+npxdP0QqaHR0cHM6Ly93d3cueW91dHViZS5jb20vdXNlci9DYXJlZXJCdWlsZGVyVwdjYXJlZXJ=
+iQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAAAAA~~" target=3D"_b=
+lank"> <img class=3D"light-img"=0D=0A                                      =
+                  style=3D"font-family: 'Roboto', 'Arial', sans-serif; font=
+-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-alig=
+n: left;"=0D=0A                                                        src=
+=3D"https://hiring-assets.careerbuilder.com/marketing/assets/images/pardot/=
+Images/2x/youtube_icon@2x.png"=0D=0A                                       =
+                 alt=3D"Youtube" width=3D"23" height=3D"22" border=3D"0"> <=
+/a> =0D=0A                                                <!--[if !mso]><! =
+-->=0D=0A                                                    <div class=3D"=
+dark-img"=0D=0A                                                      style=
+=3D"display: none; overflow: hidden; float: left; width: 0px; max-height: 0=
+px; max-width: 0px; line-height: 0px; visibility: hidden;"=0D=0A           =
+                                           align=3D"center"><a style=3D"tex=
+t-decoration: none;"=0D=0A                                                 =
+       href=3D"http://careerbuilder.et.e.sparkpost.com/f/a/BLmf9YAkl2HKshC9=
+szkhcA~~/AAAAAQA~/RgRlnpxdP0QqaHR0cHM6Ly93d3cueW91dHViZS5jb20vdXNlci9DYXJlZ=
+XJCdWlsZGVyVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgE=
+AAAAAA~~"=0A                                                        target=
+=3D"_blank"><img=0D=0A                                                     =
+     style=3D"display: inline; font-family: 'Roboto', 'Arial', sans-serif; =
+font-size: 16px; font-weight: 400; color: #0e0e24; line-height: 24px; text-=
+align: left;"=0D=0A                                                        =
+  src=3D"https://hiring-assets.careerbuilder.com/marketing/assets/images/pa=
+rdot/Images/2x/youtube_white_icon@2x.png"=0D=0A                            =
+                              alt=3D"Youtube" width=3D"23" height=3D"21" bo=
+rder=3D"0"> </a></div>=0D=0A                                               =
+     <!--<![endif]--></td>=0D=0A                                           =
+ </tr>=0D=0A                                          </tbody>=0D=0A       =
+                                 </table></td>=0D=0A                       =
+             </tr>=0D=0A                                    <!--Social-->=
+=0D=0A                                    <tr>=0D=0A                       =
+               <td height=3D"25">&nbsp;</td>=0D=0A                         =
+           </tr>=0D=0A                                    <tr>=0D=0A       =
+                               <td class=3D"td3-1"=0D=0A                   =
+                         style=3D"font-family: 'Roboto', 'Arial', sans-seri=
+f; font-size: 14px; color: #0e0e24; line-height: 24px; text-align: center;"=
+=0D=0A                                            align=3D"center" valign=
+=3D"middle"><p>This email was sent to darnellkeithj@gmail.com<br>=0D=0A    =
+                                      <br>=0D=0A                           =
+               <a style=3D"font-weight: bold; text-decoration: none; color:=
+ #0e0e24;"=0D=0A                                                title=3D"Un=
+subscribe"=0D=0A                                                href=3D"htt=
+p://careerbuilder.et.e.sparkpost.com/f/a/RV7UEjqeB7U6UB0Dr1lP5Q~~/AAAAAQA~/=
+RgRlnpxdP4QzAWh0dHBzOi8vd3d3LmNhcmVlcmJ1aWxkZXIuY29tL3Vuc3Vic2NyaXB0aW9uP2F=
+0dHI9ZW1haWwmZW1haWw9VzNlRFpZdk9uaiUyQnUlMkY3bUQwd1YzdkFvUSUyQjAwcDR3VnhkeG=
+thSyUyQmI5YjlrJTNEJmV0eXBlPW15SW5zaWdodHMmcHJlZmVyZW5jZT1qb2Jfc2Vla2VyX25ld=
+3NsZXR0ZXImc2l0ZWlkPW5ld3NsZXR0ZXImdXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRp=
+dW09ZW1haWwmdXRtX2NhbXBhaWduPWphbjIzLXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTI=
+wMjMwMTA5JnV0bV9jb250ZW50PXVuc3Vic2NyaWJlLWxpbmtXB2NhcmVlcmJCCmO1XRe8Y8M2Lw=
+FSF2Rhcm5lbGxrZWl0aGpAZ21haWwuY29tWAQAAAAA"=0A                             =
+                   target=3D"_blank" rel=3D"noopener">Unsubscribe</a> | <a=
+=0D=0A                                                style=3D"font-weight:=
+ bold; text-decoration: none; color: #0e0e24;"=0D=0A                       =
+                         href=3D"http://careerbuilder.et.e.sparkpost.com/f/=
+a/gQ_VWI3kErU6P61ZAbNIoQ~~/AAAAAQA~/RgRlnpxdP0TDaHR0cHM6Ly93d3cuY2FyZWVyYnV=
+pbGRlci5jb20vbXlwcm9maWxlL2NvbnRhY3RfcHJlZmVyZW5jZXM_c2l0ZWlkPW5ld3NsZXR0ZX=
+ImdXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWphb=
+jIzLXNwLW5vanJfbm9zYWxpbi1hJnV0bV90ZXJtPTIwMjMwMTA5JnV0bV9jb250ZW50PW1vZGlm=
+eS1wcmVmVwdjYXJlZXJiQgpjtV0XvGPDNi8BUhdkYXJuZWxsa2VpdGhqQGdtYWlsLmNvbVgEAAA=
+AAA~~"=0A                                                rel=3D"nofollow,no=
+referrer">Manage My Preferences</a><br>=0D=0A                              =
+            <br>=0D=0A                                          &copy; 2022=
+, CareerBuilder, LLC. All rights reserved. <br>=0D=0A                      =
+                    200 N. LaSalle St. Suite 1100, Chicago, IL 60601</p></t=
+d>=0D=0A                                    </tr>=0D=0A                    =
+                <tr>=0D=0A                                      <td class=
+=3D"mobileheight"=0D=0A                                            style=3D=
+"font-size: 1px; line-height: 1px; -webkit-text-size-adjust: none; padding:=
+ 19.5px;">&nbsp;</td>=0D=0A                                    </tr>=0D=0A =
+                                 </tbody>=0D=0A                            =
+    </table></td>=0D=0A                            </tr>=0D=0A             =
+             </tbody>=0D=0A                        </table></td>=0D=0A     =
+               </tr>=0D=0A                    <!--3:3 -->=0D=0A            =
+      </tbody>=0D=0A                </table></td>=0D=0A            </tr>=0D=
+=0A          </tbody>=0D=0A        </table>=0D=0A        =0D=0A        <!--=
+END Footer Section--></td>=0D=0A    </tr>=0D=0A    </tbody>=0D=0A    =0D=0A=
+  </table>=0D=0A</div>=0D=0A=0D=0A<img border=3D"0" width=3D"1" height=3D"1=
+" alt=3D"" src=3D"http://careerbuilder.et.e.sparkpost.com/q/4wWiN-dCFV1Y0BM=
+vUI9Fiw~~/AAAAAQA~/RgRlnpxdPlcHY2FyZWVyYkIKY7VdF7xjwzYvAVIXZGFybmVsbGtlaXRo=
+akBnbWFpbC5jb21YBAAAAAA~">=0D=0A</body>=0D=0A</html>
+--_----4r/AIt1XDiLSy07gkKMfZA===_B2/68-45511-2FEE6B36--
+

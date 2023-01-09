@@ -1,0 +1,440 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2911630mdb;
+        Mon, 9 Jan 2023 03:35:20 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsW+MXYcJlh+k4AsJNhq0OPpBMBHLgcEXnhcKehoNCScqaLCJBen07HgiU4MaVx6R3wDuAJ
+X-Received: by 2002:ac8:44d4:0:b0:3a8:11ab:cacc with SMTP id b20-20020ac844d4000000b003a811abcaccmr84837237qto.17.1673264119915;
+        Mon, 09 Jan 2023 03:35:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673264119; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JJhtLq2lioM6QAPZl5ODnYCgtpY2qTVV88I+TXsu0lepsLK41xaMLW0gyrLX6GQIjI
+         Xfj9QE3X8HIbSKd0/F4raP6fOKcW2JpqWdXLKqwP4W8DNWqMjDQ1w8aiwZaI6Qae/nV5
+         2Robrx/vCO2FN7oxkS9nLVHWQtpVegjg0eOMlAsLS1zubsbOP26bY1llDDR080iQOvcI
+         8m06FMM6PGT8cfXTghTXedsCeSY+v7K1XSuBmrTltu80IAIVuZYz/S5q6Qq0ZSgDMNs/
+         3lMCwW8KVfExBtFvL5GD8yZ/VNDZOqHJekX/qiJHM4quF38Ry6TWxXWRQVPB/sLazwA1
+         9Idw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:to:reply-to:mime-version:sender
+         :message-id:subject:date:from:dkim-signature:dkim-signature;
+        bh=vvic6tauOO3uPJhAPVhttv4Ncc3KTsdgOxPuuNOEMEA=;
+        b=ziP/rCVttWcpIbWMTLJ2D0TaCM0ILruplw47fRCaw+KyJFWBctLa6isrvcT0oERQ9A
+         geCfF9dc2KDWpk43jwbYxdDMZj1oaApFRl8JtZ3NfrKnyfF9e/sp76ZxBa5dlpwqxZ69
+         zProHUCLGL6YR2G0odoB5c4NcxHunQ4dP78mRctzwLpqYKL87ZXuhAVkQ3zZIlgqYFs2
+         1+/C9ARyrXU1srjq+lv2MKa2GeWOQYOduW+BH7WfEQ/SFsGSZ6E0Vt9X0UZiqE5UiJbX
+         WqqAIAS2bBgrDUIrxkfrqNpuvs9JzDVZ3McSbKvigps1ONj5mUQ0kwrprmJwFrXSj5ia
+         p0xw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mailsystem.clubreadymail.com header.s=smtpapi header.b="qVNY/2YB";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FN+pFjnH;
+       spf=pass (google.com: domain of bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com designates 149.72.229.20 as permitted sender) smtp.mailfrom="bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com"
+Return-Path: <bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com>
+Received: from o12.ptr9634.mailsystem.clubreadymail.com (o12.ptr9634.mailsystem.clubreadymail.com. [149.72.229.20])
+        by mx.google.com with ESMTPS id fc27-20020a05622a489b00b003a7ed20b129si4528977qtb.287.2023.01.09.03.35.19
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Jan 2023 03:35:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com designates 149.72.229.20 as permitted sender) client-ip=149.72.229.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mailsystem.clubreadymail.com header.s=smtpapi header.b="qVNY/2YB";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FN+pFjnH;
+       spf=pass (google.com: domain of bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com designates 149.72.229.20 as permitted sender) smtp.mailfrom="bounces+20664-edb4-darnellkeithj=gmail.com@mailsystem.clubreadymail.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailsystem.clubreadymail.com;
+	h=from:subject:sender:mime-version:reply-to:x-feedback-id:to:
+	content-type:content-transfer-encoding:cc:content-type:from:subject:to;
+	s=smtpapi; bh=vvic6tauOO3uPJhAPVhttv4Ncc3KTsdgOxPuuNOEMEA=;
+	b=qVNY/2YBhDvhAsLXhgGj7V0OoaYfusL4sr4V4+RE97oO37+BgbdSOnHLRkyxz6SPeLOS
+	LwSquv5/cG+shfJhBL29oWLwsoVFdlsINgBg4k/BDjOlJNXkcircH1/QOwKirY9eU6RM45
+	jbf/DUl5wRyPQnt+Ci2NlHf/2vLfCB0bs=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:sender:mime-version:reply-to:x-feedback-id:to:
+	content-type:content-transfer-encoding:cc:content-type:from:subject:to;
+	s=smtpapi; bh=vvic6tauOO3uPJhAPVhttv4Ncc3KTsdgOxPuuNOEMEA=;
+	b=FN+pFjnHMGNa/c9I5Bl+9TVdEqzTr2Paxi+F8MRpbZUx0OgYKiM3KZjQdB+Uup/X+X2L
+	pJkF3yraECHCs9N+aTsEC1CTlfRElo4C1DDk3EWguMhNjxPzk4Jk9zJSXn0dGjH2/tEXy7
+	rll+IfxzGYTjvD2vAVd5H48np+9ZNIMII=
+Received: by filterdrecv-7d8d7bf996-frgh2 with SMTP id filterdrecv-7d8d7bf996-frgh2-1-63BBFBF7-32
+        2023-01-09 11:35:19.63986248 +0000 UTC m=+4537631.437455245
+Received: from [10.124.2.25] (unknown)
+	by geopod-ismtpd-2-5 (SG) with ESMTP
+	id wIYm5_8XTQ-tVXTJGVlgIw
+	for <darnellkeithj@gmail.com>;
+	Mon, 09 Jan 2023 11:35:19.624 +0000 (UTC)
+From: VP Fitness LLC <mailsystem@clubreadymail.com>
+Date: Mon, 09 Jan 2023 11:35:19 +0000 (UTC)
+Subject: Your Weekly Update!
+Message-Id: <F4PZ3MXGVIU4.Y41T6PKI6VND@CRAE2PAPPV01>
+Sender: VP Fitness LLC <mailsystem@clubreadymail.com>
+X-Save-Mail-Id: CRHDRX1{"MG":"Your Weekly
+ Update!","EP":0,"EM":2021605588}CRHDRX2
+MIME-Version: 1.0
+Reply-To: info@vpfitness.net
+X-Feedback-ID: 20664:SG
+X-SG-EID: 
+ =?us-ascii?Q?l4tX1J2aVlagzomL1v15FRhGKmHrME00IMuihNwUM8Zt9EqIpSbpVdu53KVbKI?=
+ =?us-ascii?Q?uVWpidxf7GToy7xJeaNrt9NQCrGkZEPNkaih7Fd?=
+ =?us-ascii?Q?BPYC0y7s02SKnlpXRhr1ZqGrUxJ9+pX6fYPftW2?=
+ =?us-ascii?Q?1uFIY1tFrPNU7X10rZj01OWHK4uCWlP9blKRqc0?=
+ =?us-ascii?Q?kk1RGLBXKpWq28Ho7WYROjEYAY=2FqoJEVDJ9mvWC?=
+ =?us-ascii?Q?u7WbvSx0tKrG9Js9889kdz1t6BhSAn3wOTmRBJk?=
+ =?us-ascii?Q?2Ru1IIXJK95x4W6NjYkqw=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FINGo5ZMFSQ1hcEY2fg1V?=
+ =?us-ascii?Q?4Sl4Yf6Cg0ZniP3cBeOR1SiOhajx=2FJsinUFwRuI?=
+ =?us-ascii?Q?2swTh4=3D?=
+To: darnellkeithj@gmail.com
+X-Entity-ID: 9kMPNIATV4dT8j0NyHwIlw==
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-TUID: 6L+p5+2A+oXv
+
+
+
+<html>
+<head>
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"></head>
+
+<body style=3D"background:#f5f5f5;">
+<style type=3D"text/css">
+    <!--
+    .txtExtraLrg {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 24px;
+        color: #ffffff;
+        text-decoration: none;
+        line-height: 20px;
+        font-weight: bold;
+    }
+
+    .txtExtraLrg2 {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 24px;
+        color: #ff0000;
+        text-decoration: none;
+        line-height: 20px;
+        font-weight: bold;
+    }
+
+    .txtReg {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 14px;
+        color: #000000;
+        text-decoration: none;
+        line-height: 18px;
+    }
+
+    .footer {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 10px;
+        color: #000000;
+        text-decoration: none;
+        line-height: 18px;
+    }
+
+        .footer A {
+            font-family: "lucida grande", tahoma, verdana, arial, sans-seri=
+f;
+            font-size: 10px;
+            text-decoration: none;
+            line-height: 18px;
+        }
+
+            .footer A:hover {
+                font-family: "lucida grande", tahoma, verdana, arial, sans-=
+serif;
+                font-size: 10px;
+                text-decoration: none;
+                line-height: 18px;
+            }
+
+    A {
+        COLOR: #0000FF;
+        TEXT-DECORATION: underline;
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        line-height: 18px;
+        font-size: 13px;
+    }
+
+        A:hover {
+            COLOR: #990000;
+            TEXT-DECORATION: underline;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-seri=
+f;
+            line-height: 18px;
+            font-size: 13px;
+        }
+
+    .txtReg2 {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 14px;
+        color: #000000;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 18px;
+    }
+
+    .baseline {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .baseline2 {
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .style2 {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 14px;
+        color: #000000;
+        text-decoration: none;
+        line-height: 18px;
+        font-style: italic;
+    }
+
+    .style3 {
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        14px;
+        color: #FF0000;
+        text-decoration: none;
+        line-height: 18px;
+    }
+
+    .tableborder {
+        border: 1px solid #666666;
+    }
+
+
+    -->
+</style>
+<table style=3D"background:#f5f5f5;" width=3D"700" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+  <tr>
+    <td><table style=3D"background:#ffffff; border:2px solid #000000;" widt=
+h=3D"700" border=3D"0" align=3D"left" cellpadding=3D"0" cellspacing=3D"0" >
+      <tr>
+        <td height=3D"90" valign=3D"top" class=3D"baseline"   bgcolor=3D"#2=
+e3b6b">
+            <img src=3D"http://www.clubready.com/companylogo/logo2735.gif?r=
+=3D27598208" alt=3D"logo" >
+           =20
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor=3D"#999999"><table  width=3D"100%" border=3D"0" align=
+=3D"center" cellpadding=3D"8" cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+            <tr>
+              <td class=3D"baseline"><div align=3D"left" class=3D"txtReg">
+                  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">
+                    <tr>
+                      <td width=3D"54%"><strong class=3D"txtReg2">Hello Dar=
+nell! </strong></td>
+                      <td width=3D"46%"><div align=3D"right" class=3D"txtRe=
+g">Monday, January 9, 2023</div></td>
+                    </tr>
+                  </table>
+                  <p align=3D"justify">                    This is your wee=
+kly update! You can always stop these weekly updates from being sent by adj=
+usting your profile in your login area - just go to account -&gt; my profil=
+e.                    </p>
+               =20
+                    =20
+                     =20
+                =20
+              </div></td>
+            </tr>
+        </table>
+           =20
+          <br>  <table class=3D"tableborder" width=3D"97%" border=3D"0" ali=
+gn=3D"center" cellpadding=3D"4" cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+              <tr>
+                <td background=3D"https://app.clubready.local/emails/title.=
+jpg" bgcolor=3D"#e2e2e2" class=3D"txtReg"><div align=3D"left" class=3D"txtR=
+eg2"><img src=3D"bullet.gif" width=3D"16" height=3D"16"> This Weeks Fitness=
+ Tip!</div></td>
+              </tr>
+              <tr>
+                <td class=3D"baseline"><span class=3D"txtReg2">Ab Exercise =
+For the Desk</span><br>
+                  <span class=3D"txtReg">Want to get a little ab workout in=
+ without getting on the floor while sitting at your desk? Sit up straight i=
+n a firm, armless chair. Grab the chair's edges just in front of your hips.=
+ While supporting yourself with your hands, slowly draw your knees up towar=
+d your chest while breathing out, keeping your lower back pressed against t=
+he chair. Hold, then slowly lower.  Sure beats walking to the candy machine=
+ for that mid-day snack.                  </span><br>
+                    <br></td>
+              </tr>
+            </table>
+         =20
+          <br>  <table class=3D"tableborder" width=3D"97%" border=3D"0" ali=
+gn=3D"center" cellpadding=3D"4" cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+              <tr>
+                <td background=3D"https://app.clubready.local/emails/title.=
+jpg" bgcolor=3D"#e2e2e2"><div align=3D"left" class=3D"txtReg2"><img src=3D"=
+apple.gif" width=3D"16" height=3D"16"> Your Nutrition Tracking Past 7 Days =
+- 0 Days Out of 7 </div></td>
+              </tr>
+              <tr>
+                <td class=3D"baseline"><table style=3D"border:1px solid #e2=
+e2e2" width=3D"100%" border=3D"0" align=3D"center" cellpadding=3D"4" cellsp=
+acing=3D"0">
+                    <tr>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Mon 2nd</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Tue 3rd</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Wed 4th</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Thu 5th</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Fri 6th</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Sat 7th</div></td>
+                     =20
+                      <td width=3D"14%" bgcolor=3D"#f5f5f5" class=3D"baseli=
+ne"><div align=3D"center" class=3D"txtReg2">Sun 8th</div></td>
+                     =20
+                    </tr>
+                    <tr>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                      <td><div align=3D"center"><img src=3D"sad.gif" width=
+=3D"15" height=3D"15"></div></td>
+                     =20
+                    </tr>
+                  </table>
+                    <div align=3D"justify"><br>
+                        <span class=3D"txtReg">Tracking your nutrition is e=
+asy to complete from your login area. Nutrition is a key element of any fit=
+ness program and understanding what you eat is an important step. Once you =
+store some of your foods in your favorites you will find it only takes a fe=
+w seconds to log your food each day. Then you can easily see if you are on =
+track and which food types might need some attention. </span><br>
+                        <br>
+                    </div></td>
+              </tr>
+            </table>
+         =20
+          <br>  <table class=3D"tableborder" width=3D"97%" border=3D"0" ali=
+gn=3D"center" cellpadding=3D"4" cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+              <tr>
+                <td background=3D"https://app.clubready.local/emails/title.=
+jpg" bgcolor=3D"#e2e2e2"><div align=3D"left" class=3D"txtReg2"><img src=3D"=
+bullet.gif" width=3D"16" height=3D"16"> Exercise Of The Week </div></td>
+              </tr>
+              <tr>
+                <td class=3D"baseline"><table width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"4">
+                    <tr>
+                      <td  class=3D"baseline"><span class=3D"txtReg2" align=
+=3D"left">Two Point Balance; Stability Ball (20130823)</span></td>
+                    </tr>
+                    <tr>
+                      <td  class=3D"txtReg">Body Area Worked : Abdominals</=
+td>
+                    </tr>
+                =20
+                    <tr>
+                      <td  class=3D"txtReg"><table width=3D"100%" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"5">
+                        <tr>
+                          =20
+            <td width =3D "33%" colspan=3D"3" valign=3D"top"><div align=3D"=
+left"><img src=3D"https://app.clubready.local/exercisephotos/thumb_Exercise=
+Library032.jpg" border=3D"0"/ ></div></td>
+           <td></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td  class=3D"txtReg"><p><strong>Benefits: </strong>D=
+evelops core strength and balance.</p><ul><li>Place hands shoulder width ap=
+art on stability ball.  Place both knees on top of SB, 2&quot; - 3&quot; ap=
+art. <br /></li></ul><ul><li>Activate core and straighten body so that you =
+are kneeling on top of SB. <br /></li></ul><ul><li>Hold position for 10-60s=
+ec.  Repeat for 3 times.</li></ul>                      </td>
+                    </tr>
+                  </table>
+                    <br></td>
+              </tr>
+            </table>
+         =20
+         <br>   <table class=3D"tableborder" width=3D"100%" border=3D"0" al=
+ign=3D"center" cellpadding=3D"4" cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+              <tr>
+                <td class=3D"txtReg">VP Fitness, LLC<br>
+                    <br>
+                </td>
+              </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><div align=3D"right" class=3D"footer"><br>
+      powered by <a href=3D"http://mailsystem.clubreadymail.com/ls/click?up=
+n=3D7QNsrHP4TDR97MFyDyfXlg249QJnZ4h9tmmjiOiExKc-3DDdY__kHUZGGAIbaUxVXIM4tIq=
+ucmyvZ16Iw0MRGEFjccpvH-2FVcrbrgZYf8E32CqGunYQf3ZsWWx5FzxJh2tPVFi-2BN4UB7tbO=
+yaKClIdaW-2FA-2F3acTVYtjPPAPX7rTqFIx0XBPGVmLTabbMuvz1Lz6OpP6eRSas7Go0v0HhsK=
+aWmlfiL8mIZ3rtrfuWaHyquDpYL-2BM9-2BhvCBIfmwJNpKuH18uQY-2BKem3RzT8ArLFswGbSe=
+x-2FemNikef0NH9p-2BHm2-2BSaSZHzXfzyzgy5c7UenWvPp56HRg-3D-3D">ClubReady.com<=
+/a>
+     =20
+<table style=3D"margin-top:20px; border:1px dashed #e2e2e2" width=3D"100%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"6">
+  <tr>
+    <td><div class=3D"regtxt2" align=3D"center">If you do not wish to recei=
+ve weekly update emails from us - <a href=3D"http://mailsystem.clubreadymai=
+l.com/ls/click?upn=3D7QNsrHP4TDR97MFyDyfXlk3wCRVEtiW2ZNzQa3K7RGT35fjiZ1AWGU=
+LoCR2gLxfKy6GSSGJl3-2FXyHoLbIT92nGbJiYIY6A0WeSTcpJoXE5s4zngIN30A7Gz-2BsiaFa=
+Uw1YakIfCbFh-2BHnEalvWWRjzXTSJs3GlAkrQjlwsxNQdyg-3DRFGE_kHUZGGAIbaUxVXIM4tI=
+qucmyvZ16Iw0MRGEFjccpvH-2FVcrbrgZYf8E32CqGunYQf3ZsWWx5FzxJh2tPVFi-2BN4UB7tb=
+OyaKClIdaW-2FA-2F3acTVYtjPPAPX7rTqFIx0XBPGPbFcq3CeGrAdzvdWkxWtMca-2BwEmPFLv=
+roiE6YrPBNrcWMVUrBihUM4yN35FRSNwP5q3vMVvtbL7Df48WY0sIdkuH8yH17XteoCC7djRWEZ=
+UwLnDF1WOJ-2BTP30j2Iyt-2Fj8tslXPH3q9CBjQK-2Bhd595Q-3D-3D">click here</a> to=
+ opt out</div></td>
+  </tr>
+</table>
+
+
+      </div></td>
+  </tr>
+</table>
+<img src=3D"http://mailsystem.clubreadymail.com/wf/open?upn=3DLn6UxEE-2BJWX=
+ODIejw9a-2BV0Gl7H-2B0r60Hll-2BibxQXsagbLiO98NC0ldaHxeWQZJDgcGE-2FpR7ufD1d-2=
+FWO3g5CRRt56QvmqfAOoBqOqRZQTbPFqiMryyKbWFOb-2BJpe2B6NOWgvTvB2UKpmWJVN5GtPZj=
+-2FM-2BpMi26mZMzOGNkHO-2F-2BHUDyFRyO0JgCUivVk4ysYT7-2BNpDFgPKf7R4IpqZAPhxAI=
+tJvfvKb3-2FcH-2BWdujDM2cnP7XNQQfQdiSwI5eMUK4-2BxrfIdD56l50-2F46joe52NUCA-3D=
+-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !im=
+portant;width:1px !important;border-width:0 !important;margin-top:0 !import=
+ant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !imp=
+ortant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0=
+ !important;padding-left:0 !important;"/></body>
+</html>

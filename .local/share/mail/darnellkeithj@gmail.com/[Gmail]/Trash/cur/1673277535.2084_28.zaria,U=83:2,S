@@ -1,0 +1,1893 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2754105mdb;
+        Sun, 8 Jan 2023 21:11:16 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtoHTIj+Wx/R97nEwkf62taCxp2airmBTYYpi+OvKXaXqENWA9pu8FAdFwyjePBHd1rheqM
+X-Received: by 2002:a05:622a:1b11:b0:3a8:10c4:4ae with SMTP id bb17-20020a05622a1b1100b003a810c404aemr79937929qtb.49.1673241076497;
+        Sun, 08 Jan 2023 21:11:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673241076; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QIQC2BNWOaPpg1Lb3oQb7+PRgrSjoPnTt3GQF3O7wW2lqEkdIQ3AOqBZ5G4eKlTt0o
+         UL0TeskVKe3A+BtornfbZkHvzc3CRu98WaaqK2IOlJdHv3w8pouUwj/ID7bWbnwLwNbN
+         CRWoXkt142FkxZxwW1pSqErJt0JwgSenGMdFm4rQA9GcTVvA9HdTjwV/H5GqXzVl5iFr
+         Cv8Xuf2dzFnKQBqu5eGoLliMZWSDCjR0EmsdbpR9sZh3zBT2fOViLZGapkI5KBy3JCow
+         Lh+9LE/nBNIeTnQdKb3Z2ASovawgynktCw3AHgdAqdTRp3rgnSyUquRBjlbXZsXYlw3A
+         GT3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=BrqxO3FfGBALUyKsjg7qeNCmHjHzYox1vlVj5Syjabs=;
+        b=gHYDBa0J7WKsv0s2rXvFrZtB5o3WRSrz4kLA16JtGfsHXj6ZKdff+wUDs071uv6Rtf
+         1sYvEqVOlei4XmsaqNes3qOw2NNzVIxNAfzi8QLAY93a56/Zz1mtfrEj/HOBwacaTT4w
+         jqxXvKeP1CUIUfC23F9iXV0X1kJRT8xGB8tXNxX3EM9CDRItxSerMtoKB/ZbvyMP0xCh
+         cu7DhNKZYC1Stlyi8SsLr+Kh7aeXdJI8lyy6qvqay7u/TShg8K4tnCNtrPT7wn16YDwX
+         6cV0uZjS4RGNgVlvXIGs69EDLO3Hmwy+vN7qHNgjEqRcE3/QGMkYrwh1g1o9+e+MFRUy
+         DkVg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notifications.acorns.com header.s=s1 header.b=NmbH4qii;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="B0jB/rpX";
+       spf=pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) smtp.mailfrom="bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=acorns.com
+Return-Path: <bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com>
+Received: from xtrwstvn.outbound-mail.sendgrid.net (xtrwstvn.outbound-mail.sendgrid.net. [167.89.103.130])
+        by mx.google.com with ESMTPS id bs33-20020a05620a472100b006fa239df48bsi3998532qkb.455.2023.01.08.21.11.16
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Jan 2023 21:11:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) client-ip=167.89.103.130;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notifications.acorns.com header.s=s1 header.b=NmbH4qii;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="B0jB/rpX";
+       spf=pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) smtp.mailfrom="bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=acorns.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=notifications.acorns.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=BrqxO3FfGBALUyKsjg7qeNCmHjHzYox1vlVj5Syjabs=;
+	b=NmbH4qiiftKD4MrRfnlFuKMGWXysgYDzW2vHFDVIa/iluG8oqKsQdlhPHNCxosA9iDo5
+	3ddSn6PSP5vFoLxRZxjMPHVHz+rvjyDBHGbdp2fm+/YvF0NK5R+eP+bvJOoriUhonSqak5
+	AoTf3WPpmQ1fBtL6dgfif58KCv7lAEvfDEswYBp179cv9nfg3axF17BWxEVNjm4EEsWDei
+	muRdRTo/Npj1nXWvmGSsul9J1c4AZQsVGmWMQMEc7yGS9IFI3P7YscoUO4pg6puPOFLQNo
+	V4TMthjye7STmJNT/EURxTeh5/83O/7+iQLmOGQkNP2QNQ/65n1xk7r8skhM+Spg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=BrqxO3FfGBALUyKsjg7qeNCmHjHzYox1vlVj5Syjabs=;
+	b=B0jB/rpXqOyqe7Zy3gXdVHyuJR6bJgJKCX8ilsF7g2nWnIg1imbqpRANUcj1JHfLLRMB
+	tpahedo4PnDWAJKX1s0XpbFn4GmxC3dGYJH79lAYarCXCT6gnQq2fddYkq6q7yEBi+Dxsq
+	FxZvtGmb4OFMP/GX3gCszqQSNscvs+pO0=
+Received: by filterdrecv-849b969bc5-vw8vd with SMTP id filterdrecv-849b969bc5-vw8vd-1-63BBA1F3-34
+        2023-01-09 05:11:15.989698713 +0000 UTC m=+4514588.071295159
+Received: from NTA1MTk4MA (unknown)
+	by geopod-ismtpd-5-5 (SG) with HTTP
+	id gBVzx7zmSUygcnFvlWvztw
+	Mon, 09 Jan 2023 05:11:15.944 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=88c88c9f99e58d63b5b4f3ec682f45a34d5259b9ca1c18bfa7bdb021f187
+Date: Mon, 09 Jan 2023 05:11:16 +0000 (UTC)
+From: Acorns <info@notifications.acorns.com>
+Mime-Version: 1.0
+Message-ID: <gBVzx7zmSUygcnFvlWvztw@geopod-ismtpd-5-5>
+Subject: Set It & Invest It Week 1 =?UTF-8?B?4oCU?= 2x your investment!
+Reply-To: no-reply@mail.acorns.com
+X-Feedback-ID: 5051980:SG
+X-SG-EID: 
+ =?us-ascii?Q?9oXogazVxENkbbkpA84kFcrcCCXQxEzOfkQhAEk4TNBv5MIiJPv1xwR6Bb5=2FQz?=
+ =?us-ascii?Q?vstnMWcF8ercJ8MPMbJPXH1C1DT7MPIDrxag3da?=
+ =?us-ascii?Q?zeNfW4sGNwjHlOroWiSGjBHme+fR1ABDbFdGBJ0?=
+ =?us-ascii?Q?qjGHIINNozyqI400Sgmucga5ANUfevaECrKsydc?=
+ =?us-ascii?Q?2SPgolreuVYG=2FQdh3WAblpYgRmxF5Jlsl6l5E4C?=
+ =?us-ascii?Q?=2FUq7hyt0OfUeAL3o=2FVj3OLCAXjrbd4vKKFu2We?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChC0d27oiWRm9aRSKZsl9aefC8do7wOcEjdw=2FM6?=
+ =?us-ascii?Q?SlKYZnGWshHtQjQ0Qu9WxW=2FDK2GQ8gzl23vBjjj?=
+ =?us-ascii?Q?=2FttW99UEIHqCS007pGuUOYQgPjYXFJ3eRqGdxd0?=
+ =?us-ascii?Q?6Dh7FMuv08HS+JMXw5yU27EdamzT+0f9=2FxiLpcW?=
+ =?us-ascii?Q?zplZ3oxD8nsLKRYDFiln4ZFB36h277D5PlyedH4?=
+ =?us-ascii?Q?O5Pjk9gOzGjxSAEIxo0cJM7K8EiwFE1ylfKNpIC?=
+ =?us-ascii?Q?067j97N=2FvhxuGVPQB8PC+8OLLG4sP+QXJXQeVhe?=
+ =?us-ascii?Q?bZjdndvW2HmrPlDx3CAWwvfzpBOXAhF1S7Cw5Yy?=
+ =?us-ascii?Q?2F0Nj2ZaTXppKVxcnMuVO2VOxPcXHcNV7F2UQ8g?=
+ =?us-ascii?Q?4p6mKR22GqIGPHOvW62We=2Fu1w=2F93dFbtjwqi7Xl?=
+ =?us-ascii?Q?CYKRYRW7Go=2FNt0DoudthNdGftc+v8XvNiDZnTcM?=
+ =?us-ascii?Q?pVSaBqS1wvCd4c2sjeZCMfRUPZGgmS5u6zRKVX8?=
+ =?us-ascii?Q?36lq9VP8ZN4aElmNUFyq6KKR6VpUCzOWe6IfGwl?=
+ =?us-ascii?Q?o3=2FiW1v?=
+To: darnellkeithj@gmail.com
+X-Entity-ID: nqA0+zgLHg3wHdbEIilxwQ==
+X-TUID: s3mGyPmTIbfZ
+
+--88c88c9f99e58d63b5b4f3ec682f45a34d5259b9ca1c18bfa7bdb021f187
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+This week=E2=80=99s Bonus Multiplier is 2x! That means any Recurring
+Investment this week has a chance to be multiplied by 2x,
+courtesy of us.                             Make long-term
+investing a habit for a chance to win!     We=E2=80=99ve officially
+kicked off Set It & Invest It, our New Year=E2=80=99s challenge to help
+you build good, long-term investing habits and get you closer to
+your 2023 money goals! From now until Mar. 19, any Recurring
+Investment has a chance to be multiplied by up to 10x!     This
+week=E2=80=99s Bonus Multiplier is 2x!     That means any Recurring
+Investment this week has a
+chance to be multiplied by 2x, courtesy of us.
+So what are you waiting for? Join the challenge!         Set
+Recurring Investment=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig=
+-3D-3DU6pK_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7=
+EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyBy=
+T3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDd=
+yezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6ud=
+DnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7ar=
+U7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI=
+5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qr=
+c0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLK=
+X-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPiw38Q-2BNRm8F06GVoPAY88d-2BcYX1PLKp=
+LMTK7xeMuP34qTHxUwvbJjaXlZ-2BRFyHuIbJG5-2FS4zxX813mtpWBuMqP0zigb-2Bp2zg6HQC=
+UrKeA3MmwjebiFlrE9fJEqweGM1xn4EOZW-2Fh8bEnvoImFFxm14-3D )
+Alternative mail-in entry available. See terms for how to enter.
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcVfasJxS3OQKipk0l12F618JrUlNrkvuoR5AAzDJ89KwuPksx-2FS7FVPuJqHIxWkTEA-3D-=
+3DRj04_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueS=
+FC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-=
+2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezc=
+nB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfH=
+PC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7Be=
+Nh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0x=
+LfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZ=
+W0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2F=
+Gq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIZCjqvzXxbdro3H-2=
+FO-2FAAPk2uMh3N-2BgdjN8SFDnU8-2FCEvOW-2B0FxE2guZfwxKhiMx-2FXsQw-2FSt0UU4i8o=
+KmlBy8sR64O6k6LVf9qM11nqGQrTZOWep1NcUfhuSd9PQUUMBZxs-3D )
+Setting a Recurring Investment on Acorns means investing in
+a diversified portfolio on a consistent basis. And by doing that,
+your money can potentially grow over the long-term through the
+power of compounding.                     How does it work?
+Set a Recurring
+Investment starting at
+$5 a day, week, or
+month.              Each Recurring
+Investment you invest
+gets a chance to be
+multiplied by up to 10x.              We=E2=80=99ll pick winners
+each week!           The Recurring Investment multiplier changes
+every week from
+2x to 10x. And the bigger your Recurring Investment, the
+bigger the potential winnings!
+
+Set a daily or weekly Recurring Investment to never miss a
+chance at winning by tapping below!         Set Recurring
+Investment ( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsd=
+a-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcF=
+TvL4Iallyig-3D-3DKV8L_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2F=
+KgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5=
+TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3=
+fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh5=
+5JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64T=
+Q5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDA=
+yE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZw=
+m5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz=
+2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPtfOlj79Abd-2FzX3ODZoENSB=
+uTawa4uUbdCBmdUVMfM9wHiCOYtt-2FceM1LkdfDagBCzTrum5kdB-2FJZYFRtGOV6QSq41Ynxg=
+9kTRE402TQHD0kziIWweqrp4CrZEXXrrx9-2B0a6D-2BLVXU6S9Iq56JU30Po-3D )
+Alternative mail-in entry available. See terms for how to enter.
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcVfasJxS3OQKipk0l12F618JrUlNrkvuoR5AAzDJ89KwuPksx-2FS7FVPuJqHIxWkTEA-3D-=
+3DE15l_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueS=
+FC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-=
+2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezc=
+nB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfH=
+PC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7Be=
+Nh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0x=
+LfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZ=
+W0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2F=
+Gq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPg47tRN6fNXjxLai-2FzSQAKU8q8sNQXr38wvb-2=
+FIoJ-2FjV6OKm5a5g4tmBwqVkSm65hcHJBuhHQqZweljYzwWBJKnasg2OJDqCOu7BBPDcPqq6sH=
+bIDB5QxQnpGbUMf8QiN9x0-2BJa-2BiRnUPRleAasqntzE-3D )
+WEEK 1 MONEY TIP     Recurring Investment, AKA =E2=80=9CDollar Cost
+Averaging=E2=80=9D     Recurring Investments help keep you accountable
+with your money goals and discourages =E2=80=9Ctiming the market.=E2=80=9D =
+This
+=E2=80=9Calways-on=E2=80=9D
+approach to investing is called =E2=80=9CDollar Cost Averaging,=E2=80=9D an=
+d it=E2=80=99s
+a smart money practice many use to develop a regular investing
+habit.               This is what investing $10 a week
+could do over time...          The chart shows an estimate of how
+much an investment could go over time based on the initial
+deposit, contribution schedule, time horizon, and interest rate
+specified. Changes in those variables can affect the outcome.
+Results do not predict the investment performance of any Acorns
+portfolio and do not take into consideration economic or market
+factors which can impact performance.
+Instagram ( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda=
+-2Fd0vguHPT6CcaSwdGLdulvKh-2F-2B19yruGFMeNPe4e9P6agS4FhyTa-2BvwUCoQ_kHUZGGA=
+IbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThC=
+HSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2B=
+Vwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0=
+l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7i=
+F4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9=
+j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2Fw=
+kOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6R=
+zPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1=
+Yhx7rale2NyR3U5FWZ-2FPlRwBI2DBMKkjB9Ietrh3k88DSc-2FZZSan21RCpoA7SIMeaPUQ-2F=
+TZ-2BgCqFtDpp5iObnqcfdPhneypQMnoYmwSEGJ9iHYfOeg6ipIRLiOHttImZzvBHUZfra-2FAM=
+j3A6SsiA6WgiLi3gE1eB-2FP-2Bor9UZH8-3D )     Sent with love
+from Acorns
+5300 California Ave. Irvine, CA 92617
+
+This email is a no-reply.
+
+Click here ( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsd=
+a-2Fd0vguHPT6Ccao4XJ-2Bt1tENbZKxundnwCv4IwvAUH5OCbE2WqbAkL59yWlI7c1ktmVXBEV=
+QaBXPauDsoW9kd4p6KN1N7STmMh91vVUX9g49U5W3hObga1wIEa8OlcmmqsYgAb0n32GNYLdPYD=
+FV8ht1gNCeWj4AP3G6X0h2mLeomXYsN-2FacpfCVNU8T9PS5PmjULXU53VdCaI579qWdDg8IowY=
+0P9AlQW3itHF696HPE5rMdknRvw8-2Bk250NBAlBY5MO0zCBUCMjV1iuQwS-2FMz2uCTg44xGXR=
+aqKNYG-2FTxInaXV6UctG-2BtN1I5b38615cMBdPPrtmL7zJnUvZyMWeYpFvgO7kLGwal8LoIWp=
+OcJ5j9QVV5OEF3y8Z7jaFHzlBHuASoIv8UEOnEr4Ty27IFTc3a4vqVK8zjnfMQAD-2FHjJRvcMd=
+s0XxkaNFQXzQ9XPne6MFYwGF6ZoFPCAmNmpYlV-2F-2FN8A7neyQZRqeRvRWWQGkDfY0-2BQq8z=
+TsPnysVr62AYhKXRP3jlgdibR6E4lYijlGo6-2FNR8VQP0vQYL9iNIYS6a5kGUuBvE3mZ7q3QHM=
+6ctiLX5fGLT5AJWHoGlvpr6kSeOVPMokOrDRDPkC69VQuyv4vvujxjFIr1r45f4QXHy6zmvo1QL=
+3oiK2g5lgvif62I0yBKUr6cs6NzeihoqaKD5ZLAUfnNQCEjgihWSWHOq6njanfyTuyppju2-2Fq=
+jPrT0UYnMv5ZjeHJbFUDFN50aJMvPAkaZTKZW0dBgA9TxU9PIcY8otci9WV7dNKJ31WilxfnLf4=
+ZrEYgEY-2FvvGf5llhfNcXveaFbPham_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8=
+TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEF=
+wKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89=
+ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy=
+25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvK=
+Y6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09=
+y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB=
+6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3=
+Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPlEif7N9RQegOBh=
+pA5nhjAL-2BwA-2Fijy5-2BK1AmnGaqBnniKK2IDf6Uc7y4IrYKp4gFujU3IqAY542sMqdyK-2B=
+C8BhyQK-2FnsnB3neBKX85hxSd1ymSjTuwaqn-2BjjcjJGSd1nYabtlFTI-2B76yhPDCLHk0CN4=
+-3D ) to manage your
+email preferences or unsubscribe.
+
+At the beginning of each entry period the Official Terms will be
+updated and an email will be sent to Acorns customers that will
+announce what the multiplier is for that entry period, the
+maximum prize amount is five hundred dollars ($500). See official
+rules for the Set it and Invest it Challenge here.=20
+( https://links.notifications.acorns.com/ls/click?upn=3Dpkb3CfID9UpN6bm0Vxp=
+0AARRH117uhCEWcmDnyz4-2Bh5vN8mFZn0y1bYX1CBKFQjpi0y4zN530P0CzGPcAmnw6A-3D-3D=
+rHuV_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC=
+8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2F=
+cijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB=
+-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC=
+8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh=
+4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLf=
+hZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0=
+cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq=
+5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPiMDfruzlzDFBDPuALx9y9N7kWk0QIHu-2Fjjqee8H=
+PvGhey3w-2B6JxZYkqqxzLHtkwHVRifnTDCrI1hGg6u3eYylEWJsGISinRRJ6jMjai6tDaeGrFQ=
+F6QTa2s6qfOUQF4-2BrJbOw9HeUwN9PAf3mnIOqc-3D )
+
+The Set it and Invest it challenge is intended to encourage
+existing Acorns clients to routinely invest by utilizing the
+recurring investment feature available to all clients with an
+active Invest account. Although the challenge may attract new
+customers and increase customer engagement and retention, it is
+important to note that Acorns does not receive compensation in
+the form of =E2=80=9Cpayment for order flow=E2=80=9D for directing customer
+orders, or charge clients percentage-based fees or fees based on
+a percentage of assets under management for accounts under
+$1,000,000, and so conflicts of interest between Acorns and its
+clients due to this challenge are limited. Please refer to our
+Wrap Fee Brochure ( https://links.notifications.acorns.com/ls/click?upn=3DO=
+TcLGFsda-2Fd0vguHPT6Ccb5q15J9IZkaq-2FzFCLzUAJ1q-2B1HGfVenG1DptP-2FxkS9hNNXT=
+y9Yyru3ReN8JWq2IVw-3D-3D7Sx4_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLI=
+eztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKl=
+u43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymH=
+X00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L=
+2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Y=
+f5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5T=
+lbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-=
+2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0=
+qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPnnvCT5W9-2Fq3B73U=
+8MwF4xyEkVplPSr6QbQSMtCaXAeREv3l438hy9hBrCCswbl07NQQVJVDM2a-2BG283gPISRxjLO=
+Mv9m7gLdOCD06TKbkNvm3Peu7Z3-2Bh759fqV-2BmUPk-2B41SckL-2BD6pr-2F-2BAKJc7LXM-=
+3D )
+for additional information on the overall conflicts and risks
+associated with Acorns.
+
+Important Risk Disclosures
+Investing involves risk, including loss of principal. Please
+consider, among other important factors, your investment
+objectives, risk tolerance, and Acorns pricing before investing.
+Investment advisory services are provided by Acorns Advisers,
+LLC. Brokerage services are provided to clients of Acorns by
+Acorns Securities, an SEC registered broker dealer and member
+FINRA ( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd=
+0vguHPT6CcbCqRo3jeLHWfvVfvw30ppvKDej0ZlobW3k7vyXc7az9Sp8__kHUZGGAIbaUxVXIM4=
+tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWD=
+RbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6=
+dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIM=
+T0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8=
+ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5Jq=
+Od9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetth=
+fjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNF=
+TAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2N=
+yR3U5FWZ-2FPqm01ElhG1dul-2BKp1rJXfrzmzVZ964mvAag56dmfdEa-2FYvdSBGlTTPs6cOn4=
+aYAe-2BGTuAmdz-2BSahYARlnScxl8VpEOUgAcNP0gmN4g33MzL8Rf4BISxlARQvThQWsl5RDkt=
+lKVF1PYAQBD1PTqjrq18-3D )/SIPC ( https://links.notifications.acorns.com/ls/=
+click?upn=3DOTcLGFsda-2Fd0vguHPT6CcR4m2DrPOG4gySQKBMnOj6M-3DoV4S_kHUZGGAIba=
+UxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSq=
+ASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt=
+9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K=
+9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4j=
+UJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59=
+M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOv=
+mZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPe=
+PDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx=
+7rale2NyR3U5FWZ-2FPsDGpJ07OkvraP8xugSp8YjC0qdgVG-2BlOkyUZ1fCa-2B0oIjZAan-2F=
+-2BlSSwBFVl-2BoT64veP30-2BbcG-2BZfoROXk07qt-2FwFQBSpwq73cZz1Z4CGD78GZ7wFbZS=
+pADw6OEUcsIcJmxMOaqz4tTUm2AJLERwO4c-3D ) . Acorns Visa=E2=84=A2 debit cards=
+ and banking services are issued by
+Lincoln Savings Bank or nbkc, member FDIC. Investments are not
+FDIC insured and may lose value. Acorns reserves the right to
+restrict or revoke any and all offers at any time. For additional
+Important Disclosures, please click here.=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6Ccc-2FSnkRxKK-2FJJ6d-2FHJCPXIIDYZ548IBDsjOF5YMMQk-2BH7QRu_kHUZGGAIbaUxVXI=
+M4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4u=
+WDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIg=
+j6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4k=
+IMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCpp=
+u8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5=
+JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtet=
+thfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2y=
+NFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale=
+2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIbUG26F6BoVIWIz1lq6dvade5V9IsSkPdv6uNZa=
+4rpN2MTTNptUzA38eSW0E4RRZI1KPO4OCq-2Bl0lSO297qy-2F01yLaBAiVBnobWSZOSWgJOOP1=
+v6jeYLqDclZW1JpIvi48T9-2FCaQUfimXxZcI7Q71e9 ) You can update your
+Investor Suitability Profile at any time by clicking here.=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcXApNzkkYJF8Ym-2FjnwgdgHtoQQqKUKcKHWiKJXKhvjmO6ZUyJAFE0hp5EaMjGh-2Fw-2FQ=
+-3D-3DxpZY_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7=
+EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyBy=
+T3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDd=
+yezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6ud=
+DnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7ar=
+U7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI=
+5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qr=
+c0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLK=
+X-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIaKXVeN-2Fv0X=
+hW04Ryem9byuqRMPjzml0-2BKW6xgipcse8-2BQL303iSdnOL1VLz3ZSwPv6mR24hMNw2jjRSeo=
+vUiNzAQTknvc9vwXKGguBLrmQnT7cdJEoMwZqcy-2B762ObIkCvweqi8gWhMeBpk7nY-2B8ng )
+
+Mail-in Entrants
+NO PURCHASE NECESSARY TO ENTER OR WIN. A PURCHASE WILL NOT
+INCREASE YOUR CHANCES OF WINNING. Open only to legal residents of
+the 50 United States (D.C.) and Puerto Rico, 18 years of age and
+older. Void where prohibited by law. Sweepstakes begins on or
+about 12am PT on January 9, 2023 and ends at 11:59:59pm PT on
+March 19, 2023. ARV of all prizes is up to $50,000. AMOE
+Instructions: Hand-print your full name, full mailing address,
+email address, phone number and birth date on a plain 3x5 inch
+paper and mail to: Realtime Media, Attn: Set it and Invest it
+Challenge Entry, 1001 Conshohocken State Road, Suite 2=E2=80=93130, West
+Conshohocken, PA 19428. See full Official Rules for entry
+postmark and received by dates. Odds of winning will depend on
+the total number of entries received. Limit seven (7) mail-in
+entries per person, per week during the Sweepstakes Period, each
+eligible mail-in entry is worth one (1) Sweepstakes entry.
+Subject to full Official Rules, entry periods, entry limits,
+visit: https://links.notifications.acorns.com/ls/click?upn=3Dpkb3CfID9UpN6b=
+m0Vxp0AARRH117uhCEWcmDnyz4-2Bh5vN8mFZn0y1bYX1CBKFQjpIQv8crKMRUcDEcNsT43S5w-=
+3D-3D8ISS_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7E=
+ueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT=
+3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdy=
+ezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udD=
+nfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU=
+7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5=
+Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc=
+0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX=
+-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIYhwMvUlEfUgGi=
+SRb5Kvbo6vISi08M32z1Zfno4asDmD-2BLqHqBxVi1UIgo7G4-2BZoTN2782TJNs0k-2Fd2Ll6U=
+XjYvmi14G1UMlL4-2FPBG54gbStlnZ-2BT8K44alc6GEgYKA6rS-2F2cfLCsSrRVdsvzxOsH-2F=
+b Sponsor:
+Acorns Grow Incorporated, 5300 California Ave., Irvine, CA 92617.
+
+Acorns Support
+Have a question? View FAQs or contact our Investor Success team
+from our Support Center ( https://links.notifications.acorns.com/ls/click?u=
+pn=3DOTcLGFsda-2Fd0vguHPT6CccXsFt-2BV3ghFw8zBL-2FYzVEIlMwe663IArKYrZ8Co6che=
+NxrK_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC=
+8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2F=
+cijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB=
+-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC=
+8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh=
+4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLf=
+hZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0=
+cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq=
+5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIYH7cILyA-2FpULbxHF=
+xydw74Vn8uiSjU-2FyG40SgVcHEgsdGfYZuNanoE4Pffnqpwo0VZVDvNM6MEteBFD7XGK7Cj50t=
+zSns9wDFNzhqX-2B9cqCtI4a2FEjxNDFE-2BcGHVjpo2oqoWTVW9GBZOzi3M-2B6pvC ).
+
+View your monthly statements, trade confirmations and tax
+documents by logging in here=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CceH9GBIOlM-2FTcAHl4sXhhP-2FMYvVYuPn8YcVRNpfbdW0SK2xL0LADWTbagsKxVslhxg-3=
+D-3Dcq0l_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7Eu=
+eSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3=
+L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdye=
+zcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDn=
+fHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7=
+BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z=
+0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0=
+tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-=
+2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPvDQo4RALIe5O-2Be00wFXBIbsLVTkNleCOBrG=
+s6p6O1JZueDAlmLw2i5N5JKVyweUgqZySrVjCUO4FraUsAqRQ5RXpAZ7FQ8NLktI8yFuJnVQDds=
+P0byCtCZPX0gpTL5dEnYc-2B3y22xo81S2acwiXDf0k0EqruVTLjrl6qSayPCNj ) and tappi=
+ng on
+statements.
+
+"Acorns", =E2=80=9CRound-Ups=E2=80=9D, "Invest the Change", "Grow your oak"=
+ and
+the Acorns logo are registered trademarks of Acorns Grow
+Incorporated.
+
+Copyright =C2=A9 2023 Acorns and/or its
+affiliates.
+--88c88c9f99e58d63b5b4f3ec682f45a34d5259b9ca1c18bfa7bdb021f187
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" style=3D"co=
+lor-scheme: light dark; supported-color-schemes: light dark;">
+   <head>
+      <!--[if gte mso 9]>
+      <xml>
+         <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+         </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <meta http-equiv=3D"Content-type" content=3D"text/html; charset=3Dutf=
+-8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, maximum-scale=3D1">
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+      <meta name=3D"format-detection" content=3D"date=3Dno">
+      <meta name=3D"format-detection" content=3D"address=3Dno">
+      <meta name=3D"format-detection" content=3D"telephone=3Dno">
+      <meta name=3D"x-apple-disable-message-reformatting">
+      <meta name=3D"color-scheme" content=3D"light dark">
+      <meta name=3D"supported-color-schemes" content=3D"light dark">
+      <title>Acorns - Invest, Earn, Grow, Spend, Later | Acorns</title>
+      <!--[if gte mso 9]>
+      <style type=3D"text/css" media=3D"all">
+         sup { font-size: 100% !important; }
+         table, tr, th, td, div, p, strong, span, a, em { font-family: Aria=
+l, sans-serif !important; }
+      </style>
+      <![endif]-->
+     =20
+   <style>@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/1e98=
+92c0-6927-4412-9874-1b82801ba47a.woff'); font-weight: 400; font-style: norm=
+al;
+}
+@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/f26f=
+addb-86cc-4477-a253-1e1287684336.woff'); font-weight: 500; font-style: norm=
+al;
+}
+@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/91b5=
+0bbb-9aa1-4d54-9159-ec6f19d14a7c.woff'); font-weight: 600; font-style: norm=
+al;
+}
+@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/91b5=
+0bbb-9aa1-4d54-9159-ec6f19d14a7c.woff'); font-weight: 700; font-style: norm=
+al;
+}
+body {
+padding: 0 !important; margin: 0 auto !important; display: block !important=
+; min-width: 100% !important; width: 100% !important; background: #fafafa; =
+-webkit-text-size-adjust: none;
+}
+img {
+margin: 0 !important; -ms-interpolation-mode: bicubic;
+}
+@media (prefers-color-scheme: dark ) {
+  .title {
+    color: #191919 !important;
+  }
+  .text {
+    color: #191919 !important;
+  }
+  a {
+    color: #191919 !important;
+  }
+  .c-grey {
+    color: #6F6F6F !important;
+  }
+  a.c-grey {
+    color: #6F6F6F !important;
+  }
+  .l-grey a {
+    color: #6F6F6F !important;
+  }
+  .c-white {
+    color: #fffffe !important;
+  }
+  a.c-white {
+    color: #fffffe !important;
+  }
+  .l-white a {
+    color: #fffffe !important;
+  }
+  .c-green {
+    color: #74C947 !important;
+  }
+  a.c-green {
+    color: #74C947 !important;
+  }
+  .l-green a {
+    color: #74C947 !important;
+  }
+  .bg-dark {
+    background-color: #181818 !important;
+  }
+  .bg-dark2 {
+    background-color: #191919 !important;
+  }
+  .bg-green {
+    background-color: #74C947 !important;
+  }
+  .bg-white {
+    background-color: #fffffe !important;
+  }
+  .bg-grey-fa {
+    background-color: #fafafa !important;
+  }
+  .bg-grey-f5 {
+    background-color: #F5F5F5 !important;
+  }
+  .bg-grey-f3 {
+    background-color: #F3F0E6 !important;
+  }
+  .bg-grey-f7 {
+    background-color: #F7F4EB !important;
+  }
+  .bd-grey {
+    border-color: #cbcfce !important;
+  }
+  .bd-green {
+    border-color: #2B653C !important;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  .mpt-10 {
+    padding-top: 10px !important;
+  }
+  .mpx-10 {
+    padding-left: 10px !important; padding-right: 10px !important;
+  }
+  .mpy-20 {
+    padding-top: 20px !important; padding-bottom: 20px !important;
+  }
+  .mpt-45 {
+    padding-top: 45px !important;
+  }
+  .mfz-28 {
+    font-size: 28px !important;
+  }
+  .mlh-32 {
+    line-height: 32px !important;
+  }
+  .mpb-25 {
+    padding-bottom: 25px !important;
+  }
+  .mpx-20 {
+    padding-left: 20px !important; padding-right: 20px !important;
+  }
+  .mfz-14 {
+    font-size: 14px !important;
+  }
+  .mlh-22 {
+    line-height: 22px !important;
+  }
+  .mfz-20 {
+    font-size: 20px !important;
+  }
+  .mlh-25 {
+    line-height: 25px !important;
+  }
+  .mpb-35 {
+    padding-bottom: 35px !important;
+  }
+  .mpb-50 {
+    padding-bottom: 50px !important;
+  }
+  .mfz-13 {
+    font-size: 13px !important;
+  }
+  .mlh-17 {
+    line-height: 17px !important;
+  }
+  .mpb-0 {
+    padding-bottom: 0px !important;
+  }
+  .mpl-0 {
+    padding-left: 0px !important;
+  }
+  .mpb-40 {
+    padding-bottom: 40px !important;
+  }
+  .mpb-15 {
+    padding-bottom: 15px !important;
+  }
+  .mpb-20 {
+    padding-bottom: 20px !important;
+  }
+  .mpb-38 {
+    padding-bottom: 38px !important;
+  }
+  .mpx-0 {
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+  .mpt-35 {
+    padding-top: 35px !important;
+  }
+  .mfz-24 {
+    font-size: 24px !important;
+  }
+  .mlh-30 {
+    line-height: 30px !important;
+  }
+  .mpb-30 {
+    padding-bottom: 30px !important;
+  }
+  .mt-10 {
+    margin-top: -10px !important;
+  }
+  .mt-0 {
+    margin-top: 0 !important;
+  }
+  u + .body .main-tb {
+    padding-bottom: 30px;
+  }
+  body {
+    background-color: #fffffe !important;
+  }
+  .body {
+    background-color: #fffffe !important;
+  }
+  .mt-left {
+    text-align: left !important;
+  }
+  .mt-center {
+    text-align: center !important;
+  }
+  .mt-right {
+    text-align: right !important;
+  }
+  .me-left {
+    margin-right: auto !important;
+  }
+  .me-center {
+    margin: 0 auto !important;
+  }
+  .me-right {
+    margin-left: auto !important;
+  }
+  .mh-auto {
+    height: auto !important;
+  }
+  .mw-auto {
+    width: auto !important;
+  }
+  .fluid-img img {
+    width: 100% !important; max-width: 100% !important; height: auto !impor=
+tant; max-height: auto !important;
+  }
+  .column {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-top {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir-top {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir-bottom {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .m-hide {
+    display: none !important; width: 0 !important; height: 0 !important; fo=
+nt-size: 0 !important; line-height: 0 !important; min-height: 0 !important;
+  }
+  .m-block {
+    display: block !important;
+  }
+  .mh-170 {
+    height: 170px !important;
+  }
+  .mw-200 {
+    width: 200px !important;
+  }
+  .mw-img-80 img {
+    width: 80px !important; height: auto !important;
+  }
+  .mw-50p {
+    width: 50% !important;
+  }
+  .mw-100p {
+    width: 100% !important;
+  }
+  .responsive-table {
+    width: 100% !important;
+  }
+  .btn a {
+    padding: 12px 25px !important;
+  }
+  .mw-img-46 img {
+    width: 46px !important; height: auto !important;
+  }
+  .mw-img-122 img {
+    width: 122px !important; height: auto !important;
+  }
+  .mbg-none {
+    background-image: none !important;
+  }
+  .footer-body {
+    padding: 0 20px !important;
+  }
+  .hide-for-desktop {
+    display: block !important; max-width: 100% !important; max-height: 100%=
+ !important; visibility: visible !important; opacity: 1 !important; width: =
+auto !important; height: auto !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .mpt-10 {
+    padding-top: 10px !important;
+  }
+  .mpx-10 {
+    padding-left: 10px !important; padding-right: 10px !important;
+  }
+  .mpy-20 {
+    padding-top: 20px !important; padding-bottom: 20px !important;
+  }
+  .mpt-45 {
+    padding-top: 45px !important;
+  }
+  .mfz-28 {
+    font-size: 28px !important;
+  }
+  .mlh-32 {
+    line-height: 32px !important;
+  }
+  .mpb-25 {
+    padding-bottom: 25px !important;
+  }
+  .mpx-20 {
+    padding-left: 20px !important; padding-right: 20px !important;
+  }
+  .mfz-14 {
+    font-size: 14px !important;
+  }
+  .mlh-22 {
+    line-height: 22px !important;
+  }
+  .mfz-20 {
+    font-size: 20px !important;
+  }
+  .mlh-25 {
+    line-height: 25px !important;
+  }
+  .mpb-35 {
+    padding-bottom: 35px !important;
+  }
+  .mpb-50 {
+    padding-bottom: 50px !important;
+  }
+  .mfz-13 {
+    font-size: 13px !important;
+  }
+  .mlh-17 {
+    line-height: 17px !important;
+  }
+  .mpb-0 {
+    padding-bottom: 0px !important;
+  }
+  .mpl-0 {
+    padding-left: 0px !important;
+  }
+  .mpb-40 {
+    padding-bottom: 40px !important;
+  }
+  .mpb-15 {
+    padding-bottom: 15px !important;
+  }
+  .mpb-20 {
+    padding-bottom: 20px !important;
+  }
+  .mpb-38 {
+    padding-bottom: 38px !important;
+  }
+  .mpx-0 {
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+  .mpt-35 {
+    padding-top: 35px !important;
+  }
+  .mfz-24 {
+    font-size: 24px !important;
+  }
+  .mlh-30 {
+    line-height: 30px !important;
+  }
+  .mpb-30 {
+    padding-bottom: 30px !important;
+  }
+  .mt-10 {
+    margin-top: -10px !important;
+  }
+  .mt-0 {
+    margin-top: 0 !important;
+  }
+  u + .body .main-tb {
+    padding-bottom: 30px;
+  }
+  body {
+    background-color: #fffffe !important;
+  }
+  .body {
+    background-color: #fffffe !important;
+  }
+  .mt-left {
+    text-align: left !important;
+  }
+  .mt-center {
+    text-align: center !important;
+  }
+  .mt-right {
+    text-align: right !important;
+  }
+  .me-left {
+    margin-right: auto !important;
+  }
+  .me-center {
+    margin: 0 auto !important;
+  }
+  .me-right {
+    margin-left: auto !important;
+  }
+  .mh-auto {
+    height: auto !important;
+  }
+  .mw-auto {
+    width: auto !important;
+  }
+  .fluid-img img {
+    width: 100% !important; max-width: 100% !important; height: auto !impor=
+tant; max-height: auto !important;
+  }
+  .column {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-top {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir-top {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .column-dir-bottom {
+    float: left !important; width: 100% !important; display: block !importa=
+nt;
+  }
+  .m-hide {
+    display: none !important; width: 0 !important; height: 0 !important; fo=
+nt-size: 0 !important; line-height: 0 !important; min-height: 0 !important;
+  }
+  .m-block {
+    display: block !important;
+  }
+  .mh-170 {
+    height: 170px !important;
+  }
+  .mw-200 {
+    width: 200px !important;
+  }
+  .mw-img-80 img {
+    width: 80px !important; height: auto !important;
+  }
+  .mw-50p {
+    width: 50% !important;
+  }
+  .mw-100p {
+    width: 100% !important;
+  }
+  .responsive-table {
+    width: 100% !important;
+  }
+  .btn a {
+    padding: 12px 25px !important;
+  }
+  .mw-img-46 img {
+    width: 46px !important; height: auto !important;
+  }
+  .mw-img-122 img {
+    width: 122px !important; height: auto !important;
+  }
+  .mbg-none {
+    background-image: none !important;
+  }
+  .footer-body {
+    padding: 0 20px !important;
+  }
+  .hide-for-desktop {
+    display: block !important; max-width: 100% !important; max-height: 100%=
+ !important; visibility: visible !important; opacity: 1 !important; width: =
+auto !important; height: auto !important;
+  }
+}
+</style>
+</head>
+   <body class=3D"body bg-grey-fa" style=3D"display: block !important; min-=
+width: 100% !important; width: 100% !important; -webkit-text-size-adjust: n=
+one; margin: 0 auto; padding: 0;" bgcolor=3D"#fafafa"><img src=3D"https://l=
+inks.notifications.acorns.com/wf/open?upn=3DLn6UxEE-2BJWXODIejw9a-2BV0Gl7H-=
+2B0r60Hll-2BibxQXsajFMPGeBcMTu-2Bl5usQFMBwC46AM6lXqMkQz3BO532lh5LfJptNUbeM-=
+2FATetL3yOkVEimyccudqCWHrsTGBL62rOX1upzzHyinRLhx5-2FaZ3FsMiX-2FhFv-2Fda5ZHt=
+R7eUW5PfOroRy0H-2BITiTAwOMvqJ4eRqgsFQAp3g4KfBK0cSrJLMfDuSHXReu07McYyM-2BdJ4=
+1nOjm2WU8jnQuS2Q-2FVSxRDtMCnhoWu6ETzV5J93-2BW4uUzpRRKogUp3zf6JWz7CX6-2Fsx4H=
+WlwvtxB3dCN-2BAeobp5qmj-2Bvb-2FD27YJFfdB1WAfy38dwa-2B9C-2BD1xaAta6nGXq8rsMj=
+stM9CFQMxDbfkShlSmyl23AuCnT1Lwrtfr1WcZkT4qWxu3I-2BZnY-2BriT5v-2B2x-2BwVC1ND=
+2tTosVRaUwdvQbKNDSsYhTQwq5vv6UAsTp672QCOvVnhu5-2BcrwbvzibdMlIO9thJro1Vybw6i=
+GYcwP3y3fkRchz6NynOtn4KkoepsfD-2BrAhSc3XRsAsIwfn8uq7dqODp-2FfAfwPKICpsGhLEi=
+rYpsVZiv8WXbhbtekGLKGPP94hTFS4BAZ4RP0yrA56zfCSO-2BhrR-2F-2BhSfQnhGbVvOehoos=
+35qKnDKNlawaMGhPrghLOdNxwMIjDPzfZ6LrGIhL21He5ngSNcRl9f8B3OtE1p-2B3WRbaXjEIN=
+pcsDK-2Bhwybh9L87BJ28dJB9MBBAR2wWi-2FATE1N1WoyWEeTI" alt=3D"" width=3D"1" h=
+eight=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !importan=
+t;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !import=
+ant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !impor=
+tant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 =
+!important;"/>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">This week=E2=80=99s Bonus Multiplier is 2x! That means =
+any Recurring Investment this week has a
+chance to be multiplied by 2x, courtesy of us.</div>
+      <center>
+         <table class=3D"main-tb bg-grey-fa" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" style=3D"width: 100%; height: 100%; margi=
+n: 0; padding: 0;" bgcolor=3D"#fafafa">
+            <tr>
+               <td style=3D"width: 100%; height: 100%; margin: 0; padding: =
+0;" align=3D"center" valign=3D"top">
+                  <table class=3D"mw-100p" width=3D"680" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0">
+                     <tr>
+                        <td class=3D"pt-30 px-34 mpt-10 mpx-10" style=3D"fo=
+nt-size: 0pt; line-height: 0pt; padding-top: 30px; padding-left: 34px; padd=
+ing-right: 34px;">
+                           <!-- Header -->
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"bg-white" style=3D"" bgcolor=3D"#fffffe">
+                              <tr>
+                                 <td class=3D"img-center mw-img-80 py-29 mp=
+y-20" style=3D"font-size: 0pt; line-height: 0pt; padding-top: 29px; padding=
+-bottom: 29px;" align=3D"center">
+                                    <a href=3D"https://links.notifications.=
+acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcTo8jDM3LwnnxOzhnYXt-2B=
+4XDlG0tnFNxNgacDd1xun6-2FqUzN_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TL=
+Ieztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwK=
+lu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ym=
+HX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25=
+L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6=
+Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5=
+TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E=
+-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl=
+0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPiD3ukIwpwWj4baxC=
+zZArpxq-2B3mtmbv4BNDACp-2B1Vvm25rVoRTSkQ-2FdTgP8LVwM5a3TFpm-2BAxEZflaJ647j4=
+3pScTSlMgbpRiXg0Xq2UGwAoqqIH0dp3tSyddISzh7t4Z9L6XG9C8fsnW5WTOwE0kLUX-2FuIlo=
+9RDABxGTNMw344H" universal=3D"true" target=3D"_blank" style=3D"color: #1919=
+19; text-decoration: none;">
+                                    <img src=3D"https://s3.amazonaws.com/as=
+sets.acorns.com/email/2022-03-updated_acorns-logo.png" width=3D"110" height=
+=3D"25" border=3D"0" alt=3D"" style=3D"-ms-interpolation-mode: bicubic; mar=
+gin: 0;">
+                                    </a>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- END Header -->
+                           <!-- Section 1 -->
+                           <div class=3D"fluid-img" style=3D"font-size: 0pt=
+; line-height: 0pt; background-color: transparent !important;" align=3D"lef=
+t">
+                              <a href=3D"https://links.notifications.acorns=
+.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-=
+2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3D5edx_kHUZGGAIbaUxVXIM4tIqu=
+cmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnw=
+YXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjI=
+l87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0Lr=
+R7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJg=
+lxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9y=
+LzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL=
+2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAAp=
+O7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U=
+5FWZ-2FPiD3ukIwpwWj4baxCzZArpw3JH3nV38yRUcYR21oLr9y4P71Af7RnK2I0ZpbjJGG3R0k=
+k5AWwga7KxszFj22Pr74wxS-2B3sifeYEFqLRkAFHIox32RCwi-2F5f7hSkeVVvxGQrZkXUCG5R=
+tqPpkwPDXqxkiaE4cnsPpPVtFQ2IxihfJ" universal=3D"true" target=3D"_blank" sty=
+le=3D"color: #191919; text-decoration: none;">
+                                 <img src=3D"https://s3.amazonaws.com/asset=
+s.acorns.com/email/q1-23-investing-challenge/weekly-challenge.gif" width=3D=
+"612" height=3D"739" border=3D"0" alt=3D"" style=3D"-ms-interpolation-mode:=
+ bicubic; margin: 0;">
+                           </a>
+</div>
+                           <!-- END Section 1 -->
+                           <!-- Section 2 -->
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"bg-grey-f7" style=3D"" bgcolor=3D"#F7F4EB=
+">
+                           <tr>
+                           <td class=3D"pt-50 pb-34 mpt-40 mpb-15" style=3D=
+"padding-top: 50px; padding-bottom: 34px;">
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                           <tr>
+                           <td class=3D"title fz-40 lh-48 mfz-28 mlh-32 a-c=
+enter pb-19 px-50 mpb-25 mpx-20" style=3D"font-weight: 600; color: #191919;=
+ font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-=
+rule: exactly; font-size: 40px; line-height: 48px; padding-bottom: 19px; pa=
+dding-left: 50px; padding-right: 50px;" align=3D"center">
+                           Make long-term investing a habit for a chance to=
+ win!
+                           </td>
+                           </tr>
+                           <tr>
+                           <td class=3D"text fz-16 lh-24 mfz-14 mlh-22 a-ce=
+nter pb-42 px-50 mpb-15 mpx-20" style=3D"color: #191919; font-family: 'Aven=
+ir Next', Helvetica, Arial, sans-serif; mso-line-height-rule: exactly; font=
+-size: 16px; line-height: 24px; padding-bottom: 20px; padding-left: 50px; p=
+adding-right: 50px;" align=3D"center">													=09
+                           We=E2=80=99ve officially kicked off <strong styl=
+e=3D"font-weight: 600 !important;">Set It &amp; Invest It</strong>, our New=
+ Year=E2=80=99s challenge to&nbsp;help you build good, long-term investing =
+habits and get you closer to your 2023 money goals! From now until Mar. 19,=
+ any Recurring Investment has a chance to be multiplied by up to 10x!=20
+                           </td>
+                           </tr>
+                           <tr>
+                           <td class=3D"text fz-40 lh-48 mfz-22 mlh-26 c-gr=
+een l-green a-center pb-15 px-20" style=3D"font-weight: 600; font-family: '=
+Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-rule: exactly; =
+font-size: 40px; line-height: 48px; color: #74C947; padding-bottom: 15px; p=
+adding-left: 20px; padding-right: 20px;" align=3D"center">
+                           This week=E2=80=99s Bonus Multiplier is 2x!
+                           </td>
+                           </tr>
+                           <tr>
+                           <td class=3D"text fz-16 lh-24 mfz-14 mlh-22 a-ce=
+nter a-center pb-47 mpx-20" style=3D"color: #191919; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; mso-line-height-rule: exactly; font-siz=
+e: 16px; line-height: 24px; padding-bottom: 20px;" align=3D"center">
+                           That means any Recurring Investment this week ha=
+s a <span class=3D"m-hide"><br></span>chance to be multiplied by 2x, courte=
+sy of us. <span class=3D"m-hide"><br></span>So what are you waiting for? Jo=
+in the challenge!=20
+                           </td>
+                           </tr>
+                          =20
+                           										=09
+                          =20
+                           <tr>
+                           <td class=3D"mpb-20" align=3D"center" style=3D"p=
+adding-bottom: 20px;">
+                           <!-- Button -->
+                           <table border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" style=3D"border-collapse: separate;">
+                           <tr>
+                           <td class=3D"btn btnp-19-45 fz-16 lh-22 mfz-13 m=
+lh-17 c-white l-white bg-green" style=3D"font-weight: 600; border-radius: 1=
+00px; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-he=
+ight-rule: exactly; mso-padding-alt: 19px 45px; font-size: 16px; line-heigh=
+t: 22px; color: #fffffe;" align=3D"center" bgcolor=3D"#74C947">
+                           <a href=3D"https://links.notifications.acorns.co=
+m/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FG=
+Kx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DpuTh_kHUZGGAIbaUxVXIM4tIqucmy=
+vZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR=
+-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87=
+nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A=
+2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY=
+4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzc=
+E-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qj=
+z0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7C=
+zLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FW=
+Z-2FPiD3ukIwpwWj4baxCzZArpwCKh2lGX-2BG-2F00A67ASPWjGv6o6tUC36ezZKkx8mLRMKlL=
+Qax-2BvcNgvVkCYg4iqK4mVf1Zu6J5djVt20DKnJChGW0pLrls5Uj06hrFqeMV2xU1-2F-2BrSI=
+Q59bgmykLsETT-2FCu-2FAvDJvm-2BKWtUOPeHpn1x" universal=3D"true" target=3D"_b=
+lank" class=3D"link c-white" style=3D"display: block; text-decoration: none=
+; color: #fffffe; padding: 16px 45px;">
+                           Set Recurring Investment
+                           </a>
+                           </td>
+                           </tr>
+                           </table>
+                           <!-- END Button -->
+                           </td>
+</tr>
+<tr>
+                                          <td class=3D"text fz-12 lh-24 mfz=
+-14 mlh-22 a-center pb-46 mpb-40" style=3D"font-weight: 500; color: #191919=
+; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height=
+-rule: exactly; font-size: 12px; line-height: 24px; padding-bottom: 46px; p=
+adding-left: 20px; padding-right: 20px;" align=3D"center">
+                                             <em>Alternative mail-in entry =
+available. <a href=3D"https://links.notifications.acorns.com/ls/click?upn=
+=3DOTcLGFsda-2Fd0vguHPT6CcVfasJxS3OQKipk0l12F618JrUlNrkvuoR5AAzDJ89KwuPksx-=
+2FS7FVPuJqHIxWkTEA-3D-3DS5h6_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLI=
+eztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKl=
+u43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymH=
+X00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L=
+2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Y=
+f5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5T=
+lbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-=
+2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0=
+qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPiD3ukIwpwWj4baxCz=
+ZArpyplYy-2FTCJLocAilR-2FCdtc2Yq1MfO9XS7TqC5eV09Wmr-2FGHwRRhKRK1w08VaMENJ8C=
+LLxmfAgLBUCdxx00L1e-2BKW3uSdD18RoZWpKOrOa9AUyet8LaF-2BjcfZFuYhJQuzjDk9LlrS6=
+oGwOYp6DH-2FJxgg" target=3D"_blank" class=3D"link c-green" style=3D"font-we=
+ight: 600; text-decoration: none; color: #74C947;">See terms for how to ent=
+er.</a></em>
+                                          </td>
+                                       </tr>
+                           <tr>
+                           <td class=3D"mpb-20 px-60" style=3D"padding-bott=
+om: 32px; padding-left: 60px; padding-right: 60px;">
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                           <tr>
+                           <th class=3D"column" width=3D"96" style=3D"font-=
+size: 0pt; line-height: 0pt; font-weight: normal; margin: 0; padding: 0;">
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                           <tr>
+                           <td class=3D"img mt-center mw-img-180" style=3D"=
+font-size: 0pt; line-height: 0pt;" align=3D"left">
+                           <a href=3D"https://links.notifications.acorns.co=
+m/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FG=
+Kx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DQxAk_kHUZGGAIbaUxVXIM4tIqucmy=
+vZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR=
+-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87=
+nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A=
+2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY=
+4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzc=
+E-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qj=
+z0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7C=
+zLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FW=
+Z-2FPiD3ukIwpwWj4baxCzZArpwxE9dobtMQrLPhC6DnFZWAXuKm4X0FfvVWmGxvjPjwh2EQue6=
+yXjZkF4EhVhI09Y45d1VbfrEp2i6NaW5N6P-2FcrsakFeGghpXgHSjLPIpIzMOdj6TutZhzWWIQ=
+9R2jDdwF8GXMpCLXR-2FyKVI-2FZvBjN" universal=3D"true" target=3D"_blank" styl=
+e=3D"color: #191919; text-decoration: none;"><img src=3D"https://s3.amazona=
+ws.com/assets.acorns.com/email/q1-23-investing-challenge/weekly_comm_img_av=
+atar.png" width=3D"96" height=3D"auto" border=3D"0" alt=3D"" style=3D"-ms-i=
+nterpolation-mode: bicubic; margin: 0;">
+                           </a>
+</td>
+                           </tr>
+                           </table>
+                           </th>
+                           <th class=3D"column mpb-15" width=3D"30" style=
+=3D"font-size: 0pt; line-height: 0pt; font-weight: normal; margin: 0; paddi=
+ng: 0;">&nbsp;</th>
+                           <th class=3D"column" style=3D"font-size: 0pt; li=
+ne-height: 0pt; font-weight: normal; margin: 0; padding: 0;">
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                           <tr>
+                           <td class=3D"text fz-16 lh-24 mfz-14 mlh-22 mt-c=
+enter mpx-20 mpt-0" style=3D"color: #191919; font-family: 'Avenir Next', He=
+lvetica, Arial, sans-serif; mso-line-height-rule: exactly; font-size: 16px;=
+ line-height: 24px;" align=3D"left">
+                           Setting a Recurring Investment on Acorns means i=
+nvesting in a diversified portfolio on a consistent&nbsp;basis. And by doin=
+g that, your money can potentially grow over the long-term through the powe=
+r of compounding.
+                           </td>
+                           </tr>
+                           </table>
+                           </th>
+                           </tr>
+                           </table>
+                           </td>
+                           </tr>
+                          =20
+                          =20
+                           </table>
+                           </td>
+                           </tr>
+                           </table>
+                           <!-- END Section 2 -->
+                           <!-- Section 3 -->
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"bg-white" style=3D"" bgcolor=3D"#fffffe">
+                              <tr>
+                                 <td class=3D"pt-54 px-25 mpt-45 mpx-20" st=
+yle=3D"padding-top: 54px; padding-left: 25px; padding-right: 25px;">
+                                    <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0">
+                                       <tr>
+                                          <td class=3D"title fz-40 lh-48 mf=
+z-28 mlh-32 a-center pb-51 mpb-25" style=3D"font-weight: 600; color: #19191=
+9; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-heigh=
+t-rule: exactly; font-size: 40px; line-height: 48px; padding-bottom: 51px;"=
+ align=3D"center">
+                                             How does it work?=20
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class=3D"pb-17 mpb-0" align=
+=3D"center" style=3D"padding-bottom: 17px;">
+                                             <table class=3D"mw-100p" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                <tr>
+                                                   <th class=3D"column-top"=
+ width=3D"180" style=3D"font-size: 0pt; line-height: 0pt; font-weight: norm=
+al; margin: 0; padding: 0;" valign=3D"top">
+                                                      <table width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                         <tr>
+                                                            <td class=3D"im=
+g mt-center pb-22" style=3D"font-size: 0pt; line-height: 0pt; padding-botto=
+m: 22px;" align=3D"left">
+                                                               <a href=3D"h=
+ttps://links.notifications.acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguH=
+PT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyi=
+g-3D-3DgMQK_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR=
+7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyB=
+yT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYD=
+dyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6u=
+dDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7a=
+rU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gG=
+I5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Q=
+rc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWL=
+KX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKnvsb8CG-2BT85=
+eEygAw-2F4ohzYAtQXCmewPkm-2BtwYLZSj9zS-2B2YW3xC4Dws-2B7VTe0y-2BKc71vL72gFxf=
+qhk6f6r2Qdh1O5fKj6hqRmgF3kZ979ikn6AVYhfdyUAosM1jkVq90f0s1ZCOd8QosWsIOIW7Z5"=
+ universal=3D"true" target=3D"_blank" style=3D"color: #191919; text-decorat=
+ion: none;">
+                                                                  <img src=
+=3D"https://s3.amazonaws.com/assets.acorns.com/email/q1-23-investing-challe=
+nge/img_6.png" width=3D"106" height=3D"158" border=3D"0" alt=3D"" style=3D"=
+-ms-interpolation-mode: bicubic; margin: 0;">
+                                                            </a>
+</td>
+                                                         </tr>
+                                                         <tr>
+                                                         <td class=3D"text =
+fz-14 lh-17 mt-center pb-40" style=3D"font-weight: 500; color: #191919; fon=
+t-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-rule=
+: exactly; font-size: 14px; line-height: 17px; padding-bottom: 40px;" align=
+=3D"left">
+                                                         Set a Recurring<br=
+>Investment starting at<br>$5 a day, week, or<br>month.=20
+                                                         </td>
+                                                         </tr>
+                                                      </table>
+                                                   </th>
+                                                   <th class=3D"column-top"=
+ width=3D"200" style=3D"font-size: 0pt; line-height: 0pt; font-weight: norm=
+al; margin: 0; padding: 0;" valign=3D"top">
+                                                   <table width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                   <tr>
+                                                   <td class=3D"img mt-cent=
+er pb-22" style=3D"font-size: 0pt; line-height: 0pt; padding-bottom: 22px;"=
+ align=3D"left">
+                                                   <a href=3D"https://links=
+.notifications.acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNS=
+vZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DWdkv_=
+kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbO=
+OjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7=
+Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSH=
+ae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qd=
+ybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNA=
+x4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5A=
+Wi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F=
+8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zp=
+u7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKmBdnwF8vZUFEfq-2B2RyGIgn-=
+2FU76cHvx1FNrnL1NfnTxYm1gj9GH9Y8cRKunzM1a6UDCEH34jcND-2BwEwpa9FjM7ykZaND1hU=
+XKvIjrc9B8apChLgVU8Q0WYb4MguD7yT2CWZj8AdrK91orUMpC3l7-2Bu0" universal=3D"tr=
+ue" target=3D"_blank" style=3D"color: #191919; text-decoration: none;"><img=
+ src=3D"https://s3.amazonaws.com/assets.acorns.com/email/q1-23-investing-ch=
+allenge/new_img_7.png" width=3D"107" height=3D"158" border=3D"0" alt=3D"" s=
+tyle=3D"-ms-interpolation-mode: bicubic; margin: 0;">
+                                                   </a>
+</td>
+                                                   </tr>
+                                                   <tr>
+                                                   <td class=3D"text fz-14 =
+lh-17 mt-center pl-12 pb-40 mpl-0" style=3D"font-weight: 500; color: #19191=
+9; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-heigh=
+t-rule: exactly; font-size: 14px; line-height: 17px; padding-left: 12px; pa=
+dding-bottom: 40px;" align=3D"left">
+                                                   Each Recurring<br>Invest=
+ment you invest<br>gets a chance to be<br>multiplied by up to 10x.=20
+                                                   </td>
+                                                   </tr>
+                                                   </table>
+                                                   </th>
+                                                   <th class=3D"column-top"=
+ style=3D"font-size: 0pt; line-height: 0pt; font-weight: normal; margin: 0;=
+ padding: 0;" valign=3D"top">
+                                                   <table width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                   <tr>
+                                                   <td class=3D"img mt-cent=
+er pb-22" style=3D"font-size: 0pt; line-height: 0pt; padding-bottom: 22px;"=
+ align=3D"left">
+                                                   <a href=3D"https://links=
+.notifications.acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNS=
+vZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DJFzg_=
+kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbO=
+OjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7=
+Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSH=
+ae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qd=
+ybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNA=
+x4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5A=
+Wi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F=
+8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zp=
+u7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKkgbQs4lAQoOZXYwZwXsDLRN9D=
+fMnwE8AKSKM2QdL1-2BdMzSy3LzvJJf4GFrr4Rbe3-2FD8fZYe2Od-2F0TFFJVSEOGTA4NuL-2B=
+olfElaEBCc1g5sagZfs-2BwD-2BAr0f77Dzo5MtnN4a7V1tKv9QZObTd4bgMCK" universal=
+=3D"true" target=3D"_blank" style=3D"color: #191919; text-decoration: none;=
+"><img src=3D"https://s3.amazonaws.com/assets.acorns.com/email/q1-23-invest=
+ing-challenge/img_8.png" width=3D"107" height=3D"158" border=3D"0" alt=3D""=
+ style=3D"-ms-interpolation-mode: bicubic; margin: 0;">
+                                                   </a>
+</td>
+                                                   </tr>
+                                                   <tr>
+                                                   <td class=3D"text fz-14 =
+lh-17 mt-center pb-40" style=3D"font-weight: 500; color: #191919; font-fami=
+ly: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-rule: exac=
+tly; font-size: 14px; line-height: 17px; padding-bottom: 40px;" align=3D"le=
+ft">
+                                                   We=E2=80=99ll pick winne=
+rs<br>each week!
+                                                   </td>
+                                                   </tr>
+                                                   </table>
+                                                   </th>
+                                                </tr>
+                                             </table>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                       <td class=3D"text fz-16 lh-24 mfz-14=
+ mlh-22 a-center pb-46 mpb-40" style=3D"color: #191919; font-family: 'Aveni=
+r Next', Helvetica, Arial, sans-serif; mso-line-height-rule: exactly; font-=
+size: 16px; line-height: 24px; padding-bottom: 46px;" align=3D"center">
+                                       The Recurring Investment multiplier =
+changes every week from <span class=3D"m-hide"><br></span>2x to 10x. And th=
+e bigger your Recurring Investment, the <span class=3D"m-hide"><br></span>b=
+igger the potential winnings!<br><br>
+                                       Set a daily or weekly Recurring Inve=
+stment to never miss a <span class=3D"m-hide"><br></span>chance at winning =
+by tapping below!
+                                       </td>
+                                       </tr>
+                                       <tr>
+                                       <td class=3D"pb-47 mpb-50" align=3D"=
+center" style=3D"padding-bottom: 47px;">
+                                       <!-- Button -->
+                                       <table border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"border-collapse: separate;">
+                                       <tr>
+                                       <td class=3D"btn btnp-17-45 fz-16 lh=
+-20 mfz-13 mlh-17 c-white l-white bg-green" style=3D"font-weight: 600; bord=
+er-radius: 100px; font-family: 'Avenir Next', Helvetica, Arial, sans-serif;=
+ mso-line-height-rule: exactly; mso-padding-alt: 17px 45px; font-size: 16px=
+; line-height: 20px; color: #fffffe;" align=3D"center" bgcolor=3D"#74C947">
+                                       <a href=3D"https://links.notificatio=
+ns.acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6p=
+FEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DTdeB_kHUZGGAIbaUx=
+VXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqAS=
+W4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9G=
+FIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9t=
+y4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJ=
+Cppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2=
+lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZ=
+tetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePD=
+q2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7r=
+ale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKlGe1Ec-2Ft4CVNEglY74OwbSI8PXMM2LPFXKJ=
+04G2rTAbNAEh13qLkieBJA69t3FNhOUnG9kwi5nOARFLvrnz6eZMgAyxdazYzRdR0DElJagt2nx=
+VHZbDlOvK8t-2BBvW-2BTipO0nEt9Av9aRqLhDxxoMPY" universal=3D"true" target=3D"=
+_blank" class=3D"link c-white" style=3D"display: block; text-decoration: no=
+ne; color: #fffffe; padding: 17px 45px;">
+                                       Set Recurring Investment
+                                       </a>
+                                       </td>
+                                       </tr>
+                                       </table>
+                                       <!-- END Button -->
+                                       </td>
+</tr>
+<tr>
+                                          <td class=3D"text fz-12 lh-24 mfz=
+-14 mlh-22 a-center pb-46 mpb-40" style=3D"font-weight: 500; color: #191919=
+; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height=
+-rule: exactly; font-size: 12px; line-height: 24px; padding-bottom: 46px;" =
+align=3D"center">
+                                             <em>Alternative mail-in entry =
+available. <a href=3D"https://links.notifications.acorns.com/ls/click?upn=
+=3DOTcLGFsda-2Fd0vguHPT6CcVfasJxS3OQKipk0l12F618JrUlNrkvuoR5AAzDJ89KwuPksx-=
+2FS7FVPuJqHIxWkTEA-3D-3Dz7UU_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLI=
+eztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKl=
+u43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymH=
+X00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L=
+2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Y=
+f5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5T=
+lbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-=
+2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0=
+qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWH=
+rZWKmJ1jTlDxxmxiNIorOQd9lK34qrwPcSYUGtZZzkqgdvn82-2FHXS1AxZcpIDD4ReWm0x-2B6=
+dgClN2exahqy07-2BT9ql8k9gzD1oCselwjN6O57zNa20vVQbq9N-2Bl86y4aLmGGcyjK48-2FL=
+vofkR9iG0qCKDL" target=3D"_blank" class=3D"link c-green" style=3D"font-weig=
+ht: 600; text-decoration: none; color: #74C947;">See terms for how to enter=
+.</a></em>
+                                          </td>
+                                       </tr>
+                                      =20
+                                      =20
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- END Section 3 -->
+                           <!-- Section 4 -->
+                           <table class=3D"bg-dark2" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"" bgcolor=3D"#191919">
+                              <tr>
+                                 <td class=3D"fluid-img" style=3D"font-size=
+: 0pt; line-height: 0pt;" align=3D"left">
+                                    <img src=3D"https://s3.amazonaws.com/as=
+sets.acorns.com/email/q1-23-investing-challenge/img_9.png" width=3D"612" he=
+ight=3D"71" border=3D"0" alt=3D"" style=3D"-ms-interpolation-mode: bicubic;=
+ margin: 0;">
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class=3D"px-20" style=3D"padding-left:=
+ 20px; padding-right: 20px;">
+                                    <table class=3D"mt-10" style=3D"margin-=
+top: -22px;" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+">
+                                       <tr>
+                                          <td class=3D"title fz-16 lh-20 a-=
+center c-white l-white pb-23 mpb-15" style=3D"font-weight: 600; letter-spac=
+ing: 3px; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-lin=
+e-height-rule: exactly; font-size: 16px; line-height: 20px; color: #fffffe;=
+ padding-bottom: 23px;" align=3D"center">
+                                             WEEK 1 MONEY TIP
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class=3D"title fz-22 lh-30 a-=
+center c-white l-white pb-25 mpb-20" style=3D"font-weight: 600; font-family=
+: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-rule: exactl=
+y; font-size: 22px; line-height: 30px; color: #fffffe; padding-bottom: 25px=
+;" align=3D"center">
+                                             Recurring Investment, AKA =E2=
+=80=9CDollar Cost Averaging=E2=80=9D
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class=3D"text fz-16 lh-24 mfz=
+-14 mlh-22 a-center c-white l-white pb-33 px-20 mpb-38 mpx-0" style=3D"font=
+-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-height-rule:=
+ exactly; font-size: 16px; line-height: 24px; color: #fffffe; padding-botto=
+m: 33px; padding-left: 20px; padding-right: 20px;" align=3D"center">
+                                             Recurring Investments help kee=
+p you accountable with your money goals and discourages =E2=80=9Ctiming the=
+ market.=E2=80=9D This =E2=80=9Calways-on=E2=80=9D <span class=3D"m-hide"><=
+br></span>approach to investing is called =E2=80=9CDollar Cost Averaging,=
+=E2=80=9D and it=E2=80=99s a smart&nbsp;money practice many use to develop =
+a regular investing habit.
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- END Section 4 -->
+                           <!-- Section 5 -->
+                           <table class=3D"bg-green" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"" bgcolor=3D"#74C947">
+                              <tr>
+                                 <td class=3D"pt-47 mpt-35" style=3D"paddin=
+g-top: 47px;">
+                                    <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0">
+                                       <tr>
+                                          <td class=3D"title fz-30 lh-41 mf=
+z-24 mlh-30 pb-10 pl-76 pr-40 mpx-20" style=3D"font-weight: 600; color: #19=
+1919; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; mso-line-he=
+ight-rule: exactly; font-size: 30px; line-height: 41px; padding-bottom: 10p=
+x; padding-left: 76px; padding-right: 40px;" align=3D"left">
+                                             This is what <span class=3D"c-=
+white" style=3D"color: #fffffe;">investing $10 a week</span> <span class=3D=
+"m-hide"><br></span>could do over time...
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class=3D"fluid-img pl-76 pb-3=
+9 mpx-20 mpb-30" style=3D"font-size: 0pt; line-height: 0pt; padding-left: 7=
+6px; padding-bottom: 39px;" align=3D"left">
+                                             <a href=3D"https://links.notif=
+ications.acorns.com/uni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMH=
+xZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DtEfC_kHUZGG=
+AIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpTh=
+CHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2=
+BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA=
+0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7=
+iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG=
+9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2F=
+wkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6=
+RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB=
+1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKmma8p7IxMiFoEbmBS7V4bF0Fz-2F9ai=
+8M9FayihQCaD4nJIpaQKvtrDs-2FEvFKcdFnrJvGOgGC-2BywhruvVfMYoXoLYZrRqmuKsgdErU=
+POlCcSJT76JahC-2F2N29QUCAnIFvO-2BRPD5taGkf3ZYeJUFcnHAG" universal=3D"true" =
+target=3D"_blank" style=3D"color: #191919; text-decoration: none;"><img src=
+=3D"https://s3.amazonaws.com/assets.acorns.com/email/q1-23-investing-challe=
+nge/img_10.png" width=3D"462" height=3D"246" border=3D"0" alt=3D"" style=3D=
+"-ms-interpolation-mode: bicubic; margin: 0;">
+                                          </a>
+</td>
+                                       </tr>
+                                       <tr>
+                                          <td class=3D"text fz-8 lh-10 c-wh=
+ite l-white pb-12 px-14" style=3D"font-family: 'Avenir Next', Helvetica, Ar=
+ial, sans-serif; mso-line-height-rule: exactly; font-size: 8px; line-height=
+: 10px; color: #fffffe; padding-bottom: 12px; padding-left: 14px; padding-r=
+ight: 14px;" align=3D"left">
+                                             The chart shows an estimate of=
+ how much an investment could go over time based on the initial deposit, co=
+ntribution schedule, time horizon, and interest rate specified. Changes in =
+those variables can affect the outcome. Results do not predict the investme=
+nt performance of any Acorns portfolio and do not take into consideration e=
+conomic or market factors which can impact performance. =20
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- END Section 5 -->
+                           <!-- Full Width Image -->
+                           <div class=3D"fluid-img" style=3D"font-size: 0pt=
+; line-height: 0pt; background-color: transparent !important;" align=3D"lef=
+t">
+                              <img src=3D"https://s3.amazonaws.com/assets.a=
+corns.com/email/monthly-nurture-email/img_5.jpg" width=3D"612" height=3D"14=
+0" border=3D"0" alt=3D"" style=3D"-ms-interpolation-mode: bicubic; margin: =
+0;">
+                           </div>
+                           <!-- END Full Width Image -->
+                           <!-- Footer -->
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"bg-grey-fa" style=3D"" bgcolor=3D"#fafafa=
+">
+                              <!-- FOOTER -->
+<table bgcolor=3D"#FAFAFA" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-c=
+ollapse: collapse !important; width: 100%;" width=3D"100%">
+   <tbody>
+      <tr>
+         <td align=3D"center" style=3D"-webkit-text-size-adjust: 100%; -ms-=
+text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-=
+family: 'Avenir Next', Helvetica, Arial, sans-serif; padding: 0;">
+            <table width=3D"612" class=3D"responsive-table" style=3D"-webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; border-collapse: collapse !important; max-width: 6=
+12px;">
+               <tbody>
+                  <tr>
+                     <td class=3D"social-icon" align=3D"center" style=3D"-w=
+ebkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, =
+sans-serif; padding-bottom: 30px; padding-top: 50px;" valign=3D"middle">
+                        <a href=3D"https://links.notifications.acorns.com/l=
+s/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcaSwdGLdulvKh-2F-2B19yruGFMeNPe4e9P6agS=
+4FhyTa-2Bvw9ug4_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7wa=
+IudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMh=
+ENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2F=
+HkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXs=
+dT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTk=
+Bt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7=
+y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2m=
+VU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd=
+3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKnMcsVUwe5=
+-2FtWZN0iU-2FVo7-2FiUIzxy0Lil-2BOsLOfskqlHmwFEUdSERuyIZLx718jk0FUr5iI0VOGgZ=
+H9tUm2qY-2BMsqKbRDIMWNELLrwa0cw6odP3wE80EOTICKVw-2FowmlTymLzhKMvSUHdkbyfWWJ=
+YPb" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; f=
+ont-family: 'Avenir Next', Helvetica, Arial, sans-serif; color: #191919; te=
+xt-decoration: none;" target=3D"_blank">
+                        <img id=3D"instagram-logo" alt=3D"Instagram" border=
+=3D"0" height=3D"40" src=3D"https://sqy7rm.media.zestyio.com/ig_2x.png" sty=
+le=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%; out=
+line: none; text-decoration: none; margin: 0; border: 0;" width=3D"40">
+                        </a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class=3D"footer-body" align=3D"center" style=3D"-w=
+ebkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+ font-family: 'Avenir Next', Helvetica, Arial, sans-serif; -ms-text-size-ad=
+just: 100%; font-size: 12px; font-weight: 400; line-height: 20px; color: #7=
+07474; padding: 0 0 50px;">
+                        Sent with love from Acorns<br>
+                        5300 California Ave. Irvine, CA 92617<br>
+                        <br>
+                        This email is a no-reply.<br>
+                        <br>
+                        Click <a href=3D"https://links.notifications.acorns=
+.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6Ccao4XJ-2Bt1tENbZKxundnwCv4IwvAUH5=
+OCbE2WqbAkL59yWlI7c1ktmVXBEVQaBXPauDsoW9kd4p6KN1N7STmMh91vVUX9g49U5W3hObga1=
+wIEa8OlcmmqsYgAb0n32GNYLdPYDFV8ht1gNCeWj4AP3G6X0h2mLeomXYsN-2FacpfCVNU8T9PS=
+5PmjULXU53VdCaI579qWdDg8IowY0P9AlQW3itHF696HPE5rMdknRvw8-2Bk250NBAlBY5MO0zC=
+BUCMjV1iuQwS-2FMz2uCTg44xGXRaqKNYG-2FTxInaXV6UctG-2BtN1I5b38615cMBdPPrtmL7z=
+JnUvZyMWeYpFvgO7kLGwal8LoIWpOcJ5j9QVV5OEF3y8Z7jaFHzlBHuASoIv8UEOnEr4Ty27IFT=
+c3a4vqVK8zjnfMQAD-2FHjJRvcMds0XxkaNFQXzQ9XPne6MFYwGF6ZoFPCAmNmpYlV-2F-2FN8A=
+7neyQZRqeRvRWWQGkDfY0-2BQq8zTsPnysVr62AYhKXRP3jlgdibR6E4lYijlGo6-2FNR8VQP0v=
+QYL9iNIYS6a5kGUuBvE3mZ7q3QHM6ctiLX5fGLT5AJWHoGlvpr6kSeOVPMokOrDRDPkC69VQuyv=
+4vvujxjFIr1r45f4QXHy6zmvo1QL3oiK2g5lgvif62I0yBKUr6cs6NzeihoqaKD5ZLAUfnNQCEj=
+gihWSWHOq6njanfyTuyppju2-2FqjPrT0UYnMv5ZjeHJbFUDFN50aJMvPAkaZTKZW0dBgA9TxU9=
+PIcY8otci9WV7dNKJ31WilxfnLf4ZrEYgEY-2FvvGf5llhfNcXveaFbfXrM_kHUZGGAIbaUxVXI=
+M4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4u=
+WDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIg=
+j6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4k=
+IMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCpp=
+u8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5=
+JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtet=
+thfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2y=
+NFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale=
+2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKmZToTOR-2BlAzvzBwY1NNfM7Lp0-2FJlIi424-2F=
+ApVovco3AklipY7I5uxu3fvyGm5FXqEp3YowS7o2yieFRvF7rCFLoBOUz4LY09RlYGmq0j6I0kF=
+pJS-2BiMJkzJF5ff0MtqOBjgQ7m3mpyBHkN-2BHiQjAcU" style=3D"-webkit-text-size-a=
+djust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', Helvet=
+ica, Arial, sans-serif; color: #707474; text-decoration: underline;">here</=
+a> to manage your email preferences or unsubscribe.<a style=3D"color: #1919=
+19; text-decoration: none;"></a>
+                        <br>
+                        <br>
+                        At the beginning of each entry period the Official =
+Terms will be updated and an email will be sent to Acorns customers that wi=
+ll announce what the multiplier is for that entry period, the maximum prize=
+ amount is five hundred dollars ($500). See official rules for the Set it a=
+nd Invest it Challenge <a href=3D"https://links.notifications.acorns.com/ls=
+/click?upn=3Dpkb3CfID9UpN6bm0Vxp0AARRH117uhCEWcmDnyz4-2Bh5vN8mFZn0y1bYX1CBK=
+FQjpi0y4zN530P0CzGPcAmnw6A-3D-3DUvs2_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjc=
+cpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWlje=
+vFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gP=
+dxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W=
+-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjX=
+RqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnK=
+OwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzH=
+lgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRd=
+Acsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPpLlBi7xix=
+BfhaiZWHrZWKld406eMQdO7uCHNkqsu6SehkehuKvENK70TzKrYspTK-2FXW5bKI-2BfpKtZ6K7=
+fR3OwNxJIs1rYsXPyYAV-2F3YRawqbWB8LuGCytt6RKVFJRi9ucdbjCEch3GSTClLS0zDUU5svf=
+vH-2BXVNPlP76thWTUYN" style=3D"-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; c=
+olor: #707474; text-decoration: underline;">here.</a><br>
+                        <br>
+                        The Set it and Invest it challenge is intended to e=
+ncourage existing Acorns clients to routinely invest by utilizing the recur=
+ring investment feature available to all clients with an active Invest acco=
+unt. Although the challenge may attract new customers and increase customer=
+ engagement and retention, it is important to note that Acorns does not rec=
+eive compensation in the form of =E2=80=9Cpayment for order flow=E2=80=9D f=
+or directing customer orders, or charge clients percentage-based fees or fe=
+es based on a percentage of assets under management for accounts under $1,0=
+00,000, and so conflicts of interest between Acorns and its clients due to =
+this challenge are limited. Please refer to our <a href=3D"https://links.no=
+tifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6Ccb5q15J9IZkaq-2=
+FzFCLzUAJ1q-2B1HGfVenG1DptP-2FxkS9hNNXTy9Yyru3ReN8JWq2IVw-3D-3DY88__kHUZGGA=
+IbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThC=
+HSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2B=
+Vwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0=
+l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7i=
+F4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9=
+j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2Fw=
+kOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6R=
+zPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1=
+Yhx7rale2NyR3U5FWZ-2FPpLlBi7xixBfhaiZWHrZWKmaE1t2tfB6ERjjFn6ivWmQxc21xTPRRQ=
+F0SwtkBjAZ3x5aZ1wc4Vhv2dGeye09o5u-2BBXi0CjbDt-2BK4rQxZgK0RGYkZml5ZbikB1WnwF=
+3xMlwA31sXKuBzvXmSmOfrfQKWIbbSML0e-2BpUau-2F2iLfwYH" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', =
+Helvetica, Arial, sans-serif; color: #707474; text-decoration: underline;">=
+Wrap Fee Brochure </a> for additional information on the overall conflicts =
+and risks associated with Acorns.  <br><br>
+                        <b><u>Important Risk Disclosures</u></b>
+                        <br>
+                        <i>Investing involves risk, including loss of princ=
+ipal. Please consider, among other important factors, your investment objec=
+tives, risk tolerance, and Acorns pricing before investing. Investment advi=
+sory services are provided by Acorns Advisers, LLC. Brokerage services are =
+provided to clients of Acorns by Acorns Securities, an SEC registered broke=
+r dealer and member <a href=3D"https://links.notifications.acorns.com/ls/cl=
+ick?upn=3DOTcLGFsda-2Fd0vguHPT6CcbCqRo3jeLHWfvVfvw30ppvKDej0ZlobW3k7vyXc7az=
+9bIP-_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSF=
+C8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2=
+Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcn=
+B-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHP=
+C8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeN=
+h4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xL=
+fhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW=
+0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FG=
+q5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPhubfGV65jaO2DaCHSddH6kE-2BYXZPEpy-2FylI2=
+uWuWGMpotXsQGSnrJe714ir6WjqQNA5ooKtmsWMDfnG0h-2FuWi0eKWGxbwmyZHckUtJeuTKYtI=
+3UrdfCXt5fcHZVYhOpYDFxrwJdRcKB8w1aWa78TmOPX2maePdwQzDaXNvc-2BM4B" style=3D"=
+-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'A=
+venir Next', Helvetica, Arial, sans-serif; color: #707474; text-decoration:=
+ underline;">FINRA</a>/<a href=3D"https://links.notifications.acorns.com/ls=
+/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcR4m2DrPOG4gySQKBMnOj6M-3DQ4jg_kHUZGGAIb=
+aUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHS=
+qASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVw=
+t9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6=
+K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4=
+jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j5=
+9M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkO=
+vmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzP=
+ePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yh=
+x7rale2NyR3U5FWZ-2FPhubfGV65jaO2DaCHSddH6kjGzviPJ6ucoUVLJg9itUGvey6tNpbKRXE=
+X0Fb4qfYAV2aFCRiO0K7wyCeSq4kbOZDgQrKPL-2F8Gmc7FAUj7v8biV8X4vb8bwr-2Bzfc6lip=
+jEN2UA-2FxxNbJPC-2B1yp4YMEDGPf3dYwhjJXNVuWhJsH8O-2B" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', =
+Helvetica, Arial, sans-serif; color: #707474; text-decoration: underline;">=
+SIPC</a>. Acorns Visa=E2=84=A2 debit cards and banking services are issued =
+by Lincoln Savings Bank or nbkc, member FDIC. Investments are not FDIC insu=
+red and may lose value. Acorns reserves the right to restrict or revoke any=
+ and all offers at any time. For additional Important Disclosures, please c=
+lick <a href=3D"https://links.notifications.acorns.com/ls/click?upn=3DOTcLG=
+Fsda-2Fd0vguHPT6Ccc-2FSnkRxKK-2FJJ6d-2FHJCPXIIDYZ548IBDsjOF5YMMQk-2BHAkqn_k=
+HUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOO=
+jJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Q=
+vk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHa=
+e-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdy=
+btOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx=
+4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AW=
+i0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8=
+y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu=
+7pblB1Yhx7rale2NyR3U5FWZ-2FPhubfGV65jaO2DaCHSddH6kbuo0TxoZ-2BLkmrmOaAwYsOP4=
+d-2FC0klsyZYijxmlr5AKTp7q9JxvKISQMi0foEmj-2FoOjm4GEWxm4N-2FmbxOcNSz4dEB32tO=
+ksWWOnV35djbEH8xxDTFqI6Qxgx4tUdk3-2Fj2Fl64FSKytF22kPA-2BFmSbP" style=3D"-we=
+bkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Aven=
+ir Next', Helvetica, Arial, sans-serif; color: #707474; text-decoration: un=
+derline;">here.</a> You can update your Investor Suitability Profile at any=
+ time by clicking <a href=3D"https://links.notifications.acorns.com/ls/clic=
+k?upn=3DOTcLGFsda-2Fd0vguHPT6CcXApNzkkYJF8Ym-2FjnwgdgHtoQQqKUKcKHWiKJXKhvjm=
+O6ZUyJAFE0hp5EaMjGh-2Fw-2FQ-3D-3DX9we_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFj=
+ccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWlj=
+evFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441g=
+Pdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1=
+W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2Bj=
+XRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWn=
+KOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMz=
+HlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tR=
+dAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPhubfGV65=
+jaO2DaCHSddH6mGSAZaoUH48toGaCBsj7ERfR6aTgegSwmPi8inlFFIVmt-2BsiGhNZ3h0EVGvu=
+CT-2BM2-2F-2BdAWJkRL-2BrMFnZE2GCSw1rscl-2BqnerKgirhq2mn-2F4e77tsP-2FoFriZoZ=
+aKXs8jdBRskUM4LNvNPhf-2By4A8DXZ" style=3D"-webkit-text-size-adjust: 100%; -=
+ms-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetica, Arial, sa=
+ns-serif; color: #707474; text-decoration: underline;">here.</a></i>
+                        <br><br>
+                        <strong style=3D"font-weight: 600 !important;"> Mai=
+l-in Entrants</strong><br>
+                        NO PURCHASE NECESSARY TO ENTER OR WIN. A PURCHASE W=
+ILL NOT INCREASE YOUR CHANCES OF WINNING. Open only to legal residents of t=
+he 50 United States (D.C.) and Puerto Rico, 18 years of age and older. Void=
+ where prohibited by law. Sweepstakes begins on or about 12am PT on January=
+ 9, 2023 and ends at 11:59:59pm PT on March 19, 2023. ARV of all prizes is =
+up to $50,000. AMOE Instructions: Hand-print your full name, full mailing a=
+ddress, email address, phone number and birth date on a plain 3x5 inch pape=
+r and mail to: Realtime Media, Attn: Set it and Invest it Challenge Entry, =
+1001 Conshohocken State Road, Suite 2=E2=80=93130, West Conshohocken, PA 19=
+428. See full Official Rules for entry postmark and received by dates. Odds=
+ of winning will depend on the total number of entries received. Limit seve=
+n (7) mail-in entries per person, per week during the Sweepstakes Period, e=
+ach eligible mail-in entry is worth one (1) Sweepstakes entry. Subject to f=
+ull Official Rules, entry periods, entry limits, visit: http://acorns.com/s=
+et-it-and-invest-it-challenge. Sponsor: Acorns Grow Incorporated, 5300 Cali=
+fornia Ave., Irvine, CA 92617.<br><br>
+                        <b>Acorns Support</b><br>
+                        Have a question? View FAQs or contact our Investor =
+Success team from our
+                        <a href=3D"https://links.notifications.acorns.com/l=
+s/click?upn=3DOTcLGFsda-2Fd0vguHPT6CccXsFt-2BV3ghFw8zBL-2FYzVEIlMwe663IArKY=
+rZ8Co6cheHFRW_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIu=
+dR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHaGWljevFTEFwKlu43wKC5TbCpMhEN=
+yByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9441gPdxl89ymHX00dDn3fbo-2FHk=
+YDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAfG3k1W-2Bpy25L2PzrAh55JJUXsdT=
+6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt=
+7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-2BWnKOwN09y5TlbY8aDAyE50r7y8=
+gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf4aMzHlgqpB6E-2BQAeZwm5pZ2mVU=
+1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm50tRdAcsd3Gl0qZIDzSz2mfjHd3h=
+WLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPhubfGV65jaO2DaCHSddH6kYSB2ighBCB=
+2u9k7LTgv5fIiwZd-2B68-2BV3ZKPyFEROAyY6DWEt4Byh14-2BXY5hvWZavAX0k3scoYbcJJ8T=
+-2Bj0NJTa69CU2qbddZ7FVbrMoI8Z-2FMPolUxfjfvMtCAsDbhLmCeu25tMlZgjJ1GCOBcpkrB"=
+ style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-=
+family: 'Avenir Next', Helvetica, Arial, sans-serif; color: #707474; text-d=
+ecoration: underline;">
+                        Support Center</a>.<br><br>
+                        View your monthly statements, trade confirmations a=
+nd tax documents by logging in
+                        <a href=3D"https://links.notifications.acorns.com/l=
+s/click?upn=3DOTcLGFsda-2Fd0vguHPT6CceH9GBIOlM-2FTcAHl4sXhhP-2FMYvVYuPn8YcV=
+RNpfbdW0SK2xL0LADWTbagsKxVslhxg-3D-3DENX-_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MR=
+GEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASW4uWDRbnwYXR-2FaKYvHa=
+GWljevFTEFwKlu43wKC5TbCpMhENyByT3L-2Fcijz7Qvk0-2BVwt9GFIgj6dCjIl87nuX8QqCX9=
+441gPdxl89ymHX00dDn3fbo-2FHkYDdyezcnB-2FSHae-2BA0l6K9ty4kIMT0LrR7A2dISOuOAf=
+G3k1W-2Bpy25L2PzrAh55JJUXsdT6udDnfHPC8a9qdybtOj7iF4jUJCppu8ZUJglxY4EeKYe5pt=
+-2BjXRqwvKY6Yf5bZ64TQ5FBTkBt7arU7BeNh4hFNAx4zGiG9j59M2lX5JqOd9yLzcE-2BRWRy-=
+2BWnKOwN09y5TlbY8aDAyE50r7y8gGI5Z0xLfhZb5AWi0-2FwkOvmZtetthfjcL2qjz0vSKm0Cf=
+4aMzHlgqpB6E-2BQAeZwm5pZ2mVU1Qrc0tZW0cla3F8y-2F6RzPePDq2yNFTAApO7CzLEnwg8hm=
+50tRdAcsd3Gl0qZIDzSz2mfjHd3hWLKX-2FGq5q2zpu7pblB1Yhx7rale2NyR3U5FWZ-2FPhubf=
+GV65jaO2DaCHSddH6mLqZMmcDkG3t3FcM6cCD8Cxpn0j-2Fm-2FEv8X-2Baqk-2FVNwW6wtWmt7=
+ScUaU5Xk2oQsWiw4uPuksv9kQmynkVbkpXsEPV0XQJTj7qhtJLlfDstFgF-2Fj1-2BNTpVveukG=
+ss963d5RXhNycKYcMSOnHapIm0eHY" style=3D"-webkit-text-size-adjust: 100%; -ms=
+-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetica, Arial, sans=
+-serif; color: #707474; text-decoration: underline;">here</a> and tapping o=
+n statements.<br><br>
+                        "Acorns", =E2=80=9CRound-Ups=E2=80=9D, "Invest the =
+Change", "Grow your oak" and the Acorns logo are registered trademarks of A=
+corns Grow Incorporated.<br>
+                        <br>
+                        Copyright =C2=A9 2023 Acorns and/or its affiliates.
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+<!-- FOOTER END -->
+                           </table>
+                        </td>
+                     </tr>
+                  </table>
+                  <!-- END Footer -->
+               </td>
+            </tr>
+         </table>
+        =20
+        =20
+        =20
+      </center>
+   </body>
+</html>
+
+--88c88c9f99e58d63b5b4f3ec682f45a34d5259b9ca1c18bfa7bdb021f187--

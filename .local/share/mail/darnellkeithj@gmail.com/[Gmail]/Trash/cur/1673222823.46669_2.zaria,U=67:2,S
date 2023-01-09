@@ -1,0 +1,1964 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2604918mdb;
+        Sun, 8 Jan 2023 14:36:05 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvXF0A4u4IaALZMGpe2elh1ciCAs7yCX7ICVH7bDR9Mr9AgUkoLZN9FxEKXAOmJfFSYxuWk
+X-Received: by 2002:a25:40a:0:b0:7bb:13c3:77 with SMTP id 10-20020a25040a000000b007bb13c30077mr2710832ybe.39.1673217365570;
+        Sun, 08 Jan 2023 14:36:05 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673217365; cv=none;
+        d=google.com; s=arc-20160816;
+        b=r4LsZgcAzA4u5kxcFPcB1B1YXOie++SujpQpLXToScOq3TFzFYCpI0VyFG1zym7/jn
+         YqCfoUM2MTcRdrHUnhDFcVW+YzHv9/gcp9uNHUKqtHVX2jWTRi9yg4XFGYkuGF4b+pGn
+         7Q5Pzm/ufbfid9oX+wjTmMtrSJ61w3gtrPwvzX9N8P7i1fz79nsBWNTI7UoNQBB9n3k+
+         wRxHrKizLyByprf27iLsqrSWs+334Jfs1qcC75JWvQJJrhvNdBTG+6MHkvqqO4koDMWg
+         Ub87TKtmZgn/5hJrG9yY+HSRt0n7TRX1fpSGsnWlnqMia4bXJYDOmCSx93Dw+lxoh0mf
+         jRzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=KpMaTKNDd8u91jA7sBokU5VK8Hnc/IPzn+u5E6Sm6ks=;
+        b=dBD9H9X4yvqiq/X7Gi7h2SkCgxF9BeFPKTfSqf9pEbO0HNODzgsppxZEw/jvtPEn2x
+         n+YQUDBIduCVwbfeK1zVgiBSE7A6D5gohgeEvNEF/m6/w8eau0qJHy+UJabQz8kN6xwT
+         vco4rTB60nZfe0LKFoTBB9C8qXfta1+fx5qQCSUmXyhF7CgCWi94QB3j9na5n11ZM7Lx
+         8agtWq24iVI3oWDjXXfZulienib9aa4wi3pKd9NJxBqvNwpHGQxRsxM8YxD1YXRNHq3T
+         KdJVK1F3YiXowS+81q0ihiq6Byjpxb2S8Erio6WdTX2vlG1ZQx74lWdFw3rBkpY1I0P5
+         EeCg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@p.simplywall.st header.s=s1 header.b=ZUJcZciw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xmzpA7ko;
+       spf=pass (google.com: domain of bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st designates 149.72.113.159 as permitted sender) smtp.mailfrom="bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=simplywall.st
+Return-Path: <bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st>
+Received: from o3738.e.p.simplywall.st (o3738.e.p.simplywall.st. [149.72.113.159])
+        by mx.google.com with ESMTPS id n64-20020a255943000000b007278e38c9d9si8867440ybb.23.2023.01.08.14.36.05
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Jan 2023 14:36:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st designates 149.72.113.159 as permitted sender) client-ip=149.72.113.159;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@p.simplywall.st header.s=s1 header.b=ZUJcZciw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xmzpA7ko;
+       spf=pass (google.com: domain of bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st designates 149.72.113.159 as permitted sender) smtp.mailfrom="bounces+22735333-f95d-darnellkeithj=gmail.com@e.p.simplywall.st";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=simplywall.st
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=p.simplywall.st;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=KpMaTKNDd8u91jA7sBokU5VK8Hnc/IPzn+u5E6Sm6ks=;
+	b=ZUJcZciwE/tWZjFdUoLAwmq28dHmTs+NYP46yct1jIIwNUKMG9s/3cnqJpaTNh+LJrFG
+	WaVfqViT4+MWIG9xZmTjfZaf6yIjees9g3PoN+CrgXt2Nqvzf7lDONc+u2WCvMTTlyJYZy
+	akblAEkHYbyf+EstYawEvBsl0E/NZNLPIlF2tMpeVF2RW2Kvohj2u7P5WfGeOFobBxUu/b
+	0PqAnv5XnrE2Sckp0ldoEFMDl+c6vmz4QADQjNP/+7akwKzmg4QT+0Op9YnvP6kjJ3u+eK
+	jMcVvwynVv0ULcPfw5M0CBV+g7pJScWxi9qoYYJQmpM9JNRHhWrSfyFBTDV1SgoA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=KpMaTKNDd8u91jA7sBokU5VK8Hnc/IPzn+u5E6Sm6ks=;
+	b=xmzpA7koZECiz9xBpTDeXPg158Qc7No+iD/zdDWyIJJfiaWlq74aejmgF+o9goUWWskk
+	uYC7RzxOdzze2VjX5GCkJVOIFdsDu2FFBojoI3vau3V318f+2TFo05MH+O0ZWNZKL6WCR1
+	JADVg7enLzd7DnT9or9nxwu4x5VWlfNJc=
+Received: by filterdrecv-5bc4588b5c-x4kgj with SMTP id filterdrecv-5bc4588b5c-x4kgj-1-63BB4554-69
+        2023-01-08 22:36:04.962610964 +0000 UTC m=+4490951.305733349
+Received: from MjI3MzUzMzM (unknown)
+	by geopod-ismtpd-2-5 (SG) with HTTP
+	id vWGvuGBDTdevTkv9RkTIJg
+	Sun, 08 Jan 2023 22:36:04.887 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=b106c962f8fdb32847e39a2f3835467625e59f1c3bbbba195832b99467a4
+Date: Sun, 08 Jan 2023 22:36:05 +0000 (UTC)
+From: Simply Wall St <no-reply@p.simplywall.st>
+Mime-Version: 1.0
+Message-ID: <vWGvuGBDTdevTkv9RkTIJg@geopod-ismtpd-2-5>
+Subject: Market Insights: The Global Economic Outlook for 2023
+Reply-To: support@simplywallst.com
+X-Feedback-ID: 22735333:SG
+X-SG-EID: 
+ =?us-ascii?Q?S5jQiLuyGSGQSKKpyDYbO3P8TonTegVFVpt6IdNLndY+jfmbScP8o5ERD0hQjC?=
+ =?us-ascii?Q?hH2voQFLDxiEEf5uG4wLmR7RfkqBMS8eFBjrVR2?=
+ =?us-ascii?Q?ezoworcj74cotE9wB9YpIPp3RJCn5f5xl1nulMe?=
+ =?us-ascii?Q?DdnI5HIx52Rg8T+tGCVqXZZAp5k0mAp8Nw4ALMJ?=
+ =?us-ascii?Q?FOpDsFV5tpSxn=2Fqm736k5ovMJRTIDJ2I+Nafmry?=
+ =?us-ascii?Q?jT3IraGcPDvfqpDn0No+8DPw1xKZ6wl5MxgT6em?=
+ =?us-ascii?Q?+WPYrVm2Q=2FIeTKPcoHyYw=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChyiUDh2HuRZ5VVLzHyPL06hyV+j6k9JiyNBiCA?=
+ =?us-ascii?Q?qt2+NGaIymeup9aLn+7u0sp86680y8dNFuwThdh?=
+ =?us-ascii?Q?21qXI0SCwJCq07AZXEOdauHCEsC2uehT+9ArixR?=
+ =?us-ascii?Q?1AXk+0kQGb6+oRf33R4Ja9SAkkR5PlrNg3OVhOV?=
+ =?us-ascii?Q?qOGce=2FTzfAMDyplbA89AqSYgnW=2Fii76mSPZ4dYG?=
+ =?us-ascii?Q?MG2LwuHoEfYNfvP2pSb68C4sDlaHHIzmL1QH3u=2F?=
+ =?us-ascii?Q?NHY88GbVQz3hbsqo9c50OhJEhuYaNRjlfCYo3kD?=
+ =?us-ascii?Q?ZmQ5MEq1Pt8r9=2FBzS7oWBLa5WC=2Fe50PD81QkG8R?=
+ =?us-ascii?Q?0VX+1Dt3V54u5epXoBabqKDUbPbC+Q+8B5QCgP5?=
+ =?us-ascii?Q?tIvtHuW8qqTrFKtRZ6jfLpMdWIpYW5nBVBg0qrY?=
+ =?us-ascii?Q?M898NRxoxOmjDP3d67thZmb2R1hxxh4ttFqWk70?= =?us-ascii?Q?=3D?=
+To: darnellkeithj@gmail.com
+X-Entity-ID: nGlSpywtD76gfoez5CrTng==
+X-TUID: C+u+/Hw4wxcY
+
+--b106c962f8fdb32847e39a2f3835467625e59f1c3bbbba195832b99467a4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Goldman Sachs, Morgan Stanley, JP Morgan and Credit Suisse all
+largely have similar expectations for 2023; The US is expected to
+fair better than other developed countries, growth is expected to
+slow further this year; all expect inflation to decline to some
+degree; and emerging markets are priced for the worst but may not
+experience it   Your login is via your
+darnellkeithj@gmail.com account     2nd - 9th Jan 2023
+
+What Happened in the Market Last Week?
+
+We're back with our Weekly Market Insights for 2023!
+
+We hope you had a relaxing break and are as excited as we are
+to start 2023! Let's dive in.
+
+Equity markets hit the ground running in 2023, with the US
+Telecom, ( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9f=
+DFu2bRpHgWbOEbRzl7QSokem9aV5VUb/3so/1xJkzcIySqmXmGZzWHupvg/t0/RNMSNc8C7sEen=
+WV-QhVDyuzo8lnezx3RkWUiLhJU4CU ) US Consumer
+Discretionary=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9fDFu2bRpHg=
+XsWWQXjbYWgbcm8_cZs0LM73U8yECzPEh7Mp2401tfdg/3so/1xJkzcIySqmXmGZzWHupvg/t1/=
+O3YlTUoSJQeBpt7u6H2HuVairbharw1e2Il23DrxHn0 ) and US
+Real Estate ( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVx=
+M9fDFu2bRpHgXc76ccx8EdRDq9mX8LH93tcUnVSOfxqDI2EWoeBA216Q/3so/1xJkzcIySqmXmG=
+ZzWHupvg/t2/A-Ir3yU6jvCyeLVfoUzGG5PhE88vkqCmMpGoH8J3EFU )
+sectors leading the way in the first week of the year. Interest
+rate sensitive stocks were performing particularly well, while
+energy stocks struggled as warmer than expected weather in Europe
+caused oil and natural gas prices to fall.=20
+( https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeO26QmRz1hQVHuZtynk17R=
+cHnlEkWD8ky3OCN9K_ONblDHZ9_f6sW9KUGKBaxzDX6lBx9xTr0QSqCAXVJcDHRK5R7C3v_FQj9=
+pkJkXxEz5qpGC44q4uyuBN8yGeo_AmmaC3WIjLPSgOAc8vW1UIdQ2o/3so/1xJkzcIySqmXmGZz=
+WHupvg/t3/NFwpuAGcx1FCd5w7HjvXdIFj8KL5AZj-sj45kI8bSo4 )
+
+
+
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9fDFu2bRpHg=
+WnwAxjHDnq8xIe8eYLDOATsRCwNyP0LQ5GAfOng9rk9aE1H467f2XiXiNKWURaQkYvd0EpQk_cI=
+aVwmbkkNnv5/3so/1xJkzcIySqmXmGZzWHupvg/t4/RtJOL6kxOhIyBVL_JZ8XAHJ1JSJLFgeoQ=
+O52NeDnLCI Insights: Week 1 2023&utm_content=3DVariant 1 )
+  U.S. Sector 7D Performance - 6th December 2022 - Simply Wall
+St=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9fDFu2bRpHg=
+WnwAxjHDnq8xIe8eYLDOATsRCwNyP0LQ5GAfOng9rk9aE1H467f2XiXiNKWURaQkYvd0EpQk_cI=
+aVwmbkkNnv5/3so/1xJkzcIySqmXmGZzWHupvg/t5/GrgmFwhFPI6UCBW4CuLRfDNZGpAmkolNR=
+G3KASmaHFo Insights: Week 1 2023&utm_content=3DVariant 1 )
+
+
+2023: A look towards the future
+
+We capped off 2022 with a summary of the year that was=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZT=
+MWOMs1WHDIQ4yp7LZWiRXUZy5YsP0a5bFTSoFpyNvt86Vf8rPKESqwbB0WxrKd1tRexU7u49L13=
+eeI0AJi6CtZpv29759qsGtrfj-hl-p0vJ84x9JAeyjArLxlrC3D-wIQw3WJ5R1sHB7DWkA9C59H=
+/3so/1xJkzcIySqmXmGZzWHupvg/t6/N2P7FrxBY8iIM3VVtM2ga-R63yHnBW5z3hLGr5ZZ4OI =
+Insights: Week 1 2023&utm_content=3DVariant 1 )
+. There was no shortage of excitement (if you wish to call it
+that) in the market last year with climbing interest rates,
+inflation and energy prices setting the tone for a tumultuous
+time for equity markets.
+
+As we kick off the year, we turn to some of the big names in
+global finance to provide their own context and anticipations for
+the year ahead.
+
+Goldman Sachs: This Cycle Is Different
+
+The key points from the Goldman Sachs Outlook=20
+( https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeBVnTu7xPXPWFLMpSWzacT=
+kwz9Hdt1f67akaXf5eF35OvbGjYS1N4dTj0Nc4uqd76R4lZ_rTFgKdO-gqPPI5qshKHOlqPs64i=
+UZZ2768iIYcMjVyQ9q-8qOGrNHrskhusLavi5rzxmjjy8CPVwHviDY/3so/1xJkzcIySqmXmGZz=
+WHupvg/t7/G1HWJeGUG1qz1zE_TNl34uRub6TrI75wqQmBTOLVXT8 )
+:
+
+* Global growth slowed in 2022 as the curtailing of the
+reopening boost, monetary tightening, the Russia-Ukraine war and
+China=E2=80=99s COVID restrictions made themselves apparent. Global
+growth is expected to be 1.8% in 2023, as US resilience contrasts
+with a European recession.
+* The US should avoid a recession as core personal consumption
+expenditure (PCE) inflation is expected to slow from 5% now to 3%
+in late 2023, with only a 0.5% change to the unemployment rate.
+To tame real income growth, the Fed could hike another 125 basis
+to a peak of 5-5.25% with no rate cuts expected this year.
+* Inflation is expected to fall, despite a minimal change in
+employment levels as this inflation cycle differs from previous
+high-inflation periods.
+
+The word =E2=80=98recession=E2=80=99 has been thrown around a lot lately an=
+d
+for good reason. With economic growth quashed, the signals appear
+to indicate that many economies are heading towards a recession
+if they aren=E2=80=99t already there=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZT=
+MJk3tAOKyM0vc6zD4vXm9GoISdvDM9sRtFsqIgqqxCk50Oir1njq69Y6ShIW2NEvsbg9i1c0job=
+7jltGo03kaaxqrNtFDTUDwNxSRNlwcGT27kPEdt5Ot2jN5-nfxhzsc/3so/1xJkzcIySqmXmGZz=
+WHupvg/t8/zb1zNNaoZq7BAeqzDfauWHfUxX6pmIs1VJrowlb0Kms Insights: Week 1 2023=
+&utm_content=3DVariant 1 )
+.
+
+Goldman Sachs=E2=80=99 outlook for 2023 affirm their position that the
+US is likely to avoid a recession despite a diminishing reopening
+boost, declining real disposable income (a result of high
+inflation), and aggressive monetary tightening working to stifle
+growth.
+
+Goldman Sachs estimated recession probability - Goldman
+Sachs=20
+( https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeBVnTu7xPXPWFLMpSWzacT=
+kwz9Hdt1f67akaXf5eF35OvbGjYS1N4dTj0Nc4uqd76R4lZ_rTFgKdO-gqPPI5qshKHOlqPs64i=
+UZZ2768iIYcMjVyQ9q-8qOGrNHrskhusLavi5rzxmjjy8CPVwHviDY/3so/1xJkzcIySqmXmGZz=
+WHupvg/t9/FX6kFlBx6kunnzT4z3OZgtHVdfOVYI0qP1d6FCMb9DM )
+
+
+The basis of their position comes from a few key factors they=E2=80=99ve
+identified:
+
+* Firstly, that real disposable income has rebounded in the tail
+end of 2022 from the lows of the first half of 2022 where the
+initial rate increases were a sudden shock to household budgets.
+* Secondly, they posit that this inflationary cycle differs from
+previous high-inflation cycles wherein the hot labour market
+manifested itself in an unprecedented amount of job openings
+rather than excessive employment.
+
+They argue that employment levels post-pandemic rose to
+pre-pandemic levels but did not exceed it and now that things are
+cooling-off on the job market, employment levels are set to
+normalise and openings are set to fall to levels that would slow
+wage growth enough to be compatible with inflation targets.
+
+JP Morgan: A bad year for the economy, a better year for
+markets
+
+The key points from the JP Morgan Outlook:=20
+( https://l.p.simplywall.st/ss/c/liv-IU6Id76AVO8mXTOrvLE9O32C2_hAY1pWh26RU8=
+XYLpbPFicub7rFBYN-aPusgIw0t6IIYWv0fe_iGXFZYdMa6C_R1cCi0i87Q7W9qT8Y4P51RAAiI=
+2kW-I3ZDZB_SA1CFT_ipWl64nPba7WaKe45PbOrVOzhQtmxL3oF1CY/3so/1xJkzcIySqmXmGZz=
+WHupvg/t10/a5mHm_ZLAKO7PAnCKvHVsj5PqvHMlMQVDcsUHqJuAls )
+
+
+* Despite remaining above central bank targets, inflation should
+start to moderate
+* JP Morgan=E2=80=99s core scenario sees developed economies falling into
+a mild recession in 2023.
+* Bonds have priced-in the ensuing macroeconomic troubles and are
+looking increasingly more attractive. The stock market sell-off
+has left some stocks with strong earnings potential trading at
+very low valuations.
+* If inflation begins to tame itself in 2023, central banks will
+stop raising rates, and recessions, where they occur, will likely
+be modest. JP Morgan has identified possible signs that
+inflationary pressures are moderating and will continue to do so
+throughout 2023.
+
+JP Morgan has assumed a slightly more pessimistic position than
+Goldman Sachs, anticipating that more developed countries will
+slip into a recession, however their commentary echoes their
+belief in this recession being somewhat subdued.
+
+When it comes to inflation, JP Morgan=E2=80=99s stance appears to be
+less clear cut. They put forward the belief that inflation should
+start to moderate itself on the balance of slowing economic
+growth, China reopening, relieving supply chain pressures and
+labour markets weakening but also provide a cautionary tale that
+if wage pressures don=E2=80=99t ease, things could get quite ugly.
+
+The outlook anticipates a modest recession on account of lower
+levels of investment in business and housing compared to prior
+recessions. Previous recessions have been fuelled by
+over-enthusiasm caused by excessive bank lending. However in the
+years since the GFC, the global banks come into this slowdown
+comparatively well capitalised and in a position where they can
+absorb losses without a credit crunch.
+
+Business & Residential property investment as a % of GDP prior
+to recessions - JP Morgan=20
+( https://l.p.simplywall.st/ss/c/liv-IU6Id76AVO8mXTOrvLE9O32C2_hAY1pWh26RU8=
+XYLpbPFicub7rFBYN-aPusgIw0t6IIYWv0fe_iGXFZYdMa6C_R1cCi0i87Q7W9qT8Y4P51RAAiI=
+2kW-I3ZDZB_SA1CFT_ipWl64nPba7WaKe45PbOrVOzhQtmxL3oF1CY/3so/1xJkzcIySqmXmGZz=
+WHupvg/t11/PPane-RB940wFvnJlgbmiC1ZsXaIxMm5Hmwe5pi5V_k )
+
+
+Turning to the equity market. The risk vs reward is in a more
+favourable position compared to 2022 given that the market
+should=E2=80=99ve priced in the worst case scenarios at this point. So
+while a bottom may still be yet to come, JP Morgan is of the
+opinion that we aren=E2=80=99t too far from it.
+
+Morgan Stanley: A resilient economy without a looming
+collapse
+
+The key points from the Morgan Stanley Outlook:=20
+( https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeIi_uvnGGneqAWlitZRD1z=
+GpLrTtD_bwNBnknAVqGK9cPmCZcRXXkIpNmoyFoeUq7NJSX9DCKkJ4ACN417m7uelrzy6_iRFIB=
+6qVmXRow5uxg7RginVvW8hqlxASc8ZacA/3so/1xJkzcIySqmXmGZzWHupvg/t12/SnWkALeK_3=
+vUvahivBijqLEscFg7TxFRF4Ex9N4Ph00 )
+
+
+* The first quarter of 2023 has the ingredients to build on
+strengths of the fourth quarter of 2022 but an inverted yield
+curve hints at a potential economic slowdown at some point in the
+year ahead.
+* The consensus view is that early in 2023, earnings will
+collapse, bringing the stock market down with them. But sectoral
+leadership from the financials, industrials and materials sectors
+suggest otherwise.
+* The economy is proving too resilient, causing the =E2=80=9Clooming
+collapse=E2=80=9D in earnings to remain elusive for yet another quarter.
+Earnings are expected to drip down slowly, frustrating market
+bears. With continuing improvements on the inflation front mixed
+in, you have the ingredients for a strong first quarter.
+Morgan Stanley=E2=80=99s Head of Applied Equity Advisers, Andrew
+Slimmon, asserts that consensus for the early stages of 2023 will
+be underpinned by an earnings collapse. As the impacts of rising
+costs, rising interest rates, supply chain disruptions and a
+diminished household disposable income wash through the quarterly
+earnings reports, the market is expected to drop accordingly.
+
+However, as a counterpoint to the consensus, Slimmon turns to
+leaders in the financials, industrials and materials sectors to
+suggest otherwise. These sectors have outperformed during the
+months of October and November. He suggests that if an early 2023
+collapse was imminent, then these economically cyclical sectors
+would not be outperforming the rest of the market.
+
+Turning to yield curves, Slimmon acknowledges that an inversion
+is an important thing to note but that it typically isn=E2=80=99t a good
+indicator of when an economic slowdown will occur, rather, it
+more accurately suggests that one will occur at some point in the
+future. Could this slowdown occur in the latter half of the year
+after a strong start to 2023? Morgan Stanley seems to think so,
+although they acknowledge that this goes against the general
+consensus.
+
+According to Morgan Stanley, there appears to be an opportunity
+for investors who have an eye on emerging markets. Emerging
+markets (EM) have better growth, lower inflation, and less
+sovereign and private debt, yet EM equities and currencies trade
+at what Morgan Stanley are calling =E2=80=9Ccrisis-level valuations=E2=80=
+=9D. If
+emerging markets are an opportunity you=E2=80=99re interested in, then
+check out Simply Wall St=E2=80=99s top Latin American=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MP=
+SrHGdVJnY5yPGlMb7D6rxLrW1WCB_GAnYItyV5XCbcU06cEdkai2wR4I3-6l-3ue9fRW6YYIi1F=
+AElJqZi4wYE3nt4z_gepfMSUiX9F-1mo1UfdK62pfXerb4p9ve4GP2x1Rmdm9qEBsbCo_uLGST2=
+/3so/1xJkzcIySqmXmGZzWHupvg/t13/e3sXHcHNIHwo9saiIQ5z6UNP5SHw2MDOpLgxBLpCE5o=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+ and African=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MP=
+SrHGdVJnY5yPGlMb7D6rxLekPnFGv8mzDIq-MYFc1i_jLrXbyD9j1l2W_t0UEanh1rU47MMooWn=
+ZzMmEzQY5apLu8rBjSf5MCRQWpj7t7qdfEp8e1H1wPtBy7M20q_P48KilzxxaW2mwJOkGJpSFVJ=
+/3so/1xJkzcIySqmXmGZzWHupvg/t14/P0QJvr9WFEMtpbFm00lAoSPtjr2-VhiDTwjUQXmCQ-c=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+ stocks.
+
+Credit Suisse: A fundamental Reset
+
+The key points from the Credit Suisse Outlook:=20
+( https://l.p.simplywall.st/ss/c/9zekkaEr8kLHbG3pWpUPLexzNUYL48hs-gQkr3Fo-Y=
+3DJze29k6VG-zS4hN_vPshrhdTkZtWK3HIyV2CgePBN1ocXd1WIdg5hijwbXZyB15_9xTumVKH7=
+NLqe4It7XwZlab09mB1Xf75MO-noZB4xw/3so/1xJkzcIySqmXmGZzWHupvg/t15/ub4HnzKPsC=
+pK0pBEoikM_xQEGxLh88qI5ChGKG0KdAQ )
+
+
+* The UK and the Eurozone are expected to have slipped into a
+recession, while China will be in the midst of a =E2=80=9Cgrowth=E2=80=9D
+recession (read - less growth). These economies should see the
+worst by mid-2023 and begin a slow recovery provided that the US
+escapes a recession. Tightening monetary conditions will keep
+economic growth low throughout 2023.
+* Inflation is expected to decline in 2023, but will remain above
+central bank targets.
+* 2023 will be a =E2=80=98tale of two halves=E2=80=99 as interest rate rise=
+s
+remain a concern for the first half of 2023, the stock market
+performance should be quite restrained and sectors with stable
+earnings and low debts should fare better. Once central banks
+shift from increasing rates, growth stocks should receive a kick
+in the second half of the year.
+* Fears of a global recession will keep the USD strong in the
+early stages of 2023. Once monetary policy becomes less
+aggressive and foreign growth risk subsides, the USD will
+naturally fall back and stabilise.
+Credit Suisse=E2=80=99s outlook echoes the same comments as the others.
+The Eurozone and UK will likely slip into a moderate recession
+while the US should manage to escape.
+
+Inflation is in and around its peak at the present and so the
+remainder of 2023 is expected to finally decline throughout the
+year. Although Credit Suisse expects inflation to decline,
+they=E2=80=99re still assuming that it remains above inflation targets
+and won=E2=80=99t decline enough to warrant any interest rate cuts for
+the foreseeable future.
+
+Interestingly, Credit Suisse has asserted that the changing
+geopolitical landscape is presenting a unique situation for us to
+tackle. The West, East and the South have become quite polarised
+in terms of monetary policy and political views.
+
+Strained geopolitical relationships and the COVID-19 pandemic
+have fundamentally altered global trade flows and has shifted the
+focus for international trade from trying to secure pricing
+dominance, to now ensuring supply chain resilience and
+geopolitical relationships are maintained.
+
+=F0=9F=92=A1 The Insight: Investors are not fortune tellers
+
+It=E2=80=99s easy for retail investors - particularly beginner
+investors - to get carried away in the expectations of analysts
+and fund managers from reputable financial institutions. They
+hear talks of doom or market booms and attach themselves to the
+idea. But investors should remind themselves to take a step back
+and remember that no one is infallible when it comes to the
+market.
+
+There are always unexpected twists and turns in the world. No
+matter a person's expertise, experience or talent, there=E2=80=99ll be
+some things that impact equity markets that cannot be forecast.
+
+For example in late 2011, CBS News had a look into the accuracy
+of the predictions=20
+( https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeL_ckoYCBnsGvwrP8dh1EI=
+ob8PXOE9j7s5uox_HxN7HcH_IdEfI2v-a_haUWlXhdZjKJWVgpNguVy-dZD3AT7xIo2NqTVYx7v=
+cFmmJAlqSE_/3so/1xJkzcIySqmXmGZzWHupvg/t16/EGpRXGZpZC7OO1mYMou0B2ffjIYVoWdq=
+U3tVHzHz_bM )
+ made by market strategists. The consensus was that the S&P 500
+index would rise by an estimated 9.4%, with the most pessimistic
+of these strategists predicting a rise of only 5%. On the 28th of
+December 2011, with only three trading days left in the year, the
+S&P 500 was only up 0.6% for the year. It=E2=80=99s safe to say that
+their crystal balls weren=E2=80=99t in working order that year.
+
+What this means for investors
+
+The age-old saying of =E2=80=9Cdo your own research=E2=80=9D rings true,
+partially. Investors should take note of what financial
+powerhouses are saying, but they shouldn=E2=80=99t take it as gospel. If
+the consensus of the institutions is quite bullish but you
+personally have your doubts about where the market is headed, you
+shouldn=E2=80=99t disregard your own beliefs if they=E2=80=99re well founde=
+d.
+
+Always invest to your own risk tolerance. Not just in terms of
+asset allocation, but also in terms of your perceived
+macroeconomic risk.
+
+The things that have the potential to impact your investments
+most throughout 2023 may not be known to these large financial
+institutions yet and so to follow their words blindly could be
+hazardous.
+
+In times of uncertainty investing in quality companies or
+investing in accordance to a theme that resonates with the
+economic landscape are quite effective approaches. If you=E2=80=99re
+interested in reading up on some investment theses for difficult
+macroeconomic periods, then be sure to check out Simply Wall St=E2=80=99s
+list of best stocks for rising interest rates=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MP=
+SrHGdVJnY5yPGlMb7D6rxLu0ZSbWVArddkKG77jCTkAb7i4g5g-WH66tv5Oz04Q_xcSegr04DDi=
+CdfYdNilmQPiPw5af4CrQe9cP9zDh3EDzuz0UiEN-8MYtWc5xYREwks1F5fg3bI1VfAvDXElK8E=
+/3so/1xJkzcIySqmXmGZzWHupvg/t17/ZdGqTDtc2a66zkle86XYHYmCyeFiB5pZJcZxbveE4ic=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+ or recessions=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MP=
+SrHGdVJnY5yPGlMb7D6rxLfF6v50NcHFctg5bTSoGNtlb_Vl4YtWmWpWS251p_0KcGxPK8AigTo=
+pTc8UPYnizqQmTijv_VNowlnxT1EJwMDXllyjJHkQLIPHOG8Rw814IQ-QJ6yAnknteh1420X9Ja=
+/3so/1xJkzcIySqmXmGZzWHupvg/t18/1nzIZa7fyJBTWd5fKLDS5ttJm0RtQFJDhFeVCdqq9xA=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+.
+
+What=E2=80=99s in store for 2023?
+
+It seems to be a common theme among these outlooks for 2023
+that the US will manage to slip through 2023 without having to
+deal with a recession.
+
+However, as JP Morgan pointed out, moderate recessions can
+actually be beneficial in periods of high inflation. The economic
+slowdown that defines a recession is quite effective in
+curtailing the runaway prices that crank up inflation.
+
+Keeping on the topic of inflation, another common theme amongst
+these predictions is that inflation has already peaked and will
+continue to moderate itself into 2023 as China opens up and the
+flow on effects of rising interest rates begin to manifest.
+
+The probability of this happening will seemingly ride on how
+well China can navigate the current COVID outbreak.
+
+Commentary remains consistent that in times of rising interest
+rates, high quality companies with solid earnings and consistent
+dividends will tend to fare better. Growth stocks that have a
+sensitivity to interest rate adjustments will continue to
+struggle until inflation is under wraps and central banks hold
+steady on rate rises.
+
+If this happens in accordance with the general consensus from
+the above institutions, then growth stocks could have their time
+in the sun during the later half of the year.
+
+=F0=9F=92=AC Join the discussion by leaving a comment!
+
+Do you agree with the institutional outlooks above, or think
+we're in store for something else this year?
+
+Have your say=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZT=
+OUaYv9a532RXEE77Q6XZgpRnvzx3O-xVIAib9kEoDwWMnt2N9TDNsXzvvlCt27F76NYdNNev77K=
+EWdovl5We0aaRVzqxLmxlPvsmhVld4JWjgtx5dosZyc1bMEmuPGMQfZgEoyPn-Cm4Bovm5PgoRS=
+/3so/1xJkzcIySqmXmGZzWHupvg/t19/_UFm6ekTcBY0IKB6ujHRijRrIzlsWl9utIz7iuFKnQU=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+        Key Events Next Week
+
+The new year is kicking off into gear already with the
+year-on-year and month-on-month inflation figures to December
+2022 scheduled to be released on January 12, 2023.
+
+Initial jobless claims and continued jobless claims data is
+also set for release next week; important data for those
+interested in the effects of employment rates on inflation.
+
+The next week will be a busy one with many companies beginning
+to post their Q4 2022 earnings. A few big players are stepping up
+to the plate, particularly those in the financials sector:
+
+* UnitedHealth Inc. (NYSE:UNH)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+3_kEFAnPorSavvr2F0cEenRpXPIjTaeFqu8s6ov_eQun9_Np0iIJ2DMfWn9HJ7DtlwePRM98Owz=
+9J9SUdObBKw3XsWbKc81c7rA20S5sgytK2ajwQbjhV0Rj0u5F-43oNefpUn1Bk831qAwIakKi03=
+/3so/1xJkzcIySqmXmGZzWHupvg/t20/WhxbqyD79z9E-ZFbPkNn3p_8zxm8pwiqpbg4V9uEkTU=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+
+* JP Morgan Chase & Co. (NYSE:JPM)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+3ipzVaAjua_XuzH8flyAXgcc7aBbFayXSx7dp_CmC_FOigPd9PVFWm1QGoXuC3CmH_ZkIjI63ZT=
+7TWp4Z06HbD0i67c__lfWoOoLjoiWozS97jcJwNMXC21yuBsqe5BE8/3so/1xJkzcIySqmXmGZz=
+WHupvg/t21/wTfbrPaxOkrTpoUxEzbM6FrEF-jToMgIuDohSgyJB5Y Insights: Week 1 202=
+3&utm_content=3DVariant 1 )
+
+* Bank of America Corp. (NYSE:BAC)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+3ipzVaAjua_XuzH8flyAXgE_NodoPCVzupEPONYyu6OHt-B8xdRUwEiGZ0Ke4Ej9SoRSPydHw-s=
+DQj9EFmD4VBIKqyl1KISO8MXhdwHfuA2Biqrcihzm88plPzwmRj89Q/3so/1xJkzcIySqmXmGZz=
+WHupvg/t22/PDwNKijmRIls_v1AMR392cW_Ldw2W9MKSrx49YSjVcc Insights: Week 1 202=
+3&utm_content=3DVariant 1 )
+
+* Citigroup Inc. (NYSE:C)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+3ipzVaAjua_XuzH8flyAXgzLN6Qi-SsWR-PIxWRR4RnOc6z9VkS_dLMhnBUBweX8tSsiPbVbtEt=
+4t3-s0Ttlb2WWhdGVse8uJkGPiSlpMiolQsPHSU8RAvaKdbGOGrkAY/3so/1xJkzcIySqmXmGZz=
+WHupvg/t23/o1AJW2fkhtLhbyhH6gGRFivj05yNy3_0v2aGpPhPZ2w Insights: Week 1 202=
+3&utm_content=3DVariant 1 )
+
+* Delta Air Lines Inc. (NYSE:DAL)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+2mvi3I5zAlcdTX3-FQaJarIK8_ACeRtJJiG4vB-lCAIcbDJE7GGn0XgMAvE-s26y71P6OO-utF6=
+18mdzqgvYH-HZt2QnZYG8ZPruxF-3Uh3zXb15V04PDEFnl4Cc-h79Xpxz0xaHtX2-QMJnorWwc2=
+/3so/1xJkzcIySqmXmGZzWHupvg/t24/TFSHpF_1uoB8x7zHQuQ7lEykRGrzOc1TaiKTq9zQAdE=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+
+* BlackRock Inc. (NYSE:BLK)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+0WOcoxrORVJfmMtDyjb57wmXjcVA2g6nZNz1YUJ4UqF2HThb6jtjtD7rS_l4Wa1MtL2kRJuUJ4_=
+Iq_vD0rjxZE74fsd_c-fEGDCjSei2Yh78g65BlheomhgXTDqKo0otq7zsaEME4btM9EXh4IP6gt=
+/3so/1xJkzcIySqmXmGZzWHupvg/t25/AcUu1T2FQPVUhyjQA_SRQDnWj6_3xUgxyVPekTNv__E=
+ Insights: Week 1 2023&utm_content=3DVariant 1 )
+
+* Wells Fargo & Co. (NYSE:WFG)=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ=
+3ipzVaAjua_XuzH8flyAXgX6RJhMUwXKowioPFDCESdV-MfqxnNPzyLso0cbisfDwaWxs92n5MS=
+9XdF220GHaQjL9gXzrq_UUJhpPN5Iiwi8zl5QuxBBLijBKoNij_bIc/3so/1xJkzcIySqmXmGZz=
+WHupvg/t26/9gyI3KXDJuGDwlTTPiX-Sac6GijtUqE6nkCknezr2Cg Insights: Week 1 202=
+3&utm_content=3DVariant 1 )
+
+Until next week,
+
+Invest Well,
+
+Simply Wall St
+
+=F0=9F=92=99 Share with a friend!
+
+Thanks for reading! If you enjoyed this week=E2=80=99s Market Insight,
+share this week's insight with a friend=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZT=
+OUaYv9a532RXEE77Q6XZgpRnvzx3O-xVIAib9kEoDwWHP2uZKejz2kWUXmCwgJ-WR79BWUgaUxE=
+mPc7PPjKb6VAS_R8Ez5_GGeD81s87zZcUsvICfDi6xjAQu2N6lbiW8/3so/1xJkzcIySqmXmGZz=
+WHupvg/t27/mCcRLWVaAnjnK9IFMQpOl_QlWetgi_ccT34diuJGWrc Insights: Week 1 202=
+3&utm_content=3Dshare_with_friend_link )
+.
+
+Were you forwarded the email? Sign up here=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFeu39I6GUBv75nqK_4pfY=
+NXhDjYNUt7OMM60zj61W41EIUyWIHzlNsPHRwumEWRtwKNkJpGNbBxLag2GMPeh_aS1j5xsMYdn=
+HQoyRzldWeb/3so/1xJkzcIySqmXmGZzWHupvg/t28/y_s7u239hun-pxYXTV33-zz6ZTr0ZvqW=
+_P_njBsco2I Insights: Week 1 2023&utm_content=3Dsign_up_link )
+ to receive it in your inbox.
+
+=F0=9F=92=99 Share with a friend!
+
+Thanks for reading! If you enjoyed this week=E2=80=99s Market Insight,
+share it with a friend=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZT=
+MWOMs1WHDIQ4yp7LZWiRXUZy5YsP0a5bFTSoFpyNvt86Vf8rPKESqwbB0WxrKd1tRexU7u49L13=
+eeI0AJi6CtZpv29759qsGtrfj-hl-p0vJ84x9JAeyjArLxlrC3D-wIQw3WJ5R1sHB7DWkA9C59H=
+/3so/1xJkzcIySqmXmGZzWHupvg/t29/YFPEecxCwm6vqRfTMLvEp_bvsnLZsHW9J7yx-t3BtoI=
+ Insights: Week 1 2023&utm_content=3Dshare_with_friend_link )
+.
+
+Were you forwarded the email? Sign up here=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFeu39I6GUBv75nqK_4pfY=
+NXhDjYNUt7OMM60zj61W41EIUyWIHzlNsPHRwumEWRtwKNkJpGNbBxLag2GMPeh_aS1j5xsMYdn=
+HQoyRzldWeb/3so/1xJkzcIySqmXmGZzWHupvg/t30/Y5EpPB498-M9PrgiRMZdP1cMKJDeck59=
+q9QCl9sLkGE Insights: Week 1 2023&utm_content=3Dsign_up_link )
+ to receive it in your inbox.
+
+Was this email useful?
+Download the app
+
+Google Play Store=20
+( https://l.p.simplywall.st/ss/c/cA4KlFZxd1N-fwBJXW5TLCAXJrnG4q1DjQKNboFwPR=
+an3ePaNMPZoWfKMXl2vfQZFuLfEP4c9C_q3o-dLfKLxjiS1M0PgJlyjshWqBRTVgA/3so/1xJkz=
+cIySqmXmGZzWHupvg/t31/eZtLIvXqtecRnmCq67ubGSXkkeqK7_OynN_tAD3UfzY )
+ Apple Store=20
+( https://l.p.simplywall.st/ss/c/liv-IU6Id76AVO8mXTOrvGQ7fyQhD0p3TkPfpar5Fr=
+0VY3YbmA95jVWOxAjVgkYze20yBTy-VT8oxG1M-ekbvsbDosr5NQ4tZfXofs3FWPw/3so/1xJkz=
+cIySqmXmGZzWHupvg/t32/xTvjoEPZv3TffsWQNIrumDPpe1ycPcFIF4h-OQ2Ak2Q )
+
+This email is from Simply Wall Street Pty Ltd
+Level 7, 320 Pitt St Sydney 2000, NSW, Australia.
+
+Simply Wall Street Pty Ltd (ACN 600 056 611), is a Corporate
+Authorised Representative (Authorised Representative Number:
+467183) of Sanlam Private Wealth Pty Ltd (AFSL No. 337927). Any
+advice contained in this email/website is general advice only and
+has been prepared without considering your objectives, financial
+situation or needs. You should not rely on any advice and/or
+information contained in this website and before making any
+investment decision we recommend that you consider whether it is
+appropriate for your situation and seek appropriate financial,
+taxation and legal advice. Please read our Financial Services
+Guide before deciding whether to obtain financial services from
+us.
+
+Privacy Policy ( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrLil6yz=
+Cg5SP-slJbOPpXWEEJ1ZIZxGDQQ1y-RXUX2iy/3so/1xJkzcIySqmXmGZzWHupvg/t33/CGb67g=
+MOEra7oG2TSwC3exzuYlUyLDBpIkluc2Yek_Q )
+
+Terms and Conditions=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrORDgRtgsEg4NbCvjXcSgU=
+An37XeWmRaym1lAm1nDESLIkDy1Zyhhr9Aw1TSeqgX-g/3so/1xJkzcIySqmXmGZzWHupvg/t34=
+/-TXMmwtjtNn3Gs7mhNsGj_gSM2bhyDzzj5nkJt8iyb4 )
+
+Don=E2=80=99t want to hear about Market Updates? Click here to stop
+receiving it.=20
+( https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrI_yBQ-FXz2eUMtk68ADQa=
+EHfyjuDK742QeD6Wt5K_Fb65bK3ftPqkhFYPFKSPK4_rro4bUeUOZ3dWp1OUdTA7SNC1ub5iTGa=
+5yF9JvnF7Kqy6gMWApujglQtSaXonLF1TkefalJUb5Nww3Nfe6brArEAr0mXMspq_wuzKxVcneu=
+AmYImzgc0zKJNif5v_ZR2TlNOZyUXo3prl8iacLN4pA/3so/1xJkzcIySqmXmGZzWHupvg/t35/=
+MzecRqHUTK842pWGKGR0zCMTFX9zipS_ylDho6ti00s )
+
+
+Want to stop receiving emails or want to check which email you
+are subscribed on? Click here to manage your email subscriptions.
+( https://l.p.simplywall.st/ss/c/Dn_IDrvIB5ABQDwW_-IdKHrxBJGAOd-N55oyYZHV9z=
+dP6BONOJKFVcSLypkLIN2DySoNTozaD2FkP-_hCGdr7gAws1c5DcKufls6fCozj8xgDo8vJkGxN=
+ESv7E8fvVAkyuMxGO46pRrOH5i04pWniGnBNnKZ8a_kj_c-Fh0P9cQXLKADGqMbkp40qMHRBtFp=
+X6V_9UUC1yyYhUsCYEDuqU715w4sLx68198zZn7ZrkktaFYkjFpPCDs_Ckert8qLQBOM5vS7v6Y=
+HPCgjgWbEF28F3Z3KNls6tRGaHZ7m1xyxjCZ-TRYcugLKPylIja6BiZ2Wd27aIFPul2Dl7bRv2D=
+pFJAro0Y5mcfP3HNOtJqR30Q-Y_qUNoSOLFCx1uNs6RktbIP2Ji-9zNNgyH2R_6FUrQmalRbsK3=
+mN0Oi4ICPtqDBOyzdPOxnKnSfikt5OSlTJODq0X7IkjKFWSqAGnZeSTYg2dbWgG2HgiriEJHcgG=
+OMoEo8onifCTx9REtVm4NiUNA4QxZrC7JB4mJjkZVNA7STwu5qJwcbwGHQOt0D5s6VBaoAUW9OW=
+ecnx8kBHD9wOWUOBP6wkZOHahWJF07Fgb1IUpd-mAa_0bLMGyWN7Vl-CclHlIrJsrjdjG37Uaz9=
+LZkaHPl_4OdtHo9IZ3WEWCYdM2BCR6ZSU4j4v5LZdg7PPkV9vq7JZ2Op8gCW4eK-_w-_29iNNbV=
+D-aGUwpYYCwb65l9o93zeV-bE6XlIF3YHwGSCU5Ssbxzqeeizrc/3so/1xJkzcIySqmXmGZzWHu=
+pvg/t36/6ein-EE5PxmBAIigTmAx4gDEnpj-6hYkxSRPjVkMw8k )
+--b106c962f8fdb32847e39a2f3835467625e59f1c3bbbba195832b99467a4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" lang=3D"en">
+<head>
+<title></title>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPe=
+rInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !ms=
+o]><!--><link href=3D"https://fonts.googleapis.com/css?family=3DOpen+Sans" =
+rel=3D"stylesheet" type=3D"text/css">
+<!--<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}@me=
+dia (max-width:660px){.image_block img.big,.row-content{width:100%!importan=
+t}.mobile_hide{display:none}.stack .column{width:100%;display:block}.mobile=
+_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.de=
+sktop_hide,.desktop_hide table{display:table!important;max-height:none!impo=
+rtant}.reverse{display:table;width:100%}.reverse .column.first{display:tabl=
+e-footer-group!important}.reverse .column.last{display:table-header-group!i=
+mportant}.row-2 td.column.first .border{padding-left:0;padding-right:20px;b=
+order-top:0;border-right:0;border-bottom:0;border-left:0}.row-2 td.column.l=
+ast .border{padding-left:0;padding-right:0;border-top:0;border-right:0;bord=
+er-bottom:0;border-left:0}.row-8 .column-1 .block-1.text_block td.pad,.row-=
+9 .column-1 .block-1.text_block td.pad{padding:15px 20px 10px!important}.ro=
+w-8 .column-1,.row-9 .column-1{padding:5px 0!important}}
+</style>
+</head>
+<body style=3D"background-color:#fff;margin:0;padding:0;-webkit-text-size-a=
+djust:none;text-size-adjust:none">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Goldman Sachs, Morgan Stanley, JP Morgan and Credit Sui=
+sse all largely have similar expectations for 2023; The US is expected to f=
+air better than other developed countries, growth is expected to slow furth=
+er this year; all expect inflation to decline to some degree; and emerging =
+markets are priced for the worst but may not experience it</div>
+<table class=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;background-color:#fff"><tbody><tr><td>
+<table class=3D"row row-1" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000=
+;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;padding-top:10px;padding-bottom:10px;borde=
+r-top:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"html_=
+block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><=
+tr><td class=3D"pad"><div style=3D"font-family:Helvetica Neue,Helvetica,Ari=
+al,sans-serif;text-align:center" align=3D"center"><div class=3D"login" styl=
+e=3D"text-align:center; font-size:12px; color:#333;">
+  Your login is via your darnellkeithj@gmail.com account
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table>
+<table class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#71e7d6;color:#000;width:640px" width=3D"640"><tbody><tr class=3D"re=
+verse">
+<td class=3D"column column-1 first" width=3D"50%" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-right:20px;ve=
+rtical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0"=
+><div class=3D"border">
+<table class=3D"image_block block-2" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-left:20px;width=
+:100%;padding-right:0;padding-top:20px"><div class=3D"alignment" align=3D"l=
+eft" style=3D"line-height:10px"><img src=3D"https://braze-images.com/appboy=
+/communication/assets/image_assets/images/624a8575fd0e4305e97cecec/original=
+.png?1649050997" style=3D"display:block;height:auto;border:0;width:255px;ma=
+x-width:100%" width=3D"255"></div></td></tr></table>
+<table class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:25px;padding-left:50px;padding-right:10px"><div style=3D"font-=
+family:Arial,sans-serif"><div class style=3D"font-size:14px;font-family:'He=
+lvetica Neue',Helvetica,Arial,sans-serif;mso-line-height-alt:16.8px;color:#=
+101b24;line-height:1.2"><p style=3D"margin:0;font-size:14px;mso-line-height=
+-alt:16.8px"><strong>2nd - 9th Jan 2023</strong></p></div></div></td></tr><=
+/table>
+</div></td>
+<td class=3D"column column-2 last" width=3D"50%" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;bor=
+der-top:0;border-right:0;border-bottom:0;border-left:0"><div class=3D"borde=
+r">
+<table class=3D"image_block block-2" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-top:35px;width:=
+100%;padding-right:0;padding-left:0;padding-bottom:5px"><div class=3D"align=
+ment" align=3D"center" style=3D"line-height:10px"><img src=3D"https://braze=
+-images.com/appboy/communication/assets/image_assets/images/624a8565fd0e430=
+9817ce338/original.png?1649050981" style=3D"display:block;height:auto;borde=
+r:0;width:144px;max-width:100%" width=3D"144"></div></td></tr></table>
+</div></td>
+</tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000=
+;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;padding-top:5px;padding-bottom:5px;border-=
+top:0;border-right:0;border-bottom:0;border-left:0">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:15px;padding-left:20px;padding-right:20px;padding-top:15px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:12px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:18px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:39px;letter-spacing=
+:normal">
+<span style=3D"background-color:transparent;font-size:26px;"><strong>What H=
+appened in the Market Last Week?</strong></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px;letter-spacing=
+:normal">&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px;letter-spacing:normal"><span =
+style=3D"font-size:16px;">We're back with our <strong>Weekly Market Insight=
+s for 2023!</strong></span></p>
+<p style=3D"margin:0;mso-line-height-alt:18px;letter-spacing:normal">&nbsp;=
+</p>
+<p style=3D"margin:0;mso-line-height-alt:24px;letter-spacing:normal"><span =
+style=3D"font-size:16px;"> We hope you had a relaxing break and are as exci=
+ted as we are to start 2023! Let's dive in.</span></p>
+<p style=3D"margin:0;mso-line-height-alt:18px;letter-spacing:normal">&nbsp;=
+</p>
+<p style=3D"margin:0;mso-line-height-alt:24px;letter-spacing:normal">
+<span style=3D"font-size:16px;"> Equity markets hit the ground running in 2=
+023, with the <a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGx=
+rrFFdz9UBVxM9fDFu2bRpHgWbOEbRzl7QSokem9aV5VUb/3so/1xJkzcIySqmXmGZzWHupvg/h3=
+7/pQcFu3ihNw2rFeMBr1suJ74rXhVx_LdLrLRIn5QZxC8" style=3D"text-decoration: un=
+derline; color: #1871d8;"><strong>US Telecom</strong>,</a> <a href=3D"https=
+://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9fDFu2bRpHgXsWWQXj=
+bYWgbcm8_cZs0LM73U8yECzPEh7Mp2401tfdg/3so/1xJkzcIySqmXmGZzWHupvg/h38/PzMHKR=
+zDLs5TH8_nQz1t8Oya9Y0pKVKmIrMVQWmaosE" style=3D"text-decoration: underline;=
+ color: #1871d8;"><strong>US Consumer Discretionary</strong></a> and <a hre=
+f=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFFdz9UBVxM9fDFu2bR=
+pHgXc76ccx8EdRDq9mX8LH93tcUnVSOfxqDI2EWoeBA216Q/3so/1xJkzcIySqmXmGZzWHupvg/=
+h39/Hzu2SuNw-2egbuZNvG8cJcwv8tXHeC4tQxmLT8mXFqA" style=3D"text-decoration: =
+underline; color: #1871d8;"><strong>US Real Estate</strong></a> sectors lea=
+ding the way in the first week of the year. Interest rate sensitive stocks =
+were performing particularly well, while energy stocks struggled as <a href=
+=3D"https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeO26QmRz1hQVHuZtynk1=
+7RcHnlEkWD8ky3OCN9K_ONblDHZ9_f6sW9KUGKBaxzDX6lBx9xTr0QSqCAXVJcDHRK5R7C3v_FQ=
+j9pkJkXxEz5qpGC44q4uyuBN8yGeo_AmmaC3WIjLPSgOAc8vW1UIdQ2o/3so/1xJkzcIySqmXmG=
+ZzWHupvg/h40/dcdthqyYPY4eKuuTlu_cQoSdUIEw2zPH8H9bjoklNfo" style=3D"text-dec=
+oration: underline; color: #1871d8;"><strong>warmer than expected weather i=
+n Europe caused oil and natural gas prices to fall.</strong></a></span>
+</p>
+</div></div></td></tr></table>
+<table class=3D"image_block block-2" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-righ=
+t:0;padding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line=
+-height:10px"><a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGx=
+rrFFdz9UBVxM9fDFu2bRpHgWnwAxjHDnq8xIe8eYLDOATsRCwNyP0LQ5GAfOng9rk9aE1H467f2=
+XiXiNKWURaQkbRvjhaJ1ZeuZrHexj8Lor9Nt9ySYrYu8tfXRe0g6lh85RRpgKWKuhxksY_YLYhm=
+EKBLiRpZWwJekgwVQUG6jYu/3so/1xJkzcIySqmXmGZzWHupvg/h41/0MczG-vRKnQsFaiInbdo=
+mGh_uhzgqRX7kL3Tl32ffio" target=3D"_blank" style=3D"outline:none" tabindex=
+=3D"-1"><img class=3D"big" src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/63b7844ea4f43f004c80dde2/original.png?16729=
+71341" style=3D"display:block;height:auto;border:0;width:640px;max-width:10=
+0%" width=3D"640"></a></div></td></tr></table>
+<table class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=
+=3D"font-family:sans-serif">
+<div class style=3D"font-size:14px;font-family:Helvetica Neue,Helvetica,Ari=
+al,sans-serif;text-align:center;mso-line-height-alt:16.8px;color:#555;line-=
+height:1.2"><p style=3D"margin:0;mso-line-height-alt:16.8px"><span style=3D=
+"font-size:14px;"><em><strong>U.S. Sector 7D Performance </strong>- 6th Dec=
+ember 2022 - </em><a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCw=
+kTGxrrFFdz9UBVxM9fDFu2bRpHgWnwAxjHDnq8xIe8eYLDOATsRCwNyP0LQ5GAfOng9rk9aE1H4=
+67f2XiXiNKWURaQkbRvjhaJ1ZeuZrHexj8Lor9Nt9ySYrYu8tfXRe0g6lh85RRpgKWKuhxksY_Y=
+LYhmEKBLiRpZWwJekgwVQUG6jYu/3so/1xJkzcIySqmXmGZzWHupvg/h42/jhcBLWxu0xdchfWQ=
+A7nLRsKdNCcD8iAz6rLZIjKjo6c" target=3D"_blank" style=3D"text-decoration: un=
+derline; color: #1871D8;" rel=3D"noopener"><strong>Simply Wall St</strong><=
+/a></span></p></div>
+</div></td></tr></table>
+<table class=3D"text_block block-4" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-left:20px;padding-right:20px;padding-top:15px"><div style=3D"font-fam=
+ily:sans-serif"><div class style=3D"font-size:12px;font-family:Helvetica Ne=
+ue,Helvetica,Arial,sans-serif;mso-line-height-alt:18px;color:#002c5a;line-h=
+eight:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:33px;letter-spacing=
+:normal"><span style=3D"font-size:22px;"><strong>2023: A look towards the f=
+uture</strong></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px;letter-spacing=
+:normal">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px;letter-spacing=
+:normal">
+<span style=3D"font-size:16px;">We capped off 2022 with a <a href=3D"https:=
+//l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZTMWOMs1WH=
+DIQ4yp7LZWiRXUZy5YsP0a5bFTSoFpyNvt86Vf8rPKESqwbB0WxrKd1tRexU7u49L13eeI0AJi6=
+CtZpv29759qsGtrfj-hl-p0vJ84x9JAeyjArLxlrC3D-wLBuI0sNfJJQAMM9PLIACDbMCRutFud=
+iDtu8CaCVs68_W97Zddo7jC_V0ViLqvapT68-_hYLqu-Qb9s-wTVCC6x/3so/1xJkzcIySqmXmG=
+ZzWHupvg/h43/g-Q59pKb-YFC6D_DUOXphurZnSukcYrATwNycoj2_Lc" target=3D"_blank"=
+ style=3D"text-decoration: underline; color: #2c85fd;" rel=3D"noopener"><st=
+rong>summary of the year that was</strong></a>. There was no shortage of ex=
+citement (if you wish to call it that) in the market last year with climbin=
+g interest rates, inflation and energy prices setting the tone for a tumult=
+uous time for equity markets.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px;letter-spacing=
+:normal">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px;letter-spacing=
+:normal"><span style=3D"font-size:16px;">As we kick off the year, we turn t=
+o some of the big names in global finance to provide their own context and =
+anticipations for the year ahead.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px;letter-spacing=
+:normal">&nbsp;</p>
+</div></div></td></tr></table>
+<table class=3D"divider_block block-5" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" alig=
+n=3D"center"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0"><tr><td class=3D"divider_inner" style=3D"font-size:1px;line-height:1p=
+x;border-top:1px solid #bbb"><span>=E2=80=8A</span></td></tr></table></div>=
+</td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-4" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;border-rad=
+ius:0;color:#000;width:640px" width=3D"640"><tbody><tr><td class=3D"column =
+column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;fon=
+t-weight:400;text-align:left;vertical-align:top;padding-top:20px;padding-bo=
+ttom:5px;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px"><div style=3D"font-=
+family:sans-serif"><div class style=3D"font-size:12px;font-family:Helvetica=
+ Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:18px;color:#002c5a;lin=
+e-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:33px"><span style=
+=3D"font-size:22px;"><strong>Goldman Sachs: This Cycle Is Different</strong=
+></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;"><strong>The key points from the <a href=3D"=
+https://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeBVnTu7xPXPWFLMpSWzacTkw=
+z9Hdt1f67akaXf5eF35OvbGjYS1N4dTj0Nc4uqd76R4lZ_rTFgKdO-gqPPI5qshKHOlqPs64iUZ=
+Z2768iIYcMjVyQ9q-8qOGrNHrskhusLavi5rzxmjjy8CPVwHviDY/3so/1xJkzcIySqmXmGZzWH=
+upvg/h44/sMEwwHlq3xM2vqNj1Wdz6NaMZngrSG9MLRWwlQOglfE" target=3D"_blank" sty=
+le=3D"text-decoration: underline; color: #1871d8;" rel=3D"noopener">Goldman=
+ Sachs Outlook</a>:<br></strong></span></p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Global growth slowed in 2022</stron=
+g> as the curtailing of the reopening boost, monetary tightening, the Russi=
+a-Ukraine war and China=E2=80=99s COVID restrictions made themselves appare=
+nt. <strong>Global growth is expected to be 1.8% in 2023, as US resilience =
+contrasts with a European recession</strong>.</span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>The US should avoid a recession</st=
+rong> as core personal consumption expenditure (PCE) inflation is expected =
+to slow from 5% now to 3% in late 2023, with only a 0.5% change to the unem=
+ployment rate. <strong>To tame real income growth, the Fed could hike anoth=
+er 125 basis to a peak of 5-5.25% with no rate cuts expected this year.</st=
+rong></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Inflation is expected to fall, desp=
+ite a minimal change in employment levels </strong>as this inflation cycle =
+differs from previous high-inflation periods.&nbsp;</span>
+</li>
+</ul>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">The word =E2=80=98recession=E2=80=99 has be=
+en thrown around a lot lately and for good reason. With economic growth qua=
+shed, the signals appear to indicate that many economies are heading toward=
+s a <a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsK=
+iPKNon6FYbkZTMJk3tAOKyM0vc6zD4vXm9GoISdvDM9sRtFsqIgqqxCk50Oir1njq69Y6ShIW2N=
+Evsbg9i1c0job7jltGo03kaaxqrNtFDTUDwNxSRNlwcGT93biazWixaYBgSmsJeT_zyGeIQ0Qqw=
+8r2jEmyH0hcw5chZOFe3q_vCxd8u3EGVN3A/3so/1xJkzcIySqmXmGZzWHupvg/h45/tuUTe6ZH=
+WI-XQ1tS5JQYiHeLZJuh25O6K0JfZvaMukU" target=3D"_blank" style=3D"text-decora=
+tion: underline; color: #1871d8;" rel=3D"noopener"><strong>recession if the=
+y aren=E2=80=99t already there</strong></a><strong>.&nbsp;</strong></span><=
+/p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:18px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">Goldman Sachs=E2=80=99 outlook for 2023 affirm their p=
+osition that the US is likely to avoid a recession despite a diminishing re=
+opening boost, declining real disposable income (a result of high inflation=
+), and aggressive monetary tightening working to stifle growth.</span></p>
+</div></div></td></tr></table>
+<table class=3D"image_block block-2" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0">
+<tr><td class=3D"pad" style=3D"width:100%;padding-right:0;padding-left:0"><=
+div class=3D"alignment" align=3D"center" style=3D"line-height:10px"><img cl=
+ass=3D"big" src=3D"https://braze-images.com/appboy/communication/assets/ima=
+ge_assets/images/63b78414aa2886004f41cd0f/original.png?1672971284" style=3D=
+"display:block;height:auto;border:0;width:640px;max-width:100%" width=3D"64=
+0"></div></td></tr>
+</table>
+<table class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=
+=3D"font-family:sans-serif"><div class style=3D"font-size:14px;mso-line-hei=
+ght-alt:16.8px;color:#555;line-height:1.2;font-family:Helvetica Neue,Helvet=
+ica,Arial,sans-serif"><p style=3D"margin:0;text-align:center;mso-line-heigh=
+t-alt:16.8px">
+<em>Goldman Sachs estimated recession probability - </em><a href=3D"https:/=
+/l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeBVnTu7xPXPWFLMpSWzacTkwz9Hdt1f=
+67akaXf5eF35OvbGjYS1N4dTj0Nc4uqd76R4lZ_rTFgKdO-gqPPI5qshKHOlqPs64iUZZ2768iI=
+YcMjVyQ9q-8qOGrNHrskhusLavi5rzxmjjy8CPVwHviDY/3so/1xJkzcIySqmXmGZzWHupvg/h4=
+6/TyYvsAgzswMy7QYasrvtToS7QIg4DEh-oS4a9DHIhGY" style=3D"text-decoration: un=
+derline; color: #1871D8;"><em>Goldman Sachs</em></a></p></div></div></td></=
+tr></table>
+<table class=3D"text_block block-4" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">The basis of their position comes from a few key facto=
+rs they=E2=80=99ve identified:
+<br></span></p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1"><span style=3D"font-size:16px;">Firstly, that real dis=
+posable income has rebounded in the tail end of 2022 from the lows of the f=
+irst half of 2022 where the initial rate increases were a sudden shock to h=
+ousehold budgets.&nbsp;</span></li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;">Secondly, they posit that this inflationary=
+ cycle differs from previous high-inflation cycles wherein the hot labour m=
+arket manifested itself in an unprecedented amount of job openings rather t=
+han excessive employment.&nbsp;<br></span>
+</li>
+</ul>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">They argue that employment levels post-pand=
+emic rose to pre-pandemic levels but did not exceed it and now that things =
+are cooling-off on the job market, employment levels are set to normalise a=
+nd openings are set to fall to levels that would slow wage growth enough to=
+ be compatible with inflation targets.</span></p>
+</div></div></td></tr></table>
+<table class=3D"text_block block-5" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<strong><span style=3D"font-size:22px;">JP Morgan: A bad year for the econo=
+my, a better year for markets</span></strong></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;"><strong>The key points from the</strong><a href=3D"htt=
+ps://l.p.simplywall.st/ss/c/liv-IU6Id76AVO8mXTOrvLE9O32C2_hAY1pWh26RU8XYLpb=
+PFicub7rFBYN-aPusgIw0t6IIYWv0fe_iGXFZYdMa6C_R1cCi0i87Q7W9qT8Y4P51RAAiI2kW-I=
+3ZDZB_SA1CFT_ipWl64nPba7WaKe45PbOrVOzhQtmxL3oF1CY/3so/1xJkzcIySqmXmGZzWHupv=
+g/h47/YFT1ayRkfNsE9gCOANkQvCsDtPP2mv7ALVP3rJq_wWU" style=3D"text-decoration=
+: underline; color: #1871D8;"><strong> JP Morgan Outlook:</strong></a></spa=
+n></p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1"><span style=3D"font-size:16px;">Despite remaining abov=
+e central bank targets, <strong>inflation should start to moderate</strong>=
+</span></li>
+<li aria-level=3D"1"><span style=3D"font-size:16px;">JP Morgan=E2=80=99s co=
+re scenario sees <strong>developed economies falling into a mild recession =
+in 2023</strong>.</span></li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Bonds have priced-in the ensuing ma=
+croeconomic troubles and are looking increasingly more attractive.</strong>=
+ The stock market sell-off has left some <strong>stocks with strong earning=
+s potential trading at very low valuations</strong>.</span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>If inflation begins to tame itself =
+in 2023, central banks will stop raising rates,</strong> and recessions, wh=
+ere they occur, will likely be modest. JP Morgan has identified possible si=
+gns that inflationary pressures are moderating and will continue to do so t=
+hroughout 2023.</span>
+</li>
+</ul>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">JP Morgan has assumed a slightly more pessi=
+mistic position than Goldman Sachs, anticipating that more developed countr=
+ies will slip into a recession, however their commentary echoes their belie=
+f in this recession being somewhat subdued.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">When it comes to inflation, JP Morgan=E2=80=
+=99s stance appears to be less clear cut. They put forward the belief that =
+inflation should start to moderate itself on the balance of slowing economi=
+c growth, China reopening, relieving supply chain pressures and labour mark=
+ets weakening but also provide a cautionary tale that if wage pressures don=
+=E2=80=99t ease, things could get quite ugly.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">The outlook anticipates a modest recession =
+on account of lower levels of investment in business and housing compared t=
+o prior recessions. Previous recessions have been fuelled by over-enthusias=
+m caused by excessive bank lending. However in the years since the GFC, the=
+ global banks come into this slowdown comparatively well capitalised and in=
+ a position where they can absorb losses without a credit crunch.&nbsp;</sp=
+an></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+</div></div></td></tr></table>
+<table class=3D"image_block block-6" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-righ=
+t:0;padding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line=
+-height:10px"><img class=3D"big" src=3D"https://braze-images.com/appboy/com=
+munication/assets/image_assets/images/63b78414e50d27004db2a1bb/original.png=
+?1672971284" style=3D"display:block;height:auto;border:0;width:640px;max-wi=
+dth:100%" width=3D"640"></div></td></tr></table>
+<table class=3D"text_block block-7" width=3D"100%" border=3D"0" cellpadding=
+=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=
+=3D"font-family:sans-serif"><div class style=3D"font-size:14px;mso-line-hei=
+ght-alt:16.8px;color:#555;line-height:1.2;font-family:Helvetica Neue,Helvet=
+ica,Arial,sans-serif"><p style=3D"margin:0;text-align:center;mso-line-heigh=
+t-alt:16.8px"><em>Business &amp; Residential property investment as a % of =
+GDP prior to recessions - </em><a href=3D"https://l.p.simplywall.st/ss/c/li=
+v-IU6Id76AVO8mXTOrvLE9O32C2_hAY1pWh26RU8XYLpbPFicub7rFBYN-aPusgIw0t6IIYWv0f=
+e_iGXFZYdMa6C_R1cCi0i87Q7W9qT8Y4P51RAAiI2kW-I3ZDZB_SA1CFT_ipWl64nPba7WaKe45=
+PbOrVOzhQtmxL3oF1CY/3so/1xJkzcIySqmXmGZzWHupvg/h48/9_z3K2nEHnwIwWB5LB3EOQVf=
+f1Oa3jFXfseMxbqkqD4" style=3D"text-decoration: underline; color: #1871D8;">=
+<em>JP Morgan</em></a></p></div></div></td></tr></table>
+<table class=3D"text_block block-8" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">&nbsp;</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">Turning to the equity market. The risk vs reward is in=
+ a more favourable position compared to 2022 given that the market should=
+=E2=80=99ve priced in the worst case scenarios at this point. So while a bo=
+ttom may still be yet to come, JP Morgan is of the opinion that we aren=E2=
+=80=99t too far from it.</span></p>
+</div></div></td></tr></table>
+<table class=3D"text_block block-9" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:33px">
+<span style=3D"font-size:22px;"><strong>Morgan Stanley: A resilient economy=
+ without a looming collapse</strong></span><br><br></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;"><strong>The key points from the </strong><a href=3D"ht=
+tps://l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeIi_uvnGGneqAWlitZRD1zGpLr=
+TtD_bwNBnknAVqGK9cPmCZcRXXkIpNmoyFoeUq7NJSX9DCKkJ4ACN417m7uelrzy6_iRFIB6qVm=
+XRow5uxg7RginVvW8hqlxASc8ZacA/3so/1xJkzcIySqmXmGZzWHupvg/h49/6LWfuwHTbRxViA=
+jY6Yrf2ibQ8hg9BZKEUh7ngvhe6L4" style=3D"text-decoration: underline; color: =
+#1871D8;"><strong>Morgan Stanley Outlook:</strong></a></span></p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1"><span style=3D"font-size:16px;"><strong>The first quar=
+ter of 2023 has the ingredients to build on strengths of the fourth quarter=
+ of 2022</strong> but an inverted yield curve hints at a potential economic=
+ slowdown at some point in the year ahead.</span></li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>The consensus view is that early in=
+ 2023, earnings will collapse</strong>, bringing the stock market down with=
+ them. <strong>But sectoral leadership from the financials, industrials and=
+ materials sectors suggest otherwise</strong>.</span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>The economy is proving too resilien=
+t, causing the =E2=80=9Clooming collapse=E2=80=9D in earnings to remain elu=
+sive for yet another quarter.</strong> Earnings are expected to drip down s=
+lowly, frustrating market bears. With continuing improvements on the inflat=
+ion front mixed in, you have the ingredients for a strong first quarter.</s=
+pan>
+</li>
+</ul>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Morgan Stanley=E2=80=99s Head of Applied Eq=
+uity Advisers, Andrew Slimmon, asserts that consensus for the early stages =
+of 2023 will be underpinned by an earnings collapse. As the impacts of risi=
+ng costs, rising interest rates, supply chain disruptions and a diminished =
+household disposable income wash through the quarterly earnings reports, th=
+e market is expected to drop accordingly.&nbsp;</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">However, as a counterpoint to the consensus, Slimmon t=
+urns to leaders in the financials, industrials and materials sectors to sug=
+gest otherwise. These sectors have outperformed during the months of Octobe=
+r and November. He suggests that if an early 2023 collapse was imminent, th=
+en these economically cyclical sectors would not be outperforming the rest =
+of the market.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Turning to yield curves, Slimmon acknowledg=
+es that an inversion is an important thing to note but that it typically is=
+n=E2=80=99t a good indicator of <em>when</em> an economic slowdown will occ=
+ur, rather, it more accurately suggests that one <em>will</em> occur at som=
+e point in the future. Could this slowdown occur in the latter half of the =
+year after a strong start to 2023? Morgan Stanley seems to think so, althou=
+gh they acknowledge that this goes against the general consensus.</span>
+</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">According to Morgan Stanley, there appears =
+to be an opportunity for investors who have an eye on emerging markets. Eme=
+rging markets (EM) have better growth, lower inflation, and less sovereign =
+and private debt, yet EM equities and currencies trade at what Morgan Stanl=
+ey are calling =E2=80=9Ccrisis-level valuations=E2=80=9D. If emerging marke=
+ts are an opportunity you=E2=80=99re interested in, then check out Simply W=
+all St=E2=80=99s top<strong> </strong><a href=3D"https://l.p.simplywall.st/=
+ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MPSrHGdVJnY5yPGlMb7D6rxLrW1WCB=
+_GAnYItyV5XCbcU06cEdkai2wR4I3-6l-3ue9fRW6YYIi1FAElJqZi4wYE3nt4z_gepfMSUiX9F=
+-1mo1UfdK62pfXerb4p9ve4GP0a4vIbq4yabYdfbHp6DYDuBUimKntzFZq-9KURw_icZ7XSuicj=
+dfrHRRp9CZoBMZAUf8Ji633CHX-_hZTMfGyH/3so/1xJkzcIySqmXmGZzWHupvg/h50/SkoZXk4=
+FGrg4ij2JeEgMGb0IWDcRuiPL0lk00KoK7fA" target=3D"_blank" style=3D"text-decor=
+ation: underline; color: #1871D8;" rel=3D"noopener"><strong>Latin American<=
+/strong></a> and <a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwk=
+TGxrrFy7GaKH4m2y1W3FF1o2MPSrHGdVJnY5yPGlMb7D6rxLekPnFGv8mzDIq-MYFc1i_jLrXby=
+D9j1l2W_t0UEanh1rU47MMooWnZzMmEzQY5apLu8rBjSf5MCRQWpj7t7qdfEp8e1H1wPtBy7M20=
+q_P49L7mbsZN5MAcB8ZB375N8vzJ3gzQd6ZMouXiLrRNcLAVPmyQOGtC3daWD55pKiS8As2HcMz=
+2pda9bwUaUDEJis/3so/1xJkzcIySqmXmGZzWHupvg/h51/9u7xqXH6muebirT4TDbPRp63co-Y=
+mv4qpZTu1Ued878" target=3D"_blank" style=3D"text-decoration: underline; col=
+or: #1871D8;" rel=3D"noopener"><strong>African</strong></a> stocks.</span>
+</p>
+</div></div></td></tr></table>
+<table class=3D"text_block block-10" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"p=
+adding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:10px"><=
+div style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;fon=
+t-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px=
+;color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:33px"><span style=
+=3D"font-size:22px;"><strong>Credit Suisse: A fundamental Reset</strong></s=
+pan></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;"><strong>The key points from the </strong><a=
+ href=3D"https://l.p.simplywall.st/ss/c/9zekkaEr8kLHbG3pWpUPLexzNUYL48hs-gQ=
+kr3Fo-Y3DJze29k6VG-zS4hN_vPshrhdTkZtWK3HIyV2CgePBN1ocXd1WIdg5hijwbXZyB15_9x=
+TumVKH7NLqe4It7XwZlab09mB1Xf75MO-noZB4xw/3so/1xJkzcIySqmXmGZzWHupvg/h52/piw=
+KQnms-t28BmJeQbwvdFlGnnN-ARdcZqugneqNbc8" style=3D"text-decoration: underli=
+ne; color: #1871D8;"><strong>Credit Suisse Outlook:</strong></a></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>The UK and the Eurozone are expecte=
+d to have slipped into a recession</strong>, while China will be in the mid=
+st of a =E2=80=9Cgrowth=E2=80=9D recession (read - less growth). These econ=
+omies should see the worst by mid-2023 and begin a slow recovery provided t=
+hat the US escapes a recession. <strong>Tightening monetary conditions will=
+ keep economic growth low throughout 2023.</strong></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Inflation is expected to decline in=
+ 2023, </strong>but will remain above central bank targets.</span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;">2023 will be a =E2=80=98tale of two halves=
+=E2=80=99 as interest rate rises remain a concern for the<strong> first hal=
+f of 2023, the stock market performance should be quite restrained and sect=
+ors with stable earnings and low debts should fare better</strong>. Once ce=
+ntral banks shift from increasing rates, <strong>growth stocks should recei=
+ve a kick in the second half of the year</strong>.</span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Fears of a global recession will ke=
+ep the USD strong in the early stages of 2023</strong>. Once monetary polic=
+y becomes less aggressive and foreign growth risk subsides, the USD will na=
+turally fall back and stabilise.</span>
+</li>
+</ul>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Credit Suisse=E2=80=99s outlook echoes the =
+same comments as the others. The Eurozone and UK will likely slip into a mo=
+derate recession while the US should manage to escape.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Inflation is in and around its peak at the =
+present and so the remainder of 2023 is expected to finally decline through=
+out the year. Although Credit Suisse expects inflation to decline, they=E2=
+=80=99re still assuming that it remains above inflation targets and won=E2=
+=80=99t decline enough to warrant any interest rate cuts for the foreseeabl=
+e future.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">Interestingly, Credit Suisse has asserted that the cha=
+nging geopolitical landscape is presenting a unique situation for us to tac=
+kle. The West, East and the South have become quite polarised in terms of m=
+onetary policy and political views.&nbsp;</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Strained geopolitical relationships and the=
+ COVID-19 pandemic have fundamentally altered global trade flows and has sh=
+ifted the focus for international trade from trying to secure pricing domin=
+ance, to now ensuring supply chain resilience and geopolitical relationship=
+s are maintained.</span></p>
+</div></div></td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-5" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#e0fffa;color:#000;width:640px" width=3D"640"><tbody><tr><td class=
+=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;font-weight:400;text-align:left;padding-left:20px;padding-right:20p=
+x;vertical-align:top;padding-top:20px;padding-bottom:20px;border-top:0;bord=
+er-right:0;border-bottom:0;border-left:0">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px"><div style=3D"font-family:sans-serif"><div class style=
+=3D"font-size:14px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;ms=
+o-line-height-alt:21px;color:#002c5a;line-height:1.5"><p style=3D"margin:0;=
+font-size:20px;mso-line-height-alt:33px"><span style=3D"font-size:22px;"><s=
+pan style><span style><span style><span style><strong>=F0=9F=92=A1<span sty=
+le> </span></strong></span></span></span></span><span style><span style><st=
+rong>The Insight: Investors are not fortune tellers<br></strong></span></sp=
+an></span></p></div></div></td></tr></table>
+<table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px"><div style=3D"font-family:sans-serif"><div class style=
+=3D"font-size:14px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;ms=
+o-line-height-alt:21px;color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;"><strong>&nbsp;</strong></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">It=E2=80=99s easy for retail investors - pa=
+rticularly beginner investors - to get carried away in the expectations of =
+analysts and fund managers from reputable financial institutions. They hear=
+ talks of doom or market booms and attach themselves to the idea. But inves=
+tors should remind themselves to take a step back and remember that no one =
+is infallible when it comes to the market.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><br>
+<span style=3D"font-size:16px;">There are always unexpected twists and turn=
+s in the world. No matter a person's expertise, experience or talent, there=
+=E2=80=99ll be some things that impact equity markets that cannot be foreca=
+st.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">For example in late 2011, <a href=3D"https:=
+//l.p.simplywall.st/ss/c/alpfTW1aBlpwcxRyoLDOeL_ckoYCBnsGvwrP8dh1EIob8PXOE9=
+j7s5uox_HxN7HcH_IdEfI2v-a_haUWlXhdZjKJWVgpNguVy-dZD3AT7xIo2NqTVYx7vcFmmJAlq=
+SE_/3so/1xJkzcIySqmXmGZzWHupvg/h53/7eTx0wd3Fz2bDlW9bemaMEx2mPZx5PcgCul7aVsp=
+UOw" style=3D"text-decoration: underline; color: #1871D8;"><strong>CBS News=
+ had a look into the accuracy of the predictions</strong></a> made by marke=
+t strategists. The consensus was that the S&amp;P 500 index would rise by a=
+n estimated 9.4%, with the most pessimistic of these strategists predicting=
+ a rise of only 5%. On the 28th of December 2011, with only three trading d=
+ays left in the year, the S&amp;P 500 was only up 0.6% for the year. It=E2=
+=80=99s safe to say that their crystal balls weren=E2=80=99t in working ord=
+er that year.</span>
+</p>
+</div></div></td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000=
+;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;padding-top:5px;padding-bottom:5px;border-=
+top:0;border-right:0;border-bottom:0;border-left:0">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:16px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:24px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:30px"><span style=
+=3D"font-size:20px;"><strong><span style>What this means for investors<br><=
+/span></strong></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">
+The age-old saying of =E2=80=9Cdo your own research=E2=80=9D rings true, pa=
+rtially. Investors should take note of what financial powerhouses are sayin=
+g, but they shouldn=E2=80=99t take it as gospel. If the consensus of the in=
+stitutions is quite bullish but you personally have your doubts about where=
+ the market is headed, you shouldn=E2=80=99t disregard your own beliefs if =
+they=E2=80=99re well founded.&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">
+Always invest to your own risk tolerance. Not just in terms of asset alloca=
+tion, but also in terms of your perceived macroeconomic risk.&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">&nbsp;</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">The things that have the pot=
+ential to impact your investments most throughout 2023 may not be known to =
+these large financial institutions yet and so to follow their words blindly=
+ could be hazardous.</p>
+<p style=3D"margin:0;mso-line-height-alt:24px"><br>
+In times of uncertainty investing in quality companies or investing in acco=
+rdance to a theme that resonates with the economic landscape are quite effe=
+ctive approaches. If you=E2=80=99re interested in reading up on some invest=
+ment theses for difficult macroeconomic periods, then be sure to check out =
+Simply Wall St=E2=80=99s list of<strong> </strong><a href=3D"https://l.p.si=
+mplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1o2MPSrHGdVJnY5yPGlMb=
+7D6rxLu0ZSbWVArddkKG77jCTkAb7i4g5g-WH66tv5Oz04Q_xcSegr04DDiCdfYdNilmQPiPw5a=
+f4CrQe9cP9zDh3EDzuz0UiEN-8MYtWc5xYREwnnk5H82RoUGJQ0vrEtqlVNRr9MlgJADRk6tx2i=
+6BrkKVhfgIISCbQe26yaIAndfGsgEbccR6PdufcNcuBUYjZd/3so/1xJkzcIySqmXmGZzWHupvg=
+/h54/cvq6NVZFovI3U9KHnP4pER5hz_qGKVbJZ1gv9aH4hmA" target=3D"_blank" style=
+=3D"text-decoration: underline; color: #1871d8;" rel=3D"noopener"><strong>b=
+est stocks for rising interest rates</strong></a> or<strong> </strong><a hr=
+ef=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFy7GaKH4m2y1W3FF1=
+o2MPSrHGdVJnY5yPGlMb7D6rxLfF6v50NcHFctg5bTSoGNtlb_Vl4YtWmWpWS251p_0KcGxPK8A=
+igTopTc8UPYnizqQmTijv_VNowlnxT1EJwMDXllyjJHkQLIPHOG8Rw814IfwHrEnbbn8pYrA4Hy=
+grpNYdR-iRYdk75rQ7WykuZeu8jJJmlGaW5Mp9O0o_3_ZBpuev1RPmF6nCT-OHwhAWz3/3so/1x=
+JkzcIySqmXmGZzWHupvg/h55/5ZZwiS9RoQQw5jAMh83azkeFQSO198H8Y_MoEI4Mgb0" targe=
+t=3D"_blank" style=3D"text-decoration: underline; color: #1871d8;" rel=3D"n=
+oopener"><strong>recessions</strong></a>.
+</p>
+<p style=3D"margin:0;mso-line-height-alt:24px">&nbsp;</p>
+</div></div></td></tr></table>
+<table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;"><span style=3D"font-size:22px;"><strong>What=E2=80=99s=
+ in store for 2023?</strong></span><strong><br></strong></span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">It seems to be a common theme among these o=
+utlooks for 2023 that the US will manage to slip through 2023 without havin=
+g to deal with a recession.&nbsp;</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">However, as JP Morgan pointed out, moderate=
+ recessions can actually be beneficial in periods of high inflation. The ec=
+onomic slowdown that defines a recession is quite effective in curtailing t=
+he runaway prices that crank up inflation.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Keeping on the topic of inflation, another =
+common theme amongst these predictions is that inflation has already peaked=
+ and will continue to moderate itself into 2023 as China opens up and the f=
+low on effects of rising interest rates begin to manifest.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">The probability of this happening will seem=
+ingly ride on how well China can navigate the current COVID outbreak.</span=
+></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Commentary remains consistent that in times=
+ of rising interest rates, high quality companies with solid earnings and c=
+onsistent dividends will tend to fare better. Growth stocks that have a sen=
+sitivity to interest rate adjustments will continue to struggle until infla=
+tion is under wraps and central banks hold steady on rate rises.&nbsp;</spa=
+n></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">If this happens in accordance with the general consens=
+us from the above institutions, then growth stocks could have their time in=
+ the sun during the later half of the year.</span></p>
+</div></div></td></tr></table>
+<table class=3D"divider_block block-3" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:10px;p=
+adding-top:10px"><div class=3D"alignment" align=3D"center"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_=
+inner" style=3D"font-size:1px;line-height:1px;border-top:2px solid #2c85fd"=
+><span>=E2=80=8A</span></td></tr></table></div></td></tr></table>
+<table class=3D"text_block block-4" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:5px"><di=
+v style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font-=
+family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;c=
+olor:#002c5a;line-height:1.5">
+<p style=3D"margin:0;text-align:center;mso-line-height-alt:24px">
+<span style=3D"color:#5c6cfa;font-size:16px;">=F0=9F=92=AC Join the discuss=
+ion by leaving a comment!</span><br><br></p>
+<p style=3D"margin:0;text-align:center;mso-line-height-alt:33px"><span styl=
+e=3D"font-size:22px;"><strong>Do you agree with the institutional outlooks =
+above, or think we're in store for something else this year?&nbsp;</strong>=
+</span></p>
+</div></div></td></tr></table>
+<table class=3D"button_block block-5" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=
+=3D"center">
+<!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://simplywall.st/ar=
+ticle/the-global-economic-outlook-for-2023#comments?utm_source=3Dbraze&utm_=
+medium=3Demail&utm_campaign=3DMarket Insights: Week 1 2023&utm_content=3DVa=
+riant 1" style=3D"height:44px;width:160px;v-text-anchor:middle;" arcsize=3D=
+"19%" strokeweight=3D"0.75pt" strokecolor=3D"#1871D8" fillcolor=3D"#1871D8"=
+><w:anchorlock/><v:textbox inset=3D"5px,0px,0px,0px"><center style=3D"color=
+:#FFFFFF; font-family:Arial, sans-serif; font-size:16px"><![endif]-->
+<a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrKHmbOFsKiPKN=
+on6FYbkZTOUaYv9a532RXEE77Q6XZgpRnvzx3O-xVIAib9kEoDwWMnt2N9TDNsXzvvlCt27F76N=
+YdNNev77KEWdovl5We0aaRVzqxLmxlPvsmhVld4JWjgtx5dosZyc1bMEmuPGMQffrxJxQMx5jLk=
+cOLksyXPnl35G_oLrrDjBu7AHeJHKaUScOcF5mlTvTgiXH4cdVDlx8c6pZHgCPsqyibINpcs2/3=
+so/1xJkzcIySqmXmGZzWHupvg/h56/QCL_6Xx09DtamXVR7rzvmmqCX45CDzZDI_3XY0srexQ" =
+target=3D"_blank" style=3D"text-decoration:none;display:inline-block;color:=
+#FFFFFF;background-color:#1871D8;border-radius:8px;width:auto;border-top:1p=
+x solid #1871D8;font-weight:400;border-right:1px solid #1871D8;border-botto=
+m:1px solid #1871D8;border-left:1px solid #1871D8;padding-top:5px;padding-b=
+ottom:5px;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-siz=
+e:16px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span st=
+yle=3D"padding-left:30px;padding-right:25px;font-size:16px;display:inline-b=
+lock;letter-spacing:normal;"><span style=3D"word-break: break-word;"><span =
+style=3D"line-height: 32px;" data-mce-style>Have your say</span></span></sp=
+an></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+</div></td></tr></table>
+<table class=3D"divider_block block-6" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:10px;p=
+adding-top:10px"><div class=3D"alignment" align=3D"center"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_=
+inner" style=3D"font-size:1px;line-height:1px;border-top:2px solid #2c85fd"=
+><span>=E2=80=8A</span></td></tr></table></div></td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-7" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000=
+;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;padding-top:5px;padding-bottom:15px;border=
+-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#002c5a;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><strong><span=
+ style=3D"font-size:22px;">Key Events Next Week</span></strong></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">The new year is kicking off into gear already with the=
+ year-on-year and month-on-month inflation figures to December 2022 schedul=
+ed to be released on January 12, 2023.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">Initial jobless claims and continued jobles=
+s claims data is also set for release next week; important data for those i=
+nterested in the effects of employment rates on inflation.</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:21px">&nbsp;</p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px">
+<span style=3D"font-size:16px;">The next week will be a busy one with many =
+companies beginning to post their Q4 2022 earnings. A few big players are s=
+tepping up to the plate, particularly those in the financials sector:</span=
+></p>
+<ul style=3D"line-height:1.5;mso-line-height-alt:24px;font-size:16px">
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>UnitedHealth Inc. </strong><a href=
+=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fW=
+bJ3_kEFAnPorSavvr2F0cEenRpXPIjTaeFqu8s6ov_eQun9_Np0iIJ2DMfWn9HJ7DtlwePRM98O=
+wz9J9SUdObBKw3XsWbKc81c7rA20S5sgytK2ajwQbjhV0Rj0u5F-43oORr6moXzmJTHaL1vt2VJ=
+gzUUm6FdkE4IchluB6zweAhvRO2yLV3L0hU3fdnEH8KHM/3so/1xJkzcIySqmXmGZzWHupvg/h5=
+7/5S1b2ZJ7DBnDUS9BBkMUEPbVuDTQSRB-XYq2DhnM0ZU" target=3D"_blank" style=3D"t=
+ext-decoration: underline; color: #1871D8;" rel=3D"noopener"><strong>(NYSE:=
+UNH)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>JP Morgan Chase &amp; Co. </strong>=
+<a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEia=
+enKu1fWbJ3ipzVaAjua_XuzH8flyAXgcc7aBbFayXSx7dp_CmC_FOigPd9PVFWm1QGoXuC3CmH_=
+ZkIjI63ZT7TWp4Z06HbD0i67c__lfWoOoLjoiWozSy-SVzdD-XTtVUDWwuybHTFrB0JhEX_ly1K=
+ZzL9kX9w5ExEsmGz6fHZ2Cft95NrXdrphnvXJ-bJIxDqWG7zThqk/3so/1xJkzcIySqmXmGZzWH=
+upvg/h58/CYwi-Z8sqshDqC7yJvOxrTo2TFaXcdWWRfos8rmhWoI" target=3D"_blank" sty=
+le=3D"text-decoration: underline; color: #1871D8;" rel=3D"noopener"><strong=
+>(NYSE:JPM)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Bank of America Corp. </strong><a h=
+ref=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu=
+1fWbJ3ipzVaAjua_XuzH8flyAXgE_NodoPCVzupEPONYyu6OHt-B8xdRUwEiGZ0Ke4Ej9SoRSPy=
+dHw-sDQj9EFmD4VBIKqyl1KISO8MXhdwHfuA2Ef7yJHEA5r5rzNk9YC1UlBeUDGDPtpmOW1dgcF=
+YI5Qe3T5AQCs1n7VMPyLwRasO80uDQLYynO31Fl-QXlArn48/3so/1xJkzcIySqmXmGZzWHupvg=
+/h59/EJPH-1wA76mpeROotTrdfLCdhD6evwVZlWcFXCwNeFE" target=3D"_blank" style=
+=3D"text-decoration: underline; color: #1871D8;" rel=3D"noopener"><strong>(=
+NYSE:BAC)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Citigroup Inc. </strong><a href=3D"=
+https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ3i=
+pzVaAjua_XuzH8flyAXgzLN6Qi-SsWR-PIxWRR4RnOc6z9VkS_dLMhnBUBweX8tSsiPbVbtEt4t=
+3-s0Ttlb2WWhdGVse8uJkGPiSlpMiolBLuNx0CPd87qvZRA-vHCgCRSt3yEG84Vi_Lgp45OnApP=
+COd74vdO4Ew8VD2bK_hg/3so/1xJkzcIySqmXmGZzWHupvg/h60/nu9PEZ2JWShFSEOCNuZk9XB=
+tiN9wB-OQ1sAMsxO85Mk" target=3D"_blank" style=3D"text-decoration: underline=
+; color: #1871D8;" rel=3D"noopener"><strong>(NYSE:C)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Delta Air Lines Inc. </strong><a hr=
+ef=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1=
+fWbJ2mvi3I5zAlcdTX3-FQaJarIK8_ACeRtJJiG4vB-lCAIcbDJE7GGn0XgMAvE-s26y71P6OO-=
+utF618mdzqgvYH-HZt2QnZYG8ZPruxF-3Uh3zXb15V04PDEFnl4Cc-h79UNWoqBVDeHRvRUK5DF=
+N7nfDCovrWgPv3CVz7WIhytmE2rcxYV4UZBs9-7YVkpJiyS2J-suEF6BGwZ-XJ0QfbJW/3so/1x=
+JkzcIySqmXmGZzWHupvg/h61/r2oBBIZW7-8bUUnKYv37N9JOt5HmVm3gYdFfOwpKF68" targe=
+t=3D"_blank" style=3D"text-decoration: underline; color: #1871D8;" rel=3D"n=
+oopener"><strong>(NYSE:DAL)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>BlackRock Inc. </strong><a href=3D"=
+https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu1fWbJ0W=
+OcoxrORVJfmMtDyjb57wmXjcVA2g6nZNz1YUJ4UqF2HThb6jtjtD7rS_l4Wa1MtL2kRJuUJ4_Iq=
+_vD0rjxZE74fsd_c-fEGDCjSei2Yh78g65BlheomhgXTDqKo0otpSY3uJQ_xfJ0yojemsUWtN56=
+cahjkuBOL2mkb9ge_aTsGiRzyacr3J0uxnHAU_CJ4MIArZ9101b7xWJ8sMxapN/3so/1xJkzcIy=
+SqmXmGZzWHupvg/h62/WoMh7DhfjQV10Wb5L7Jc_RZ8tJsjWirs1aSj7sb3P-M" target=3D"_=
+blank" style=3D"text-decoration: underline; color: #1871D8;" rel=3D"noopene=
+r"><strong>(NYSE:BLK)</strong></a></span>
+</li>
+<li aria-level=3D"1">
+<span style=3D"font-size:16px;"><strong>Wells Fargo &amp; Co. </strong><a h=
+ref=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrPFj5EIyOwEiaenKu=
+1fWbJ3ipzVaAjua_XuzH8flyAXgX6RJhMUwXKowioPFDCESdV-MfqxnNPzyLso0cbisfDwaWxs9=
+2n5MS9XdF220GHaQjL9gXzrq_UUJhpPN5Iiwi4kS__EBDxjMJoo5x0nRed3b59qiNgdkZfZd-wR=
+VELMSkeU40HcRTN36rhGEQCNr2_p-ws7odKGb25zxfIo3HnY/3so/1xJkzcIySqmXmGZzWHupvg=
+/h63/abyf6_90BJ_UlFDjCsRXk181A2oLdkLTsyjcwMvUUqg" target=3D"_blank" style=
+=3D"text-decoration: underline; color: #1871D8;" rel=3D"noopener"><strong>(=
+NYSE:WFG)</strong></a></span>
+</li>
+</ul>
+</div></div></td></tr></table>
+<table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px"><d=
+iv style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font=
+-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-line-height-alt:21px;=
+color:#101b24;line-height:1.5">
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">Until next week,</span><br><br></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;">Invest Well,</span></p>
+<p style=3D"margin:0;font-size:16px;mso-line-height-alt:24px"><span style=
+=3D"font-size:16px;"><em>Simply Wall St</em></span></p>
+</div></div></td></tr></table>
+<table class=3D"divider_block block-3" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:10px;p=
+adding-left:20px;padding-right:20px;padding-top:10px"><div class=3D"alignme=
+nt" align=3D"center"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" width=3D"100%" style=3D"mso-table-lspace:0;mso-tabl=
+e-rspace:0"><tr><td class=3D"divider_inner" style=3D"font-size:1px;line-hei=
+ght:1px;border-top:3px solid #2c85fd"><span>=E2=80=8A</span></td></tr></tab=
+le></div></td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-8 mobile_hide" align=3D"center" width=3D"100%" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"mso-table-lspace:0;mso-table-rspace:0;background-size:auto"><tbody><tr><td=
+><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;background-size:auto;border-radius:16px;color:#000;bor=
+der-bottom:1px solid #2c85fd;border-left:1px solid #2c85fd;border-right:1px=
+ solid #2c85fd;border-top:1px solid #2c85fd;width:640px" width=3D"640"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+padding-top:5px;padding-bottom:5px;border-top:0;border-right:0;border-botto=
+m:0;border-left:0"><table class=3D"text_block block-1" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=
+=3D"pad" style=3D"padding-bottom:10px;padding-left:20px;padding-right:20px;=
+padding-top:15px"><div style=3D"font-family:sans-serif"><div class style=3D=
+"font-size:14px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;mso-l=
+ine-height-alt:16.8px;color:#101b24;line-height:1.2">
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><strong><sp=
+an style=3D"font-size:16px;">=F0=9F=92=99&nbsp; Share with a friend!</span>=
+</strong></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"font-size:16px;">Thanks for reading! If you enjoyed this wee=
+k=E2=80=99s Market Insight, <a href=3D"https://l.p.simplywall.st/ss/c/qvi47=
+H6F9rGEqCwkTGxrrKHmbOFsKiPKNon6FYbkZTOUaYv9a532RXEE77Q6XZgpRnvzx3O-xVIAib9k=
+EoDwWHP2uZKejz2kWUXmCwgJ-WR79BWUgaUxEmPc7PPjKb6VAS_R8Ez5_GGeD81s87zZcaVwRwC=
+kmaI2NVTXU6uBdHQ3AP7Gz-wmPWGo5zPw82LL5S_nl7FGdvyLNGXir9r4FGDl6b7uZ7PeUfrGl3=
+8UdfuSsVlqLbY4JEV2TrdxhMex/3so/1xJkzcIySqmXmGZzWHupvg/h64/s1pD9I0BHUrcgbIBe=
+MrISb5yy_ULo0gJwuTZkbH0xr0" target=3D"_blank" style=3D"text-decoration: und=
+erline; color: #1871D8;" rel=3D"noopener">share this week's insight with a =
+friend</a>.</span></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"font-size:16px;">Were you forwarded the email? <a href=3D"ht=
+tps://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFeu39I6GUBv75nqK_4pfYNXhD=
+jYNUt7OMM60zj61W41EIUyWIHzlNsPHRwumEWRtwKNkJpGNbBxLag2GMPeh_b-gfRDzXLnEwupk=
+pQXeA-2xogUm3DKwQnaymV-ufJrUb6VwXERGmr51ZdAXOvL3_UQr82KZqTJ2VOpsFbGqTbM/3so=
+/1xJkzcIySqmXmGZzWHupvg/h65/Ok3L_uRuBYwjJ4_3fI409pndbD8fXyIjkghQ0jSE5IE" ta=
+rget=3D"_blank" style=3D"text-decoration: underline; color: #1871D8;" rel=
+=3D"noopener">Sign up here</a> to receive it in your inbox.</span></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table>
+<table class=3D"row row-9 desktop_hide" align=3D"center" width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-hei=
+ght:0;overflow:hidden;background-size:auto"><tbody><tr><td><table class=3D"=
+row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspac=
+e:0;mso-hide:all;display:none;max-height:0;overflow:hidden;background-size:=
+auto;border-radius:16px;color:#000;border-bottom:0 solid #2c85fd;border-lef=
+t:0 solid #2c85fd;border-right:0 solid #2c85fd;border-top:0 solid #2c85fd;w=
+idth:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=3D=
+"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-=
+align:left;vertical-align:top;padding-top:5px;padding-bottom:5px;border-top=
+:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"text_block=
+ block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-br=
+eak:break-word;mso-hide:all;display:none;max-height:0;overflow:hidden"><tr>=
+<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:20px;padding-ri=
+ght:20px;padding-top:15px"><div style=3D"font-family:sans-serif"><div class=
+ style=3D"font-size:14px;font-family:Helvetica Neue,Helvetica,Arial,sans-se=
+rif;mso-line-height-alt:16.8px;color:#101b24;line-height:1.2">
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><strong><sp=
+an style=3D"font-size:16px;">=F0=9F=92=99&nbsp; Share with a friend!</span>=
+</strong></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span style=
+=3D"font-size:16px;">Thanks for reading! If you enjoyed this week=E2=80=99s=
+ Market Insight, <a href=3D"https://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwk=
+TGxrrKHmbOFsKiPKNon6FYbkZTMWOMs1WHDIQ4yp7LZWiRXUZy5YsP0a5bFTSoFpyNvt86Vf8rP=
+KESqwbB0WxrKd1tRexU7u49L13eeI0AJi6CtZpv29759qsGtrfj-hl-p0vJ84x9JAeyjArLxlrC=
+3D-wLBuI0sNfJJQAMM9PLIACDbMCRutFudiDtu8CaCVs68_XDt0JMFdeaJSCWrfwcjlck1qlAjg=
+bkfAd3eYdEXSNqL/3so/1xJkzcIySqmXmGZzWHupvg/h66/CeiAG8wv_Q8ol3IVBEcpvFWnRmG4=
+PCjVr19h3z66S-U" target=3D"_blank" style=3D"text-decoration: underline; col=
+or: #1871D8;" rel=3D"noopener">share it with a friend</a>.</span></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"font-size:16px;">Were you forwarded the email? <a href=3D"ht=
+tps://l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrFeu39I6GUBv75nqK_4pfYNXhD=
+jYNUt7OMM60zj61W41EIUyWIHzlNsPHRwumEWRtwKNkJpGNbBxLag2GMPeh_b-gfRDzXLnEwupk=
+pQXeA-2xogUm3DKwQnaymV-ufJrUb6VwXERGmr51ZdAXOvL3_UQr82KZqTJ2VOpsFbGqTbM/3so=
+/1xJkzcIySqmXmGZzWHupvg/h67/z_N-cApI6MDxdHzdu6Q3JjS7KCDCrUqVVHLJJ3Z9Uvk" ta=
+rget=3D"_blank" style=3D"text-decoration: underline; color: #1871D8;" rel=
+=3D"noopener">Sign up here</a> to receive it in your inbox.</span></p>
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">&nbsp;</p>
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table>
+<table class=3D"row row-10" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody><tr><td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;border-radius:0;color:#000;width:640px" width=3D"640"><=
+tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-l=
+space:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:t=
+op;padding-top:25px;padding-bottom:5px;border-top:0;border-right:0;border-b=
+ottom:0;border-left:0"><table class=3D"html_block block-1" width=3D"100%" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div style=
+=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center=
+" align=3D"center"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" align=3D"center">
+  <tbody>
+    <tr>
+      <td align=3D"center" valign=3D"middle" class=3D"font-sans font-14 col=
+or-space-gray" style=3D"padding-bottom: 8px;"> Was this email useful? </td>
+    </tr>
+    <tr>
+      <td align=3D"center" valign=3D"top" style=3D"padding-bottom: 0px;">
+        <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"ce=
+nter">
+          <tbody>
+            <tr>
+              <td align=3D"center" valign=3D"middle" style=3D"padding-right=
+: 20px;"> <a href=3D"https://l.p.simplywall.st/ss/c/H236FFfXUiQDhiDL4CgByvJ=
+szzPbQyUodSC4_6qP_kEL6Y5g9KRBmrLOlKtLhrH1L3VEHnUx-m3D7h8kaKeVMMhhRjg_3Z8OWs=
+DFHW1ft4iT5ZH7_3W6MezlXazZtOy1z3MBb14kXyrrMFxqkLaDxlo3HcJ4QytzGHrwZKKhNobFD=
+XZ2kvzH7bN1r5fTquEh2SQLQXi80AEsSgEClAe3qYUSqmhYWjaMrpF6zNS9xLLEU_RELjsFM-yg=
+c1I-Atrcqae2sGA27yV3m9ADGsKQgA/3so/1xJkzcIySqmXmGZzWHupvg/h68/KT6-87lyQXI45=
+c1Q-Y52YAOGqhSlpul5o9CsfVHQ9Mo" target=3D"_blank" style=3D"text-decoration:=
+ none;"> <img src=3D"https://braze-images.com/appboy/communication/assets/i=
+mage_assets/images/613ef0054eeab20f10f95639/original.png?1631514629" alt=3D=
+"" width=3D"20" border=3D"0" style=3D"display: block; max-width: 20px;"> </=
+a> </td>
+              <td valign=3D"top" align=3D"center">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" align=3D"center">
+                  <tbody>
+                    <tr>
+                      <td align=3D"center" valign=3D"middle" style=3D"paddi=
+ng-top: 0px;"> <a href=3D"https://l.p.simplywall.st/ss/c/H236FFfXUiQDhiDL4C=
+gByvJszzPbQyUodSC4_6qP_kEL6Y5g9KRBmrLOlKtLhrH1LoY0QTttkzDvWUrMd8FVSxh3onlO5=
+CPMMoBUPYnnGakp24gM7muL0m-RdXR8rCTKs4a7nYQ4nMCJrFDPUAgxO-4gvGNKDcchAb-1M5BH=
+32TgFhtmd96sTl4MzdloVt2q7UNsvvDY2yR6IMXjX_gBfryYfnIOuLkj6NQbQnuBP8z_QZluqg2=
+Ubtbwg0eXDnmNsxERO2r9jSilmW3j2Q_7pQ/3so/1xJkzcIySqmXmGZzWHupvg/h69/JGBKJVzY=
+DzWTd3zy-PnMhJe8aZ3O6uZPdRXj-aNDzfM" target=3D"_blank" style=3D"text-decora=
+tion: none;"> <img src=3D"https://braze-images.com/appboy/communication/ass=
+ets/image_assets/images/613ef016a4158c53945e61c2/original.png?1631514646" a=
+lt=3D"" width=3D"20" border=3D"0" style=3D"display: block; max-width: 20px;=
+"> </a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+</td>
+</tr>
+</tbody>
+</table></div></td></tr></table></td></tr></tbody></table>
+<table class=3D"row row-11" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content sta=
+ck" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000=
+;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;padding-top:5px;padding-bottom:5px;border-=
+top:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"text_bl=
+ock block-1" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"=
+0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;wor=
+d-break:break-word"><tr><td class=3D"pad"><div style=3D"font-family:sans-se=
+rif"><div class style=3D"font-size:14px;mso-line-height-alt:16.8px;color:#2=
+62e3a;line-height:1.2;font-family:Helvetica Neue,Helvetica,Arial,sans-serif=
+"><p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt=
+:16.8px"><span style=3D"font-size:20px;"><strong>Download the app</strong><=
+/span></p></div></div></td></tr></table></td></tr></tbody></table></td></tr=
+></tbody></table>
+<table class=3D"row row-12" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content" al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:=
+640px" width=3D"640"><tbody><tr>
+<td class=3D"column column-1" width=3D"50%" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;border-t=
+op:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"image_bl=
+ock block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr=
+><td class=3D"pad" style=3D"padding-left:20px;padding-right:10px;width:100%=
+;padding-top:5px;padding-bottom:5px"><div class=3D"alignment" align=3D"righ=
+t" style=3D"line-height:10px"><a href=3D"https://l.p.simplywall.st/ss/c/cA4=
+KlFZxd1N-fwBJXW5TLCAXJrnG4q1DjQKNboFwPRan3ePaNMPZoWfKMXl2vfQZFuLfEP4c9C_q3o=
+-dLfKLxjiS1M0PgJlyjshWqBRTVgA/3so/1xJkzcIySqmXmGZzWHupvg/h70/SjpdvZZQJ3S89w=
+z671nHaox5fx2Dq0xfcuRV60h85H0" target=3D"_blank" style=3D"outline:none" tab=
+index=3D"-1"><img src=3D"https://appboy-images.com/appboy/communication/ass=
+ets/image_assets/images/612f08d160ec0a565931abe3/original.png?1630472401" s=
+tyle=3D"display:block;height:auto;border:0;width:146px;max-width:100%" widt=
+h=3D"146" alt=3D"Google Play Store" title=3D"Google Play Store"></a></div><=
+/td></tr></table></td>
+<td class=3D"column column-2" width=3D"50%" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;border-t=
+op:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"image_bl=
+ock block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr=
+><td class=3D"pad" style=3D"padding-left:10px;padding-right:20px;width:100%=
+;padding-top:5px;padding-bottom:5px"><div class=3D"alignment" align=3D"left=
+" style=3D"line-height:10px"><a href=3D"https://l.p.simplywall.st/ss/c/liv-=
+IU6Id76AVO8mXTOrvGQ7fyQhD0p3TkPfpar5Fr0VY3YbmA95jVWOxAjVgkYze20yBTy-VT8oxG1=
+M-ekbvsbDosr5NQ4tZfXofs3FWPw/3so/1xJkzcIySqmXmGZzWHupvg/h71/ck1ceRZ-0ztYt3v=
+TZTqYXJWbDHov_WYGbGYyXKd1dDk" target=3D"_blank" style=3D"outline:none" tabi=
+ndex=3D"-1"><img src=3D"https://appboy-images.com/appboy/communication/asse=
+ts/image_assets/images/612f08dea4158c5a218ca830/original.png?1630472414" st=
+yle=3D"display:block;height:auto;border:0;width:146px;max-width:100%" width=
+=3D"146" alt=3D"Apple Store" title=3D"Apple Store"></a></div></td></tr></ta=
+ble></td>
+</tr></tbody></table></td></tr></tbody></table>
+<table class=3D"row row-13" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody>
+<tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;color:#000;width:640px" width=3D"640"><tbody><t=
+r><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;paddi=
+ng-top:5px;padding-bottom:5px;border-top:0;border-right:0;border-bottom:0;b=
+order-left:0"><table class=3D"text_block block-1" width=3D"100%" border=3D"=
+0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-=
+table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"p=
+ad"><div style=3D"font-family:sans-serif"><div class style=3D"font-size:14p=
+x;mso-line-height-alt:16.8px;color:#555;line-height:1.2;font-family:Helveti=
+ca Neue,Helvetica,Arial,sans-serif">
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"></p>
+<table style=3D"max-width: 540px; text-align: center;margin: 0 auto;">
+	<tbody>
+		<tr>
+			<td style=3D"color:#5b6477; font-family:'Helvetica Neue', Arial,sans-ser=
+if; font-size:12px; line-height:18px; padding:0 40px">
+			<p><span style=3D"font-size:12px;">This email is from Simply Wall Street=
+ Pty Ltd<br>
+			Level 7, 320 Pitt St Sydney 2000, NSW, Australia.</span></p>
+
+			<p><span style=3D"font-size:12px;">Simply Wall Street Pty Ltd (ACN 600 0=
+56 611), is a Corporate Authorised Representative (Authorised Representativ=
+e Number: 467183) of Sanlam Private Wealth Pty Ltd (AFSL No. 337927). Any a=
+dvice contained in this email/website is general advice only and has been p=
+repared without considering your objectives, financial situation or needs. =
+You should not rely on any advice and/or information contained in this webs=
+ite and before making any investment decision we recommend that you conside=
+r whether it is appropriate for your situation and seek appropriate financi=
+al, taxation and legal advice. Please read our Financial Services Guide bef=
+ore deciding whether to obtain financial services from us.</span></p>
+
+			<p style=3D"margin-block-start: 1em; margin-block-end: 0em;"><span style=
+=3D"font-size:12px;"><span style=3D"color:#5b6477;"><a href=3D"https://l.p.=
+simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrLil6yzCg5SP-slJbOPpXWEEJ1ZIZxGDQQ1y=
+-RXUX2iy/3so/1xJkzcIySqmXmGZzWHupvg/h72/-Ocyv5sTE5mP5JzZ8y8u9MuzxFk0yF1cqlu=
+Yh834A_k" rel=3D"noopener" style=3D"text-decoration:none; color:#5b6477" ta=
+rget=3D"_blank">Privacy Policy</a></span></span></p>
+
+			<p style=3D"margin-block-start: 0.5em; margin-block-end: 0.5em;"><span s=
+tyle=3D"font-size:12px;"><span style=3D"color:#5b6477;"><a href=3D"https://=
+l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrORDgRtgsEg4NbCvjXcSgUAn37XeWmRa=
+ym1lAm1nDESLIkDy1Zyhhr9Aw1TSeqgX-g/3so/1xJkzcIySqmXmGZzWHupvg/h73/epIL-qrXH=
+tj-YsIYkM3u47Vi7d5XnVYoznBqDf9yRUM" rel=3D"noopener" style=3D"text-decorati=
+on:none; color:#5b6477" target=3D"_blank">Terms and Conditions</a></span></=
+span></p>
+			<br>Don=E2=80=99t want to hear about Market Updates? 	<a href=3D"https:/=
+/l.p.simplywall.st/ss/c/qvi47H6F9rGEqCwkTGxrrI_yBQ-FXz2eUMtk68ADQaEHfyjuDK7=
+42QeD6Wt5K_Fb65bK3ftPqkhFYPFKSPK4_rro4bUeUOZ3dWp1OUdTA7SNC1ub5iTGa5yF9JvnF7=
+Kqy6gMWApujglQtSaXonLF1TkefalJUb5Nww3Nfe6brArEAr0mXMspq_wuzKxVcneuAmYImzgc0=
+zKJNif5v_ZR2TlNOZyUXo3prl8iacLN4pA/3so/1xJkzcIySqmXmGZzWHupvg/h74/e9JTSneRX=
+0kWje5A7WxH9uMpgCo8ISDruMUUxJPZLjA" rel=3D"noopener" style=3D"text-decorati=
+on:underline; color:#5b6477;" target=3D"_blank">Click here to stop receivin=
+g it.</a>
+<br><br>
+Want to stop receiving emails or want to check which email you are subscrib=
+ed on? <a href=3D"https://l.p.simplywall.st/ss/c/Dn_IDrvIB5ABQDwW_-IdKHrxBJ=
+GAOd-N55oyYZHV9zdP6BONOJKFVcSLypkLIN2DySoNTozaD2FkP-_hCGdr7gAws1c5DcKufls6f=
+Cozj8xgDo8vJkGxNESv7E8fvVAkyuMxGO46pRrOH5i04pWniGnBNnKZ8a_kj_c-Fh0P9cQXLKAD=
+GqMbkp40qMHRBtFpX6V_9UUC1yyYhUsCYEDuqU715w4sLx68198zZn7ZrkktaFYkjFpPCDs_Cke=
+rt8qLQBOM5vS7v6YHPCgjgWbEF28F3Z3KNls6tRGaHZ7m1xyxjCZ-TRYcugLKPylIja6BiZ2Wd2=
+7aIFPul2Dl7bRv2DpFJAro0Y5mcfP3HNOtJqR30Q-Y_qUNoSOLFCx1uNs6RktbIP2Ji-9zNNgyH=
+2R_6FUrQmalRbsK3mN0Oi4ICPtqDBOyzdPOxnKnSfikt5OSlTJODq0X7IkjKFWSqAGnZeSTYg2d=
+bWgG2HgiriEJHcgGOMoEo8onifCTx9REtVm4NiUNA4QxZrC7JB4mJjkZVNA7STwu5qJwcbwGHQO=
+t0D5s6VBaoAUW9OWecnx8kBHD9wOWUOBP6wkZOHahWJF07Fgb1IUpd-mAa_0bLMGyWN7Vl-CclH=
+lIrJsrjdjG37Uaz9LZkaHPl_4OdtHo9IZ3WEWCYdM2BCR6ZSU4j4v5LZdg7PPkV9vq7JZ2Op8gC=
+W4eK-_w-_29iNNbVD-aGUwpYYCwb65l9o93zeV-bE6XlIF3YHwGSCU5Ssbxzqeeizrc/3so/1xJ=
+kzcIySqmXmGZzWHupvg/h75/RkVJ1ZIhvVueld591lpC9ApLfBwbVFDrX6YnFNrc4yU" rel=3D=
+"noopener" style=3D"text-decoration:underline; color:#5b6477;" target=3D"_b=
+lank">Click here to manage your email subscriptions.</a>
+</td>
+		=09
+		=09
+	=09
+		</tr>
+		<tr>
+			<td class=3D"em_h20" height=3D"50" style=3D"font-size:1px; line-height:1=
+px;"></td>
+		</tr>
+	</tbody>
+</table>
+</div></div></td></tr></table></td></tr></tbody></table></td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+<!-- End -->
+</td></tr></tbody></table>
+<img src=3D"https://l.p.simplywall.st/ss/o/7W_IFBd3KcGfAmPk6JEd8w/3so/1xJkz=
+cIySqmXmGZzWHupvg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" st=
+yle=3D"height:1px !important;width:1px !important;border-width:0 !important=
+;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !importa=
+nt;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !impo=
+rtant;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--b106c962f8fdb32847e39a2f3835467625e59f1c3bbbba195832b99467a4--

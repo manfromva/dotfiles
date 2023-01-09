@@ -1,0 +1,3078 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2717476mdb;
+        Sun, 8 Jan 2023 19:30:10 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvHU+VG4NAIQofTtVXNiy32xX7itzgmiqopVmKEFsDk7qVpkF9qiO2C2hbdAi6pWI4MIq0p
+X-Received: by 2002:ac8:7190:0:b0:3a9:7d1a:ff0c with SMTP id w16-20020ac87190000000b003a97d1aff0cmr83554193qto.62.1673235009754;
+        Sun, 08 Jan 2023 19:30:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673235009; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WSH+yIMvAmPA2jBYc89PX9kiuxcLuvwsICul3c1vmMewGJxHpAIwQA85Onm6ps9DdG
+         YuWoJ+oMy8CkbPWZDvWjDQHSn6VlJV//oyI9Td1ERhky10VvvCeo9SeIg0BdrMyI3SB4
+         xnMFnWHd0bSTLJToaAFFj9l+LuVpLRyUIAVBoea9x7U8hDjwDxXcuToTT0KFWHKS10e7
+         QlXTmD7vJi+Gb2wnF6fTC9/hTHwOMjco+oIkD7PJg+oud+bypW8Zt1ukwRUBi5SWxNvx
+         EACP36X2rcmgYlxp6PjxpoBAYzj4F09PP7KVl4kvBma/ZLvrXjmWMocsNXJ8KFlk3wTF
+         YsIg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:to:from:subject:mime-version:date
+         :sender:dkim-signature:dkim-signature;
+        bh=XFyenOz4g6gR0HSyyDh+rzDV8sseMDJYmuYMgFkrgFc=;
+        b=BJxVTUxSAbUbrxFp4w8Xl1YlHAq9U5UNYufa04W1I0RDWdA6pzaR0ETPmQhT4TRmeK
+         lxGTJh+hofxi1vuyWcc9aL8Y1WDTHa9hYrNCcU+wLM5R1Oin5zjb4f5wpPPA48xoUevj
+         XgzdF6VikG3vqsXRj40/vlu/zMPfXe+voTOP0Lydq8gMMzWIVxntUvKQerPh6TaS+w2o
+         NMIJf0oyj4LsYlyy0vTgcPpiaPsx3pWehrpmve/mTXZY4qMwURQcryyArVk1G0lMz1GO
+         PSnX+P/MzBEFjVNbm5yBywoyuWw+V4tVUI8NEqsHsDZVlLPIMmzd0UhPU+KF5df6R8QH
+         QM8g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notifications.creditkarma.com header.s=smtp header.b=a4hUB6sI;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=b4ldWccV;
+       spf=pass (google.com: domain of bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com designates 159.135.236.60 as permitted sender) smtp.mailfrom="bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=notifications3.creditkarma.com
+Return-Path: <bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com>
+Received: from m236-60.mailgun.net (m236-60.mailgun.net. [159.135.236.60])
+        by mx.google.com with UTF8SMTPS id a8-20020aed2788000000b003a68abc1c8bsi3911898qtd.145.2023.01.08.19.30.07
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Jan 2023 19:30:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com designates 159.135.236.60 as permitted sender) client-ip=159.135.236.60;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notifications.creditkarma.com header.s=smtp header.b=a4hUB6sI;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=b4ldWccV;
+       spf=pass (google.com: domain of bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com designates 159.135.236.60 as permitted sender) smtp.mailfrom="bounce+29d1de.830b42-darnellkeithj=gmail.com@notifications.creditkarma.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=notifications3.creditkarma.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=notifications.creditkarma.com;
+ q=dns/txt; s=smtp; t=1673235004; x=1673242204; h=Message-Id:
+ List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type:
+ Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=XFyenOz4g6gR0HSyyDh+rzDV8sseMDJYmuYMgFkrgFc=; b=a4hUB6sIC8snb79wea60+ZqTkNNnxsdjWP3/1E65P4l+9Hj4PhcPl/+ml+RLL7i8Exy0V7W6
+ dvjueGqYfd7441BUr7VO5P18JL/T3M3S0rgoMwkImJOVPupy6G8i1yYYSxzq8NUp05oGxq9/
+ jhtTFPqYKzdX2uJJm+73PBWH/e8=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg;
+ t=1673235004; x=1673242204; h=Message-Id: List-Unsubscribe: To: To:
+ From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender:
+ Sender: X-Feedback-Id; bh=XFyenOz4g6gR0HSyyDh+rzDV8sseMDJYmuYMgFkrgFc=;
+ b=b4ldWccVuru8WCBl9JZISdks0U1spb0EW5JZ3PZjyaZWr9GiRoUt2pvqWWgdMyYrVPKJ1FxJ
+ J6OytXn1TSBf5PZ0MxvDK8+QR7UlCxiW7nFP1MVv3QAJMDEK4ZbFkbXZLkJUU7vx7hE3Ppsu
+ bPoZeuAnTPsp+v5Fw5uTVXYH0lk=
+X-Feedback-Id: 59f3693a4f41fe0148383bce:mailgun
+X-Mailgun-Sending-Ip: 159.135.236.60
+X-Mailgun-Sid: WyJiZDUyMiIsImRhcm5lbGxrZWl0aGpAZ21haWwuY29tIiwiODMwYjQyIl0=
+Received: from <unknown> (<unknown> []) by dae61c41861b with HTTP id
+ 63bb19f513ba593ec2bd85dc; Sun, 08 Jan 2023 19:31:01 GMT
+Sender: notifications@notifications3.creditkarma.com
+Date: Sun, 08 Jan 2023 19:31:01 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="67e279d7d8b7592e1f0fe7f4e3dc2eadfa058ee9d2905f602b027956bd20"
+Subject: Darnell: Cover any major expense with a personal loan
+From: Credit Karma <notifications@notifications3.creditkarma.com>
+To: darnellkeithj@gmail.com
+X-Mailgun-Deliver-By: Mon, 09 Jan 2023 03:30:00 +0000
+List-Unsubscribe: <https://www.creditkarma.com/notification-events/redirect/mailing?forwardCtPayload=true&ctPayload=H4sIAAAAAAAAA2WQzU7DMBCE38XnosZO458cQULcQKicEIp27U0b4TpW7KAixLvj0CJBOVne%2BTzemecPNjjWMmGNVhVSLSrUegNKWW0NAgeJnCvDViwn1nKpCiGF5CsWJ3q79qN9ZW2YvV8xmPN%2BnIpZpkP0kOnqAAF2NJXHDjLcQdoXFaFpeoGGjBFGqsqpjeYbDqB0r4WozzRrP5gdQ6aQu%2FO5fY9UDOgAgy%2FUj%2BqH8LqlYy7SU0gzJjsNSL%2BAMiAKRS4bU5hpHf0IIa1zpPWOwunapRhiV4g4p323SJf%2FJLJ5GBefOwL3Hav3dOxSnm4H8q7iRXqYRjefuAu5rpbwpWaqDRfYV6ImbBpjnJLSGLRamx4QSfFNXaM1FqE3iqxAlFL0ZWB4MU3vqRTcLVHyzeiWRh4p0fRGrruP%2BX7O%2F6Dv%2FVnb%2FJ2f6hSfny9fJnuwzgYCAAA%3D&trackingId=30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&notificationId=b987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91&content_link=https%3A%2F%2Fwww.creditkarma.com%2Fnotifications-preferences%2Funsubscribe%3FforwardCtPayload%3Dtrue%26ctPayload%3DH4sIAAAAAAAAA2WQzU7DMBCE38XnosZO458cQULcQKicEIp27U0b4TpW7KAixLvj0CJBOVne%252BTzemecPNjjWMmGNVhVSLSrUegNKWW0NAgeJnCvDViwn1nKpCiGF5CsWJ3q79qN9ZW2YvV8xmPN%252BnIpZpkP0kOnqAAF2NJXHDjLcQdoXFaFpeoGGjBFGqsqpjeYbDqB0r4WozzRrP5gdQ6aQu%252FO5fY9UDOgAgy%252FUj%252BqH8LqlYy7SU0gzJjsNSL%252BAMiAKRS4bU5hpHf0IIa1zpPWOwunapRhiV4g4p323SJf%252FJLJ5GBefOwL3Hav3dOxSnm4H8q7iRXqYRjefuAu5rpbwpWaqDRfYV6ImbBpjnJLSGLRamx4QSfFNXaM1FqE3iqxAlFL0ZWB4MU3vqRTcLVHyzeiWRh4p0fRGrruP%252BX7O%252F6Dv%252FVnb%252FJ2f6hSfny9fJnuwzgYCAAA%253D%26trackingId%3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758%26notificationId%3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91>
+X-250ok-Cid: 250ok-UID-en-credit_karma_inc_ploanspnprevpushtpe_10124
+X-Mailgun-Variables: {"campaign-Id": "10124", "categories":
+ "Revenue,Bulk,TouchPointException", "notification-Id":
+ "b987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91",
+ "notification-Type": "ploan_spnp_revpush_tpe", "tracking-Id":
+ "30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758"}
+Message-Id: <20230108193101.87e6bee88539ce45@notifications3.creditkarma.com>
+X-TUID: +hCmC/HTKT2C
+
+--67e279d7d8b7592e1f0fe7f4e3dc2eadfa058ee9d2905f602b027956bd20
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+<!DOCTYPE html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml"
+  xmlns:v=3D"urn:schemas-microsoft-com:vml"
+  xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+  style=3D"-webkit-text-size-adjust: 100%;">
+
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"x-apple-disable-message-reformatting">
+  <!--[if !mso]>
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <![endif]-->
+  <title>Credit Karma</title>
+    <!--[if mso]>
+    <style type=3D"text/css">
+      li { text-indent: -1em; }
+      table, tr, td {border-collapse: collapse;}
+      tr { font-size:0px; line-height:0px; border-collapse: collapse; }
+    </style>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!--[if !mso]><!-->
+
+      <style type=3D"text/css">
+      sup {
+      	line-height: 1em !important;
+        font-size: 60% !important;
+      }
+      </style>
+    <!--<![endif]-->
+
+  <style type=3D"text/css">
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: 100;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Light.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Regular.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: bold;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Medium.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: italic;
+    font-weight: normal;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-LightItalic.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+    a[href^=3D"tel"],
+    a[href^=3D"sms"] {
+      text-decoration: none !important;;
+      color: inherit !important;;
+      pointer-events: none !important;;
+      cursor: default !important;;
+    }
+    .gmail-contact a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    #MessageViewBody, #MessageWebViewDiv {
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+    #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+    img {
+      -ms-interpolation-mode:bicubic;
+    }
+    div[style*=3D"margin: 16px 0"] {
+        margin:0 !important;
+    }
+
+   =20
+
+
+    @media screen and (max-width: 581px) {
+      .md1-block {
+        display: block !important;
+      }
+
+      .md1-100 {
+        width: 100% !important;
+      }
+      .md1-center img {
+      	margin: 0 auto !important;
+      }
+      .md1-center {
+        text-align: center !important;
+      }
+    }
+
+    @media screen and (max-width: 481px) {
+      .mb-inline-block {
+        display: inline-block !important;
+      }
+      .mb-block {
+        display: block !important;
+      }
+      .mb-hide {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .mb-center {
+        text-align: center !important;
+      }
+      .mb-center img {
+      	margin: 0 auto !important;
+      }
+      .mb-left {
+      	text-align: left !important;
+      }
+      .mb-left img {
+        margin: 0px auto 0px 0px !important;
+      }
+      .mb-right {
+      	text-align: right !important;
+      }
+      .mb-right img {
+        margin: 0px 0px 0px auto !important;
+      }
+      .mb-288 {
+        max-width: 288px !important;
+      }
+      .mb-288px {
+        width: 288px !important;
+      }
+      .mb-95 {
+        width: 94.99% !important;
+      }
+      .mb-75 {
+        width: 75% !important;
+      }
+      .mb-79-16 {
+        width: 79.167% !important;
+      }
+      .mb-86-6 {
+        width: 86.67% !important;
+      }
+      .mb-91-347 {
+        width: 91.347% !important;
+      }
+      .mb-86 {
+        width: 85.99% !important;
+      }
+      .mb-87 {
+        width: 86.667% !important;
+      }
+      .mb-50 {
+        width: 49.99% !important;
+      }
+      .mb-100 {
+        width: 100% !important;
+      }
+      .mb-90 {
+        width: 89.99% !important;
+      }
+
+      .mb-90-38 {
+        width: 90.38% !important;
+      }
+      .mb-91-71 {
+        width: 91.71% !important;
+      }
+      .mb-70 {
+        width: 69.99% !important;
+      }
+      .mb-16px{
+        width: 16px !important;
+      }
+      .mb-cta-272 {
+        width: 272px !important;
+      }
+      .mb-pad-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+      }
+      .cta-class {
+        width: 272px !important;
+        line-height: 44px !important;
+        margin: 0 !important;
+    }
+  }
+
+    @media screen and (max-width: 380px) {
+      	.sm-font-26{
+      		font-size:26px !important;
+            word-break: normal !important;
+        }
+          .sm-font-18{
+          	font-size:18px !important;
+            word-break: normal !important;
+          }
+
+          .sm-hide {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+          }
+          .sm-100 {
+            width: 100% !important;
+          }
+          .sm-100-mx {
+            width: 100% !important;
+            max-width: 100% !important;
+            }
+          .sm-90{
+          	width:89.99% !important;
+          }
+      }
+
+    @media screen and (max-width: 320px) {
+      .xs-hide {=20
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+      }
+
+      .xs-100 { width: 100% !important; }
+    }
+
+      body {
+        width: 100vw !important;
+      }
+     =20
+
+
+    @media only screen and (max-width: 600px) {
+      .hide {
+        display: none !important;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+
+      .md-block {
+       display: block !important;
+       }
+
+       .md-center {
+         text-align: center !important;
+       }
+
+       .md-86 {
+         width: 85.99% !important;
+       }
+
+       .md-100 {
+         width: 100% !important;
+       }
+
+     }
+
+  </style>
+</head>
+
+<body bgcolor=3D"#f5f6f6" style=3D"width: 100%; margin: 0; padding: 0; back=
+ground-color: #f5f6f6;">
+ =20
+  <div class=3D"preheader" style=3D"display:none;font-size:1px;color:#f5f6f=
+6;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Credit Karma makes it easy to find and compare personal loans.
+  </div>
+  <div style=3D"display:none;font-size:1px;color:#f5f6f6;line-height:1px;ma=
+x-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+  <table role=3D"presentation" bgcolor=3D"#f5f6f6" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"  width=3D"100%" style=3D"border-collapse: collapse=
+; width: 100%; margin: 0; padding: 0;">
+    <tr>
+      <td align=3D"center" valign=3D"top" style=3D"border-collapse: collaps=
+e; vertical-align: top; margin: 0; padding: 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" width=3D"700" align=3D"center"><tr><td>
+        <![endif]-->
+        <table bgcolor=3D"#ffffff" width=3D"700" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"  align=3D"center" style=3D"border-collapse: collap=
+se; width: 100%; max-width: 700px;">
+
+       =20
+
+          <tr>
+            <td bgcolor=3D"#002356">
+              <a href=3D"https://www.creditkarma.com/u/personal-loans/marke=
+tplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPayload=3DH4=
+sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8P=
+sfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2U=
+Ic0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%=
+2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%=
+2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqB=
+UuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2w=
+EAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edc=
+c848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notificatio=
+nId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+          "
+               style=3D"text-decoration: none; width: 100%" target=3D"_blan=
+k">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  al=
+ign=3D"center" style=3D"border-collapse: collapse; width: 100%" role=3D"pre=
+sentation">
+                  <tr>
+                    <td class=3D"mb-hide" width=3D"78" style=3D"width:11.15=
+%;">&nbsp;</td>
+         =20
+                    <td class=3D"mb-block" style=3D"vertical-align: top">
+                    	<table class=3D"mb-100 mb-center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collapse: col=
+lapse; width: 100%" role=3D"presentation">
+                        <tr>
+                          <td>
+                            <table class=3D"mb-75 mb-center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collaps=
+e: collapse; width: 100%" role=3D"presentation">
+                              <tr>
+                                <td height=3D"32" style=3D"font-size: 0; li=
+ne-height: 32px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td align=3D"left">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;" target=
+=3D"_blank"><![endif]-->
+                                      <img src=3D"https://creditkarmacdn-a.=
+akamaihd.net/res/content/mailings/ck/logos/cklogo_white_2x.png" width=3D"10=
+0" alt=3D"Credit Karma" border=3D"0" style=3D"display: block; font-size:9px=
+; font-family: Arial, Helvetica, sans-serif;  text-decoration: none; border=
+: none; margin: none; outline: none; line-height: 100%; width: 100px;">
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+         =20
+         =20
+         =20
+                              <tr>
+                                <td height=3D"32" style=3D"font-size: 0; li=
+ne-height: 32px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class=3D"mb-center" style=3D"font-weigh=
+t: lighter;font-family:'National',Helvetica,Arial,sans-serif; text-align: l=
+eft; color: #FFFFFF; font-size: 36px; line-height: 1.2em;">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;color: #F=
+FFFFF;" target=3D"_blank"><![endif]-->
+                                      Here's to lower interest rates.
+         =20
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height=3D"16" style=3D"font-size: 0; li=
+ne-height: 16px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class=3D"mb-center" style=3D"font-weigh=
+t: normal;font-family:'National',Helvetica,Arial,sans-serif; text-align: le=
+ft; color: #FFFFFF; font-size: 20px; line-height: 1.2em;">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;color: #F=
+FFFFF;" target=3D"_blank"><![endif]-->
+                                      Cover your next big expense with a pe=
+rsonal loan.
+         =20
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <!--[if !mso]><!-->
+                        <tr>
+                          <td class=3D"mb-block mb-center" style=3D"width: =
+100%; display: none; mso-hide: all; padding-top: 32px; padding-bottom: 0px;=
+">
+                              <img class=3D"mb-block" src=3D"https://credit=
+karmacdn-a.akamaihd.net/res/content/mailings/ck/ploan_tpe/cheers_desktop.pn=
+g" alt=3D"Illustration" border=3D"0" align=3D"center" style=3D"display: non=
+e; text-decoration: none; border: none; margin: none; outline: none; width:=
+ 100%; mso-hide: all;">
+                          </td>
+                        </tr>
+                        <!--<![endif]-->
+                        <tr>
+                          <td height=3D"32" style=3D"font-size: 0; line-hei=
+ght: 32px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>
+                              <!--[if mso]>
+                              <v:roundrect xmlns:v=3D"urn:schemas-microsoft=
+-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https:/=
+/www.creditkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-l=
+oans-story-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMP=
+jYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUW=
+rGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3n=
+AalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRA=
+HO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQm=
+yUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2B=
+XXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5=
+dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DR=
+evenue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699=
+bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+          "
+                               style=3D"height:44px;v-text-anchor:middle;wi=
+dth:268px;" arcsize=3D"13%" strokecolor=3D"#0077DB" strokeweight=3D"2pt" fi=
+llcolor=3D"#0077DB">
+                                         <w:anchorlock/>
+                                      <table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0">
+                                      <tr>
+                                      <td width=3D"1" align=3D"right" valig=
+n=3D"top" height=3D"1" style=3D"margin:auto; padding:0; border-collapse:col=
+lapse;height: 1px;line-height: 1px;display: block; mso-line-height: exactly=
+;text-align:right;height:1px;">
+                                      &nbsp;
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0">
+                                  <tr>
+         =20
+                                  <td height=3D"24" align=3D"center" valign=
+=3D"middle"  style=3D"margin:auto;padding:0; border-collapse:collapse; disp=
+lay:block; mso-line-height: exactly;height:24px;">
+                                    <center style=3D"color:#FFFFFF;;font-fa=
+mily:Arial,sans-serif;font-size:18px;font-weight:bold;text-align:center;ver=
+tical-align: middle">See offers</center>
+                                  </td>
+                                  </tr>
+                                </table>
+                                                </v:roundrect>
+                                                <![endif]-->
+                              <a href=3D"https://www.creditkarma.com/u/pers=
+onal-loans/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v=
+1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCj=
+Ku3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2=
+FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHg=
+n3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05=
+KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpv=
+DYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN=
+6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540dec=
+f1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointExcep=
+tion&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2=
+bb662fc9c91
+          "
+                               style=3D"background-color: #0077DB; border: =
+2px solid #0077DB; border-radius: 6px; color: #FFFFFF; display: inline-bloc=
+k; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold ;line=
+-height: 44px; text-align:center; text-decoration: none; width: 268px; -web=
+kit-text-size-adjust: none; mso-hide: all;">
+                                See offers
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height=3D"32" style=3D"font-size: 0; line-hei=
+ght: 32px;">&nbsp;</td>
+                        </tr>
+         =20
+         =20
+         =20
+         =20
+                      </table>
+                    </td>
+         =20
+         =20
+         =20
+                    <td class=3D"mb-hide" width=3D"22" style=3D"width: 3.09=
+9%;">&nbsp;</td>
+         =20
+                    <td class=3D"mb-hide" width=3D"240" style=3D"width: 34.=
+3%; text-align: center; vertical-align: middle; mso-padding-alt: 0px 0px 0p=
+x 0px; ">
+                      <!--[if mso]>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center" style=3D"border-collapse: collapse; width: 100%" role=
+=3D"presentation">
+                        <tr><td height=3D"0px" style=3D"font-size: 0px; lin=
+e-height: 0px;">&nbsp;</td></tr>
+                        <tr><td>
+                        <a href=3D"https://www.creditkarma.com/u/personal-l=
+oans/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPa=
+yload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTp=
+GqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2Fjkkuy=
+VdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1Nu=
+hOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDW=
+nRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rp=
+hzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2=
+BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a7=
+66ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&n=
+otificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662f=
+c9c91
+          "
+                         style=3D"text-decoration: none;" target=3D"_blank"=
+>
+                      <![endif]-->
+                        <img class=3D"mb-hide" src=3D"https://creditkarmacd=
+n-a.akamaihd.net/res/content/mailings/ck/ploan_tpe/cheers_desktop.png" widt=
+h=3D"240" alt=3D"Illustration" border=3D"0" align=3D"center" style=3D"displ=
+ay: block; text-decoration: none; border: none; margin: 0px auto; outline: =
+none; width: 100%; max-width: 240px; padding: 0px 0px 0px 0px;">
+                      <!--[if mso]>
+                        </a>
+                        </td></tr>
+                        <tr><td height=3D"0px" style=3D"font-size: 0px; lin=
+e-height: 0px;">&nbsp;</td></tr>
+                      </table>
+                      <![endif]-->
+                    </td>
+                  </tr>
+                </table>
+              </a>
+            </td>
+          </tr>
+         =20
+
+
+       =20
+
+
+          <tr>
+            <td >
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0"  align=3D"center" style=3D"border-collapse: collapse; width: 77.=
+8%" role=3D"presentation">
+               =20
+                <tr>
+                  <td height=3D"32" style=3D"font-size: 0; line-height: 32p=
+x;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td style=3D"font-weight: normal; font-family:Arial,sans-=
+serif; text-align: left; color: #000000; font-size: 20px; line-height: 1.3e=
+m;">
+                        High-interest credit card debt is so 2022, Darnell.=
+ Personal loans usually have lower interest rates than credit cards do, mak=
+ing them a great option if you need funds quickly. On Credit Karma, you can=
+:
+         =20
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+  <td >
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+  align=3D"center" style=3D"border-collapse: collapse; width: 77.8%"  role=
+=3D"presentation">
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+      <tr>
+        <td>
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  align=3D=
+"center" style=3D"border-collapse: collapse; width: 100%" role=3D"presentat=
+ion">
+            <tr>
+              <td width=3D"80" valign=3D"top" style=3D"width: 80px">
+                                <img src=3D" https://creditkarmacdn-a.akama=
+ihd.net/res/content/mailings/ck/ploan_tpe/document_blue.png" width=3D"80" a=
+lt=3D"Symbol" border=3D"0" style=3D"display: block; text-decoration: none; =
+border: none; margin: 0; outline: none; width: 100%;">
+                              </td>
+            <td class=3D"mb-16px" width=3D"24" height=3D"24" style=3D"width=
+: 24px; font-size: 0px; line-height: 24px">&nbsp;</td>
+              <td>
+               =20
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  al=
+ign=3D"center" style=3D"border-collapse: collapse; width:100%;" role=3D"pre=
+sentation">
+                  <tr>
+                    <td style=3D"font-weight: normal; font-family:Arial,san=
+s-serif; text-align: left; color: #000000; font-size: 18px; line-height: 1.=
+333em;">
+                          See personalized recommendations based on your cr=
+edit profile from our network of 25 trusted lenders.
+
+                    </td>
+                  </tr>
+                </table>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+<tr>
+  <td >
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+  align=3D"center" style=3D"border-collapse: collapse; width: 77.8%"  role=
+=3D"presentation">
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+      <tr>
+        <td>
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  align=3D=
+"center" style=3D"border-collapse: collapse; width: 100%" role=3D"presentat=
+ion">
+            <tr>
+              <td width=3D"80" valign=3D"top" style=3D"width: 80px">
+                                <img src=3D" https://creditkarmacdn-a.akama=
+ihd.net/res/content/mailings/ck/ploan_tpe/ribbon_blue.png" width=3D"80" alt=
+=3D"Symbol" border=3D"0" style=3D"display: block; text-decoration: none; bo=
+rder: none; margin: 0; outline: none; width: 100%;">
+                              </td>
+            <td class=3D"mb-16px" width=3D"24" height=3D"24" style=3D"width=
+: 24px; font-size: 0px; line-height: 24px">&nbsp;</td>
+              <td>
+               =20
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  al=
+ign=3D"center" style=3D"border-collapse: collapse; width:100%;" role=3D"pre=
+sentation">
+                  <tr>
+                    <td style=3D"font-weight: normal; font-family:Arial,san=
+s-serif; text-align: left; color: #000000; font-size: 18px; line-height: 1.=
+333em;">
+                          Check your Approval Odds* up front and apply with=
+ more confidence.=20
+
+                    </td>
+                  </tr>
+                </table>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+<tr>
+  <td >
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+  align=3D"center" style=3D"border-collapse: collapse; width: 77.8%" role=
+=3D"presentation">
+     =20
+      <tr>
+        <td height=3D"32" style=3D"font-size: 0; line-height: 32px;">&nbsp;=
+</td>
+      </tr>
+      <tr>
+        <td style=3D"font-weight: normal; font-family:Arial,sans-serif; tex=
+t-align: left; color: #000000; font-size: 20px; line-height: 1.3em;">
+              Whether you're covering a new expense or paying off the $3,98=
+3** you have on your credit cards, a loan could help you make some progress=
+=2E Tap the button to see your offers.
+
+        </td>
+      </tr>
+     =20
+      <tr>
+        <td height=3D"16" style=3D"font-size: 0; line-height: 16px;">&nbsp;=
+</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+          <tr>
+            <td >
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0"  align=3D"center" style=3D"border-collapse: collapse; width: 77.=
+8%" role=3D"presentation">
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class=3D"" style=3D"text-align: left">
+                    <div>
+                      <!--[if mso]>
+                      <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://www.cre=
+ditkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-sto=
+ry-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPe=
+RWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZG=
+SSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEK=
+vwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOA=
+BH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmh=
+pfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs=
+%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d=
+34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,B=
+ulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fab=
+be71433bc9cbaf97ec2bb662fc9c91
+          "
+                       style=3D"height:44px;v-text-anchor:middle;width:268p=
+x;" arcsize=3D"13%" strokecolor=3D"#0077DB" strokeweight=3D"2pt" fillcolor=
+=3D"#0077DB">
+                        <w:anchorlock/>
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+                        <tr>
+                        <td width=3D"1" align=3D"right" valign=3D"top" heig=
+ht=3D"1" style=3D"margin:auto; padding:0; border-collapse:collapse;height: =
+1px;line-height: 1px;display: block; mso-line-height: exactly;text-align:ri=
+ght;height:1px;">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0">
+                    <tr>
+         =20
+                    <td height=3D"24" align=3D"center" valign=3D"middle"  s=
+tyle=3D"margin:auto;padding:0; border-collapse:collapse; display:block; mso=
+-line-height: exactly;height:24px;">
+                      <center style=3D"color:#FFFFFF;;font-family:Arial,san=
+s-serif;font-size:18px;font-weight:bold;text-align:center;vertical-align: m=
+iddle">See offers</center>
+                    </td>
+                    </tr>
+                  </table>
+                      </v:roundrect>
+                      <![endif]-->
+                      <a href=3D"https://www.creditkarma.com/u/personal-loa=
+ns/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPayl=
+oad=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGq=
+aE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVd=
+XEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhO=
+xKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnR=
+NsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphz=
+FhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ=
+1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766=
+ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&not=
+ificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9=
+c91
+          "
+                       style=3D"background-color: #0077DB; border: 2px soli=
+d #0077DB; border-radius: 6px; color: #FFFFFF; display: inline-block; font-=
+family: Arial, sans-serif; font-size: 18px; font-weight: bold ;line-height:=
+ 44px; text-align:center; text-decoration: none; width: 268px; -webkit-text=
+-size-adjust: none; mso-hide: all;">
+                        See offers
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+         =20
+              </table>
+            </td>
+          </tr>
+
+         =20
+
+          <tr>
+            <td >
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0"  align=3D"center" style=3D"border-collapse: collapse; width: 77.=
+8%" role=3D"presentation">
+                <tr>
+                  <td style=3D"font-weight: normal; font-family:Arial,sans-=
+serif; text-align: left; color: #6E7677; font-size: 12px; line-height: 1.16=
+7em;">
+                        <br>
+              *Approval Odds are not a guarantee of approval. Credit Karma =
+determines Approval Odds by comparing your credit profile to other Credit K=
+arma members who were approved for the personal loan, or whether you meet c=
+ertain criteria determined by the lender. Of course, there's no such thing =
+as a sure thing, but knowing your Approval Odds may help you narrow down yo=
+ur choices. For example, you may not be approved because you don't meet the=
+ lender's "ability to pay standard" after they verify your income and emplo=
+yment; or, you already have the maximum number of accounts with that specif=
+ic lender.
+              <br><br>
+              **Based on your credit report information from TransUnion as =
+reported on 2023-01-05.
+         =20
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"32" style=3D"font-size: 0; line-height: 32p=
+x;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+         =20
+
+
+          <tr>
+            <td style=3D"width: 100%;" bgcolor=3D"#e6e6e6">
+              <table width=3D"100%" align=3D"left" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" style=3D"border-collapse: coll=
+apse;">
+                <tr>
+                  <td style=3D"border-collapse: collapse; vertical-align: t=
+op; color: #333333; font-family: 'Arial', Helvetica, sans-serif; line-heigh=
+t: 1em; margin: 0; padding: 0;">
+                    <div>
+                      <table class=3D"spacer mb-100" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"border-=
+collapse: collapse; background: none;">
+                        <tr>
+                          <td valign=3D"top" height=3D"32" style=3D"border-=
+collapse: collapse; vertical-align: top; color: #333333; font-family: 'Aria=
+l', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-size: =
+32px; line-height: 32px;" width=3D"100%">&nbsp;
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <table class=3D"mb-86" width=3D"83.72%" align=3D"center=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" styl=
+e=3D"border-collapse: collapse;">
+                      <tr>
+                        <td class=3D"mb-pad-0" style=3D"border-collapse: co=
+llapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetic=
+a, sans-serif; line-height: 1em; margin: 0;  padding-left:3.58%; padding-ri=
+ght:3.58%;">
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none;">
+                              This is a promotional email.<br> To manage yo=
+ur email preferences, please go to <a href=3D"https://www.creditkarma.com/n=
+otification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QwUoDMRCGX0V=
+yrrDZzSabPVosnsSDN5FlMjuxS9Nk2aSlIr67U61QPQXyffkz8798iGkUvWixMwBem7azUindEY=
+JpHKIBZauxEitRsuilNk1d6VrLlZgXOt6FhDvRx0MIKwGHsk0LhxXazwEK3e4hwhst%2FHiEAg%=
+2BQt0ylU1p5lIBOgezk6NAa0qg8%2F6ksXmzRfwhMsVAsw%2BV8fp%2BJA2gPU2Drl4Yp7p7pVB=
+g9pjL5CaFMKd7wgJ4Wikj5ys64EEV255AgDnmO88CbzIe8HQrnX5mE5xxWNymV7zV8oNOQy7KZK=
+IyVZPS0pPHw4%2F3DTcXY2c5QY2XtfFU35NrW2tFoba3DrrMenCMjVcNVW3TguQmsndO69nxhJY=
+fm98yFDnTkmdZpPDdwf25gHSbu%2Fj%2F%2FHl307d%2F7n%2Bbqz8%2FXL4yjXTPxAQAA&cont=
+ent_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fmyprofile%2Fpreferences&trac=
+kingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b07=
+58&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912=
+bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+                            " style=3D"color:#0077DB;text-decoration:none;f=
+ont-size: 13px;">notification preferences</a>.
+                           =20
+                            </p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #858B8F; font-family: Arial, Helvetic, sans-serif; clear: left;=
+ line-height: 1.5; font-style: normal; text-decoration: none; margin-top:1.=
+15em;">
+                                <a href=3D"https://www.creditkarma.com/noti=
+fication-events/redirect/mailing?forwardCtPayload=3Dtrue&ctPayload=3DH4sIAA=
+AAAAAAA2WQy2rDMBBFfyVonYIlWbLkZQuhu5SSrkoxeowaE1kylhwSQv69yqPQx0aCuWdm7tz3E=
+%2BotahEwV3HhDK%2BErhurhCDMlNdhQ5ytGVqinFCLeUNJxQnHSzROsH%2F00exQG2bvl0jNeR=
+unMizDMHqV4WFQQX3CVJqtyupZpW1RazCWEVcz4YTAjmIiqXaNY4YKVlN%2Bp1F7QiaGDCF3939=
+zHOHidVC9L9S36vuw28AhF%2BktpFknM%2FUaFm6Kw0J5v7jy6UdDAQBCwUcfVejSGMauHDPOad=
+vlsuIHCSb38YKuYszXS5yHQ5fytOrB2woX6WWKdr5xf2RaFVlL0QCVmGhXEQqaMSltw7mU2gghn=
+dIaGlxTqo00WjnZgCFac05cKUhchqZjKpl2sC%2BenqK9hPAKCaY92G495vWc%2F0FX%2F6hlv%=
+2Bu3BMn5%2FPEFDrPaevkBAAA%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540d=
+ecf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointExc=
+eption&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97e=
+c2bb662fc9c91&content_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fnotificati=
+ons-preferences%2Funsubscribe%3FforwardCtPayload%3Dtrue%26ctPayload%3DH4sIA=
+AAAAAAAA2WQy2rDMBBFfyVonYIlWbLkZQuhu5SSrkoxeowaE1kylhwSQv69yqPQx0aCuWdm7tz3=
+E%252BotahEwV3HhDK%252BErhurhCDMlNdhQ5ytGVqinFCLeUNJxQnHSzROsH%252F00exQG2b=
+vl0jNeRunMizDMHqV4WFQQX3CVJqtyupZpW1RazCWEVcz4YTAjmIiqXaNY4YKVlN%252Bp1F7Qi=
+aGDCF3939zHOHidVC9L9S36vuw28AhF%252BktpFknM%252FUaFm6Kw0J5v7jy6UdDAQBCwUcfV=
+ejSGMauHDPOadvlsuIHCSb38YKuYszXS5yHQ5fytOrB2woX6WWKdr5xf2RaFVlL0QCVmGhXEQqa=
+MSltw7mU2gghndIaGlxTqo00WjnZgCFac05cKUhchqZjKpl2sC%252BenqK9hPAKCaY92G495vW=
+c%252F0FX%252F6hlv%252Bu3BMn5%252FPEFDrPaevkBAAA%253D%26trackingId%3D30ef07=
+b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758%26categories=
+%3DRevenue%2CBulk%2CTouchPointException%26notificationId%3Db987e3912bf023eb=
+5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;te=
+xt-decoration:none;font-size: 13px;">Unsubscribe from all emails</a></p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #858B8F; font-family: Arial, Helvetic, sans-serif; clear: left;=
+ line-height: 1.5; font-style: normal; text-decoration: none; margin-top:1.=
+15em;">
+                                <a href=3D"https://www.creditkarma.com/noti=
+fication-events/redirect/mailing?forwardCtPayload=3Dtrue&ctPayload=3DH4sIAA=
+AAAAAAA2WQS0ssMRBG%2F0qT9VzIo5Pu9FJB7s7LRVciTR4Vp5l0EpL04CD%2BdzOjgo9VQZ1TH=
+1X18IIWiyZEGBuxxkzKfhR8FP0ITlrdG6MGCZyjHaoFTUQMjGJBBdmhlOF45aM5oCls3u%2BQ2u=
+o%2B5hZWYU1eVfizqqCeILdhq6r6q8q%2BUacJJVyMWAlHOQWubY8dH5wUghGKP2w0vSATQ4VQ5=
+496d0rQAmBVi2%2FWJ%2FVLONzBc23oPpRNF5MXDZ3Lce2U993FL13Ky6ry4k%2Bd0nGrXYJcYl=
+C%2B81GF8iWvzQOElpbOZC4ppLndmrayn2vb4IsJpi7xrN7EWC%2BHOg%2FPc6n5ZgFvMWnoX45=
+2e%2Fd%2BYIYb1nIcgElCtcOUgeZcSjsIIaU24yid0hoG0jOmjTRaOTmAoVoLQV1rSNJCy6m0l8=
+9wbDtdR3v%2B0X8okI9g59tUb7f6S7rsjyb%2Bvf%2F%2BYPr6%2BvgG9IA9EhgCAAA%3D&trac=
+kingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b07=
+58&categories=3DRevenue,Bulk,TouchPointException&preferences=3DPERSONAL_LOA=
+NS&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb=
+662fc9c91&content_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fnotifications-=
+preferences%2Funsubscribe%3FforwardCtPayload%3Dtrue%26ctPayload%3DH4sIAAAAA=
+AAAA2WQS0ssMRBG%252F0qT9VzIo5Pu9FJB7s7LRVciTR4Vp5l0EpL04CD%252BdzOjgo9VQZ1T=
+H1X18IIWiyZEGBuxxkzKfhR8FP0ITlrdG6MGCZyjHaoFTUQMjGJBBdmhlOF45aM5oCls3u%252B=
+Q2uo%252B5hZWYU1eVfizqqCeILdhq6r6q8q%252BUacJJVyMWAlHOQWubY8dH5wUghGKP2w0vS=
+ATQ4VQ5496d0rQAmBVi2%252FWJ%252FVLONzBc23oPpRNF5MXDZ3Lce2U993FL13Ky6ry4k%25=
+2Bd0nGrXYJcYlC%252B81GF8iWvzQOElpbOZC4ppLndmrayn2vb4IsJpi7xrN7EWC%252BHOg%2=
+52FPc6n5ZgFvMWnoX452e%252Fd%252BYIYb1nIcgElCtcOUgeZcSjsIIaU24yid0hoG0jOmjTR=
+aOTmAoVoLQV1rSNJCy6m0l89wbDtdR3v%252B0X8okI9g59tUb7f6S7rsjyb%252Bvf%252F%25=
+2BYPr6%252BvgG9IA9EhgCAAA%253D%26trackingId%3D30ef07b5dfdfb19d34999b602b7b0=
+540decf1a1a766ff5f2edcc848d23c6b22b0758%26categories%3DRevenue%2CBulk%2CTou=
+chPointException%26preferences%3DPERSONAL_LOANS%26notificationId%3Db987e391=
+2bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0=
+077DB;text-decoration:none;font-size: 13px;">Unsubscribe from all emails pr=
+imarily about personal loans</a></p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none; margin-top:=
+1.15em;">
+                              The offers that you see on Credit Karma come =
+from companies who pay us. Compensation may factor into the decision to sen=
+d you this particular email.
+                            </p>
+                           =20
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none; margin-top:=
+1.15em;">
+                              Loan services offered through Credit Karma Of=
+fers, Inc., NMLS ID# 1628077 | <a href=3D"https://www.creditkarma.com/notif=
+ication-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QS2vDMBCE%2F4vOK=
+diS9fKxoaWHHnrorRSzWq8bE0UyllwaQv57lUchzWlhv9lhdj4ObOxZy8DoQQg0khquQGHVYK8R=
+oDKDIaORrVhOrK2VFrxSXNUrNs30%2FegjblkbFu9XDJa8iXMxy7SbPGR62EGAL5rLcQ8ZXiBtC=
+iUpwQ6NwwoN6UqCFq4RkkvopUCur2rWHhjGkCnk7jrf9xOdDHYw%2BqL6o34M23f6yQW9jkghUb=
+qhCWeiUNjkI4QuTWHqSvJpSZsuF78bJWEe40n6HGM%2Bxx48%2FXQpz88j%2Bb6qC3qbY79cdHd=
+YVAU7azQJW3M3VFyQk9LaXitlrUNj7ADOka4bIRxadDBYTcidU4oPZWHrYpr2qRTY0XfJtI796e=
+On08drP5au7%2Fk5Omvl%2F%2F2lKX48fv4CpmRpfeEBAAA%3D&content_link=3Dhttps%3A%=
+2F%2Fwww.creditkarma.com%2Fabout%2Floan-licenses&trackingId=3D30ef07b5dfdfb=
+19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenu=
+e,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889=
+fabbe71433bc9cbaf97ec2bb662fc9c91
+                            " style=3D"color:#0077DB;text-decoration:underl=
+ine;font-size: 13px;">
+                              Licenses</a> | <a href=3D"https://www.creditk=
+arma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QX=
+WvCMBSG%2F4rk2kE%2B2qTp3SaTXWxjMO%2FGKPk4ncWYlCYVRfzvS9WB8%2BrAeZ6E875fR9RZ=
+VCPgsqJYGSY0ZazIg3DApBXSVrIgGM1RiqgmXDCKOeVkjvoBdk8umA2q%2FejcHKkxrcOQP0uw7=
+Z1K8LBVXv3AkB9bldSLiutMW1nSwlhtsMRAVWm50cyWpKDCGMrI1Ub1EZngE%2FjUXOfq0MN061=
+Z1Llt%2F1HV%2Bs4J9yuj97fVztgg%2BjlsYZo%2FGQIw3ZjQDgM9e74LyTex93%2BQU%2FRjXT=
+cp%2F35hgUhcmdRlCOkdoHeybmIZlB85iktHHEOx48e4wwxlrWQlgklDdYspAl6WUVnAupTZVJV=
+ulNQhSMKaNNFq1UoChWnNO27yQUxHxEHOZDezyTYtgp%2FTPU%2FqF63Lv9%2Fx8OqrL%2F%2Ft=
+La%2FR0%2Bv4F9HwUvu0BAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.nmlsconsumerac=
+cess.org%2FEntityDetails.aspx%2FCOMPANY%2F1628077&trackingId=3D30ef07b5dfdf=
+b19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DReven=
+ue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc88=
+9fabbe71433bc9cbaf97ec2bb662fc9c91
+                            " style=3D"color:#0077DB;text-decoration:underl=
+ine;font-size: 13px;">
+                              NMLS Consumer Access</a>. California loans ar=
+ranged pursuant to a California Financing Law license.
+                            </p>
+             =20
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left; =
+line-height: 15px; font-style: normal; text-decoration: none;">
+                            Credit Karma, LLC, P.O. Box 30963, Oakland, CA =
+94604 Copyright &copy; 2008-2023 Credit Karma, LLC. All Rights Reserved. An=
+y third party trademarks referenced are the property of their respective ow=
+ners.
+                          </p>
+                         =20
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left; =
+line-height: 15px; font-style: normal; text-decoration: none;margin-top:1.1=
+5em;">
+                            Note: Never share your online banking or Credit=
+ Karma passwords with anyone, including us!
+                          </p>
+                                      <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"16" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 16px; font-=
+size: 16px; line-height: 16px;" width=3D"100%">
+                                  &nbsp;</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; line-height: =
+1.5; text-align: left; text-decoration: none;">
+                            <a  href=3D"https://www.creditkarma.com/notific=
+ation-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA2WQzW7DIBCEX6XinEoYD=
+DY%2BNmrUYw65VZUFy7qxQsAyOIoV5d2Lk1Tqzwlp59tlZt4vpLekIQYt7aQqgTIOAkqBpaCW1q=
+WVzNCiICuSImkKWXFGJZPFigwjnl5cgANp%2FOTciugp7cOYjyU8Dk4nfD5qrz9xzMtWJ%2F2m4=
+z6riLTj3HYCgArGaSUUlLKipaWF5rx%2B0KS5EAg%2BoU%2Ft493NAy4Hjrp3mfpWXe8POzynLG=
+3H%2FqRhftoG18P8g4kwIvpMDC5o38bBD232P0xx36Z89QeJkPqwoJsQ0s185%2FDcxjRuenTZ5=
+O2fYKc790fmdGlT1RVyVTDT5T7RCKGUraRUykBdq04bg1VRcm5AgdGdqhCYMVKyLg%2FU0nacY6=
+6xxVP2tA52yf265F7nYId%2F%2Bs06acTv%2Bb0vdr1%2BfAEz%2BY8h5wEAAA%3D%3D&conten=
+t_link=3Dhttps%3A%2F%2Fwww.intuit.com%2Fprivacy%2Fstatement%2F&trackingId=
+=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&cat=
+egories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912bf023e=
+b5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+              " style=3D"color:#0077DB;text-decoration:none;font-size: 13px=
+;">Privacy
+                              Policy</a>
+                              <span style=3D"margin: 0; padding: 0; color: =
+#6E7677; text-decoration: none; font-size: 13px;">|</span>
+                            <a href=3D"https://www.creditkarma.com/notifica=
+tion-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2rDMBBFfyVonYIt2X=
+p42dDQZaHZlWL0GDUmsiUkOSSE%2FHuVR6HJSjDn6HJnvk5oMKhDEmuNtWo4pcaS1hDRgGxUC1V=
+jalIrtEQ5oa6mjOCKYlovUYiwf3Ve71A3zc4tkZzz1scSlmEMTmZ4GeUkfyCWz0Zm%2BS7TtlBO=
+QXKmCZMVsY0UtCKGCcu50SAExncbdSek%2FZRhyv393RwDlAAY5eCK9UfdMO02cMgFbSCOaeHt4=
+hPiftDwz0o6AkzFCc7LqU9hCn3ZIMxp2%2BfwYILOg7%2Boa%2B%2Fztb51cOhTjusBnKnqgj6i=
+N%2FPNe8KkKlgJzoCIGitbYQKqbYUwjFIhlOZcWKkUsLohRGmhlbSCgcZKUYptGYi6hKZjKofsY=
+V86rby5bP522XzlhnLzZ36tjrr2cX67GD6fv38Bso4x1ukBAAA%3D&content_link=3Dhttps%=
+3A%2F%2Fwww.creditkarma.com%2Fabout%2Fterms202210&trackingId=3D30ef07b5dfdf=
+b19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DReven=
+ue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc88=
+9fabbe71433bc9cbaf97ec2bb662fc9c91
+              " style=3D"color:#0077DB;text-decoration:none;font-size: 13px=
+;">Terms
+                              of Service</a>
+                            </p>
+             =20
+             =20
+             =20
+                        </td>
+                      </tr>
+                    </table>
+             =20
+                   =20
+                    <table class=3D"mb-86" width=3D"83.72%" align=3D"center=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" styl=
+e=3D"border-collapse: collapse;">
+                      <tr>
+                        <td class=3D"mb-pad-0" style=3D"border-collapse: co=
+llapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetic=
+a, sans-serif; line-height: 1em; margin: 0;  padding-left:3.58%;padding-rig=
+ht:3.58%;">
+                          <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"32" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-=
+size: 32px; line-height: 32px;" width=3D"100%">
+                                  &nbsp;</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <table class=3D"mb-100 mb-left" align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bo=
+rder-collapse: collapse;">
+                            <tr>
+                              <td valign=3D"top" style=3D"border-collapse: =
+collapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvet=
+ica, sans-serif; line-height: 1em; margin: 0; padding: 0;">
+                                <!--[if (gte mso 9)|(IE)]><table width=3D"1=
+00%" align=3D"left" dir=3D"ltr" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td width=3D"200" align=3D"left" valign=3D"top" dir=3D"ltr" styl=
+e=3D"margin:0;padding:0; border-collapse:collapse;"><![endif]-->
+                                <table class=3D"mb-100  mb-inline-block" wi=
+dth=3D"200" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"border-collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding-bottom: 10px;">
+                                      <table class=3D"mb-left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=3D"200" style=3D"=
+border-collapse: collapse;">
+                                        <tr>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0; width: 100px;">
+                                            <a href=3D"https://www.creditka=
+rma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2=
+7DIBBFfyVinUoYBzDetVGjLrvIrqosHuPGCgFkcJooyr938qiUdgXiHK7mzseJDI60RPKmp0pXw=
+LSqxKLngnItOefMKmpqS%2BakZNJWQtaMCiaqOUkj7F98tFvShsn7OdFT2cQRwwrsktcFnnY66C=
+8Y8bPTRb%2FpvEFqZe3AGaMa1hvQnFLm8C6lpVAxo%2B42aU%2FExlAglO5%2Bro8JMAB2evBo%=
+2FVI%2FhO0aDgXRc0oeZkPMM53SzMXv4KN2D262I0BAMyEIXU4hddgjTXnTFUx%2FMMGWIV7UVY=
+zlWqL3cOhyGVcDeEcrRO9jdNPN%2B4drihg7SqgVtuopq8FwrpSTQihlbNOoXhsDslrUtbHKGt0=
+rCZYZIwTr8UFVGJqPGdfZwR5nWkZ36f966b%2F0A27%2BP7%2BOTlr%2B9%2F22N3Y%2Bf%2F4A=
+RuT0we8BAAA%3D&content_link=3Dhttps%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fcre=
+dit-karma-mobile-free-credit%2Fid519817714%3Famp%253Bmt%3D8%26ls%3D1&tracki=
+ngId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758=
+&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912bf=
+023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+              ">
+                                              <img src=3D"https://creditkar=
+macdn-a.akamaihd.net/res/content/mailings/ck/footers/ios_app_store.png" wid=
+th=3D"82" border=3D"0" alt=3D"App Store"
+                                                style=3D"display: block; he=
+ight: auto; text-decoration: none; border: 0 none; outline: none; line-heig=
+ht: 100%; max-width: 82px; margin: 0;">
+                                              </a>
+                                            </td>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0; width: 100px;">
+                                            <a href=3D"https://www.creditka=
+rma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QQW=
+7DIBBFr1KxTiUDNgbv2qhRl11kV1XWAOPGCgFk4zRRlLsXJ6mUZoU07zGa%2Fz9PpLekISCwVrb=
+UXGpb1Zp2yJg0KJByBlIJsiBpJA0VNWeFYIIuSBxw%2F%2BqC2ZLGT84tCExpE4a8LOEuOkj4vA=
+MP3zjkzxYSvMO4yVSZCgBkwYUVnFZaQyksN0qpUlY1pTebNCdigk%2FoU3t718eIeQHuoHfZ%2B=
+qOu99s1HlJGL94OobdPEOOTDT%2FeBbB35mgGRJ%2B9mIFvx%2Bhjm1PEady0Ke%2B%2BM9GkPs=
+zqKoR0idA5PLRjGlY9OlvQjD6GYKer94B5kbFWskauKNNdwTjqqlLK1kIopY2UqgOtsaYl59ooo=
+6FTNRqmtRCsywM1FzEex1xmi%2Ft80zLYOf3bnH7p%2Btz7I7%2BcTprq%2F%2FzaGjufv34BA8=
+kdj%2B0BAAA%3D&content_link=3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%=
+2Fdetails%3Fid%3Dcom.creditkarma.mobile&trackingId=3D30ef07b5dfdfb19d34999b=
+602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,To=
+uchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe7143=
+3bc9cbaf97ec2bb662fc9c91
+              ">
+                                              <img src=3D"https://creditkar=
+macdn-a.akamaihd.net/res/content/mailings/ck/footers/android_app_store.png"=
+ width=3D"96" border=3D"0" alt=3D"Google Play"
+                                                style=3D"display: block; he=
+ight: auto; text-decoration: none; border: 0 none; outline: none; line-heig=
+ht: 100%; max-width: 96px; margin: 0;">
+                                              </a>
+                                            </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td><td width=3D=
+"20" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]-->
+                                <table class=3D"mb-100" width=3D"20" align=
+=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-=
+collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding: 0;">
+                                      <span class=3D"mb-hide">&nbsp;</span>
+                                      <table class=3D"mb-block mb-100" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle=
+" style=3D"border-collapse: collapse; background: none;display:none;mso-hid=
+e:all;">
+                                        <tr>
+                                          <td valign=3D"top" height=3D"6"
+                                            style=3D"border-collapse: colla=
+pse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica, =
+sans-serif; margin: 0; padding: 0; height: 6px; font-size: 6px; line-height=
+: 6px;mso-hide:all;" width=3D"100%">
+                                            &nbsp;
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td><td width=3D=
+"322" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]-->
+                                <table class=3D"mb-100 mb-left" width=3D"16=
+0" align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding: 0;">
+                                      <table class=3D"mb-100 mb-left" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=3D"160" st=
+yle=3D"border-collapse: collapse;">
+                                        <tr>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0;">
+                                            <table class=3D"mb-100 mb-left"=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-collapse: collapse;">
+                                              <tr>
+                                                <td valign=3D"top" style=3D=
+"border-collapse: collapse; vertical-align: top; color: #333333; font-famil=
+y: 'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0;=
+">
+                                                  <!--[if (gte mso 9)|(IE)]=
+></td><td width=3D"160" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]=
+-->
+                                                  <table class=3D"mb-100 mb=
+-left" width=3D"160" align=3D"left" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse: collapse;">
+                                                    <tr>
+                                                      <td class=3D"mb-cente=
+r" align=3D"center" valign=3D"top" style=3D"border-collapse: collapse; vert=
+ical-align: top; color: #333333; font-family: 'Arial', Helvetica, sans-seri=
+f; line-height: 1em; margin: 0; padding: 0;">
+                                                        <table class=3D"mb-=
+left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=
+=3D"160" style=3D"border-collapse: collapse;">
+                                                          <tr>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12Qy27CMBBFf6XymkqxTew4y6KidtcFu6qK%2FJhAhGNHsYNAiH%2FvBKhEWVm=
+ac3x1Z77PpHOkJiVYqYWjlsrWLCsO1HFHwVSGMwvUkAXJidRUSM4KwQRdkGGEw5uPdk%2FqMHm%=
+2FIHrKuzhiWIZ%2B8DrDa6%2BD3sKIn53O%2BkOnHVLFXam0LitXcmutska6dsmtAoXhQtxtUp%=
+2BJjSFDyM393ZwGwADodefR%2BqO%2BC%2FsNHDOiz5Cy3o66f%2BmQPjjJjgABjcFHHZo0hKHB=
+%2FsOUdk3G1AcTbO7irK5jzNfyrYdjk%2FK47sC7giL6GqObbt4T5gVioyoJXFFm2oJxMGWplJN=
+CKGVsValWGwOSLjk38%2Fq6VRIsM0YI1uJAUQxNp4RnbOCAnVbRzXu%2Fz3uvfIcXf%2BbX6qQu=
+%2F89v92KXy88vdBC0HucBAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.instagram.com=
+%2Fcreditkarma%2F&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766f=
+f5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&noti=
+ficationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c=
+91
+              ">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/inst=
+agram@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-s=
+erif;" width=3D"28" border=3D"0" alt=3D"Instagram"
+                                                                  style=3D"=
+display: block; height: auto; text-decoration: none; border: 0 none; outlin=
+e: none; line-height: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12QzWrDMBCEX6XonIIl2bLlY0NDjz3kVopZSatGRLGMLacJIe%2FezU8h7UUL%=
+2B42G2fk4seBYyypugFsO3mFdGuOERmUa57ksRSFkyRYsT6zlqpaiUELxBRtG3L%2FEZLes7ecY=
+FwzmvEkjmWXcDREyPu%2Bghy8c6bODDG8wbYiWVWkb0KaowTquvS%2BkgsaAFPRYVdzVrD0xm%2=
+FqMfe7uc30ckAxwByGS6pfG0G%2FXeMiE1t8hZxyfArEHxWRHxJ74EBP03TT0Q0fph3nadJk8H5=
+Roc0gX6SqlfI3uIx66KY%2BrgNEVnND7mNx80%2F3DsiBsdFOj1FwYT9WhqSqtXa2U1sY2jfZgD=
+Na8lNJYbQ14XaMVxiglPC00J9PpOFGJHe4p0zK5y9Wvl6uXMVDf%2F%2Fk1Omurv%2FtbW%2BJ8=
+%2FvwB8HvoyuUBAAA%3D&content_link=3Dhttps%3A%2F%2Ftwitter.com%2FCreditKarma=
+&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b=
+22b0758&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987=
+e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+              ">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/twit=
+ter@2x.png" style=3D"font-size: 0.60em; font-family: Arial, Helvetica, sans=
+-serif;" width=3D"28" border=3D"0" alt=3D"Twitter"
+                                                                  style=3D"=
+display: block; height: auto; text-decoration: none; border: 0 none; outlin=
+e: none; line-height: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12QTWsDIRCG%2F0rxnMKqq657bGjosYfcSllGnW2WGJVdNySE%2FPeaj0KakzD=
+P4%2FDO%2B3UigyMt4abWTKpesl6zhjomOHCmQFkplK6RLEieSEul4qySTNIFSSPu33y0W9KG2f=
+sFgTlv4liWZdwlDxlfdxDgB8fy2UGGD5g2hboaFfSS1oI1tRRGmgqUbKCpReWUonebtCdiY8gYc=
+nd%2F18eEZQHuYPDF%2BqN%2BCNs1HnJBK7BoYty%2BDAU%2BKJMdEUMRko8QuimF1JX4aZ42XU=
+74aKLNQ7yoqxjzNXvv8dBNeVwN6F1FC%2Foco5tv3hPmVcFGNwq5psz0FeNohNDaKSm1NrZpdA%=
+2FGoKI158Zqa6DXCi0zRpbyy0BfGpiOU2mxw33JtIzucvb75eylH0rhz%2FwanbTi%2F%2FxWFz=
+ufv38BHloWPOYBAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.facebook.com%2FCredit=
+Karma&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d=
+23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notificationId=
+=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+              ">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/face=
+book@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-se=
+rif;" width=3D"28" border=3D"0" alt=3D"Facebook"
+                                                                  style=3D"=
+display: block; height: auto; text-decoration: none; border: 0 none; outlin=
+e: none; line-height: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 28px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12Qy2rDMBBFf6VonYIl2ZLlZUNDC110kV0pRo9RY6JIxpZDQsi%2Fd5ykkGYlo=
+XM03LlfJ9I50hDjuC8UN85rXmjglBtbVkwyUZeyLhlZkDyShgrJWSGYoAvSD7B%2FCcluSROnEB=
+ZET3mTBhyWYdcHneF5p6P%2BgQE%2FO531mx43SKWpJXfaOMtK6q2hWgADI0QhQGhHbzZpTsSmm=
+CHm9naujz3gANjpLqD1R0MXt2s4ZEQfeAX3Hp86hHfKaAeAiEIfko7t2Me%2Bxfj9NG7ajEPvTL=
+C5S7O6SilfsvsAh3bMw6qD4AqK6HNIbrp6D5gXc5mqlsAVZcYXjIOpKqWcFEIpY%2BtaeW0MSFp=
+y7FhZo72SYJnBBpjHBzU3MB5HbLGFPWZaJjev%2FTqvvQwdFv7IL9FJU%2F1%2Fv9bFzufvX5Jy=
+J6DmAQAA&content_link=3Dhttps%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fcredit-k=
+arma%2Fmycompany%2F&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a76=
+6ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&no=
+tificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc=
+9c91
+              ">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/link=
+edin@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-se=
+rif;" width=3D"28" border=3D"0" alt=3D"LinkedIn"
+                                                                  style=3D"=
+display: block; height: auto; text-decoration: none; border: 0 none; outlin=
+e: none; line-height: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                  <!--[if (gte mso 9)|(IE)]=
+></td></tr></table><![endif]-->
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td></tr></table=
+><![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                          <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"32" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-=
+size: 32px; line-height: 32px;" width=3D"100%">
+                                  <div>
+                                    <img src=3D"https://www.creditkarma.com=
+/notification-events/pixel/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2rDMBBF%2F0=
+XrFPSwXl62ULrsortSjB6jxlSWjSWHhJB%2F77RJoe1KMOfM5Wpez2SMpCfUeW8FgNVOAtPBcSE=
+jp5F1rqOdEWRHWiU9U1pwqrhiO7KscLjPc%2Fggfdly3hG3tf28YliDacmuwd3kinuHFZeja%2B=
+7J1T1SnVIUOkqpGOu4MVpoQ03kklHlvUg3m%2FRnEubSoLTh9r6cFsAAmNyY0fqhNawABcGSZ1e=
+GupRlwG7LVvdDw41fJoQ2zt%2FqeISvjJThONS2Po6QI2VIntc5blftHxYUsbdGg7CM%2B0S5AC=
+%2BltVErZa0PxtiEdwTNOiF8sMG7ZDUE7r1SPOHAMgytp4oXGuCAlR6uzUgv%2F86vX2WXy9snf=
+ijAEqIBAAA%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2=
+edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notifica=
+tionId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" =
+width=3D"1" height=3D"1" />
+                                    <img src=3D"https://pixel.app.returnpat=
+h.net/pixel.gif?r=3D2601e78cdeee473088cb8e8240a4c8e137a6cf78&c=3Dploan_spnp=
+_revpush_tpe" width=3D"1" height=3D"1" />                    </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+             =20
+              <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=
+=3D"hide" width=3D"100%">
+                <tr>
+                  <td height=3D"1" class=3D"hide" style=3D"width: 100%; min=
+-width:500px; font-size:0px;line-height:0px;">
+                    <img height=3D"1" src=3D"https://creditkarmacdn-a.akama=
+ihd.net/res/content/mailings/ck/reminder_series_refresh/spacer.gif" style=
+=3D"width: 100%; min-width:auto; text-decoration: none; border: none; -ms-i=
+nterpolation-mode: bicubic;" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+--67e279d7d8b7592e1f0fe7f4e3dc2eadfa058ee9d2905f602b027956bd20
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" style=3D"-w=
+ebkit-text-size-adjust: 100%;">
+
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1=
+">
+  <meta name=3D"x-apple-disable-message-reformatting">
+  <!--[if !mso]>
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <![endif]-->
+  <title>Credit Karma</title>
+    <!--[if mso]>
+    <style type=3D"text/css">
+      li { text-indent: -1em; }
+      table, tr, td {border-collapse: collapse;}
+      tr { font-size:0px; line-height:0px; border-collapse: collapse; }
+    </style>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!--[if !mso]><!-->
+
+      <style type=3D"text/css">
+      sup {
+      	line-height: 1em !important;
+        font-size: 60% !important;
+      }
+      </style>
+    <!--<![endif]-->
+
+  <style type=3D"text/css">
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: 100;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Light.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Regular.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: normal;
+    font-weight: bold;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-Medium.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'National';
+    font-style: italic;
+    font-weight: normal;
+    src: url('https://creditkarmacdn-a.akamaihd.net/res/content/bundles/gal=
+axy-css/4.0.2/fonts/National2Web-LightItalic.woff') format('woff');
+    mso-font-alt: Arial;
+  }
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+    a[href^=3D"tel"],
+    a[href^=3D"sms"] {
+      text-decoration: none !important;;
+      color: inherit !important;;
+      pointer-events: none !important;;
+      cursor: default !important;;
+    }
+    .gmail-contact a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    #MessageViewBody, #MessageWebViewDiv {
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+    #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+    img {
+      -ms-interpolation-mode:bicubic;
+    }
+    div[style*=3D"margin: 16px 0"] {
+        margin:0 !important;
+    }
+
+   =20
+
+
+    @media screen and (max-width: 581px) {
+      .md1-block {
+        display: block !important;
+      }
+
+      .md1-100 {
+        width: 100% !important;
+      }
+      .md1-center img {
+      	margin: 0 auto !important;
+      }
+      .md1-center {
+        text-align: center !important;
+      }
+    }
+
+    @media screen and (max-width: 481px) {
+      .mb-inline-block {
+        display: inline-block !important;
+      }
+      .mb-block {
+        display: block !important;
+      }
+      .mb-hide {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .mb-center {
+        text-align: center !important;
+      }
+      .mb-center img {
+      	margin: 0 auto !important;
+      }
+      .mb-left {
+      	text-align: left !important;
+      }
+      .mb-left img {
+        margin: 0px auto 0px 0px !important;
+      }
+      .mb-right {
+      	text-align: right !important;
+      }
+      .mb-right img {
+        margin: 0px 0px 0px auto !important;
+      }
+      .mb-288 {
+        max-width: 288px !important;
+      }
+      .mb-288px {
+        width: 288px !important;
+      }
+      .mb-95 {
+        width: 94.99% !important;
+      }
+      .mb-75 {
+        width: 75% !important;
+      }
+      .mb-79-16 {
+        width: 79.167% !important;
+      }
+      .mb-86-6 {
+        width: 86.67% !important;
+      }
+      .mb-91-347 {
+        width: 91.347% !important;
+      }
+      .mb-86 {
+        width: 85.99% !important;
+      }
+      .mb-87 {
+        width: 86.667% !important;
+      }
+      .mb-50 {
+        width: 49.99% !important;
+      }
+      .mb-100 {
+        width: 100% !important;
+      }
+      .mb-90 {
+        width: 89.99% !important;
+      }
+
+      .mb-90-38 {
+        width: 90.38% !important;
+      }
+      .mb-91-71 {
+        width: 91.71% !important;
+      }
+      .mb-70 {
+        width: 69.99% !important;
+      }
+      .mb-16px{
+        width: 16px !important;
+      }
+      .mb-cta-272 {
+        width: 272px !important;
+      }
+      .mb-pad-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+      }
+      .cta-class {
+        width: 272px !important;
+        line-height: 44px !important;
+        margin: 0 !important;
+    }
+  }
+
+    @media screen and (max-width: 380px) {
+      	.sm-font-26{
+      		font-size:26px !important;
+            word-break: normal !important;
+        }
+          .sm-font-18{
+          	font-size:18px !important;
+            word-break: normal !important;
+          }
+
+          .sm-hide {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+          }
+          .sm-100 {
+            width: 100% !important;
+          }
+          .sm-100-mx {
+            width: 100% !important;
+            max-width: 100% !important;
+            }
+          .sm-90{
+          	width:89.99% !important;
+          }
+      }
+
+    @media screen and (max-width: 320px) {
+      .xs-hide {=20
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+      }
+
+      .xs-100 { width: 100% !important; }
+    }
+
+      body {
+        width: 100vw !important;
+      }
+     =20
+
+
+    @media only screen and (max-width: 600px) {
+      .hide {
+        display: none !important;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+
+      .md-block {
+       display: block !important;
+       }
+
+       .md-center {
+         text-align: center !important;
+       }
+
+       .md-86 {
+         width: 85.99% !important;
+       }
+
+       .md-100 {
+         width: 100% !important;
+       }
+
+     }
+
+  </style>
+</head>
+
+<body bgcolor=3D"#f5f6f6" style=3D"width: 100%; margin: 0; padding: 0; back=
+ground-color: #f5f6f6;">
+ =20
+  <div class=3D"preheader" style=3D"display:none;font-size:1px;color:#f5f6f=
+6;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Credit Karma makes it easy to find and compare personal loans.
+  </div>
+  <div style=3D"display:none;font-size:1px;color:#f5f6f6;line-height:1px;ma=
+x-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+  <table role=3D"presentation" bgcolor=3D"#f5f6f6" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse: collapse;=
+ width: 100%; margin: 0; padding: 0;">
+    <tr>
+      <td align=3D"center" valign=3D"top" style=3D"border-collapse: collaps=
+e; vertical-align: top; margin: 0; padding: 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" width=3D"700" align=3D"center"><tr><td>
+        <![endif]-->
+        <table bgcolor=3D"#ffffff" width=3D"700" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collapse: collaps=
+e; width: 100%; max-width: 700px;">
+
+       =20
+
+          <tr>
+            <td bgcolor=3D"#002356">
+              <a href=3D"https://www.creditkarma.com/u/personal-loans/marke=
+tplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPayload=3DH4=
+sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8P=
+sfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2U=
+Ic0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%=
+2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%=
+2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqB=
+UuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2w=
+EAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edc=
+c848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notificatio=
+nId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" sty=
+le=3D"text-decoration: none; width: 100%" target=3D"_blank">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ali=
+gn=3D"center" style=3D"border-collapse: collapse; width: 100%" role=3D"pres=
+entation">
+                  <tr>
+                    <td class=3D"mb-hide" width=3D"78" style=3D"width:11.15=
+%;">&nbsp;</td>
+         =20
+                    <td class=3D"mb-block" style=3D"vertical-align: top">
+                    	<table class=3D"mb-100 mb-center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collapse: col=
+lapse; width: 100%" role=3D"presentation">
+                        <tr>
+                          <td>
+                            <table class=3D"mb-75 mb-center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collaps=
+e: collapse; width: 100%" role=3D"presentation">
+                              <tr>
+                                <td height=3D"32" style=3D"font-size: 0; li=
+ne-height: 32px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td align=3D"left">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;" target=
+=3D"_blank"><![endif]-->
+                                      <img src=3D"https://creditkarmacdn-a.=
+akamaihd.net/res/content/mailings/ck/logos/cklogo_white_2x.png" width=3D"10=
+0" alt=3D"Credit Karma" border=3D"0" style=3D"display: block; font-size:9px=
+; font-family: Arial, Helvetica, sans-serif;  text-decoration: none; border=
+: none; margin: none; outline: none; line-height: 100%; width: 100px;">
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+         =20
+         =20
+         =20
+                              <tr>
+                                <td height=3D"32" style=3D"font-size: 0; li=
+ne-height: 32px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class=3D"mb-center" style=3D"font-weigh=
+t: lighter;font-family:'National',Helvetica,Arial,sans-serif; text-align: l=
+eft; color: #FFFFFF; font-size: 36px; line-height: 1.2em;">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;color: #F=
+FFFFF;" target=3D"_blank"><![endif]-->
+                                      Here's to lower interest rates.
+         =20
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height=3D"16" style=3D"font-size: 0; li=
+ne-height: 16px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class=3D"mb-center" style=3D"font-weigh=
+t: normal;font-family:'National',Helvetica,Arial,sans-serif; text-align: le=
+ft; color: #FFFFFF; font-size: 20px; line-height: 1.2em;">
+                                  <!--[if mso]><a href=3D"https://www.credi=
+tkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-story=
+-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRW=
+VRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSS=
+VeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvw=
+AqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH=
+1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpf=
+UQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2=
+F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34=
+999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bul=
+k,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe=
+71433bc9cbaf97ec2bb662fc9c91
+          "
+                                   style=3D"text-decoration: none;color: #F=
+FFFFF;" target=3D"_blank"><![endif]-->
+                                      Cover your next big expense with a pe=
+rsonal loan.
+         =20
+                                  <!--[if mso]></a><![endif]-->
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <!--[if !mso]><!-->
+                        <tr>
+                          <td class=3D"mb-block mb-center" style=3D"width: =
+100%; display: none; mso-hide: all; padding-top: 32px; padding-bottom: 0px;=
+">
+                              <img class=3D"mb-block" src=3D"https://credit=
+karmacdn-a.akamaihd.net/res/content/mailings/ck/ploan_tpe/cheers_desktop.pn=
+g" alt=3D"Illustration" border=3D"0" align=3D"center" style=3D"display: non=
+e; text-decoration: none; border: none; margin: none; outline: none; width:=
+ 100%; mso-hide: all;">
+                          </td>
+                        </tr>
+                        <!--<![endif]-->
+                        <tr>
+                          <td height=3D"32" style=3D"font-size: 0; line-hei=
+ght: 32px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>
+                              <!--[if mso]>
+                              <v:roundrect xmlns:v=3D"urn:schemas-microsoft=
+-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https:/=
+/www.creditkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-l=
+oans-story-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMP=
+jYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUW=
+rGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3n=
+AalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRA=
+HO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQm=
+yUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2B=
+XXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5=
+dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DR=
+evenue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699=
+bc889fabbe71433bc9cbaf97ec2bb662fc9c91
+          "
+                               style=3D"height:44px;v-text-anchor:middle;wi=
+dth:268px;" arcsize=3D"13%" strokecolor=3D"#0077DB" strokeweight=3D"2pt" fi=
+llcolor=3D"#0077DB">
+                                         <w:anchorlock/>
+                                      <table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0">
+                                      <tr>
+                                      <td width=3D"1" align=3D"right" valig=
+n=3D"top" height=3D"1" style=3D"margin:auto; padding:0; border-collapse:col=
+lapse;height: 1px;line-height: 1px;display: block; mso-line-height: exactly=
+;text-align:right;height:1px;">
+                                      &nbsp;
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0">
+                                  <tr>
+         =20
+                                  <td height=3D"24" align=3D"center" valign=
+=3D"middle"  style=3D"margin:auto;padding:0; border-collapse:collapse; disp=
+lay:block; mso-line-height: exactly;height:24px;">
+                                    <center style=3D"color:#FFFFFF;;font-fa=
+mily:Arial,sans-serif;font-size:18px;font-weight:bold;text-align:center;ver=
+tical-align: middle">See offers</center>
+                                  </td>
+                                  </tr>
+                                </table>
+                                                </v:roundrect>
+                                                <![endif]-->
+                              <a href=3D"https://www.creditkarma.com/u/pers=
+onal-loans/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v=
+1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCj=
+Ku3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2=
+FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHg=
+n3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05=
+KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpv=
+DYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN=
+6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540dec=
+f1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointExcep=
+tion&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2=
+bb662fc9c91" style=3D"background-color: #0077DB; border: 2px solid #0077DB;=
+ border-radius: 6px; color: #FFFFFF; display: inline-block; font-family: Ar=
+ial, sans-serif; font-size: 18px; font-weight: bold ;line-height: 44px; tex=
+t-align:center; text-decoration: none; width: 268px; -webkit-text-size-adju=
+st: none; mso-hide: all;">
+                                See offers
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height=3D"32" style=3D"font-size: 0; line-hei=
+ght: 32px;">&nbsp;</td>
+                        </tr>
+         =20
+         =20
+         =20
+         =20
+                      </table>
+                    </td>
+         =20
+         =20
+         =20
+                    <td class=3D"mb-hide" width=3D"22" style=3D"width: 3.09=
+9%;">&nbsp;</td>
+         =20
+                    <td class=3D"mb-hide" width=3D"240" style=3D"width: 34.=
+3%; text-align: center; vertical-align: middle; mso-padding-alt: 0px 0px 0p=
+x 0px;">
+                      <!--[if mso]>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center" style=3D"border-collapse: collapse; width: 100%" role=
+=3D"presentation">
+                        <tr><td height=3D"0px" style=3D"font-size: 0px; lin=
+e-height: 0px;">&nbsp;</td></tr>
+                        <tr><td>
+                        <a href=3D"https://www.creditkarma.com/u/personal-l=
+oans/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPa=
+yload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTp=
+GqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2Fjkkuy=
+VdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1Nu=
+hOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDW=
+nRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rp=
+hzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2=
+BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a7=
+66ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&n=
+otificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662f=
+c9c91
+          "
+                         style=3D"text-decoration: none;" target=3D"_blank"=
+>
+                      <![endif]-->
+                        <img class=3D"mb-hide" src=3D"https://creditkarmacd=
+n-a.akamaihd.net/res/content/mailings/ck/ploan_tpe/cheers_desktop.png" widt=
+h=3D"240" alt=3D"Illustration" border=3D"0" align=3D"center" style=3D"displ=
+ay: block; text-decoration: none; border: none; margin: 0px auto; outline: =
+none; width: 100%; max-width: 240px; padding: 0px 0px 0px 0px;">
+                      <!--[if mso]>
+                        </a>
+                        </td></tr>
+                        <tr><td height=3D"0px" style=3D"font-size: 0px; lin=
+e-height: 0px;">&nbsp;</td></tr>
+                      </table>
+                      <![endif]-->
+                    </td>
+                  </tr>
+                </table>
+              </a>
+            </td>
+          </tr>
+         =20
+
+
+       =20
+
+
+          <tr>
+            <td>
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" align=3D"center" style=3D"border-collapse: collapse; width: 77.8=
+%" role=3D"presentation">
+               =20
+                <tr>
+                  <td height=3D"32" style=3D"font-size: 0; line-height: 32p=
+x;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td style=3D"font-weight: normal; font-family:Arial,sans-=
+serif; text-align: left; color: #000000; font-size: 20px; line-height: 1.3e=
+m;">
+                        High-interest credit card debt is so 2022, Darnell.=
+ Personal loans usually have lower interest rates than credit cards do, mak=
+ing them a great option if you need funds quickly. On Credit Karma, you can=
+:
+         =20
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+  <td>
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ align=3D"center" style=3D"border-collapse: collapse; width: 77.8%" role=3D=
+"presentation">
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+      <tr>
+        <td>
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" style=3D"border-collapse: collapse; width: 100%" role=3D"presentati=
+on">
+            <tr>
+              <td width=3D"80" valign=3D"top" style=3D"width: 80px">
+                                <img src=3D"https://creditkarmacdn-a.akamai=
+hd.net/res/content/mailings/ck/ploan_tpe/document_blue.png" width=3D"80" al=
+t=3D"Symbol" border=3D"0" style=3D"display: block; text-decoration: none; b=
+order: none; margin: 0; outline: none; width: 100%;">
+                              </td>
+            <td class=3D"mb-16px" width=3D"24" height=3D"24" style=3D"width=
+: 24px; font-size: 0px; line-height: 24px">&nbsp;</td>
+              <td>
+               =20
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ali=
+gn=3D"center" style=3D"border-collapse: collapse; width:100%;" role=3D"pres=
+entation">
+                  <tr>
+                    <td style=3D"font-weight: normal; font-family:Arial,san=
+s-serif; text-align: left; color: #000000; font-size: 18px; line-height: 1.=
+333em;">
+                          See personalized recommendations based on your cr=
+edit profile from our network of 25 trusted lenders.
+
+                    </td>
+                  </tr>
+                </table>
+               =20
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+<tr>
+  <td>
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ align=3D"center" style=3D"border-collapse: collapse; width: 77.8%" role=3D=
+"presentation">
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+      <tr>
+        <td>
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" style=3D"border-collapse: collapse; width: 100%" role=3D"presentati=
+on">
+            <tr>
+              <td width=3D"80" valign=3D"top" style=3D"width: 80px">
+                                <img src=3D"https://creditkarmacdn-a.akamai=
+hd.net/res/content/mailings/ck/ploan_tpe/ribbon_blue.png" width=3D"80" alt=
+=3D"Symbol" border=3D"0" style=3D"display: block; text-decoration: none; bo=
+rder: none; margin: 0; outline: none; width: 100%;">
+                              </td>
+            <td class=3D"mb-16px" width=3D"24" height=3D"24" style=3D"width=
+: 24px; font-size: 0px; line-height: 24px">&nbsp;</td>
+              <td>
+               =20
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ali=
+gn=3D"center" style=3D"border-collapse: collapse; width:100%;" role=3D"pres=
+entation">
+                  <tr>
+                    <td style=3D"font-weight: normal; font-family:Arial,san=
+s-serif; text-align: left; color: #000000; font-size: 18px; line-height: 1.=
+333em;">
+                          Check your Approval Odds* up front and apply with=
+ more confidence.=20
+
+                    </td>
+                  </tr>
+                </table>
+               =20
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height=3D"8" style=3D"font-size: 0; line-height: 8px;">&nbsp;</=
+td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+<tr>
+  <td>
+    <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ align=3D"center" style=3D"border-collapse: collapse; width: 77.8%" role=3D=
+"presentation">
+     =20
+      <tr>
+        <td height=3D"32" style=3D"font-size: 0; line-height: 32px;">&nbsp;=
+</td>
+      </tr>
+      <tr>
+        <td style=3D"font-weight: normal; font-family:Arial,sans-serif; tex=
+t-align: left; color: #000000; font-size: 20px; line-height: 1.3em;">
+              Whether you're covering a new expense or paying off the $3,98=
+3** you have on your credit cards, a loan could help you make some progress=
+=2E Tap the button to see your offers.
+
+        </td>
+      </tr>
+     =20
+      <tr>
+        <td height=3D"16" style=3D"font-size: 0; line-height: 16px;">&nbsp;=
+</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+          <tr>
+            <td>
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" align=3D"center" style=3D"border-collapse: collapse; width: 77.8=
+%" role=3D"presentation">
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class=3D"" style=3D"text-align: left">
+                    <div>
+                      <!--[if mso]>
+                      <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://www.cre=
+ditkarma.com/u/personal-loans/marketplace?referralCode=3Dpersonal-loans-sto=
+ry-cc-debt-amount-v1&ctPayload=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPe=
+RWVRY%2FS22FgGVwlCjKu3fTpGqaE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZG=
+SSVeLltFKUFGvyDTD%2FjkkuyVdXEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEK=
+vwAqfSNr6Q3jljLtNHgn3M1NuhOxKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOA=
+BH1KSQd%2BzzFqcfW05KHvmDWnRNsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmh=
+pfUQaGc6VcK4RSxkqpvDYG2rphzFhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs=
+%2F8p%2FipOP%2F9euN6Pn8%2BQ1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d=
+34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,B=
+ulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fab=
+be71433bc9cbaf97ec2bb662fc9c91
+          "
+                       style=3D"height:44px;v-text-anchor:middle;width:268p=
+x;" arcsize=3D"13%" strokecolor=3D"#0077DB" strokeweight=3D"2pt" fillcolor=
+=3D"#0077DB">
+                        <w:anchorlock/>
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+                        <tr>
+                        <td width=3D"1" align=3D"right" valign=3D"top" heig=
+ht=3D"1" style=3D"margin:auto; padding:0; border-collapse:collapse;height: =
+1px;line-height: 1px;display: block; mso-line-height: exactly;text-align:ri=
+ght;height:1px;">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0">
+                    <tr>
+         =20
+                    <td height=3D"24" align=3D"center" valign=3D"middle"  s=
+tyle=3D"margin:auto;padding:0; border-collapse:collapse; display:block; mso=
+-line-height: exactly;height:24px;">
+                      <center style=3D"color:#FFFFFF;;font-family:Arial,san=
+s-serif;font-size:18px;font-weight:bold;text-align:center;vertical-align: m=
+iddle">See offers</center>
+                    </td>
+                    </tr>
+                  </table>
+                      </v:roundrect>
+                      <![endif]-->
+                      <a href=3D"https://www.creditkarma.com/u/personal-loa=
+ns/marketplace?referralCode=3Dpersonal-loans-story-cc-debt-amount-v1&ctPayl=
+oad=3DH4sIAAAAAAAAA12QzW7DIBCE34VzKtlgMPjYqFWPPeRWVRY%2FS22FgGVwlCjKu3fTpGq=
+aE9J8s8PsfpzI6EhHeMWMkBUo6WwjoDbeU8UbbUWrGOctWZGSSVeLltFKUFGvyDTD%2FjkkuyVd=
+XEJYEb2UIc0YVmA3BV3gaaej%2FoIZh50u%2Bk3nAalwpqEKvwAqfSNr6Q3jljLtNHgn3M1NuhO=
+xKRaIpb%2B9m%2BMEGAA7PQZ0%2FdIwxu0GDgXRAHO6I9nOABH1KSQd%2BzzFqcfW05KHvmDWnR=
+NsGVP8i%2FABDn0u8%2BsIwVU1gvc5ueXqesCsQmyUbIGpmhpfUQaGc6VcK4RSxkqpvDYG2rphz=
+FhljfaqBUuNEYJ6FFSNofmY8XQ97LHROrnLri%2BXXddhxCs%2F8p%2FipOP%2F9euN6Pn8%2BQ=
+1NJhsv2wEAAA%3D%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766=
+ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&not=
+ificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9=
+c91" style=3D"background-color: #0077DB; border: 2px solid #0077DB; border-=
+radius: 6px; color: #FFFFFF; display: inline-block; font-family: Arial, san=
+s-serif; font-size: 18px; font-weight: bold ;line-height: 44px; text-align:=
+center; text-decoration: none; width: 268px; -webkit-text-size-adjust: none=
+; mso-hide: all;">
+                        See offers
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"16" style=3D"font-size: 0; line-height: 16p=
+x;">&nbsp;</td>
+                </tr>
+         =20
+              </table>
+            </td>
+          </tr>
+
+         =20
+
+          <tr>
+            <td>
+              <table class=3D"mb-87" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" align=3D"center" style=3D"border-collapse: collapse; width: 77.8=
+%" role=3D"presentation">
+                <tr>
+                  <td style=3D"font-weight: normal; font-family:Arial,sans-=
+serif; text-align: left; color: #6E7677; font-size: 12px; line-height: 1.16=
+7em;">
+                        <br>
+              *Approval Odds are not a guarantee of approval. Credit Karma =
+determines Approval Odds by comparing your credit profile to other Credit K=
+arma members who were approved for the personal loan, or whether you meet c=
+ertain criteria determined by the lender. Of course, there's no such thing =
+as a sure thing, but knowing your Approval Odds may help you narrow down yo=
+ur choices. For example, you may not be approved because you don't meet the=
+ lender's "ability to pay standard" after they verify your income and emplo=
+yment; or, you already have the maximum number of accounts with that specif=
+ic lender.
+              <br><br>
+              **Based on your credit report information from TransUnion as =
+reported on 2023-01-05.
+         =20
+                  </td>
+                </tr>
+               =20
+                <tr>
+                  <td height=3D"32" style=3D"font-size: 0; line-height: 32p=
+x;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+         =20
+
+
+          <tr>
+            <td style=3D"width: 100%;" bgcolor=3D"#e6e6e6">
+              <table width=3D"100%" align=3D"left" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" style=3D"border-collapse: coll=
+apse;">
+                <tr>
+                  <td style=3D"border-collapse: collapse; vertical-align: t=
+op; color: #333333; font-family: 'Arial', Helvetica, sans-serif; line-heigh=
+t: 1em; margin: 0; padding: 0;">
+                    <div>
+                      <table class=3D"spacer mb-100" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"border-=
+collapse: collapse; background: none;">
+                        <tr>
+                          <td valign=3D"top" height=3D"32" style=3D"border-=
+collapse: collapse; vertical-align: top; color: #333333; font-family: 'Aria=
+l', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-size: =
+32px; line-height: 32px;" width=3D"100%">&nbsp;
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <table class=3D"mb-86" width=3D"83.72%" align=3D"center=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" styl=
+e=3D"border-collapse: collapse;">
+                      <tr>
+                        <td class=3D"mb-pad-0" style=3D"border-collapse: co=
+llapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetic=
+a, sans-serif; line-height: 1em; margin: 0;  padding-left:3.58%; padding-ri=
+ght:3.58%;">
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none;">
+                              This is a promotional email.<br> To manage yo=
+ur email preferences, please go to <a href=3D"https://www.creditkarma.com/n=
+otification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QwUoDMRCGX0V=
+yrrDZzSabPVosnsSDN5FlMjuxS9Nk2aSlIr67U61QPQXyffkz8798iGkUvWixMwBem7azUindEY=
+JpHKIBZauxEitRsuilNk1d6VrLlZgXOt6FhDvRx0MIKwGHsk0LhxXazwEK3e4hwhst%2FHiEAg%=
+2BQt0ylU1p5lIBOgezk6NAa0qg8%2F6ksXmzRfwhMsVAsw%2BV8fp%2BJA2gPU2Drl4Yp7p7pVB=
+g9pjL5CaFMKd7wgJ4Wikj5ys64EEV255AgDnmO88CbzIe8HQrnX5mE5xxWNymV7zV8oNOQy7KZK=
+IyVZPS0pPHw4%2F3DTcXY2c5QY2XtfFU35NrW2tFoba3DrrMenCMjVcNVW3TguQmsndO69nxhJY=
+fm98yFDnTkmdZpPDdwf25gHSbu%2Fj%2F%2FHl307d%2F7n%2Bbqz8%2FXL4yjXTPxAQAA&cont=
+ent_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fmyprofile%2Fpreferences&trac=
+kingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b07=
+58&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912=
+bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#00=
+77DB;text-decoration:none;font-size: 13px;">notification preferences</a>.
+                           =20
+                            </p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #858B8F; font-family: Arial, Helvetic, sans-serif; clear: left;=
+ line-height: 1.5; font-style: normal; text-decoration: none; margin-top:1.=
+15em;">
+                                <a href=3D"https://www.creditkarma.com/noti=
+fication-events/redirect/mailing?forwardCtPayload=3Dtrue&ctPayload=3DH4sIAA=
+AAAAAAA2WQy2rDMBBFfyVonYIlWbLkZQuhu5SSrkoxeowaE1kylhwSQv69yqPQx0aCuWdm7tz3E=
+%2BotahEwV3HhDK%2BErhurhCDMlNdhQ5ytGVqinFCLeUNJxQnHSzROsH%2F00exQG2bvl0jNeR=
+unMizDMHqV4WFQQX3CVJqtyupZpW1RazCWEVcz4YTAjmIiqXaNY4YKVlN%2Bp1F7QiaGDCF3939=
+zHOHidVC9L9S36vuw28AhF%2BktpFknM%2FUaFm6Kw0J5v7jy6UdDAQBCwUcfVejSGMauHDPOad=
+vlsuIHCSb38YKuYszXS5yHQ5fytOrB2woX6WWKdr5xf2RaFVlL0QCVmGhXEQqaMSltw7mU2gghn=
+dIaGlxTqo00WjnZgCFac05cKUhchqZjKpl2sC%2BenqK9hPAKCaY92G495vWc%2F0FX%2F6hlv%=
+2Bu3BMn5%2FPEFDrPaevkBAAA%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540d=
+ecf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointExc=
+eption&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97e=
+c2bb662fc9c91&content_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fnotificati=
+ons-preferences%2Funsubscribe%3FforwardCtPayload%3Dtrue%26ctPayload%3DH4sIA=
+AAAAAAAA2WQy2rDMBBFfyVonYIlWbLkZQuhu5SSrkoxeowaE1kylhwSQv69yqPQx0aCuWdm7tz3=
+E%252BotahEwV3HhDK%252BErhurhCDMlNdhQ5ytGVqinFCLeUNJxQnHSzROsH%252F00exQG2b=
+vl0jNeRunMizDMHqV4WFQQX3CVJqtyupZpW1RazCWEVcz4YTAjmIiqXaNY4YKVlN%252Bp1F7Qi=
+aGDCF3939zHOHidVC9L9S36vuw28AhF%252BktpFknM%252FUaFm6Kw0J5v7jy6UdDAQBCwUcfV=
+ejSGMauHDPOadvlsuIHCSb38YKuYszXS5yHQ5fytOrB2woX6WWKdr5xf2RaFVlL0QCVmGhXEQqa=
+MSltw7mU2gghndIaGlxTqo00WjnZgCFac05cKUhchqZjKpl2sC%252BenqK9hPAKCaY92G495vW=
+c%252F0FX%252F6hlv%252Bu3BMn5%252FPEFDrPaevkBAAA%253D%26trackingId%3D30ef07=
+b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758%26categories=
+%3DRevenue%2CBulk%2CTouchPointException%26notificationId%3Db987e3912bf023eb=
+5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;te=
+xt-decoration:none;font-size: 13px;">Unsubscribe from all emails</a></p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #858B8F; font-family: Arial, Helvetic, sans-serif; clear: left;=
+ line-height: 1.5; font-style: normal; text-decoration: none; margin-top:1.=
+15em;">
+                                <a href=3D"https://www.creditkarma.com/noti=
+fication-events/redirect/mailing?forwardCtPayload=3Dtrue&ctPayload=3DH4sIAA=
+AAAAAAA2WQS0ssMRBG%2F0qT9VzIo5Pu9FJB7s7LRVciTR4Vp5l0EpL04CD%2BdzOjgo9VQZ1TH=
+1X18IIWiyZEGBuxxkzKfhR8FP0ITlrdG6MGCZyjHaoFTUQMjGJBBdmhlOF45aM5oCls3u%2BQ2u=
+o%2B5hZWYU1eVfizqqCeILdhq6r6q8q%2BUacJJVyMWAlHOQWubY8dH5wUghGKP2w0vSATQ4VQ5=
+496d0rQAmBVi2%2FWJ%2FVLONzBc23oPpRNF5MXDZ3Lce2U993FL13Ky6ry4k%2Bd0nGrXYJcYl=
+C%2B81GF8iWvzQOElpbOZC4ppLndmrayn2vb4IsJpi7xrN7EWC%2BHOg%2FPc6n5ZgFvMWnoX45=
+2e%2Fd%2BYIYb1nIcgElCtcOUgeZcSjsIIaU24yid0hoG0jOmjTRaOTmAoVoLQV1rSNJCy6m0l8=
+9wbDtdR3v%2B0X8okI9g59tUb7f6S7rsjyb%2Bvf%2F%2BYPr6%2BvgG9IA9EhgCAAA%3D&trac=
+kingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b07=
+58&categories=3DRevenue,Bulk,TouchPointException&preferences=3DPERSONAL_LOA=
+NS&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb=
+662fc9c91&content_link=3Dhttps%3A%2F%2Fwww.creditkarma.com%2Fnotifications-=
+preferences%2Funsubscribe%3FforwardCtPayload%3Dtrue%26ctPayload%3DH4sIAAAAA=
+AAAA2WQS0ssMRBG%252F0qT9VzIo5Pu9FJB7s7LRVciTR4Vp5l0EpL04CD%252BdzOjgo9VQZ1T=
+H1X18IIWiyZEGBuxxkzKfhR8FP0ITlrdG6MGCZyjHaoFTUQMjGJBBdmhlOF45aM5oCls3u%252B=
+Q2uo%252B5hZWYU1eVfizqqCeILdhq6r6q8q%252BUacJJVyMWAlHOQWubY8dH5wUghGKP2w0vS=
+ATQ4VQ5496d0rQAmBVi2%252FWJ%252FVLONzBc23oPpRNF5MXDZ3Lce2U993FL13Ky6ry4k%25=
+2Bd0nGrXYJcYlC%252B81GF8iWvzQOElpbOZC4ppLndmrayn2vb4IsJpi7xrN7EWC%252BHOg%2=
+52FPc6n5ZgFvMWnoX452e%252Fd%252BYIYb1nIcgElCtcOUgeZcSjsIIaU24yid0hoG0jOmjTR=
+aOTmAoVoLQV1rSNJCy6m0l89wbDtdR3v%252B0X8okI9g59tUb7f6S7rsjyb%252Bvf%252F%25=
+2BYPr6%252BvgG9IA9EhgCAAA%253D%26trackingId%3D30ef07b5dfdfb19d34999b602b7b0=
+540decf1a1a766ff5f2edcc848d23c6b22b0758%26categories%3DRevenue%2CBulk%2CTou=
+chPointException%26preferences%3DPERSONAL_LOANS%26notificationId%3Db987e391=
+2bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0=
+077DB;text-decoration:none;font-size: 13px;">Unsubscribe from all emails pr=
+imarily about personal loans</a></p>
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none; margin-top:=
+1.15em;">
+                              The offers that you see on Credit Karma come =
+from companies who pay us. Compensation may factor into the decision to sen=
+d you this particular email.
+                            </p>
+                           =20
+                           =20
+                            <p style=3D"margin: 0; padding: 0; font-size: 1=
+3px; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left=
+; line-height: 15px; font-style: normal; text-decoration: none; margin-top:=
+1.15em;">
+                              Loan services offered through Credit Karma Of=
+fers, Inc., NMLS ID# 1628077 | <a href=3D"https://www.creditkarma.com/notif=
+ication-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QS2vDMBCE%2F4vOK=
+diS9fKxoaWHHnrorRSzWq8bE0UyllwaQv57lUchzWlhv9lhdj4ObOxZy8DoQQg0khquQGHVYK8R=
+oDKDIaORrVhOrK2VFrxSXNUrNs30%2FegjblkbFu9XDJa8iXMxy7SbPGR62EGAL5rLcQ8ZXiBtC=
+iUpwQ6NwwoN6UqCFq4RkkvopUCur2rWHhjGkCnk7jrf9xOdDHYw%2BqL6o34M23f6yQW9jkghUb=
+qhCWeiUNjkI4QuTWHqSvJpSZsuF78bJWEe40n6HGM%2Bxx48%2FXQpz88j%2Bb6qC3qbY79cdHd=
+YVAU7azQJW3M3VFyQk9LaXitlrUNj7ADOka4bIRxadDBYTcidU4oPZWHrYpr2qRTY0XfJtI796e=
+On08drP5au7%2Fk5Omvl%2F%2F2lKX48fv4CpmRpfeEBAAA%3D&content_link=3Dhttps%3A%=
+2F%2Fwww.creditkarma.com%2Fabout%2Floan-licenses&trackingId=3D30ef07b5dfdfb=
+19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenu=
+e,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889=
+fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;text-decoration:u=
+nderline;font-size: 13px;">
+                              Licenses</a> | <a href=3D"https://www.creditk=
+arma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QX=
+WvCMBSG%2F4rk2kE%2B2qTp3SaTXWxjMO%2FGKPk4ncWYlCYVRfzvS9WB8%2BrAeZ6E875fR9RZ=
+VCPgsqJYGSY0ZazIg3DApBXSVrIgGM1RiqgmXDCKOeVkjvoBdk8umA2q%2FejcHKkxrcOQP0uw7=
+Z1K8LBVXv3AkB9bldSLiutMW1nSwlhtsMRAVWm50cyWpKDCGMrI1Ub1EZngE%2FjUXOfq0MN061=
+Z1Llt%2F1HV%2Bs4J9yuj97fVztgg%2BjlsYZo%2FGQIw3ZjQDgM9e74LyTex93%2BQU%2FRjXT=
+cp%2F35hgUhcmdRlCOkdoHeybmIZlB85iktHHEOx48e4wwxlrWQlgklDdYspAl6WUVnAupTZVJV=
+ulNQhSMKaNNFq1UoChWnNO27yQUxHxEHOZDezyTYtgp%2FTPU%2FqF63Lv9%2Fx8OqrL%2F%2Ft=
+La%2FR0%2Bv4F9HwUvu0BAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.nmlsconsumerac=
+cess.org%2FEntityDetails.aspx%2FCOMPANY%2F1628077&trackingId=3D30ef07b5dfdf=
+b19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DReven=
+ue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc88=
+9fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;text-decoration:=
+underline;font-size: 13px;">
+                              NMLS Consumer Access</a>. California loans ar=
+ranged pursuant to a California Financing Law license.
+                            </p>
+             =20
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left; =
+line-height: 15px; font-style: normal; text-decoration: none;">
+                            Credit Karma, LLC, P.O. Box 30963, Oakland, CA =
+94604 Copyright &copy; 2008-2023 Credit Karma, LLC. All Rights Reserved. An=
+y third party trademarks referenced are the property of their respective ow=
+ners.
+                          </p>
+                         =20
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; clear: left; =
+line-height: 15px; font-style: normal; text-decoration: none;margin-top:1.1=
+5em;">
+                            Note: Never share your online banking or Credit=
+ Karma passwords with anyone, including us!
+                          </p>
+                                      <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"16" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 16px; font-=
+size: 16px; line-height: 16px;" width=3D"100%">
+                                  &nbsp;</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <p style=3D"margin: 0; padding: 0; font-size: 13p=
+x; color: #6E7677; font-family: Arial, Helvetica, sans-serif; line-height: =
+1.5; text-align: left; text-decoration: none;">
+                            <a href=3D"https://www.creditkarma.com/notifica=
+tion-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA2WQzW7DIBCEX6XinEoYDD=
+Y%2BNmrUYw65VZUFy7qxQsAyOIoV5d2Lk1Tqzwlp59tlZt4vpLekIQYt7aQqgTIOAkqBpaCW1qW=
+VzNCiICuSImkKWXFGJZPFigwjnl5cgANp%2FOTciugp7cOYjyU8Dk4nfD5qrz9xzMtWJ%2F2m4z=
+6riLTj3HYCgArGaSUUlLKipaWF5rx%2B0KS5EAg%2BoU%2Ft493NAy4Hjrp3mfpWXe8POzynLG3=
+H%2FqRhftoG18P8g4kwIvpMDC5o38bBD232P0xx36Z89QeJkPqwoJsQ0s185%2FDcxjRuenTZ5O=
+2fYKc790fmdGlT1RVyVTDT5T7RCKGUraRUykBdq04bg1VRcm5AgdGdqhCYMVKyLg%2FU0nacY66=
+xxVP2tA52yf265F7nYId%2F%2Bs06acTv%2Bb0vdr1%2BfAEz%2BY8h5wEAAA%3D%3D&content=
+_link=3Dhttps%3A%2F%2Fwww.intuit.com%2Fprivacy%2Fstatement%2F&trackingId=3D=
+30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&catego=
+ries=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb55=
+99d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;text=
+-decoration:none;font-size: 13px;">Privacy
+                              Policy</a>
+                              <span style=3D"margin: 0; padding: 0; color: =
+#6E7677; text-decoration: none; font-size: 13px;">|</span>
+                            <a href=3D"https://www.creditkarma.com/notifica=
+tion-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2rDMBBFfyVonYIt2X=
+p42dDQZaHZlWL0GDUmsiUkOSSE%2FHuVR6HJSjDn6HJnvk5oMKhDEmuNtWo4pcaS1hDRgGxUC1V=
+jalIrtEQ5oa6mjOCKYlovUYiwf3Ve71A3zc4tkZzz1scSlmEMTmZ4GeUkfyCWz0Zm%2BS7TtlBO=
+QXKmCZMVsY0UtCKGCcu50SAExncbdSek%2FZRhyv393RwDlAAY5eCK9UfdMO02cMgFbSCOaeHt4=
+hPiftDwz0o6AkzFCc7LqU9hCn3ZIMxp2%2BfwYILOg7%2Boa%2B%2Fztb51cOhTjusBnKnqgj6i=
+N%2FPNe8KkKlgJzoCIGitbYQKqbYUwjFIhlOZcWKkUsLohRGmhlbSCgcZKUYptGYi6hKZjKofsY=
+V86rby5bP522XzlhnLzZ36tjrr2cX67GD6fv38Bso4x1ukBAAA%3D&content_link=3Dhttps%=
+3A%2F%2Fwww.creditkarma.com%2Fabout%2Fterms202210&trackingId=3D30ef07b5dfdf=
+b19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DReven=
+ue,Bulk,TouchPointException&notificationId=3Db987e3912bf023eb5599d76699bc88=
+9fabbe71433bc9cbaf97ec2bb662fc9c91" style=3D"color:#0077DB;text-decoration:=
+none;font-size: 13px;">Terms
+                              of Service</a>
+                            </p>
+             =20
+             =20
+             =20
+                        </td>
+                      </tr>
+                    </table>
+             =20
+                   =20
+                    <table class=3D"mb-86" width=3D"83.72%" align=3D"center=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#EDF1F3" styl=
+e=3D"border-collapse: collapse;">
+                      <tr>
+                        <td class=3D"mb-pad-0" style=3D"border-collapse: co=
+llapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetic=
+a, sans-serif; line-height: 1em; margin: 0;  padding-left:3.58%;padding-rig=
+ht:3.58%;">
+                          <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"32" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-=
+size: 32px; line-height: 32px;" width=3D"100%">
+                                  &nbsp;</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <table class=3D"mb-100 mb-left" align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bo=
+rder-collapse: collapse;">
+                            <tr>
+                              <td valign=3D"top" style=3D"border-collapse: =
+collapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvet=
+ica, sans-serif; line-height: 1em; margin: 0; padding: 0;">
+                                <!--[if (gte mso 9)|(IE)]><table width=3D"1=
+00%" align=3D"left" dir=3D"ltr" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td width=3D"200" align=3D"left" valign=3D"top" dir=3D"ltr" styl=
+e=3D"margin:0;padding:0; border-collapse:collapse;"><![endif]-->
+                                <table class=3D"mb-100 mb-inline-block" wid=
+th=3D"200" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border-collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding-bottom: 10px;">
+                                      <table class=3D"mb-left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=3D"200" style=3D"=
+border-collapse: collapse;">
+                                        <tr>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0; width: 100px;">
+                                            <a href=3D"https://www.creditka=
+rma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2=
+7DIBBFfyVinUoYBzDetVGjLrvIrqosHuPGCgFkcJooyr938qiUdgXiHK7mzseJDI60RPKmp0pXw=
+LSqxKLngnItOefMKmpqS%2BakZNJWQtaMCiaqOUkj7F98tFvShsn7OdFT2cQRwwrsktcFnnY66C=
+8Y8bPTRb%2FpvEFqZe3AGaMa1hvQnFLm8C6lpVAxo%2B42aU%2FExlAglO5%2Bro8JMAB2evBo%=
+2FVI%2FhO0aDgXRc0oeZkPMM53SzMXv4KN2D262I0BAMyEIXU4hddgjTXnTFUx%2FMMGWIV7UVY=
+zlWqL3cOhyGVcDeEcrRO9jdNPN%2B4drihg7SqgVtuopq8FwrpSTQihlbNOoXhsDslrUtbHKGt0=
+rCZYZIwTr8UFVGJqPGdfZwR5nWkZ36f966b%2F0A27%2BP7%2BOTlr%2B9%2F22N3Y%2Bf%2F4A=
+RuT0we8BAAA%3D&content_link=3Dhttps%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fcre=
+dit-karma-mobile-free-credit%2Fid519817714%3Famp%253Bmt%3D8%26ls%3D1&tracki=
+ngId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758=
+&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987e3912bf=
+023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91">
+                                              <img src=3D"https://creditkar=
+macdn-a.akamaihd.net/res/content/mailings/ck/footers/ios_app_store.png" wid=
+th=3D"82" border=3D"0" alt=3D"App Store" style=3D"display: block; height: a=
+uto; text-decoration: none; border: 0 none; outline: none; line-height: 100=
+%; max-width: 82px; margin: 0;">
+                                              </a>
+                                            </td>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0; width: 100px;">
+                                            <a href=3D"https://www.creditka=
+rma.com/notification-events/redirect/mailing?ctPayload=3DH4sIAAAAAAAAA12QQW=
+7DIBBFr1KxTiUDNgbv2qhRl11kV1XWAOPGCgFk4zRRlLsXJ6mUZoU07zGa%2Fz9PpLekISCwVrb=
+UXGpb1Zp2yJg0KJByBlIJsiBpJA0VNWeFYIIuSBxw%2F%2BqC2ZLGT84tCExpE4a8LOEuOkj4vA=
+MP3zjkzxYSvMO4yVSZCgBkwYUVnFZaQyksN0qpUlY1pTebNCdigk%2FoU3t718eIeQHuoHfZ%2B=
+qOu99s1HlJGL94OobdPEOOTDT%2FeBbB35mgGRJ%2B9mIFvx%2Bhjm1PEady0Ke%2B%2BM9GkPs=
+zqKoR0idA5PLRjGlY9OlvQjD6GYKer94B5kbFWskauKNNdwTjqqlLK1kIopY2UqgOtsaYl59ooo=
+6FTNRqmtRCsywM1FzEex1xmi%2Ft80zLYOf3bnH7p%2Btz7I7%2BcTprq%2F%2FzaGjufv34BA8=
+kdj%2B0BAAA%3D&content_link=3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%=
+2Fdetails%3Fid%3Dcom.creditkarma.mobile&trackingId=3D30ef07b5dfdfb19d34999b=
+602b7b0540decf1a1a766ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,To=
+uchPointException&notificationId=3Db987e3912bf023eb5599d76699bc889fabbe7143=
+3bc9cbaf97ec2bb662fc9c91">
+                                              <img src=3D"https://creditkar=
+macdn-a.akamaihd.net/res/content/mailings/ck/footers/android_app_store.png"=
+ width=3D"96" border=3D"0" alt=3D"Google Play" style=3D"display: block; hei=
+ght: auto; text-decoration: none; border: 0 none; outline: none; line-heigh=
+t: 100%; max-width: 96px; margin: 0;">
+                                              </a>
+                                            </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td><td width=3D=
+"20" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]-->
+                                <table class=3D"mb-100" width=3D"20" align=
+=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-=
+collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding: 0;">
+                                      <span class=3D"mb-hide">&nbsp;</span>
+                                      <table class=3D"mb-block mb-100" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle=
+" style=3D"border-collapse: collapse; background: none;display:none;mso-hid=
+e:all;">
+                                        <tr>
+                                          <td valign=3D"top" height=3D"6" s=
+tyle=3D"border-collapse: collapse; vertical-align: top; color: #333333; fon=
+t-family: 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 6p=
+x; font-size: 6px; line-height: 6px;mso-hide:all;" width=3D"100%">
+                                            &nbsp;
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td><td width=3D=
+"322" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]-->
+                                <table class=3D"mb-100 mb-left" width=3D"16=
+0" align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse: collapse;">
+                                  <tr>
+                                    <td class=3D"mb-center" align=3D"center=
+" valign=3D"top" style=3D"border-collapse: collapse; vertical-align: top; c=
+olor: #333333; font-family: 'Arial', Helvetica, sans-serif; line-height: 1e=
+m; margin: 0; padding: 0;">
+                                      <table class=3D"mb-100 mb-left" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=3D"160" st=
+yle=3D"border-collapse: collapse;">
+                                        <tr>
+                                          <td style=3D"border-collapse: col=
+lapse; vertical-align: top; color: #333333; font-family: 'Arial', Helvetica=
+, sans-serif; line-height: 1em; margin: 0; padding: 0;">
+                                            <table class=3D"mb-100 mb-left"=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-collapse: collapse;">
+                                              <tr>
+                                                <td valign=3D"top" style=3D=
+"border-collapse: collapse; vertical-align: top; color: #333333; font-famil=
+y: 'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0;=
+">
+                                                  <!--[if (gte mso 9)|(IE)]=
+></td><td width=3D"160" align=3D"left" valign=3D"top" dir=3D"ltr"><![endif]=
+-->
+                                                  <table class=3D"mb-100 mb=
+-left" width=3D"160" align=3D"left" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse: collapse;">
+                                                    <tr>
+                                                      <td class=3D"mb-cente=
+r" align=3D"center" valign=3D"top" style=3D"border-collapse: collapse; vert=
+ical-align: top; color: #333333; font-family: 'Arial', Helvetica, sans-seri=
+f; line-height: 1em; margin: 0; padding: 0;">
+                                                        <table class=3D"mb-=
+left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"left" width=
+=3D"160" style=3D"border-collapse: collapse;">
+                                                          <tr>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12Qy27CMBBFf6XymkqxTew4y6KidtcFu6qK%2FJhAhGNHsYNAiH%2FvBKhEWVm=
+ac3x1Z77PpHOkJiVYqYWjlsrWLCsO1HFHwVSGMwvUkAXJidRUSM4KwQRdkGGEw5uPdk%2FqMHm%=
+2FIHrKuzhiWIZ%2B8DrDa6%2BD3sKIn53O%2BkOnHVLFXam0LitXcmutska6dsmtAoXhQtxtUp%=
+2BJjSFDyM393ZwGwADodefR%2BqO%2BC%2FsNHDOiz5Cy3o66f%2BmQPjjJjgABjcFHHZo0hKHB=
+%2FsOUdk3G1AcTbO7irK5jzNfyrYdjk%2FK47sC7giL6GqObbt4T5gVioyoJXFFm2oJxMGWplJN=
+CKGVsValWGwOSLjk38%2Fq6VRIsM0YI1uJAUQxNp4RnbOCAnVbRzXu%2Fz3uvfIcXf%2BbX6qQu=
+%2F89v92KXy88vdBC0HucBAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.instagram.com=
+%2Fcreditkarma%2F&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766f=
+f5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&noti=
+ficationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c=
+91">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/inst=
+agram@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-s=
+erif;" width=3D"28" border=3D"0" alt=3D"Instagram" style=3D"display: block;=
+ height: auto; text-decoration: none; border: 0 none; outline: none; line-h=
+eight: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12QzWrDMBCEX6XonIIl2bLlY0NDjz3kVopZSatGRLGMLacJIe%2FezU8h7UUL%=
+2B42G2fk4seBYyypugFsO3mFdGuOERmUa57ksRSFkyRYsT6zlqpaiUELxBRtG3L%2FEZLes7ecY=
+FwzmvEkjmWXcDREyPu%2Bghy8c6bODDG8wbYiWVWkb0KaowTquvS%2BkgsaAFPRYVdzVrD0xm%2=
+FqMfe7uc30ckAxwByGS6pfG0G%2FXeMiE1t8hZxyfArEHxWRHxJ74EBP03TT0Q0fph3nadJk8H5=
+Roc0gX6SqlfI3uIx66KY%2BrgNEVnND7mNx80%2F3DsiBsdFOj1FwYT9WhqSqtXa2U1sY2jfZgD=
+Na8lNJYbQ14XaMVxiglPC00J9PpOFGJHe4p0zK5y9Wvl6uXMVDf%2F%2Fk1Omurv%2FtbW%2BJ8=
+%2FvwB8HvoyuUBAAA%3D&content_link=3Dhttps%3A%2F%2Ftwitter.com%2FCreditKarma=
+&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d23c6b=
+22b0758&categories=3DRevenue,Bulk,TouchPointException&notificationId=3Db987=
+e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/twit=
+ter@2x.png" style=3D"font-size: 0.60em; font-family: Arial, Helvetica, sans=
+-serif;" width=3D"28" border=3D"0" alt=3D"Twitter" style=3D"display: block;=
+ height: auto; text-decoration: none; border: 0 none; outline: none; line-h=
+eight: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 44px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12QTWsDIRCG%2F0rxnMKqq657bGjosYfcSllGnW2WGJVdNySE%2FPeaj0KakzD=
+P4%2FDO%2B3UigyMt4abWTKpesl6zhjomOHCmQFkplK6RLEieSEul4qySTNIFSSPu33y0W9KG2f=
+sFgTlv4liWZdwlDxlfdxDgB8fy2UGGD5g2hboaFfSS1oI1tRRGmgqUbKCpReWUonebtCdiY8gYc=
+nd%2F18eEZQHuYPDF%2BqN%2BCNs1HnJBK7BoYty%2BDAU%2BKJMdEUMRko8QuimF1JX4aZ42XU=
+74aKLNQ7yoqxjzNXvv8dBNeVwN6F1FC%2Foco5tv3hPmVcFGNwq5psz0FeNohNDaKSm1NrZpdA%=
+2FGoKI158Zqa6DXCi0zRpbyy0BfGpiOU2mxw33JtIzucvb75eylH0rhz%2FwanbTi%2F%2FxWFz=
+ufv38BHloWPOYBAAA%3D&content_link=3Dhttps%3A%2F%2Fwww.facebook.com%2FCredit=
+Karma&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2edcc848d=
+23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notificationId=
+=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/face=
+book@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-se=
+rif;" width=3D"28" border=3D"0" alt=3D"Facebook" style=3D"display: block; h=
+eight: auto; text-decoration: none; border: 0 none; outline: none; line-hei=
+ght: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                            <td style=3D"bo=
+rder-collapse: collapse; vertical-align: top; color: #333333; font-family: =
+'Arial', Helvetica, sans-serif; line-height: 1em; margin: 0; padding: 0; wi=
+dth: 28px;">
+                                                              <a href=3D"ht=
+tps://www.creditkarma.com/notification-events/redirect/mailing?ctPayload=3D=
+H4sIAAAAAAAAA12Qy2rDMBBFf6VonYIl2ZLlZUNDC110kV0pRo9RY6JIxpZDQsi%2Fd5ykkGYlo=
+XM03LlfJ9I50hDjuC8UN85rXmjglBtbVkwyUZeyLhlZkDyShgrJWSGYoAvSD7B%2FCcluSROnEB=
+ZET3mTBhyWYdcHneF5p6P%2BgQE%2FO531mx43SKWpJXfaOMtK6q2hWgADI0QhQGhHbzZpTsSmm=
+CHm9naujz3gANjpLqD1R0MXt2s4ZEQfeAX3Hp86hHfKaAeAiEIfko7t2Me%2Bxfj9NG7ajEPvTL=
+C5S7O6SilfsvsAh3bMw6qD4AqK6HNIbrp6D5gXc5mqlsAVZcYXjIOpKqWcFEIpY%2BtaeW0MSFp=
+y7FhZo72SYJnBBpjHBzU3MB5HbLGFPWZaJjev%2FTqvvQwdFv7IL9FJU%2F1%2Fv9bFzufvX5Jy=
+J6DmAQAA&content_link=3Dhttps%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fcredit-k=
+arma%2Fmycompany%2F&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a76=
+6ff5f2edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&no=
+tificationId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc=
+9c91">
+                                                                <img src=3D=
+"https://creditkarmacdn-a.akamaihd.net/res/content/mailings/ck/footers/link=
+edin@2x.png" style=3D"font-size:9px; font-family: Arial, Helvetica, sans-se=
+rif;" width=3D"28" border=3D"0" alt=3D"LinkedIn" style=3D"display: block; h=
+eight: auto; text-decoration: none; border: 0 none; outline: none; line-hei=
+ght: 100%; max-width: 28px; margin: 0;">
+                                                              </a>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                  <!--[if (gte mso 9)|(IE)]=
+></td></tr></table><![endif]-->
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td></tr></table=
+><![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                          <div>
+                            <table class=3D"spacer mb-100" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" align=3D"middle" style=3D"b=
+order-collapse: collapse; background: none;">
+                              <tr>
+                                <td valign=3D"top" height=3D"32" style=3D"b=
+order-collapse: collapse; vertical-align: top; color: #333333; font-family:=
+ 'Arial', Helvetica, sans-serif; margin: 0; padding: 0; height: 32px; font-=
+size: 32px; line-height: 32px;" width=3D"100%">
+                                  <div>
+                                    <img src=3D"https://www.creditkarma.com=
+/notification-events/pixel/mailing?ctPayload=3DH4sIAAAAAAAAA12Qy2rDMBBF%2F0=
+XrFPSwXl62ULrsortSjB6jxlSWjSWHhJB%2F77RJoe1KMOfM5Wpez2SMpCfUeW8FgNVOAtPBcSE=
+jp5F1rqOdEWRHWiU9U1pwqrhiO7KscLjPc%2Fggfdly3hG3tf28YliDacmuwd3kinuHFZeja%2B=
+7J1T1SnVIUOkqpGOu4MVpoQ03kklHlvUg3m%2FRnEubSoLTh9r6cFsAAmNyY0fqhNawABcGSZ1e=
+GupRlwG7LVvdDw41fJoQ2zt%2FqeISvjJThONS2Po6QI2VIntc5blftHxYUsbdGg7CM%2B0S5AC=
+%2BltVErZa0PxtiEdwTNOiF8sMG7ZDUE7r1SPOHAMgytp4oXGuCAlR6uzUgv%2F86vX2WXy9snf=
+ijAEqIBAAA%3D&trackingId=3D30ef07b5dfdfb19d34999b602b7b0540decf1a1a766ff5f2=
+edcc848d23c6b22b0758&categories=3DRevenue,Bulk,TouchPointException&notifica=
+tionId=3Db987e3912bf023eb5599d76699bc889fabbe71433bc9cbaf97ec2bb662fc9c91" =
+width=3D"1" height=3D"1">
+                                    <img src=3D"https://pixel.app.returnpat=
+h.net/pixel.gif?r=3D2601e78cdeee473088cb8e8240a4c8e137a6cf78&c=3Dploan_spnp=
+_revpush_tpe" width=3D"1" height=3D"1">                    </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+             =20
+              <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=
+=3D"hide" width=3D"100%">
+                <tr>
+                  <td height=3D"1" class=3D"hide" style=3D"width: 100%; min=
+-width:500px; font-size:0px;line-height:0px;">
+                    <img height=3D"1" src=3D"https://creditkarmacdn-a.akama=
+ihd.net/res/content/mailings/ck/reminder_series_refresh/spacer.gif" style=
+=3D"width: 100%; min-width:auto; text-decoration: none; border: none; -ms-i=
+nterpolation-mode: bicubic;">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://track.notificatio=
+ns3.creditkarma.com/o/eJxNkL1uwzAMhJ-m3hpI1C8HLy06dCuK7IFIUYkaRzYcJ2jfvkqng=
+gOBI-4jj23eaqmctjq35_3PIuMyzakdrktbDqvcl9v1dNgWGWTUPhgwTik75DEaRRaG9t_-nkfC=
+GMSgBioKjJBziDl4j0gcI5ZEJEFbY4iRKRUMwkDkPZQuoB62NfG5tuMDZpQUFcjlkgtpzMZi53g=
+FFEg5q7Jw0Umnzi_FFZDMHG3MYNgTAKng4nAaoyXsBRHQGWHJlotFE1RhMD6noY7Qj1VaRY1GK7=
+3rGTyJxOgMslj3ZNX_oFez41Vy3c5pvaQdz5dhHXNam0zTWep2-uqG4yXV6W_G6bKkevz7T6eD7=
+comx3mtch0_5S7tJk_w-nKbzr3t5xufPubatrdvluWx7xdquYWF"></body>
+</html>
+--67e279d7d8b7592e1f0fe7f4e3dc2eadfa058ee9d2905f602b027956bd20--

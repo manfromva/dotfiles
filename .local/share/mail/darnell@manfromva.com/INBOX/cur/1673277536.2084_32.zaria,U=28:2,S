@@ -1,0 +1,128 @@
+Return-Path: <noreply@github.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id YF7xNgZ0u2N5TycAdh2gHA
+	(envelope-from <noreply@github.com>)
+	for <darnell@manfromva.com>; Sun, 08 Jan 2023 20:55:18 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DMARC_PASS,HTML_IMAGE_ONLY_20,HTML_MESSAGE,
+	MAILING_LIST_MULTI,RCVD_IN_DNSWL_MED,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,
+	SPF_PASS,T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Report: 
+	* -2.3 RCVD_IN_DNSWL_MED RBL: Sender listed at https://www.dnswl.org/,
+	*       medium trust
+	*      [192.30.252.202 listed in list.dnswl.org]
+	* -0.1 DMARC_PASS DMARC check passed
+	* -0.1 SPF_PASS SPF check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.7 HTML_IMAGE_ONLY_20 BODY: HTML: images with 1600-2000 bytes of
+	*      words
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [192.30.252.202 listed in wl.mailspike.net]
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	* -1.0 MAILING_LIST_MULTI Multiple indicators imply a widely-seen list
+	*       manager
+	* -0.0 DKIMWL_WL_HIGH DKIMwl.org - High trust sender
+X-Spam-Score: -2.9
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=reject dis=none) header.from=github.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=github.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (1024-bit key; unprotected) header.d=github.com header.i=@github.com header.a=rsa-sha256 header.s=pf2014 header.b=1q3EgK4t;
+	dkim-atps=neutral
+Received: from out-19.smtp.github.com (out-19.smtp.github.com [192.30.252.202])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id BF327BD4B9
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 20:55:18 -0500 (EST)
+Received: from github-lowworker-e8b54ca.ac4-iad.github.net (github-lowworker-e8b54ca.ac4-iad.github.net [10.52.23.39])
+	by smtp.github.com (Postfix) with ESMTP id 96007E057F
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 17:55:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1673229318;
+	bh=Kww8mWqtnZUIYMUZufCXUL5QwOEQgbjXKg90kwvhRRc=;
+	h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:List-ID:
+	 List-Archive:List-Post:List-Unsubscribe:From;
+	b=1q3EgK4t8Edurhnv9D50IJqnobiKahjCEomvI4q6bCYTKlsPQyc8sznx/fP1NcgFE
+	 NYQl7asFzfERr0Ntpbw7zPk2NsV682hGyPSHG2mf8sxx3J6VPvWuilQQhlnSGInu7g
+	 Wa0UdT/LupuzCod3BusAYFhnH1IjaObXPwbHDyl0=
+Date: Sun, 08 Jan 2023 17:55:18 -0800
+From: "github-actions[bot]" <notifications@github.com>
+Reply-To: "acmesh-official/acme.sh" <reply+A4RKTHCYBQNTWXUP33AINAGBZCTINEVBNHHFVYUUDY@reply.github.com>
+To: "acmesh-official/acme.sh" <acme.sh@noreply.github.com>
+Cc: Subscribed <subscribed@noreply.github.com>
+Message-ID: <acmesh-official/acme.sh/issues/4461/1375013828@github.com>
+In-Reply-To: <acmesh-official/acme.sh/issues/4461@github.com>
+References: <acmesh-official/acme.sh/issues/4461@github.com>
+Subject: Re: [acmesh-official/acme.sh] Error with Wildcards on Namecheap Web
+ Servers (Issue #4461)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bb74068689d_2d52c5bc7621d9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: github-actions[bot]
+X-GitHub-Recipient: manfromva
+X-GitHub-Reason: subscribed
+List-ID: acmesh-official/acme.sh <acme.sh.acmesh-official.github.com>
+List-Archive: https://github.com/acmesh-official/acme.sh
+List-Post: <mailto:reply+A4RKTHCYBQNTWXUP33AINAGBZCTINEVBNHHFVYUUDY@reply.github.com>
+List-Unsubscribe: <mailto:unsub+A4RKTHCYBQNTWXUP33AINAGBZCTINEVBNHHFVYUUDY@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/A4RKTHG36V3ZU6VMB5INYF3WRNVYNANCNFSM6AAAAAATU5DVDU>
+X-Auto-Response-Suppress: All
+X-GitHub-Recipient-Address: darnell@manfromva.com
+X-TUID: GgQZWQdYKNHc
+
+
+----==_mimepart_63bb74068689d_2d52c5bc7621d9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Please upgrade to the latest code and try again first. Maybe it's already fixed.              ```acme.sh --upgrade```              If it's still not working, please provide the log with `--debug 2`, otherwise, nobody can help you.
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/acmesh-official/acme.sh/issues/4461#issuecomment-1375013828
+You are receiving this because you are subscribed to this thread.
+
+Message ID: <acmesh-official/acme.sh/issues/4461/1375013828@github.com>
+----==_mimepart_63bb74068689d_2d52c5bc7621d9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p></p>
+<p dir="auto">Please upgrade to the latest code and try again first. Maybe it's already fixed.              <code class="notranslate">acme.sh --upgrade</code>              If it's still not working, please provide the log with <code class="notranslate">--debug 2</code>, otherwise, nobody can help you.</p>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />Reply to this email directly, <a href="https://github.com/acmesh-official/acme.sh/issues/4461#issuecomment-1375013828">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/A4RKTHDS2QWQDCTTKELAUETWRNVYNANCNFSM6AAAAAATU5DVDU">unsubscribe</a>.<br />You are receiving this because you are subscribed to this thread.<img src="https://github.com/notifications/beacon/A4RKTHAO7NSBZVHJA4LKVELWRNVYNA5CNFSM6AAAAAATU5DVDWWGG33NNVSW45C7OR4XAZNMJFZXG5LFINXW23LFNZ2KUY3PNVWWK3TUL5UWJTSR6UF4I.gif" height="1" width="1" alt="" /><span style="color: transparent; font-size: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message ID: <span>&lt;acmesh-official/acme</span><span>.</span><span>sh/issues/4461/1375013828</span><span>@</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/acmesh-official/acme.sh/issues/4461#issuecomment-1375013828",
+"url": "https://github.com/acmesh-official/acme.sh/issues/4461#issuecomment-1375013828",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+----==_mimepart_63bb74068689d_2d52c5bc7621d9--

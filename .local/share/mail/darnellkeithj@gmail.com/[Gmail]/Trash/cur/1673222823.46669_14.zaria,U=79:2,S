@@ -1,0 +1,902 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2439628mdb;
+        Sun, 8 Jan 2023 08:09:12 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXu4OfhRy/91QZi7Dwfujafv9v8Aoajhk6TgUsdtHSq4c24/vXj7FZTfu7Fr4k6E6CZE9YbC
+X-Received: by 2002:a05:622a:4807:b0:3a8:efd:2ef0 with SMTP id fb7-20020a05622a480700b003a80efd2ef0mr87884784qtb.60.1673194152315;
+        Sun, 08 Jan 2023 08:09:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673194152; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KLNgx7/EsmlNxMhto6kr7VEXhNxooiqsyVU0y2EBuQGEZwt7KLbIsZfLd8smILH3V6
+         cRZy4TNi63iO49p/5sf39aAv47B9fC448sxwr9x4tgcwJrs2Xxs4l8sadkmsMsXUIAW7
+         csObNkUteo7tdsTB6S22y0U+xMgIYXuzna3BmFNFF22CwR/4Zyex7GSIkkDkFJHHtz+T
+         H5yf0oUR6BUVc+1nOE0UPA6FWU8NdQtqOOqcqyn0Akk7eSxzQuNtTJeeMhVunTyKcvO0
+         2pCEumf4CX0AlaZUTJ8LnAx1U3digbIXkx6DS7x++ktVK8CQleWlYef7vvT24xdyvln0
+         VfHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id:list-id:reply-to
+         :mime-version:list-unsubscribe-post:list-unsubscribe:date:subject:to
+         :from:dkim-signature;
+        bh=qiY30FheUJbLfMSTnvqo4dmyAj81GBbgqQyt3fS/RRw=;
+        b=HB0N0OuhEkAJW1W3Hm8pvEuo14P0bRbC4gjSklVOugbCvIj25iQdBJsILoL7VltwDr
+         3ojrGqmUMHatZiIAY2Rl2V513AutPJ8KePQsolUuVav1ODhkfN/lQveL2vkJYYFhUFFT
+         ru56JODJz1dMawU+y+8IaLw3LZt+BMX3pgQtwyFCvqNHZ3kJ8cSTNIlJG1v2bAQqdHli
+         bmsOu/d6W7635omXglJGuD7LPk6dnjZ5i1wnQlKYV54oDe69TJoczPItz5lwA+Bhzswn
+         E67VSRA3ws/1yqLQLNMOxb9XRuJhYGbKwQAVyX8DBRiY2pXRawwkkj4i2jDjWbolJwLO
+         6nUg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@personalcapital.com header.s=200608 header.b=nG1gzGuh;
+       spf=pass (google.com: domain of bounce-231840_html-302903477-8611642-6424950-737481@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) smtp.mailfrom=bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=personalcapital.com
+Return-Path: <bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com>
+Received: from mta.email.personalcapital.com (mta.email.personalcapital.com. [198.245.83.86])
+        by mx.google.com with ESMTPS id p199-20020a3742d0000000b006feb000391fsi3152717qka.703.2023.01.08.08.09.12
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 08:09:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-231840_html-302903477-8611642-6424950-737481@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) client-ip=198.245.83.86;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@personalcapital.com header.s=200608 header.b=nG1gzGuh;
+       spf=pass (google.com: domain of bounce-231840_html-302903477-8611642-6424950-737481@bounce.email.personalcapital.com designates 198.245.83.86 as permitted sender) smtp.mailfrom=bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=personalcapital.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=personalcapital.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type:
+ Content-Transfer-Encoding; i=service@personalcapital.com;
+ bh=qiY30FheUJbLfMSTnvqo4dmyAj81GBbgqQyt3fS/RRw=;
+ b=nG1gzGuhGj232WJbuoD8tBbXM4PM0GHZ9bY1vFSPWmLM7tNmi1dKN3zn13dPvhbRkarTUDlEtWJp
+   YZA3QzoOn2eMpMr8Px1YRIjGHWVQR6zf3hEDcnKPsX7Ich0X2VuKIE1de7V9s20pxpd8GLlVhLOF
+   ipyeULDHwjD9jc4ibs8=
+Received: by mta.email.personalcapital.com id hnblag2fmd4g for <darnellkeithj@gmail.com>; Sun, 8 Jan 2023 16:09:08 +0000 (envelope-from <bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com>)
+From: "Personal Capital" <service@personalcapital.com>
+To: <darnellkeithj@gmail.com>
+Subject: You spent $328 less than this time last month. 0 charges this week.
+Date: Sun, 08 Jan 2023 10:09:08 -0600
+List-Unsubscribe: <https://click.email.personalcapital.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI2NDI0OTUwIiwicyI6IjMwMjkwMzQ3NyIsImxpZCI6IjIzMTg0MCIsImoiOiI4NjExNjQyIiwiamIiOiI3Mzc0ODEiLCJkIjoiNjAyMDYifQ.b2BbtOhxqrhpmTVks2AC5nP-tBMO7JmVoniM72QVaro>, <mailto:leave-fcb91673746c007d1a4c342838-fe2c1770776d047e711377-fe931c767465027977-fe91127477600d7875-fec1137372600c7c@leave.email.personalcapital.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Personal Capital" <service@personalcapital.com>
+List-ID: <6424007.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 6
+x-job: 6424950_8611642
+Message-ID: <bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com>
+X-Return-Path: bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com
+Feedback-ID: 6424950:8611642:198.245.83.86:sfmktgcld
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+X-TUID: F5+HnE1YmyZv
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:v="urn:schemas-microsoft-com:vml"  xmlns:o="urn:schemas-microsoft-com:office:office" lang="en" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<![endif]-->
+    <style type="text/css">
+      ReadMsgBody{width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0 !important;}
+      p {margin: 1em 0;}
+      table td {border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      a[x-apple-data-detectors] {color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important;}
+      td, p, a, span, img{font-family:'sofia-pro',Helvetica, Arial, sans-serif;font-size:16px; line-height: 24px;color:#000000;font-weight: 400;}
+      h1{font-family: 'clarendon-urw', Georgia, serif; font-size: 30px; line-height: 34px; color: #000000;font-weight:500;}
+   h2{font-family: 'clarendon-urw', Georgia, serif; font-size: 24px; line-height: 28px; color: #000000; font-weight:500;}
+   h3{font-family:'sofia-pro',Helvetica, Arial, sans-serif;font-size:18px; line-height: 22px;color:#000000;font-weight: 400;}
+   h4 {font-family: 'clarendon-urw', Georgia, serif; font-size: 18px; line-height: 22px; color: #000000; font-weight:500;}
+   p {margin:0;padding:0px;margin-bottom:20px;}
+   a {color:#1396B3; text-decoration: none;}
+   
+      @media screen {
+   @font-face {
+   font-family:'sofia-pro';
+   src:url('https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2');
+   font-display:auto;font-style:normal;font-weight:400;}
+
+   @font-face {
+   font-family:'sofia-pro';
+   src:url('https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2');
+   font-display:auto;font-style:normal;font-weight:700;}
+   
+  @font-face {
+  font-family:'clarendon-urw';
+  src:url('https://use.typekit.net/af/889892/0000000000000000000178e9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3') format('woff2');
+  font-display:auto;font-style:normal;font-weight:500;}
+  }
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 480px) {
+        .container {width: 100% !important;}
+        .footer {width:auto !important; margin-left:0;}
+        .mobile-hidden {display:none !important;}
+        .logo { display:block !important; padding:0 !important;}
+        img {max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important;max-height:auto !important;}
+        .photo img {width:100% !important;max-width:100% !important;height:auto !important;}
+        .drop {display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo {display:block !important; width: 100% !important;padding-top:15px;float:left;clear:both; }
+        .nav4, .nav5, .nav6 {display: none !important;}
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding:0 !important;}
+        .fluid, .fluid-centered {width: 100% !important; max-width: 100% !important; height: auto !important; margin-left: auto !important;margin-right: auto !important;}
+        .fluid-centered { margin-left: auto !important; margin-right: auto !important; }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+  body, .tb_properties{font-family:'sofia-pro',Helvetica, Arial,sans-serif !important; font-size: 16px !important; color: #000000 !important; line-height: 1.5 !important; padding: 0px !important; }
+  .buttonstyles{font-family:'sofia-pro',Helvetica, Arial,sans-serif !important; font-size: 16px !important; color: #FFFFFF !important; padding: 14px !important; }
+  a:not(.buttonstyles){line-height: 1.15 !important; }
+  .mobile-hidden{display: none !important; }
+  .responsive-td {width: 100% !important; display: block !important; padding: 0 !important;}
+  /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+  /*SS Modules */
+  .mw100 {max-width:100% !important;}
+     .w100 {width:100% !important;}
+     .w90{width:90%!important;}
+     .w320p {width: 330px !important;}
+     .txt-center {text-align: center !important;}
+     .mbl-center {margin:0 auto !important; float:none !important;text-align: center !important;}
+     .txt-40 {font-size: 40px !important; line-height: 44px !important;}
+      }
+      /* WHY ARE THESE NOT IN THE PARENT? WHY IS MOBILE HIDDEN HIDDEN FROM ALL? */
+      @media only screen and (max-width: 640px) {
+        .container {width:100% !important;}
+        .mobile-hidden {display:none !important;}
+        .logo {display:block !important;padding:0 !important;}
+        .photo img {width:100% !important;height:auto !important;}
+        .nav5, .nav6 {display: none !important;}
+        .fluid, .fluid-centered {width: 100% !important; max-width: 100% !important; height: auto !important; margin-left: auto !important; margin-right: auto !important;}
+        .fluid-centered {margin-left: auto !important;margin-right: auto !important;}
+      }
+    </style>
+<!--[if mso]><style type="text/css">body, table, td, p, a, span, h1, h2, h3 {font-family: Century Gothic, Arial, sans-serif !important;}</style><![endif]-->
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+  </head>
+  <body bgcolor="#F9F9F9" text="#000000" style="margin: 0px; -webkit-text-size-adjust:none;background-color : #F9F9F9; font-family : Arial, helvetica, sans-serif; line-height : 115%; font-size : 14px; color : #424242; padding : 0px; ">
+  
+ <div style="font-size:0; line-height:0;">
+ <img src="https://click.email.personalcapital.com/open.aspx?ffcb10-fe931c767465027977-fe281c72736402757d1570-fe91127477600d7875-fecd1673746c007d-fe2c1770776d047e711377-fec1137372600c7c&d=60206&bmt=0" width="1" height="1" alt="">
+ 
+ </div>
+  
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+ <tr>
+  <td align="center" valign="top"></td>
+ </tr>
+ <tr>
+  <td align="center">
+   <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+    <tr>
+     <td>
+      <!-- added the border style here -->
+      <table cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" width="100%" style="background-color : #FFFFFF; border : 0px;font-size : 14px; font-family : Arial, helvetica, sans-serif; line-height : 115%; color : #424242; " class="tb_properties">
+       <tr>
+        <td align="center" valign="top">
+         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <!-- added padding here -->
+           <td class="content_padding" style="border:0px;padding : 0px; ">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+             <tr>
+              <td align="left" class="header" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; border: 0px none transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner">
+</td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border: 0px none transparent; background-color: transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"><html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Domine:400,700&display=swap" rel="stylesheet">
+    <!-- CUSTOM STYLES -->
+
+    <style>
+    table.button:hover td {
+    background: #2795b6 !important;
+    }
+    table.button:visited td {
+    background: #2795b6 !important;
+    }
+    table.button:active td {
+    background: #2795b6 !important;
+    }
+    table.button:hover td a {
+    color: #fff !important;
+    }
+    table.button:visited td a {
+    color: #fff !important;
+    }
+    table.button:active td a {
+    color: #fff !important;
+    }
+    table.button:hover td {
+    background: #2795b6 !important;
+    }
+    table.tiny-button:hover td {
+    background: #2795b6 !important;
+    }
+    table.small-button:hover td {
+    background: #2795b6 !important;
+    }
+    table.medium-button:hover td {
+    background: #2795b6 !important;
+    }
+    table.large-button:hover td {
+    background: #2795b6 !important;
+    }
+    table.button:hover td a {
+    color: #ffffff !important;
+    }
+    table.button:active td a {
+    color: #ffffff !important;
+    }
+    table.button td a:visited {
+    color: #ffffff !important;
+    }
+    table.tiny-button:hover td a {
+    color: #ffffff !important;
+    }
+    table.tiny-button:active td a {
+    color: #ffffff !important;
+    }
+    table.tiny-button td a:visited {
+    color: #ffffff !important;
+    }
+    table.small-button:hover td a {
+    color: #ffffff !important;
+    }
+    table.small-button:active td a {
+    color: #ffffff !important;
+    }
+    table.small-button td a:visited {
+    color: #ffffff !important;
+    }
+    table.medium-button:hover td a {
+    color: #ffffff !important;
+    }
+    table.medium-button:active td a {
+    color: #ffffff !important;
+    }
+    table.medium-button td a:visited {
+    color: #ffffff !important;
+    }
+    table.large-button:hover td a {
+    color: #ffffff !important;
+    }
+    table.large-button:active td a {
+    color: #ffffff !important;
+    }
+    table.large-button td a:visited {
+    color: #ffffff !important;
+    }
+    table.secondary:hover td {
+    background: #d0d0d0 !important; color: #555;
+    }
+    table.secondary:hover td a {
+    color: #555 !important;
+    }
+    table.secondary td a:visited {
+    color: #555 !important;
+    }
+    table.secondary:active td a {
+    color: #555 !important;
+    }
+    table.success:hover td {
+    background: #457a1a !important;
+    }
+    table.alert:hover td {
+    background: #970b0e !important;
+    }
+      .pc-logo-image {
+        height: 48px;
+      }
+    </style>
+    <style type="text/css">
+    @media only screen and (max-width:480px) {
+      img {
+      width: auto !important; height: auto !important;
+      }
+      center {
+        min-width: 0 !important;
+      }
+      .container {
+        width: 100% !important;
+      }
+      .row {
+        width: 100% !important; display: block !important;
+      }
+      .wrapper {
+        display: block !important; padding-right: 0 !important;
+      }
+      .columns {
+        table-layout: fixed !important; float: none !important; width: 100% !important; padding-right: 0px !important; padding-left: 0px !important;
+      }
+      .column {
+        table-layout: fixed !important; float: none !important; width: 100% !important; padding-right: 0px !important; padding-left: 0px !important;
+      }
+      .wrapper.first .columns {
+        display: table !important;
+      }
+      .wrapper.first .column {
+        display: table !important;
+      }
+      table.columns td {
+        width: 100% !important;
+      }
+      table.column td {
+        width: 100% !important;
+      }
+      .columns .one {
+        width: 8.333333% !important;
+      }
+      .column td.one {
+        width: 8.333333% !important;
+      }
+      .columns td.two {
+        width: 16.666666% !important;
+      }
+      .column td.two {
+        width: 16.666666% !important;
+      }
+      .columns td.three {
+        width: 25% !important;
+      }
+      .column td.three {
+        width: 25% !important;
+      }
+      .columns td.four {
+        width: 33.333333% !important;
+      }
+      .column td.four {
+        width: 33.333333% !important;
+      }
+      .columns td.five {
+        width: 41.666666% !important;
+      }
+      .column td.five {
+        width: 41.666666% !important;
+      }
+      .columns td.six {
+        width: 50% !important;
+      }
+      .column td.six {
+        width: 50% !important;
+      }
+      .columns td.seven {
+        width: 58.333333% !important;
+      }
+      .column td.seven {
+        width: 58.333333% !important;
+      }
+      .columns td.eight {
+        width: 66.666666% !important;
+      }
+      .column td.eight {
+        width: 66.666666% !important;
+      }
+      .columns td.nine {
+        width: 75% !important;
+      }
+      .column td.nine {
+        width: 75% !important;
+      }
+      .columns td.ten {
+        width: 83.333333% !important;
+      }
+      .column td.ten {
+        width: 83.333333% !important;
+      }
+      .columns td.eleven {
+        width: 91.666666% !important;
+      }
+      .column td.eleven {
+        width: 91.666666% !important;
+      }
+      .columns td.twelve {
+        width: 100% !important;
+      }
+      .column td.twelve {
+        width: 100% !important;
+      }
+      td.offset-by-one {
+        padding-left: 0 !important;
+      }
+      td.offset-by-two {
+        padding-left: 0 !important;
+      }
+      td.offset-by-three {
+        padding-left: 0 !important;
+      }
+      td.offset-by-four {
+        padding-left: 0 !important;
+      }
+      td.offset-by-five {
+        padding-left: 0 !important;
+      }
+      td.offset-by-six {
+        padding-left: 0 !important;
+      }
+      td.offset-by-seven {
+        padding-left: 0 !important;
+      }
+      td.offset-by-eight {
+        padding-left: 0 !important;
+      }
+      td.offset-by-nine {
+        padding-left: 0 !important;
+      }
+      td.offset-by-ten {
+        padding-left: 0 !important;
+      }
+      td.offset-by-eleven {
+        padding-left: 0 !important;
+      }
+      table.columns td.expander {
+        width: 1px !important;
+      }
+      .right-text-pad {
+        padding-left: 10px !important;
+      }
+      .text-pad-right {
+        padding-left: 10px !important;
+      }
+      .left-text-pad {
+        padding-right: 10px !important;
+      }
+      .text-pad-left {
+        padding-right: 10px !important;
+      }
+      .hide-for-small {
+        display: none !important;
+      }
+      .show-for-desktop {
+        display: none !important;
+      }
+      .show-for-small {
+        display: inherit !important;
+      }
+      .hide-for-desktop {
+        display: inherit !important;
+      }
+      .unsubscribe .wrapper {
+        padding-top: 0 !important;
+      }
+      .panel {
+        padding: 10px !important;
+      }
+      .panel.title h2 {
+        font-size: 18px !important;
+      }
+      .teasers a {
+        width: 137px;
+      }
+      a.section-callout:first-child {
+        margin-top: 0 !important;
+      }
+      .section.company-details.top .panel {
+        padding-left: 10px !important; padding-right: 10px !important;
+      }
+      .section.holdings-performance .index-label {
+        padding-left: 10px !important; padding-right: 0px !important;
+      }
+      .section.holdings-performance .index-value {
+        padding-right: 10px !important;
+      }
+      .section.holdings-performance .indices td {
+        font-size: 12px !important;
+      }
+      .section.holdings-performance .first td.index-label {
+        font-size: 16px !important;
+      }
+      .section.holdings-performance .first td.index-value {
+        font-size: 16px !important;
+      }
+      .teaser-1-padding {
+          padding: 0 5px 0 10px !important;
+      }
+        .teaser-2-padding {
+            padding: 0px 10px 0 5px !important;
+        }
+        .teaser-3-padding {
+            padding: 10px 5px 0 10px !important
+        }
+        .teaser-4-padding {
+            padding: 10px 10px 0 5px !important;
+        }
+        .header img.pig-image {
+         /* width: 43px !important; */
+         height: 43px !important;
+          /* max-width: unset !important; */
+        }
+        .logo-image {
+          height: 43px !important;
+        }
+
+        .learn-more-table {
+            float: right;
+        }
+
+        .earn-more-td {
+          padding-top: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .learn-more-td {
+          padding-left: 0 !important;
+          padding-top: 0 !important;
+        }
+
+        .second-row-td {
+            padding-top: 0 !important;
+            padding-bottom: 5px !important;
+        }
+
+        .learn-more {
+            padding-top: 5px !important;
+        }
+
+        td.logo-tr,
+        td.pig-tr,
+        td.earn-more-td,
+        td.learn-more-td {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+      .table-container {
+        box-sizing: border-box;
+        border-left: solid 10px #333333;
+        border-right: solid 10px #333333;
+        background: white;
+        border-top: none !important;
+        padding-top: 3px !important;
+      }
+      .pc-logo-image {
+        height: 43px !important;
+        width: 100px !important;
+      }
+    }
+      @media only screen and (max-width: 350px) {
+        .earn-more-text {
+          font-size: 16px !important;
+        }
+      }
+
+      @font-face {
+        font-family:'clarendon-urw';
+        src:url('https://use.typekit.net/af/889892/0000000000000000000178e9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3') format('woff2');
+        font-display:auto;font-style:normal;font-weight:500;
+      }
+      </style>
+
+    </head>
+    <body>
+      <table class="body header" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: auto; width: 100%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #eef3f5; margin: 0; padding: 0;" bgcolor="#333333">
+          <tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+            <td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;">
+                <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;">
+                  <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+                    <table class="row section company-details top" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; background: #eef3f5; padding: 0px;" bgcolor="#333333">
+                      <tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+                        <td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+                            <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                              <tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+                                <td class="panel seven sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 58.333333%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 48px; font-size: 14px; background: #eef3f5; margin: 0; padding: 10px 0;" align="left" bgcolor="#eef3f5" valign="top">
+                                  <a href="https://click.email.personalcapital.com/?qs=15b5f4292473d170682235ffab1894eb0e41ee0b411b77b690e57147338e244788397d6017b3786fe99477542f7de64a34a8d47ff7a4f6b2" class="login" style="text-decoration: none;"><img class="pc-logo-image" src="https://www.personalcapital.com/static/images/ace/PC_EM_Logo_BG_Email.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-height: 48px; max-width: 112px; float: left; clear: both; padding: 0;" align="left"></a>
+                                </td>
+                                <td class="panel five sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 41.666666%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #eef3f5; margin: 0; padding: 10px 0;" align="left" bgcolor="#333333" valign="top">
+                                <table cellpadding="0" cellspacing="0" border="0" align="right" style="border-spacing: 0; border-collapse: collapse; margin: 7px 0 0; padding: 0;">
+                                  <tr>
+                                    <td class="action-button" style="padding: 5px 13px; background: black; margin: 2px 0 0; border-radius: 3px; vertical-align: middle;" align="center" valign="middle">
+                                      <a href="https://click.email.personalcapital.com/?qs=15b5f4292473d170682235ffab1894eb0e41ee0b411b77b690e57147338e244788397d6017b3786fe99477542f7de64a34a8d47ff7a4f6b2" class="login" style="color: #ffffff !important; text-decoration: none; float: right; font-size: 14px;">
+                                        <font color="white">Sign In</font>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                      <table class="row section teasers" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; margin: 0 0 20px 0; max-width: 580px; padding: 0px;">
+                        <tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+                          <td class="wrapper" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+                            <table class="six columns top" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 290px; margin: 0 auto; padding: 0;">
+                              <tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+                                <td class="six sub-columns teaser-1-padding" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 50%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 10px 0 0px;" align="left" valign="top">
+                                  <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin: 0; padding: 0;">
+                                    <tr>
+                                      <td style="background: #c4cacc; height: 120px; padding:0;">
+                                        <a class="teaser charges" href="https://click.email.personalcapital.com/?qs=15b5f4292473d170dba841656404c8b41d1642ca23bcc05a9a5b65d90e363c30029092f949efde529032ddd49a550991ca803346af3d89b9" style="color: #fff; text-decoration: none; width: 137px; height: 120px; background: #F95609;">
+                                          <p style="color: black; font-weight: normal; text-align: left; line-height: 1.2; font-size: 18px; margin: 0 10px 10px 10px; padding-top: 10px;" align="left">0 charges this week on your credit cards &raquo;</p>
+                                        </a>
+                                  </td></tr></table>
+                                </td>
+                                <td class="six sub-columns teaser-2-padding" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 50%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 10px 0 0px;" align="left" valign="top">
+                                  <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin: 0; padding: 0;">
+                                    <tr>
+                                      <td style="background: #c4cacc; height: 120px; padding:0;">
+                                        <a class="teaser holdings" href="https://click.email.personalcapital.com/?qs=15b5f4292473d17079554c5d6fc8b25d8ce15529aa5b69f21b6f99eee45147315e85023c8d0fee5ffc5bf85716e2f91de31317a603dd05e6" style="color: #fff; text-decoration: none; width: 137px; height: 120px; background: #3E8CE1;">
+                                          <p style="color: black; font-weight: normal; text-align: left; line-height: 1.2; font-size: 18px; margin: 0 10px 10px 10px; padding-top: 10px;" align="left">Your holdings rose 3.96% this week &raquo;</p>
+                                        </a>
+                                        </td></tr>
+                                  </table>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        <td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0 0px 0 0;" align="left" valign="top">
+                          <table class="six columns bottom" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 290px; margin: 0 auto; padding: 0;">
+                            <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="six sub-columns teaser-3-padding bottom-teaser-padding" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 50%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 10px 0 0px;" align="left" valign="top">
+                                  <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin: 0; padding: 0;"><tr><td style="background: #c4cacc; height: 120px; padding:0;"><a class="teaser notifications" href="https://click.email.personalcapital.com/?qs=15b5f4292473d17094c007cfc905237f3bb0a76e1f121962cbfdb5ba6437299cbdddeb1e6ec74e2961933a4d1555ffff1338299f5ba1dcdd" style="color: #fff; text-decoration: none; width: 137px; height: 120px; background: #ED2041;"><p style="color: black; font-weight: normal; text-align: left; line-height: 1.2; font-size: 18px; margin: 0 10px 10px 10px; padding-top: 10px;" align="left">You have 0 unread notifications &raquo;</p></a></td></tr></table>
+                                </td>
+                                <td class="six sub-columns teaser-4-padding bottom-teaser-padding" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 50%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 0;" align="left" valign="top">
+                                  <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin: 0; padding: 0;"><tr><td style="background: #c4cacc; height: 120px; padding:0;"><a class="teaser net-worth" href="https://click.email.personalcapital.com/?qs=15b5f4292473d17045c813948f80b3de51ec658ff222d765223c33bdbd6c0dca9a4f63830522330b1a1a5e07c5fbad2f7577c731aae550b7" style="color: #fff; text-decoration: none; width: 137px; height: 120px; background: #48CB93;"><p style="color: black; font-weight: normal; text-align: left; line-height: 1.2; font-size: 18px; margin: 0 10px 10px 10px; padding-top: 10px;" align="left">Your net worth stayed flat this week &raquo;</p></a></td></tr></table>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr></table></td>
+                      </tr></table><!-- container end below --></td>
+                </tr></table>
+          </td>
+        </tr></table><table class="body main" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: 100%; width: 100%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: white; margin: 0; padding: 0;" bgcolor="#F1F1F1"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;">
+              <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+
+                    <div style="margin: 20px 0;"><a class="section-callout middle" href="https://click.email.personalcapital.com/?qs=beb00943e56f0d2c80d46ff733f910561375d63a809b32ac366113e525d1a32735bafb138bc8b7a7e1b253ae941c18e032c8be0b72d6cb2c" style="color: #fff; text-decoration: none;"><table class="row section spending" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+<td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+
+                            <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel title" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #dae0e2; margin: 0; padding: 10px 20px;" align="left" bgcolor="#FD7424" valign="top">
+                                  <h2 style="color: black; font-family: 'clarendon-urw', 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: 600; text-align: left; line-height: 1.3; word-break: normal; font-size: 20px; margin: 0; padding: 0;" align="left">Your Spending vs. Last Month »</h2>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="content" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 0px 0px 10px;" align="left" bgcolor="#fff" valign="top">
+                                  <img src="https://img.personalcapital.com/spendingChart/type-spendingChart-2cde0447-509c-4cf6-8469-0c5079b736ff-processtime-2023_01_08_07_47_39_PST.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: left; clear: both;" align="left"></td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel summary" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px;" align="left" bgcolor="#fff" valign="top">
+                                  <p style="color: #666; font-weight: normal; text-align: left; line-height: 1.3; font-size: 16px; margin: 0 0 10px; padding: 0;" align="left">You spent $0 this week, bringing this month's spending to $328 less than this time last month. Your cash flow is $0 so far this year.</p>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr></table></td>
+                        </tr></table></a></div>
+                    
+
+                    <div style="margin: 40px 0;"><a class="section-callout middle" href="https://click.email.personalcapital.com/?qs=beb00943e56f0d2ca01fae200cc292287b23e9a9c2b8e147c71ca9d940952ef8ec483ff0f5f87f31e70a57dcc39ab010bd15773d3299682f" style="color: #fff; text-decoration: none;"><table class="row section holdings-performance" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+<td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+
+                            <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="content" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 0;" align="left" bgcolor="#fff" valign="top">
+
+                                  <table class="indices" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="six sub-columns you-index" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; color: #fff; font-weight: normal; line-height: 19px; font-size: 14px; width: 50%; margin: 0; padding: 0 2px 0 0;" align="left" valign="top">
+                                        <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; background: #0047bb; padding: 0;" bgcolor="#3E8CE1"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #fff; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 0px 0px 20px;" align="left" valign="top">You Index™</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: #fff; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 20px 0px 0;" align="right" valign="top">+3.96%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 20px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #fff; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px 20px;" align="left" valign="top">YTD</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: #fff; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 20px 10px 0;" align="right" valign="top">+3.96%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr></table></td>
+                                      <td class="six sub-columns last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; color: #fff; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; width: 50%; margin: 0; padding: 0 0px 0 0;" align="left" valign="top">
+                                        <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; background: #eef3f5; padding: 0;" bgcolor="#666"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 0px 0px 20px;" align="left" valign="top">US Stock</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 20px 0px 0;" align="right" valign="top">+1.49%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 20px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px 20px;" align="left" valign="top">YTD</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 20px 10px 0;" align="right" valign="top">+1.49%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr></table></td>
+                                      <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                    </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="six sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; color: black; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; width: 50%; margin: 0; padding: 2px 2px 0 0;" align="left" valign="top">
+                                        <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; background: #eef3f5; padding: 0;" bgcolor="#666"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 0px 0px 20px;" align="left" valign="top">Foreign</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 20px 0px 0;" align="right" valign="top">+4.07%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 20px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px 20px;" align="left" valign="top">YTD</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 20px 10px 0;" align="right" valign="top">+4.07%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr></table></td>
+                                      <td class="six sub-columns last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; color: #fff; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; width: 50%; margin: 0; padding: 2px 0px 0 0;" align="left" valign="top">
+                                        <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; background: #eef3f5; padding: 0;" bgcolor="#666"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 0px 0px 20px;" align="left" valign="top">US Bond</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: 600; line-height: 19px; font-size: 20px; margin: 0; padding: 10px 20px 0px 0;" align="right" valign="top">+2.17%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 20px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="index-label" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px 20px;" align="left" valign="top">YTD</td>
+                                            <td class="index-value" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; color: black; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 20px 10px 0;" align="right" valign="top">+2.17%</td>
+                                            <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                          </tr></table></td>
+                                      <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                    </tr></table></td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+                                  <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel summary" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px;" align="left" bgcolor="#fff" valign="top">
+<p style="color: #666; font-weight: normal; text-align: left; line-height: 1.3; font-size: 16px; margin: 0 0 10px; padding: 0;" align="left">Your current holdings rose 3.96% this week and are up 3.96% if held since the beginning of the year.</p></td>
+                                      <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                    </tr></table></td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr></table></td>
+                        </tr></table></a></div>
+                    
+
+                    <div style="margin: 40px 0;"><a class="section-callout" href="https://click.email.personalcapital.com/?qs=c1c2802132ab55cf0d2b096ca8544aba5123dfe7d82370f7af2ff3fb46104b4b96d25031b81f4cc681378234278324bc4cc385ddae08dedf487b9dcdb5706409" style="color: #fff; text-decoration: none;"><table class="row section weekly-commentary" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0 0px 0px;" align="left" valign="top">
+
+                      <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel title" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #dae0e2; margin: 0; padding: 10px 20px;" align="left" bgcolor="#666" valign="top">
+                                <h2 style="color: black; font-family: 'clarendon-urw', 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: 600; text-align: left; line-height: 1.3; word-break: normal; font-size: 20px; margin: 0; padding: 0;" align="left">Dividend Yield &raquo;</h2>
+                              </td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                            </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="content" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 0px 0px 10px; max-width: 600px;" align="left" bgcolor="#fff" valign="top">
+                                <img src="https://www.personalcapital.com/blog/wp-content/uploads/2022/06/what-is-dividend-yield.png" width="600" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto !important; max-width: 100% !important; float: left; clear: both; display: block;" align="left"></td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                            </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel summary" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px;" align="left" bgcolor="#fff" valign="top">
+                                <p style="color: #666; font-weight: normal; text-align: left; line-height: 19px; font-size: 16px; margin: 0 0 10px; padding: 0;" align="left">A dividend yield measures a company's annual distributions, relative to the market. This ratio helps investors compare investments across companies.</p>
+                              </td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                            </tr></table></td>
+                      </tr></table></a></div>
+
+                    <div style="margin: 40px 0;"><a class="section-callout middle" href="https://click.email.personalcapital.com/?qs=beb00943e56f0d2c831707e323e72e0d7e294c6cd50139751cbae03ca6a83b68896b8ba70ec0833bb5bda1bc79d3bf1046b66a343ff73a9b" style="color: #fff; text-decoration: none; display: block;"><table class="row section accounts-need-attention" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+<td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+
+                            <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel title" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #dae0e2; margin: 0; padding: 10px 20px;" align="left" bgcolor="#ED2041" valign="top">
+                                  <h2 style="color: black; font-family: 'clarendon-urw', 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: 600; text-align: left; line-height: 1.3; word-break: normal; font-size: 20px; margin: 0; padding: 0;" align="left">Accounts That Need Attention »</h2>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="content" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 0px 0px 10px;" align="left" bgcolor="#fff" valign="top">
+                                  <table class="accounts-list" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; padding: 0;">
+                                    <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="list-item" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0px 0px 0;" align="left" valign="top">
+                                          <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; border-bottom-color: #666; border-bottom-width: 1px; border-bottom-style: dotted; padding: 0;"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel product-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #000; font-weight: bold; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 10px 20px 0;" align="left" bgcolor="#fff" valign="top">US Bank</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px 0;" align="right" bgcolor="#fff" valign="top">Last Update</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel account-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="left" bgcolor="#fff" valign="top">Checking - Ending in 0497</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="right" bgcolor="#fff" valign="top">12/10/22</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr></table></td>
+                                      </tr>
+                                    
+                                    <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+                                          <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; border-bottom-color: #666; border-bottom-width: 1px; border-bottom-style: dotted; padding: 0;"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel product-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #000; font-weight: bold; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 10px 20px 0;" align="left" bgcolor="#fff" valign="top">US Bank</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px 0;" align="right" bgcolor="#fff" valign="top">Last Update</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel account-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="left" bgcolor="#fff" valign="top">Credit Card - Ending in 0852</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="right" bgcolor="#fff" valign="top">12/10/22</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr></table></td>
+                                      </tr>
+                                    
+                                    <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+                                          <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; border-bottom-color: #666; border-bottom-width: 1px; border-bottom-style: dotted; padding: 0;"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel product-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #000; font-weight: bold; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 10px 20px 0;" align="left" bgcolor="#fff" valign="top">Fidelity Investments</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px 0;" align="right" bgcolor="#fff" valign="top">Last Update</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel account-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="left" bgcolor="#fff" valign="top">Individual - Ending in 0581</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="right" bgcolor="#fff" valign="top">11/28/22</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr></table></td>
+                                      </tr>
+                                    
+                                    <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+                                          <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; border-bottom-color: #666; border-bottom-width: 1px; border-bottom-style: dotted; padding: 0;"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel product-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #000; font-weight: bold; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 10px 20px 0;" align="left" bgcolor="#fff" valign="top">Fidelity Investments</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px 0;" align="right" bgcolor="#fff" valign="top">Last Update</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel account-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="left" bgcolor="#fff" valign="top">Individual - Ending in 4747</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="right" bgcolor="#fff" valign="top">11/28/22</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr></table></td>
+                                      </tr>
+                                    
+                                    <tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+                                          <table style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; border-bottom-color: #666; border-bottom-width: 1px; border-bottom-style: dotted; padding: 0;"><tr class="first" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel product-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #000; font-weight: bold; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 10px 20px 0;" align="left" bgcolor="#fff" valign="top">Fidelity Investments</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px 0;" align="right" bgcolor="#fff" valign="top">Last Update</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr><tr class="second" style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="eight sub-columns panel account-name" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 66.666666%; color: #666; font-weight: normal; line-height: 19px; font-size: 16px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="left" bgcolor="#fff" valign="top">Individual - Ending in 6054</td>
+                                              <td class="four sub-columns panel last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: right; min-width: 0px; width: 33.333333%; color: #666; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 2px 20px 10px;" align="right" bgcolor="#fff" valign="top">11/28/22</td>
+                                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #666; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 16px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                            </tr></table></td>
+                                      </tr>
+                                    
+                                    
+                                  </table></td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel summary" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 10px 20px;" align="left" bgcolor="#fff" valign="top">
+                                  <p style="color: #666; font-weight: normal; text-align: left; line-height: 1.3; font-size: 16px; margin: 0 0 10px; padding: 0;" align="left">	We need your help to get the latest information from these accounts, so you can have the clearest picture of your finances.</p>
+                                </td>
+                                <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                              </tr></table></td>
+                        </tr></table></a></div>
+                    
+
+
+
+                    <div style="margin: 40px 0 0;"><table class="row section company-details" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; display: block; background: #233038; padding: 0px;" bgcolor="#233038"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+
+                          <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel seven sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 58.333333%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #233038; margin: 0; padding: 10px 20px;" align="left" bgcolor="#333333" valign="top">
+                                <p class="org-name" style="color: #fff; font-weight: bold; text-align: left; line-height: 14px; font-size: 12px; margin: 0; padding: 0;" align="left">Personal Capital</p>
+                                <p class="org-address" style="color: #fff; font-weight: normal; text-align: left; line-height: 14px; font-size: 12px; margin: 0; padding: 0;" align="left">3 Lagoon Drive Suite 200, Redwood City, CA 94065</p>
+                              </td>
+                              <td class="panel five sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 41.666666%; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #233038; margin: 0; padding: 10px 20px;" align="left" bgcolor="#333333" valign="top">
+                                <table cellpadding="0" cellspacing="0" border="0" align="right" style="border-spacing: 0; border-collapse: collapse; margin: 0; padding: 0;"><tr><td style="padding: 5px 10px; background: #00cfff; margin: 2px 0 0; border-radius: 3px; vertical-align: middle;" align="center" valign="middle"><a href="https://click.email.personalcapital.com/?qs=15b5f4292473d170682235ffab1894eb0e41ee0b411b77b690e57147338e244788397d6017b3786fe99477542f7de64a34a8d47ff7a4f6b2" class="login" style="color: black !important; text-decoration: none; float: right; font-size: 14px; white-space: nowrap;"><font color="black">Sign In</font></a>
+                                </td></tr></table>
+                              </td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                            </tr></table></td>
+                      </tr></table></div><!-- container end below --></td>
+                </tr></table>
+          </td>
+        </tr></table><table class="body footer" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: auto; width: 100%; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; background:  #eef3f5; margin: 0; padding: 0;" bgcolor="#333333"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;">
+              <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 600px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
+
+                    <table class="row section unsubscribe" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; display: block; margin-bottom: 40px; background: #233038; padding: 0px;" bgcolor="#4D4D4D"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper left" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 10px 0px 0px;" align="left" valign="top">
+
+                          <table class="" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: transparent; margin: 0; padding: 10px 0 10px 20px;" align="left" bgcolor="transparent" valign="top">
+                                <p style="color: #fff; font-weight: normal; text-align: left; line-height: 14px; font-size: 12px; margin: 0 0 10px; padding: 0;" align="left">Too much email? Change your <a href="https://click.email.personalcapital.com/?qs=15b5f4292473d1709b52b9d71d60b8a77fd4421a7ddca3461403c65d07d41d99380d1fe93300603e995b4974023b743d3d4cdf877602d022931b8e1a8d19e604"  class="link" style="color: #fff; text-decoration: none; border-bottom-color: #fff; border-bottom-width: 1px; border-bottom-style: dotted; font-size: 12px;">email preferences</a> or manage <a href="https://click.email.personalcapital.com/?qs=15b5f4292473d170d55e01cdb98b6fce5e42ce4f7c5b73cde15879cb7277d0568d0363bdf3fa74c831184c4684bf22e95ba8b50e7182d248187478d6ccf99b5c"  class="link" style="color: #fff; text-decoration: none; border-bottom-color: #fff; border-bottom-width: 1px; border-bottom-style: dotted; font-size: 12px;">subscription</a>.</p>
+                              </td>
+                              <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                            </tr></table></td>
+                        <td class="wrapper last right" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="left" valign="top">
+
+                            <table class="six columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 280px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+                                  <td class="panel twelve sub-columns" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 100%; color: #222222; font-weight: normal; line-height: 19px; font-size: 14px; background: transparent; margin: 0; padding: 10px 20px 10px 0px;" align="left" bgcolor="transparent" valign="top">
+                                    <img class="advisor-image" src="https://home.personalcapital.com/advisor/images/005F00000047Pseudo.jpg" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 50px; float: left; display: block; padding-right: 10px;" align="left" bgcolor="transparent" valign="top">
+                                    <p style="color: #fff; font-weight: normal; text-align: left; line-height: 14px; font-size: 12px; margin: 0 0 10px; padding: 0;" align="left">Have a question? <a href="https://click.email.personalcapital.com/?qs=15b5f4292473d1700e050016300fe0493aa558b4fb262eb0d0242790c8fdade967d98585d1b275745ef530d63bb1e82925064f133a79384c14df6a2373a1c96d" class="link" style="color: #fff; text-decoration: none; border-bottom-color: #fff; border-bottom-width: 1px; border-bottom-style: dotted; font-size: 12px;">Schedule a call</a> with your advisor, Kyle Ryan, to discuss a strategic approach to your finances.</p>
+                                  </td>
+                                  <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                                </tr></table></td>
+                        
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Avenir', 'Tahoma', 'Geneva', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table><!-- container end below --></td>
+                </tr></table>
+          </td>
+        </tr></table><img src="https://click.email.personalcapital.com/open.aspx?ffcb10-fe931c767465027977-fe281c72736402757d1570-fe91127477600d7875-fecd1673746c007d-fe2c1770776d047e711377-fec1137372600c7c&d=60206&bmt=0" width="1" height="1" alt="">
+
+    </custom>
+
+
+
+
+    
+<!--
+X-Return-Path: bounce-231840_HTML-302903477-8611642-6424950-737481@bounce.email.personalcapital.com
+-->
+</body>
+    </html></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; border: 0px solid transparent; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="" valign="top">
+                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #F9F9F9; min-width: 100%; " class="slot-styling"><tr><td style="padding: 0px; " class="slot-styling camarker-inner"></td></tr></table>
+                                  
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

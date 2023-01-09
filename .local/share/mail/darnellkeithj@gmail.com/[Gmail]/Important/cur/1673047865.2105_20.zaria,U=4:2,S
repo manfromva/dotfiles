@@ -1,0 +1,342 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp661618mdb;
+        Thu, 5 Jan 2023 15:24:37 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXthRZsub7YwYjWH/0UPGn7UsdR8FTIMWzePAEuuZ0xTJilwFHFPCoRqcAzvCKB5//le2Pf1
+X-Received: by 2002:a05:6214:350b:b0:4bb:6b75:bf98 with SMTP id nk11-20020a056214350b00b004bb6b75bf98mr18109801qvb.31.1672961076945;
+        Thu, 05 Jan 2023 15:24:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1672961076; cv=none;
+        d=google.com; s=arc-20160816;
+        b=IwCqgCrQj97z6eix3CW0FXI47M/XKdd7kEBFnIjkE4RpkEi5oPAE8wtyKcAXPQKnV6
+         vxKhq9b5Frm9GGvFzqI9Xvn+a9/8S4ZLJChYNphc71FXuBk9xfUPJ9bfiIzltONdwW1E
+         vtrXxA3v9+VRWmkNb/X0LBmMJTMfD/Dl6AVZwLT95PSBmi+FuNFD7Ict8vntB2xcAKEE
+         w5Zt5W8sOK2e1BvB3bLFuQkP3GUo8bH3aSnS4X9Uv46WwOVOzLbI6Elz5//A9JemC6sl
+         JzlXPVjy8eLVjBFSpZ7/fWvScujXc1w0tmGdDTn70aV0NNqzBeCR6IjORr5Y4clsBwPY
+         i2Aw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:references:message-id:subject:date:mime-version:from
+         :content-transfer-encoding:dkim-signature;
+        bh=8Gd00RN2or6hrzsP/fdZWp7Fw6dx0YK9y5x3pKXJDE0=;
+        b=JEwNFaM7+i112TXS+47Eqf5ZoFc0lm+j0fyBlX7Mhq3d1cIoNx1IpDR2TteZZ0EyZR
+         vt3ghqQ9avDO4qjHUy0O4m5taGukabM75pJg3T4Kns0Jis9AqNFzyMwq/4nZ3xbHAbJF
+         Mypvc8HonzbcVnnyPl+RHSoOp7+2J+/tfpfcWtgGUay7uWtdlFru81BONptbIErDfJYS
+         zOaPWTYSI+ma6gACbx5ESsD/2Ofw1j731JfcEqSQH4DxhoHeM6osm/sKvxnoZ3zpPYri
+         ncgFxJqf1nAWUclrYGAX0OIEnS5IJKKHGzrUBLjCwt/4iu/C6WLRXtkUrdYbjS94gSLm
+         rcIQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@manfromva.com header.s=mail header.b=IEDdlG19;
+       spf=none (google.com: manfromva.com does not designate permitted sender hosts) smtp.mailfrom=darnell@manfromva.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=manfromva.com
+Return-Path: <darnell@manfromva.com>
+Received: from mail.manfromva.com (mail.manfromva.com. [137.184.133.18])
+        by mx.google.com with ESMTPS id jv5-20020a05621429e500b004c6ae1ac3b5si20439094qvb.486.2023.01.05.15.24.36
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 05 Jan 2023 15:24:36 -0800 (PST)
+Received-SPF: none (google.com: manfromva.com does not designate permitted sender hosts) client-ip=137.184.133.18;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@manfromva.com header.s=mail header.b=IEDdlG19;
+       spf=none (google.com: manfromva.com does not designate permitted sender hosts) smtp.mailfrom=darnell@manfromva.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=manfromva.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=manfromva.com;
+	s=mail; t=1672961076;
+	bh=YT3GPHOj7S3Y0TM0CqTmAF8eWvha7GNAdp/TdkW90tY=;
+	h=From:Date:Subject:References:To:From;
+	b=IEDdlG19oeuCs+4jcFKnD79Jy81jFqfK00BI6woEqDnRY66Frzi3ywlv5QwdAhCBy
+	 z7WbHFp0eKchKCIHlEY0eb3XAQ1x5y3oBNn9uTlsCy+IrgjVT9IayUnRk5QiMoATbD
+	 Z7fmICXjesKIMyC99hHAYRpY8KhzNhZM1W4n9nqPJQflkWNbe1nThZFI9SxDjrBgf1
+	 T2zY7GrdKaP9ZNDxKEkS616Z+Spw4eoDA2DpUiq6evyO/46V+8LhXETliicd+aAo/U
+	 6kqplRMCia4bTR0sJ/SYPj1q6j7yRbCE/iLNw0ZrPwJ0kQ3+U1uzeQMWJPjDwbQQT+
+	 HrizxAQGW7W6g==
+Received: from authenticated-user (mail.manfromva.com [137.184.133.18])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPSA id 32EACBF0B3
+	for <darnellkeithj@gmail.com>; Thu,  5 Jan 2023 18:24:36 -0500 (EST)
+Content-Type: multipart/alternative; boundary=Apple-Mail-F089F570-ECB7-45B7-B773-3AF36433FABC
+Content-Transfer-Encoding: 7bit
+From: Darnell Keith <darnell@manfromva.com>
+Mime-Version: 1.0
+Date: Thu, 5 Jan 2023 18:24:24 -0500
+Subject: Fwd: [Authelia] Register your mobile
+Message-Id: <1C07750E-7DDA-4126-B138-F9B1CD4246E1@manfromva.com>
+References: <63b75b17.050a0220.4d931.9359@mx.google.com>
+To: Darnell Keith <darnellkeithj@gmail.com>
+X-TUID: jb8gm4Klfu0v
+
+
+--Apple-Mail-F089F570-ECB7-45B7-B773-3AF36433FABC
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto"><br><br><div dir=3D"ltr">Sent from my iPhon=
+e</div><div dir=3D"ltr"><br>Begin forwarded message:<br><br></div><blockquot=
+e type=3D"cite"><div dir=3D"ltr"><b>From:</b> darnellkeithj@gmail.com<br><b>=
+Date:</b> January 5, 2023 at 6:19:58 PM EST<br><b>To:</b> darnell@manfromva.=
+com<br><b>Subject:</b> <b>[Authelia] Register your mobile</b><br><br></div><=
+/blockquote><blockquote type=3D"cite"><div dir=3D"ltr">=EF=BB=BF
+
+
+
+   <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=
+
+   <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+   <title>Authelia</title>
+
+  =20
+
+
+
+   <!-- Start of header -->
+   <table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" id=3D"backgroundTable" st-sortable=3D"header">
+      <tbody>
+         <tr>
+            <td>
+               <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" align=3D"center" class=3D"devicewidth">
+                  <tbody>
+                     <tr>
+                        <td width=3D"100%">
+                           <table width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" align=3D"center" class=3D"devicewidth">
+                              <tbody>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td height=3D"20" style=3D"font-size:1px=
+; line-height:1px; mso-line-height-rule: exactly;">&nbsp;
+                                    </td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td>
+                                       <!-- logo -->
+                                       <table width=3D"140" align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"devicewidth">
+                                          <tbody>
+                                             <tr>
+                                                <td width=3D"300" height=3D"=
+50" align=3D"center">
+                                                   <h1>Register your mobile<=
+/h1>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of logo -->
+                                    </td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td height=3D"20" style=3D"font-size:1px=
+; line-height:1px; mso-line-height-rule: exactly;">&nbsp;
+                                    </td>
+                                 </tr>
+                                 <!-- Spacing -->
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of Header -->
+   <!-- Start of separator -->
+   <table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" id=3D"backgroundTable" st-sortable=3D"separator">
+      <tbody>
+         <tr>
+            <td>
+               <table width=3D"600" align=3D"center" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" class=3D"devicewidth">
+                  <tbody>
+                     <tr>
+                        <td align=3D"center" height=3D"20" style=3D"font-siz=
+e:1px; line-height:1px;">&nbsp;</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of separator -->
+   <!-- Start Full Text -->
+   <table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" id=3D"backgroundTable" st-sortable=3D"full-text">
+      <tbody>
+         <tr>
+            <td>
+               <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" align=3D"center" class=3D"devicewidth">
+                  <tbody>
+                     <tr>
+                        <td width=3D"100%">
+                           <table width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" align=3D"center" class=3D"devicewidth">
+                              <tbody>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td height=3D"20" style=3D"font-size:1px=
+; line-height:1px; mso-line-height-rule: exactly;">&nbsp;
+                                    </td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td>
+                                       <table width=3D"560" align=3D"center"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"devicewidthinner"=
+>
+                                          <tbody>
+                                             <!-- Title -->
+                                             <tr>
+                                                <td style=3D"font-family: He=
+lvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:cent=
+er; line-height: 30px;" st-title=3D"fulltext-content">
+                                                   Hi=20
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td style=3D"font-family: He=
+lvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:cent=
+er; line-height: 30px;" st-title=3D"fulltext-content">
+                                                   This email has been sent t=
+o you in order to validate your identity.
+                                                   If you did not initiate t=
+he process your credentials might have been compromised. You should reset yo=
+ur password and contact an administrator.
+                                                </td>
+                                             </tr>
+                                             <!-- End of Title -->
+                                             <!-- spacing -->
+                                             <tr>
+                                                <td width=3D"100%" height=3D=
+"20" style=3D"font-size:1px; line-height:1px; mso-line-height-rule: exactly;=
+">
+                                                   &nbsp;</td>
+                                             </tr>
+                                             <!-- End of spacing -->
+                                             <!-- content -->
+                                             <tr>
+                                                <td style=3D"font-family: He=
+lvetica, arial, sans-serif; font-size: 16px; color: #666666; text-align:cent=
+er; line-height: 30px;" st-content=3D"fulltext-content">
+                                                   <a href=3D"https://auth.m=
+anfromva.com/one-time-password/register?token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6=
+IkpXVCJ9.eyJpc3MiOiJBdXRoZWxpYSIsImV4cCI6MTY3Mjk2MTA5MCwiaWF0IjoxNjcyOTYwNzk=
+wLCJqdGkiOiIyY2NjNDUzNi0xZDBhLTRmMTYtYTIwNy03ZjZkZjlhYjk2MGIiLCJhY3Rpb24iOiJ=
+SZWdpc3RlclRPVFBEZXZpY2UiLCJ1c2VybmFtZSI6ImRhcm5lbGwifQ.BXNhmqIAlOunjCUuAa0A=
+sG2LmXuO8M3ZXP8QbygdeE8" class=3D"button">Register</a>
+                                                </td>
+                                             </tr>
+                                             <!-- End of content -->
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of full text -->
+   <!-- Start of separator -->
+   <table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" id=3D"backgroundTable" st-sortable=3D"separator">
+      <tbody>
+         <tr>
+            <td>
+               <table width=3D"600" align=3D"center" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" class=3D"devicewidth">
+                  <tbody>
+                     <tr>
+                        <td align=3D"center" height=3D"30" style=3D"font-siz=
+e:1px; line-height:1px;">&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td width=3D"550" align=3D"center" height=3D"1" bgco=
+lor=3D"#d1d1d1" style=3D"font-size:1px; line-height:1px;">&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td align=3D"center" height=3D"30" style=3D"font-siz=
+e:1px; line-height:1px;">&nbsp;</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of separator -->
+   <!-- Start of Postfooter -->
+   <table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" id=3D"backgroundTable" st-sortable=3D"postfooter">
+      <tbody>
+         <tr>
+            <td>
+               <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" align=3D"center" class=3D"devicewidth">
+                  <tbody>
+                     <tr>
+                        <td width=3D"100%">
+                           <table width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" align=3D"center" class=3D"devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td align=3D"center" valign=3D"middle" s=
+tyle=3D"font-family: Helvetica, arial, sans-serif; font-size: 14px;color: #6=
+66666" st-content=3D"postfooter">
+                                       Please contact an administrator if yo=
+u did not initiate this process.
+                                    </td>
+                                 </tr>
+                                <!-- spacing -->
+                                <tr>
+                                    <td width=3D"100%" height=3D"20" style=3D=
+"font-size:1px; line-height:1px; mso-line-height-rule: exactly;">
+                                        &nbsp;</td>
+                                </tr>
+                                <!-- End of spacing -->
+								 <tr>
+									<td=
+ style=3D"font-family: Helvetica, arial, sans-serif; font-style: italic; fon=
+t-size: 12px; color: #333333; text-align:center; line-height: 30px;" st-titl=
+e=3D"fulltext-content">
+									   T=
+his email was generated by a request from the IP address 68.0.214.236.
+									</t=
+d>
+								 </tr>
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td width=3D"100%" height=3D"20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of postfooter -->
+
+
+
+</div></blockquote></body></html>=
+
+--Apple-Mail-F089F570-ECB7-45B7-B773-3AF36433FABC--

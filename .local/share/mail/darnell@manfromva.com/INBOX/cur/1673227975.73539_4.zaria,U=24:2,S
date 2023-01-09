@@ -1,0 +1,146 @@
+Return-Path: <noreply@github.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id P7JeC21uu2OKRicAdh2gHA
+	(envelope-from <noreply@github.com>)
+	for <darnell@manfromva.com>; Sun, 08 Jan 2023 20:31:25 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DMARC_PASS,HTML_IMAGE_ONLY_16,HTML_MESSAGE,
+	MAILING_LIST_MULTI,RCVD_IN_DNSWL_MED,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,
+	SPF_PASS,T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Report: 
+	* -0.1 DMARC_PASS DMARC check passed
+	* -0.1 SPF_PASS SPF check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  1.0 HTML_IMAGE_ONLY_16 BODY: HTML: images with 1200-1600 bytes of
+	*      words
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	* -2.3 RCVD_IN_DNSWL_MED RBL: Sender listed at https://www.dnswl.org/,
+	*       medium trust
+	*      [192.30.252.202 listed in list.dnswl.org]
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [192.30.252.202 listed in wl.mailspike.net]
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	* -1.0 MAILING_LIST_MULTI Multiple indicators imply a widely-seen list
+	*       manager
+	* -0.0 DKIMWL_WL_HIGH DKIMwl.org - High trust sender
+X-Spam-Score: -2.5
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=reject dis=none) header.from=github.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=github.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (1024-bit key; unprotected) header.d=github.com header.i=@github.com header.a=rsa-sha256 header.s=pf2014 header.b=SS36XO/Z;
+	dkim-atps=neutral
+Received: from out-19.smtp.github.com (out-19.smtp.github.com [192.30.252.202])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id F2E48BD4AE
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 20:31:24 -0500 (EST)
+Received: from github-lowworker-ea218f1.ash1-iad.github.net (github-lowworker-ea218f1.ash1-iad.github.net [10.56.217.22])
+	by smtp.github.com (Postfix) with ESMTP id 60D67E03F9
+	for <darnell@manfromva.com>; Sun,  8 Jan 2023 17:31:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1673227884;
+	bh=HfCQBKDIVhJ0fafAr4Wddzz0rsuZdEBBcONjzLGO5fA=;
+	h=Date:From:Reply-To:To:Cc:Subject:List-ID:List-Archive:List-Post:
+	 List-Unsubscribe:From;
+	b=SS36XO/Ze/53TjX4Tc4yIm1nkyPtExChFK3uml3fI+3mCATbL0v78an/Zmp8MTVhm
+	 rbJEBFwFMvf0frY8vIC8JZ/v5t5HXijp71D3E39ZZEi/ss/u9/2aTgwMtGuJU4KLLe
+	 3LqOmaVtmxA2ontm+TO6Vw5KhMtqIGfUiaWykGBA=
+Date: Sun, 08 Jan 2023 17:31:24 -0800
+From: trulyliu <notifications@github.com>
+Reply-To: "acmesh-official/acme.sh" <reply+A4RKTHBS3TAD23WMBMHLPOGBZCQOZEVBNHHFVYSRUA@reply.github.com>
+To: "acmesh-official/acme.sh" <acme.sh@noreply.github.com>
+Cc: Subscribed <subscribed@noreply.github.com>
+Message-ID: <acmesh-official/acme.sh/issues/4460@github.com>
+Subject: [acmesh-official/acme.sh] Report bugs to gcore DNS API (Issue #4460)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bb6e6c520f8_5fc9c5bc163042";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: trulyliu
+X-GitHub-Recipient: manfromva
+X-GitHub-Reason: subscribed
+List-ID: acmesh-official/acme.sh <acme.sh.acmesh-official.github.com>
+List-Archive: https://github.com/acmesh-official/acme.sh
+List-Post: <mailto:reply+A4RKTHBS3TAD23WMBMHLPOGBZCQOZEVBNHHFVYSRUA@reply.github.com>
+List-Unsubscribe: <mailto:unsub+A4RKTHBS3TAD23WMBMHLPOGBZCQOZEVBNHHFVYSRUA@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/A4RKTHCWWNZLYDVVWSYYPYTWRNS6ZANCNFSM6AAAAAATU4WYYY>
+X-Auto-Response-Suppress: All
+X-GitHub-Recipient-Address: darnell@manfromva.com
+X-TUID: mHvn3urzJG8a
+
+
+----==_mimepart_63bb6e6c520f8_5fc9c5bc163042
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCEtLQ0K5oiR5b6I5b+ZLCDmr4/lpKnlj6/og73lj6rmnIkg5Yeg56eS6ZKf
+IOaXtumXtOeci+S9oOeahCBpc3N1ZSwg5aaC5p6c5LiN5oyJ54Wn5oiR55qE
+6KaB5rGC5YaZIGlzc3VlLCDkvaDlj6/og73kuI3kvJrlvpfliLDku7vkvZXl
+m57lpI0sIOefs+ayieWkp+a1ty4NCg0K6K+356Gu5L+d5bey57uP5pu05paw
+5Yiw5pyA5paw55qE5Luj56CBLCDnhLblkI7otLTkuIrmnaUgYC0tZGVidWcg
+MmAg55qE6LCD6K+V6L6T5Ye6LiDmsqHmnInosIPor5Xkv6Hmga8uIOaIkeWB
+muS4jeS6huS7gOS5iC4NCuWmguS9leiwg+ivlSBodHRwczovL2dpdGh1Yi5j
+b20vYWNtZXNoLW9mZmljaWFsL2FjbWUuc2gvd2lraS9Ib3ctdG8tZGVidWct
+YWNtZS5zaA0KDQpJZiBpdCBpcyBhIGJ1ZyByZXBvcnQ6DQotIG1ha2Ugc3Vy
+ZSB5b3UgYXJlIGFibGUgdG8gcmVwcm8gaXQgb24gdGhlIGxhdGVzdCByZWxl
+YXNlZCB2ZXJzaW9uLg0KWW91IGNhbiBpbnN0YWxsIHRoZSBsYXRlc3QgdmVy
+c2lvbiBieTogYGFjbWUuc2ggLS11cGdyYWRlYA0KDQotIFNlYXJjaCB0aGUg
+ZXhpc3RpbmcgaXNzdWVzLg0KLSBSZWZlciB0byB0aGUgW1dJS0ldKGh0dHBz
+Oi8vd2lraS5hY21lLnNoKS4NCi0gRGVidWcgaW5mbyBbRGVidWddKGh0dHBz
+Oi8vZ2l0aHViLmNvbS9hY21lc2gtb2ZmaWNpYWwvYWNtZS5zaC93aWtpL0hv
+dy10by1kZWJ1Zy1hY21lLnNoKS4NCg0KLS0+DQoNClN0ZXBzIHRvIHJlcHJv
+ZHVjZQ0KLS0tLS0tLS0tLS0tLS0tLS0tDQoNCkRlYnVnIGxvZw0KLS0tLS0t
+LS0tLS0tLS0tLS0NCg0KYGBgDQphY21lLnNoICAtLWlzc3VlIC4uLi4uICAg
+LS1kZWJ1ZyAyDQpgYGANCg0KDQoNCg0KLS0gDQpSZXBseSB0byB0aGlzIGVt
+YWlsIGRpcmVjdGx5IG9yIHZpZXcgaXQgb24gR2l0SHViOg0KaHR0cHM6Ly9n
+aXRodWIuY29tL2FjbWVzaC1vZmZpY2lhbC9hY21lLnNoL2lzc3Vlcy80NDYw
+DQpZb3UgYXJlIHJlY2VpdmluZyB0aGlzIGJlY2F1c2UgeW91IGFyZSBzdWJz
+Y3JpYmVkIHRvIHRoaXMgdGhyZWFkLg0KDQpNZXNzYWdlIElEOiA8YWNtZXNo
+LW9mZmljaWFsL2FjbWUuc2gvaXNzdWVzLzQ0NjBAZ2l0aHViLmNvbT4=
+
+----==_mimepart_63bb6e6c520f8_5fc9c5bc163042
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p></p>
+
+<h2 dir="auto">Steps to reproduce</h2>
+<h2 dir="auto">Debug log</h2>
+<pre class="notranslate"><code class="notranslate">acme.sh  --issue .....   --debug 2
+</code></pre>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />Reply to this email directly, <a href="https://github.com/acmesh-official/acme.sh/issues/4460">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/A4RKTHASY7TR4NE4JV55SJTWRNS6ZANCNFSM6AAAAAATU4WYYY">unsubscribe</a>.<br />You are receiving this because you are subscribed to this thread.<img src="https://github.com/notifications/beacon/A4RKTHHS3EYRD5GZXIO653DWRNS6ZA5CNFSM6AAAAAATU4WYY2WGG33NNVSW45C7OR4XAZNFJFZXG5LFVJRW63LNMVXHIX3JMTHFVYSRUA.gif" height="1" width="1" alt="" /><span style="color: transparent; font-size: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message ID: <span>&lt;acmesh-official/acme</span><span>.</span><span>sh/issues/4460</span><span>@</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/acmesh-official/acme.sh/issues/4460",
+"url": "https://github.com/acmesh-official/acme.sh/issues/4460",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+----==_mimepart_63bb6e6c520f8_5fc9c5bc163042--

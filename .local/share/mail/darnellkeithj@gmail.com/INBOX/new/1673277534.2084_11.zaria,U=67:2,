@@ -1,0 +1,828 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2976459mdb;
+        Mon, 9 Jan 2023 05:21:22 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsVt939Pq+wVSO+qD6IHJ1WoiftA5wwPBnOvhFpMCtAxGtjP+TZvsJ8h87Ymh/LdLm77kDM
+X-Received: by 2002:a05:6830:1112:b0:671:b52f:5c3a with SMTP id w18-20020a056830111200b00671b52f5c3amr34553958otq.34.1673270481907;
+        Mon, 09 Jan 2023 05:21:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673270481; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bg+KPcyTiYsxze/qs4E1CAPVCap10+gQ2eTtnBN669mg1Imps2gNYJOPegF8Exf8V3
+         LvvGAciHQCK6bt1Ynrj69WUIgB2MCZrOAcmaVj4bks7GECZDC+i+BxK8j7ipUuhQSGmA
+         8K3su1pxHG1eoZlwQNpgQWr5CfMMg+LmD+jANZ4/4VX4Ra7Thjztdi3AwyqsXhp3BAm/
+         XEG4bNd77+/v7MuOzxU0LtYmz0CFrwFjFHpyAB36m7Jh0do8fPIkvT25Zdh8+soJZWDY
+         2uGKxpFp3HPrN6yp45qlTmLY6zMqlvZ1WnCkgKv8+B/2ZB5x0LVGPj17a2XSz/Kv7eLf
+         RI2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version:list-help:date
+         :subject:to:from:dkim-signature;
+        bh=zgXshNu0lSyUjpajhprazkwEECJyfK4LS37MKPQKAbw=;
+        b=NDptGVZ2FJqRHEOJVZ6TuX2zKUQ5eQg8ZJACabPQQYc9R3clAto+GI/ewA+/wAnycM
+         i/NT3aZ2IVdP0RdY+peTS8XmpgQbkl2YsbPhF6aVInUx82S3dksqQ876QSdselbdfftI
+         va9z8LGYZgzBG703YqoWFXbxkcah26E8aR7cAbrxj+06u/6RRK8Tcs0bB9U0ElRPqWRr
+         zl9+n32Ysb5t/1dsExn5+lLxnjgK7ijKYvEMCIZDVnU60A/wBwcsHVpU6QStRM4sowr2
+         gTVuIFThArxWFbN4fue4Y71KLwBocNBckV7+k0qaIkC55XbWkPSQp+6awq1Kr1GGmIUH
+         275Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.usbank.com header.s=200608 header.b=cIAhxHSP;
+       spf=pass (google.com: domain of bounce-88_html-17331681-375368-1462436-342@bounce.email.usbank.com designates 68.232.206.75 as permitted sender) smtp.mailfrom=bounce-88_HTML-17331681-375368-1462436-342@bounce.email.usbank.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.usbank.com
+Return-Path: <bounce-88_HTML-17331681-375368-1462436-342@bounce.email.usbank.com>
+Received: from mta2.email.usbank.com (mta2.email.usbank.com. [68.232.206.75])
+        by mx.google.com with ESMTPS id cp26-20020a056830661a00b0066e88977e0dsi9025849otb.66.2023.01.09.05.21.21
+        for <DARNELLKEITHJ@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 05:21:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-88_html-17331681-375368-1462436-342@bounce.email.usbank.com designates 68.232.206.75 as permitted sender) client-ip=68.232.206.75;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.usbank.com header.s=200608 header.b=cIAhxHSP;
+       spf=pass (google.com: domain of bounce-88_html-17331681-375368-1462436-342@bounce.email.usbank.com designates 68.232.206.75 as permitted sender) smtp.mailfrom=bounce-88_HTML-17331681-375368-1462436-342@bounce.email.usbank.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.usbank.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.usbank.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:Reply-To:List-ID:
+ X-CSA-Complaints:Message-ID:Content-Type; i=1800USBanks@email.usbank.com;
+ bh=zgXshNu0lSyUjpajhprazkwEECJyfK4LS37MKPQKAbw=;
+ b=cIAhxHSPT3ROjayujnkaOAtZmGVjL9xpAkW7FglH1clAGv0J7IpfvLP+ITt5hOwTqDgrYcf5yGv4
+   AO8xyPwZJhE0q6ocKDkdPmAPw6HRnhp0GRzdel7XBGfrkqgk6DYq66j9HpnP/4MFF1/tR9rMfEsd
+   YiZ9it2Ed5bESLfzNOA=
+Received: by mta2.email.usbank.com id hngad22fmd41 for <DARNELLKEITHJ@GMAIL.COM>; Mon, 9 Jan 2023 13:21:18 +0000 (envelope-from <bounce-88_HTML-17331681-375368-1462436-342@bounce.email.usbank.com>)
+From: "U.S. Bank" <1800USBanks@email.usbank.com>
+To: <DARNELLKEITHJ@GMAIL.COM>
+Subject: =?UTF-8?B?UHJlcGFyZSBmb3Igd2hhdOKAmXMgYWhlYWQ=?=
+Date: Mon, 09 Jan 2023 07:21:18 -0600
+List-Help: <https://click.email.usbank.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxNDYyNDM2IiwicyI6IjE3MzMxNjgxIiwibGlkIjoiODgiLCJqIjoiMzc1MzY4IiwiamIiOiIzNDIiLCJkIjoiNDAxMjMifQ.LQLsqnZvF11WwruYOJIGAbQcU0-_zUWtKGzNI7cSOxI>
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "U.S. Bank" <reply-febf177770670275-88_HTML-17331681-1462436-342@email.usbank.com>
+List-ID: <1461676.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1462436_375368
+Message-ID: <173f1fc8-e2e6-4131-9644-e721f23e9168@las1s04mta909.xt.local>
+Feedback-ID: 1462436:375368:68.232.206.75:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="NUUbrYSMNU0g=_?:"
+X-TUID: Di6fH+3TDr8J
+
+This is a multi-part message in MIME format.
+
+--NUUbrYSMNU0g=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+U.S. Bank | Email
+ 
+ 
+ 
+ 
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa56d06ab8bcd043698080f5d2782f51ad09067a517f9c62e770f4ea57d03055e71b9336b34440e9cbb4310911be6f655bb 
+
+https://view.email.usbank.com/?qs=c4fba5096de98978d49112a8b451c3ca1861a20dc91672352d660d8bff9b3285b5c6e57bf160bfeceb4041dd2ef438a59d7c930f7cab278f8f3e9019253b0400e1e7eb455d507d4b 
+View as web page 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa56d06ab8bcd043698080f5d2782f51ad09067a517f9c62e770f4ea57d03055e71b9336b34440e9cbb4310911be6f655bb 
+Log in 
+
+
+ 
+ 
+
+
+ 
+ Get ready for the New Year
+
+ A message from Tim Welsh,
+
+ Head of Consumer & Business Banking
+
+
+
+ Dear Darnell,<br><br>As we begin the new year, I want to share my sincerest gratitude for the trust and confidence you place in U.S. Bank. As your financial partner, we appreciate you allowing us to be part of your journey to achieve what is most important to you.
+
+
+ The U.S. Bank team is committed to ensuring you have what you need to navigate your financial priorities in 2023. Whether you&rsquo;re looking for budgeting tips to juggle everyday expenses or planning a significant life change, we&rsquo;ll be right there with you.
+
+
+ We make it easy for you to bank where and how you want via our award-winning digital tools and talented local bankers. Our goal setting tips and resources are available for you at 
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa50b512023c10f518ad258dee2533c152624a005923f2f643f331edae13a3972ad9d64750d867b4613892d8c476817ec3a 
+usbank.com/goals .
+
+
+ Thank you for choosing U.S. Bank. I wish you and those close to you great joy in the New Year.
+
+
+ Sincerely,
+
+
+
+
+ Tim Welsh
+
+ U.S. Bank Vice Chair
+
+ Consumer and Business Banking
+
+
+ Support in the palm of your hand
+
+ The U.S. Bank Mobile App has features that can help you stay on track with your spending and set financial goals in 2023.
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5494da9bc05da44a2cb7a9425c69fbe1bc7e5372f7ae9cec94c2f054f3066ba59463d8c6e14e010314f5ef490edeb0384 
+Get the tips 
+
+
+ 
+ 
+
+
+ 
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa56d06ab8bcd043698080f5d2782f51ad09067a517f9c62e770f4ea57d03055e71b9336b34440e9cbb4310911be6f655bb 
+Login 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa54e0edad9267204a2d8a2443363138b62e9a752e043fff61134a74a63acb3db7ef101ffdff38056addfcd21dcbf0fed04 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5e72df45d1e62fa87d1f4ec2efe3a6d6eb409535c3fe6ec61eb887eb4d03d37ccd8b113bb0ab0e20f10721e8cf80c4d4e 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5cf3ee58107688bc9132a4608b695c40881fb1750cb43cf67ec9e1e973cf0b9ba81610628126847144d92d8428c2e0a9d 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5e1316da15d1d3f1eebdd79fceeeedb6745b89df2001e6547707830282d4a5ae606c7da1f2a6bacd22a9d52c1a8124183 
+Get the app 
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5e1316da15d1d3f1eebdd79fceeeedb6745b89df2001e6547707830282d4a5ae606c7da1f2a6bacd22a9d52c1a8124183 
+
+
+ 
+ 
+
+
+ 
+ Email intended for: 
+ 
+mailto:DARNELLKEITHJ@GMAIL.COM 
+DARNELLKEITHJ@GMAIL.COM 
+ 
+  
+ 
+ 
+  
+ 
+
+
+ Protecting your privacy is our priority. We will never initiate a request via email for your sensitive information like your Personal ID, Password, Social Security Number, Personal Identification Number (PIN) or Account Number. For your safety, never share this information with anyone, at any time. If you receive an email asking for your sensitive information, or would like to report a suspicious email, forward it to 
+ 
+mailto:fraud_help@usbank.com 
+fraud_help@usbank.com  or call U.S. Bank Customer Service immediately at 
+ 
+tel:8008722657 
+800-USBANKS (872&#8209;2657).
+ 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa51b4ce4cc8f37c1dba30327ee2c3c623c1b863d05801e3188a0737000bddb51e57e456acecbef322b0a654c29b7be1c82 
+Get more details  about recognizing online fraud issues.
+ 
+
+
+ Note: If you would rather not follow links from this email, you can access information on all U.S. Bank products and services at 
+ 
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5da0a520ffd30af033d5fbcf4741deade22abc88ca4f17b69cbf98faaca4fb0619f9ce00afca01ff8da4e88d26743e4c1 
+usbank.com .
+ 
+
+
+ To ensure that you continue to receive email from us, please add us to your Address Book (
+mailto:1800USBanks@usbank.com 
+1800USBanks@usbank.com ). Thank you. 
+ 
+
+
+ You are receiving this email as a service to your account because you are a U.S. Bank customer. 
+ 
+
+https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5c6ab0e3a7c25bfbda40501a33bc38483fa09961163c88b4002ccbc23c682a8f223b225f9607540d8bf4227bf1e23426b 
+View  the U.S. Bank Privacy Pledge
+ 
+
+U.S. Bank, EP-MN-L20D, 200 South 6th Street, Minneapolis, MN 55402
+
+ 
+  
+ Equal Housing Lender. Member FDIC. (c)2023 U.S. Bank.
+ 
+
+
+ 
+ 
+
+
+
+--NUUbrYSMNU0g=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"     xmlns:v="urn:schemas-microsoft-com:vml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+<meta name="x-apple-disable-message-reformatting">
+<title>U.S. Bank | Email</title>
+<style type="text/css">
+    * {
+        -webkit-text-size-adjust: none;
+        margin: 0;
+    }
+
+    /* prevent iOS font upsizing */
+    .ExternalClass * {
+        line-height: 100%;
+    }
+
+    /* force Outlook.com to honor line-height */
+    td {
+        mso-line-height-rule: exactly;
+    }
+
+    /* force Outlook to honor set line-heights */
+    .appleLinks a {
+        color: #555555 !important;
+        text-decoration: none !important;
+    }
+
+    /*** Responsive CSS ***/
+    @media only screen and (max-width: 480px) {
+
+        /*** Layout ***/
+        body {
+            width: 100%;
+            min-width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .marginFix {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .full-width-container {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .hide {
+            width: 0px !important;
+            height: 0px !important;
+            display: none !important;
+        }
+
+        .full-width {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .stackTbl {
+            width: 100% !important;
+            display: table !important;
+        }
+
+        .marginTop30 {
+            margin-top: 30px !important;
+        }
+
+        .center {
+            margin: 0px auto !important;
+        }
+
+        .removeHeight {
+            height: auto !important;
+        }
+
+        .resetWidth {
+            width: inherit !important;
+        }
+
+        /*** Padding Styles ***/
+        .mobilePaddingLR {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .paddingTop0 {
+            padding-top: 0px !important
+        }
+
+        .paddingTop25 {
+            padding-top: 25px !important
+        }
+
+        .paddingTop20 {
+            padding-top: 20px !important;
+        }
+
+        .paddingBottom0 {
+            padding-bottom: 0px !important;
+        }
+
+        .paddingBottom20 {
+            padding-bottom: 20px !important;
+        }
+
+        .paddingLeft5 {
+            padding-left: 5px !important
+        }
+
+        .paddingRight5 {
+            padding-right: 5px !important
+        }
+
+        .paddingLeft15 {
+            padding-left: 15px !important
+        }
+
+        .paddingRight15 {
+            padding-right: 15px !important
+        }
+
+        .paddingLeft25 {
+            padding-left: 25px !important
+        }
+
+        .paddingRight25 {
+            padding-right: 25px !important
+        }
+
+        .removeLRPadding {
+            padding-left: 0px !important;
+            padding-right: 0px !important
+        }
+
+        /*** Text/Divider/Image Styles ***/
+        .imageUpsizeCell img {
+            width: auto !important;
+            height: auto !important;
+            max-width: 100% !important
+        }
+
+        .fullWidthImgCell img {
+            width: 100% !important;
+            height: auto !important;
+            min-width: 100% !important;
+        }
+
+        .maxWidthImgCell img {
+            max-width: 100% !important;
+        }
+
+        .textAlignCenter {
+            text-align: center !important
+        }
+
+        .buttonCTA {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .fontSize14 {
+            font-size: 14px !important;
+            line-height: 17px !important;
+        }
+
+        .fontSize16 {
+            font-size: 16px !important;
+            line-height: 19px !important;
+        }
+
+        .fontSize18 {
+            font-size: 18px !important;
+            line-height: 22px !important;
+        }
+
+        .fontSize24 {
+            font-size: 24px !important;
+            line-height: 27px !important;
+        }
+
+        .fontSize44 {
+            font-size: 44px !important;
+            line-height: 47px !important;
+        }
+
+        .logo {
+            width: 90px !important;
+        }
+
+        .backgroundAdjustRight {
+            background-color: #FFFFFF !important;
+            background-size: auto 280px !important;
+            background-position: top right !important;
+            padding-top: 280px !important;
+        }
+
+        .backgroundAdjustLeft {
+            background-color: #FFFFFF !important;
+            background-size: auto 280px !important;
+            background-position: top left !important;
+            padding-top: 280px !important;
+        }
+
+        .backgroundAdjustCenter {
+            background-color: #FFFFFF !important;
+            background-size: auto 280px !important;
+            background-position: top center !important;
+            padding-top: 280px !important;
+        }
+
+        .colorAdjust {
+            color: #001E79 !important
+        }
+
+        .borderTop {
+            border-top: 2px solid #FFFFFF;
+        }
+
+        /*** Mobile Show and Hide ***/
+        .mobileShow {
+            display: table !important;
+            overflow: visible !important;
+            max-height: inherit !important;
+            width: 100% !important;
+        }
+
+        .mobile-hidden {
+            display: none !important;
+        }
+
+        .mobile-initial {
+            display: initial !important;
+        }
+        .banner_notification p a {color:#ffffff !important;}
+        /*** END Responsive CSS ***/
+    }
+
+    @media only screen and (max-width: 360px) {
+        .logo {
+            width: 80px !important;
+        }
+    }
+
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+</style>
+<!--[if gte mso 9]> <xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> <![endif]-->
+
+<!--[if gt mso 15]> <style type="text/css" media="all"> * {margin:0;} table, tr, td {border-collapse;} </style> <![endif]-->
+</head>
+
+<body class="body" style="margin:0px; padding:0px;">
+    <style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Resources to help you set goals and budget.</div><!--  -->
+<style>
+* {margin:0;}
+@media only screen and (max-width: 480px) {}
+</style>
+    
+    <div style="display: none; max-height: 0px; overflow: hidden;"></div>
+    <!-- CONTAINER -->
+    <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%" class="marginFix" bgcolor="#FFFFFF">
+        <!-- HEADER ROW -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="700" class="full-width-container"                     bgcolor="#001E79">
+                    <tr>
+                        <td width="700" align="center" style="min-width:700px;" class="full-width-container">
+                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Shell/Header --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" class="mobilePaddingLR" style="background-color:#001E79; padding:0 50px 16px 50px">
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+     
+      <tr>
+       <!-- Logo --><td align="left" class="paddingTop25" style="padding: 16px 0 0 0;" valign="bottom">
+        <a  href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa51eee1ad73f9944da2d0c80f058630a393d7eedf0b3b72b590f72f9486369cd452b2e33f0fc4b55ae7de598cf57e9f6ac" target="_blank"><img alt="U.S. Bank Logo" border="0" class="center" height="42" src="https://image.email.usbank.com/lib/fe9015747365027a73/m/5/US_Bank_logo__white.png" style="display:block;color: #FFFFFF; width:150px; height:42px;" width="150"></a></td><!-- End Logo --><td align="right" class="hide" style="padding: 12px 0px 0px 0px" valign="top">
+        <!-- VAWP --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+          <tr>
+           <td align="right" style="font-family: Helvetica, sans-serif, Arial; font-size: 10px; line-height: 12px;color: #FFFFFF;padding: 0px 0px 0px 0px">
+            <a  href="https://view.email.usbank.com/?qs=c4fba5096de98978d49112a8b451c3ca1861a20dc91672352d660d8bff9b3285b5c6e57bf160bfeceb4041dd2ef438a59d7c930f7cab278fecebcda4e4e96120bcd7275159244982" style="color: #FFFFFF; text-decoration: underline" target="_blank">View as web page</a></td></tr></table><!-- end VAWP --><!-- CTA --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+          <tr>
+           <td align="right" style="padding: 10px 0px 0px 0px">
+            <table border="0" cellpadding="0" cellspacing="0">
+             
+              <tr>
+               <td align="left" style="font-family: Helvetica, sans-serif, Arial; font-size: 14px; line-height: 16px;color: #FFFFFF; padding: 0px 0px 0px 10px" valign="middle">
+                <b><a   data-linkto="http://" href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa512cd49021ad91fe0dcfd6cb778023f1315327ad4384b2583778ee94d51ad4daf76773a8a853a7e0bb4876b4187c3bfe9" style="color:#FFFFFF;text-decoration:none;" target="_blank" title="Log in">Log in</a></b></td></tr></table></td></tr></table><!-- end CTA --></td></tr></table></td></tr></table><!-- End Shell/Header --></td></tr></table>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END HEADER -->
+        <!-- MODULES ROW -->
+        <tr>
+            <td align="center" bgcolor="#FFFFFF">
+                <table cellpadding="0" cellspacing="0" border="0" width="700" class="full-width-container">
+                    <tr>
+                        <td width="700" align="center" style="min-width:700px;" class="full-width-container">
+                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Hero | Headline / Body Copy /CTA right (white box) --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding:0px 0px 0px 0px" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <!-- Image -->
+      <tr>
+       <td align="right" background="https://image.email.usbank.com/lib/fe9515747366007e73/m/8/45e14409-8c3f-4b45-bdbc-2f957b59f418.png" bgcolor="#0C2074" class="backgroundAdjustLeft removeHeight" height="280" style="background-size: cover; background-repeat: no-repeat;width:700px;" valign="bottom" width="700">
+        <!--[if gte mso 9]>                         <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 700px;height: 280px;">                         <v:fill type="frame" size="100%,100%" src="https://image.email.usbank.com/lib/fe9515747366007e73/m/8/45e14409-8c3f-4b45-bdbc-2f957b59f418.png" />                         <v:textbox inset="0,0,0,0">                         <div>                         <![endif]--><!-- Place modules here --><!-- copy --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+          <tr>
+           <td class="hide" width="320">
+           </td><td align="center" class="removeHeight mobilePaddingLR" height="280" style="width:320px; height:280px" valign="middle" width="320">
+            <table border="0" cellpadding="0" cellspacing="0" class="stackTbl" role="presentation" style="width:300px;" width="300">
+             
+              <tr>
+               <td align="center" class="paddingTop25" style="background:#ffffff;padding:20px 0 25px 0">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="stackTbl" role="presentation" style="width:260px;" width="260">
+                 <!-- copy -->
+                  <tr>
+                   <td align="left" class="removeLRPadding" style="padding: 0 0px 0px 0;" valign="bottom">
+                    <h1 class="colorAdjust" style="font-family: Helvetica, Arial, sans-serif; font-size: 38px; line-height: 42px;color: #001E79;font-weight: bold; margin: 0px;">
+                     Get ready for the New&nbsp;Year</h1></td></tr><tr>
+                   <td align="left" class="fontSize18" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 20px;color: #2E2E32; padding: 8px 0px 0px 0px;" valign="top">
+                    A message from Tim&nbsp;Welsh,<br>
+                    Head of Consumer &amp; Business&nbsp;Banking</td></tr><!-- end copy --><tr>
+                  </tr></table></td></tr></table></td></tr></table><!-- end copy --><!--[if gte mso 9]>                         </div>                         </v:textbox>                         </v:fill>                         </v:rect>                         </v:image>                         <![endif]--></td></tr></table></td></tr></table><!-- End Hero | Headline / Body Copy /CTA right (white box) --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Body Copy --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" class="mobilePaddingLR" style="padding:25px 50px 15px 50px" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+     <!-- copy -->
+      <tr>
+       <td align="left" class="fontSize18" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 19px;color: #2E2E32; padding: 0px 0px 0px 0px;" valign="top">
+        <p>
+         Dear Darnell,<br><br>As we begin the new year, I want to share my sincerest gratitude for the trust and confidence you place in U.S.&nbsp;Bank. As your financial partner, we appreciate you allowing us to be part of your journey to achieve what is most important to&nbsp;you.<br>
+         <br>
+        The U.S. Bank team is committed to ensuring you have what you need to navigate your financial priorities in 2023. Whether you&rsquo;re looking for budgeting tips to juggle everyday expenses or planning a significant life change, we&rsquo;ll be right there with&nbsp;you.<br>
+         <br>
+         We make it easy for you to bank where and how you want via our award-winning digital tools and talented local bankers. Our goal setting tips and resources are available for you at&nbsp;<a   data-linkto="https://" href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa510f91c12f2cd29a57600fb0797a272ae6b9626d3c6fd50336c096e989553d20940aa8ba46fa685ac325440d071426057" style="color:#0558FF;text-decoration:underline;" title="usbank.com/goals">usbank.com/goals</a>.<br>
+         <br>
+         Thank you for choosing U.S.&nbsp;Bank. I wish you and those close to you great joy in the New&nbsp;Year.<br>
+         <br>
+         Sincerely,</p></td></tr><!-- end copy --></table></td></tr></table><!-- End Body Copy --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Static - Contact Info w/ Image Left --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" class="mobilePaddingLR" style="padding:10px 50px 30px 50px" valign="top">
+    <!--[if gte mso 9]><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="left" valign="top"><![endif]--><!-- column 1 --><table align="left" border="0" cellpadding="0" cellspacing="0" class="stackTbl" style="display:inline;" width="160">
+     
+      <tr>
+       <td align="left" valign="top" width="160">
+        <!-- image --><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+         
+          <tr>
+           <td align="left" valign="top">
+            <img alt="Tim Welsh headshot" border="0" src="https://image.email.usbank.com/lib/fe9515747366007e73/m/8/b6996011-81b7-4fe6-8237-abd070cbce44.png" style="display:block" width="160"></td></tr></table><!-- end image --></td></tr></table><!-- end column 1 --><!--[if gte mso 9]></td><td align="left" valign="top"><![endif]--><!-- column 2 --><table align="right" border="0" cellpadding="0" cellspacing="0" class="stackTbl marginTop30" style="display:inline;" width="420">
+     
+      <tr>
+       <td align="left" valign="top" width="420">
+        <!-- copy --><img alt="Tim Welsh signature" data-assetid="28367" src="https://image.email.usbank.com/lib/fe9515747366007e73/m/6/2759c042-20e7-4d48-98d0-aec1d2f63801.png" style="display: block; padding: 0px; text-align: center; width: 250px;" width="250"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="290">
+         
+          <tr>
+           <td align="left" class="fontSize18" style="font-family: Helvetica, sans-serif, Arial; font-size: 16px; line-height: 19px;color: #001E79;font-weight: bold;padding: 10px 0px 4px 10px" valign="top">
+            Tim Welsh</td></tr><tr>
+           <td align="left" class="fontSize18" style="font-family: Helvetica, sans-serif, Arial; font-size: 16px; line-height: 19px;color: #2E2E32; padding: 0px 0px 10px 10px" valign="top">
+            U.S. Bank Vice Chair<br>
+            Consumer and Business&nbsp;Banking</td></tr></table><!-- end copy --></td></tr></table><!-- end column 2 --><!--[if gte mso 9]></td></tr></table><![endif]--></td></tr></table><!-- End Static - Contact Info w/ Image Left --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- 2 col - Body Copy Left/Image Right --><table bgcolor="#F5F5Fa" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" class="mobilePaddingLR" style="padding:25px 50px 20px 50px" valign="top">
+    <!--[if gte mso 9]><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="left" valign="top"><![endif]--><!-- column 1 --><table align="left" border="0" cellpadding="0" cellspacing="0" class="stackTbl" style="display:inline;" width="420">
+     
+      <tr>
+       <td align="left" valign="top" width="420">
+        <!-- copy --><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+         
+          <tr>
+           <td align="left" class="textAlignCenter" style="padding: 0px 0px 0 0px;" valign="top">
+            <h2 class="fontSize24" style="color: #0C2074; font-family: Helvetica, sans-serif, Arial; font-size: 20px; line-height: 24px; font-weight: bold; margin: 0px;">
+             Support in the palm of your&nbsp;hand</h2></td></tr><tr>
+           <td align="left" class="fontSize18" style="font-family: Helvetica, sans-serif, Arial; font-size: 16px; line-height: 19px;color: #2E2E32; padding: 10px 0px 0px 0px" valign="top">
+            The U.S. Bank Mobile App has features that can help you stay on track with your spending and set financial goals in&nbsp;2023.</td></tr></table><!-- end copy --><!-- Primary CTA --><table border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+          <tr>
+           <td align="left" style="padding-top: 20px" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" class="buttonCTA" role="presentation" width="250">
+             
+              <tr>
+               <td align="center" bgcolor="#0558FF" height="42" style="font-family: Helvetica, sans-serif, Arial;font-size: 16px; line-height:19px;color: #FFFFFF;font-weight: bold;border-radius: 4px;">
+                <a   data-linkto="http://" href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa50975122919558f3088df4922f64477152fc9e48206e62fe0d9e7b405f602588dc0308bc2c476289c7232c2f12adde2f6" style="color:#FFFFFF;text-decoration:none;display: inline-block;width: 100%;padding: 10px 0 10px 0; line-height:19px" target="_blank" title="Get the tips">Get the tips</a></td></tr></table></td></tr></table><!-- End Primary CTA --></td></tr></table><!-- end column 1 --><!--[if gte mso 9]></td><td align="left" valign="top"><![endif]--><!-- column 2 --><table align="right" border="0" cellpadding="0" cellspacing="0" class="stackTbl marginTop30" style="display:inline;" width="160">
+     
+      <tr>
+       <td align="center" valign="top" width="160">
+        <!-- image --><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+         
+          <tr>
+           <td align="center" valign="top">
+            <img alt="Mobile app illustration" border="0" src="https://image.email.usbank.com/lib/fe9515747366007e73/m/8/ddd0b731-23e8-470d-9c32-a4ab606ec845.png" style="display:block" width="130"></td></tr></table><!-- end image --></td></tr></table><!-- end column 2 --><!--[if gte mso 9]></td></tr></table><![endif]--></td></tr></table><!-- End 2 col - Body Copy Left/Image Right --></td></tr></table>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END MODULES ROW -->
+        <!-- FOOTER ROW -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="700" class="full-width-container"                     bgcolor="#001E79">
+                    <tr>
+                        <td width="700" align="center" style="min-width:700px;" class="full-width-container">
+                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Shell/Footer Social Bar -->
+<table bgcolor="#001E79" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <!--[if !mso]><!-->
+    <!-- Mobile-Only Login -->
+    <tr>
+        <td align="center">
+            <div class="mobileShow" style="display:none; width:0px; max-height:0px; overflow:hidden;">
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#D11B25">
+                    <tr>
+                        <td style="font-family: Helvetica, sans-serif, Arial; font-size: 12px; line-height: 14px;color: #FFFFFF;font-weight: bold; padding: 0px 10px 0px 10px" valign="middle" align="center"><a  href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa55a88ba15c6c320617be12e3474500a4107b18d55a71c3a02995db53629e78578ea3c5c4b9eb0415abea860842bcb2a72" style="text-decoration: none;color:#FFFFFF; width: 100%; line-height: 34px; display: inline-block;" title="Login" target="_blank">Login</a></td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <!-- End Mobile-Only Login -->
+    <!--<![endif]-->
+    <tr>
+        <td style="padding: 20px 60px 20px 60px" class="removeLRPadding borderTop" valign="middle" align="center">
+
+            <!--[if gte mso 9]><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="left" valign="top"><![endif]-->
+
+            <!-- column 1 -->
+            <table class="stackTbl" style="display:inline;" width="290" cellspacing="0" cellpadding="0" border="0" align="left">
+                <tr>
+                    <td class="paddingBottom20" width="290" valign="middle" align="left">
+
+                        <!-- Icons -->
+                        <table class="center" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td style="padding: 0px 0px 0px 0px" valign="middle" align="center"><a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa52fb3f5b2a644e39ada1dd7fb0163f1aae270eb0baac01057eb7572adb8fd4581a467b95d2b8a7dacbd99de2fc63c31f3" target="_blank" ><img src="https://image.email.usbank.com/lib/fe9015747365027a73/m/4/3cc8d974-1e60-41a0-8e06-3ff17a8731d9.png?b=1521784356000" style="display: block; color:#ffffff; height: 30px; width:30px;" alt="Facebook" height="30" width="30" border="0"></a></td>
+                                <td width="20"></td>
+                                <td style="padding: 0px 0px 0px 0px" valign="middle" align="center"><a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa568ca8ca9b88c69bff59e3d2ab97a38bdf14882f65164092330f0e6779e6121c5771ddafa8d6cac7e0e59cbbbb2b1d34b" target="_blank" ><img src="http://image.email.usbank.com/lib/fe911570726d007475/m/5/2094171d-2dca-48df-9f8e-eecac2adfec6.png?b=1521784357000" style="display: block; color:#ffffff; height: 30px; width:34px;" alt="Twitter" height="30" width="34" border="0"></a></td>
+                                <td width="20"></td>
+                                <td style="padding: 0px 0px 0px 0px" valign="middle" align="center"><a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5ddaa1b2dcbd4264e05e544a3b36876215e19f75b1298b2a87384d78bfe130c3e7eddd7db83094ea2e956bfe41d3d3fa5" target="_blank" ><img src="http://image.email.usbank.com/lib/fe911570726d007475/m/5/f1be81c4-754a-40b1-b02b-5ae1d976c8bc.png?b=1521784356000" style="display: block; color:#ffffff; height: 30px; width:29px;" alt="Instagram" height="30" width="29" border="0"></a></td>
+                            </tr>
+                        </table>
+                        <!-- End Icons -->
+
+                    </td>
+                </tr>
+            </table>
+            <!-- end column 1 -->
+
+            <!--[if gte mso 9]></td><td align="left" valign="top"><![endif]-->
+
+            <!-- column 2 -->
+            <table class="stackTbl borderTop" style="display:inline;" width="290" cellspacing="0" cellpadding="0" border="0" align="right">
+                <tr>
+                    <td class="paddingTop20" width="290" valign="middle" align="right">
+
+                        <!-- Copy -->
+                        <table class="center" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td style="font-family: Helvetica, sans-serif, Arial; font-size: 18px; line-height: 22px;color: #FFFFFF;font-weight: bold; padding: 0px 10px 0px 0px" valign="middle" align="right"><a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5de34a9a2a2d217a090cd7474d5ebe3eae3a872ee64cfb2d2edbcf7049aa091d38ecc7c97b5389a691d97209f8190efca" style="text-decoration: none;color:#FFFFFF" target="_blank" >Get the app</a></td>
+                                <td style="padding: 0px 0px 0px 0px" valign="middle" align="center"><a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa58a6b714d97f5630b44436193dd52ecdbd545c03ba699f230744f2df772886ac898512ddb2ac9acdc8deb5aed12d55022" target="_blank" ><img src="https://image.email.usbank.com/lib/fe9015747365027a73/m/4/1634fcde-66ec-4b53-b44c-30aa943fbfc4.png?b=1521784356000" style="display: block; color:#ffffff; height:30px; width:19px;" alt="Mobile App" height="30" width="19" border="0"></a></td>
+                            </tr>
+                        </table>
+                        <!-- End Copy -->
+
+                    </td>
+                </tr>
+            </table>
+            <!-- end column 2 -->
+
+            <!--[if gte mso 9]></td></tr></table><![endif]-->
+        </td>
+    </tr>
+</table>
+<!-- End Shell/Footer Social Bar --></td></tr></table>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="700" class="full-width-container">
+                    <tr>
+                        <td width="700" align="center" style="min-width:700px;padding-bottom: 40px"                             class="full-width-container">
+                            <!-- Shell/Footer Disclaimer -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+    <tr>
+      <td align="left" valign="top" style="font-family: Helvetica, sans-serif, arial; font-size: 14px; line-height: 18px;color: #2E2E32; padding: 20px 60px 0px 60px" class="mobilePaddingLR">
+        Email intended for: 
+        <a href="mailto:DARNELLKEITHJ@GMAIL.COM" target="_blank" style="color: #2E2E32; text-decoration: none;">DARNELLKEITHJ@GMAIL.COM</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="top" style="padding: 0px 60px 0px 60px" class="mobilePaddingLR">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td width="40" bgcolor="#FFFFFF">&nbsp;
+            </td>
+            <td rowspan="3" width="30" align="center" valign="middle">
+              <img border="0" src="http://image.email.usbank.com/lib/fe911570726d007475/m/5/4689ee94-b52c-4aa7-9c2c-678acf626b6b.png?b=1521785433000" width="11" style="display:block">
+            </td>
+            <td bgcolor="#FFFFFF">&nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td width="40" height="2" bgcolor="#0C2074" style="font-size: 2px; line-height: 2px">&nbsp;
+            </td>
+            <td height="2" bgcolor="#0C2074" style="font-size: 2px; line-height: 2px">&nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td width="40" height="15">
+            </td>
+            <td height="15">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="top" style="font-family: Helvetica, sans-serif, arial; font-size: 14px; line-height: 18px;color: #2E2E32; padding: 0px 60px 20px 60px" class="mobilePaddingLR">
+        Protecting your privacy is our priority. We will never initiate a request via email for your sensitive information like your Personal ID, Password, Social Security Number, Personal Identification Number (PIN) or Account Number. For your safety, never share this information with anyone, at any time. If you receive an email asking for your sensitive information, or would like to report a suspicious email, forward it to 
+        <a href="mailto:fraud_help@usbank.com" target="_blank" style="color:#2E2E32; text-decoration: underline" alias="FooterFraudMailTo">fraud_help@usbank.com</a> or call U.S.&nbsp;Bank Customer Service immediately at 
+        <a alias="800-USBANKS_Footer" href="tel:8008722657" style="color:#2E2E32;text-decoration:none;" title="800-USBANKS"><span style="white-space: nowrap;">800-USBANKS (872&#8209;2657</span>)</a>.
+        <br>
+        <br>
+        <a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa52ddba62730600241d1fc35d9a71505165e4277da43e946941f325bea2836f5444ebe031456f37305bdfbc2b653c09f05" target="_blank" style="color:#2E2E32; text-decoration: underline;" >Get more details</a> about recognizing online fraud&nbsp;issues.
+        <br>
+        <br>
+        Note: If you would rather not follow links from this email, you can access information on all U.S.&nbsp;Bank products and services at 
+        <a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5fe07809d7510a088757a3c7b189eaa70faecc59a5330a86ca51b82613149b57fb256feb97ad677f424812828f7c69996" target="_blank"  style="color: #2E2E32; text-decoration: underline;">usbank.com</a>.
+        <br>
+        <br>
+        To ensure that you continue to receive email from us, please add us to your Address Book (<a href="mailto:1800USBanks@usbank.com" target="_blank" style="color:#2E2E32; text-decoration: underline" alias="FooterTestMailTo">1800USBanks@usbank.com</a>). Thank&nbsp;you. 
+        <br><br>
+        You are receiving this email as a service to your account because you are a U.S.&nbsp;Bank&nbsp;customer. 
+        <br>
+        <br>
+        <a href="https://click.email.usbank.com/?qs=bc3fb75dd6bedfa5fd94aaee6c20207b8f488ec01865d22b4fbbc4a961fcff547fea26fc9b15ac4be092824553820a8327bfde80742c5983" target="_blank"  style="color:#2E2E32; text-decoration:underline;">View</a> the U.S.&nbsp;Bank Privacy Pledge
+        <br>
+        <br>
+        <span class="appleLinks">U.S.&nbsp;Bank, EP-MN-L20D, 200 South 6th Street, Minneapolis,&nbsp;MN&nbsp;55402</span>
+        <br>
+        <br>
+        <table cellpadding="0" cellspacing="0" border="0" align="left">
+          <tr>
+            <td valign="top" align="left">
+              <img src="http://image.email.usbank.com/lib/fe911570726d007475/m/5/ehl_20170605.png" alt="Equal Housing Lender" width="45" height="54" border="0" style="display:block;" title="Equal Housing Lender">
+            </td>
+            <td align="left" width="10">&nbsp;
+            </td>
+            <td valign="bottom" align="left" style="font-family: Helvetica, sans-serif, arial; font-size: 14px; line-height: 14px;color: #2E2E32;"><div style="height:15px; font-size:14px; line-height:15px;">&nbsp;</div>
+              Equal Housing Lender. Member&nbsp;FDIC. &copy;2023 U.S.&nbsp;Bank.
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- End Shell/Footer Disclaimer -->
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END FOOTER ROW -->
+    </table>
+    <!-- END CONTAINER -->
+    <img src="https://click.email.usbank.com/open.aspx?ffcb10-febf177770670275-fed017707461047b-fe9515747366007e73-ff8f1c78-fe6115777667057b7d15-ff66177477&d=40123&bmt=0" width="1" height="1" alt="">
+        <img width="1" height="1" border="0" style="display: none;"             src="https://562-img.c3tag.com/v.gif?cid=562&c3ch=Email&c3nid=SERV_CustComms_Tim_Welsh_CBB_message_EAA-9048_1462436" />
+</body>
+</html>
+
+--NUUbrYSMNU0g=_?:--
+

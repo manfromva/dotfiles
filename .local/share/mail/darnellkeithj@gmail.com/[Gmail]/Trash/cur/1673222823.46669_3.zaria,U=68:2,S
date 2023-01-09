@@ -1,0 +1,1268 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2567003mdb;
+        Sun, 8 Jan 2023 13:00:34 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtQYd3HfW3uVz9UDWrfGpHMTc8uzeJSVaP+Gs/68eYGSXeGBGNZXUdSvlHZpuuNb/FZBTY4
+X-Received: by 2002:a25:8001:0:b0:6f9:6e27:5a with SMTP id m1-20020a258001000000b006f96e27005amr60011760ybk.47.1673211634741;
+        Sun, 08 Jan 2023 13:00:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673211634; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VUNH7pqOtmXYf3dA/eJMsU+WybWbMTA9rYj0+EeeyqMI5FVcgssNBVFSptqtw203xw
+         5bxmILNsWV5NHDXXFsvfgK8le4wjrVmojK1tUaah+BQITijSp/0OcgSPY4s0iKdAhQY4
+         dLD8tSP5QzQeYqNpyoWV+xlO4W6GsTWMkmOEjzN1rBZMaRRJ/Lw2DPSm0IfduJIWdzje
+         Q5ACqPN17EUSjjRmBlQHUbYFpwbzsjEiB8h3dgFy/0W0aEqeVdfAzYzVIMzeozn9ipFo
+         yrtdhOvN3GIFtUEDvSJEJ8eBsTApJnPQivtfSYSrHHh/Oh3C7uI6VBuuw/a9oed5sVa+
+         5dHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=ZeFb4Z35qlG7tptIsvYNv8yjVeEVuFf1vPuukxFi6pU=;
+        b=hinBItNN2zvR5qLjqCR8P4GDrp6i7HX/zXojjy6viQfzfV5rZi5yr/WY0wsTYj/smi
+         hDtu0NRgmQ9wxVk2s845kpofCmwV2kzh31grQRUsYimCrizl0+PAE+FJwjUu9tBIFH0t
+         PY3a8diYMifizfPIiXSwtVJvTGY1ZidK6RSrpnUdgJZt/ZXZxd/OzqMqHHbEK59fyzco
+         OCatgCkzfZmdTgADRAPkfSAuhy8XKEEkwHAIaVgW17Zn8OGOwZ7YtYJDm8rGj78rNxjx
+         D73BRsHNjMiWSUYW0IOaPERvzxuseybkHdIShgsaX/3LkDIRFDEjgmy1vJQkqF9xL0KF
+         g8Fw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=17UErgrT;
+       dkim=pass header.i=@mailchimpapp.net header.s=k3 header.b=DZkpwNfS;
+       spf=pass (google.com: domain of bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net designates 198.2.182.159 as permitted sender) smtp.mailfrom=bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net
+Return-Path: <bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net>
+Received: from mail159.suw16.rsgsv.net (mail159.suw16.rsgsv.net. [198.2.182.159])
+        by mx.google.com with ESMTPS id a2-20020a254d02000000b006ff98a34465si7670705ybb.456.2023.01.08.13.00.34
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Jan 2023 13:00:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net designates 198.2.182.159 as permitted sender) client-ip=198.2.182.159;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=17UErgrT;
+       dkim=pass header.i=@mailchimpapp.net header.s=k3 header.b=DZkpwNfS;
+       spf=pass (google.com: domain of bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net designates 198.2.182.159 as permitted sender) smtp.mailfrom=bounce-mc.us5_161767806.9285201-5d5eaa32b8@mail159.suw16.rsgsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1673211587; x=1673513987;
+	bh=ZeFb4Z35qlG7tptIsvYNv8yjVeEVuFf1vPuukxFi6pU=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=17UErgrTKvfGb4eBBn9tK8HY0W2YxW5PugKrYt277HLyMLOVPYFS19trb5N8hvfTb
+	 9WOeNRV7L0CuakvQpEnUfCqTvUv4DWLXRdFGpFd2ku5DyLH1iPQwmJ9CURjdjHsRDC
+	 GBcxSTAZiNm6NkTBSUHwOgckZy4pJw8CtSeJpe1ZS3OwkK5EI/beIamJ9mSWko4Co5
+	 kVRady4ujm0/pe6pEc0MAU7jqdmWy8rLP2BpSCt2xUGhbAioJjYcayS1FX+CqtrnW4
+	 7YfsLb/pXsyRMYaOvvO4ED0bpre+GxE+njce1hNbQa4PaQY1mnTdZfT1CHOStv8ivA
+	 y5MwntLGq1oeg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k3; t=1673211587; x=1673513987;
+	i=deanna=3Dsavagefinance.org@mailchimpapp.net;
+	bh=ZeFb4Z35qlG7tptIsvYNv8yjVeEVuFf1vPuukxFi6pU=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=DZkpwNfSEfwOzsHcdWFy9O5MMFf/Gph/RQjjBHD3VDBHweA/oAdoZz1eZEk58bkXU
+	 3PhAa0Ibi4xvHWelhJZrEr8WmcV01APfCFA4vonLMb+Opv13+CdD82nGLeLwhwS1gk
+	 RbHMkQpTB2WFqRBf8OWe8ZmJr3kcCP/qvkklo37CzNaCSpBpcMXJRl0L9zx/LXiPG4
+	 dHckxZ7jZoYmw5Rvn26P6RC9fVL6laUiiTLn/xK32f+hCyxVhVpnsmsFONnNoed7Am
+	 37miX+j7OdpedwIcpZxO15VgMW6cdlBdJQcuwOmiHvDSfcimHdDrjleEhLrEoJKLfG
+	 0nMKSbIFl/n3Q==
+Received: from localhost (localhost [127.0.0.1])
+	by mail159.suw16.rsgsv.net (Mailchimp) with ESMTP id 4NqqFv2Z9wzFCsxHP
+	for <darnellkeithj@gmail.com>; Sun,  8 Jan 2023 20:59:47 +0000 (GMT)
+Subject: =?utf-8?Q?Get=20Rich=20in=203=20Years=20and=20Wealthy=20in=2010=20Years=20=2D=20The=20Blueprint=20for=20Success?=
+From: =?utf-8?Q?Glendon?= <deanna@savagefinance.org>
+Reply-To: =?utf-8?Q?Glendon?= <deanna@savagefinance.org>
+To: <darnellkeithj@gmail.com>
+Date: Sun,  8 Jan 2023 20:59:36 +0000
+Message-ID: <b8c9553d4c61bb611ce7e2d12.5d5eaa32b8.20230108205926.6b10f5ea43.4212be51@mail159.suw16.rsgsv.net>
+X-Mailer: Mailchimp Mailer - **CID6b10f5ea435d5eaa32b8**
+X-Campaign: mailchimpb8c9553d4c61bb611ce7e2d12.6b10f5ea43
+X-campaignid: mailchimpb8c9553d4c61bb611ce7e2d12.6b10f5ea43
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=b8c9553d4c61bb611ce7e2d12&id=6b10f5ea43&e=5d5eaa32b8
+X-MC-User: b8c9553d4c61bb611ce7e2d12
+Feedback-ID: 161767806:161767806.9285201:us5:mc
+List-ID: b8c9553d4c61bb611ce7e2d12mc list <b8c9553d4c61bb611ce7e2d12.510522.list-id.mcsv.net>
+X-Accounttype: pd
+List-Unsubscribe: <https://bschoolforhustlers.us5.list-manage.com/unsubscribe?u=b8c9553d4c61bb611ce7e2d12&id=c4f9fad262&e=5d5eaa32b8&c=6b10f5ea43>, <mailto:unsubscribe-mc.us5_b8c9553d4c61bb611ce7e2d12.6b10f5ea43-5d5eaa32b8@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_229916157"
+MIME-Version: 1.0
+X-TUID: 5WzQgHvehA4R
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_229916157
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+View this email in your browser (https://mailchi.mp/ea730870d5d8/get-rich-=
+in-3-years-and-wealthy-in-10-years-the-blueprint-for-success?e=3D5d5eaa32b8)
+
+
+** The time to get Rich is now
+------------------------------------------------------------
+
+I got rich by starting a business. I don't know stocks=2C It sure wasn't c=
+rypto. it was a business. What if I told you that you could get rich in 3=
+ years?
+
+First of all - what is rich?
+
+I would say the starting point to rich is $250=2C000 a year. At that point=
+=2C you can drive an exotic car=2C buy a million-dollar home and send your=
+ kids to private school. That is the fun stuff. The real thing is you can=
+ live well=2C pay your taxes=2C and have money to make massive investments=
+ to become wealthy.
+
+Today you can start a business and hit  $250=2C000 a year in gross income=
+ in 3 years. From scratch. With no experience. Some people will do it fast=
+er. The first step is not making a ton of money. There are layers to this.=
+ The first step is to learn how to manage money.
+
+To prepare yourself to have money. It is a mindset. It is a process.
+
+There are tons of people of made money who are broke today. Money manageme=
+nt is the cornerstone of getting wealthy. The second step is to start a bu=
+siness. Oh yeah=2C you are keeping your job. Yes=2C you will be working mu=
+ch harder than you are now. That is part of the plan. It is extremely hard=
+ to quit your job and make a lot of money from scratch in a few weeks or a=
+ few months.
+
+So my plan is the teach you to step by step process. I am tearing down my=
+ old training. Making it better and more accessible for the - average pers=
+on. This blueprint will be designed to take the average person who has nev=
+er started a business.
+
+To become a competent and profitable entrepreneur.
+* Learn what business to start
+* Learn how to set up corp structure
+* Learn how to pay yourself
+* Learn how to market
+* Learn how to hire people
+* Learn how to scale up the business
+* Learn how to develop business credit
+* Learn how to set up a holding company
+
+So this is what you get when you sign up you get all of the old training s=
+o you can compare and contrast how the new training is much better than th=
+e old training.
+
+You will get live training once a week ( sometimes more)
+You will get workshops
+You will get the new courses
+You will be in a position to get rich in 3 years and wealthy in 10 years
+
+What is Wealth?  In a video I said wealth in my opinion starts at $5 milli=
+on=2C so what we are going to do is place you at the entrance point of wea=
+lth - a million-dollar net worth that you will scale up to 5 million in ti=
+me.
+
+So I will start adding training next week and once I get a substantial amo=
+unt of training - say Jan 31 the price is going to go up so you want to ge=
+t in now. Sign up below
+
+Enroll in The Successful Business Model HotShot - learn how to manage mone=
+y=2C start a business and scale a business
+BUY NOW (https://learn.thesuccessfulbusinessmodel.com/bundles/thesuccessfu=
+l-business-model-hotstart)
+
+Enroll on - The Digital Money Hot Shot Playbox - Make Millions - learn how=
+ to be a digital nomad and how to use YouTube to make a lot of money=2C ho=
+w to build online courses=2C how to run a blog=2C and how to run YouTube a=
+ds
+BUY NOW (https://learn.thesuccessfulbusinessmodel.com/bundles/the-digtal-m=
+oney-hot-shot-playbox-make-millions)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+** Twitter (http://www.twitter.com/)
+** Facebook (http://www.facebook.com)
+** Website (http://mailchimp.com)
+Copyright =C2=A9 2023 B School for Hustlers=2C All rights reserved.
+ You are receiving this email because you opted in via our website.
+
+Our mailing address is:
+B School for Hustlers
+5825 Glenridge Dr Ste 101
+Blg 3
+Atlanta=2C GA 30328-5387
+USA
+Want to change how you receive these emails?
+You can ** update your preferences (https://bschoolforhustlers.us5.list-ma=
+nage.com/profile?u=3Db8c9553d4c61bb611ce7e2d12&id=3Dc4f9fad262&e=3D5d5eaa32b8&c=3D6b10f5ea43)
+or ** unsubscribe from this list (https://bschoolforhustlers.us5.list-mana=
+ge.com/unsubscribe?u=3Db8c9553d4c61bb611ce7e2d12&id=3Dc4f9fad262&e=3D5d5eaa32b8&c=3D6b10f5ea43)
+=2E
+ Email Marketing Powered by Mailchimp
+http://www.mailchimp.com/email-referral/?utm_source=3Dfreemium_newsletter&=
+utm_medium=3Demail&utm_campaign=3Dreferral_marketing&aid=3Db8c9553d4c61bb6=
+11ce7e2d12&afl=3D1
+--_----------=_MCPart_229916157
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: 1 COLUMN -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Get Rich in 3 Years and Wealthy in 10 Years - The Blueprint=
+ for Success</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09#bodyCell{
+=09=09=09padding:10px;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09body=2C#bodyTable{
+=09=09=09background-color:#FAFAFA;
+=09=09}
+=09=09#bodyCell{
+=09=09=09border-top:0;
+=09=09}
+=09=09.templateContainer{
+=09=09=09border:0;
+=09=09}
+=09=09h1{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:26px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h2{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:20px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h4{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:18px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader{
+=09=09=09background-color:#FAFAFA;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templatePreheader .mcnTextContent=2C#templatePreheader .mcnTextCont=
+ent p{
+=09=09=09color:#656565;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader .mcnTextContent a=2C#templatePreheader .mcnTextCo=
+ntent p a{
+=09=09=09color:#656565;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09#templateHeader .mcnTextContent=2C#templateHeader .mcnTextContent p{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader .mcnTextContent a=2C#templateHeader .mcnTextContent=
+ p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:2px solid #EAEAEA;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templateBody .mcnTextContent=2C#templateBody .mcnTextContent p{
+=09=09=09color:#202020;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateBody .mcnTextContent a=2C#templateBody .mcnTextContent p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#FAFAFA;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templateFooter .mcnTextContent=2C#templateFooter .mcnTextContent p{
+=09=09=09color:#656565;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09#templateFooter .mcnTextContent a=2C#templateFooter .mcnTextContent=
+ p a{
+=09=09=09color:#656565;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:22px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templatePreheader{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templatePreheader .mcnTextContent=2C#templatePreheader .mcnTextCont=
+ent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateHeader .mcnTextContent=2C#templateHeader .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateBody .mcnTextContent=2C#templateBody .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateFooter .mcnTextContent=2C#templateFooter .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FAFAFA=
+;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;background-color: #FAFAFA;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 10px;width: 100%;bord=
+er-top: 0;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <!--[if (gte mso 9)|(IE)]>
+                        <table align=3D"center" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                        <tr>
+                        <td align=3D"center" valign=3D"top" width=3D"600"=
+ style=3D"width:600px;">
+                        <![endif]-->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"border-collapse=
+: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !importa=
+nt;">
+                            <tr>
+                                <td valign=3D"top" id=3D"templatePreheader=
+" style=3D"background:#FAFAFA none no-repeat center/cover;mso-line-height-=
+rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;ba=
+ckground-color: #FAFAFA;background-image: none;background-repeat: no-repea=
+t;background-position: center;background-size: cover;border-top: 0;border-=
+bottom: 0;padding-top: 9px;padding-bottom: 9px;"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlock" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding: 0px 18px 9px;text-align: center;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: bre=
+ak-word;color: #656565;font-family: Helvetica;font-size: 12px;line-height:=
+ 150%;">
+
+                            <a href=3D"https://mailchi.mp/ea730870d5d8/get=
+-rich-in-3-years-and-wealthy-in-10-years-the-blueprint-for-success?e=3D5d5eaa32b8" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight=
+: normal;text-decoration: underline;">View this email in your browser</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign=3D"top" id=3D"templateHeader" s=
+tyle=3D"background:#FFFFFF none no-repeat center/cover;mso-line-height-rul=
+e: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;backg=
+round-color: #FFFFFF;background-image: none;background-repeat: no-repeat;b=
+ackground-position: center;background-size: cover;border-top: 0;border-bot=
+tom: 0;padding-top: 9px;padding-bottom: 0;"></td>
+                            </tr>
+                            <tr>
+                                <td valign=3D"top" id=3D"templateBody" sty=
+le=3D"background:#FFFFFF none no-repeat center/cover;mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;backgro=
+und-color: #FFFFFF;background-image: none;background-repeat: no-repeat;bac=
+kground-position: center;background-size: cover;border-top: 0;border-botto=
+m: 2px solid #EAEAEA;padding-top: 0;padding-bottom: 9px;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlo=
+ck" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0=
+pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: norma=
+l;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: l=
+eft;">The time to get Rich is now</h1>
+
+<p style=3D"margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-fa=
+mily: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">I got=
+ rich by starting a business. I don't know stocks=2C It sure wasn't crypto=
+=2E it was a business. What if I told you that you could get rich in 3 years=
+?&nbsp;<br>
+<br>
+First of all - what is rich?<br>
+<br>
+<strong>I would say the starting point to rich is $250=2C000 a year. </str=
+ong>At that point=2C you can drive an exotic car=2C buy a million-dollar h=
+ome and send your kids to private school. That is the fun stuff. The real=
+ thing is you can live well=2C pay your taxes=2C and have money to make ma=
+ssive investments to become wealthy.<br>
+<br>
+Today you can start a business and hit&nbsp; $250=2C000 a year in gross in=
+come in 3 years. From scratch. With no experience. Some people will do it=
+ faster. The first step is not making a ton of money. There are layers to=
+ this.<strong> The first step is to learn how to manage money.</strong><br=
+>
+<br>
+To prepare yourself to have money. It is a mindset. It is a process.<br>
+<br>
+There are tons of people of made money who are broke today. Money manageme=
+nt is the cornerstone of getting wealthy. The second step is to start a bu=
+siness. Oh yeah=2C you are keeping your job. Yes=2C you will be working mu=
+ch harder than you are now. That is part of the plan. It is extremely hard=
+ to quit your job and make a lot of money from scratch in a few weeks or a=
+ few months.<br>
+<br>
+So my plan is the teach you to step by step process. I am tearing down my=
+ old training. Making it better and more accessible for the - average pers=
+on. This blueprint will be designed to take the average person who has nev=
+er started a business.&nbsp;<br>
+<br>
+<strong>To become a competent and profitable entrepreneur.&nbsp;</strong><=
+/p>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn what business to start</stro=
+ng></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to set up corp structure=
+</strong></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to pay yourself</strong>=
+</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to market</strong></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to hire people</strong><=
+/li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to scale up the business=
+</strong></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to develop business cred=
+it</strong></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;"><strong>Learn how to set up a holding comp=
+any</strong></li>
+</ul>
+So this is what you get when you sign up you get all of the old training s=
+o you can compare and contrast how the new training is much better than th=
+e old training.<br>
+<br>
+You will get live training once a week ( sometimes more)&nbsp;<br>
+You will get workshops<br>
+You will get the new courses<br>
+You will be in a position to get rich in 3 years and wealthy in 10 years<b=
+r>
+<br>
+What is Wealth?&nbsp; In a video I said wealth in my opinion starts at $5=
+ million=2C so what we are going to do is place you at the entrance point=
+ of wealth - a million-dollar net worth that you will scale up to 5 millio=
+n in time.<br>
+<br>
+So I will start adding training next week and once I get a substantial amo=
+unt of training - say Jan 31 the price is going to go up so you want to ge=
+t in now.<strong> Sign up below</strong><br>
+<br>
+<br>
+<br>
+<strong>Enroll in The Successful Business Model HotShot</strong> - learn h=
+ow to manage money=2C start a business and scale a business&nbsp;<br>
+<strong><a href=3D"https://bschoolforhustlers.us5.list-manage.com/track/cl=
+ick?u=3Db8c9553d4c61bb611ce7e2d12&id=3D5ba586d101&e=3D5d5eaa32b8" target=
+=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text=
+-decoration: underline;">BUY NOW</a></strong><br>
+<br>
+<strong>Enroll on - The Digital Money Hot Shot Playbox - Make Millions</st=
+rong> - learn how to be a digital nomad and how to use YouTube to make a l=
+ot of money=2C how to build online courses=2C how to run a blog=2C and how=
+ to run YouTube ads&nbsp;&nbsp;<br>
+<a href=3D"https://bschoolforhustlers.us5.list-manage.com/track/click?u=3D=
+b8c9553d4c61bb611ce7e2d12&id=3D00fdd322a2&e=3D5d5eaa32b8" target=3D"_blan=
+k" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decorati=
+on: underline;"><strong>BUY NOW</strong></a>
+
+<p style=3D"margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-fa=
+mily: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><br>
+<br>
+<img data-file-id=3D"5880621" height=3D"393" src=3D"https://mcusercontent.=
+com/b8c9553d4c61bb611ce7e2d12/images/529e0a66-e3a5-dd53-8187-6913e909c557.=
+png" style=3D"border: 0px;width: 700px;height: 393px;margin: 0px;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"700=
+"></p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign=3D"top" id=3D"templateFooter" s=
+tyle=3D"background:#FAFAFA none no-repeat center/cover;mso-line-height-rul=
+e: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;backg=
+round-color: #FAFAFA;background-image: none;background-repeat: no-repeat;b=
+ackground-position: center;background-size: cover;border-top: 0;border-bot=
+tom: 0;padding-top: 9px;padding-bottom: 9px;"><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowBlock" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"display: inline;border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td valign=3D"top" sty=
+le=3D"padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcn=
+FollowContentItemContainer">
+                                                        <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowCon=
+tentItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-tab=
+le-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"=
+>
+                                                            <tbody><tr>
+                                                                <td align=
+=3D"left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;=
+padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                    <table=
+ align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                        <t=
+body><tr>
+
+                                                                         =
+       <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFol=
+lowIconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+                                                                         =
+           <a href=3D"https://bschoolforhustlers.us5.list-manage.com/track=
+/click?u=3Db8c9553d4c61bb611ce7e2d12&id=3D75ea784191&e=3D5d5eaa32b8" targ=
+et=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"><img src=3D"https://cdn-images.mail=
+chimp.com/icons/social-block-v2/color-twitter-48.png" alt=3D"Twitter" styl=
+e=3D"display: block;border: 0;height: auto;outline: none;text-decoration:=
+ none;-ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=
+=3D""></a>
+                                                                         =
+       </td>
+
+
+                                                                        </=
+tr>
+                                                                    </tbod=
+y></table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"display: inline;border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td valign=3D"top" sty=
+le=3D"padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcn=
+FollowContentItemContainer">
+                                                        <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowCon=
+tentItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-tab=
+le-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"=
+>
+                                                            <tbody><tr>
+                                                                <td align=
+=3D"left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;=
+padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                    <table=
+ align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                        <t=
+body><tr>
+
+                                                                         =
+       <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFol=
+lowIconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+                                                                         =
+           <a href=3D"https://bschoolforhustlers.us5.list-manage.com/track=
+/click?u=3Db8c9553d4c61bb611ce7e2d12&id=3Deb21554407&e=3D5d5eaa32b8" targ=
+et=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"><img src=3D"https://cdn-images.mail=
+chimp.com/icons/social-block-v2/color-facebook-48.png" alt=3D"Facebook" st=
+yle=3D"display: block;border: 0;height: auto;outline: none;text-decoration=
+: none;-ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=
+=3D""></a>
+                                                                         =
+       </td>
+
+
+                                                                        </=
+tr>
+                                                                    </tbod=
+y></table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"display: inline;border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td valign=3D"top" sty=
+le=3D"padding-right: 0;padding-bottom: 9px;mso-line-height-rule: exactly;-=
+ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnFol=
+lowContentItemContainer">
+                                                        <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowCon=
+tentItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-tab=
+le-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"=
+>
+                                                            <tbody><tr>
+                                                                <td align=
+=3D"left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;=
+padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                    <table=
+ align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                        <t=
+body><tr>
+
+                                                                         =
+       <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFol=
+lowIconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+                                                                         =
+           <a href=3D"https://bschoolforhustlers.us5.list-manage.com/track=
+/click?u=3Db8c9553d4c61bb611ce7e2d12&id=3D00a0d4d66a&e=3D5d5eaa32b8" targ=
+et=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"><img src=3D"https://cdn-images.mail=
+chimp.com/icons/social-block-v2/color-link-48.png" alt=3D"Website" style=
+=3D"display: block;border: 0;height: auto;outline: none;text-decoration: n=
+one;-ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=3D"=
+"></a>
+                                                                         =
+       </td>
+
+
+                                                                        </=
+tr>
+                                                                    </tbod=
+y></table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 10px 18px 25px;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #EEEEEE;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #656565;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2023 B School for Hustler=
+s=2C All rights reserved.</em>
+<br>
+    You are receiving this email because you opted in via our website.
+    <br>
+    <br>
+    <strong>Our mailing address is:</strong>
+    <br>
+    <div class=3D"vcard"><span class=3D"org fn">B School for Hustlers</spa=
+n><div class=3D"adr"><div class=3D"street-address">5825 Glenridge Dr Ste 1=
+01</div><div class=3D"extended-address">Blg 3</div><span class=3D"locality=
+">Atlanta</span>=2C <span class=3D"region">GA</span> <span class=3D"postal=
+-code">30328-5387</span></div><br><a href=3D"https://bschoolforhustlers.us=
+5.list-manage.com/vcard?u=3Db8c9553d4c61bb611ce7e2d12&id=3Dc4f9fad262" cla=
+ss=3D"hcard-download">Add us to your address book</a></div>
+    <br>
+    <br>
+=09Want to change how you receive these emails?<br>
+    You can <a href=3D"https://bschoolforhustlers.us5.list-manage.com/prof=
+ile?u=3Db8c9553d4c61bb611ce7e2d12&id=3Dc4f9fad262&e=3D5d5eaa32b8&c=3D6b10f5e=
+a43" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-we=
+bkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decora=
+tion: underline;">update your preferences</a> or <a href=3D"https://bschoo=
+lforhustlers.us5.list-manage.com/unsubscribe?u=3Db8c9553d4c61bb611ce7e2d12=
+&id=3Dc4f9fad262&e=3D5d5eaa32b8&c=3D6b10f5ea43" style=3D"mso-line-height-rul=
+e: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color=
+: #656565;font-weight: normal;text-decoration: underline;">unsubscribe fro=
+m this list</a>.
+    <br>
+    <br>
+ <a href=3D"http://www.mailchimp.com/email-referral/?utm_source=3Dfreemium=
+_newsletter&utm_medium=3Demail&utm_campaign=3Dreferral_marketing&aid=3Db8c=
+9553d4c61bb611ce7e2d12&afl=3D1"><img src=3D"https://cdn-images.mailchimp.c=
+om/monkey_rewards/grow-business-banner-2.png" border=3D"0" alt=3D"Email Ma=
+rketing Powered by Mailchimp" title=3D"Mailchimp Email Marketing" width=3D=
+"435" height=3D"64" style=3D"max-width: 100%; height: auto;"></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                        </table>
+                        <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://bschoolforhustlers.us5.list-manage.com/track/open.=
+php?u=3Db8c9553d4c61bb611ce7e2d12&id=3D6b10f5ea43&e=3D5d5eaa32b8" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_229916157--

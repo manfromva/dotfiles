@@ -122,7 +122,7 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 # bare git repo alias for dotfiles
-alias priv="/usr/bin/git --git-dir=/home/darnell/projects/priv --work-tree=$HOME"
+alias vault="/usr/bin/git --git-dir=/home/darnell/projects/vault --work-tree=$HOME"
 alias dots="/usr/bin/git --git-dir=/home/darnell/projects/bare --work-tree=$HOME"
 
 #arcolinux applications

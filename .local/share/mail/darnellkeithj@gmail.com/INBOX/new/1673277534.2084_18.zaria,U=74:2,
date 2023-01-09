@@ -1,0 +1,966 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3027199mdb;
+        Mon, 9 Jan 2023 06:34:17 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXuvf15iyIVZEB1dOgXP8FJEgkThMoiD6gJMpece4vlfoOKjxxjFeyzAILsjpD138yge4DY9
+X-Received: by 2002:a05:6102:72e:b0:3cb:7ddb:732e with SMTP id u14-20020a056102072e00b003cb7ddb732emr16449175vsg.7.1673274857381;
+        Mon, 09 Jan 2023 06:34:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673274857; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cUnDprbT3iOGKPBPoQaia8nQcWEy3hka1yy8A3oVviUT8Zn1ojZo4VTrRBsP0bTMlL
+         qmIRZYwijCxPmLTL08xDDwolcZWysKFvLh7y0jdF//SBfXGoDGgPAGQ+CqjUc5Pt0kUf
+         ZeAT84C9/BC48PcGILReeViIeRecsw+TDYrL0xYxAzeLN7dHw2DKq3iPkdPobUo7y0dm
+         JrsnOrwY/C3As2YRfIEYes2EsoqdM4ddsLh1lryD3WbzHxffXYxGOB6M0v1bsYfOU0Px
+         mGlmKgKmU24Hoo1RiFJXBAEXxvq/JbuElqAK0DoxQAzaZzabpWfv5s1w0xyTSIAg4SOX
+         ZWNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe-post:list-unsubscribe:content-transfer-encoding
+         :mime-version:subject:message-id:from:date:dkim-signature
+         :dkim-signature;
+        bh=2iu4TjgYLyy7P81Tr4Viitppz643WOSEAhGKbQCZjJs=;
+        b=q6dATp9L0MHYhT1Ec/D5zXXRR3scgQ2MoAi0Qx82nKhBVWTXJRXPYPjhiiOZqHx8Hy
+         aZow0Rbl81Tsuk9o2BkvORf0RggXU14itrfvOo1F+jJWIxFV0Y1xv8WDyW07oklbJKm/
+         eV5B17qT8Fv3nu2Zif5ZDS3YzE8jH3dyLYhWmc+qGkr9O+ssk2RCG/cw8uWtHv/Js8oT
+         0gV/tUjY/fL5nKKuDiTtdCDI2ydITruXLdJr5UvZ5L80Wp4GeY4Qc1zYb5WvLB7WSNQP
+         BfBWyCebZU/yPEJZHrUz9T8KJmGy7eiaP7XL6PU7Fo8KM84hSqP82R+K9e7SHW4miXyg
+         zojA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sefaria.org header.s=s1 header.b=FTcfaIa6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TXqZhuoA;
+       spf=pass (google.com: domain of bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org designates 167.89.27.106 as permitted sender) smtp.mailfrom="bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org"
+Return-Path: <bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org>
+Received: from o41.email.nationbuilder.com (o41.email.nationbuilder.com. [167.89.27.106])
+        by mx.google.com with ESMTPS id u8-20020a67c808000000b003b377aff0b8si2103298vsk.782.2023.01.09.06.34.17
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:34:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org designates 167.89.27.106 as permitted sender) client-ip=167.89.27.106;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sefaria.org header.s=s1 header.b=FTcfaIa6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TXqZhuoA;
+       spf=pass (google.com: domain of bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org designates 167.89.27.106 as permitted sender) smtp.mailfrom="bounces+3414734-994a-darnellkeithj=gmail.com@em1.sefaria.org"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sefaria.org;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	list-unsubscribe:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=2iu4TjgYLyy7P81Tr4Viitppz643WOSEAhGKbQCZjJs=;
+	b=FTcfaIa6NvN/FPKxoImsZIsOvF7UMg4FqGNdCV9n6XWWnDkZx78fdSWjTF7RvjoCVvgg
+	e5CS8Io+Ka3qfy2jGB77fSSTWqXUl/daMrw0qcDsUfARnCNKIEeC4zCyKLwS5jx9JDhS6p
+	s1nryzqV6KQEgQqn3LIfwgQajvb5+aclZDIv6fgye3t2VAquF5O2as+xnFdpNNESB1FbOU
+	ra7a3cjhTxkfbg7lL0GOgXeA7L4D34v3It7q4oW+pZkAFd6H6f7vtsgMh7UTkuJlIsOFsD
+	I0eBBN1LSLsYch5BKWE+12zlJDHzCLSTSiDr84JdWSdjmz7WwH2gidIu4UyGwnCw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	list-unsubscribe:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=2iu4TjgYLyy7P81Tr4Viitppz643WOSEAhGKbQCZjJs=;
+	b=TXqZhuoARToxJZAxDSwRTLnQzFhy5vifgLJgVgSmDbSSQt/UKth3fZZ3N+35OaUlSkOP
+	IBPDbNWB9rfjp1c9SXtBkygHuRG1UgPyR/hfoZUZ9TyqlyeqF2S7Lh+BCLs6R+UGDUgn8N
+	QlxIHAYN4tdUTV0alNW340ar1Wg0L6Kys=
+Received: by filterdrecv-5f76c5748d-gbmfd with SMTP id filterdrecv-5f76c5748d-gbmfd-1-63BC25E8-BB
+        2023-01-09 14:34:16.781331107 +0000 UTC m=+4548368.296242810
+Received: from nationbuilder.com (unknown)
+	by geopod-ismtpd-6-2 (SG)
+	with ESMTP id viqK8piBTYW9u-oIVl_mlg
+	for <sendingthrough@nationbuilder.com>;
+	Mon, 09 Jan 2023 14:34:16.753 +0000 (UTC)
+Date: Mon, 09 Jan 2023 14:34:16 +0000 (UTC)
+From: Elise at Sefaria <hello@sefaria.org>
+Message-ID: <63bc25e8b6133_2514778f585499d@asgworker-qmb3-30.nbuild.prd.useast1.3dna.io.mail>
+Subject: We want to hear from you!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63bc25e8b1801_2514778f58548d8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+List-Unsubscribe: <https://sefaria.nationbuilder.com/unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Feedback-ID: 3414734:SG
+X-SG-EID: 
+ =?us-ascii?Q?oCNl2bRh1Bt36K0PM2BiTapS1M9wTbI4=2F5FfagffdwVtmnMZ7ZkGQTOhtZMC5p?=
+ =?us-ascii?Q?KyDWCM6UKMah3gjBMXAUIA0bdQdB9oAPIp6wqQX?=
+ =?us-ascii?Q?vLfOQGrW6Zs5B3kqh4gIOn5dllcw9KV1pLBq9aN?=
+ =?us-ascii?Q?U4A=2FpdpnW3LspRdZR7jS=2F1+=2F+=2FABqSWmB3TcUnX?=
+ =?us-ascii?Q?DbKf3mGhPuNc=2Ff4PPiEqdp=2F0MTAyaTH5o+n2OS1?=
+ =?us-ascii?Q?wo8=2FVN4rtRPj=2FHK3zYwtxi9FWJYaM2ts8vnTwq?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb3EkxxYKjSnolllYBK1lHgZpxdpACcQ6gDgIxn7WI3?=
+ =?us-ascii?Q?=2FJRubsveusRXykINwaOK0sGEEWAG51ITe3PsUKy?=
+ =?us-ascii?Q?VspBLeQPMGlbSEIZbGCRaKDiM=2Fjr=2FtAPoEhORIk?=
+ =?us-ascii?Q?KbJEqX7G9u+2cblhemVn=2FsE33g3jntcnRR9uxjM?=
+ =?us-ascii?Q?wABWenSZuJFjB2PEqN5Rem7mbLjZu7ctlFA=3D=3D?=
+To: Darnell Keith <darnellkeithj@gmail.com>
+X-Entity-ID: xtuQ1pd4qWT1WHiQz3xVng==
+X-TUID: F19fxmRA2LY9
+
+
+----==_mimepart_63bc25e8b1801_2514778f58548d8
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+VGFrZSA1IG1pbnV0ZXMgdG8gY29tcGxldGUgdGhlIFNlZmFyaWEgdXNlciBzdXJ2ZXkNCg0KwqDi
+gIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCM
+wqDigIzCoMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCM
+wqDigIzCoOKAjMKg4oCMwqDCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCM
+wqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKgwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCM
+wqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoMKg4oCMwqDigIzCoOKAjMKg4oCM
+wqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDCoOKAjMKg4oCM
+wqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg
+4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDCoOKAjMKg
+4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKA
+jMKgwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKA
+jMKg4oCMwqDigIzCoMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKA
+jMKg4oCMwqDigIzCoOKAjMKg4oCMwqDCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKA
+jMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKgwqDigIzCoOKAjMKg4oCMwqDigIzCoOKA
+jMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzC
+oOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKgwqDigIzCoOKAjMKg4oCMwqDigIzC
+oOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoMKg4oCMwqDigIzC
+oOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDC
+oOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDi
+gIzCoOKAjMKgwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDi
+gIzCoOKAjMKg4oCMwqDigIzCoMKg4oCMwqDigIzCoOKAjMKg4oCMwqDigIzCoOKAjMKg4oCMwqDi
+gIzCoOKAjMKgDQoNCiA8aHR0cHM6Ly93d3cuc2VmYXJpYS5vcmc/dXRtX2NhbXBhaWduPWdlbl9z
+dXJ2ZXlfMDEwODIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1zZWZhcmlhPkRlYXIgRGFy
+bmVsbCwNCg0KQXMgdGhlIG5ldyB5ZWFyIGJlZ2lucywgd2UncmUgbG9va2luZyBmb3J3YXJkIHRv
+IGdyb3dpbmcgYW5kIGltcHJvdmluZyB0aGUgbGlicmFyeSBmb3IgeW91LiBBcyBwYXJ0IG9mIHRo
+YXQgcHJvY2Vzcywgd2UncmUgdHVybmluZyB0byB5b3UsIG91ciBsZWFybmVycywgdG8gYmV0dGVy
+IHVuZGVyc3RhbmQgd2h5IGFuZCBob3cgeW91IHVzZSBTZWZhcmlhLg0KDQpQbGVhc2UgdGVsbCB1
+cyBhYm91dCB5b3VyIFNlZmFyaWEgZXhwZXJpZW5jZSBieSB0YWtpbmcgZml2ZSBtaW51dGVzIHRv
+IGZpbGwgb3V0IG91ciB1c2VyIHN1cnZleSA8aHR0cHM6Ly9xdWFsdHJpY3N4bWQ2cXpkMmp5di5x
+dWFsdHJpY3MuY29tL2pmZS9mb3JtL1NWXzZLY1pDaEFqSUhwdGZTdT9zb3VyY2U9ZW1haWw+LiBZ
+b3VyIG9waW5pb24gbWF0dGVycyB0byB1cywgYW5kIGZlZWRiYWNrIGZyb20geW91IHRlbGxzIHVz
+IGhvdyB3ZSBjYW4gaW1wcm92ZS4NCg0KVEFLRSBUSEXCoFNVUlZFWSA8aHR0cHM6Ly9xdWFsdHJp
+Y3N4bWQ2cXpkMmp5di5xdWFsdHJpY3MuY29tL2pmZS9mb3JtL1NWXzZLY1pDaEFqSUhwdGZTdT9z
+b3VyY2U9ZW1haWw+VGhpcyBzdXJ2ZXkgaXMgZm9yIHJlc2VhcmNoIHB1cnBvc2VzIG9ubHksIGFu
+ZCBhbGwgcmVzcG9uc2VzIHdpbGwgYmUgY29tcGxldGVseSBhbm9ueW1vdXMuIFlvdXIgcmVzcG9u
+c2VzIHdpbGwgaGVscCB1cyBiZXR0ZXIgc2VydmUgeW91IGluIHlvdXIgbGVhcm5pbmcuDQoNClRo
+YW5rIHlvdSBmb3IgeW91ciBwYXJ0aWNpcGF0aW9uIQ0KDQpTaW5jZXJlbHksDQoNCkVsaXNlIFJp
+bmdvDQpBc3NvY2lhdGUgRGlnaXRhbCBNYXJrZXRpbmcgTWFuYWdlclNVUFBPUlQgRlJFRcKgVE9S
+QUggPGh0dHBzOi8vc2VmYXJpYS5uYXRpb25idWlsZGVyLmNvbS9zdXBwb3J0c2VmYXJpYT5Db25u
+ZWN0IHdpdGggdXMNCg0KIDxodHRwczovL3d3dy5mYWNlYm9vay5jb20vc2VmYXJpYS5vcmc+IDxo
+dHRwczovL3d3dy5pbnN0YWdyYW0uY29tL3NlZmFyaWFwcm9qZWN0Lz4gPGh0dHBzOi8vdHdpdHRl
+ci5jb20vU2VmYXJpYVByb2plY3Q+IDxodHRwczovL3d3dy55b3V0dWJlLmNvbS91c2VyL1NlZmFy
+aWFQcm9qZWN0PiA8aHR0cHM6Ly9zdG9yZS5zZWZhcmlhLm9yZy8/dXRtX2NhbXBhaWduPWVtYWls
+X2Zvb3Rlcl9ldmVyZ3JlZW4mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXNlZmFyaWE+DQoN
+Cg0KDQotPS09LQ0KU2VmYXJpYSAtIDIyOCBQYXJrIEF2ZSBTLCBTdWl0ZSA3OTI2MiwgTmV3IFlv
+cmssIE5ZIDEwMDAzLCBVbml0ZWQgU3RhdGVzIA0KVGhpcyBlbWFpbCB3YXMgc2VudCB0byBkYXJu
+ZWxsa2VpdGhqQGdtYWlsLmNvbS4gIFRvIHN0b3AgcmVjZWl2aW5nIGVtYWlsczogaHR0cHM6Ly9z
+ZWZhcmlhLm5hdGlvbmJ1aWxkZXIuY29tL3Vuc3Vic2NyaWJlDQotPS09LQ==
+
+----==_mimepart_63bc25e8b1801_2514778f58548d8
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html lang=3D"en" xmlns:v=3D"urn:schemas-microsoft-com:vml"=0D
+xmlns:o=3D"urn:schemas-microsoft-com:office:office">=0D
+=0D
+<head>=0D
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">=0D
+    <meta charset=3D"utf-8">=0D
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">=0D
+<meta name=3D"viewport"=0D
+content=3D"width=3Ddevice-width,initial-scale=3D1">=0D
+<meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno,=0D
+address=3Dno, email=3Dno">=0D
+    <meta name=3D"x-apple-disable-message-reformatting">=0D
+    <!--[if mso]>=0D
+    <noscript>=0D
+        <xml>=0D
+        <o:OfficeDocumentSettings>=0D
+            <o:PixelsPerInch>96</o:PixelsPerInch>=0D
+        </o:OfficeDocumentSettings>=0D
+        </xml>=0D
+    </noscript>=0D
+    <![endif]-->=0D
+    <!--[if !mso]><!-->=0D
+<link=0D
+href=3D"https://fonts.googleapis.com/css?family=3DRoboto:300,400,500"=0D
+rel=3D"stylesheet">=0D
+    <!--<![endif]-->=0D
+    <title>Sefaria</title>=0D
+=0D
+    <style type=3D"text/css">=0D
+        .body {=0D
+            background-color: #FFFFFF !important;=0D
+            width: 100% !important;=0D
+            margin: 0;=0D
+            padding: 0;=0D
+          	-webkit-text-size-adjust: 100%;=0D
+      			-ms-text-size-adjust: 100%;=0D
+        }=0D
+=0D
+        .ExternalClass {=0D
+            width: 100%;=0D
+        }=0D
+=0D
+        .ExternalClass,=0D
+        .ExternalClass p,=0D
+        .ExternalClass span,=0D
+        .ExternalClass font,=0D
+        .ExternalClass td,=0D
+        .ExternalClass div {=0D
+            line-height: 100%;=0D
+        }=0D
+=0D
+        table td {=0D
+            border-collapse: collapse;=0D
+        }=0D
+=0D
+        table {=0D
+            border-collapse: collapse;=0D
+            border-spacing: 0;=0D
+        }=0D
+=0D
+        td {=0D
+            margin: 0em;=0D
+        }=0D
+=0D
+        td p {=0D
+            margin: 1em 0em;=0D
+        }=0D
+=0D
+=0D
+        a {=0D
+            color: #000000;=0D
+            font-weight: 400;=0D
+        }=0D
+=0D
+        p {=0D
+            font-family: Verdana, sans-serif;=0D
+            font-size: 16px;=0D
+            line-height: 1.5;=0D
+            font-style: normal;=0D
+            font-variant: normal;=0D
+            color: #000000;=0D
+        }=0D
+=0D
+        hr {=0D
+            color: #cccccc;=0D
+        }=0D
+=0D
+        .button {=0D
+            border-radius: 5px;=0D
+            text-align: center;=0D
+            font-size: 16px;=0D
+            line-height: 1.2;=0D
+        }=0D
+=0D
+=0D
+        .button a {=0D
+            padding: 15px 46px;=0D
+            display: block;=0D
+            font-size: 16px;=0D
+            line-height: 1.2;=0D
+            text-decoration: none;=0D
+        }=0D
+     =20=0D
+      	p.cardHeadline {=0D
+          color: #18345D;=0D
+          font-weight: bold;=0D
+          font-size: 64px;=0D
+          line-height: 1.2;=0D
+      	}=0D
+     =20=0D
+      	img.spacer.hideMob {=0D
+            height: 10px !important;=0D
+      	}=0D
+=0D
+=0D
+=0D
+=0D
+        @media only screen and (max-width: 580px) {=0D
+            table.outerTable {=0D
+                width: 100% !important;=0D
+            }=0D
+=0D
+            td.margin {=0D
+                width: 0 !important;=0D
+            }=0D
+=0D
+            td.mainContent {=0D
+                padding-right: 5% !important;=0D
+                padding-left: 5% !important;=0D
+            }=0D
+=0D
+            img.full {=0D
+                width: 100% !important;=0D
+                height: auto !important;=0D
+                max-width: 580px !important;=0D
+            }=0D
+           =20=0D
+            img.full300{=0D
+                width: 100% !important;=0D
+                height: auto !important;=0D
+                max-width: 300px !important;=0D
+            }=0D
+=0D
+            td.sectionHeadline {=0D
+                font-size: 28px !important;=0D
+            }=0D
+=0D
+            td.logoCol {=0D
+                width: 15% !important;=0D
+            }=0D
+=0D
+            td.textCol {=0D
+                width: 80% !important;=0D
+            }=0D
+           =20=0D
+            div.twoUp,=0D
+            table.twoUp,=0D
+            td.twoUp,=0D
+            div.twoUpGoWide,=0D
+            table.twoUpGoWide,=0D
+            td.twoUpGoWide {=0D
+                float: none !important;=0D
+            }=0D
+           =20=0D
+            div.twoUpGoWide,=0D
+            table.twoUpGoWide,=0D
+            td.twoUpGoWide {=0D
+                width: 100% !important;=0D
+                max-width: 100% !important;=0D
+                text-align: center !important;=0D
+                padding-left: 0 !important;=0D
+                padding-right: 0 !important;=0D
+            }=0D
+           =20=0D
+            td.rightCol {=0D
+                padding-top: 30px !important;=0D
+            }=0D
+           img.hideMob {=0D
+               display: none !important;=0D
+               height: 0 !important;=0D
+               max-width: 0 !important;=0D
+           }=0D
+           img.showMob {=0D
+             display: block !important;=0D
+             height: auto !important;=0D
+             width: 100% !important;=0D
+           }=0D
+           img.spacer.showMob {=0D
+             height: 10px !important;=0D
+           }=0D
+          img.spacer.hideMob {=0D
+            height: 0 !important;=0D
+          }=0D
+=0D
+=0D
+        }=0D
+=0D
+        @media only screen and (max-width: 475px) {=0D
+            td.goWide {=0D
+                width: 45% !important;=0D
+            }=0D
+=0D
+            table.mobButton {=0D
+                width: 100px !important;=0D
+            }=0D
+=0D
+            td.mobButton {=0D
+                padding: 12px 6px !important;=0D
+            }=0D
+=0D
+            td.sectionHeadline {=0D
+                font-size: 24px !important;=0D
+            }=0D
+          =09=0D
+          	p.cardHeadline {=0D
+              font-size: 48px !important;=0D
+          	}=0D
+          	p.cardSubheadline {=0D
+              font-size: 42px !important;=0D
+          	}=0D
+        }=0D
+=0D
+    </style>=0D
+=0D
+</head>=0D
+=0D
+=0D
+<body class=3D"body" style=3D"margin:0; padding:0;background-color:=0D
+#FFFFFF;">=0D
+=0D
+    <!-- 100% wrapper -->=0D
+<table border=3D"0" width=3D"100%" height=3D"100%" cellpadding=3D"0"=0D
+cellspacing=3D"0" bgcolor=3D"#ffffff">=0D
+        <tr>=0D
+<td align=3D"center" valign=3D"top" bgcolor=3D"#ffffff"=0D
+style=3D"background-color:#FFFFFF;" width=3D"100%">=0D
+=0D
+=0D
+<p style=3D"background-color: #ffffff; height: 0;=0D
+max-height: 0px; font-size: 0; display: none; color: #ffffff;=0D
+overflow: hidden;"><span style=3D"overflow: hidden; height: 0;=0D
+max-height: 0px; font-size: 0; display: none; color: #ffffff;=0D
+line-height: 0;">Take 5 minutes to complete the Sefaria user=0D
+survey</span></p>=0D
+<div style=3D"display: none; max-height: 0px; overflow: hidden;=0D
+background-color:=0D
+#ffffff;">=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0</div>=0D
+<div align=3D"center">=0D
+<table align=3D"center" class=3D"outerTable" style=3D"width: 580px;"=0D
+width=3D"580">=0D
+<tbody>=0D
+<tr>=0D
+<td align=3D"center" class=3D"outerTable" style=3D"padding: 0; width: 100%;=
+"=0D
+width=3D"100%" bgcolor=3D"#FFFFFF">=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"100%"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"35"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<table align=3D"center" style=3D"text-align: left; width: 100%;"=0D
+cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+<td class=3D"mainContent">=0D
+<table align=3D"left" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" style=3D"width: 100%;" width=3D"100%" height=3D"1"><im=
+g=0D
+class=3D"spacer" style=3D"display: block; max-width: 100%; width: 325px;=0D
+height: 1px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"325" height=3D"1"></td>=0D
+</tr>=0D
+<tr>=0D
+<td style=3D"text-align: center; width: 150px; max-width: 50%;"=0D
+width=3D"150"><a style=3D"border: 0; text-decoration: none;"=0D
+rel=3D"noopener"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3Dn1Mvbxqtf8VBMJt9MUGaTk_fFJD=
+DrMr5aQKVx9TblMz0AWCyfw_7NMSzENOwXFFvISGtWuZK6Id-bqWviAVHGV7SfhecORlwoCBL6y=
+6ClGkoleRtAzy8CASHEuRKLpae&amp;e=3D93aef55f1ea33aa2155e079d02063596&amp;utm=
+_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_survey_0108=
+23&amp;n=3D1">=0D
+<img style=3D"border: 0; font-family: Verdana; color: #000000;=0D
+font-size: 22px; height: auto; max-width: 100%;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1991/attachme=
+nts/original/logo_black.jpg"=0D
+alt=3D"Sefaria" width=3D"135" height=3D"auto"> </a></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" style=3D"width: 100%; line-height: 1px;" width=3D"100%=
+"=0D
+height=3D"1"><img class=3D"spacer" style=3D"display: block; max-width: 100%=
+;=0D
+width: 325px; height: 1px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"325" height=3D"1"></td>=0D
+</tr>=0D
+<tr>=0D
+<td class=3D"spacer" style=3D"border-bottom: 1px solid #cccccc;"=0D
+width=3D"100%" height=3D"100%"><img class=3D"spacer" style=3D"display: bloc=
+k;=0D
+height: 15px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"15"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+</tr>=0D
+<tr>=0D
+<td align=3D"center" class=3D"outerTable" style=3D"padding: 0; width: 100%;=
+"=0D
+width=3D"100%" bgcolor=3D"#FFFFFF">=0D
+<table align=3D"center" style=3D"text-align: left; width: 100%;"=0D
+cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+<td align=3D"center" class=3D"mainContent" style=3D"text-align: left;=0D
+padding: 0px;">=0D
+<table style=3D"width: 100%;" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0"=0D
+width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"sectionBody" style=3D"width: 100%; font-size: 16px;=0D
+line-height: 1.5; font-family: Verdana, sans-serif; color: #000000;=0D
+vertical-align: top; padding: 15px 0px;" dir=3D"ltr">=0D
+<!-- start spacer table  -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"15"><img class=3D"spacer"=0D
+style=3D"display: block; height: 15px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"15"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- end spacer table  -->=0D
+<p>Dear Darnell,</p>=0D
+<p>As the new year begins, we're looking forward to growing and=0D
+improving the library for you. As part of that process, we're turning=0D
+to you, our learners, to better understand why and how you use=0D
+Sefaria.</p>=0D
+<p><strong>Please tell us about your Sefaria experience by taking five=0D
+minutes to <a style=3D"font-weight: bold; text-decoration: underline;=0D
+color: #000000;"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3D-Reu6_xpdetPRcbXPpaKitGA-jG=
+9aQQkQrLrVQL8_kpPKC-q047D9GjKpsFxLoq2tw_cnLNieEmmjQzvIHc67XDxklpgVMa321YCb0=
+bonRZwO_HRkIg80qnGSDZXut9j&amp;e=3D93aef55f1ea33aa2155e079d02063596&amp;utm=
+_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_survey_0108=
+23&amp;n=3D2">fill=0D
+out our user survey</a>. </strong>Your opinion matters to us, and=0D
+feedback from you tells us how we can improve.</p>=0D
+<!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"15"><img class=3D"spacer"=0D
+style=3D"display: block; height: 15px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"15"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER -->=0D
+<table align=3D"center" style=3D"margin: 0 auto;" border=3D"0"=0D
+cellspacing=3D"0" cellpadding=3D"0" width=3D"320">=0D
+<tbody>=0D
+<tr>=0D
+<td align=3D"center" style=3D"background-color: #18345d; border-radius:=0D
+8px; color: #ffffff; font-size: 16px; line-height: 1.5;=0D
+text-decoration: none; display: block; text-size-adjust: 100%;=0D
+padding: 15px 36px; margin: 0 auto;" bgcolor=3D"#ffffff"><a=0D
+style=3D"font-weight: bold; font-family: Arial, Helvetica, sans-serif;=0D
+color: #ffffff; text-decoration: none; display: block; word-wrap:=0D
+break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:=0D
+100%; letter-spacing: 1.75px;" rel=3D"noopener"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3D-Reu6_xpdetPRcbXPpaKitGA-jG=
+9aQQkQrLrVQL8_kpPKC-q047D9GjKpsFxLoq2tw_cnLNieEmmjQzvIHc67XDxklpgVMa321YCb0=
+bonRZwO_HRkIg80qnGSDZXut9j&amp;e=3D93aef55f1ea33aa2155e079d02063596&amp;utm=
+_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_survey_0108=
+23&amp;n=3D3"=0D
+target=3D"_blank">TAKE THE=C2=A0SURVEY</a></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- END BUTTON--> <!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"15"><img class=3D"spacer"=0D
+style=3D"display: block; height: 15px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"15"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER -->=0D
+<p>This survey is for research purposes only, and all responses will=0D
+be completely anonymous. Your responses will help us better serve you=0D
+in your learning.</p>=0D
+<p>Thank you for your participation!</p>=0D
+<p>Sincerely,</p>=0D
+<!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"10"><img class=3D"spacer"=0D
+style=3D"display: block; height: 10px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"10"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER -->=0D
+<table align=3D"left" style=3D"width: 100%;" border=3D"0" cellspacing=3D"0"=0D
+cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td style=3D"padding-left: 0px; padding-right: 10px; width: 100px;=0D
+text-align: left; vertical-align: middle;" valign=3D"middle"><img=0D
+style=3D"width: 100px; max-width: 100%; height: auto;"=0D
+src=3D"https://assets.nationbuilder.com/sefaria/mailings/2534/attachments/o=
+riginal/elise_ringo_circle.png?1672529192"=0D
+alt=3D"Elise Ringo" width=3D"100" height=3D"auto"></td>=0D
+<td style=3D"width: 10px;" width=3D"10">=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"100%"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"10" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td align=3D"left" class=3D"sectionBody" style=3D"text-align: left;=0D
+vertical-align: middle; font-size: 16px; font-family: Verdana,=0D
+sans-serif; color: #000000;">Elise Ringo<br><span style=3D"font-style:=0D
+italic; line-height: 1.25;">Associate Digital Marketing Manager</span>=0D
+</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"10"><img class=3D"spacer"=0D
+style=3D"display: block; height: 10px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"10"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER -->=0D
+</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+</tr>=0D
+<tr>=0D
+<td align=3D"center" class=3D"buttonSection" style=3D"padding: 0px 0px 0px;=
+"=0D
+dir=3D"ltr" colspan=3D"3">=0D
+<!-- START SPACER TABLE WITH MULTICOLOR BOTTOM BORDER-->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td align=3D"center" style=3D"width: 100%; padding: 0;" dir=3D"ltr">=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<!-- START SPACER -->=0D
+<tr>=0D
+<td width=3D"100%">=0D
+<!-- START SPACER TABLE-->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"100%"><img class=3D"spacer"=0D
+style=3D"display: block; max-width: 100%; height: 1px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"275" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- END SPACER TABLE-->=0D
+</td>=0D
+</tr>=0D
+<!--END SPACER --> <!-- START FULL WIDTH MULTICOLOR HR -->=0D
+<tr>=0D
+<td style=3D"height: 5px; width: 100%;" width=3D"100%" height=3D"5"><img=0D
+style=3D"width: 100%; height: 5px !important;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1956/attachme=
+nts/original/multicolor_footerbar_v2.png?1622518554"=0D
+alt=3D"" width=3D"100%" height=3D"5"></td>=0D
+</tr>=0D
+<!-- END FULL WIDTH MULTICOLOR HR -->=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- END SPACER TABLE WITH MULTICOLOR BOTTOM BORDER-->=0D
+</td>=0D
+</tr>=0D
+<tr>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+<td align=3D"center" class=3D"mainContent" style=3D"text-align: left;=0D
+padding: 0px;">=0D
+<!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"100%"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"25"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER --> <!-- START DONATE-->=0D
+<table align=3D"center" style=3D"margin: 0 auto;" border=3D"0"=0D
+cellspacing=3D"0" cellpadding=3D"0" width=3D"250">=0D
+<tbody>=0D
+<tr>=0D
+<td align=3D"center" style=3D"background-color: #18345d; border-radius:=0D
+8px; color: #ffffff; font-size: 16px; line-height: 1.5;=0D
+text-decoration: none; display: block; text-size-adjust: 100%;=0D
+padding: 15px 36px; margin: 0 auto;" bgcolor=3D"#ffffff"><a=0D
+style=3D"font-family: Arial, Helvetica, sans-serif; color: #ffffff;=0D
+text-decoration: none; display: block; word-wrap: break-word;=0D
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=0D
+letter-spacing: 1.75px; font-weight: bold;" rel=3D"noopener"=0D
+href=3D"https://sefaria.nationbuilder.com/supportsefaria?e=3D93aef55f1ea33a=
+a2155e079d02063596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_=
+campaign=3Dgen_survey_010823&amp;n=3D4"=0D
+target=3D"_blank">SUPPORT FREE=C2=A0TORAH</a></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- END DONATE BUTTON--> <!-- SPACER -->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"25"><img class=3D"spacer"=0D
+style=3D"display: block; height: 25px;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"25"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- SPACER --> <!-- START SOCIAL MEDIA LOGOS-->=0D
+<table align=3D"center" style=3D"margin: 0 auto;" border=3D"0"=0D
+cellspacing=3D"0" cellpadding=3D"0" width=3D"270">=0D
+<tbody>=0D
+<tr>=0D
+<td style=3D"text-align: center; padding: 10px 0;" colspan=3D"9">=0D
+<p style=3D"font-size: 15px; line-height: 18px; font-family: Roboto,=0D
+Verdana, sans-serif; color: #000000; text-align: center; font-weight:=0D
+bold; margin: 0;">Connect with us</p>=0D
+</td>=0D
+</tr>=0D
+<tr>=0D
+<td style=3D"text-align: center;" width=3D"50"><a title=3D"Sefaria on=0D
+Facebook"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3D27Ax0UmWOX2J8J_QwK9Z6k_xXzv=
+aZFmN7OXy8Ff1jPhd2E-nXjfwUtHcCpQoy-Vj&amp;e=3D93aef55f1ea33aa2155e079d02063=
+596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_=
+survey_010823&amp;n=3D5">=0D
+<img class=3D"full" style=3D"border: 0; width: 50px; height: auto;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1620/attachme=
+nts/original/facebook_icon.png"=0D
+alt=3D"Facebook" width=3D"50" height=3D"auto"> </a></td>=0D
+<td>=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"5" height=3D"1"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"5" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td style=3D"text-align: center;" width=3D"50"><a title=3D"Sefaria on=0D
+Instagram"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3D6hyvAYXBs1PELL28GD73y2l4_xu=
+HGpDbkDWCPdl9Tu-sjLntMtHkAfaMDgF_CS54&amp;e=3D93aef55f1ea33aa2155e079d02063=
+596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_=
+survey_010823&amp;n=3D6">=0D
+<img class=3D"full" style=3D"border: 0; width: 50px; height: auto;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1620/attachme=
+nts/original/instagram_icon.png"=0D
+alt=3D"Instagram" width=3D"50" height=3D"auto"> </a></td>=0D
+<td>=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"5" height=3D"1"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"5" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td style=3D"text-align: center;" width=3D"50"><a title=3D"Sefaria on=0D
+Twitter"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3DYqgukYA3Mrlri-dqG7I8TtZIVJz=
+HD1whI2XkLPJYhyy-7agAzeUt0M5rgMMXEKIj&amp;e=3D93aef55f1ea33aa2155e079d02063=
+596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_=
+survey_010823&amp;n=3D7">=0D
+<img class=3D"full" style=3D"border: 0; width: 50px; height: auto;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1620/attachme=
+nts/original/twitter_icon.png"=0D
+alt=3D"Twitter" width=3D"50" height=3D"auto"> </a></td>=0D
+<td>=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"5" height=3D"1"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"5" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td style=3D"text-align: center;" width=3D"50"><a title=3D"Sefaria on=0D
+YouTube"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3DGQ96LxW7tJscudkL8mlwN9sq6_E=
+5OzyYevSmYfepC8oS0EGSb3CmTLL5KVe11Fos&amp;e=3D93aef55f1ea33aa2155e079d02063=
+596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_campaign=3Dgen_=
+survey_010823&amp;n=3D8">=0D
+<img class=3D"full" style=3D"border: 0; width: 50px; height: auto;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1620/attachme=
+nts/original/youtube_icon.png"=0D
+alt=3D"YouTube" width=3D"50" height=3D"auto"> </a></td>=0D
+<td>=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"5" height=3D"1"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"5" height=3D"1"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td style=3D"text-align: center;" width=3D"50"><a title=3D"Sefaria Store"=0D
+href=3D"https://sefaria.nationbuilder.com/r?u=3DBmhYfCvB0eIKRdDdJBcA4OHGU3r=
+4pwBSQFZmaAg2VfU4PQ7GM91gVmES8KIj8jRC_OHiA-tH5msyKbDFviy4r5yW9BoCqJJBpTbMzU=
+mixBBm8V485kiSTKu3HhyaRWfetZ9CtdjH5WoKkc03ZWHOog&amp;e=3D93aef55f1ea33aa215=
+5e079d02063596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_camp=
+aign=3Dgen_survey_010823&amp;n=3D9">=0D
+<img class=3D"full" style=3D"border: 0; width: 50px; height: auto;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1620/attachme=
+nts/original/shop_icon.png"=0D
+alt=3D"Sefaria Shop" width=3D"50" height=3D"auto"> </a></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+<!-- END SOCIAL MEDIA LOGOS-->=0D
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">=0D
+<tbody>=0D
+<tr>=0D
+<td class=3D"spacer" width=3D"100%" height=3D"100%"><img class=3D"spacer"=0D
+style=3D"display: block;"=0D
+src=3D"https://d3n8a8pro7vhmx.cloudfront.net/sefaria/mailings/1356/attachme=
+nts/original/spacer.gif"=0D
+border=3D"0" alt=3D"" width=3D"1" height=3D"45"></td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+<td class=3D"margin" style=3D"width: 7.2%;" width=3D"7.2%">=C2=A0</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</td>=0D
+</tr>=0D
+</tbody>=0D
+</table>=0D
+</div>=0D
+=0D
+                <!-- START SYSTEM FOOTER TEXT -->=0D
+<table align=3D"center" border=3D"0" cellspacing=3D"0"=0D
+cellpadding=3D"0" width=3D"100%">=0D
+                    <tr>=0D
+<td class=3D"margin" style=3D"width: 7.2%;"=0D
+width=3D"7.2%">=C2=A0</td>=0D
+<td align=3D"center" class=3D"mainContent"=0D
+style=3D"text-align: center; padding: 0px; color: #666666; font-family:=0D
+Verdana; font-size: 12px; line-height: 14px;">=0D
+Sefaria is a 501(c)3 charitable=0D
+organization.<br>=0D
+<br> This email was sent to=0D
+darnellkeithj@gmail.com. To stop receiving emails, <a=0D
+href=3D"https://sefaria.nationbuilder.com/unsubscribe?e=3D93aef55f1ea33aa21=
+55e079d02063596&amp;utm_source=3Dsefaria&amp;utm_medium=3Demail&amp;utm_cam=
+paign=3Dgen_survey_010823&amp;n=3D10"=0D
+style=3D"color:#595959 !important;">click here</a>.=0D
+                        </td>=0D
+<td class=3D"margin" style=3D"width: 7.2%;"=0D
+width=3D"7.2%">=C2=A0</td>=0D
+                    </tr>=0D
+                </table>=0D
+=0D
+            </td>=0D
+        </tr>=0D
+    </table>=0D
+<img src=3D"http://email.nationbuilder.com/wf/open?upn=3DLn6UxEE-2BJWXODIej=
+w9a-2BV0Gl7H-2B0r60Hll-2BibxQXsaig4kurNvMDVvVpwjcLwavVXWEp5RvXc0oqLHhnkJxOh=
+EziPfHnCx9Epzkul-2F64igcZMHSXLlntrig1-2BpfskaYR-2FjkzNNYFMg-2FG1Z-2FaU-2ByJ=
+tkLG3997h2FdVP-2FBeUP4582es9fdQnoyWRRp-2FYd-2BXC42jBG0QmvaCpvo9iUoopMWReAyY=
+AlD80LnbouMKzsR3uXDRvCqrCETVk4uw9rfVkKBbiqDm5Hx-2F8O-2FJZjyhY8O6uBY0pVfdVd-=
+2FM4jUXim8DJLZDywKjzh8GQqkFj3CIgv-2F9tkK-2BUHarlGQ6IiZqE8cEU0lQmJfEZWjlo09n=
+yBUvZDlIzXkzpV827BJDGecbjKZaDnUwDfQlw1dlCUtd1ZRXQ-3D-3D" alt=3D"" width=3D"=
+1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impo=
+rtant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !im=
+portant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !i=
+mportant;padding-bottom:0 !important;padding-right:0 !important;padding-lef=
+t:0 !important;"/></body>=0D
+=0D
+</html>
+----==_mimepart_63bc25e8b1801_2514778f58548d8--

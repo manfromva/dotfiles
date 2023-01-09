@@ -9,10 +9,11 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser";
-    show-icons:                 false;
+	modi:                       "drun,window,ssh,calc,combi";
+    combi-modi:                 "clipboard:greenclip print,emoji";
+    show-icons:                 true;
     display-drun:               " Apps";
-    display-run:                " Run";
+    display-ssh:                " SSH";
     display-filebrowser:        " Files";
     display-window:             " Windows";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
@@ -56,7 +57,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       1000px;
+    height:                      700px;
     x-offset:                    0px;
     y-offset:                    0px;
 

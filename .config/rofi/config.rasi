@@ -1,5 +1,4 @@
 configuration {
-modi: "window,drun,ssh,run";
 /*  width: 50;*/
 /*  lines: 15;*/
 /*  columns: 2;*/
@@ -95,13 +94,9 @@ modi: "window,drun,ssh,run";
 /*  kb-accept-custom: "Control+Return";*/
 /*  kb-accept-alt: "Shift+Return";*/
 /*  kb-delete-entry: "Shift+Delete";*/
-/*  kb-mode-next: "Shift+Right,Control+Tab";*/
-/*  kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
 /*  kb-row-left: "Control+Page_Up";*/
 /*  kb-row-right: "Control+Page_Down";*/
-/*  kb-row-up: "Up,Control+p,ISO_Left_Tab";*/
 /*  kb-row-down: "Down,Control+n";*/
-/*  kb-row-tab: "Tab";*/
 /*  kb-page-prev: "Page_Up";*/
 /*  kb-page-next: "Page_Down";*/
 /*  kb-row-first: "Home,KP_Home";*/
@@ -149,5 +144,4 @@ modi: "window,drun,ssh,run";
 /*  me-accept-entry: "MouseDPrimary";*/
 /*  me-accept-custom: "Control+MouseDPrimary";*/
 }
-@theme "/usr/share/rofi/themes/android_notification.rasi"
-/*  window { fullscreen: true; } */
+@theme "~/.config/rofi/launchers/type-1/style-1.rasi"

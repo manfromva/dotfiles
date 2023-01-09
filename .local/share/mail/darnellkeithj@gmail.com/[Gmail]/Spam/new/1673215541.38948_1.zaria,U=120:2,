@@ -1,0 +1,199 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2590891mdb;
+        Sun, 8 Jan 2023 14:00:38 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvHTFtFCD7GDc0vN4F+4Ajzws59lPz7s//pCue1sHYb4iTQNioRmILUw+EGd13A97b3r7QH
+X-Received: by 2002:a05:6808:190a:b0:360:fc00:5274 with SMTP id bf10-20020a056808190a00b00360fc005274mr36884920oib.50.1673215238659;
+        Sun, 08 Jan 2023 14:00:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673215238; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pvRb7XnkYlVVmX3YAHh7VzC81hrWvcrzBX1iy5FEvhjFLdijcdq7fAmKk2jtg8uHVl
+         eQJjvJxPw6XYZ9dW8sONV73WRpMxwnTM6F5359LX7U047x/VUINiTaVpKojnEXrx2eoq
+         09SBAmfRw6iXtxRT5NVkOI29g6jeRWErapupj9g1TQqBZiC54BvKYMDz3uQLlC2tDu1g
+         gU62/NLL26rjxhke1KLeM8Onn9D/nv8CMaUGOjDCNJbh2M5xRUPVwK2QFAN/osCWoV8f
+         mkxFoVho/1GFkkYrOqwxoY8pB8NyplFMa7vB5DrFHchsCHK7JYsgwLcyNIQevCFIpoKi
+         A3IA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:user-agent:content-transfer-encoding:mime-version
+         :subject:message-id:to:from:date:dkim-signature:precedence;
+        bh=uObqtCvUsjNCBMcbnAawGnLYpwFlqXTIUQ0EWOfedGw=;
+        b=kZ794K3QvCc19AoeF82XoTwxudH1+HtRYgGHThsbiVtEBTdy+06ko7noSmgsYavVtM
+         S5P7TZIAE2Kv93b0zd1xUt7tX3r1TQCGkKpv6KKZzFjitzSkpJRX1yO0Xix25JeC7usQ
+         ptZWTlH0QS8fDWunbor+8amMuqHCkgKflrbEDXOGVE+tezxGF/EpdXsYHFEtLlCXLjU4
+         tiu+HGbsfaPI+aAAOV5uJPTrIlTf1Le3iXuO5Xw/YD4gxb0Sfxp3LhztIl2Fd3du1nto
+         XyWiGy1YG6a3F4JHhB7ev0kohsRR+erkVcfRQjd9O/mtShBqrQR/ZKJtVrVIQLzi4/yT
+         xlcA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bmd.jp header.s=20181023 header.b=CRyNCTBK;
+       spf=pass (google.com: domain of spmlerror-014.hirosan.2372.17410@err.q.bmd.jp designates 18.182.225.86 as permitted sender) smtp.mailfrom=spmlerror-014.hirosan.2372.17410@err.q.bmd.jp
+Return-Path: <spmlerror-014.hirosan.2372.17410@err.q.bmd.jp>
+Received: from ks0003-001.tnbt.jp (ks0003-001.tnbt.jp. [18.182.225.86])
+        by mx.google.com with ESMTPS id m2-20020a056808024200b0035a4d9b34ddsi6329022oie.55.2023.01.08.14.00.38
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 14:00:38 -0800 (PST)
+Received-SPF: pass (google.com: domain of spmlerror-014.hirosan.2372.17410@err.q.bmd.jp designates 18.182.225.86 as permitted sender) client-ip=18.182.225.86;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bmd.jp header.s=20181023 header.b=CRyNCTBK;
+       spf=pass (google.com: domain of spmlerror-014.hirosan.2372.17410@err.q.bmd.jp designates 18.182.225.86 as permitted sender) smtp.mailfrom=spmlerror-014.hirosan.2372.17410@err.q.bmd.jp
+Precedence: bulk
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1673215227;
+	s=20181023; d=bmd.jp;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=uObqtCvUsjNCBMcbnAawGnLYpwFlqXTIUQ0EWOfedGw=;
+	b=CRyNCTBK9QBsxe4shbI8xGToRki3zs16XSNeHeOuORVXddSTonkVxZTSVh74mMzP
+	NvzX1vCpVSnigPgi5Va31ZYJ+fB6zdhSGf1aLUQccgRTlDntgHfxSQfA6my3lXGZaIt
+	/UDxuw0pCfDIE+VpUgUiimy4X4A7v03IYzkRa5Vc=
+Date: Mon, 9 Jan 2023 07:00:27 +0900 (JST)
+From: =?ISO-2022-JP?B?GyRCP00kTj80JEtFdCRyJEgkYiQ5GyhC?= <hitonokokoroni@ni-g.co.jp>
+To: darnellkeithj@gmail.com
+Message-ID: <213275303.7796.1673215227823.Mail.root@bjvm-1-q.prd.bm.internal>
+Subject: =?ISO-2022-JP?B?GyRCP00kTj80JEtFdCRyJEgkYiQ5GyhCIDUyMTkgGyRCJTkbKEI=?=
+ =?ISO-2022-JP?B?GyRCJT8hPCVIJSIlQyVXRSo/TUA4IUolLSVjJWolIiFLQG9OLBsoQg==?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-2022-JP
+Content-Transfer-Encoding: 7bit
+User-Agent: Mail/10.0.0
+Feedback-ID: q.bmd.jp-hirosan:q.bmd.jp-hirosan-mno2372:q.bmd.jp-hirosan-gno1:blastmail
+X-TUID: 1HrXfCAyqQ55
+
+【スタートアップ的人生（キャリア）戦略】
+
+
+
+リンクトイン共同創業者、リード・ホフマン＆ベン・カスノーカ氏の心に響く言葉より…
+
+
+《人はみな起業家》 
+
+人はみな起業家である。 
+
+洞窟（どうくつ）生活をしていた時代には、自分で食べ物を見つけて飢えをしのいでいたのだから、言うなら全員が自営業だったわけだ。
+
+人類の歴史はそこから始まった。
+
+文明が発展するにつれて、このような暮らしは失われていった。 
+
+私たちは「労働者」になった。
+
+この呼称をあてがわれたからだ。
+
+そして、自分たちが起業家であることを忘れてしまった。 
+
+（マイクロファイナンスのパイオニア、ノーベル賞受賞者／ムハマド・ユヌス）
+
+
+
+
+私たちはみな、起業家（アントレプレナー）として生まれついている。 
+
+といっても、会社を興すために生まれてきたという意味ではない。
+
+それどころか、たいていの人は会社など興すべきではない。
+
+起業とは、成功の見込みが小さいうえに、気苦労が絶えないジェットコースターに乗るようなものだからだ。 
+
+
+なぜ誰もが起業家なのかというと、人はみな「自分自身の運命の手綱は自分で握りたい」、 そして「常に創造的（クリエイティブ）でありたい」という思いがDNA (遺伝子)に組み込まれているからだ。 
+
+創造（クリエイティビティ）こそ、起業家精神のエッセンスなのである。 
+
+ユヌスの言葉にもあるように、洞窟暮らしをしていた私たちの祖先は、自分で食べ物を見つけなくてはならなかった。
+
+仲間と生きていくためのルールを決めなくてはならなかった。
+
+自分の人生を創業していたのだ。
+ 
+
+ところが、何千年も経つうちに、私たちは起業家としての生来の自覚を失い、雇われ人として振る舞うことにすっかり慣れてしまった。
+
+これでは、素晴らしい人生は築けない。 
+
+あなたは、成長の最中にある新興ベンチャー企業を少なくとも1つ舵取りしている。
+
+そう、 「自分のキャリア」というスタートアップを。 
+
+
+仕事をしていくうえで常にぶつかる難題にうまく対処し、自分のキャリアの手綱を握るには、自分の内にある起業家としての本能を再発見して、新しい世渡りの道を切り拓かなくてはいけない。
+ 
+医師、会社員、教員、エンジニア、ウーバーの運転手、そして企業のオーナーでさえも、この時代には起業家としての自覚を持つ必要がある。
+
+
+『スタートアップ的人生（キャリア）戦略』ニュースピックス
+https://amzn.to/3jVJxj4
+
+
+
+
+
+
+本書の中にこんな文章があった。
+
+
+『若者はエスカレーターになかなか乗れず、ミドル世代は容易に上へと進めず、60歳以上の人々は仕事を辞めるに辞められない。 
+
+キャリアパス（キャリアを積み重ねること）はもはやエスカレーターではなくなってしまった。
+
+むしろジャングルだ。誰もが落ちないように必死で木をよじ登っている。 
+
+キャリアをめぐる従来の前提が崩れている背景には、2つの大きな潮流がある。
+
+「世界的なテクノロジー革命」と「終身雇用の崩壊」だ。 
+
+テクノロジーの進歩を受けて、かつては苦労して知識やスキルを身につける必要のあった仕事が自動化されている。
+
+株式仲買人や放射線科医など高報酬のホワイトカラーも例外ではな い。
+
+このような特定の仕事の淘汰は、すでに各業界を席巻しつつあるAI(人工知能)の進歩によって、さらに進んでいくだろう。 
+
+テクノロジーは新しい職種も生むが、たいていは失業数を埋め合わせるほどではない。
+
+そして新しい職種は一般的に、以前の職種とは違った、より高度なスキルを必要とする。 
+
+仮に多くの業界で求められるスキルが用済みにならなかったとしても、企業は海外への外注が容易になる。
+
+働き手は世界中の大勢(たいてい賃金がより安いフリーランス)と仕事を奪い合うことになり、そうこうするうちにあなたの給料は下がっていく。 
+
+人材市場は、後戻りの利かない変化にさらされている。』
+
+
+
+スタートアップと人生は似ている、という。
+
+
+
+『飛ぶ鳥を落とす勢いのスタートアップが採用する事業戦略と、順風満帆の人生（キャリア）を送る個人のキャリア戦略は、驚くほど似通っているということだ。
+
+つまり、会社を順調に成長させる原則は、素晴らしいキャリアを築く秘訣とそれほど変わらない。
+
+会社で言えば製品、事業能力、顧客基盤を迅速に展開することは、キャリア構築においてはスキル、人脈、市場とのつながりを素早く育てることと変わらないのである。』
+
+
+
+つまり、会社のブランドを構築するのと、個人のブランドを構築するのは同じだということ。
+
+トムピータズ氏のいう「ブランド人になれ」だ。
+
+かつては、会社の肩書だけでも勝負できたが、これからはそうはいかない。
+
+会社に勤めていたとしても「個人事業主」のように考え、行動することが大事だということ。
+
+
+スタートアップ的人生（キャリア）戦略を、個人としてしっかりと打ち立てたい。
+
+
+
+
+
+
+
+■メルマガの登録と解除はこちらから
+http://hitonokokoro.com/
+
+■「人の心に灯をともす」のfacebookページです♪
+http://www.facebook.com/hitonokokoro
+
+■【人の心に灯をともす】のブログはこちら
+http://ameblo.jp/hiroo117/
+
+■Twitterはこちらから
+https://twitter.com/hiroo117

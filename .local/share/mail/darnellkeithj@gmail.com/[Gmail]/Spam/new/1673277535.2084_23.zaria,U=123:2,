@@ -1,0 +1,345 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2807079mdb;
+        Sun, 8 Jan 2023 23:36:53 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtB/4G3/tBK+zYpnTK0HKPZ2j9rJ+qw8xxfYuQm9u+h/Ukn166rN2uQpr7Ur7cSv2YD0Uy2
+X-Received: by 2002:a0c:90c5:0:b0:521:2df4:f467 with SMTP id p63-20020a0c90c5000000b005212df4f467mr121474225qvp.38.1673249813451;
+        Sun, 08 Jan 2023 23:36:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673249813; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ULbL2HXDD4yt6GMEdMgAE3jo+Nyg7VuN4vAwNX2ihWVrAGrSz7QnI0Y50xqQ8T37CV
+         uMzhxU61an1Fff7KJNttd9aEmV+nBuC1Crmk3VrSeca6TRcaA2CtcvqLLDQdxBzTEKO0
+         +Wm9HSPqrqvKtPsGgm/T6cJlcDJholufKHLGZo1sSRcLAY6Ej2JQNoGejD6nwB/KDdlR
+         GSOvLsnf72O71wCv+b7FiFuCITaDZt1owIQzjUzpsBHUrTTZHJjvnDdxcmavxuwaR3+W
+         sCv90aF4bDFcuW55o4aIA2I3Y6rvIBzNa/oCkHlb6KHrU3HC/L4I4HVvDsBDkb8owhL1
+         1KmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=yMUuP5VR2S9lq1NbL80VUTq3FIBYpxqX9QG1DZ77JLM=;
+        b=XFdTYhuev71ujsZMaJjFyMnIgHQkls/ghV2kDhUOjknaZn/Z3E3yNmrPs7nUfQs6FJ
+         ewOak8llxZqmvnV51DAZ1zzvJJWmBBxrQIpnz6Yww2TKsfXvZlM/SNh83us3Hakjkvx4
+         RONF896MvYLj5M6Ki2KXQTZ0qqknDFwp87WpHmBEPnJTYoEKet79tCqCKjl7BSKjD3G4
+         kZ60RjQXAeO4DG3iAtXx72Fmb7xoFjMfrkKxF/fNOYQ5pJ9RgscfpHfeD06zBXosNmBQ
+         69wcmInlmz3zTrV6r2gwAE46fulLUFARA5TalROLTBDIL5yoGRca4A0+d/DgjKC3gIj8
+         polg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@em.travala.com header.s=11dkim1 header.b=d9W0vWyT;
+       spf=pass (google.com: domain of bounce-129_html-180234031-592130-514003226-19004@bounce.em.travala.com designates 13.111.157.207 as permitted sender) smtp.mailfrom=bounce-129_HTML-180234031-592130-514003226-19004@bounce.em.travala.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.travala.com
+Return-Path: <bounce-129_HTML-180234031-592130-514003226-19004@bounce.em.travala.com>
+Received: from mta.em.travala.com (mta.em.travala.com. [13.111.157.207])
+        by mx.google.com with ESMTPS id dt31-20020a05620a479f00b006f765f6aa33si4037750qkb.52.2023.01.08.23.36.53
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 23:36:53 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-129_html-180234031-592130-514003226-19004@bounce.em.travala.com designates 13.111.157.207 as permitted sender) client-ip=13.111.157.207;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@em.travala.com header.s=11dkim1 header.b=d9W0vWyT;
+       spf=pass (google.com: domain of bounce-129_html-180234031-592130-514003226-19004@bounce.em.travala.com designates 13.111.157.207 as permitted sender) smtp.mailfrom=bounce-129_HTML-180234031-592130-514003226-19004@bounce.em.travala.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.travala.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1; d=em.travala.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=no-reply@em.travala.com;
+ bh=yMUuP5VR2S9lq1NbL80VUTq3FIBYpxqX9QG1DZ77JLM=;
+ b=d9W0vWyT+FE4A3nkdYPr0hSxQPRO+jJbCXxI/7X7PCtLzhEryXu4bKk2u2l6ltHRLRno+JktZRIH
+   /fZMnUvsXOHp154UIKVykhFvIYC/YMXSCp5vsEl56i2uD5YE7N/62QFzhwvgaeYGfc2RUmMa7rUq
+   a34Ux6+BH9CfWFN3A5exUSlRaysAxO9Q0k6H05O7ra0Gmrh6VJIYx3rXDztejwGd9By/Yp5oyC83
+   IVEsNfTEXsKLE26ls7yllmXEtVlhy+X3SEfEUzgo4pLnkpPdUhZ2UqLuG++X0kMmw4h4+KhEG31O
+   R4U8nRlnQdfDnj8oIapzlGskBgbHA3RsUr35Kg==
+Received: by mta.em.travala.com id hnf21a2fmd4i for <darnellkeithj@gmail.com>; Mon, 9 Jan 2023 07:36:06 +0000 (envelope-from <bounce-129_HTML-180234031-592130-514003226-19004@bounce.em.travala.com>)
+From: "Travala.com" <no-reply@em.travala.com>
+To: <darnellkeithj@gmail.com>
+Subject: =?UTF-8?B?SG90ZWwgU3BvdGxpZ2h0OiBTaGFuZ3JpLUxhIPCfjJ8=?=
+Date: Mon, 09 Jan 2023 01:36:06 -0600
+List-Unsubscribe: <http://click.em.travala.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMDMyMjYiLCJzIjoiMTgwMjM0MDMxIiwibGlkIjoiMTI5IiwiaiI6IjU5MjEzMCIsImpiIjoiMTkwMDQiLCJkIjoiMTEwMDI0In0.kqLdL-ccTMs4jytld5CCv_jxsKB6T9dgvLmrCqQTQ2s>, <mailto:leave-fd4f15727c0b5c392848-fe39157875660779751771-fecb11797765077d-fe3811717164047e771676-ff011579756400@leave.em.travala.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Support Team" <reply-fecb11797765077d-129_HTML-180234031-514003226-19004@e.travala.com>
+List-ID: <514003226.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 11
+x-job: 514003226_592130
+Message-ID: <45c8d03f-aebc-43db-8089-27f52fb830bc@atl1s11mta316.xt.local>
+Feedback-ID: 514003226:592130:13.111.157.207:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="fwaz2mAUOk7A=_?:"
+X-TUID: xFF+98gR6X3M
+
+This is a multi-part message in MIME format.
+
+--fwaz2mAUOk7A=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+http://click.em.travala.com/?qs=0ac6ab03d97875884839ba50fda28a1462a1422e4865d05b3e3656b2554275fb37b306ff72f754616b8c1d83c6f0dfe4df91792addd6d867ef98c3aad0909fa0 
+
+http://click.em.travala.com/?qs=0ac6ab03d97875884839ba50fda28a1462a1422e4865d05b3e3656b2554275fb37b306ff72f754616b8c1d83c6f0dfe4df91792addd6d867ef98c3aad0909fa0 
+
+
+ New year, new hotels to explore! This month, we’re showcasing Shangri-La, a luxury hotel experience that combines traditional Asian hospitality with modern décor.
+
+Taking its name from a mythical earthly paradise described in the 1933 novel Lost Horizon, the luxury hotel chain first opened its doors in Singapore in 1971 and has since strived to create a utopia for travellers across the world.
+
+With over 90 locations on five continents today, we’ve selected five Shangri-La hotels that steal the show—check them out below!
+ 
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588e4930e0cdde8d44e6c6f0b1118519f7e66006135e2eda36aeb73fb85e48e838f26322913083b313cb3965caed6756ceeeb3c1512d80179e0 
+Shangri-La Paris 
+5/5 Stars | From $1,687 Per Night
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588e4930e0cdde8d44e6c6f0b1118519f7e66006135e2eda36aeb73fb85e48e838f26322913083b313cb3965caed6756ceeeb3c1512d80179e0 
+
+A stay at Shangri-La Paris places you in the heart of Paris, within a 15-minute walk of the Eiffel Tower and Champs-Élysées. With a distinct French-meets-Asian style, the 100 guestrooms are bathed in natural light and feature a calming Rococo colour scheme. Make yourself at home in one of the 100 guestrooms featuring espresso makers, flat-screen televisions and Egyptian cotton sheets.
+
+http://click.em.travala.com/?qs=0ac6ab03d978758881a43e4a33afae5c940e39831efa4c2e81706ac2f7fcc09ef6731b32319e693b317fa9737a6711735a35f3f5a7be1965534974966390f871 
+Shangri-La Toronto 
+5/5 Stars | From $552 Per Night
+
+http://click.em.travala.com/?qs=0ac6ab03d978758881a43e4a33afae5c940e39831efa4c2e81706ac2f7fcc09ef6731b32319e693b317fa9737a6711735a35f3f5a7be1965534974966390f871 
+
+Soaring high above the city in one of Toronto’s tallest buildings, Shangri-La Toronto offers guests a distinctively urban escape. Just a 6-minute walk from Queen Street West on University Avenue, the hotel is surrounded in all directions by the best the city has to offer. The nearby Art Gallery of Ontario, the vibrant waterfront, and the non-stop energy on Yonge Street are just a few of the great city hotspots within easy reach.
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588ea0aa55a6a6779d48f6cbdc6f9a79f7b4282209ca7137b34c67fea1e50bdb6d9e82cf916e2fc6b4478ed6261b4acb24b49b60a3308d436fe 
+Shangri-La Dubai 
+5/5 Stars | From $694 Per Night
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588ea0aa55a6a6779d48f6cbdc6f9a79f7b4282209ca7137b34c67fea1e50bdb6d9e82cf916e2fc6b4478ed6261b4acb24b49b60a3308d436fe 
+
+Shangri-La Dubai is an ideal starting point from which to discover the city’s dynamic energy, where modern architecture stands side-by-side with traditional souk markets. Strategically located on Sheikh Zayed Road, minutes away from Dubai Mall and City Walk, the hotel offers spacious rooms with stunning views of the ever-evolving skyline or the Arabian Sea.
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588257f4b1d2279f74b112f8a38cf298d3f237f0d2e30ef25cc749651282a2c5fac0bfbcda1f1ae20ba0253d5392d0d7bd59c92d5dd381f788c 
+Shangri-La The Shard, London 
+5/5 Stars | From $738 Per Night
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588257f4b1d2279f74b112f8a38cf298d3f237f0d2e30ef25cc749651282a2c5fac0bfbcda1f1ae20ba0253d5392d0d7bd59c92d5dd381f788c 
+
+Feel an unparalleled connection to London at Shangri-La The Shard. Starting on level 34 – a soaring 125 metres high – the hotel occupies 18 floors of The Shard, an architectural icon and Western Europe’s tallest building. Guests can connect to the whole city through panoramic skyline views overlooking the River Thames, with other iconic landmarks all within easy reach.
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588564aac0a6bab2cfd82964c61e203a2642a27a4fa9fb0021804257d2be8b559dd8a4545b5261c348981a8eb856bb12064cbd3c092bb2a3be1 
+Shangri-La Vancouver 
+5/5 Stars | From $333 Per Night
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588564aac0a6bab2cfd82964c61e203a2642a27a4fa9fb0021804257d2be8b559dd8a4545b5261c348981a8eb856bb12064cbd3c092bb2a3be1 
+
+Exuding sleek sophistication and full of Zen-like energy, Shangri-La Vancouver is your urban sanctuary nestled between the mountains and the sea. Occupying 15 floors of the tallest building in downtown Vancouver, the hotel sits at the heart of the city’s most popular areas. Venture to nearby Robson Street for luxury shopping, take in the stunning nature Vancouver is known for at Stanley Park, or revel in the nightlife on Granville Street.
+
+
+ 
+ Happy Travels!The Travala.com Team
+Download the Travala App
+http://click.em.travala.com/?qs=0ac6ab03d97875881a47ad5d7ee85e956c69ff824548c003d6e758f42ec35dfface3de30f2f573dab49fcb5be106c244018390ffcb81eedb060ecbd2bcab08ea 
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588dbbd6bb7980eebc835e9010dd54b0b12117b120e132f52b11827622522c3dd09d4492f512a302284736a3721e9edb00d128c13bcd5e4c8fe 
+TravelFront
+
+ Harbour Place, 2nd Floor, 103 South Church Street
+ George Town, Grand Cayman
+ KY1-1106, Cayman Islands
+ Registration No: IC-361834
+ 
+
+http://click.em.travala.com/?qs=0ac6ab03d97875882966a20173bb7dca0c2b8749353727d89a15049654578323d1b440a03e555620ea01d174b8b1d99fc475e521ad0caa0bf7c40abfd5774cc7 
+
+http://click.em.travala.com/?qs=0ac6ab03d97875883fdc14832efe85045dd5ff9cf777d11cdc6ac7a5c27c14574bbc749b156e0a62fc2a7192a771b7434875cdcec972707204507b466e4abc56 
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588761c73208afe5621ca2eef1be060945c164a88aa985482a07973dc112c203a056e45787982f8844da18d910747f25ab02b646daca2f11ed4 
+
+http://click.em.travala.com/?qs=0ac6ab03d9787588593356049bc4c69cab57c093990569e1ddc109c52c26e6777dfbc7fe52a52af32efa70a74790f42662d0c364d76e2cb16df6904060f549a4 
+
+© 2023 Travala.com. All rights reserved.
+
+You're receiving this email because you opted in to receiving emails from Travala.com. You may opt out of receiving these types of communications by clicking the unsubscribe link below.
+
+http://click.em.travala.com/subscription_center.aspx?qs=841c01e5b8c33992c63c1f48ce7a692c54ebaa01cbedc0cf1e7e6babbcf8ee0bcffc15c8661e0d06bb151afbbc96a3dd6a52cc03f29629212bc9c680c348cc4f2191110bbc12ac6a 
+
+ Unsubscribe
+  &ensp;|&ensp;
+ 
+http://click.em.travala.com/?qs=0ac6ab03d9787588463e6c1c061cd2984ae58ed75a09144d50771a14d6a33078b71a4861c30ae54fba2ad74a8248d8b6cd5eb58ebf24d59bfc480a05fbdee52f 
+
+ Terms and Conditions
+  &ensp;|&ensp;
+ 
+http://click.em.travala.com/?qs=0ac6ab03d97875880ac926eb7b2a02d0ac6c8ad73034132a188a3ccf94e4cc22895ca8fe854c6b0961201447fa7c0c046565d8f164d12f0b6ea2156f87add528 
+
+ Privacy Policy
+  
+
+
+--fwaz2mAUOk7A=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<img src="http://click.em.travala.com/open.aspx?ffcb10-fecb11797765077d-fe5e117273670d7c7711-fe3811717164047e771676-ff6315727c-fe39157875660779751771-ff011579756400&d=110024&bmt=0" width="1" height="1" alt="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"           content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        html {
+            font-size: 14px;
+        }
+
+        * {
+            font-weight: 400;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        p {
+            color: black;
+            font-weight: 500;
+            margin-bottom: 20px !important;
+        }
+
+        a {
+            font-weight: 500;
+            color: #048cec;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        .app-ggplay img {
+            width: 200px;
+        }
+
+        @media all and (max-width: 480px) {
+            html {
+                font-size: 12px;
+            }
+
+            .app-ggplay img {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body style="max-width: 600px; padding: 0; margin: 0 auto !important; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);">
+    <div style="padding: 20px 0;text-align: center; background-color: #182A60;">
+        
+      <a href="http://click.em.travala.com/?qs=0ac6ab03d97875884839ba50fda28a1462a1422e4865d05b3e3656b2554275fb37b306ff72f754616b8c1d83c6f0dfe4df91792addd6d867ef98c3aad0909fa0" target="_blank"><img width="216px" src="https://static.travala.com/frontend/images-pc/logo-footer.png" alt=""/></a>
+    </div>
+  <a href="http://click.em.travala.com/?qs=0ac6ab03d97875884839ba50fda28a1462a1422e4865d05b3e3656b2554275fb37b306ff72f754616b8c1d83c6f0dfe4df91792addd6d867ef98c3aad0909fa0" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/83977236-ffda-4d62-b346-5494ee6b66b3.png" alt=""/></a>
+    
+  <div style="padding: 0px 0px;">
+     <p>
+       New year, new hotels to explore! This month, we’re showcasing Shangri-La, a luxury hotel experience that combines traditional Asian hospitality with modern décor.
+<br/><br/>
+Taking its name from a mythical earthly paradise described in the 1933 novel Lost Horizon, the luxury hotel chain first opened its doors in Singapore in 1971 and has since strived to create a utopia for travellers across the world.
+<br/><br/>
+With over 90 locations on five continents today, we’ve selected five Shangri-La hotels that steal the show—check them out below!
+    </p>   
+            
+    <h5><a style="font-size: 14px;color: #000;font-weight: 600;" href="http://click.em.travala.com/?qs=0ac6ab03d9787588e4930e0cdde8d44e6c6f0b1118519f7e66006135e2eda36aeb73fb85e48e838f26322913083b313cb3965caed6756ceeeb3c1512d80179e0" target="_blank">Shangri-La Paris</a></h5>
+        <p>5/5 Stars | From $1,687 Per Night</p>
+    </div>
+        <a href="http://click.em.travala.com/?qs=0ac6ab03d9787588e4930e0cdde8d44e6c6f0b1118519f7e66006135e2eda36aeb73fb85e48e838f26322913083b313cb3965caed6756ceeeb3c1512d80179e0" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/5156162b-b0a6-48fa-8f9e-ab03126355f4.jpg" alt=""/></a>
+  
+  <div style="padding: 0px 0px;">
+        <p>A stay at Shangri-La Paris places you in the heart of Paris, within a 15-minute walk of the Eiffel Tower and Champs-Élysées. With a distinct French-meets-Asian style, the 100 guestrooms are bathed in natural light and feature a calming Rococo colour scheme. Make yourself at home in one of the 100 guestrooms featuring espresso makers, flat-screen televisions and Egyptian cotton sheets.</p>
+        <h5><a style="font-size: 14px;color: #000;font-weight: 600;" href="http://click.em.travala.com/?qs=0ac6ab03d978758881a43e4a33afae5c940e39831efa4c2e81706ac2f7fcc09ef6731b32319e693b317fa9737a6711735a35f3f5a7be1965534974966390f871" target="_blank">Shangri-La Toronto</a></h5>
+        <p>5/5 Stars | From $552 Per Night</p>
+  </div>
+        <a href="http://click.em.travala.com/?qs=0ac6ab03d978758881a43e4a33afae5c940e39831efa4c2e81706ac2f7fcc09ef6731b32319e693b317fa9737a6711735a35f3f5a7be1965534974966390f871" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/2dc7602e-e691-4362-a6bf-acb13872cbfc.jpg" alt=""/></a>
+  <div style="padding: 0px 0px;">
+        <p>Soaring high above the city in one of Toronto’s tallest buildings, Shangri-La Toronto offers guests a distinctively urban escape. Just a 6-minute walk from Queen Street West on University Avenue, the hotel is surrounded in all directions by the best the city has to offer. The nearby Art Gallery of Ontario, the vibrant waterfront, and the non-stop energy on Yonge Street are just a few of the great city hotspots within easy reach.</p>
+        <h5><a style="font-size: 14px;color: #000;font-weight: 600;" href="http://click.em.travala.com/?qs=0ac6ab03d9787588ea0aa55a6a6779d48f6cbdc6f9a79f7b4282209ca7137b34c67fea1e50bdb6d9e82cf916e2fc6b4478ed6261b4acb24b49b60a3308d436fe" target="_blank">Shangri-La Dubai</a></h5>
+        <p>5/5 Stars | From $694 Per Night</p>
+  </div>
+        <a href="http://click.em.travala.com/?qs=0ac6ab03d9787588ea0aa55a6a6779d48f6cbdc6f9a79f7b4282209ca7137b34c67fea1e50bdb6d9e82cf916e2fc6b4478ed6261b4acb24b49b60a3308d436fe" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/d569addd-6315-4c00-a7a0-b5ebfa08fc2e.jpg" alt=""/></a>
+  <div style="padding: 0px 0px;">
+        <p>Shangri-La Dubai is an ideal starting point from which to discover the city’s dynamic energy, where modern architecture stands side-by-side with traditional souk markets. Strategically located on Sheikh Zayed Road, minutes away from Dubai Mall and City Walk, the hotel offers spacious rooms with stunning views of the ever-evolving skyline or the Arabian Sea.</p>
+       
+        <h5><a style="font-size: 14px;color: #000;font-weight: 600;" href="http://click.em.travala.com/?qs=0ac6ab03d9787588257f4b1d2279f74b112f8a38cf298d3f237f0d2e30ef25cc749651282a2c5fac0bfbcda1f1ae20ba0253d5392d0d7bd59c92d5dd381f788c" target="_blank">Shangri-La The Shard, London</a></h5>
+        <p>5/5 Stars | From $738 Per Night</p>
+  </div>
+        <a href="http://click.em.travala.com/?qs=0ac6ab03d9787588257f4b1d2279f74b112f8a38cf298d3f237f0d2e30ef25cc749651282a2c5fac0bfbcda1f1ae20ba0253d5392d0d7bd59c92d5dd381f788c" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/f0786a26-dda3-4851-90c1-37ccdf4ab8c7.jpg" alt=""/></a>
+  <div style="padding: 0px 0px;">
+        <p>Feel an unparalleled connection to London at Shangri-La The Shard. Starting on level 34 – a soaring 125 metres high – the hotel occupies 18 floors of The Shard, an architectural icon and Western Europe’s tallest building. Guests can connect to the whole city through panoramic skyline views overlooking the River Thames, with other iconic landmarks all within easy reach.</p>
+    
+      <h5><a style="font-size: 14px;color: #000;font-weight: 600;" href="http://click.em.travala.com/?qs=0ac6ab03d9787588564aac0a6bab2cfd82964c61e203a2642a27a4fa9fb0021804257d2be8b559dd8a4545b5261c348981a8eb856bb12064cbd3c092bb2a3be1" target="_blank">Shangri-La Vancouver</a></h5>
+        <p>5/5 Stars | From $333 Per Night</p>
+  </div>
+        <a href="http://click.em.travala.com/?qs=0ac6ab03d9787588564aac0a6bab2cfd82964c61e203a2642a27a4fa9fb0021804257d2be8b559dd8a4545b5261c348981a8eb856bb12064cbd3c092bb2a3be1" target="_blank"><img style="margin-bottom: 20px !important;" width="100%" src="http://image.em.travala.com/lib/fe3811717164047e771676/m/1/72b65b8a-d020-45e4-9e8d-15ac0fbe2189.jpg" alt=""/></a>
+  <div style="padding:0px 0px;">
+        <p>Exuding sleek sophistication and full of Zen-like energy, Shangri-La Vancouver is your urban sanctuary nestled between the mountains and the sea. Occupying 15 floors of the tallest building in downtown Vancouver, the hotel sits at the heart of the city’s most popular areas. Venture to nearby Robson Street for luxury shopping, take in the stunning nature Vancouver is known for at Stanley Park, or revel in the nightlife on Granville Street.</p>
+      
+        <p>
+            
+            Happy Travels!<br/>
+            <strong>The Travala.com Team</strong>
+        </p>
+    </div>
+
+
+    <!--    Footer-->
+<div id="footer_travala">
+    <div style="font-size: 14px; color: white; padding: 25px 25px 0px;background: #182a60;">
+        <div style="font-size: 14px;color: white;text-align: center;">Download the Travala App</div>
+        <div style="text-align: center; padding: 25px 0 !important; border-bottom: 1px solid #4B587E;margin-bottom: 20px !important;">
+            <a target="_blank" style="width:36%;display: inline-block !important;margin: 0 15px !important;" href="http://click.em.travala.com/?qs=0ac6ab03d97875881a47ad5d7ee85e956c69ff824548c003d6e758f42ec35dfface3de30f2f573dab49fcb5be106c244018390ffcb81eedb060ecbd2bcab08ea">
+                <img width="100%" style="display: inline-block !important;" src="https://statics.travala.com/mail/aotomation-app.png" alt="">
+            </a>
+            <a target="_blank" style="width:36%;display: inline-block !important;margin: 0 15px !important;" href="http://click.em.travala.com/?qs=0ac6ab03d9787588dbbd6bb7980eebc835e9010dd54b0b12117b120e132f52b11827622522c3dd09d4492f512a302284736a3721e9edb00d128c13bcd5e4c8fe">
+                <img width="100%" style="display: inline-block !important;" src="https://statics.travala.com/mail/automation-ggplay.png" alt="">
+            </a>
+        </div>
+        <div>
+            <div style="display: inline-block;width: 60%;">
+                <h4 style="font-size: 12px;color:#bbc0cf;font-weight: bold;margin-bottom: 5px !important;">TravelFront</h4>
+                <p style="font-size: 12px;color:#BBC0CF;line-height: 1.6;">
+                    Harbour Place, 2nd Floor, 103 South Church Street<br/>
+                    George Town, Grand Cayman<br/>
+                    KY1-1106, Cayman Islands<br/>
+                    Registration No: IC-361834
+                </p>
+            </div>
+            <div style="display: inline-block;width: calc(40% - 5px);text-align: right;">
+                <a target="_blank" href="http://click.em.travala.com/?qs=0ac6ab03d97875882966a20173bb7dca0c2b8749353727d89a15049654578323d1b440a03e555620ea01d174b8b1d99fc475e521ad0caa0bf7c40abfd5774cc7">
+                    <img width="32px" style="display: inline-block; margin: 10px 0 0 10px !important;" src="https://statics.travala.com/mail/footer-facebook.png" alt="">
+                </a>
+                <a target="_blank" href="http://click.em.travala.com/?qs=0ac6ab03d97875883fdc14832efe85045dd5ff9cf777d11cdc6ac7a5c27c14574bbc749b156e0a62fc2a7192a771b7434875cdcec972707204507b466e4abc56">
+                    <img width="32px" style="display: inline-block; margin: 10px 0 0 10px !important;" src="https://statics.travala.com/mail/footer-twitter.png" alt="">
+                </a>
+                <a target="_blank" href="http://click.em.travala.com/?qs=0ac6ab03d9787588761c73208afe5621ca2eef1be060945c164a88aa985482a07973dc112c203a056e45787982f8844da18d910747f25ab02b646daca2f11ed4">
+                    <img width="32px" style="display: inline-block; margin: 10px 0 0 10px !important;" src="https://statics.travala.com/mail/footer-instagram.png" alt="">
+                </a>
+                <a target="_blank" href="http://click.em.travala.com/?qs=0ac6ab03d9787588593356049bc4c69cab57c093990569e1ddc109c52c26e6777dfbc7fe52a52af32efa70a74790f42662d0c364d76e2cb16df6904060f549a4">
+                    <img width="32px" style="display: inline-block; margin: 10px 0 0 10px !important;" src="https://statics.travala.com/mail/footer-plane.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <p style="background-color: #11204E;line-height: 38px;font-size: 12px;color: #BBC0CF;text-align: center;margin: 0 !important;">© 2023 Travala.com. All rights reserved.</p>
+    <div style="background-color: transparent;text-align: center;padding: 30px 15px;">
+        <p style="font-size: 12px;color: #4B587E;line-height: 1.8;text-align: center;font-weight: 500;">You're receiving this email because you opted in to receiving emails from Travala.com. You may opt out of receiving these types of communications by clicking the unsubscribe link below.</p>
+        <p style="color: #4B587E;">
+            <a href="http://click.em.travala.com/subscription_center.aspx?qs=841c01e5b8c33992c63c1f48ce7a692c54ebaa01cbedc0cf1e7e6babbcf8ee0bcffc15c8661e0d06bb151afbbc96a3dd6a52cc03f2962921e0ce230c2dc47a1f2b16761c686f6664"  style="font-size: 12px;font-weight: 500;color: #4B587E !important;text-decoration: underline !important;">
+                Unsubscribe
+            </a>&ensp;|&ensp;
+            <a href="http://click.em.travala.com/?qs=0ac6ab03d9787588463e6c1c061cd2984ae58ed75a09144d50771a14d6a33078b71a4861c30ae54fba2ad74a8248d8b6cd5eb58ebf24d59bfc480a05fbdee52f" style="font-size: 12px;font-weight: 500;color: #4B587E !important;text-decoration: underline !important;">
+                Terms and Conditions
+            </a>&ensp;|&ensp;
+            <a href="http://click.em.travala.com/?qs=0ac6ab03d97875880ac926eb7b2a02d0ac6c8ad73034132a188a3ccf94e4cc22895ca8fe854c6b0961201447fa7c0c046565d8f164d12f0b6ea2156f87add528" style="font-size: 12px;font-weight: 500;color: #4B587E !important;text-decoration: underline !important;">
+                Privacy Policy
+            </a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
+
+--fwaz2mAUOk7A=_?:--
+

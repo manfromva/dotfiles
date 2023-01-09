@@ -14,16 +14,21 @@ export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
 export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 export BROWSER="firefox"
-
-
+export GOOGLE_API_KEY='AIzaSyDKC3qLADOvj0N-Yvtn1w8y-ME-3fWyGYc'
+export GOOGLE_SEARCH_ID='007284766711962870236:qnl_hhagnta'
+export ROFI_SEARCH='cse,ddgr'
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d "$HOME/.local/bin" ] ;
+if [ -d "$HOME/.local/bin" ] ; 
   then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/projects/bash/bash_course/scripts" ] ; 
+  then PATH="$HOME/projects/bash/bash_course/scripts:$PATH"
 fi
 
 if [ -d "$HOME/Applications" ] ;
@@ -115,9 +120,15 @@ source ~/.zsh/options.zsh
 source ~/.zsh/prompt.zsh
 
 # Autostart
-[[ -e ~/.ssh/key ]] && {
-  { eval `ssh-agent`; ssh-add -q ~/.ssh/id_ed25519.pub; } &>/dev/null
-}
+if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
+    eval $(ssh-agent -s) > /dev/null
+    if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
+        # Auto-add ssh keys to your ssh agent
+        # Example:
+         ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+	       ssh-add ~/.ssh/ansible > /dev/null 2>&1
+    fi
+fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

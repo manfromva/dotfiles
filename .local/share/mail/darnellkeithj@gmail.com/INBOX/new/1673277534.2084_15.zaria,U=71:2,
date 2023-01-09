@@ -1,0 +1,2515 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3014083mdb;
+        Mon, 9 Jan 2023 06:15:47 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXslYAL1vPEVBa15SeJY0R3FUzzJSndkqeGhnUCGYBwu/cFMnB/XeXscgEcabHyY/SEHLUs7
+X-Received: by 2002:a05:6000:1a45:b0:2bb:dd87:3483 with SMTP id t5-20020a0560001a4500b002bbdd873483mr3901119wry.38.1673273746858;
+        Mon, 09 Jan 2023 06:15:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673273746; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bzeay9edguinFMvtTKZ7OrGtiSRjNC6fZKM0cA471bWge2hZDgmoBppoAw5VYKw1vI
+         Fik/AyKw9oW81Tw6aTc1eVeIXpGxMpH1+IEcX1tm8BqWMuNmgHApGoRsmwDnM0QiTlB8
+         7TC3lewSQ0Hvayr8tiG8Jj8yKcyQMXwpl9gJ5qf5kPhcDWF8GZPeTLru4Nci7vEguKtL
+         07NzpNLhE3pCaXZDKdbJ0YOwHjydDtPzyRWoxifOQe7S1+LJPsR9VKXtIFhz1bAcHVot
+         Pm3LyEZEIE5pNugptOHZ68G3/fBUhX3ehrB7QbUJQwq/XIOlP+Tc1UorkgdTSx425wj1
+         5VtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:mime-version:reply-to:to:date:subject:from
+         :dkim-signature;
+        bh=nwAVeB6MqISYhG5suhZgcFsRTl5z43a8mAaxPa+dr+c=;
+        b=adEmXx6jBnHHwZG+ZdQmWNOUJ8xYjdSHSqXL6tqt0yXbdJrgwKZa5lsbUg6ZcWmcgH
+         7mZlsEukcc2mCuM2MAq4nLc6VPOinY3iG0I3XdYOgyFxQ49Xm+6w21Kpwy5XjBvSkYwL
+         HS6FxuPFhT8685jtIbbg1VTsvZvGSqoa7wklzFe5izM+tAeTp+7wWi5eYCs2+zksb7EN
+         OusZxnv+V+dyKd48vxtAQ68mmfN39nm6Fm86kqgCqBgiz1+/VMbk5s+apx9z2LBzT/rL
+         7hM9pV3hfdfW4NAxW+NNo4nvRsVUL4xzS0PnoUhUjT4HWbpdveUeC3GBrlORUc7wL2zC
+         cF6w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@subs.subway.com header.s=subway header.b=MYP06mXC;
+       spf=pass (google.com: domain of bounce@subs.subway.com designates 66.117.17.224 as permitted sender) smtp.mailfrom=bounce@subs.subway.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=subway.com
+Return-Path: <bounce@subs.subway.com>
+Received: from r224.subs.subway.com (r224.subs.subway.com. [66.117.17.224])
+        by mx.google.com with ESMTPS id v7-20020a05600c12c700b003d9f6ac77b9si139791wmd.46.2023.01.09.06.15.46
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:15:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@subs.subway.com designates 66.117.17.224 as permitted sender) client-ip=66.117.17.224;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@subs.subway.com header.s=subway header.b=MYP06mXC;
+       spf=pass (google.com: domain of bounce@subs.subway.com designates 66.117.17.224 as permitted sender) smtp.mailfrom=bounce@subs.subway.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=subway.com
+Return-Path: <bounce@subs.subway.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=subs.subway.com;
+	s=subway; t=1673273744;
+	bh=nwAVeB6MqISYhG5suhZgcFsRTl5z43a8mAaxPa+dr+c=;
+	h=From:Subject:Date:To:MIME-Version:Message-ID:Content-Type;
+	b=MYP06mXC5qnW3JiYeQn/lfogg8jpxWwP5jut7sESDV53WwCQShzc6WeUqpvm/5yh5
+	 S6Xs4+Br7XEA3oCOuZmovuOjKRKGVIzGgW+P0sPw4/APHn2cVUNPOJgHsZ7hYXntRr
+	 yyKxOLbi2+A6E1Q4cYoJiN1EXLJGfFYmS7Jb9kBfghWI/MTfVQlPOswRC9L6heCAE9
+	 jqsEkVyheRTP0106ztmmMjquCMsKWT9RGOMRhXghuUWuck/O38asNPdTaxqbhD06XX
+	 3G1lIXxVp3butC5v1Wx6V4NDvgGtWsx4uKZKhrkBUDdNluYiOkYVXrM8ZNK/D9Ike4
+	 wfkEClEfG1ZIQ==
+X-MSFBL: HvPgNrvPcY3XK8FjNURxoWqn6itnRzTuAA/ReqqaP6g=|eyJiIjoiYXdzX3N1Ynd
+	heV9wcm9kMV9kZWZhdWx0X21vbWVudHVtMDNfbXRhMDA2XzY2LjExNy4xNy4yMjQ
+	iLCJyIjoiZGFybmVsbGtlaXRoakBnbWFpbC5jb20iLCJyY3B0X21ldGEiOnsgIml
+	uIjogInN1YndheV9ta3RfcHJvZDEiLCAiciI6ICJkYXJuZWxsa2VpdGhqQGdtYWl
+	sLmNvbSIsICJtIjogIi0zMjQyNTgxMTMiLCAiZCI6ICI0ODc2NjY0OTIiLCAiaSI
+	6ICIiIH0sImciOiJkZWZhdWx0Xzg0ZGZmODJlLWY2ZDctNGIzNS1iNjZlLWJjMGY
+	1ZjYwMmM0NSJ9
+Received: from [10.98.212.170] ([10.98.212.170:53646] helo=r221.subs.subway.com)
+	by momentum03.lon7.cpt.adobe.net (envelope-from <bounce@subs.subway.com>)
+	(ecelerity 4.2.31.59853 r(Core:4.2.31.1)) with ESMTP
+	id 97/47-22218-0912CB36; Mon, 09 Jan 2023 14:15:44 +0000
+From: "SUBWAY Restaurants" <news@subs.subway.com>
+Subject: =?utf-8?B?JDUuOTkgZm9yIGEgRm9vdGxvbmcg8J+RgCBMaW1pdGVkIHRpbQ==?=
+ =?utf-8?B?ZSBvbmx5?=
+Date: Mon, 09 Jan 2023 14:15:42 GMT
+To: <darnellkeithj@gmail.com>
+Reply-To: "SUBWAY Restaurants" <guestnews@subs.subway.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM6ECAC36BF1D11333Csubway_mkt_prod1@subs.subway.com>
+Content-Type: multipart/alternative;
+	charset="windows-1252";
+	boundary="----=_NextPart_415_E73B179E.E73B179D"
+X-TUID: JBU8kVmHCcj1
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_415_E73B179E.E73B179D
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<style type="text/css">
+  /*Dynamic header css*/
+@media only screen and (max-width: 596px) {
+
+.w46{width: 45px!important;}
+.body{min-width:100% !important;} 
+.mobile_head {
+  width: 320px !important;
+  margin: 0 auto;
+}
+.mobile-hide {
+  text-indent: -99999em;
+  display: none !important;
+}
+.desktop-hide {
+  max-height: none !important;
+  font-size: 13px !important;
+  display: block !important;
+}
+/* Project-specific styles */
+.pad-left-15 {
+  padding-left: 15px !important;
+}
+.pad-right-15 {
+  padding-right: 15px !important;
+}
+.pad-top-10 {
+  padding-top: 10px !important;
+}
+.pad15 {
+  padding: 0px 15px !important;
+}
+.pad25 {
+  padding: 0px 25px !important;
+}
+.ta-c {
+  text-align: center !important;
+}
+.w4 {
+  width: 4px !important;
+}
+.w14 {
+  width: 14px !important;
+}
+.w55 {
+  width: 55px !important;
+}
+.w125 {
+  width: 125px !important;
+}
+.w144 {
+  width: 144px !important;
+}
+.w240 {
+  width: 240px !important;
+}
+.h7 {
+  height: 7px !important;
+}
+.h20 {
+  height: 20px !important;
+}
+.h25 {
+  height: 25px !important;
+}
+.h45 {
+  height: 45px !important;
+}
+/* Project-specific styles */
+/* Rewards Module-specific styles */
+.h-auto {
+  height: auto !important;
+}
+.w10 {
+  width: 10px !important;
+}
+.w12 {
+  width: 12px !important;
+}
+.w15 {
+  width: 15px !important;
+}
+.w22 {
+  width: 22px !important;
+}
+.w50 {
+  width: 50px !important;
+}
+.w180 {
+  width: 180px !important;
+}
+.w220 {
+  width: 220px !important;
+}
+.f11 {
+  font-size: 11px !important;
+  line-height: 14px !important;
+}
+.f12 {
+  font-size: 12px !important;
+  line-height: 15px !important;
+}
+.f15 {
+  font-size: 15px !important;
+}
+.f19 {
+  font-size: 18px !important;
+  line-height: 20px !important;
+}
+.pad-left-12 {
+  padding-left: 12px !important;
+}
+.pad-right-12 {
+  padding-right: 12px !important;
+}
+.pad0 {
+  padding: 0px !important;
+}
+.h5 {
+  height: 5px !important;
+}
+.h15 {
+  height: 15px !important;
+}
+/* Rewards Module-specific styles */
+}
+
+/*Dynamic header css ends here*/
+</style>
+
+Don’t miss out—order in the App or online today. Participating restaurants.    ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 	
+	
+	
+
+	
+
+<!-- Dynamic Non Rewards header V1 -->
+<table class="backgroundTable" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ececec">
+   <tr>
+      <td align="left" valign="top">
+         <!-- begin container to control width -->
+         <table class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="text-align:left; width:600px; margin:0 auto; padding:0;" align="center" bgcolor="#ececec">
+            <tr>
+               <td align="left" valign="top" bgcolor="#ececec">
+                  <!-- begin container to control width -->
+                  <table class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="text-align:left; width:600px; margin:0 auto; padding:0;" align="center" bgcolor="#ececec">
+                     <!-- begin preheader -->
+                     <tr>
+                        <td valign="top" align="left" bgcolor="#ececec">
+                           <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                       <tr>
+                                          <td class="pad-left-12 pad-right-12 pad-top-10" height="30" align="left" valign="middle" style="font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color: #74766e; padding-left: 10px; padding-right: 10px;">
+                                             <a href="https://order.subway.com/en-us/?lnkcnt=order-tx-hdr" target="_blank" style="text-decoration: none; color: #74766e;font-weight: normal;">Order</a> | <a href="https://order.subway.com/en-us/locator?lnkcnt=find-restaurant-tx-hdr" target="_blank" style="text-decoration: none; color: #74766e;font-weight: normal;">Find a restaurant</a>
+
+                                          </td>
+                                          <td class="pad-left-12 pad-right-12 pad-top-10" height="30" align="right" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color: #74766e; padding-left: 10px; padding-right: 10px;">
+                                             <a href="https://m.subs.subway.com/nl/jsp/m.jsp?c=%40NGSB6nEO7as9L8JG27HRfGL5SiZeXj1CF8KAlp8mMEI%3D" target="_blank" style="text-decoration: none; color: #74766e;font-weight: normal;">View in browser</a>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                     <!-- end preheader --> 
+                  </table>
+               </td>
+            </tr>
+            <!-- begin spacer image to control width in Gmail App for Android - forces desktop -->
+            <tr>
+               <td class="mobile-hide" height="1" style="font-size: 1px; line-height: 1px;"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/sp.gif" width="600" height="1" alt="" style="display: block; min-width:600px; min-height:1px;" border="0"></td>
+            </tr>
+            <!-- end spacer image to control width in Gmail App for Android - forces desktop -->
+            <!-- begin main content -->
+            <tr>
+               <td align="left" valign="top" bgcolor="#ffffff">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                     <!-- BEGIN MOD LOGO -->
+                     <tr>
+                        <td align="left" valign="top" bgcolor="#ffffff">
+                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                 <td class="h7" height="10" style="font-size: 1px; line-height: 1px;"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/sp.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                              </tr>
+                              <tr>
+                                 <td align="center" valign="top" style="padding: 0px 15px;">
+                                    <a href="https://order.subway.com/en-us/?lnkcnt=subway-logo-im-hdr" target="_blank" style="text-decoration: none; color: #74766e;"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/logo-subway.png" width="150" height="30" alt="SUBWAY" style="display: block;" border="0" class="w125"></a>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="h7" height="10" style="font-size: 1px; line-height: 1px;"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/sp.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                     <!-- END MOD LOGO -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+
+                  </table>
+               </td>
+            </tr> 
+            <!-- end main content --> 
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- Dynamic Non Rewards header V1 ends here-->	
+
+	
+	
+<!-- BEGIN DDIGITALONLYBANNER -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+      <td align="left" valign="top">
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+               <td class="mobile-hide" align="left" valign="top">
+                  <a _label="order-im-ppm1" href="https://order.subway.com/en-us/?lnkcnt=order-im-ppm1" target="_blank"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/DIGITALONLYBANNERd1.jpg" width="600" height="" alt="" style="display: block;" border="0" class="block-cell"></a>
+               </td>
+            </tr>
+            <tr>
+               <!-- ***begin mobile only image*** -->
+               <td align="center" height="1" style="font-size: 1px; line-height: 1px;">
+                  <div class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;"><a _label="order-im-ppm1" href="https://order.subway.com/en-us/?lnkcnt=order-im-ppm1" target="_blank"><img class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;" src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/DIGITALONLYBANNERm1.jpg" width="320" alt="" border="0"></a></div>
+               </td>
+               <!-- ***end mobile only image*** -->
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END DDIGITALONLYBANNER -->	
+
+<!-- Primary block 230109 -->
+  <!-- DOFFER599FOOTLONG1 -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="background-color: #ffffff">
+    <!-- BEGIN TEXT1TOP -->
+    <tr>
+      <td align="left" valign="top">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+         <td height="24" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+      </tr>
+      <tr>
+        
+            <td class="pad15" align="center" valign="top" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; line-height:32px; color: #00491e; font-weight: bold; padding: 0px 30px;">
+                 <span class="block-cell ta-c">Limited&#45;time deal! Get a Footlong for<br class="mobile-hide"> only $5.99.<sup style="mso-line-height-rule:exactly; line-height:0; font-size:80%; vertical-align:8px;"><!--[if (gte mso 9) | (IE 7)]><span style="mso-line-height-rule:exactly; line-height:0; font-size:19px; vertical-align:1px;"><![endif]-->&#42;<!--[if (gte mso 9) | (IE 7)]></span><![endif]--></sup>
+
+                           </td>
+                                    </tr>
+               <tr>
+                <td height="15" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                    </tr>
+                 <tr>
+                      <td align="center" valign="middle" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px; line-height:18px; color: #000000; padding: 0px 15px;">Don&#8217;t miss this special offer. Have a favorite? Wanna try something new? <br class="mobile-hide">With this price, you can&#8217;t go wrong.
+                            </td>
+                        </tr>
+      <tr>
+       <td height="15" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+    </tr>
+    <tr>
+       <td align="center" valign="top">
+        <!-- #SwiftWIN CTA code starts from here-->
+        <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="fullwidth">
+         <tr>
+          <td align="center" width="" class="" style="">
+            <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="">
+             <tr>
+              <td width="210" height="" bgcolor="" align="center" valign="middle" style="mso-line-height-rule: exactly; font-weight: normal; padding-left:0px; width:240px;border-radius: 5px;text-align: center;padding-top:2px;padding-bottom:1px;" class="mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:50px;v-text-anchor:middle;width:240px;v-text-align:center" arcsize="10%" strokecolor="#f3b817;" fillcolor="#f3b817;"><span style="vertical-align:0px;"><center style="font-size: 19px !important;"><![endif]-->     
+                <a href="http://order.subway.com/en-us/mywayrewards/offers?&cg=subway:MV-484876009-7ccffc97972df3d23276b9d225dfc271&co=0&country=USA&channel=1&lnkcnt=get-deal-tx-pm1" target="_blank" style="text-decoration:none;font-size: 19px; font-family:'Arial', Tahoma, sans-serif !important; color: #000000; line-height:50px;mso-line-height-rule: exactly;font-weight: 400;display: block;background-color: #f3b817;border-radius: 5px;text-align: center;height:50px;width: 240px;" _label="order-now-tx-pm1" class="mobCTA_font mobCTA"><strong style="font-family:'Arial', Tahoma, sans-serif !important;color: #000000;">Get Deal</strong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+             </tr>
+          </table>
+       </td> 
+    </tr> 
+ </table>
+ <!-- CTA code Ends here-->
+</td>
+</tr>
+<tr>
+   <td height="25" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END TEXT1TOP --> 
+ 
+<tr>
+  <td align="left" valign="top">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" style="background-color:#000000;">
+    <tr>
+    <!-- ***begin mobile only image*** -->
+    <td align="center" height="1" style="font-size: 1px; line-height: 1px;">
+     <div class="desktop-hide" style="max-height: 0px; font-size: 0; display: none; padding-bottom:2px;"><a href="http://order.subway.com/en-us/mywayrewards/offers?&cg=subway:MV-484876009-7ccffc97972df3d23276b9d225dfc271&co=0&country=USA&channel=1&lnkcnt=get-deal-im-pm1" target="_blank" _label="get-deal-im-pm1"><img class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;" src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/230109DOFFER599FOOTLONG1M.jpg" width="320" alt="Limited&#45;Time Deal: Get a Footlong for only $5.99.*" border="0"></a></div>
+  </td>
+</tr>
+
+
+<!-- ***end mobile only image*** -->   
+
+    <!-- begin desktop layout --> 
+    <tr>
+      <td class="mobile-hide" align="left" valign="top">
+       <a href="http://order.subway.com/en-us/mywayrewards/offers?&cg=subway:MV-484876009-7ccffc97972df3d23276b9d225dfc271&co=0&country=USA&channel=1&lnkcnt=get-deal-im-pm1" target="_blank" _label="get-deal-im-pm1"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/230109DOFFER599FOOTLONG1D.jpg" width="600" height="" alt="Limited&#45;Time Deal: Get a Footlong for only $5.99.*" style="display: block;" border="0" class="block-cell" padding-bottom:10px;></a>
+    </td>
+ </tr>
+ 
+</table>
+</td>
+</tr> 
+
+</table>
+
+    <!-- Primary block 230109 ends here -->  	
+
+	
+	
+ <!-- Secondary block V1 US 230109 -->
+<!-- DAPPHOWTOREORDERFAVE1 -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="background-color:#ffffff ;">
+    <tr>
+     <td height="24" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+   </tr>
+   <tr>
+     <td class="" align="center" valign="top" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; line-height:1.2; color: #00491e; font-weight: bold; padding: 0px 20px;">
+      It&#8217;s easy to reorder your faves in our App
+    </td>
+  </tr>
+  <tr>
+   <td height="12" style="font-size: 1px; line-height: 1px;"><img src="images/sp.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+ </tr>
+ <tr>
+   <td align="center" valign="middle" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px; line-height:18px; color: #000000; padding: 0px 15px;">
+    Just heart your faves to save them, so you can order again in a flash.
+  </td>
+</tr>
+<tr>
+ <td class="h15" height="25" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+</tr>
+<tr>
+ <td align="center" valign="top" >
+   <!-- #SwiftWIN CTA code starts from here-->
+   <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="fullwidth">
+     <tr>
+      <td align="center" width="" class="" style="">
+        <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="">
+         <tr>
+          <td width="210" height="" bgcolor="" align="center" valign="middle" style="mso-line-height-rule: exactly; font-weight: normal; padding-left:0px; width:240px;border-radius: 5px;text-align: center;padding-top:12px;padding-bottom:1px;" class="mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:50px;v-text-anchor:middle;width:240px;v-text-align:center" arcsize="10%" strokecolor="#f3b817;" fillcolor="#f3b817;"><span style="vertical-align:0px;"><center style="font-size: 19px !important;"><![endif]-->     
+                <a href="https://subway.app.link/dashboard?lnkcnt=open-app-tx-sm1" target="_blank" style="text-decoration:none;font-size: 19px; font-family:'Arial', Tahoma, sans-serif !important; color: #000000; line-height:50px;mso-line-height-rule: exactly;font-weight:400;display: block;background-color: #f3b817;border-radius: 5px;text-align: center;height:50px;width: 240px;" _label="open-app-tx-sm1" class="mobCTA_font mobCTA"><strong style="font-family:'Arial', Tahoma, sans-serif !important;color: #000000;">Open App</strong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+              </tr>
+            </table>
+          </td> 
+        </tr> 
+      </table>
+      <!-- CTA code Ends here-->
+    </td>
+  </tr>
+  <tr>
+   <td height="5" style="font-size: 1px; line-height: 1px;"><img src="images/sp.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+ </tr>
+ <tr>
+   <td align="center" valign="middle" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:14px; line-height:17px; color: #000000; padding: 0px 15px; font-weight: bold;">
+     <a _label="download-app-tx-sm1" href="https://subway.app.link/dashboard?lnkcnt=download-app-tx-sm1" target="_blank" style="text-decoration:underline; color: #000000;">Download the App now</a>
+   </td>
+ </tr>
+ <tr>
+  <td height="15" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+</tr>
+
+<tr>
+  <td align="left" valign="top" bgcolor="#000000" style="background-color:#000000;">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <!-- ***begin mobile only image*** -->
+     <td align="center" height="1" style="font-size: 1px; line-height: 1px;">
+      <div class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;"><a 
+        _label="open-app-im-sm1" href="https://subway.app.link/dashboard?lnkcnt=open-app-im-sm1" target="_blank"><img class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;" src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/TMScheduledCampaign_US_V1_220916_640X460.jpg" width="320" alt="Reorder your favorites with a tap. In the App or online." border="0"></a></div>
+      </td>
+      <!-- ***end mobile only image*** -->
+    </tr>
+    <tr>
+     <td class="mobile-hide" align="left" valign="top">
+      <a  _label="open-app-im-sm1" href="https://subway.app.link/dashboard?lnkcnt=open-app-im-sm1" target="_blank"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/TMScheduledCampaign_US_V1_220916_564X720.jpg" width="280" height="360" alt="Reorder your favorites with a tap. In the App or online." style="display: block;" border="0"></a>
+    </td>
+    <td class="block-cell" width="320" align="left" valign="top">
+
+      <a  _label="open-app-im-sm1"href="https://subway.app.link/dashboard?lnkcnt=open-app-im-sm1" target="_blank"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/DAPPHOWTOREORDERFAVE1_D.gif" width="320" height="360" alt="Reorder your favorites with a tap. In the App or online." style="display: block;" border="0"></a>
+
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+
+</table>
+<!-- Secondary block ends here	
+
+	
+	
+
+<!-- Tertiary block V1 US 230109 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="background-color: #ffffff";>
+ 
+  <!-- BEGIN TEXT2SIDE -->
+                           <tr>
+                              <td align="left" valign="top">
+                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+
+                                       <td width="300" align="left" valign="top" class="block-cell">
+                                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                             <tr>
+                                                <td height="24" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="pad15" align="center" valign="top" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; line-height:32px; color: #00491e; font-weight: bold; padding: 0px 5px;">
+                                               Skip the trip.<span class="mobile-hide"><br></span> Subway<sup style="mso-line-height-rule:exactly; line-height:0; font-size:70%; vertical-align:8px;"><!--[if (gte mso 9) | (IE 7)]><span style="mso-line-height-rule:exactly; line-height:0; font-size:19px; vertical-align:6px;"><![endif]-->&reg;<!--[if (gte mso 9) | (IE 7)]></span><![endif]--></sup> Delivery<br> has you covered.</td>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td height="12" style="font-size: 1px; line-height: 1px;"><img src="images/sp.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                                             </tr>
+                                            <tr>
+                                             <td align="center" valign="middle" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px; line-height:1.2; color: #000000;">
+                                                Whether you just can&#8217;t&#8212;or just don&#8217;t<br> feel like it. Every reason is a good<br> reason to order Subway<sup style="mso-line-height-rule:exactly; line-height:0; font-size:72%; vertical-align:6px;"><!--[if (gte mso 9) | (IE 7)]><span style="mso-line-height-rule:exactly; line-height:0; font-size:19px; vertical-align:1px;"><![endif]-->&reg;<!--[if (gte mso 9) | (IE 7)]></span><![endif]--></sup> Delivery in<br> the App or online.<strong><sup style="mso-line-height-rule:exactly; line-height:0; font-size:60%; vertical-align: 6px;"><!--[if (gte mso 9) | (IE 7)]><span style="mso-line-height-rule:exactly; line-height:0; font-size:19px; vertical-align:1px;"><![endif]-->&#8224;&#8224;<!--[if (gte mso 9) | (IE 7)]></span><![endif]--></sup></strong>
+                                                </td>
+                                          </tr>
+                                             <tr>
+                                                <td height="20" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                                             </tr>
+                                             <tr>
+                                                <td align="center" valign="top">
+                                                    <!-- #SwiftWIN CTA code starts from here-->
+   <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="fullwidth">
+     <tr>
+      <td align="center" width="" class="" style="">
+        <table cellpadding="0" cellspacing="0"  border="0" height="" width="" style="" class="">
+         <tr>
+          <td width="210" height="" bgcolor="" align="center" valign="middle" style="mso-line-height-rule: exactly; font-weight: normal; padding-left:0px; width:240px;border-radius: 5px;text-align: center;padding-top:0px;padding-bottom:1px;" class="mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:50px;v-text-anchor:middle;width:240px;v-text-align:center" arcsize="10%" strokecolor="#f3b817;" fillcolor="#f3b817;"><span style="vertical-align:0px;"><center style="font-size: 19px !important;"><![endif]-->     
+                <a href="https://order.subway.com/en-us/?lnkcnt=order-delivery-tx-tm1" target="_blank" style="text-decoration:none;font-size: 19px; font-family:'Arial', Tahoma, sans-serif !important; color: #000000; line-height:50px;mso-line-height-rule: exactly;font-weight: 400;display: block;background-color: #f3b817;border-radius: 5px;text-align: center;height:50px;width: 240px;" _label="order-delivery-tx-tm1" class="mobCTA_font mobCTA"><strong style="font-family:'Arial', Tahoma, sans-serif !important;color: #000000;">Order Delivery</strong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+              </tr>
+            </table>
+          </td> 
+        </tr> 
+      </table>
+      <!-- CTA code Ends here-->
+                                                </td>
+                                             </tr>
+                                            <tr>
+                                             <td class="h25" height="5" style="font-size: 1px; line-height: 1px;"><img src="https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width="1" height="1" alt="" style="display: block;" border="0"></td>
+                                          </tr>
+                                            
+                                          <tr>
+                                             <!-- ***begin mobile only image*** -->
+                                             <td align="center" height="1" style="font-size: 1px; line-height: 1px;">
+                                                <div class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;"><a href="https://order.subway.com/en-us/?lnkcnt=order-delivery-im-tm1" target="_blank"><img class="desktop-hide" style="max-height: 0px; font-size: 0; display: none;" src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/D0DELIVERY1_m_TM221110.png" width="320" alt="Skip the trip. Order Subway&reg; Delivery today." border="0"></a></div>
+                                             </td>
+                                          </tr>
+                                          <!-- ***end mobile only image*** -->
+                                       </table>
+                                    </td>
+                                    <td width="300" align="left" valign="top" class="block-cell">
+                                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                          <tr>
+                                             <td class="mobile-hide" align="right" valign="top">
+                                                <a href="https://order.subway.com/en-us/?lnkcnt=order-delivery-im-tm1" target="_blank"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/D0DELIVERY1_d_TM221110.png" width="300" height="" alt="Skip the trip. Order Subway&reg; Delivery today." style="display: block;" border="0"></a>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!-- END TEXT2SIDE -->
+                       
+                  
+</table>
+<!-- Tertiary block 230109 ends here -->	
+	
+<!-- Safety Signoff US V1  -->
+<table align="center" class="container float-center" role="presentation" style="Margin:0 auto;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:600px" width="600">
+  <tr style="padding:0;text-align:left;vertical-align:top" width="600">
+    <td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial Bold,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal" width="600">
+    
+        <table class="row collapse white" role="presentation" style="background-color:#fff;border-collapse:collapse;border-spacing:0;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+        <tr style="padding:0;text-align:left;vertical-align:top">
+          <th class="no-bottom-padding white small-12 large-12 columns first last" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;background-color:#fff;color:#000!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:0;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;padding-right:0;text-align:left;width:608px;word-break:keep-all;word-wrap:normal">
+            <table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%;background-color:#fff;">
+              <tr style="padding:0;text-align:left;vertical-align:top">
+                <th style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:keep-all;word-wrap:normal;background-color:#fff;">
+                  <a href="#"> <img alt="Order in the app" 
+
+          src="https://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/ReusableContentUS_SafetySignoff_Campaign_600x358_V2.jpg" style="-ms-interpolation-mode:bicubic;border:none;clear:both;color:#000;display:block;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;max-width:100%;outline:0;text-align:center;text-decoration:none;width:100%" width="600" usemap="#image-mapsafety"> </a>
+                      <map name="image-mapsafety">
+                         
+                   <area alt="Order in the app" coords="0,0,600,48" href="#" shape="rect" style="outline: none;" target="_blank"  title="">
+                    <area alt="Order in the app" coords="0,49,28,172" href="#" shape="rect"  style="outline: none;" target="_blank"  title="">
+                    <area alt="Order in the app" coords="29,49,570,172" href="https://subway.app.link/dashboard?lnkcnt=order-in-app-tx-ss1" _label="order-in-app-tx-ss1" shape="rect" 
+          style="outline: none;"  target="_blank"  title="">
+                    <area alt="Order in the app" coords="571,49,600,172" href="#" shape="rect" style="outline: none;"     title="">
+          
+                    <area alt="Order in the app" coords="0,173,600,174"  href="#" shape="rect" style="outline: none;"    title="">
+          
+                    <area  alt="" coords="0,175,28,296"  href="#" shape="rect" style="outline: none;"   title="">
+                    <area alt="Order online" coords="29,175,298,296"  href="https://order.subway.com/en-us/locator?lnkcnt=order-online-tx-ss1" _label="online-tx-ss1" shape="rect"  style="outline: none;" target="_blank"  title="">
+                    <area alt="" coords="297,175,299,296"  href="#" shape="rect" style="outline: none;"    title="">
+                    <area alt="Find a restaurant" coords="300,175,570,296"  href="https://order.subway.com/en-us/locator?lnkcnt=find-restaurant-tx-ss1" _label="find-restaurant-tx-ss1" shape="rect" style="outline: none;"  target="_blank"   title="">
+                    <area alt="" coords="571,175,600,296"  href="#" shape="rect" style="outline: none;"    title="">
+                    <area alt="0,297,600,298" coords="" href="#" shape="rect" style="outline: none;"   title="">
+                    <area alt="" coords="0,299,28,358" href="#" shape="rect"  style="outline: none;"   title="">
+                    <area alt="Earn rewards" coords="29,299,207,358" href="https://order.subway.com/en-US/signin?url=/en-US&lnkcnt=earn-rewards-tx-ss1" _label="earn-rewards-tx-ss1" shape="rect" style="outline: none;"  target="_blank"  title="">
+                    <area alt="" coords="208,299,210,358" href="#" shape="rect" style="outline: none;"     title="">
+                    <area alt="Order catering" coords="211,299,388,358" href="https://catering.subway.com/?lnkcnt=catering-tx-ss1" _label="catering-tx-ss1" shape="rect" style="outline: none;"  target="_blank"  title="">
+                    <area alt="" coords="389,299,390,358" href="" shape="rect" style="outline: none;"   title="">
+                    <area alt="Buy gift cards" coords="391,299,570,358" href="https://subway.cashstar.com/store/recipient?locale=en-us&lnkcnt=gift-card-tx-ss1" _label="gift-card-tx-ss1" shape="rect" style="outline: none;"  target="_blank"  title="">
+                    <area alt="" coords="571,299,600,358" href="" shape="rect" style="outline: none;"    title="">
+                    
+                       </map>
+                </th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+    
+   
+
+     
+ 
+    </td>
+  </tr>
+</table>
+
+
+<!-- Ends here -->	
+<!-- subSocialBannerV5-->
+
+<table role="presentation" align="center" class="container main float-center" style="Margin:0 auto;background:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:600px">
+   <tbody>
+      <tr style="padding:0;text-align:left;vertical-align:top">
+         <td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">
+            <table role="presentation" class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+               <tbody>
+                  <tr style="padding:0;text-align:left;vertical-align:top">
+                     <td height="27px" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;hyphens:none;line-height:27px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">&#xA0;</td>
+                  </tr>
+               </tbody>
+            </table>
+            <center data-parsed="" style="width:100%">
+               <table role="presentation" align="center" class="menu social float-center" style="Margin:0 auto;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:auto!important">
+                  <tr style="padding:0;text-align:left;vertical-align:top">
+                     <td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">
+                        <table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                           <tr style="padding:0;text-align:left;vertical-align:top">
+                              <th class="menu-item float-center mobSocial" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding-right:15px;text-align:center;word-break:keep-all;word-wrap:normal"><a href="https://www.tiktok.com/@subway?&lnkcnt=tiktok-im-social" _label="tiktok-im-social" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/TikTok-thumbnail_37x65_US_en_v2_B.png" class="float-left" alt="TikTok icon" 
+style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outline:0;text-align:left;text-decoration:none;width:auto"></a></th>
+                              <th class="menu-item float-center mobSocial" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding-left:15px;padding-right:15px;text-align:center;word-break:keep-all;word-wrap:normal"><a href="https://twitter.com/SUBWAY?lnkcnt=twitter-im-social"  _label="twitter-im-social" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/Twitter_thumbnail_37x65_US_en_v2_B.png" class="float-left" alt="Twitter icon" 
+style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outline:0;vertical-align:bottom;text-align:left;text-decoration:none;width:auto"></a></th>
+                              <th class="menu-item float-center mobSocial" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding-left:15px;padding-right:15px;text-align:center;word-break:keep-all;word-wrap:normal"><a href="https://www.subway.com/en-us?lnkcnt=subway-com-im-social" _label="subway-com-im-social" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/Subway-thumbnail_37x65_US_en_v2_B.png" class="float-left" alt="Subway Logo" 
+style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outline:0;text-align:left;text-decoration:none;width:auto"></a></th>
+                              <th class="menu-item float-center  mobSocial" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding-left:15px;padding-right:15px;text-align:center;word-break:keep-all;word-wrap:normal"><a href="https://www.instagram.com/subway/?lnkcnt=instagram-im-social" _label="instagram-im-social" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/Instagram-thumbnail_37x65_US_en_v2_B.png" class="float-left" alt="Instagram icon" 
+style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outline:0;text-align:left;text-decoration:none;width:auto"></a></th>
+                              <th class="menu-item float-center mobSocial" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding-left:15px;text-align:center;word-break:keep-all;word-wrap:normal"><a href="https://www.facebook.com/subway/?lnkcnt=facebook-im-social" _label="facebook-im-social" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><img src="http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/Facebook-thumbnail_37x65_US_en_v2_B.png" class="float-left" alt="Facebook icon" 
+style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outline:0;text-align:left;text-decoration:none;width:auto"></a></th>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </center>
+            <table role="presentation" class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+               <tbody>
+                  <tr style="padding:0;text-align:left;vertical-align:top">
+                     <td height="27px" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;hyphens:none;line-height:27px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">&#xA0;</td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+<!--/subSocialBannerV5 -->	
+<!--subStandardFooter1-->
+<table role="presentation" align="center" class="container float-center" style="Margin:0 auto;background:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:600px"><tbody><tr style="padding:0;text-align:left;vertical-align:top"><td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">
+    <table role="presentation" class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%"><tbody><tr style="padding:0;text-align:left;vertical-align:top"><td height="20px" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:20px;font-weight:700;hyphens:none;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">&#xA0;</td></tr></tbody></table> 
+    <table role="presentation" class="menu footer upper" style="background:#ececec;border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%"><tr style="padding:0;text-align:left;vertical-align:top"><td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;padding-left:5px;padding-top:20px;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal"><table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top"><tr style="padding:0;text-align:left;vertical-align:top">
+      <th class="menu-item float-center" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0 auto;padding:10px;padding-right:10px;text-align:left;word-break:keep-all;word-wrap:normal"> 
+          <a href="https://order.subway.com/en-US/signin?url=/en-US&lnkcnt=account-tx-ftr" _label="account-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Account</font></a> &nbsp;|&nbsp; 
+          <a href="https://contactsubscriptions.subway.com/en-us/Unsubscribe/Index/?id=XduYJd6K+dhnS7RfCEmGSfDIiq+pTiV/ypvjfUyYePc=&lnkcnt=unsubscribe-tx-ftr" target="_blank" _label="unsubscribe-tx-ftr" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Unsubscribe</font></a> &nbsp;|&nbsp; 
+          <a href="http://www.subway.com/en-us/contactus/howcanwehelp?lnkcnt=contact-us-tx-ftr" _label="contact-us-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Contact us</font></a> &nbsp;|&nbsp; 
+          <a href="http://www.subway.com/en-us/menunutrition?lnkcnt=menu-tx-ftr" _label="menu-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Menu</font></a> </th>
+  </tr></table></td></tr></table>
+  <table role="presentation" class="row footer" style="background:#ececec;border-collapse:collapse;border-spacing:0;color:#4c4c4c;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%"><tbody><tr style="padding:0;text-align:left;vertical-align:top">
+      <th class="no-bottom-padding small-12 large-12 columns first last" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding:0;padding-bottom:0;padding-left:16px;padding-right:16px;text-align:left;width:584px;word-break:keep-all;word-wrap:normal"><table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%"><tr style="padding:0;text-align:left;vertical-align:top"><th style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;padding-bottom:0;text-align:left;word-break:keep-all;word-wrap:normal">
+          
+            <p style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left;word-break:keep-all;word-wrap:normal">Subway MyWay<sup style="font-size:9px;line-height:0;vertical-align:2px">&reg;</sup> Rewards available at participating restaurants. Tokens may not be earned on catering orders or purchases of gift cards</p>
+         
+      </th></tr></table></th>
+  </tr></tbody></table>
+</td></tr></tbody></table>
+<!--/subStandardFooter1-->	
+
+* Redeemable at participating U.S. restaurants. Add-ons addt'l. Plus tax. Addt'l fees apply on delivery orders. Cannot be combined with other offers. 1 use. Excludes Footlong PRO ® , Fresh Melts ® , Wraps & Vault subs. Expires 01/16/2023. 
+
+†† Subway ®  Delivery available in select areas. Delivery fees, service fees, and minimum order requirement may apply. See  http://t.subs.subway.com/r/?id=tecac36bf,1d11333c,14261f69&utm_source=ac&utm_medium=email&utm_term=newsAndOffers_scheduled&utm_content=0&utm_campaign=sd-SC_W6_EM_USEN_V1_230109-0-2020&cid=00PvzTY:0:0:0:0:0&segment_code=NR_EM&campaignid=DM135865&bid=-324258113 Subway ®  Delivery FAQ  for additional details. 
+
+	
+	
+<!--subStandardFooter2-->
+<table role="presentation" align="center" class="container float-center" style="Margin:0 auto;background:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:600px">
+  <tbody>
+    <tr style="padding:0;text-align:left;vertical-align:top">
+      <td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">
+      <table role="presentation" class="row footer" style="background:#ececec;border-collapse:collapse;border-spacing:0;color:#4c4c4c;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+          <tbody>
+            <tr style="padding:0;text-align:left;vertical-align:top">
+              <th class="no-bottom-padding small-12 large-12 columns first last" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding:0;padding-bottom:0;padding-left:16px;padding-right:16px;text-align:left;width:584px;word-break:keep-all;word-wrap:normal">
+                <table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+                  <tr style="padding:0;text-align:left;vertical-align:top">
+                    <th style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;padding-bottom:0;text-align:left;word-break:keep-all;word-wrap:normal">
+                      <p class="aol-mail" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left;word-break:keep-all;word-wrap:normal">Please add <a href="mailto:news@subs.subway.com" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:inherit;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-height:16px!important;margin:inherit;margin-bottom:10px!important;padding:0;text-align:left;text-decoration:none;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">news@subs.subway.com</font></a> to your address book to ensure our emails reach your inbox.</p>
+                      <p style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left;word-break:keep-all;word-wrap:normal">This email and the messages contained within are intended for US audiences only.</p>
+                      <p style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left;word-break:keep-all;word-wrap:normal">Subway<sup style="font-size:9px;line-height:0;vertical-align:2px">&reg;</sup> is a Registered Trademark of Subway IP LLC. &copy;
+                        2023 Subway IP LLC. All rights reserved. This email was sent by
+                          
+                                Franchise World Headquarters, LLC, 325 <span style="color:#ececec;font-size:0;line-height:0">&zwnj;</span>Sub Way, <span style="color:#ececec;font-size:0;line-height:0">&zwnj;</span>Milford, CT <span style="color:#ececec;font-size:0;line-height:0">&zwnj;</span>06461.
+                                  
+                      </p>
+                    </th>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <table role="presentation" class="menu footer" style="background:#ececec;border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+          <tr style="padding:0;text-align:left;vertical-align:top">
+            <td style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;padding:0;padding-left:5px;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">
+              <table role="presentation" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                <tr style="padding:0;text-align:left;vertical-align:top">
+                  <th class="menu-item float-center" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0 auto;padding:10px;padding-right:10px;text-align:left;word-break:keep-all;word-wrap:normal">
+                    
+	<a href="http://www.subway.com/en-us/legal/termsofuse?lnkcnt=terms-and-conditions-tx-ftr" _label="terms-and-conditions-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Terms &amp; conditions</font></a>
+&nbsp;|&nbsp; <a href="http://www.subway.com/en-us/legal/privacynotice?lnkcnt=privacy-tx-ftr" _label="privacy-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color="#4c4c4c">Privacy</font></a> &nbsp;|&nbsp; <a href="https://www.subway.com/en-us?lnkcnt=subway-com-tx-ftr" _label="subway-com-tx-ftr" target="_blank" style="-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font 
+color="#4c4c4c">subway.com</font></a> 
+                  </th>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--/subStandardFooter2-->
+
+------=_NextPart_415_E73B179E.E73B179D
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml"
+xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+  <!-- resolves Outlook 120dpi image issues -->
+         <!--[if gte mso 9]>
+         <xml>
+            <o:OfficeDocumentSettings>
+               <o:AllowPNG/>
+               <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+         </xml>
+       <![endif]-->
+        <script type=3D"application/ld+json">
+          [{
+            "@context": "http://schema.org/",
+            "@type": "DiscountOffer", 
+            // Describe your discount, this will be shown as a badge (eg "2=
+5% off" or "free shipping")
+            "description": "",
+            "discountCode": ""
+          }]
+        </script>
+        <title></title>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width; initial-sc=
+ale=3D1.0">
+        <!-- resolves Outlook not rendering font family when web font's are=
+n't supported -->
+         <!--[if mso]>
+         <style> body,table tr,table td,a, span {  font-family:Arial, Helve=
+tica, sans-serif !important;  }</style>
+         <!=3D=3D<![endif]-->
+           <style type=3D"text/css">
+             /* Resets and overrides for email clients */
+             body, .ExternalClass {
+              width: 100%;
+              margin: 0;
+            }
+            .ExternalClass * {
+              line-height: 100%
+            }
+            .ReadMsgBody {
+              width: 100%;
+            }
+            html, body {
+              width: 100% !important;
+              margin: 0 auto;
+              padding: 0;
+              -webkit-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
+            }
+            table {
+              height: auto !important;
+              border-collapse: collapse;
+              mso-table-lspace: 0pt;
+              mso-table-rspace: 0pt;
+            }
+            td {
+              margin: 0;
+              padding: 0;
+            }
+            img {
+              line-height: 100%;
+              outline: none;
+              text-decoration: none;
+              display: block;
+              -ms-interpolation-mode: bicubic;
+            }
+            .backgroundTable {
+              margin: 0 auto;
+              padding: 0;
+              width: 100% !important;
+              line-height: 100% !important;
+            }
+            span[class~=3Dyshortcuts] {
+              border-bottom: none !important;
+              color: #0078ca !important;
+            }
+            /* iOS link style override */
+            .ios_link a {
+              color: inherit;
+              text-decoration: none;
+              line-height: inherit;
+              pointer-events: none;
+              cursor: default;
+            }
+            .hide-desktop { 
+             display: none !important;
+           }
+           /* Media queries and responsive styles */
+           @media only screen and (max-width: 480px) {
+            /* Standard styles */
+            body {
+             -webkit-text-size-adjust: 100%;
+             -ms-text-size-adjust: 100%;
+           }
+           img {
+             max-width: 320px !important;
+             height: auto !important;
+           }
+           .container {
+             width: 320px !important;
+           }
+           .mobile-hide {
+             text-indent: -99999em;
+             display: none !important;
+           }
+           .desktop-hide {
+             max-height: none !important;
+             font-size: 13px !important;
+             display: block !important;
+           }
+           .block-cell {
+             display: block !important;
+             max-width: 320px !important;
+             text-align: left !important;
+           }
+           /* adjust mobile stacking */
+           .puttop {
+             display: table-header-group!important;
+           }
+           .putbottom {
+             display: table-footer-group!important;
+           }
+           /* adjust mobile stacking */
+           /* Project-specific styles */
+           .pad-left-15{padding-left: 15px !important;}
+           .pad-right-15{padding-right: 15px !important;}
+           .pad-top-10{padding-top: 10px !important;}
+           .pad15{padding: 0px 15px !important;}
+           .pad25{padding: 0px 25px !important;}
+           .ta-c{text-align: center !important;}
+           .w4{width: 4px !important;}
+           .w14{width: 14px !important;}
+           .w55{width: 55px !important;}
+           .w125{width: 125px !important;}
+           .w144{width: 144px !important;}
+           .w240{width: 240px !important;}
+           .h7{height: 7px !important;}
+           .h20{height: 20px !important;}
+           .h25{height: 25px !important;}
+           .h45{height: 45px !important;}
+           /* Project-specific styles */
+
+           /* Rewards Module-specific styles */
+           .h-auto{height: auto !important;}
+           .w10{width: 10px !important;}
+           .w12{width: 12px !important;}
+           .w15{width: 15px !important;}
+           .w22{width: 22px !important;}
+           .w50{width: 50px !important;}
+           .w180{width: 180px !important;}
+           .w220{width: 220px !important;}
+           .f12{font-size: 12px !important; line-height: 15px !important;}
+           .f15{font-size: 15px !important;}
+           .f19{font-size: 19px !important; line-height: 20px !important;}
+           .pad-left-12{padding-left: 12px !important;}
+           .pad-right-12{padding-right: 12px !important;}
+           .pad0{padding: 0px !important;}
+           .h5{height: 5px !important;}
+           .h15{height: 15px !important;}
+           /* Rewards Module-specific styles */ 
+           .mobSocial{padding: 0 7px 0 6px!important;}  
+           .w160{width: 160px !important;}
+           .pad32{padding: 0px 32px !important;}
+
+
+         }
+       </style> 
+       <style type=3D"text/css">
+  /*Dynamic header css*/
+@media only screen and (max-width: 596px) {
+
+=2Ew46{width: 45px!important;}
+=2Ebody{min-width:100% !important;} 
+=2Emobile_head {
+  width: 320px !important;
+  margin: 0 auto;
+}
+=2Emobile-hide {
+  text-indent: -99999em;
+  display: none !important;
+}
+=2Edesktop-hide {
+  max-height: none !important;
+  font-size: 13px !important;
+  display: block !important;
+}
+/* Project-specific styles */
+=2Epad-left-15 {
+  padding-left: 15px !important;
+}
+=2Epad-right-15 {
+  padding-right: 15px !important;
+}
+=2Epad-top-10 {
+  padding-top: 10px !important;
+}
+=2Epad15 {
+  padding: 0px 15px !important;
+}
+=2Epad25 {
+  padding: 0px 25px !important;
+}
+=2Eta-c {
+  text-align: center !important;
+}
+=2Ew4 {
+  width: 4px !important;
+}
+=2Ew14 {
+  width: 14px !important;
+}
+=2Ew55 {
+  width: 55px !important;
+}
+=2Ew125 {
+  width: 125px !important;
+}
+=2Ew144 {
+  width: 144px !important;
+}
+=2Ew240 {
+  width: 240px !important;
+}
+=2Eh7 {
+  height: 7px !important;
+}
+=2Eh20 {
+  height: 20px !important;
+}
+=2Eh25 {
+  height: 25px !important;
+}
+=2Eh45 {
+  height: 45px !important;
+}
+/* Project-specific styles */
+/* Rewards Module-specific styles */
+=2Eh-auto {
+  height: auto !important;
+}
+=2Ew10 {
+  width: 10px !important;
+}
+=2Ew12 {
+  width: 12px !important;
+}
+=2Ew15 {
+  width: 15px !important;
+}
+=2Ew22 {
+  width: 22px !important;
+}
+=2Ew50 {
+  width: 50px !important;
+}
+=2Ew180 {
+  width: 180px !important;
+}
+=2Ew220 {
+  width: 220px !important;
+}
+=2Ef11 {
+  font-size: 11px !important;
+  line-height: 14px !important;
+}
+=2Ef12 {
+  font-size: 12px !important;
+  line-height: 15px !important;
+}
+=2Ef15 {
+  font-size: 15px !important;
+}
+=2Ef19 {
+  font-size: 18px !important;
+  line-height: 20px !important;
+}
+=2Epad-left-12 {
+  padding-left: 12px !important;
+}
+=2Epad-right-12 {
+  padding-right: 12px !important;
+}
+=2Epad0 {
+  padding: 0px !important;
+}
+=2Eh5 {
+  height: 5px !important;
+}
+=2Eh15 {
+  height: 15px !important;
+}
+/* Rewards Module-specific styles */
+}
+
+/*Dynamic header css ends here*/
+</style> 
+
+     </head> 
+     <body style=3D"margin: 0; padding: 0; font-family: Arial, sans-serif; =
+font-size: 12px; line-height: 14px; -webkit-text-size-adjust: 100%;" bgcolo=
+r=3D"#e5e6e7">
+       <!-- Begin preheader bar -->
+       <table class=3D"backgroundTable" width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0">
+         <tr>
+           <td align=3D"left" valign=3D"top" bgcolor=3D"#e5e6e7">
+             <!-- begin container to control width -->
+             <table class=3D"container" width=3D"600" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" style=3D"text-align:left; width:600px; margin:0=
+ auto; padding:0;" align=3D"center" bgcolor=3D"#e5e6e7">
+               <!-- begin preheader -->
+               <tr>
+                 <td valign=3D"top" align=3D"left" bgcolor=3D"#e5e6e7">
+
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0">
+                     <tr>
+                       <td class=3D"pad-left-15 pad-right-15" height=3D"" a=
+lign=3D"left" valign=3D"middle" style=3D"font-family: Arial, 'Helvetica Neu=
+e', Helvetica, sans-serif; font-size:14px; line-height:17px; color: #000000=
+; padding-left: 10px; padding-right: 10px;">
+                        <span class=3D"preheader" style=3D"color:#cce7d9;di=
+splay:none!important;font-size:1px;line-height:1px;max-height:0;max-width:0=
+;mso-hide:all!important;opacity:0;overflow:hidden;visibility:hidden">Don=E2=
+=80=99t miss out=E2=80=94order in the App or online today. Participating re=
+staurants.</span>
+
+                        <!-- Begin: insert &zwnj;&nbsp; hack after hidden p=
+review text -->
+                        <!--[if !mso]><!-->
+                         <div style=3D"display: none; max-height: 0px; over=
+flow: hidden;">
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                           &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                         </div>
+                         <!--<![endif]-->
+                           <!-- End: insert &zwnj;&nbsp; hack after hidden =
+preview text -->
+                         </td>
+                       </tr>
+                     </table>
+
+                   </td>
+                 </tr> 
+                 <!-- end preheader --> 
+               </table>
+             </td>
+           </tr>
+         </table>
+         <!-- end preheader bar --> 
+         <table class=3D"backgroundTable" width=3D"100%" cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" bgcolor=3D"#e5e6e7">
+           <tr>
+             <td align=3D"left" valign=3D"top">
+               <!-- begin container to control width -->
+               <table class=3D"container" width=3D"600" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" style=3D"text-align:left; width:600px; margin=
+:0 auto; padding:0;" align=3D"center" >
+                 <!-- begin spacer image to control width in Gmail App for =
+Android - forces desktop -->
+                 <tr>
+                   <td class=3D"mobile-hide" height=3D"1" style=3D"font-siz=
+e: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/res/subw=
+ay_mkt_prod1/spacer.gif" width=3D"600" height=3D"1" alt=3D"" style=3D"displ=
+ay: block; min-width:600px; min-height:1px;" border=3D"0"></td>
+                 </tr>
+                 <!-- end spacer image to control width in Gmail App for An=
+droid - forces desktop -->
+                 <!-- begin main content -->
+                   <tr>
+                   <td align=3D"left" valign=3D"top" bgcolor=3D"#ffffff">
+                     <table width=3D"100%" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" style=3D"background: #ffffff;" bgcolor=3D"#ffffff">
+                       <!-- BEGIN MOD LOGO -->
+                        <tr>
+                         <td align=3D"left" valign=3D"top" bgcolor=3D""> 
+                           
+                           <!-- Dynamic Non Rewards header V1 -->
+<table class=3D"backgroundTable" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" bgcolor=3D"#ececec">
+   <tr>
+      <td align=3D"left" valign=3D"top">
+         <!-- begin container to control width -->
+         <table class=3D"container" width=3D"600" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" style=3D"text-align:left; width:600px; margin:0 aut=
+o; padding:0;" align=3D"center" bgcolor=3D"#ececec">
+            <tr>
+               <td align=3D"left" valign=3D"top" bgcolor=3D"#ececec">
+                  <!-- begin container to control width -->
+                  <table class=3D"container" width=3D"600" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" style=3D"text-align:left; width:600px; mar=
+gin:0 auto; padding:0;" align=3D"center" bgcolor=3D"#ececec">
+                     <!-- begin preheader -->
+                     <tr>
+                        <td valign=3D"top" align=3D"left" bgcolor=3D"#ecece=
+c">
+                           <table width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0">
+                              <tr>
+                                 <td align=3D"left" valign=3D"top">
+                                    <table width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0">
+                                       <tr>
+                                          <td class=3D"pad-left-12 pad-righ=
+t-12 pad-top-10" height=3D"30" align=3D"left" valign=3D"middle" style=3D"fo=
+nt-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; =
+color: #74766e; padding-left: 10px; padding-right: 10px;">
+                                             <a href=3D"http://t.subs.subwa=
+y.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f43&utm_source=3Dac&utm_medium=3Dem=
+ail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC=
+_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&c=
+ampaignid=3DDM135865&bid=3D-324258113" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #74766e;font-weight: normal;">Order</a> | <a href=3D"h=
+ttp://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f44&utm_source=3D=
+ac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&ut=
+m_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segm=
+ent_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" target=3D"_blank" =
+style=3D"text-decoration: none; color: #74766e;font-weight: normal;">Find a=
+ restaurant</a>
+
+                                          </td>
+                                          <td class=3D"pad-left-12 pad-righ=
+t-12 pad-top-10" height=3D"30" align=3D"right" valign=3D"middle" style=3D"f=
+ont-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; =
+color: #74766e; padding-left: 10px; padding-right: 10px;">
+                                             <a href=3D"http://t.subs.subwa=
+y.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f45&utm_source=3Dac&utm_medium=3Dem=
+ail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC=
+_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&c=
+ampaignid=3DDM135865&bid=3D-324258113&p1=3D%40NGSB6nEO7as9L8JG27HRfGL5SiZeX=
+j1CF8KAlp8mMEI%3D" target=3D"_blank" style=3D"text-decoration: none; color:=
+ #74766e;font-weight: normal;">View in browser</a>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                     <!-- end preheader --> 
+                  </table>
+               </td>
+            </tr>
+            <!-- begin spacer image to control width in Gmail App for Andro=
+id - forces desktop -->
+            <tr>
+               <td class=3D"mobile-hide" height=3D"1" style=3D"font-size: 1=
+px; line-height: 1px;"><img src=3D"http://media.subway.com/digital/Account_=
+Updates/Assets/Images/Brand/Subway/sp.gif" width=3D"600" height=3D"1" alt=
+=3D"" style=3D"display: block; min-width:600px; min-height:1px;" border=3D"=
+0"></td>
+            </tr>
+            <!-- end spacer image to control width in Gmail App for Android=
+ - forces desktop -->
+            <!-- begin main content -->
+            <tr>
+               <td align=3D"left" valign=3D"top" bgcolor=3D"#ffffff">
+                  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">
+                     <!-- BEGIN MOD LOGO -->
+                     <tr>
+                        <td align=3D"left" valign=3D"top" bgcolor=3D"#fffff=
+f">
+                           <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td class=3D"h7" height=3D"10" style=3D"fo=
+nt-size: 1px; line-height: 1px;"><img src=3D"http://media.subway.com/digita=
+l/Account_Updates/Assets/Images/Brand/Subway/sp.gif" width=3D"1" height=3D"=
+1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+                              </tr>
+                              <tr>
+                                 <td align=3D"center" valign=3D"top" style=
+=3D"padding: 0px 15px;">
+                                    <a href=3D"http://t.subs.subway.com/r/=
+=3Fid=3Dhecac36bf,1d11333c,14261f46&utm_source=3Dac&utm_medium=3Demail&utm_=
+term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_U=
+SEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaigni=
+d=3DDM135865&bid=3D-324258113" target=3D"_blank" style=3D"text-decoration: =
+none; color: #74766e;"><img src=3D"http://media.subway.com/digital/Account_=
+Updates/Assets/Images/Brand/Subway/logo-subway.png" width=3D"150" height=3D=
+"30" alt=3D"SUBWAY" style=3D"display: block;" border=3D"0" class=3D"w125"><=
+/a>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class=3D"h7" height=3D"10" style=3D"fo=
+nt-size: 1px; line-height: 1px;"><img src=3D"http://media.subway.com/digita=
+l/Account_Updates/Assets/Images/Brand/Subway/sp.gif" width=3D"1" height=3D"=
+1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                     <!-- END MOD LOGO -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+                     <!-- BEGIN REWARDS HEADER - NON-MEMBER -->
+
+                  </table>
+               </td>
+            </tr> 
+            <!-- end main content --> 
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- Dynamic Non Rewards header V1 ends here-->
+                            
+                         </td>
+                       </tr>
+                       <!-- END MOD LOGO --> 
+
+                       
+                       <!-- BEGIN SEPERATOR -->
+                       <tr>
+                        <td align=3D"left" valign=3D"top">
+                         <table width=3D"100%" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">
+                          <tr>
+                           <td bgcolor=3D"#e5e6e7" height=3D"25" style=3D"f=
+ont-size: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/r=
+es/subway_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"" style=3D"=
+display: block;" border=3D"0"></td>
+                         </tr>
+                       </table>
+                     </td>
+                   </tr>
+
+                   <!-- END SEPERATOR --> 
+                    
+                   
+                   <!-- BEGIN BANNER -->
+                   <tr>
+                     <td align=3D"left" valign=3D"top">
+                      <!-- BEGIN DDIGITALONLYBANNER -->
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+   <tr>
+      <td align=3D"left" valign=3D"top">
+         <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+            <tr>
+               <td class=3D"mobile-hide" align=3D"left" valign=3D"top">
+                  <a _label=3D"order-im-ppm1" href=3D"http://t.subs.subway.=
+com/r/=3Fid=3Dhecac36bf,1d11333c,14261f47&utm_source=3Dac&utm_medium=3Demai=
+l&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W=
+6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&cam=
+paignid=3DDM135865&bid=3D-324258113" target=3D"_blank"><img src=3D"http://m=
+edia.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/DIGITALO=
+NLYBANNERd1.jpg" width=3D"600" height=3D"" alt=3D"" style=3D"display: block=
+;" border=3D"0" class=3D"block-cell"></a>
+               </td>
+            </tr>
+            <tr>
+               <!-- ***begin mobile only image*** -->
+               <td align=3D"center" height=3D"1" style=3D"font-size: 1px; l=
+ine-height: 1px;">
+                  <div class=3D"desktop-hide" style=3D"max-height: 0px; fon=
+t-size: 0; display: none;"><a _label=3D"order-im-ppm1" href=3D"http://t.sub=
+s.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f48&utm_source=3Dac&utm_medi=
+um=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=
+=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=
+=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" target=3D"_blank"><img cla=
+ss=3D"desktop-hide" style=3D"max-height: 0px; font-size: 0; display: none;"=
+ src=3D"http://media.subway.com/digital/Account_Updates/Assets/Images/Brand=
+/Subway/DIGITALONLYBANNERm1.jpg" width=3D"320" alt=3D"" border=3D"0"></a></=
+div>
+               </td>
+               <!-- ***end mobile only image*** -->
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END DDIGITALONLYBANNER -->
+                    </td>
+                  </tr>
+                  <!-- END BANNER --> 
+                  <!-- BEGIN MOD1 -->
+                  <tr>
+                   <td align=3D"left" valign=3D"top">
+                    
+<!-- Primary block 230109 -->
+  <!-- DOFFER599FOOTLONG1 -->
+  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bg=
+color=3D"#ffffff" style=3D"background-color: #ffffff">
+    <!-- BEGIN TEXT1TOP -->
+    <tr>
+      <td align=3D"left" valign=3D"top">
+       <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0">
+        <tr>
+         <td height=3D"24" style=3D"font-size: 1px; line-height: 1px;"><img=
+ src=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=
+=3D"1" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+      </tr>
+      <tr>
+        
+            <td class=3D"pad15" align=3D"center" valign=3D"top" style=3D"fo=
+nt-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; =
+line-height:32px; color: #00491e; font-weight: bold; padding: 0px 30px;">
+                 <span class=3D"block-cell ta-c">Limited&#45;time deal! Get=
+ a Footlong for<br class=3D"mobile-hide"> only $5.99.<sup style=3D"mso-line=
+-height-rule:exactly; line-height:0; font-size:80%; vertical-align:8px;"><!=
+--[if (gte mso 9) | (IE 7)]><span style=3D"mso-line-height-rule:exactly; li=
+ne-height:0; font-size:19px; vertical-align:1px;"><![endif]-->&#42;<!--[if =
+(gte mso 9) | (IE 7)]></span><![endif]--></sup>
+
+                           </td>
+                                    </tr>
+               <tr>
+                <td height=3D"15" style=3D"font-size: 1px; line-height: 1px=
+;"><img src=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif"=
+ width=3D"1" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"><=
+/td>
+                    </tr>
+                 <tr>
+                      <td align=3D"center" valign=3D"middle" style=3D"font-=
+family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px; lin=
+e-height:18px; color: #000000; padding: 0px 15px;">Don&#8217;t miss this sp=
+ecial offer. Have a favorite=3F Wanna try something new=3F <br class=3D"mob=
+ile-hide">With this price, you can&#8217;t go wrong.
+                            </td>
+                        </tr>
+      <tr>
+       <td height=3D"15" style=3D"font-size: 1px; line-height: 1px;"><img s=
+rc=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=3D=
+"1" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+    </tr>
+    <tr>
+       <td align=3D"center" valign=3D"top">
+        <!-- #SwiftWIN CTA code starts from here-->
+        <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=3D"=
+" width=3D"" style=3D"" class=3D"fullwidth">
+         <tr>
+          <td align=3D"center" width=3D"" class=3D"" style=3D"">
+            <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=
+=3D"" width=3D"" style=3D"" class=3D"">
+             <tr>
+              <td width=3D"210" height=3D"" bgcolor=3D"" align=3D"center" v=
+align=3D"middle" style=3D"mso-line-height-rule: exactly; font-weight: norma=
+l; padding-left:0px; width:240px;border-radius: 5px;text-align: center;padd=
+ing-top:2px;padding-bottom:1px;" class=3D"mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:50px;v-text-anc=
+hor:middle;width:240px;v-text-align:center" arcsize=3D"10%" strokecolor=3D"=
+#f3b817;" fillcolor=3D"#f3b817;"><span style=3D"vertical-align:0px;"><cente=
+r style=3D"font-size: 19px !important;"><![endif]-->     
+                <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d1=
+1333c,14261f49&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_=
+scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&=
+cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3=
+24258113&p1=3Dsubway:MV-484876009-7ccffc97972df3d23276b9d225dfc271" target=
+=3D"_blank" style=3D"text-decoration:none;font-size: 19px; font-family:'Ari=
+al', Tahoma, sans-serif !important; color: #000000; line-height:50px;mso-li=
+ne-height-rule: exactly;font-weight: 400;display: block;background-color: #=
+f3b817;border-radius: 5px;text-align: center;height:50px;width: 240px;" _la=
+bel=3D"order-now-tx-pm1" class=3D"mobCTA_font mobCTA"><strong style=3D"font=
+-family:'Arial', Tahoma, sans-serif !important;color: #000000;">Get Deal</s=
+trong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+             </tr>
+          </table>
+       </td> 
+    </tr> 
+ </table>
+ <!-- CTA code Ends here-->
+</td>
+</tr>
+<tr>
+   <td height=3D"25" style=3D"font-size: 1px; line-height: 1px;"><img src=
+=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=3D"1=
+" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END TEXT1TOP --> 
+ 
+<tr>
+  <td align=3D"left" valign=3D"top">
+   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" b=
+gcolor=3D"#000000" style=3D"background-color:#000000;">
+    <tr>
+    <!-- ***begin mobile only image*** -->
+    <td align=3D"center" height=3D"1" style=3D"font-size: 1px; line-height:=
+ 1px;">
+     <div class=3D"desktop-hide" style=3D"max-height: 0px; font-size: 0; di=
+splay: none; padding-bottom:2px;"><a href=3D"http://t.subs.subway.com/r/=3F=
+id=3Dhecac36bf,1d11333c,14261f4a&utm_source=3Dac&utm_medium=3Demail&utm_ter=
+m=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN=
+_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=
+=3DDM135865&bid=3D-324258113&p1=3Dsubway:MV-484876009-7ccffc97972df3d23276b=
+9d225dfc271" target=3D"_blank" _label=3D"get-deal-im-pm1"><img class=3D"des=
+ktop-hide" style=3D"max-height: 0px; font-size: 0; display: none;" src=3D"h=
+ttp://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/2=
+30109DOFFER599FOOTLONG1M.jpg" width=3D"320" alt=3D"Limited&#45;Time Deal: G=
+et a Footlong for only $5.99.*" border=3D"0"></a></div>
+  </td>
+</tr>
+
+
+<!-- ***end mobile only image*** -->   
+
+    <!-- begin desktop layout --> 
+    <tr>
+      <td class=3D"mobile-hide" align=3D"left" valign=3D"top">
+       <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,142=
+61f4b&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled=
+&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00P=
+vzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113&=
+p1=3Dsubway:MV-484876009-7ccffc97972df3d23276b9d225dfc271" target=3D"_blank=
+" _label=3D"get-deal-im-pm1"><img src=3D"http://media.subway.com/digital/Ac=
+count_Updates/Assets/Images/Brand/Subway/230109DOFFER599FOOTLONG1D.jpg" wid=
+th=3D"600" height=3D"" alt=3D"Limited&#45;Time Deal: Get a Footlong for onl=
+y $5.99.*" style=3D"display: block;" border=3D"0" class=3D"block-cell" padd=
+ing-bottom:10px;></a>
+    </td>
+ </tr>
+ 
+</table>
+</td>
+</tr> 
+
+</table>
+
+    <!-- Primary block 230109 ends here -->  
+                  </td>
+                </tr>
+                <!-- END MOD1 --> 
+                <!-- BEGIN SEPERATOR -->
+                <tr>
+                  <td align=3D"left" valign=3D"top">
+                   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+                    <tr>
+                     <td bgcolor=3D"#e5e6e7" height=3D"25" style=3D"font-si=
+ze: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/res/sub=
+way_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"" style=3D"displa=
+y: block;" border=3D"0"></td>
+                   </tr>
+                 </table>
+               </td>
+             </tr>
+
+             <!-- END SEPERATOR --> 
+             <!-- BEGIN MOD2 -->
+             <tr>
+               <td align=3D"left" valign=3D"top">
+                  <!-- Secondary block V1 US 230109 -->
+<!-- DAPPHOWTOREORDERFAVE1 -->
+  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bg=
+color=3D"#ffffff" style=3D"background-color:#ffffff ;">
+    <tr>
+     <td height=3D"24" style=3D"font-size: 1px; line-height: 1px;"><img src=
+=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=3D"1=
+" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+   </tr>
+   <tr>
+     <td class=3D"" align=3D"center" valign=3D"top" style=3D"font-family: A=
+rial, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; line-height:=
+1.2; color: #00491e; font-weight: bold; padding: 0px 20px;">
+      It&#8217;s easy to reorder your faves in our App
+    </td>
+  </tr>
+  <tr>
+   <td height=3D"12" style=3D"font-size: 1px; line-height: 1px;"><img src=
+=3D"images/sp.gif" width=3D"1" height=3D"1" alt=3D"" style=3D"display: bloc=
+k;" border=3D"0"></td>
+ </tr>
+ <tr>
+   <td align=3D"center" valign=3D"middle" style=3D"font-family: Arial, 'Hel=
+vetica Neue', Helvetica, sans-serif; font-size:16px; line-height:18px; colo=
+r: #000000; padding: 0px 15px;">
+    Just heart your faves to save them, so you can order again in a flash.
+  </td>
+</tr>
+<tr>
+ <td class=3D"h15" height=3D"25" style=3D"font-size: 1px; line-height: 1px;=
+"><img src=3D"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" =
+width=3D"1" height=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></=
+td>
+</tr>
+<tr>
+ <td align=3D"center" valign=3D"top" >
+   <!-- #SwiftWIN CTA code starts from here-->
+   <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=3D"" wid=
+th=3D"" style=3D"" class=3D"fullwidth">
+     <tr>
+      <td align=3D"center" width=3D"" class=3D"" style=3D"">
+        <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=3D"=
+" width=3D"" style=3D"" class=3D"">
+         <tr>
+          <td width=3D"210" height=3D"" bgcolor=3D"" align=3D"center" valig=
+n=3D"middle" style=3D"mso-line-height-rule: exactly; font-weight: normal; p=
+adding-left:0px; width:240px;border-radius: 5px;text-align: center;padding-=
+top:12px;padding-bottom:1px;" class=3D"mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:50px;v-text-anc=
+hor:middle;width:240px;v-text-align:center" arcsize=3D"10%" strokecolor=3D"=
+#f3b817;" fillcolor=3D"#f3b817;"><span style=3D"vertical-align:0px;"><cente=
+r style=3D"font-size: 19px !important;"><![endif]-->     
+                <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d1=
+1333c,14261f4c" target=3D"_blank" style=3D"text-decoration:none;font-size: =
+19px; font-family:'Arial', Tahoma, sans-serif !important; color: #000000; l=
+ine-height:50px;mso-line-height-rule: exactly;font-weight:400;display: bloc=
+k;background-color: #f3b817;border-radius: 5px;text-align: center;height:50=
+px;width: 240px;" _label=3D"open-app-tx-sm1" class=3D"mobCTA_font mobCTA"><=
+strong style=3D"font-family:'Arial', Tahoma, sans-serif !important;color: #=
+000000;">Open App</strong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+              </tr>
+            </table>
+          </td> 
+        </tr> 
+      </table>
+      <!-- CTA code Ends here-->
+    </td>
+  </tr>
+  <tr>
+   <td height=3D"5" style=3D"font-size: 1px; line-height: 1px;"><img src=3D=
+"images/sp.gif" width=3D"1" height=3D"1" alt=3D"" style=3D"display: block;"=
+ border=3D"0"></td>
+ </tr>
+ <tr>
+   <td align=3D"center" valign=3D"middle" style=3D"font-family: Arial, 'Hel=
+vetica Neue', Helvetica, sans-serif; font-size:14px; line-height:17px; colo=
+r: #000000; padding: 0px 15px; font-weight: bold;">
+     <a _label=3D"download-app-tx-sm1" href=3D"http://t.subs.subway.com/r/=
+=3Fid=3Dhecac36bf,1d11333c,14261f4d" target=3D"_blank" style=3D"text-decora=
+tion:underline; color: #000000;">Download the App now</a>
+   </td>
+ </tr>
+ <tr>
+  <td height=3D"15" style=3D"font-size: 1px; line-height: 1px;"><img src=3D=
+"https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=3D"1" h=
+eight=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+</tr>
+
+<tr>
+  <td align=3D"left" valign=3D"top" bgcolor=3D"#000000" style=3D"background=
+-color:#000000;">
+   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+    <tr>
+     <!-- ***begin mobile only image*** -->
+     <td align=3D"center" height=3D"1" style=3D"font-size: 1px; line-height=
+: 1px;">
+      <div class=3D"desktop-hide" style=3D"max-height: 0px; font-size: 0; d=
+isplay: none;"><a _label=3D"open-app-im-sm1" href=3D"http://t.subs.subway.c=
+om/r/=3Fid=3Dhecac36bf,1d11333c,14261f4e" target=3D"_blank"><img class=3D"d=
+esktop-hide" style=3D"max-height: 0px; font-size: 0; display: none;" src=3D=
+"http://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway=
+/TMScheduledCampaign_US_V1_220916_640X460.jpg" width=3D"320" alt=3D"Reorder=
+ your favorites with a tap. In the App or online." border=3D"0"></a></div>
+      </td>
+      <!-- ***end mobile only image*** -->
+    </tr>
+    <tr>
+     <td class=3D"mobile-hide" align=3D"left" valign=3D"top">
+      <a _label=3D"open-app-im-sm1" href=3D"http://t.subs.subway.com/r/=3Fi=
+d=3Dhecac36bf,1d11333c,14261f4f" target=3D"_blank"><img src=3D"http://media=
+.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/TMScheduledC=
+ampaign_US_V1_220916_564X720.jpg" width=3D"280" height=3D"360" alt=3D"Reord=
+er your favorites with a tap. In the App or online." style=3D"display: bloc=
+k;" border=3D"0"></a>
+    </td>
+    <td class=3D"block-cell" width=3D"320" align=3D"left" valign=3D"top">
+
+      <a _label=3D"open-app-im-sm1" href=3D"http://t.subs.subway.com/r/=3Fi=
+d=3Dhecac36bf,1d11333c,14261f50" target=3D"_blank"><img src=3D"http://media=
+.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/DAPPHOWTOREO=
+RDERFAVE1_D.gif" width=3D"320" height=3D"360" alt=3D"Reorder your favorites=
+ with a tap. In the App or online." style=3D"display: block;" border=3D"0">=
+</a>
+
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+
+</table>
+<!-- Secondary block ends here
+               </td>
+             </tr>
+             <!-- END MOD2 -->  
+
+                 <!-- BEGIN SEPERATOR -->
+                <tr>
+                  <td align=3D"left" valign=3D"top">
+                   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+                    <tr>
+                     <td bgcolor=3D"#e5e6e7" height=3D"25" style=3D"font-si=
+ze: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/res/sub=
+way_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"" style=3D"displa=
+y: block;" border=3D"0"></td>
+                   </tr>
+                 </table>
+               </td>
+             </tr>
+
+             <!-- END SEPERATOR --> 
+
+               <!-- BEGIN MOD2 -->
+             <tr>
+               <td align=3D"left" valign=3D"top">
+                 
+<!-- Tertiary block V1 US 230109 -->
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff" style=3D"background-color: #ffffff";>
+ 
+  <!-- BEGIN TEXT2SIDE -->
+                           <tr>
+                              <td align=3D"left" valign=3D"top">
+                                 <table width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0">
+                                    <tr>
+
+                                       <td width=3D"300" align=3D"left" val=
+ign=3D"top" class=3D"block-cell">
+                                          <table width=3D"100%" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0">
+                                             <tr>
+                                                <td height=3D"24" style=3D"=
+font-size: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/=
+res/subway_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"" style=3D=
+"display: block;" border=3D"0"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class=3D"pad15" align=
+=3D"center" valign=3D"top" style=3D"font-family: Arial, 'Helvetica Neue', H=
+elvetica, sans-serif; font-size:28px; line-height:32px; color: #00491e; fon=
+t-weight: bold; padding: 0px 5px;">
+                                               Skip the trip.<span class=3D=
+"mobile-hide"><br></span> Subway<sup style=3D"mso-line-height-rule:exactly;=
+ line-height:0; font-size:70%; vertical-align:8px;"><!--[if (gte mso 9) | (=
+IE 7)]><span style=3D"mso-line-height-rule:exactly; line-height:0; font-siz=
+e:19px; vertical-align:6px;"><![endif]-->&reg;<!--[if (gte mso 9) | (IE 7)]=
+></span><![endif]--></sup> Delivery<br> has you covered.</td>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td height=3D"12" style=3D"=
+font-size: 1px; line-height: 1px;"><img src=3D"images/sp.gif" width=3D"1" h=
+eight=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+                                             </tr>
+                                            <tr>
+                                             <td align=3D"center" valign=3D=
+"middle" style=3D"font-family: Arial, 'Helvetica Neue', Helvetica, sans-ser=
+if; font-size:16px; line-height:1.2; color: #000000;">
+                                                Whether you just can&#8217;=
+t&#8212;or just don&#8217;t<br> feel like it. Every reason is a good<br> re=
+ason to order Subway<sup style=3D"mso-line-height-rule:exactly; line-height=
+:0; font-size:72%; vertical-align:6px;"><!--[if (gte mso 9) | (IE 7)]><span=
+ style=3D"mso-line-height-rule:exactly; line-height:0; font-size:19px; vert=
+ical-align:1px;"><![endif]-->&reg;<!--[if (gte mso 9) | (IE 7)]></span><![e=
+ndif]--></sup> Delivery in<br> the App or online.<strong><sup style=3D"mso-=
+line-height-rule:exactly; line-height:0; font-size:60%; vertical-align: 6px=
+;"><!--[if (gte mso 9) | (IE 7)]><span style=3D"mso-line-height-rule:exactl=
+y; line-height:0; font-size:19px; vertical-align:1px;"><![endif]-->&#8224;&=
+#8224;<!--[if (gte mso 9) | (IE 7)]></span><![endif]--></sup></strong>
+                                                </td>
+                                          </tr>
+                                             <tr>
+                                                <td height=3D"20" style=3D"=
+font-size: 1px; line-height: 1px;"><img src=3D"https://res.subs.subway.com/=
+res/subway_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"" style=3D=
+"display: block;" border=3D"0"></td>
+                                             </tr>
+                                             <tr>
+                                                <td align=3D"center" valign=
+=3D"top">
+                                                    <!-- #SwiftWIN CTA code=
+ starts from here-->
+   <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=3D"" wid=
+th=3D"" style=3D"" class=3D"fullwidth">
+     <tr>
+      <td align=3D"center" width=3D"" class=3D"" style=3D"">
+        <table cellpadding=3D"0" cellspacing=3D"0"  border=3D"0" height=3D"=
+" width=3D"" style=3D"" class=3D"">
+         <tr>
+          <td width=3D"210" height=3D"" bgcolor=3D"" align=3D"center" valig=
+n=3D"middle" style=3D"mso-line-height-rule: exactly; font-weight: normal; p=
+adding-left:0px; width:240px;border-radius: 5px;text-align: center;padding-=
+top:0px;padding-bottom:1px;" class=3D"mobCTA"> 
+             <!--[if mso]>
+              <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:50px;v-text-anc=
+hor:middle;width:240px;v-text-align:center" arcsize=3D"10%" strokecolor=3D"=
+#f3b817;" fillcolor=3D"#f3b817;"><span style=3D"vertical-align:0px;"><cente=
+r style=3D"font-size: 19px !important;"><![endif]-->     
+                <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d1=
+1333c,14261f51&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_=
+scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&=
+cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3=
+24258113" target=3D"_blank" style=3D"text-decoration:none;font-size: 19px; =
+font-family:'Arial', Tahoma, sans-serif !important; color: #000000; line-he=
+ight:50px;mso-line-height-rule: exactly;font-weight: 400;display: block;bac=
+kground-color: #f3b817;border-radius: 5px;text-align: center;height:50px;wi=
+dth: 240px;" _label=3D"order-delivery-tx-tm1" class=3D"mobCTA_font mobCTA">=
+<strong style=3D"font-family:'Arial', Tahoma, sans-serif !important;color: =
+#000000;">Order Delivery</strong></a> 
+
+                <!--[if mso]></center></span></v:roundrect><![endif]--> 
+                </td>
+              </tr>
+            </table>
+          </td> 
+        </tr> 
+      </table>
+      <!-- CTA code Ends here-->
+                                                </td>
+                                             </tr>
+                                            <tr>
+                                             <td class=3D"h25" height=3D"5"=
+ style=3D"font-size: 1px; line-height: 1px;"><img src=3D"https://res.subs.s=
+ubway.com/res/subway_mkt_prod1/spacer.gif" width=3D"1" height=3D"1" alt=3D"=
+" style=3D"display: block;" border=3D"0"></td>
+                                          </tr>
+                                            
+                                          <tr>
+                                             <!-- ***begin mobile only imag=
+e*** -->
+                                             <td align=3D"center" height=3D=
+"1" style=3D"font-size: 1px; line-height: 1px;">
+                                                <div class=3D"desktop-hide"=
+ style=3D"max-height: 0px; font-size: 0; display: none;"><a href=3D"http://=
+t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f52&utm_source=3Dac&utm=
+_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_camp=
+aign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_co=
+de=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" target=3D"_blank"><img c=
+lass=3D"desktop-hide" style=3D"max-height: 0px; font-size: 0; display: none=
+;" src=3D"http://media.subway.com/digital/Account_Updates/Assets/Images/Bra=
+nd/Subway/D0DELIVERY1_m_TM221110.png" width=3D"320" alt=3D"Skip the trip. O=
+rder Subway&reg; Delivery today." border=3D"0"></a></div>
+                                             </td>
+                                          </tr>
+                                          <!-- ***end mobile only image*** =
+-->
+                                       </table>
+                                    </td>
+                                    <td width=3D"300" align=3D"left" valign=
+=3D"top" class=3D"block-cell">
+                                       <table width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                          <tr>
+                                             <td class=3D"mobile-hide" alig=
+n=3D"right" valign=3D"top">
+                                                <a href=3D"http://t.subs.su=
+bway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f53&utm_source=3Dac&utm_medium=
+=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3D=
+sd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR=
+_EM&campaignid=3DDM135865&bid=3D-324258113" target=3D"_blank"><img src=3D"h=
+ttp://media.subway.com/digital/Account_Updates/Assets/Images/Brand/Subway/D=
+0DELIVERY1_d_TM221110.png" width=3D"300" height=3D"" alt=3D"Skip the trip. =
+Order Subway&reg; Delivery today." style=3D"display: block;" border=3D"0"><=
+/a>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!-- END TEXT2SIDE -->
+                       
+                  
+</table>
+<!-- Tertiary block 230109 ends here -->
+               </td>
+             </tr>
+             <!-- END MOD2 --> 
+
+      </table>
+    </td>
+  </tr>
+
+  <!-- end main content -->
+  <!-- Begin legal/disclaimer copy -->
+  <tr>
+   <td align=3D"left" valign=3D"top">
+     <!-- Safety Signoff US V1  -->
+<table align=3D"center" class=3D"container float-center" role=3D"presentati=
+on" style=3D"Margin:0 auto;border-collapse:collapse;border-spacing:0;float:=
+none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:600=
+px" width=3D"600">
+  <tr style=3D"padding:0;text-align:left;vertical-align:top" width=3D"600">
+    <td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Ma=
+rgin:0;border-collapse:collapse!important;color:#000;font-family:Arial Bold=
+,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens=
+:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-break:keep-all;word-wrap:normal" width=3D"600">
+    
+        <table class=3D"row collapse white" role=3D"presentation" style=3D"=
+background-color:#fff;border-collapse:collapse;border-spacing:0;display:tab=
+le;padding:0;position:relative;text-align:left;vertical-align:top;width:100=
+%">
+        <tr style=3D"padding:0;text-align:left;vertical-align:top">
+          <th class=3D"no-bottom-padding white small-12 large-12 columns fi=
+rst last" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;=
+Margin:0 auto;background-color:#fff;color:#000!important;font-family:Arial,=
+Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:=
+none;line-height:0;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;=
+padding-right:0;text-align:left;width:608px;word-break:keep-all;word-wrap:n=
+ormal">
+            <table role=3D"presentation" style=3D"border-collapse:collapse;=
+border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%;ba=
+ckground-color:#fff;">
+              <tr style=3D"padding:0;text-align:left;vertical-align:top">
+                <th style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyp=
+hens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sa=
+ns-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin=
+:0;padding:0;text-align:left;word-break:keep-all;word-wrap:normal;backgroun=
+d-color:#fff;">
+                  <a href=3D"#"> <img alt=3D"Order in the app" 
+
+          src=3D"https://media.subway.com/digital/Account_Updates/Assets/Im=
+ages/Brand/Subway/ReusableContentUS_SafetySignoff_Campaign_600x358_V2.jpg" =
+style=3D"-ms-interpolation-mode:bicubic;border:none;clear:both;color:#000;d=
+isplay:block;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-siz=
+e:16px;max-width:100%;outline:0;text-align:center;text-decoration:none;widt=
+h:100%" width=3D"600" usemap=3D"#image-mapsafety"> </a>
+                      <map name=3D"image-mapsafety">
+                         
+                   <area alt=3D"Order in the app" coords=3D"0,0,600,48" hre=
+f=3D"#" shape=3D"rect" style=3D"outline: none;" target=3D"_blank"  title=3D=
+"">
+                    <area alt=3D"Order in the app" coords=3D"0,49,28,172" h=
+ref=3D"#" shape=3D"rect"  style=3D"outline: none;" target=3D"_blank"  title=
+=3D"">
+                    <area alt=3D"Order in the app" coords=3D"29,49,570,172"=
+ href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f54" _l=
+abel=3D"order-in-app-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=
+=3D"_blank" title=3D""><area alt=3D"Order in the app" coords=3D"571,49,600,=
+172" href=3D"#" shape=3D"rect" style=3D"outline: none;"     title=3D"">
+          
+                    <area alt=3D"Order in the app" coords=3D"0,173,600,174"=
+  href=3D"#" shape=3D"rect" style=3D"outline: none;"    title=3D"">
+          
+                    <area  alt=3D"" coords=3D"0,175,28,296"  href=3D"#" sha=
+pe=3D"rect" style=3D"outline: none;"   title=3D"">
+                    <area alt=3D"Order online" coords=3D"29,175,298,296" hr=
+ef=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f55&utm_so=
+urce=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=
+=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0=
+:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _label=3D"o=
+nline-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=3D"_blank" tit=
+le=3D""><area alt=3D"" coords=3D"297,175,299,296"  href=3D"#" shape=3D"rect=
+" style=3D"outline: none;"    title=3D"">
+                    <area alt=3D"Find a restaurant" coords=3D"300,175,570,2=
+96" href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f56&=
+utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_c=
+ontent=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0=
+:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _labe=
+l=3D"find-restaurant-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=
+=3D"_blank" title=3D""><area alt=3D"" coords=3D"571,175,600,296"  href=3D"#=
+" shape=3D"rect" style=3D"outline: none;"    title=3D"">
+                    <area alt=3D"0,297,600,298" coords=3D"" href=3D"#" shap=
+e=3D"rect" style=3D"outline: none;"   title=3D"">
+                    <area alt=3D"" coords=3D"0,299,28,358" href=3D"#" shape=
+=3D"rect"  style=3D"outline: none;"   title=3D"">
+                    <area alt=3D"Earn rewards" coords=3D"29,299,207,358" hr=
+ef=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f57&utm_so=
+urce=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=
+=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0=
+:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _label=3D"e=
+arn-rewards-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=3D"_blan=
+k" title=3D""><area alt=3D"" coords=3D"208,299,210,358" href=3D"#" shape=3D=
+"rect" style=3D"outline: none;"     title=3D"">
+                    <area alt=3D"Order catering" coords=3D"211,299,388,358"=
+ href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f58&utm=
+_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_cont=
+ent=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:=
+0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _label=
+=3D"catering-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=3D"_bla=
+nk" title=3D""><area alt=3D"" coords=3D"389,299,390,358" href=3D"" shape=3D=
+"rect" style=3D"outline: none;"   title=3D"">
+                    <area alt=3D"Buy gift cards" coords=3D"391,299,570,358"=
+ href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f59" _l=
+abel=3D"gift-card-tx-ss1" shape=3D"rect" style=3D"outline: none;" target=3D=
+"_blank" title=3D""><area alt=3D"" coords=3D"571,299,600,358" href=3D"" sha=
+pe=3D"rect" style=3D"outline: none;"    title=3D"">
+                    
+                       </map>
+                </th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+    
+   
+
+     
+ 
+    </td>
+  </tr>
+</table>
+
+
+<!-- Ends here --></td>
+   </tr>
+   <tr>
+     <td align=3D"left" valign=3D"top">
+       <!-- subSocialBannerV5-->
+
+<table role=3D"presentation" align=3D"center" class=3D"container main float=
+-center" style=3D"Margin:0 auto;background:#fff;border-collapse:collapse;bo=
+rder-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertica=
+l-align:top;width:600px">
+   <tbody>
+      <tr style=3D"padding:0;text-align:left;vertical-align:top">
+         <td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:no=
+ne;Margin:0;border-collapse:collapse!important;color:#000;font-family:'Treb=
+uchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;hyphens=
+:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-break:keep-all;word-wrap:normal">
+            <table role=3D"presentation" class=3D"spacer" style=3D"border-c=
+ollapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:=
+top;width:100%">
+               <tbody>
+                  <tr style=3D"padding:0;text-align:left;vertical-align:top=
+">
+                     <td height=3D"27px" style=3D"-moz-hyphens:none;-ms-hyp=
+hens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;=
+color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:=
+20px;font-weight:700;hyphens:none;line-height:27px;margin:0;mso-line-height=
+-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:keep-=
+all;word-wrap:normal">&#xA0;</td>
+                  </tr>
+               </tbody>
+            </table>
+            <center data-parsed=3D"" style=3D"width:100%">
+               <table role=3D"presentation" align=3D"center" class=3D"menu =
+social float-center" style=3D"Margin:0 auto;border-collapse:collapse;border=
+-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-al=
+ign:top;width:auto!important">
+                  <tr style=3D"padding:0;text-align:left;vertical-align:top=
+">
+                     <td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webki=
+t-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font-=
+family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:16px;font-weight=
+:700;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertic=
+al-align:top;word-break:keep-all;word-wrap:normal">
+                        <table role=3D"presentation" style=3D"border-collap=
+se:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                           <tr style=3D"padding:0;text-align:left;vertical-=
+align:top">
+                              <th class=3D"menu-item float-center mobSocial=
+" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0=
+ auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans=
+-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0=
+ auto;padding-right:15px;text-align:center;word-break:keep-all;word-wrap:no=
+rmal"><a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,1426=
+1f5a" _label=3D"tiktok-im-social" target=3D"_blank" style=3D"-moz-hyphens:n=
+one;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-famil=
+y:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;li=
+ne-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:keep=
+-all;word-wrap:normal"><img src=3D"http://media.subway.com/digital/Account_=
+Updates/Assets/Images/Brand/Subway/TikTok-thumbnail_37x65_US_en_v2_B.png" c=
+lass=3D"float-left" alt=3D"TikTok icon" style=3D"-ms-interpolation-mode:bic=
+ubic;border:none;clear:both;display:block;float:left;outline:0;text-align:l=
+eft;text-decoration:none;width:auto"></a></th>
+                              <th class=3D"menu-item float-center mobSocial=
+" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0=
+ auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans=
+-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0=
+ auto;padding-left:15px;padding-right:15px;text-align:center;word-break:kee=
+p-all;word-wrap:normal"><a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac=
+36bf,1d11333c,14261f5b" _label=3D"twitter-im-social" target=3D"_blank" styl=
+e=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color=
+:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:=
+400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:n=
+one;word-break:keep-all;word-wrap:normal"><img src=3D"http://media.subway.c=
+om/digital/Account_Updates/Assets/Images/Brand/Subway/Twitter_thumbnail_37x=
+65_US_en_v2_B.png" class=3D"float-left" alt=3D"Twitter icon" style=3D"-ms-i=
+nterpolation-mode:bicubic;border:none;clear:both;display:block;float:left;o=
+utline:0;vertical-align:bottom;text-align:left;text-decoration:none;width:a=
+uto"></a></th>
+                              <th class=3D"menu-item float-center mobSocial=
+" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0=
+ auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans=
+-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0=
+ auto;padding-left:15px;padding-right:15px;text-align:center;word-break:kee=
+p-all;word-wrap:normal"><a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac=
+36bf,1d11333c,14261f5c&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAn=
+dOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109=
+-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&=
+bid=3D-324258113" _label=3D"subway-com-im-social" target=3D"_blank" style=
+=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:=
+#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:4=
+00;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoration:no=
+ne;word-break:keep-all;word-wrap:normal"><img src=3D"http://media.subway.co=
+m/digital/Account_Updates/Assets/Images/Brand/Subway/Subway-thumbnail_37x65=
+_US_en_v2_B.png" class=3D"float-left" alt=3D"Subway Logo" style=3D"-ms-inte=
+rpolation-mode:bicubic;border:none;clear:both;display:block;float:left;outl=
+ine:0;text-align:left;text-decoration:none;width:auto"></a></th>
+                              <th class=3D"menu-item float-center  mobSocia=
+l" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:=
+0 auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,san=
+s-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:=
+0 auto;padding-left:15px;padding-right:15px;text-align:center;word-break:ke=
+ep-all;word-wrap:normal"><a href=3D"http://t.subs.subway.com/r/=3Fid=3Dheca=
+c36bf,1d11333c,14261f5d" _label=3D"instagram-im-social" target=3D"_blank" s=
+tyle=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;co=
+lor:#2199e8;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weig=
+ht:400;hyphens:none;line-height:1.3;margin:0;text-align:left;text-decoratio=
+n:none;word-break:keep-all;word-wrap:normal"><img src=3D"http://media.subwa=
+y.com/digital/Account_Updates/Assets/Images/Brand/Subway/Instagram-thumbnai=
+l_37x65_US_en_v2_B.png" class=3D"float-left" alt=3D"Instagram icon" style=
+=3D"-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;flo=
+at:left;outline:0;text-align:left;text-decoration:none;width:auto"></a></th=
+>
+                              <th class=3D"menu-item float-center mobSocial=
+" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0=
+ auto;color:#000;float:none;font-family:'Trebuchet MS',Helvetica,Arial,sans=
+-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0=
+ auto;padding-left:15px;text-align:center;word-break:keep-all;word-wrap:nor=
+mal"><a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261=
+f5e" _label=3D"facebook-im-social" target=3D"_blank" style=3D"-moz-hyphens:=
+none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#2199e8;font-fami=
+ly:'Trebuchet MS',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;l=
+ine-height:1.3;margin:0;text-align:left;text-decoration:none;word-break:kee=
+p-all;word-wrap:normal"><img src=3D"http://media.subway.com/digital/Account=
+_Updates/Assets/Images/Brand/Subway/Facebook-thumbnail_37x65_US_en_v2_B.png=
+" class=3D"float-left" alt=3D"Facebook icon" style=3D"-ms-interpolation-mod=
+e:bicubic;border:none;clear:both;display:block;float:left;outline:0;text-al=
+ign:left;text-decoration:none;width:auto"></a></th>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </center>
+            <table role=3D"presentation" class=3D"spacer" style=3D"border-c=
+ollapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:=
+top;width:100%">
+               <tbody>
+                  <tr style=3D"padding:0;text-align:left;vertical-align:top=
+">
+                     <td height=3D"27px" style=3D"-moz-hyphens:none;-ms-hyp=
+hens:none;-webkit-hyphens:none;Margin:0;border-collapse:collapse!important;=
+color:#000;font-family:'Trebuchet MS',Helvetica,Arial,sans-serif;font-size:=
+20px;font-weight:700;hyphens:none;line-height:27px;margin:0;mso-line-height=
+-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:keep-=
+all;word-wrap:normal">&#xA0;</td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+<!--/subSocialBannerV5 -->
+     </td>
+   </tr>
+   <tr>
+     <td align=3D"left" valign=3D"top">
+      <!--subStandardFooter1-->
+<table role=3D"presentation" align=3D"center" class=3D"container float-cent=
+er" style=3D"Margin:0 auto;background:#fff;border-collapse:collapse;border-=
+spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-ali=
+gn:top;width:600px"><tbody><tr style=3D"padding:0;text-align:left;vertical-=
+align:top"><td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:=
+none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Ari=
+al,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphe=
+ns:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:t=
+op;word-break:keep-all;word-wrap:normal">
+    <table role=3D"presentation" class=3D"spacer" style=3D"border-collapse:=
+collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;widt=
+h:100%"><tbody><tr style=3D"padding:0;text-align:left;vertical-align:top"><=
+td height=3D"20px" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyph=
+ens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family=
+:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:20px;font-weight:700;h=
+yphens:none;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:=
+0;text-align:left;vertical-align:top;word-break:keep-all;word-wrap:normal">=
+&#xA0;</td></tr></tbody></table> 
+    <table role=3D"presentation" class=3D"menu footer upper" style=3D"backg=
+round:#ececec;border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%"><tr style=3D"padding:0;text-align:lef=
+t;vertical-align:top"><td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webk=
+it-hyphens:none;Margin:0;border-collapse:collapse!important;color:#000;font=
+-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weigh=
+t:700;hyphens:none;line-height:1.3;margin:0;padding:0;padding-left:5px;padd=
+ing-top:20px;text-align:left;vertical-align:top;word-break:keep-all;word-wr=
+ap:normal"><table role=3D"presentation" style=3D"border-collapse:collapse;b=
+order-spacing:0;padding:0;text-align:left;vertical-align:top"><tr style=3D"=
+padding:0;text-align:left;vertical-align:top">
+      <th class=3D"menu-item float-center" style=3D"-moz-hyphens:none;-ms-h=
+yphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float:none;font-f=
+amily:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:=
+700;hyphens:none;line-height:16px;margin:0 auto;padding:10px;padding-right:=
+10px;text-align:left;word-break:keep-all;word-wrap:normal"> 
+          <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,=
+14261f5f&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_schedu=
+led&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D=
+00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3242581=
+13" _label=3D"account-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens:none;=
+-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font=
+-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weigh=
+t:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text=
+-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:nor=
+mal"><font color=3D"#4c4c4c">Account</font></a> &nbsp;|&nbsp; 
+          <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,=
+14261f60&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_schedu=
+led&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D=
+00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3242581=
+13&p1=3DXduYJd6K+dhnS7RfCEmGSfDIiq+pTiV/ypvjfUyYePc=3D" target=3D"_blank" _=
+label=3D"unsubscribe-tx-ftr" style=3D"-moz-hyphens:none;-ms-hyphens:none;-w=
+ebkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Arial,Helve=
+tica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphens:none;=
+line-height:16px;margin:0;padding:0;text-align:left;text-decoration:none;te=
+xt-transform:uppercase;word-break:keep-all;word-wrap:normal"><font color=3D=
+"#4c4c4c">Unsubscribe</font></a> &nbsp;|&nbsp; 
+          <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,=
+14261f61&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_schedu=
+led&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D=
+00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3242581=
+13" _label=3D"contact-us-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens:no=
+ne;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;f=
+ont-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-we=
+ight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;t=
+ext-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap:=
+normal"><font color=3D"#4c4c4c">Contact us</font></a> &nbsp;|&nbsp; 
+          <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,=
+14261f62&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_schedu=
+led&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D=
+00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-3242581=
+13" _label=3D"menu-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens:none;-ms=
+-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-fa=
+mily:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:7=
+00;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;text-de=
+coration:none;text-transform:uppercase;word-break:keep-all;word-wrap:normal=
+"><font color=3D"#4c4c4c">Menu</font></a> </th>
+  </tr></table></td></tr></table>
+  <table role=3D"presentation" class=3D"row footer" style=3D"background:#ec=
+ecec;border-collapse:collapse;border-spacing:0;color:#4c4c4c;display:table;=
+padding:0;position:relative;text-align:left;vertical-align:top;width:100%">=
+<tbody><tr style=3D"padding:0;text-align:left;vertical-align:top">
+      <th class=3D"no-bottom-padding small-12 large-12 columns first last" =
+style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 a=
+uto;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-s=
+ize:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto;padding=
+:0;padding-bottom:0;padding-left:16px;padding-right:16px;text-align:left;wi=
+dth:584px;word-break:keep-all;word-wrap:normal"><table role=3D"presentation=
+" style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-align:l=
+eft;vertical-align:top;width:100%"><tr style=3D"padding:0;text-align:left;v=
+ertical-align:top"><th style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-=
+hyphens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS'=
+,sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;mar=
+gin:0;padding:0;padding-bottom:0;text-align:left;word-break:keep-all;word-w=
+rap:normal">
+          
+            <p style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:=
+none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,Helvetica,=
+'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line-=
+height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left;word-brea=
+k:keep-all;word-wrap:normal">Subway MyWay<sup style=3D"font-size:9px;line-h=
+eight:0;vertical-align:2px">&reg;</sup> Rewards available at participating =
+restaurants. Tokens may not be earned on catering orders or purchases of gi=
+ft cards</p>
+         
+      </th></tr></table></th>
+  </tr></tbody></table>
+</td></tr></tbody></table>
+<!--/subStandardFooter1-->
+    </td>
+  </tr>
+
+
+  <tr>
+   <td align=3D"left" valign=3D"top" style=3D"padding: 0px;">
+    <table role=3D"presentation" align=3D"center" class=3D"container float-=
+center" style=3D"Margin:0 auto;background:#fff;border-collapse:collapse;bor=
+der-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical=
+-align:top;width:600px"><tbody><tr style=3D"padding:0;text-align:left;verti=
+cal-align:top"><td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyph=
+ens:none;Margin:0;border-collapse:collapse!important;color:#000;font-family=
+:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;h=
+yphens:none;line-height:1.3;margin:0;padding:0;text-align:left;vertical-ali=
+gn:top;word-break:keep-all;word-wrap:normal">
+     <table role=3D"presentation" class=3D"row footer" style=3D"background:=
+#ececec;border-collapse:collapse;border-spacing:0;color:#4c4c4c;display:tab=
+le;padding:0;position:relative;text-align:left;vertical-align:top;width:100=
+%"><tbody><tr style=3D"padding:0;text-align:left;vertical-align:top">
+       <th class=3D"small-12 large-12 columns first last" style=3D"-moz-hyp=
+hens:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;fo=
+nt-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-wei=
+ght:700;hyphens:none;line-height:1.3;margin:0 auto;padding:0;padding-bottom=
+:0;padding-left:16px;padding-right:16px;text-align:left;width:584px;word-br=
+eak:keep-all;word-wrap:normal"><table role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-alig=
+n:top;width:100%"><tr style=3D"padding:0;text-align:left;vertical-align:top=
+">
+        <th style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:non=
+e;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif=
+;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0;paddi=
+ng-top:1px;padding-bottom:0;text-align:left;word-break:keep-all;word-wrap:n=
+ormal"> 
+  
+
+              <p style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphen=
+s:none;Margin:0;Margin-bottom:0px;color:#4c4c4c;font-family:Arial,Helvetica=
+,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;line=
+-height:16px;padding:0;text-align:left;word-break:keep-all;word-wrap:normal=
+;margin-bottom:10px;"><sup>*</sup>Redeemable at participating U.S. restaura=
+nts. Add-ons addt'l. Plus tax. Addt'l fees apply on delivery orders. Cannot=
+ be combined with other offers. 1 use. Excludes Footlong PRO<sup>&reg;</sup=
+>, Fresh Melts<sup>&reg;</sup>, Wraps & Vault subs. Expires 01/16/2023.</p>
+
+
+                <p style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyph=
+ens:none;Margin:0;Margin-bottom:0px;color:#4c4c4c;font-family:Arial,Helveti=
+ca,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:none;li=
+ne-height:16px;padding:0;text-align:left;word-break:keep-all;word-wrap:norm=
+al;margin-bottom:10px;"><sup> &dagger;&dagger;</sup>Subway<sup>&reg;</sup> =
+Delivery available in select areas. Delivery fees, service fees, and minimu=
+m order requirement may apply. See <a href=3D"http://t.subs.subway.com/r/=
+=3Fid=3Dhecac36bf,1d11333c,14261f63&utm_source=3Dac&utm_medium=3Demail&utm_=
+term=3DnewsAndOffers_scheduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_U=
+SEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaigni=
+d=3DDM135865&bid=3D-324258113" target=3D"_blank" style=3D"-moz-hyphens:none=
+;-ms-hyphens:none;-webkit-hyphens:none;Margin:inherit;color:#4c4c4c!importa=
+nt;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;fon=
+t-weight:400;hyphens:none;line-height:16px!important;margin:inherit;margin-=
+bottom:10px!important;padding:0;text-align:left;text-decoration:none;word-b=
+reak:keep-all;word-wrap:normal; text-decoration: underline;"><font color=3D=
+"#4c4c4c">Subway<sup>&reg;</sup> Delivery FAQ</font></a> for additional det=
+ails.</p>
+              
+              
+             
+
+        </th>
+
+      </tr></table></th></tr></tbody></table>
+    </td></tr></tbody></table>
+  </td>
+</tr>
+<tr>
+ <td align=3D"left" valign=3D"top">
+  <!--subStandardFooter2-->
+<table role=3D"presentation" align=3D"center" class=3D"container float-cent=
+er" style=3D"Margin:0 auto;background:#fff;border-collapse:collapse;border-=
+spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-ali=
+gn:top;width:600px">
+  <tbody>
+    <tr style=3D"padding:0;text-align:left;vertical-align:top">
+      <td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;=
+Margin:0;border-collapse:collapse!important;color:#000;font-family:Arial,He=
+lvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyphens:no=
+ne;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;wo=
+rd-break:keep-all;word-wrap:normal">
+      <table role=3D"presentation" class=3D"row footer" style=3D"background=
+:#ececec;border-collapse:collapse;border-spacing:0;color:#4c4c4c;display:ta=
+ble;padding:0;position:relative;text-align:left;vertical-align:top;width:10=
+0%">
+          <tbody>
+            <tr style=3D"padding:0;text-align:left;vertical-align:top">
+              <th class=3D"no-bottom-padding small-12 large-12 columns firs=
+t last" style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;Ma=
+rgin:0 auto;color:#000;font-family:Arial,Helvetica,'Trebuchet MS',sans-seri=
+f;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;margin:0 auto=
+;padding:0;padding-bottom:0;padding-left:16px;padding-right:16px;text-align=
+:left;width:584px;word-break:keep-all;word-wrap:normal">
+                <table role=3D"presentation" style=3D"border-collapse:colla=
+pse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100=
+%">
+                  <tr style=3D"padding:0;text-align:left;vertical-align:top=
+">
+                    <th style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit=
+-hyphens:none;Margin:0;color:#000;font-family:Arial,Helvetica,'Trebuchet MS=
+',sans-serif;font-size:16px;font-weight:700;hyphens:none;line-height:1.3;ma=
+rgin:0;padding:0;padding-bottom:0;text-align:left;word-break:keep-all;word-=
+wrap:normal">
+                      <p class=3D"aol-mail" style=3D"-moz-hyphens:none;-ms-=
+hyphens:none;-webkit-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c=
+;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-=
+weight:400;hyphens:none;line-height:16px;margin:0;margin-bottom:10px;paddin=
+g:0;text-align:left;word-break:keep-all;word-wrap:normal">Please add <a hre=
+f=3D"mailto:news@subs.subway.com" target=3D"_blank" style=3D"-moz-hyphens:n=
+one;-ms-hyphens:none;-webkit-hyphens:none;Margin:inherit;color:#4c4c4c!impo=
+rtant;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;=
+font-weight:400;hyphens:none;line-height:16px!important;margin:inherit;marg=
+in-bottom:10px!important;padding:0;text-align:left;text-decoration:none;wor=
+d-break:keep-all;word-wrap:normal"><font color=3D"#4c4c4c">news@subs.subway=
+.com</font></a> to your address book to ensure our emails reach your inbox.=
+</p>
+                      <p style=3D"-moz-hyphens:none;-ms-hyphens:none;-webki=
+t-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,=
+Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:=
+none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left=
+;word-break:keep-all;word-wrap:normal">This email and the messages containe=
+d within are intended for US audiences only.</p>
+                      <p style=3D"-moz-hyphens:none;-ms-hyphens:none;-webki=
+t-hyphens:none;Margin:0;Margin-bottom:10px;color:#4c4c4c;font-family:Arial,=
+Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:400;hyphens:=
+none;line-height:16px;margin:0;margin-bottom:10px;padding:0;text-align:left=
+;word-break:keep-all;word-wrap:normal">Subway<sup style=3D"font-size:9px;li=
+ne-height:0;vertical-align:2px">&reg;</sup> is a Registered Trademark of Su=
+bway IP LLC. &copy;
+                        2023 Subway IP LLC. All rights reserved. This email=
+ was sent by
+                          
+                                Franchise World Headquarters, LLC, 325 <spa=
+n style=3D"color:#ececec;font-size:0;line-height:0">&zwnj;</span>Sub Way, <=
+span style=3D"color:#ececec;font-size:0;line-height:0">&zwnj;</span>Milford=
+, CT <span style=3D"color:#ececec;font-size:0;line-height:0">&zwnj;</span>0=
+6461.
+                                  
+                      </p>
+                    </th>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <table role=3D"presentation" class=3D"menu footer" style=3D"backgro=
+und:#ececec;border-collapse:collapse;border-spacing:0;padding:0;text-align:=
+left;vertical-align:top;width:100%">
+          <tr style=3D"padding:0;text-align:left;vertical-align:top">
+            <td style=3D"-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens=
+:none;Margin:0;border-collapse:collapse!important;color:#000;font-family:Ar=
+ial,Helvetica,'Trebuchet MS',sans-serif;font-size:16px;font-weight:700;hyph=
+ens:none;line-height:1.3;margin:0;padding:0;padding-left:5px;text-align:lef=
+t;vertical-align:top;word-break:keep-all;word-wrap:normal">
+              <table role=3D"presentation" style=3D"border-collapse:collaps=
+e;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                <tr style=3D"padding:0;text-align:left;vertical-align:top">
+                  <th class=3D"menu-item float-center" style=3D"-moz-hyphen=
+s:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0 auto;color:#000;float=
+:none;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;=
+font-weight:700;hyphens:none;line-height:16px;margin:0 auto;padding:10px;pa=
+dding-right:10px;text-align:left;word-break:keep-all;word-wrap:normal">
+                    
+=09<a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f6=
+5&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm=
+_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY=
+:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _la=
+bel=3D"terms-and-conditions-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens=
+:none;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!importan=
+t;font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font=
+-weight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:lef=
+t;text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wr=
+ap:normal"><font color=3D"#4c4c4c">Terms &amp; conditions</font></a>
+&nbsp;|&nbsp; <a href=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d113=
+33c,14261f66&utm_source=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_sc=
+heduled&utm_content=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&ci=
+d=3D00PvzTY:0:0:0:0:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324=
+258113" _label=3D"privacy-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens:n=
+one;-ms-hyphens:none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;=
+font-family:Arial,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-w=
+eight:700;hyphens:none;line-height:16px;margin:0;padding:0;text-align:left;=
+text-decoration:none;text-transform:uppercase;word-break:keep-all;word-wrap=
+:normal"><font color=3D"#4c4c4c">Privacy</font></a> &nbsp;|&nbsp; <a href=
+=3D"http://t.subs.subway.com/r/=3Fid=3Dhecac36bf,1d11333c,14261f67&utm_sour=
+ce=3Dac&utm_medium=3Demail&utm_term=3DnewsAndOffers_scheduled&utm_content=
+=3D0&utm_campaign=3Dsd-SC_W6_EM_USEN_V1_230109-0-2020&cid=3D00PvzTY:0:0:0:0=
+:0&segment_code=3DNR_EM&campaignid=3DDM135865&bid=3D-324258113" _label=3D"s=
+ubway-com-tx-ftr" target=3D"_blank" style=3D"-moz-hyphens:none;-ms-hyphens:=
+none;-webkit-hyphens:none;Margin:0;color:#4c4c4c!important;font-family:Aria=
+l,Helvetica,'Trebuchet MS',sans-serif;font-size:10px;font-weight:700;hyphen=
+s:none;line-height:16px;margin:0;padding:0;text-align:left;text-decoration:=
+none;text-transform:uppercase;word-break:keep-all;word-wrap:normal"><font c=
+olor=3D"#4c4c4c">subway.com</font></a> 
+                  </th>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--/subStandardFooter2-->
+</td>
+</tr>
+<!-- End legal/disclaimer copy -->
+<tr>
+ <td height=3D"50" style=3D"font-size: 1px; line-height: 1px;"><img src=3D"=
+https://res.subs.subway.com/res/subway_mkt_prod1/spacer.gif" width=3D"1" he=
+ight=3D"1" alt=3D"" style=3D"display: block;" border=3D"0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- tracking pixel tag --> 
+<!-- end tracking pixel tag -->
+<img height=3D'0' width=3D'0' alt=3D'' src=3D'http://t.subs.subway.com/r/=
+=3Fid=3Dhecac36bf,1d11333c,1'/></body>
+</html>
+
+------=_NextPart_415_E73B179E.E73B179D--
+

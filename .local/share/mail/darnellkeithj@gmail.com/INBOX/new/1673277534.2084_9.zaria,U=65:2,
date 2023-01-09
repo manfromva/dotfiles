@@ -1,0 +1,1424 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2943680mdb;
+        Mon, 9 Jan 2023 04:31:51 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvmIyFQGT6yCX5f0NNZuLPcU4LL9EfJXu6KrAJD35+A9cESZoxnXU5wRbCnnQnNxoAKxprb
+X-Received: by 2002:a05:6a00:24c9:b0:57f:7bb4:8fce with SMTP id d9-20020a056a0024c900b0057f7bb48fcemr75068274pfv.32.1673267511553;
+        Mon, 09 Jan 2023 04:31:51 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673267511; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dl7LJK3+Oo9/pb3y879PbAwmGkRunrbeyR15Jw4Y4F3ZUGMIynQbUhimR2NzxSjgQ+
+         yb7rLf9Du5ySx7uZB0Zl9kYQmEk8Ic4QG66QROF7AcKLiQ/AVPyK+dwhnFKlNwacjCQR
+         Zc75vJPPiU+rWjYPCAwuzvVBGmqz9RWhRYWjSBPGFz5IBggW/HZqHoyNr16ZVILDKWqG
+         BKSOY814qWq+wMpNDmjxCwe+PebFMLsbkJVpi6EnZjrt2VoKIXCNwkuWv3ntaRJAOizZ
+         xM7iL4ZWvMmMt/oQ0NKY8lfA41HS1fkz39/GLNKEn8+PQZmeUe+q4vhWd0rNZAENhlZN
+         s5Zw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:recipientaddressheader:recipientaddresshash
+         :feedback-id:list-unsubscribe:to:reply-to:message-id:subject:date
+         :from:dkim-signature;
+        bh=HHCvta659MGa+fzAuYtEfvWNPO+rP9HX9pU+gXOnv/s=;
+        b=cKVefTe+DL+6bVmVZ1P99qWEfYfCjeYHcK8c1aWo/m2ydYCNEOzyPzix6MqT915jEQ
+         JAU1hjzwQU6L9maMkcaZgSbv4SXBDWk2U97LJ6tRuOxsGPwfP8y0aic49097YhBaVzGi
+         rHiqPdK22W5XFtMCCpZuRlPcPLfKqxa/uiZiOGsZd9Ur3GiyrDPm+Cb5DjOOrAwlpu/2
+         XsXrjoeXO9C/h0uCw2gOxtHfESBl1d2oJ4dJ+DJWLBKkj5/wvgkvOcbgrcBnjF+2mdOR
+         8pLccUGZ//d/dYZpO+l0LY1DYG8MqOYkyR+vWXC4QWcyDBnpouy81bkW+B917JBxeDqP
+         /YsQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.comptia.org header.s=namkey1 header.b="IRs9hg/l";
+       spf=pass (google.com: domain of b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com designates 13.66.138.138 as permitted sender) smtp.mailfrom=b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=comptia.org
+Return-Path: <b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com>
+Received: from mail04.nam.pb-dynmktg.com (mail04.nam.pb-dynmktg.com. [13.66.138.138])
+        by mx.google.com with ESMTPS id s4-20020a056a0008c400b0057fe4c0dbe6si9854240pfu.298.2023.01.09.04.31.51
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 09 Jan 2023 04:31:51 -0800 (PST)
+Received-SPF: pass (google.com: domain of b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com designates 13.66.138.138 as permitted sender) client-ip=13.66.138.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.comptia.org header.s=namkey1 header.b="IRs9hg/l";
+       spf=pass (google.com: domain of b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com designates 13.66.138.138 as permitted sender) smtp.mailfrom=b-2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26@nam.pb-dynmktg.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=comptia.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=namkey1; d=e.comptia.org;
+ h=From:Date:Subject:Message-Id:Reply-To:To:List-Unsubscribe:MIME-Version:
+ Content-Type;
+ bh=HHCvta659MGa+fzAuYtEfvWNPO+rP9HX9pU+gXOnv/s=;
+ b=IRs9hg/lfRyXW8JJzzFR7EUmi4NpEoYfMYUZIOha7b1jO8uSL36RrnljkeVcrpRCC5zmxvmZWimE
+   YyRiSG8UbyP7FrTEoJJYNtGRXD2RXpWHDrbH/fgteoCYex0q4E03j+r3emZj7E2iNE3JkYvAkgU8
+   N7yteLeHMZ6IwlUphHk3/9YIKPaRDSEZtAoC7WenwO72McqVq7s7J+whvpbgkNFMljTRwN5iYYVo
+   fIHmFze32DLIDO7dqqIBdNB2JTFhE76YliHg4AlEqPbEXvOV0mPk56TVq69BTX1FCqJNF+46IWKs
+   OqfIhzs0BCpdWVGYCbVNdJQiPkR7KAsCI5Xb8w==
+From: CompTIA Quick Reads <membership@e.comptia.org>
+Date: Mon, 09 Jan 2023 12:31:51 +0000
+Subject: What Does Community Mean to You? and More!
+Message-Id: <GMBHWVNJVIU4.KCTKSWDM9MJ@nam.pb-dynmktg.com>
+Reply-To: CompTIA Quick Reads <membership@comptia.org>
+To: Darnell Keith <darnellkeithj@gmail.com>
+X-MS-Dynamics-Message-ID: 2_pusa1_b146c-0fb1867333c34d31940f5e5e5c088c26
+X-MS-Dynamics-Instance: 7jzr1mu5ms2ayt4fvrqxtzxda8j6djkoakba5fkkpaw2
+X-MS-Dynamics-CodePackageVersion: 2.31.1228.0
+List-Unsubscribe: https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/lu/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx
+Feedback-ID: 6281fc57-6b60-6205-bc5c-32a131ca1291:MicrosoftDynamics
+x-job: 6281fc57-6b60-6205-bc5c-32a131ca1291
+RecipientAddressHash: KEv70gPEOLnXCddPd7iLdjwYwu8GHqywf2C1932eeJM2_BiSdQ68N5ma4gsqVfPwhWbI1mQmTwLc6dIWxpd8NaIo2
+RecipientAddressHeader: ZGFybmVsbGtlaXRoakBnbWFpbC5jb20=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=-aVo1ranksYKdJ0HWFgCLfg=="
+X-TUID: 5KuboZAoa/Bz
+
+--=-aVo1ranksYKdJ0HWFgCLfg==
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+[Connect.CompTIA.org <https://connect.comptia.org/?utm_source=3DDynamics_Ma=
+rketing&utm_medium=3DEmail&utm_campaign=3DMembership_Quick_Reads_010923>]
+[Story 1 Image <https://connect.comptia.org/blog/what-does-community-mean-t=
+o-you?utm_source=3DDynamics_Marketing&utm_medium=3DEmail&utm_campaign=3DMem=
+bership_Quick_Reads_010923>]
+What Does Community Mean to You?
+Eric Anthony, director of MSP evangelism at Egnyte, asked several CompTIA m=
+embers and staff what community means to them at CompTIA=E2=80=99s recent Y=
+ear-End Planning Meeting. The compiled answers are mentioned in a video emb=
+edded at the end of the article.
+[Read More <https://connect.comptia.org/blog/what-does-community-mean-to-yo=
+u?utm_source=3DDynamics_Marketing&utm_medium=3DEmail&utm_campaign=3DMembers=
+hip_Quick_Reads_010923>]
+The Top 10 CompTIA Membership Research Reports and Resources for 2022
+Cybersecurity and emerging tech were top themes for CompTIA research and re=
+sources, but legal and business trends were also popular downloads in 2022.
+[Read More <https://connect.comptia.org/blog/the-top-10-comptia-membership-=
+research-reports-and-resources-for-2022?utm_source=3DDynamics_Marketing&utm=
+_medium=3DEmail&utm_campaign=3DMembership_Quick_Reads_010923>]
+[Story 2Image <https://connect.comptia.org/blog/the-top-10-comptia-membersh=
+ip-research-reports-and-resources-for-2022?utm_source=3DDynamics_Marketing&=
+utm_medium=3DEmail&utm_campaign=3DMembership_Quick_Reads_010923>]
+The Top 10 CompTIA Community Videos of 2022
+CompTIA produced an abundance of YouTube content and we=E2=80=99ve compiled=
+ our favorites of the year. Here are the Top 10 videos from the CompTIA Com=
+munity YouTube channel for 2022.
+[Read More <https://connect.comptia.org/blog/the-top-10-comptia-community-v=
+ideos-of-2022?utm_source=3DDynamics_Marketing&utm_medium=3DEmail&utm_campai=
+gn=3DMembership_Quick_Reads_010923>]
+[Story 3 Image <https://connect.comptia.org/blog/the-top-10-comptia-communi=
+ty-videos-of-2022?utm_source=3DDynamics_Marketing&utm_medium=3DEmail&utm_ca=
+mpaign=3DMembership_Quick_Reads_010923>]
+The Top 10 CompTIA Community Blogs of 2022
+From cybersecurity lessons to workforce optimization to MSP sales strategie=
+s, CompTIA published more than 100 blogs in 2022 that can help your busines=
+s. Check out our top 10 list and stay tuned for what=E2=80=99s to come in 2=
+023!
+[Read More <https://connect.comptia.org/blog/the-top-10-comptia-community-b=
+logs-of-2022>]
+[Story 4 Image <https://connect.comptia.org/blog/the-top-10-comptia-communi=
+ty-blogs-of-2022>]
+Aligning IT Skills with Strategic Business Goals
+Seth Robinson, Vice President, Industry and Technology Research, at CompTIA=
+, examines the need for continued skills expansion among IT pros. New skill=
+s enhance job security and ensure that IT pros remain competitive in the jo=
+b market, but there is also a recent need to involve technology more fully.
+[Watch Now <https://www.youtube.com/watch?v=3DqoEiePan-FE>]
+[Story 5 Image <https://www.youtube.com/watch?v=3DqoEiePan-FE>]
+[Twitter <https://twitter.com/comptiaconnect>]
+[LinkedIn <https://www.linkedin.com/groups/83900/>]
+[YouTube <https://www.youtube.com/CompTIAConnect>]
+This marketing email was sent by =C2=A9 CompTIA, Inc.
+=C2=A9 CompTIA, Inc. All rights reserved.
+3500 Lacey Dr. Suite 100 Downers Grove, IL 60515
+[Contact Us <https://www.comptia.org/contact-us>] | [Unsubscribe <https://w=
+ww.comptia.org/preference-center?scu=3Dhttps://www.comptia.org/preference-c=
+enter?msdynunsubscribeid=3DFzdgrXYr6DsrkKxlgDAvxEOT7coR2YDWh2uQusVYFp0x&cid=
+=3D95191ffb-de87-ec11-93b0-000d3a3414d9&pid=3Ddm&email=3Ddarnellkeithj@gmai=
+l.com>]
+[View this Email Online <https://4fb516e0ad974eb7b7d929125dbdc1ff.marketing=
+usercontent.com/m/view/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx>]=
+
+--=-aVo1ranksYKdJ0HWFgCLfg==
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/x=
+html1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.org/1999/xh=
+tml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micro=
+soft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<title>What Does Community Mean to You? and More!</title>
+<meta name=3D"referrer" content=3D"never">
+<style>body{font-family:Calibri,Helvetica,Arial,sans-serif;font-size:16px;c=
+olor:#586169;background-color:#e2e2e2}[data-layout=3Dtrue]{margin:0 auto;ma=
+x-width:600px}p{margin:0;padding:0;line-height:1.25;mso-line-height-rule:at=
+-least}p img{max-width:100%}a{text-decoration:none;color:#0092bc}u a{text-d=
+ecoration:underline;color:#0092bc}.imageWrapper a img{text-decoration:none;=
+border:0}@media only screen and (max-width:768px){.columnContainer{width:10=
+0%!important;padding:10px 0!important;box-sizing:border-box;margin-left:0!i=
+mportant;margin-right:0!important}.containerWrapper{display:block!important=
+}.columnContainerWrapper{min-height:70px!important}a span{line-height:inher=
+it!important}.no-wrap-section .columnContainer{width:auto!important;display=
+:table-cell!important}.no-wrap-section .no-wrap-section-wrapper{width:auto!=
+important;display:table!important;margin:auto}.bodyimage{display:none!impor=
+tant}}</style>
+<meta name=3D"html-editor"><!--[if gte mso 9]>
+<xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPe=
+rInch></o:OfficeDocumentSettings></xml>
+<![endif]-->
+</head><body style=3D"font-family:Calibri,Helvetica,Arial,sans-serif;font-s=
+ize:16px;color:#586169;background-color:#e2e2e2"><!--[if !mso]><!--><div id=
+=3D"preheader" style=3D"display: none; max-height: 0px; overflow: hidden;">=
+CompTIA Quick Reads<br>&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp; &n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+ &nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp; &nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp; &nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;<br>&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp; &nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp; &nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp; &nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp; &nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&n=
+bsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;</div><!---=
+-><!--[endif]----><div style=3D"margin:auto;max-width:600px">
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse;  " cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;   " cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+<tr> <![endif]--><div style=3D"padding:0" class=3D"columns-equal-class wrap=
+-section">
+<!--[if gte mso 9]> </div><div style=3D" border:none;"> <![endif]--><div st=
+yle=3D"display:block;width:100%">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"600" style=
+=3D"width: 600px; vertical-align: top; padding: 0px; background-color: rgb(=
+255, 255, 255);"><table width=3D"100%" style=3D"table-layout: fixed; border=
+-collapse: collapse; width: 100%; background-color: rgb(255, 255, 255);  bo=
+rder: 0px solid transparent;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0">
+<tr><td valign=3D"top" width=3D"600" style=3D" height: 70px; padding-left:0=
+px; padding-right:0px; padding-top: 0px; padding-bottom: 0px; vertical-alig=
+n: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:bloc=
+k;min-height:70px;min-width:20px;width:600px;flex-direction:column;padding:=
+0;float:left;word-wrap:break-word;word-break:break-word;flex:0 0 600px;back=
+ground-color:#fff;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if gte mso 9]> <table  width=3D"600" style=3D"t=
+able-layout: fixed;border-collapse: collapse; width: 600px; padding-top: 15=
+px;padding-bottom: 15px; padding-left: 0px;padding-right: 0px; " cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td valign=3D"top"> <![endif]--><div style=3D"padding:15px 0;margin:10px 0 =
+0">
+<div align=3D"Center" class=3D"imageWrapper" style=3D""><a href=3D"https://=
+4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/gTYYuFi6flhMe0azKaj2D=
+de4Yh68JjeWoEqXwWN9XnAx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" data-=
+msdyn-tracking-id=3D"da9c9eca735381663765225627" data-msdyn-tracking=3D"nul=
+l" style=3D"text-decoration:none;color:#0092bc"><!--[if gte mso 9]> <img al=
+t=3D"Connect.CompTIA.org" class=3D"logoimage" src=3D"https://mktdplp102wuda=
+.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/4ec54767-4c99-eb11-b1ac=
+-00224806ac7a/Mpgt--IJ6Qxs3a31lJcr4TYnhQt24ORoCJ5dFbes7sw!" style=3D"text-d=
+ecoration: none; border: 0px; max-height: 100%; max-width: 100%; box-sizing=
+: border-box; margin: 0px auto; position: static; display: block; top: 0px;=
+ left: 0px; float: none; border-radius: 0px;" width=3D"200"> <![endif]--><!=
+--[if false]> <div style=3D"display: none"> <![endif]--> <!--[if !mso]> <!-=
+---><img alt=3D"Connect.CompTIA.org" class=3D"logoimage" src=3D"https://mkt=
+dplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/4ec54767-4c9=
+9-eb11-b1ac-00224806ac7a/Mpgt--IJ6Qxs3a31lJcr4TYnhQt24ORoCJ5dFbes7sw!" styl=
+e=3D"text-decoration:none;border:0;max-height:100%;max-width:100%;box-sizin=
+g:border-box;margin:0 auto;position:static;display:block;top:0;left:0;float=
+:none;border-radius:0"><!--<![endif]--> <!--[if false]> </div> <![endif]-->=
+</a>
+<div class=3D"clear" style=3D"clear:both;height:0;width:0"><br></div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table> <![endif]-->
+<div style=3D"padding:0;margin:0">
+<div align=3D"Center" class=3D"imageWrapper" width=3D"100%" style=3D""><a h=
+ref=3D"https://connect.comptia.org/blog/what-does-community-mean-to-you?utm=
+_source=3DDynamics_Marketing&amp;utm_medium=3DEmail&amp;utm_campaign=3DMemb=
+ership_Quick_Reads_010923" style=3D"text-decoration:none;color:#0092bc"><im=
+g src=3D"https://assets-usa.mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c8480=
+29d4b6/digitalassets/images/7335a840-0c8d-ed11-81ad-000d3a3467ad?ts=3D63808=
+5287444277843" style=3D"text-decoration:none;border:0;max-height:100%;max-w=
+idth:100%;box-sizing:border-box;margin:0;position:relative;display:block;to=
+p:0;left:0;border-radius:0;height:316px!important;width:500px!important" cl=
+ass=3D"headerimage" alt=3D"Story 1 Image" height=3D"316" width=3D"500"></a>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> </tr></table></td></tr> </table> <![endif]-->
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse; background-color: rgb=
+(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr><td><table align=3D"center" width=3D"=
+600" style=3D"width: 600px; table-layout: fixed; border-collapse: collapse;=
+  background-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:10px 10px 0;bac=
+kground-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: rgb(=
+255, 255, 255);"><table width=3D"100%" style=3D"table-layout: fixed; border=
+-collapse: collapse; width: 100%; background-color: rgb(255, 255, 255);  bo=
+rder: 0px solid transparent;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" height: 36px; padding-left:1=
+0px; padding-right:10px; padding-top: 10px; padding-bottom: 0px; vertical-a=
+lign: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:b=
+lock;min-height:36px;min-width:20px;width:560px;flex-direction:column;paddi=
+ng:10px 10px 0;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 560px;background-color:#fff;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if false]> <div style=3D"display: none"> <![end=
+if]--> <!--[if gte mso 9]> <div style=3D"margin: 0px 0px 10px;"><p style=3D=
+"margin: 0px; padding: 0px; line-height: 125%; mso-line-height-rule: at-lea=
+st; font-size: 24px;"><span style=3D""><span style=3D"font-size: 24px;">Wha=
+t Does Community Mean to You?</span></span></p></div> <![endif]--><!--[if f=
+alse]> </div> <![endif]--> <!--[if !mso]> <!----><div style=3D"margin:0 0 1=
+0px"><p style=3D"margin:0;padding:0;line-height:1.25;mso-line-height-rule:a=
+t-least;font-size:24px"><span style=3D"line-height:1.25"><span style=3D"fon=
+t-size:24px;line-height:1.25">What Does Community Mean to You?</span></span=
+></p></div><!--<![endif]-->
+<div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1=
+.25;mso-line-height-rule:at-least">Eric Anthony, director of MSP evangelism=
+ at Egnyte, asked several CompTIA members and staff what community means to=
+ them at CompTIA=E2=80=99s recent Year-End Planning Meeting. The compiled a=
+nswers are mentioned in a video embedded at the end of the article.<br></p>=
+</div>
+<!--[if gte mso 9]> <table align=3D"center"  style=3D"border-collapse: coll=
+apse;border-spacing: 0px;padding: 0px; margin: 0px;" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" >
+<tr><style> .buttonWrapper a {border-style: none !important;} .buttonWrappe=
+r {padding: 0px !important; margin: 0px !important;} .buttonClass {mso-hide=
+: none !important;}</style>
+<td valign=3D"top" align=3D"center" width=3D"560"> <![endif]--><div align=3D=
+"left" style=3D"margin:10px 0 0" class=3D"buttonWrapper"><!--[if false]> <d=
+iv style=3D"display: none"> <![endif]--> <!--[if gte mso 9]> <table  cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: collap=
+se;border-spacing: 0px;font-size: 0; line-height: 0;">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr>
+<td>
+<table  border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"" style=3D=
+" color: rgb(255, 255, 255); border-collapse: collapse;border-spacing: 0px;=
+">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"center"  style=3D"height: 19.2px; vertical-a=
+lign: middle; align-content: center; text-align: center; color: rgb(255, 25=
+5, 255); font-family: Calibri, Helvetica, Arial, sans-serif"><v:roundrect s=
+tyle=3D"height:39.2px;v-text-anchor:middle; width:114px;" arcsize=3D"10%" s=
+troke=3D"false" fillcolor=3D"rgb(200, 16, 46)" >
+<w:anchorlock/></v:roundrect>
+<v:shapetype id=3D"mytype"
+coordorigin=3D"0 0" coordsize=3D"200 200">
+<v:path v=3D"m 0,0 l 0,200, 200,200, 200,0 x e"></v:path>
+</v:shapetype>
+<v:shape xmlns:v=3D"urn:schemas-microsoft-com:vml" type=3D"#mytype" href=3D=
+"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/mexZw7N9BEF3=
+fWMv8wMkxCvpMHSxR8ZTEiy6mPBPgaEx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbyt=
+gx" data-msdyn-tracking-id=3D"29d18c5ba91648735006045" fill=3D"false" strok=
+e=3D"false" style=3D"position: absolute; top: 0px; left: 0px;padding: 0px;h=
+eight:39.2px;width:114px;v-text-anchor:middle;">
+<center style=3D"font-family: Calibri, Helvetica, Arial, sans-serif;font-si=
+ze: 16px; color: rgb(255, 255, 255); font-weight: bold;">Read More</center>=
+</v:shape></td></tr></tbody></table></td>
+</tr></table> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if false=
+]><a class=3D"buttonClass" href=3D"https://connect.comptia.org/blog/what-do=
+es-community-mean-to-you?utm_source=3DDynamics_Marketing&amp;utm_medium=3DE=
+mail&amp;utm_campaign=3DMembership_Quick_Reads_010923" style=3D"text-decora=
+tion: none; text-align: center; margin-right: auto; margin-left: 0px; displ=
+ay: inline-block; background-color: rgb(200, 16, 46); border-radius: 4px; c=
+olor: rgb(255, 255, 255); width: 74px; height: auto; padding: 10px 20px; ma=
+x-width: 100%; line-height: normal; border-color: rgb(255, 255, 255); borde=
+r-width: 1px; border-style: none; font-size: 16px; font-weight: bold; mso-h=
+ide: none !important;"><span style=3D"font-family: Calibri, Helvetica, Aria=
+l, sans-serif;">Read More</span></a><![endif]--> <!--[if !mso]> <!--[if fal=
+se]> <div style=3D"display: none"> <![endif]-->  <a class=3D"buttonClass" h=
+ref=3D"https://connect.comptia.org/blog/what-does-community-mean-to-you?utm=
+_source=3DDynamics_Marketing&amp;utm_medium=3DEmail&amp;utm_campaign=3DMemb=
+ership_Quick_Reads_010923" style=3D"text-decoration:none;text-align:center;=
+margin-right:auto;margin-left:0;display:inline-block;background-color:#c810=
+2e;border-radius:4px;color:#fff;width:fit-content;height:auto;padding:10px =
+20px;max-width:100%;line-height:normal;border-color:#fff;border-width:1px;b=
+order-style:none;font-size:16px;font-weight:700;mso-hide:none!important"><s=
+pan style=3D"font-family:Calibri,Helvetica,Arial,sans-serif">Read More</spa=
+n></a><!--<![endif]--> <!--[if false]> </div> <![endif]--></div><!--[if gte=
+ mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]-->
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse; background-color: rgb=
+(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: tran=
+sparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-collap=
+se: collapse; width: 100%;   border: 0px solid transparent;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" height: 10px; padding-left:1=
+0px; padding-right:10px; padding-top: 10px; padding-bottom: 0px; vertical-a=
+lign: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:b=
+lock;min-height:10px;min-width:20px;width:560px;flex-direction:column;paddi=
+ng:10px 10px 0;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 560px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if gte mso 9]> <table style=3D"border-collapse:=
+ collapse;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><style> .dividerDivWrapper {margin: 0px !important; } .dividerInnerWrap=
+per {padding-top: 5px !important; padding-bottom: 15px !important;} </style=
+>
+<td  width=3D"560" class=3D"dividerInnerWrapper" valign=3D"top" style=3D"wi=
+dth: 560px; padding-left:  0px; padding-right: 0px;padding-top:  5px; paddi=
+ng-bottom: 5px;"> <![endif]--><div style=3D"margin:0 0 10px;padding:0" clas=
+s=3D"dividerDivWrapper">
+<div align=3D"center" class=3D"dividerWrapper" style=3D"padding-top:5px;pad=
+ding-bottom:5px">
+<table style=3D"padding:0;margin:0;width:100%;border-collapse:collapse" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr style=3D"padding:0">
+<td style=3D"margin:0;padding:0;vertical-align:top;border-top:3px solid #58=
+6169">
+<p style=3D"mso-line-height-rule:at-least;margin:0;padding:0;line-height:0;=
+width:100%">
+<span><!--[if gte mso 9]><br/><![endif]-->&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><!--[if gte mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]-->
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse; background-color: rgb=
+(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"388.6" sty=
+le=3D"width: 388.6px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"368.6" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:17.5px;width:368.6px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 368.6px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if false]> <div style=3D"display: none"> <![end=
+if]--> <!--[if gte mso 9]> <div style=3D"margin: 0px 0px 10px;"><p style=3D=
+"margin: 0px; padding: 0px; line-height: 125%; mso-line-height-rule: at-lea=
+st; font-size: 24px;"><span style=3D""><span style=3D"font-size: 24px;">The=
+ Top 10 CompTIA Membership Research Reports and Resources for 2022</span></=
+span></p></div> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if !ms=
+o]> <!----><div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;li=
+ne-height:1.25;mso-line-height-rule:at-least;font-size:24px"><span style=3D=
+"line-height:1.25"><span style=3D"font-size:24px;line-height:1.25">The Top =
+10 CompTIA Membership Research Reports and Resources for 2022</span></span>=
+</p></div><!--<![endif]-->
+<div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1=
+.25;mso-line-height-rule:at-least">Cybersecurity and emerging tech were top=
+ themes for CompTIA research and resources, but legal and business trends w=
+ere also popular downloads in 2022.</p></div>
+<!--[if gte mso 9]> <table align=3D"center"  style=3D"border-collapse: coll=
+apse;border-spacing: 0px;padding: 0px; margin: 0px;" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" >
+<tr><style> .buttonWrapper a {border-style: none !important;} .buttonWrappe=
+r {padding: 0px !important; margin: 0px !important;} .buttonClass {mso-hide=
+: none !important;}</style>
+<td valign=3D"top" align=3D"center" width=3D"368.6"> <![endif]--><div align=
+=3D"left" style=3D"margin:10px 0 0" class=3D"buttonWrapper"><!--[if false]>=
+ <div style=3D"display: none"> <![endif]--> <!--[if gte mso 9]> <table  cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: col=
+lapse;border-spacing: 0px;font-size: 0; line-height: 0;">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr>
+<td>
+<table  border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"" style=3D=
+" color: rgb(255, 255, 255); border-collapse: collapse;border-spacing: 0px;=
+">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"center"  style=3D"height: 19.2px; vertical-a=
+lign: middle; align-content: center; text-align: center; color: rgb(255, 25=
+5, 255); font-family: Calibri, Helvetica, Arial, sans-serif"><v:roundrect s=
+tyle=3D"height:39.2px;v-text-anchor:middle; width:114px;" arcsize=3D"10%" s=
+troke=3D"false" fillcolor=3D"rgb(200, 16, 46)" >
+<w:anchorlock/></v:roundrect>
+<v:shapetype id=3D"mytype"
+coordorigin=3D"0 0" coordsize=3D"200 200">
+<v:path v=3D"m 0,0 l 0,200, 200,200, 200,0 x e"></v:path>
+</v:shapetype>
+<v:shape xmlns:v=3D"urn:schemas-microsoft-com:vml" type=3D"#mytype" href=3D=
+"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/CxSkfLmc8lAx=
+8U0ZwSiF9PdLPQ09UxtuNvebBVgtRMYx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbyt=
+gx" data-msdyn-tracking-id=3D"29d18c5ba91648735006045" fill=3D"false" strok=
+e=3D"false" style=3D"position: absolute; top: 0px; left: 0px;padding: 0px;h=
+eight:39.2px;width:114px;v-text-anchor:middle;">
+<center style=3D"font-family: Calibri, Helvetica, Arial, sans-serif;font-si=
+ze: 16px; color: rgb(255, 255, 255); font-weight: bold;">Read More</center>=
+</v:shape></td></tr></tbody></table></td>
+</tr></table> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if false=
+]><a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff=
+.svc.dynamics.com/t/t/CxSkfLmc8lAx8U0ZwSiF9PdLPQ09UxtuNvebBVgtRMYx/pfY8PiHQ=
+TJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration: none; text-=
+align: center; margin-right: auto; margin-left: 0px; display: inline-block;=
+ background-color: rgb(200, 16, 46); border-radius: 4px; color: rgb(255, 25=
+5, 255); width: 74px; height: auto; padding: 10px 20px; max-width: 100%; li=
+ne-height: normal; border-color: rgb(255, 255, 255); border-width: 1px; bor=
+der-style: none; font-size: 16px; font-weight: bold; mso-hide: none !import=
+ant;" data-msdyn-tracking-id=3D"29d18c5ba91648735006045"><span style=3D"fon=
+t-family: Calibri, Helvetica, Arial, sans-serif;">Read More</span></a><![en=
+dif]--> <!--[if !mso]> <!--[if false]> <div style=3D"display: none"> <![end=
+if]-->  <a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d929125d=
+bdc1ff.svc.dynamics.com/t/t/CxSkfLmc8lAx8U0ZwSiF9PdLPQ09UxtuNvebBVgtRMYx/pf=
+Y8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration:none;t=
+ext-align:center;margin-right:auto;margin-left:0;display:inline-block;backg=
+round-color:#c8102e;border-radius:4px;color:#fff;width:fit-content;height:a=
+uto;padding:10px 20px;max-width:100%;line-height:normal;border-color:#fff;b=
+order-width:1px;border-style:none;font-size:16px;font-weight:700;mso-hide:n=
+one!important" data-msdyn-tracking-id=3D"29d18c5ba91648735006045"><span sty=
+le=3D"font-family:Calibri,Helvetica,Arial,sans-serif">Read More</span></a><=
+!--<![endif]--> <!--[if false]> </div> <![endif]--></div><!--[if gte mso 9]=
+> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"191.4" sty=
+le=3D"width: 191.4px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"171.4" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:12.5px;width:171.4px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 171.4px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><div style=3D"padding:0;margin:0">
+<div align=3D"Center" class=3D"imageWrapper" width=3D"100%" style=3D""><a h=
+ref=3D"https://connect.comptia.org/blog/the-top-10-comptia-membership-resea=
+rch-reports-and-resources-for-2022?utm_source=3DDynamics_Marketing&amp;utm_=
+medium=3DEmail&amp;utm_campaign=3DMembership_Quick_Reads_010923" style=3D"t=
+ext-decoration:none;color:#0092bc"><!--[if gte mso 9]> <img src=3D"https://=
+assets-usa.mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c848029d4b6/digitalass=
+ets/images/6e35a840-0c8d-ed11-81ad-000d3a3467ad?ts=3D638085287444121592" st=
+yle=3D"text-decoration: none; border: 0px; max-height: 100%; max-width: 100=
+%; box-sizing: border-box; margin: 0px; position: relative; display: block;=
+ top: 0px; left: 0px; border-radius: 0px;" class=3D"bodyimage" alt=3D"Story=
+ 2Image" width=3D"171.4"> <![endif]--><!--[if false]> <div style=3D"display=
+: none"> <![endif]--> <!--[if !mso]> <!----><img src=3D"https://assets-usa.=
+mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c848029d4b6/digitalassets/images/=
+6e35a840-0c8d-ed11-81ad-000d3a3467ad?ts=3D638085287444121592" style=3D"text=
+-decoration:none;border:0;max-height:100%;max-width:100%;box-sizing:border-=
+box;margin:0;position:relative;display:block;top:0;left:0;border-radius:0" =
+class=3D"bodyimage" alt=3D"Story 2Image"><!--<![endif]--> <!--[if false]> <=
+/div> <![endif]--></a>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]--><!--[if gte mso 9]> <table align=3D"center" width=3D"600" =
+style=3D"width: 600px; table-layout: fixed; border-collapse: collapse; back=
+ground-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: tran=
+sparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-collap=
+se: collapse; width: 100%;   border: 0px solid transparent;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" height: 10px; padding-left:1=
+0px; padding-right:10px; padding-top: 10px; padding-bottom: 0px; vertical-a=
+lign: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:b=
+lock;min-height:10px;min-width:20px;width:560px;flex-direction:column;paddi=
+ng:10px 10px 0;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 560px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if gte mso 9]> <table style=3D"border-collapse:=
+ collapse;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><style> .dividerDivWrapper {margin: 0px !important; } .dividerInnerWrap=
+per {padding-top: 5px !important; padding-bottom: 15px !important;} </style=
+>
+<td  width=3D"560" class=3D"dividerInnerWrapper" valign=3D"top" style=3D"wi=
+dth: 560px; padding-left:  0px; padding-right: 0px;padding-top:  5px; paddi=
+ng-bottom: 5px;"> <![endif]--><div style=3D"margin:0 0 10px;padding:0" clas=
+s=3D"dividerDivWrapper">
+<div align=3D"center" class=3D"dividerWrapper" style=3D"padding-top:5px;pad=
+ding-bottom:5px">
+<table style=3D"padding:0;margin:0;width:100%;border-collapse:collapse" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr style=3D"padding:0">
+<td style=3D"margin:0;padding:0;vertical-align:top;border-top:3px solid #58=
+6169">
+<p style=3D"mso-line-height-rule:at-least;margin:0;padding:0;line-height:0;=
+width:100%">
+<span><!--[if gte mso 9]><br/><![endif]-->&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><!--[if gte mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]--><!--[if gte mso 9]> <table align=3D"center" width=3D"600" =
+style=3D"width: 600px; table-layout: fixed; border-collapse: collapse; back=
+ground-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"388.6" sty=
+le=3D"width: 388.6px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"368.6" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:17.5px;width:368.6px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 368.6px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if false]> <div style=3D"display: none"> <![end=
+if]--> <!--[if gte mso 9]> <div style=3D"margin: 0px 0px 10px;"><p style=3D=
+"margin: 0px; padding: 0px; line-height: 125%; mso-line-height-rule: at-lea=
+st; font-size: 24px;"><span style=3D""><span style=3D"font-size: 24px;">The=
+ Top 10 CompTIA Community Videos of 2022</span></span></p></div> <![endif]-=
+-><!--[if false]> </div> <![endif]--> <!--[if !mso]> <!----><div style=3D"m=
+argin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1.25;mso-line-he=
+ight-rule:at-least;font-size:24px"><span style=3D"line-height:1.25"><span s=
+tyle=3D"font-size:24px;line-height:1.25">The Top 10 CompTIA Community Video=
+s of 2022</span></span></p></div><!--<![endif]-->
+<div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1=
+.25;mso-line-height-rule:at-least">CompTIA produced an abundance of YouTube=
+ content and we=E2=80=99ve compiled our favorites of the year. Here are the=
+ Top 10 videos from the CompTIA Community YouTube channel for 2022.&nbsp;<b=
+r></p></div>
+<!--[if gte mso 9]> <table align=3D"center"  style=3D"border-collapse: coll=
+apse;border-spacing: 0px;padding: 0px; margin: 0px;" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" >
+<tr><style> .buttonWrapper a {border-style: none !important;} .buttonWrappe=
+r {padding: 0px !important; margin: 0px !important;} .buttonClass {mso-hide=
+: none !important;}</style>
+<td valign=3D"top" align=3D"center" width=3D"368.6"> <![endif]--><div align=
+=3D"left" style=3D"margin:10px 0 0" class=3D"buttonWrapper"><!--[if false]>=
+ <div style=3D"display: none"> <![endif]--> <!--[if gte mso 9]> <table  cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: col=
+lapse;border-spacing: 0px;font-size: 0; line-height: 0;">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr>
+<td>
+<table  border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"" style=3D=
+" color: rgb(255, 255, 255); border-collapse: collapse;border-spacing: 0px;=
+">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"center"  style=3D"height: 19.2px; vertical-a=
+lign: middle; align-content: center; text-align: center; color: rgb(255, 25=
+5, 255); font-family: Calibri, Helvetica, Arial, sans-serif"><v:roundrect s=
+tyle=3D"height:39.2px;v-text-anchor:middle; width:114px;" arcsize=3D"10%" s=
+troke=3D"false" fillcolor=3D"rgb(200, 16, 46)" >
+<w:anchorlock/></v:roundrect>
+<v:shapetype id=3D"mytype"
+coordorigin=3D"0 0" coordsize=3D"200 200">
+<v:path v=3D"m 0,0 l 0,200, 200,200, 200,0 x e"></v:path>
+</v:shapetype>
+<v:shape xmlns:v=3D"urn:schemas-microsoft-com:vml" type=3D"#mytype" href=3D=
+"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/T4eK8l6WYaaJ=
+DQg3MPnu8ndiHgvhcWfk5KsMxuuXSJcx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbyt=
+gx" data-msdyn-tracking-id=3D"03aca94b66ff91672931613617" fill=3D"false" st=
+roke=3D"false" style=3D"position: absolute; top: 0px; left: 0px;padding: 0p=
+x;height:39.2px;width:114px;v-text-anchor:middle;">
+<center style=3D"font-family: Calibri, Helvetica, Arial, sans-serif;font-si=
+ze: 16px; color: rgb(255, 255, 255); font-weight: bold;">Read More</center>=
+</v:shape></td></tr></tbody></table></td>
+</tr></table> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if false=
+]><a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff=
+.svc.dynamics.com/t/t/T4eK8l6WYaaJDQg3MPnu8ndiHgvhcWfk5KsMxuuXSJcx/pfY8PiHQ=
+TJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration: none; text-=
+align: center; margin-right: auto; margin-left: 0px; display: inline-block;=
+ background-color: rgb(200, 16, 46); border-radius: 4px; color: rgb(255, 25=
+5, 255); width: 74px; height: auto; padding: 10px 20px; max-width: 100%; li=
+ne-height: normal; border-color: rgb(255, 255, 255); border-width: 1px; bor=
+der-style: none; font-size: 16px; font-weight: bold; mso-hide: none !import=
+ant;" data-msdyn-tracking-id=3D"03aca94b66ff91672931613617"><span style=3D"=
+font-family: Calibri, Helvetica, Arial, sans-serif;">Read More</span></a><!=
+[endif]--> <!--[if !mso]> <!--[if false]> <div style=3D"display: none"> <![=
+endif]-->  <a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d9291=
+25dbdc1ff.svc.dynamics.com/t/t/T4eK8l6WYaaJDQg3MPnu8ndiHgvhcWfk5KsMxuuXSJcx=
+/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration:non=
+e;text-align:center;margin-right:auto;margin-left:0;display:inline-block;ba=
+ckground-color:#c8102e;border-radius:4px;color:#fff;width:fit-content;heigh=
+t:auto;padding:10px 20px;max-width:100%;line-height:normal;border-color:#ff=
+f;border-width:1px;border-style:none;font-size:16px;font-weight:700;mso-hid=
+e:none!important" data-msdyn-tracking-id=3D"03aca94b66ff91672931613617"><sp=
+an style=3D"font-family:Calibri,Helvetica,Arial,sans-serif">Read More</span=
+></a><!--<![endif]--> <!--[if false]> </div> <![endif]--></div><!--[if gte =
+mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"191.4" sty=
+le=3D"width: 191.4px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"171.4" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:12.5px;width:171.4px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 171.4px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><div style=3D"padding:0;margin:0">
+<div align=3D"Center" class=3D"imageWrapper" width=3D"100%" style=3D""><a h=
+ref=3D"https://connect.comptia.org/blog/the-top-10-comptia-community-videos=
+-of-2022?utm_source=3DDynamics_Marketing&amp;utm_medium=3DEmail&amp;utm_cam=
+paign=3DMembership_Quick_Reads_010923" style=3D"text-decoration:none;color:=
+#0092bc"><!--[if gte mso 9]> <img src=3D"https://assets-usa.mkt.dynamics.co=
+m/b146cec3-7389-4e3e-9118-0c848029d4b6/digitalassets/images/6c35a840-0c8d-e=
+d11-81ad-000d3a3467ad?ts=3D638085287444121592" style=3D"text-decoration: no=
+ne; border: 0px; max-height: 100%; max-width: 100%; box-sizing: border-box;=
+ margin: 0px; position: relative; display: block; top: 0px; left: 0px; bord=
+er-radius: 0px;" class=3D"bodyimage" alt=3D"Story 3 Image" width=3D"171.4">=
+ <![endif]--><!--[if false]> <div style=3D"display: none"> <![endif]--> <!-=
+-[if !mso]> <!----><img src=3D"https://assets-usa.mkt.dynamics.com/b146cec3=
+-7389-4e3e-9118-0c848029d4b6/digitalassets/images/6c35a840-0c8d-ed11-81ad-0=
+00d3a3467ad?ts=3D638085287444121592" style=3D"text-decoration:none;border:0=
+;max-height:100%;max-width:100%;box-sizing:border-box;margin:0;position:rel=
+ative;display:block;top:0;left:0;border-radius:0" class=3D"bodyimage" alt=3D=
+"Story 3 Image"><!--<![endif]--> <!--[if false]> </div> <![endif]--></a>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]--><!--[if gte mso 9]> <table align=3D"center" width=3D"600" =
+style=3D"width: 600px; table-layout: fixed; border-collapse: collapse; back=
+ground-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: tran=
+sparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-collap=
+se: collapse; width: 100%;   border: 0px solid transparent;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" height: 10px; padding-left:1=
+0px; padding-right:10px; padding-top: 10px; padding-bottom: 0px; vertical-a=
+lign: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:b=
+lock;min-height:10px;min-width:20px;width:560px;flex-direction:column;paddi=
+ng:10px 10px 0;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 560px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if gte mso 9]> <table style=3D"border-collapse:=
+ collapse;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><style> .dividerDivWrapper {margin: 0px !important; } .dividerInnerWrap=
+per {padding-top: 5px !important; padding-bottom: 15px !important;} </style=
+>
+<td  width=3D"560" class=3D"dividerInnerWrapper" valign=3D"top" style=3D"wi=
+dth: 560px; padding-left:  0px; padding-right: 0px;padding-top:  5px; paddi=
+ng-bottom: 5px;"> <![endif]--><div style=3D"margin:0 0 10px;padding:0" clas=
+s=3D"dividerDivWrapper">
+<div align=3D"center" class=3D"dividerWrapper" style=3D"padding-top:5px;pad=
+ding-bottom:5px">
+<table style=3D"padding:0;margin:0;width:100%;border-collapse:collapse" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr style=3D"padding:0">
+<td style=3D"margin:0;padding:0;vertical-align:top;border-top:3px solid #58=
+6169">
+<p style=3D"mso-line-height-rule:at-least;margin:0;padding:0;line-height:0;=
+width:100%">
+<span><!--[if gte mso 9]><br/><![endif]-->&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><!--[if gte mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]--><!--[if gte mso 9]> <table align=3D"center" width=3D"600" =
+style=3D"width: 600px; table-layout: fixed; border-collapse: collapse; back=
+ground-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"388.6" sty=
+le=3D"width: 388.6px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"368.6" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:17.5px;width:368.6px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 368.6px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if false]> <div style=3D"display: none"> <![end=
+if]--> <!--[if gte mso 9]> <div style=3D"margin: 0px 0px 10px;"><p style=3D=
+"margin: 0px; padding: 0px; line-height: 125%; mso-line-height-rule: at-lea=
+st; font-size: 24px;"><span style=3D""><span style=3D"font-size: 24px;">The=
+ Top 10 CompTIA Community Blogs of 2022</span></span></p></div> <![endif]--=
+><!--[if false]> </div> <![endif]--> <!--[if !mso]> <!----><div style=3D"ma=
+rgin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1.25;mso-line-hei=
+ght-rule:at-least;font-size:24px"><span style=3D"line-height:1.25"><span st=
+yle=3D"font-size:24px;line-height:1.25">The Top 10 CompTIA Community Blogs =
+of 2022</span></span></p></div><!--<![endif]-->
+<div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1=
+.25;mso-line-height-rule:at-least">From cybersecurity lessons to workforce =
+optimization to MSP sales strategies, CompTIA published more than 100 blogs=
+ in 2022 that can help your business. Check out our top 10 list and stay tu=
+ned for what=E2=80=99s to come in 2023!&nbsp;<br></p></div>
+<!--[if gte mso 9]> <table align=3D"center"  style=3D"border-collapse: coll=
+apse;border-spacing: 0px;padding: 0px; margin: 0px;" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" >
+<tr><style> .buttonWrapper a {border-style: none !important;} .buttonWrappe=
+r {padding: 0px !important; margin: 0px !important;} .buttonClass {mso-hide=
+: none !important;}</style>
+<td valign=3D"top" align=3D"center" width=3D"368.6"> <![endif]--><div align=
+=3D"left" style=3D"margin:10px 0 0" class=3D"buttonWrapper"><!--[if false]>=
+ <div style=3D"display: none"> <![endif]--> <!--[if gte mso 9]> <table  cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: col=
+lapse;border-spacing: 0px;font-size: 0; line-height: 0;">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr>
+<td>
+<table  border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"" style=3D=
+" color: rgb(255, 255, 255); border-collapse: collapse;border-spacing: 0px;=
+">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"center"  style=3D"height: 19.2px; vertical-a=
+lign: middle; align-content: center; text-align: center; color: rgb(255, 25=
+5, 255); font-family: Calibri, Helvetica, Arial, sans-serif"><v:roundrect s=
+tyle=3D"height:39.2px;v-text-anchor:middle; width:114px;" arcsize=3D"10%" s=
+troke=3D"false" fillcolor=3D"rgb(200, 16, 46)" >
+<w:anchorlock/></v:roundrect>
+<v:shapetype id=3D"mytype"
+coordorigin=3D"0 0" coordsize=3D"200 200">
+<v:path v=3D"m 0,0 l 0,200, 200,200, 200,0 x e"></v:path>
+</v:shapetype>
+<v:shape xmlns:v=3D"urn:schemas-microsoft-com:vml" type=3D"#mytype" href=3D=
+"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/lt7NvH6csUx9=
+jnHwsdr3kppXpA17fFqtxzJ6KGKI9xIx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbyt=
+gx" data-msdyn-tracking-id=3D"d5af83f2dbe391672931705883" fill=3D"false" st=
+roke=3D"false" style=3D"position: absolute; top: 0px; left: 0px;padding: 0p=
+x;height:39.2px;width:114px;v-text-anchor:middle;">
+<center style=3D"font-family: Calibri, Helvetica, Arial, sans-serif;font-si=
+ze: 16px; color: rgb(255, 255, 255); font-weight: bold;">Read More</center>=
+</v:shape></td></tr></tbody></table></td>
+</tr></table> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if false=
+]><a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff=
+.svc.dynamics.com/t/t/lt7NvH6csUx9jnHwsdr3kppXpA17fFqtxzJ6KGKI9xIx/pfY8PiHQ=
+TJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration: none; text-=
+align: center; margin-right: auto; margin-left: 0px; display: inline-block;=
+ background-color: rgb(200, 16, 46); border-radius: 4px; color: rgb(255, 25=
+5, 255); width: 74px; height: auto; padding: 10px 20px; max-width: 100%; li=
+ne-height: normal; border-color: rgb(255, 255, 255); border-width: 1px; bor=
+der-style: none; font-size: 16px; font-weight: bold; mso-hide: none !import=
+ant;" data-msdyn-tracking-id=3D"d5af83f2dbe391672931705883"><span style=3D"=
+font-family: Calibri, Helvetica, Arial, sans-serif;">Read More</span></a><!=
+[endif]--> <!--[if !mso]> <!--[if false]> <div style=3D"display: none"> <![=
+endif]-->  <a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d9291=
+25dbdc1ff.svc.dynamics.com/t/t/lt7NvH6csUx9jnHwsdr3kppXpA17fFqtxzJ6KGKI9xIx=
+/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration:non=
+e;text-align:center;margin-right:auto;margin-left:0;display:inline-block;ba=
+ckground-color:#c8102e;border-radius:4px;color:#fff;width:fit-content;heigh=
+t:auto;padding:10px 20px;max-width:100%;line-height:normal;border-color:#ff=
+f;border-width:1px;border-style:none;font-size:16px;font-weight:700;mso-hid=
+e:none!important" data-msdyn-tracking-id=3D"d5af83f2dbe391672931705883"><sp=
+an style=3D"font-family:Calibri,Helvetica,Arial,sans-serif">Read More</span=
+></a><!--<![endif]--> <!--[if false]> </div> <![endif]--></div><!--[if gte =
+mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"191.4" sty=
+le=3D"width: 191.4px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"171.4" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:12.5px;width:171.4px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 171.4px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><div style=3D"padding:0;margin:0">
+<div align=3D"Center" class=3D"imageWrapper" width=3D"100%" style=3D""><a h=
+ref=3D"https://connect.comptia.org/blog/the-top-10-comptia-community-blogs-=
+of-2022" style=3D"text-decoration:none;color:#0092bc"><!--[if gte mso 9]> <=
+img src=3D"https://assets-usa.mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c84=
+8029d4b6/digitalassets/images/6d35a840-0c8d-ed11-81ad-000d3a3467ad?ts=3D638=
+085287444121592" style=3D"text-decoration: none; border: 0px; max-height: 1=
+00%; max-width: 100%; box-sizing: border-box; margin: 0px; position: relati=
+ve; display: block; top: 0px; left: 0px; border-radius: 0px;" class=3D"body=
+image" alt=3D"Story 4 Image" width=3D"171.4"> <![endif]--><!--[if false]> <=
+div style=3D"display: none"> <![endif]--> <!--[if !mso]> <!----><img src=3D=
+"https://assets-usa.mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c848029d4b6/d=
+igitalassets/images/6d35a840-0c8d-ed11-81ad-000d3a3467ad?ts=3D6380852874441=
+21592" style=3D"text-decoration:none;border:0;max-height:100%;max-width:100=
+%;box-sizing:border-box;margin:0;position:relative;display:block;top:0;left=
+:0;border-radius:0" class=3D"bodyimage" alt=3D"Story 4 Image"><!--<![endif]=
+--> <!--[if false]> </div> <![endif]--></a>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]--><!--[if gte mso 9]> <table align=3D"center" width=3D"600" =
+style=3D"width: 600px; table-layout: fixed; border-collapse: collapse; back=
+ground-color: rgb(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px;backgrou=
+nd-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: tran=
+sparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-collap=
+se: collapse; width: 100%;   border: 0px solid transparent;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" height: 10px; padding-left:1=
+0px; padding-right:10px; padding-top: 10px; padding-bottom: 0px; vertical-a=
+lign: top; "> <![endif]--><div class=3D"columnContainer" style=3D"display:b=
+lock;min-height:10px;min-width:20px;width:560px;flex-direction:column;paddi=
+ng:10px 10px 0;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 560px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if gte mso 9]> <table style=3D"border-collapse:=
+ collapse;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><style> .dividerDivWrapper {margin: 0px !important; } .dividerInnerWrap=
+per {padding-top: 5px !important; padding-bottom: 15px !important;} </style=
+>
+<td  width=3D"560" class=3D"dividerInnerWrapper" valign=3D"top" style=3D"wi=
+dth: 560px; padding-left:  0px; padding-right: 0px;padding-top:  5px; paddi=
+ng-bottom: 5px;"> <![endif]--><div style=3D"margin:0 0 10px;padding:0" clas=
+s=3D"dividerDivWrapper">
+<div align=3D"center" class=3D"dividerWrapper" style=3D"padding-top:5px;pad=
+ding-bottom:5px">
+<table style=3D"padding:0;margin:0;width:100%;border-collapse:collapse" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr style=3D"padding:0">
+<td style=3D"margin:0;padding:0;vertical-align:top;border-top:3px solid #58=
+6169">
+<p style=3D"mso-line-height-rule:at-least;margin:0;padding:0;line-height:0;=
+width:100%">
+<span><!--[if gte mso 9]><br/><![endif]-->&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><!--[if gte mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> </ta=
+ble> <![endif]-->
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse; background-color: rgb=
+(255, 255, 255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td><table align=3D"center" width=3D"600" style=3D"width: 600px; table-=
+layout: fixed; border-collapse: collapse;  background-color: rgb(255, 255, =
+255); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgb(255, 255, =
+255);" width=3D"10"></td> <![endif]--><div style=3D"padding:0 10px 10px;bac=
+kground-color:#fff" class=3D"columns-equal-class wrap-section">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgb(255, 255, 255=
+); border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"388.6" sty=
+le=3D"width: 388.6px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"368.6" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:17.5px;width:368.6px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 368.6px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><!--[if false]> <div style=3D"display: none"> <![end=
+if]--> <!--[if gte mso 9]> <div style=3D"margin: 0px 0px 10px;"><p style=3D=
+"margin: 0px; padding: 0px; line-height: 125%; mso-line-height-rule: at-lea=
+st; font-size: 24px;"><span style=3D""><span style=3D"font-size: 24px;">Ali=
+gning IT Skills with Strategic Business Goals&nbsp;</span></span></p></div>=
+ <![endif]--><!--[if false]> </div> <![endif]--> <!--[if !mso]> <!----><div=
+ style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1.25;=
+mso-line-height-rule:at-least;font-size:24px"><span style=3D"line-height:1.=
+25"><span style=3D"font-size:24px;line-height:1.25">Aligning IT Skills with=
+ Strategic Business Goals&nbsp;</span></span></p></div><!--<![endif]-->
+<div style=3D"margin:0 0 10px"><p style=3D"margin:0;padding:0;line-height:1=
+.25;mso-line-height-rule:at-least">Seth Robinson, Vice President, Industry =
+and Technology Research, at CompTIA, examines the need for continued skills=
+ expansion among IT pros. New skills enhance job security and ensure that I=
+T pros remain competitive in the job market, but there is also a recent nee=
+d to involve technology more fully.&nbsp;<br></p></div>
+<!--[if gte mso 9]> <table align=3D"center"  style=3D"border-collapse: coll=
+apse;border-spacing: 0px;padding: 0px; margin: 0px;" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" >
+<tr><style> .buttonWrapper a {border-style: none !important;} .buttonWrappe=
+r {padding: 0px !important; margin: 0px !important;} .buttonClass {mso-hide=
+: none !important;}</style>
+<td valign=3D"top" align=3D"center" width=3D"368.6"> <![endif]--><div align=
+=3D"left" style=3D"margin:10px 0 0" class=3D"buttonWrapper"><!--[if false]>=
+ <div style=3D"display: none"> <![endif]--> <!--[if gte mso 9]> <table  cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: col=
+lapse;border-spacing: 0px;font-size: 0; line-height: 0;">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr>
+<td>
+<table  border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"" style=3D=
+" color: rgb(255, 255, 255); border-collapse: collapse;border-spacing: 0px;=
+">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"center"  style=3D"height: 19.2px; vertical-a=
+lign: middle; align-content: center; text-align: center; color: rgb(255, 25=
+5, 255); font-family: Calibri, Helvetica, Arial, sans-serif"><v:roundrect s=
+tyle=3D"height:39.2px;v-text-anchor:middle; width:117px;" arcsize=3D"10%" s=
+troke=3D"false" fillcolor=3D"rgb(200, 16, 46)" >
+<w:anchorlock/></v:roundrect>
+<v:shapetype id=3D"mytype"
+coordorigin=3D"0 0" coordsize=3D"200 200">
+<v:path v=3D"m 0,0 l 0,200, 200,200, 200,0 x e"></v:path>
+</v:shapetype>
+<v:shape xmlns:v=3D"urn:schemas-microsoft-com:vml" type=3D"#mytype" href=3D=
+"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/vMYux2eQhtSC=
+U4SINZyZN5ReAWQIMPVUMuGVh8MKwtgx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbyt=
+gx" data-msdyn-tracking-id=3D"e08c255bd6c4d1666273066501" fill=3D"false" st=
+roke=3D"false" style=3D"position: absolute; top: 0px; left: 0px;padding: 0p=
+x;height:39.2px;width:117px;v-text-anchor:middle;">
+<center style=3D"font-family: Calibri, Helvetica, Arial, sans-serif;font-si=
+ze: 16px; color: rgb(255, 255, 255); font-weight: bold;">Watch Now</center>=
+</v:shape></td></tr></tbody></table></td>
+</tr></table> <![endif]--><!--[if false]> </div> <![endif]--> <!--[if false=
+]><a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff=
+.svc.dynamics.com/t/t/vMYux2eQhtSCU4SINZyZN5ReAWQIMPVUMuGVh8MKwtgx/pfY8PiHQ=
+TJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration: none; text-=
+align: center; margin-right: auto; margin-left: 0px; display: inline-block;=
+ background-color: rgb(200, 16, 46); border-radius: 4px; color: rgb(255, 25=
+5, 255); width: 77px; height: auto; padding: 10px 20px; max-width: 100%; li=
+ne-height: normal; border-color: rgb(255, 255, 255); border-width: 1px; bor=
+der-style: none; font-size: 16px; font-weight: bold; mso-hide: none !import=
+ant;" data-msdyn-tracking-id=3D"e08c255bd6c4d1666273066501"><span style=3D"=
+font-family: Calibri, Helvetica, Arial, sans-serif;">Watch Now</span></a><!=
+[endif]--> <!--[if !mso]> <!--[if false]> <div style=3D"display: none"> <![=
+endif]-->  <a class=3D"buttonClass" href=3D"https://4fb516e0ad974eb7b7d9291=
+25dbdc1ff.svc.dynamics.com/t/t/vMYux2eQhtSCU4SINZyZN5ReAWQIMPVUMuGVh8MKwtgx=
+/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"text-decoration:non=
+e;text-align:center;margin-right:auto;margin-left:0;display:inline-block;ba=
+ckground-color:#c8102e;border-radius:4px;color:#fff;width:fit-content;heigh=
+t:auto;padding:10px 20px;max-width:100%;line-height:normal;border-color:#ff=
+f;border-width:1px;border-style:none;font-size:16px;font-weight:700;mso-hid=
+e:none!important" data-msdyn-tracking-id=3D"e08c255bd6c4d1666273066501"><sp=
+an style=3D"font-family:Calibri,Helvetica,Arial,sans-serif">Watch Now</span=
+></a><!--<![endif]--> <!--[if false]> </div> <![endif]--></div><!--[if gte =
+mso 9]> </td></tr></table> <![endif]-->
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"191.4" sty=
+le=3D"width: 191.4px; vertical-align: top; padding: 0px; background-color: =
+transparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-co=
+llapse: collapse; width: 100%;   border: 0px solid transparent;" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"171.4" style=3D" height: 70px; padding-left=
+:10px; padding-right:10px; padding-top: 10px; padding-bottom: 10px; vertica=
+l-align: top; "> <![endif]--><div class=3D"columnContainer" style=3D"displa=
+y:block;min-height:70px;min-width:12.5px;width:171.4px;flex-direction:colum=
+n;padding:10px;float:left;word-wrap:break-word;word-break:break-word;flex:0=
+ 0 171.4px;vertical-align:baseline">
+<!--[if gte mso 9]> </div><div style=3D"background-color: transparent; bord=
+er:none;"> <![endif]--><div style=3D"padding:0;margin:0">
+<div align=3D"Center" class=3D"imageWrapper" width=3D"100%" style=3D""><a h=
+ref=3D"https://www.youtube.com/watch?v=3DqoEiePan-FE" style=3D"text-decorat=
+ion:none;color:#0092bc"><!--[if gte mso 9]> <img src=3D"https://assets-usa.=
+mkt.dynamics.com/b146cec3-7389-4e3e-9118-0c848029d4b6/digitalassets/images/=
+e3a1648f-f8b0-ec11-9840-000d3a5c07e6?ts=3D0" style=3D"text-decoration: none=
+; border: 0px; max-height: 100%; max-width: 100%; box-sizing: border-box; m=
+argin: 0px; position: relative; display: block; top: 0px; left: 0px; border=
+-radius: 0px;" class=3D"bodyimage" alt=3D"Story 5 Image" width=3D"171.4"> <=
+![endif]--><!--[if false]> <div style=3D"display: none"> <![endif]--> <!--[=
+if !mso]> <!----><img src=3D"https://assets-usa.mkt.dynamics.com/b146cec3-7=
+389-4e3e-9118-0c848029d4b6/digitalassets/images/e3a1648f-f8b0-ec11-9840-000=
+d3a5c07e6?ts=3D0" style=3D"text-decoration:none;border:0;max-height:100%;ma=
+x-width:100%;box-sizing:border-box;margin:0;position:relative;display:block=
+;top:0;left:0;border-radius:0" class=3D"bodyimage" alt=3D"Story 5 Image"><!=
+--<![endif]--> <!--[if false]> </div> <![endif]--></a>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgb(255, 255, 255);" width=3D"10"></td></tr></table></td></tr> <tr =
+style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" heig=
+ht=3D"10"><td>&nbsp;</td></tr></table> <![endif]-->
+<!--[if gte mso 9]> <table align=3D"center" width=3D"600" style=3D"width: 6=
+00px; table-layout: fixed; border-collapse: collapse; background-color: rgb=
+a(0, 0, 0, 0); " cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr style=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" =
+height=3D"10"><td>&nbsp;</td></tr><tr><td><table align=3D"center" width=3D"=
+600" style=3D"width: 600px; table-layout: fixed; border-collapse: collapse;=
+  background-color: rgba(0, 0, 0, 0); " cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0">
+<tr><td style=3D"padding: 0px; width:10px; background-color: rgba(0, 0, 0, =
+0);" width=3D"10"></td> <![endif]--><div class=3D"columns-equal-class wrap-=
+section" style=3D"padding:10px;background-color:rgba(0,0,0,0)">
+<!--[if gte mso 9]> </div><div style=3D"background-color: rgba(0, 0, 0, 0);=
+ border:none;"> <![endif]--><div style=3D"display:flex;width:100%" class=3D=
+"containerWrapper">
+<div style=3D"clear:both"></div>
+<!--[if gte mso 9]> <td valign=3D"top" align=3D"center" width=3D"580" style=
+=3D"width: 580px; vertical-align: top; padding: 0px; background-color: tran=
+sparent;"><table width=3D"100%" style=3D"table-layout: fixed; border-collap=
+se: collapse; width: 100%;   border: 0px solid transparent;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+<tr><td valign=3D"top" width=3D"560" style=3D" padding-left:10px; padding-r=
+ight:10px; padding-top: 10px; padding-bottom: 10px; vertical-align: top; ">=
+ <![endif]--><div class=3D"columnContainer" style=3D"display:block;min-widt=
+h:5px;width:560px;flex-direction:column;padding:10px;float:left;word-wrap:b=
+reak-word;word-break:break-word;flex:0 0 560px"><!--[if gte mso 9]> </div><=
+div style=3D"background-color: transparent; border:none;"> <![endif]--><div=
+>
+<div class=3D"contentBlockWrapper">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"text A1162ACDB-DF0D-976=
+7-BF77-045CBFF21F4D" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" bgcolor=3D"#e2e2e2">
+<p style=3D"margin:0;padding:0;mso-line-height-rule:at-least;color:#586169;=
+font-family:Calibri,Arial,sans-serif;font-size:8px;font-weight:400;line-hei=
+ght:12px;margin-bottom:0;margin-top:0;text-align:center">
+</p><p style=3D"margin:0;padding:0;mso-line-height-rule:at-least;color:#586=
+169;font-family:Calibri,Arial,sans-serif;font-size:8px;font-weight:400;line=
+-height:12px;margin-bottom:0;margin-top:0;text-align:center">
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table align=3D"center" bgcolor=3D"#e2e2e2" cellpadding=3D"10" cellspacing=3D=
+"0" class=3D"icon-set" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"">
+<tbody>
+<tr>
+<td class=3D"inner-width" valign=3D"top"><img alt=3D"" height=3D"2.5" src=3D=
+"https://mktdplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/=
+3f4b1e88-9a11-ec11-b6e6-0022480b370a/3ZwPLR0yDyQi0a7jd5EP_sCYDnT2Pb9icx3Wc-=
+yIW9Y!" style=3D"display:block" width=3D"2.5">
+</td>
+<td class=3D"inner-width" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"image A9EDD3AC4-2F1C-A3=
+1C-8184-A0A466F0ACF8" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"line-height:1px;text-align:center">
+<a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/bf=
+b7nIten9TG5xaeczkIUGnEMy7T5rkXc4Yqg2to9Xwx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amj=
+m2aBxRdbytgx" style=3D"color:#c8102e;font-weight:inherit;text-decoration:un=
+derline" target=3D"_blank" rel=3D"noopener"><img align=3D"center" alt=3D"Tw=
+itter" border=3D"0" class=3D"img" height=3D"30" src=3D"https://mktdplp102wu=
+da.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/d9975b34-6799-eb11-b1=
+ac-00224806aefe/XVQrgaJm_UnWIIgZwn5YRXR_FzjOEfYLb3n0vlhxKeA!" style=3D"marg=
+in:0;text-align:center" width=3D"30">
+</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"inner-width" valign=3D"top"><img alt=3D"" height=3D"2.5" src=3D=
+"https://mktdplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/=
+3f4b1e88-9a11-ec11-b6e6-0022480b370a/3ZwPLR0yDyQi0a7jd5EP_sCYDnT2Pb9icx3Wc-=
+yIW9Y!" style=3D"display:block" width=3D"2.5">
+</td>
+<td class=3D"inner-width" valign=3D"top"><img alt=3D"" height=3D"2.5" src=3D=
+"https://mktdplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/=
+3f4b1e88-9a11-ec11-b6e6-0022480b370a/3ZwPLR0yDyQi0a7jd5EP_sCYDnT2Pb9icx3Wc-=
+yIW9Y!" style=3D"display:block" width=3D"2.5">
+</td>
+<td class=3D"inner-width" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"image A7957CE13-E067-A0=
+99-1E2B-0D85BCCACEDB" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"line-height:1px;text-align:center">
+<a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/NO=
+oMML8vVureVoxui3x3vsKhxpIz0XVxFwzLxxhrIZkx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amj=
+m2aBxRdbytgx" style=3D"color:#c8102e;font-weight:inherit;text-decoration:un=
+derline" target=3D"_blank" rel=3D"noopener"><img align=3D"center" alt=3D"Li=
+nkedIn" border=3D"0" class=3D"img" height=3D"30" src=3D"https://mktdplp102w=
+uda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/be422a80-6799-eb11-b=
+1ac-00224806aefe/bxojoDxHYl-d8-rCVGT9P0NONbwfIFA1RrQRehs_WvY!" style=3D"mar=
+gin:0;text-align:center" width=3D"30">
+</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td><td class=3D"inner-width" valign=3D"top"><img alt=3D"" height=3D"2.5" =
+src=3D"https://mktdplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125db=
+dc1ff/3f4b1e88-9a11-ec11-b6e6-0022480b370a/3ZwPLR0yDyQi0a7jd5EP_sCYDnT2Pb9i=
+cx3Wc-yIW9Y!" style=3D"display:block" width=3D"2.5">
+</td>
+<td class=3D"inner-width" valign=3D"top"><img alt=3D"" height=3D"2.5" src=3D=
+"https://mktdplp102wuda.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/=
+3f4b1e88-9a11-ec11-b6e6-0022480b370a/3ZwPLR0yDyQi0a7jd5EP_sCYDnT2Pb9icx3Wc-=
+yIW9Y!" style=3D"display:block" width=3D"2.5">
+</td>
+<td class=3D"inner-width" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"image AE1F5C4D9-C156-65=
+A9-2CC2-74E9A940073C" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"line-height:1px;text-align:center">
+<a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/dm=
+MaMgA6Smz3fA0oRSaKpFDv7eB3icmZxuvfxHYOSdsx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amj=
+m2aBxRdbytgx" style=3D"color:#c8102e;font-weight:inherit;text-decoration:un=
+derline" target=3D"_blank" rel=3D"noopener"><img align=3D"center" alt=3D"Yo=
+uTube" border=3D"0" class=3D"img" height=3D"30" src=3D"https://mktdplp102wu=
+da.azureedge.net/org-4fb516e0ad974eb7b7d929125dbdc1ff/5cb2362f-6f1c-ec11-b6=
+e6-0022480a454a/897sNQ1V6b5yyT8oADFED2PS1YOgY_QckA-_c3HNqn0!" style=3D"marg=
+in:0;text-align:center" width=3D"30">
+</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style=3D"font-family:Verdana,Arial,sans-serif;font-size:14px;color:#00=
+0"><div class=3D"contentBlockWrapper">
+<div style=3D"text-align:center" title=3D"[Content block tool]">
+<p style=3D"margin:0;padding:0;line-height:20px;mso-line-height-rule:at-lea=
+st;text-align:center;font-size:11px">
+<span style=3D"font-size:11px"><span style=3D"color:#586169"><span style=3D=
+"text-align:center"><span style=3D"text-align:center">This marketing email =
+was sent by =C2=A9 CompTIA, Inc.</span></span></span></span>
+</p><br>
+<p style=3D"margin:0;padding:0;mso-line-height-rule:at-least;color:#586169;=
+font-family:Calibri,Arial,sans-serif;font-style:normal;font-weight:400;lett=
+er-spacing:normal;text-indent:0;text-transform:none;white-space:normal;word=
+-spacing:0;text-decoration-thickness:initial;text-decoration-style:initial;=
+text-decoration-color:initial;line-height:21px;margin-bottom:0;margin-top:0=
+">
+<span class=3D"inline-color" style=3D"color:#586169;text-align:center">=C2=A9=
+ CompTIA, Inc. All rights reserved.</span>
+</p><p style=3D"margin:0;padding:0;mso-line-height-rule:at-least;color:#586=
+169;font-family:Calibri,Arial,sans-serif;font-style:normal;font-weight:400;=
+letter-spacing:normal;text-indent:0;text-transform:none;white-space:normal;=
+word-spacing:0;text-decoration-thickness:initial;text-decoration-style:init=
+ial;text-decoration-color:initial;line-height:21px;margin-bottom:0;margin-t=
+op:0">
+3500 Lacey Dr. Suite 100 Downers Grove, IL 60515</p><p style=3D"margin:0;pa=
+dding:0;mso-line-height-rule:at-least;color:#586169;font-family:Calibri,Ari=
+al,sans-serif;font-style:normal;font-weight:400;letter-spacing:normal;text-=
+indent:0;text-transform:none;white-space:normal;word-spacing:0;text-decorat=
+ion-thickness:initial;text-decoration-style:initial;text-decoration-color:i=
+nitial;line-height:21px;margin-bottom:0;margin-top:0">
+<a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/6a=
+o4ysQcy9zsj2dxP52KPtyxxvQZx6HCQnbLU4bVUMUx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amj=
+m2aBxRdbytgx" rel=3D"noopener" style=3D"color:#586169;font-weight:inherit;t=
+ext-decoration:underline;text-align:center" target=3D"_blank"><strong class=
+=3D"email-hyperlink-color-preserver" style=3D"font-weight:400;text-decorati=
+on:underline;color:#586169">Contact Us</strong></a><span class=3D"inline-co=
+lor" style=3D"color:#586169;text-align:center"><span style=3D"text-align:ce=
+nter">&nbsp;</span>|<span style=3D"text-align:center">&nbsp;</span></span><=
+a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/7oG=
+n6OgSV1Bqhd9x3duhznlmFYvr8aKral8b2rnwAawx/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm=
+2aBxRdbytgx?p0=3DFzdgrXYr6DsrkKxlgDAvxEOT7coR2YDWh2uQusVYFp0x&p1=3D95191ffb=
+-de87-ec11-93b0-000d3a3414d9&p2=3Ddarnellkeithj@gmail.com" style=3D"color:#=
+0092bc;text-decoration:none;text-align:center"><strong class=3D"email-hyper=
+link-color-preserver" style=3D"font-weight:400;text-decoration:underline;co=
+lor:#586169">Unsubscribe</strong></a>
+</p><p style=3D"margin:0;padding:0;mso-line-height-rule:at-least;color:#586=
+169;font-family:Calibri,Arial,sans-serif;font-style:normal;font-weight:400;=
+letter-spacing:normal;text-indent:0;text-transform:none;white-space:normal;=
+word-spacing:0;text-decoration-thickness:initial;text-decoration-style:init=
+ial;text-decoration-color:initial;line-height:21px;margin-bottom:0;margin-t=
+op:0">
+<a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/t/t/dd=
+CfEpsBICsMNFBfdzQRzkFEBcwUpDGk9099qEOJ0oox/pfY8PiHQTJciK5t1CDVF6FyYB2XS3amj=
+m2aBxRdbytgx?p0=3DpfY8PiHQTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" style=3D"co=
+lor:#0092bc;text-decoration:none;text-align:center"><strong class=3D"email-=
+hyperlink-color-preserver" style=3D"font-weight:400;text-decoration:underli=
+ne;color:#586169">View this Email Online</strong></a>
+</p></div>
+</div>
+</div>
+</div><!--[if gte mso 9]> </td></tr></table><p style=3D"height:0px; margin-=
+bottom:0; margin-top:0; padding:0;line-height: 0px; mso-line-height-rule: e=
+xactly; background-color: transparent;"></p></td> <![endif]-->
+<div style=3D"clear:both"></div>
+</div>
+</div><!--[if gte mso 9]> <td style=3D"padding: 0px; width:10px; background=
+-color: rgba(0, 0, 0, 0);" width=3D"10"></td></tr></table></td></tr> <tr st=
+yle=3D"padding: 0px;mso-line-height-rule: exactly;line-height: 1px;" height=
+=3D"10"><td>&nbsp;</td></tr></table> <![endif]-->
+</div><a href=3D"https://4fb516e0ad974eb7b7d929125dbdc1ff.svc.dynamics.com/=
+t/t/qjpTIwXx5T7y4SaFmevSINeTQtvDip5EtocXPqlbWowx/pfY8PiHQTJciK5t1CDVF6FyYB2=
+XS3amjm2aBxRdbytgx"></a><img src=3D"https://4fb516e0ad974eb7b7d929125dbdc1f=
+f.svc.dynamics.com/t/i/rkf0MThl4w1hk3pyFGFjR04nmxKdVcWbLdVxIJxFgU4x/pfY8PiH=
+QTJciK5t1CDVF6FyYB2XS3amjm2aBxRdbytgx" width=3D"0" height=3D"0"/></body></h=
+tml>=
+
+--=-aVo1ranksYKdJ0HWFgCLfg==--

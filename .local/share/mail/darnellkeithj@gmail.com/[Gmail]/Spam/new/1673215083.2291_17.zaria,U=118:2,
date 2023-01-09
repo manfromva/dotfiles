@@ -1,0 +1,221 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2453324mdb;
+        Sun, 8 Jan 2023 08:36:48 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtpoEkUv0pmLmsJCMWQ9UxIvm1s3uxtDToAMgF0iC/Jv63411ORdry0RZgUYhGitlwtvN9l
+X-Received: by 2002:a05:6a20:2d0d:b0:a3:f233:c35 with SMTP id g13-20020a056a202d0d00b000a3f2330c35mr79931746pzl.52.1673195808671;
+        Sun, 08 Jan 2023 08:36:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673195808; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ecrsWPJWQMzE/+ubhU4tgePDFt8Wlm+VKOD17JZNjkLrhj4yGC49otNayS6m6mp2a1
+         ed+m8M4SD5NjVlA1leasqCjbeJCAFV8TJPipn6omd+8SPtkrfffJxrLqVrNFvUHizgcS
+         M0ylCCnu4dfmJEXx/JRVxpHzVZmHs/NIn5mX9vJIzgFGHZihg2767NqBSUiR7XbXNcrl
+         110n8k5LlK0V71AoCXwL25+wId2dKyl3py5kL0A9ZM80Oundkh4RoG0VPmdJHV5NqHbG
+         i0KTIQkzQK1sRShaRoASAgyb/xn+XK4yki2zJTgcWgeJYX9ZaDfDIhtje2qka9sITG7x
+         DPRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:feedback-id
+         :mime-version:subject:reply-to:to:from:date:dkim-signature
+         :dkim-signature;
+        bh=RVrGdO/q8sPpptRuY0jAX1HcTmUYYHhZxOfDYuMswn0=;
+        b=h7smTmfePjvANsgxJRNBON+sL9OtiPEAtcKh6P9gZbAG3fbRsSH8opmv/iAyheQc+e
+         NHFJ+d6X2IWQ2PXiTp9rOfKCqAw8s37iTAG+VNP1WJGZhq9ilOc4G633/k8MZTsyfp5h
+         8T5neuv2OIHFhe5SW/wa4AwLk6IL+EeXas7jbIBwnNiP6VLIDgmZFbJgtyQGNDnQSCP1
+         0TUXmA3l2il20fYykD9sgMkiWB6WyoxWuE63fGddZxhasNk7RRAnv2s0pm1dxtcH36g6
+         p7jT5sQ6gEkGPOJWR6WsKHbI9y+HAIcvodVuTmFfcVG+kx5kuVDTPZowI1VJOldbjoPk
+         W96Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ontramail.com header.s=default header.b=qXuc1H99;
+       dkim=pass header.i=@ontramail.com header.s=default header.b=dYQxRGJE;
+       spf=pass (google.com: domain of 7861@ontramail.com designates 209.237.239.49 as permitted sender) smtp.mailfrom=7861@ontramail.com
+Return-Path: <7861@ontramail.com>
+Received: from mail41.ontramail.com (mail41.ontramail.com. [209.237.239.49])
+        by mx.google.com with ESMTPS id h8-20020a17090acf0800b00226812679e2si6962537pju.105.2023.01.08.08.36.48
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Jan 2023 08:36:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of 7861@ontramail.com designates 209.237.239.49 as permitted sender) client-ip=209.237.239.49;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ontramail.com header.s=default header.b=qXuc1H99;
+       dkim=pass header.i=@ontramail.com header.s=default header.b=dYQxRGJE;
+       spf=pass (google.com: domain of 7861@ontramail.com designates 209.237.239.49 as permitted sender) smtp.mailfrom=7861@ontramail.com
+DKIM-Signature: a=rsa-sha256; bh=RVrGdO/q8sPpptRuY0jAX1HcTmUYYHhZxOfDYuMswn0=;
+ c=relaxed/relaxed; d=ontramail.com;
+ h=X-Mailer-Info:Received:DKIM-Signature:Date:From:To:Reply-to:Subject:X-virtual-MTA:X-intended-MTA:X-Mailer:MIME-Version:Content-Type:Feedback-ID:List-Unsubscribe:List-Unsubscribe-Post:X-AAID/CID:X-MRID:X-OP-DA:X-OP-LA:X-OP-MARKETING:X-OP-QID:X-OP-QT:X-unsubscriber-link:Message-ID;
+ s=default; t=1673195808; v=1;
+ b=qXuc1H992nnzZcoct3UMs+7Uvi0Nq5E7gPBB1dvOZqGEdJ7YqHpkONW87bHB8SnQicu4ZIa8
+ y0lH/a2Gl55pFiIwsie4JNpKhxvMDFgyzmjgD1r+oRBkjWBdw5DtDgnzgyo83RJWR3Uf7kWseff
+ WYlL1IlvT8BLyrkg471/PKhk=
+X-Mailer-Info: 3.Qaz9WY.wVnYsl2Yf12Yfl2cv9VYyMDMxADO.QWYy5WZsx2allGdopGQn1WYpxmLj9Wb.w4yN4YTMuEjNzIDN0YjLxYjM1czM2ITM14SMzkzN54yM2IjLzUDM7EjN0ATOwYjM0EzOxYDNwkDM2IDNwsTM2czMxkTN4AzM7EDNwUzM2ATOxAjL1kTN4EDNxsTM
+Received: from unknown (HELO mail002.production2.lan) (209.170.211.177)
+  by ul7.ontraport.com with SMTP; 8 Jan 2023 16:36:48 -0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=ontramail.com;
+ h=Date:From:To:Reply-to:Subject:MIME-Version:Content-Type:Feedback-ID:List-Unsubscribe;
+ bh=bJfVrXd47O0eBTxXRkXnyPL+Rps=;
+ b=dYQxRGJEvvPzD2aSCH3OMAKKEXL0oJ70KEEvXBNRcCfVE7bgw9BFhBtadSiIfv9vRFu4R8/UnIZq
+   NdtjE29XxpbLkjwtYRRrqChFWi4O8/KDIndnTwlIjjcYocIZltHGJxWLoonRB/5ZRK0WCsSa16JB
+   NvRkkne8wOrINfQQAhA=
+Date: Sun, 8 Jan 2023 08:36:43 -0800
+From: "Anthony Morrison" <anthony@morrisonpublishing.com>
+To: darnellkeithj@gmail.com
+Reply-to: anthony@morrisonpublishing.com
+Subject: I'm looking for partners...
+X-virtual-MTA: PUBLIC_MC_ISO_A
+X-intended-MTA: PUBLIC_MC_ISO_A
+X-Mailer:Moonray Mailer [version 0.2]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_5979b890d8552f28045ef0d9529f998b"
+Feedback-ID: af.7861:mf.13979.7861:sf.0.7861:ONTRA7861
+List-Unsubscribe: <mailto:listunsubscribe+7861@ontraport.com>,<https://amviplink.ontraport.net/u/Nzg2MS8wLzE2MzI0NDYvMzYyLzEzOTc5LzM1MC9lNTU0ODllZmIyMzY0Y2E0MGYxNGMyMTk3MTRlYzgxYy8xNjI1NzM2MjE1?a=unsub&oneclick=1>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-AAID/CID: 0/7861
+X-MRID: 0.7861.1632446.1625736215.13979.362.350
+X-OP-DA: 1640906240
+X-OP-LA: 1640906241
+X-OP-MARKETING: 1
+X-OP-QID: 1405360910.5958141
+X-OP-QT: 1673195803
+X-unsubscriber-link: <https://amviplink.ontraport.net/u/Nzg2MS8wLzE2MzI0NDYvMzYyLzEzOTc5LzM1MC9lNTU0ODllZmIyMzY0Y2E0MGYxNGMyMTk3MTRlYzgxYy8xNjI1NzM2MjE1?a=unsub&oneclick=1>
+Message-ID: <0.0.1.17B.1D9237F64296634.0@mail002.production2.lan>
+X-TUID: t4tq7TsHzFNY
+
+--b1_5979b890d8552f28045ef0d9529f998b
+Content-Type: text/plain; charset = "UTF-8"
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+
+
+If you wish to stop receiving our emails or change your subscription opt=
+ions, please visit this link:
+https://amviplink.ontraport.net/u/Nzg2MS8wLzE2MzI0NDYvMzYyLzEzOTc5LzM1MC=
+9lNTU0ODllZmIyMzY0Y2E0MGYxNGMyMTk3MTRlYzgxYy8xNjI1NzM2MjE1
+
+Morrison Publishing, LLC, 965 Hwy 51n Ste 4-100, madison, MS 39110, US
+
+--b1_5979b890d8552f28045ef0d9529f998b
+Content-Type: text/html; charset = "UTF-8"
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://w=
+ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"=
+>
+
+</head>
+<body>
+<p><span class=3D"large-body-text">Hey,<br />
+<br />
+As you&#39;ve heard me say many times...<br />
+<br />
+Getting results online is SIMPLE but not<br />
+EASY.<br />
+<br />
+<strong>Why is that?</strong><br />
+<br />
+Well for one, most of what I do makes<br />
+sense conceptually, but can be difficult to<br />
+pull off in the real world<br />
+<br />
+...there are just so many moving parts.<br />
+<br />
+It can also be very EXPENSIVE and<br />
+time-consuming to test things out and see<br />
+what works.&nbsp;<br />
+<br />
+And &#39;testing&#39; also requires a ton of<br />
+TRAFFIC (at least&nbsp;if you want to do it right.)<br />
+<br />
+So for the last 6 months I&#39;ve created a<br />
+platform that will teach&nbsp;you how to&nbsp;<br />
+leverage the work I&#39;ve already done.<br />
+<br />
+I know this sounds hard to believe, but<br />
+you&#39;ll understand once you&#39;ve seen&nbsp;<br />
+everything outlined here in this webinar.<br />
+<br />
+<a href=3D"https://amviplink.ontraport.net/c/s/ss9/6g6wSI/6/Red/jX1g/6cd=
+81U/sjgNOMAT1U/P/P/vZJ">Join the live training now (starting soon)</a><b=
+r />
+<br />
+Now you haven&#39;t really heard a lot from<br />
+me about this because I&nbsp;ONLY accept&nbsp;<br />
+a select amount of new&nbsp;&#39;Ambassadors&#39;&nbsp;<br />
+every month.<br />
+<br />
+To make a long story short, I want to<br />
+extend this invitation to you to partner with<br />
+me so we can build YOUR business together.</span><img height=3D'1' width=
+=3D'1' src=3D'http://amviplink.ontraport.net/o?ih=3DUX_UR_s_ss9_vZJ_6g6w=
+SI_jX1g_6cd8R1_6JZwJnQxBK_P_P' alt=3D"" /><br />
+<br />
+<span class=3D"large-body-text">This opportunity WILL NOT be available<b=
+r />
+much&nbsp;longer&nbsp;so if you&#39;re interested in<br />
+learning more<br />
+<br />
+<a href=3D"https://amviplink.ontraport.net/c/s/ss9/6g6wSI/s/Red/jX1g/6cd=
+81U/slm27EwHvk/P/P/vZJ">Register and claim your spot ASAP.</a></span><br=
+ />
+<br />
+<span class=3D"large-body-text">See you on the call!</span><br />
+<br />
+<span class=3D"large-body-text">Anthony Morrison<br />
+#nevergiveup</span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p><br /><center><div class=3D'body-text' style=3D'padding-top=
+:10px;'>If you wish to stop receiving our emails or change your subscrip=
+tion options, please <a style=3D'' href=3D'https://amviplink.ontraport.n=
+et/u/Nzg2MS8wLzE2MzI0NDYvMzYyLzEzOTc5LzM1MC9lNTU0ODllZmIyMzY0Y2E0MGYxNGM=
+yMTk3MTRlYzgxYy8xNjI1NzM2MjE1'>Manage Your Subscription</a><br/>Morrison=
+ Publishing, LLC, 965 Hwy 51n Ste 4-100, madison, MS 39110, US</div></ce=
+nter>
+</body>
+</html>
+
+--b1_5979b890d8552f28045ef0d9529f998b--

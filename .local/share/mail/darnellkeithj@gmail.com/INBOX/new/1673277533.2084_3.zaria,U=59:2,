@@ -1,0 +1,271 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2895022mdb;
+        Mon, 9 Jan 2023 03:05:35 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvmpxngtGSt3PTzhkMmpt/mlyzG4ne5wJfKjURxOv1OhxdCa0BkvCtitK7P0yTGDFHZXRW3
+X-Received: by 2002:a25:38f:0:b0:79f:2dea:504d with SMTP id 137-20020a25038f000000b0079f2dea504dmr25450587ybd.34.1673262335825;
+        Mon, 09 Jan 2023 03:05:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673262335; cv=none;
+        d=google.com; s=arc-20160816;
+        b=eWhiCiCYucSlBoM2wjDaQ3eX1gvjY1SxUMRwW0m781mlp79E5zaRHYyAD+NLKUOqk2
+         g/tfLaPXX2fIt3LaRAK2NpnEmv23phxfLHkR+qr4ePYhUugq4QGciXaV9sfyDoFpsAoO
+         8aE1dM9Rr+hfMDKo8vo/wDWrwvPkzKm30UTlreMtiWk9NzgOMU+ZCS03Aqas+v5XAfXh
+         k5ai4g09UVu+2eyouHAE5hkJZNiWgRrbOn1MGbvQrQKKB+LS8YrMknWR5qodbeV9ipRa
+         uFG7lWimQ9aSpVKvnbJZUCPST13YRcZ5PvzMslr9Jbj6VVAwwewxh40zdXFKeG7WNT82
+         HQhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:feedback-id:precedence:list-unsubscribe:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=HgaXGFIoIC2zqfvs7jmYIRvqG8tT/kJg3kSilZ3pnlk=;
+        b=dQgs0HqKwFOubtzftyC9NbbmvGVD57C6UqPj7HMS12hvO9C+L6LGFpTUiVxOs2YPZD
+         w+v62CuhU+tk24ECpH3dXNafqRc9j7kY2n+Sj5JhNuPxHZOxB0QAld4KD/7dOviSuQuO
+         YMyPqAFoMtPRDSLmERgXQ+wqY61ORPUNaJbbkDxWntBzODxSjcM3oJrjglyspyJSkMBc
+         NhA8yIHXSLEU5MMlP1DN8ssEVCmBSBAg6edmBARlPEnMF8NsuHJt7kiKZrJQAS3Fn84y
+         L2KS9R9rfIAJqX33oK9QnWHTeku0EdQuf1vSshRGo0OLW36aZowTDnz1KWTn/NKEpXMb
+         gAWw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@n.convertkit.com header.s=s1 header.b=S+nzPryx;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rNPOLebm;
+       spf=pass (google.com: domain of bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com designates 168.245.5.113 as permitted sender) smtp.mailfrom="bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com"
+Return-Path: <bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com>
+Received: from o20.ck.n.convertkit.com (o20.ck.n.convertkit.com. [168.245.5.113])
+        by mx.google.com with ESMTPS id h206-20020a2521d7000000b007b553c7e98fsi8607998ybh.58.2023.01.09.03.05.35
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Jan 2023 03:05:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com designates 168.245.5.113 as permitted sender) client-ip=168.245.5.113;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@n.convertkit.com header.s=s1 header.b=S+nzPryx;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rNPOLebm;
+       spf=pass (google.com: domain of bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com designates 168.245.5.113 as permitted sender) smtp.mailfrom="bounces+19127393-b62e-darnellkeithj=gmail.com@mail.n.convertkit.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=n.convertkit.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=s1; bh=HgaXGFIoIC2zqfvs7jmYIRvqG8tT/kJg3kSilZ3pnlk=;
+	b=S+nzPryx5u3CaTWYFXxl7i64JuHuDuX865+HpWN8HZSOLEVG5ESCn6/TOLsxNRBuISBV
+	E0D7jTu70KUaV6hWouGj5vBIIsPAwUiV9acw107YwXJ17qvPiNiaYKcOHmwjZUpLQK8jzc
+	rn5q7K0c2awZ9PyAK/PsU8BcFl3Vc7/+kYmPo6L6A2NkW951k8I1kXhcnAOvega2Mnf1Pr
+	o/fMo/IhUejjlmT87AeRrj2lUxU1CsjK3VZ9MoNDSjBEJu0U5sGH53BNTA1E+5Xopt92BK
+	a5K63wpdgQG52bkmHk/IEq721V+ngLrL23GRZD/W6+9MEbC1nauM1MbOfHiRkcwQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=HgaXGFIoIC2zqfvs7jmYIRvqG8tT/kJg3kSilZ3pnlk=;
+	b=rNPOLebm71dY5n7nw7TpGMohh/x/LEk/ReGoYBRvVWFzIhnbVGZufzkPsksiiwxqdzQl
+	zqNd+KoPR0N0FO2Iua3//GaBYEbGFDv1rztAPaY9tpYOoW2M/bfQ9EnqWklNtC9a00/8cf
+	xvsM19wvF4Gb8XXXTVVJqvTc4MUwPkr8w=
+Received: by filterdrecv-7b586f6447-sxvck with SMTP id filterdrecv-7b586f6447-sxvck-1-63BBF4FE-98
+        2023-01-09 11:05:34.983220051 +0000 UTC m=+4535920.789620379
+Received: from MTkxMjczOTM (unknown)
+	by geopod-ismtpd-1-5 (SG) with HTTP
+	id ZvAS5rN9Qty3x-sB-zb4yg
+	Mon, 09 Jan 2023 11:05:34.938 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=de4d5f34ff1ca22bc37c70f09fd586cd9084c5a5dd3ae850c388c17cef27
+Date: Mon, 09 Jan 2023 11:05:35 +0000 (UTC)
+From: Mike Vestil <info@passion2profits.co>
+Mime-Version: 1.0
+Message-ID: <lmu04ggemkimh0zwwwxi6@convertkit-mail2.com>
+Subject: New Traffic Software (unfair advantage)
+List-Unsubscribe: 
+ <https://unsubscribe.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6>
+X-Report-Spam: <abuse@convertkit.com>
+X-Report-Abuse: <abuse@convertkit.com>
+Precedence: bulk
+Feedback-ID: 9794612:489163:broadcast:CK
+X-Feedback-ID: 19127393:SG
+X-SG-EID: 
+ =?us-ascii?Q?gQkno2vIGpTbi=2FX3IyC+Ki1djmnCs1CnjbxTlZJNeAB9aN0R3T60TYG6mxUr17?=
+ =?us-ascii?Q?ZAqOC2mRlKe5431QiscPwejxv4yFrYbhwHm6RI2?=
+ =?us-ascii?Q?F65iIc1bcvvyyv0w7svHG=2FQ9pwgTbEKwslJq1IH?=
+ =?us-ascii?Q?XkkSdWc0q7reZm=2FR=2FWh1aK7JJEzDXZ5ujSSWArj?=
+ =?us-ascii?Q?+ZUoW4p8Hkeb5tTilUfOAflvXjJQhO4pP0y2KOg?=
+ =?us-ascii?Q?4ZuHksbTD8CeN79p=2FqV+72=2FAcyBhpkjVMyY+HN?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJHjDFAea1uZocvZojyqe?=
+ =?us-ascii?Q?ADp0acoRMWz=2FLnVSW2cRXy2ifwIaXgzmcV76MOm?=
+ =?us-ascii?Q?5q5J4Y3Q19NJCHY4ZXUOOEwC1kYpFMZzhJ0se7q?=
+ =?us-ascii?Q?AFF1VqXIKlbqpz8lFLCleJBfDxzE3cGG1cnrykU?=
+ =?us-ascii?Q?alzYyFQOQj4ChxBmsOQi4OTVf5C46mTHZJjpEVI?=
+ =?us-ascii?Q?ZaKy4Iubb3qeBbsN56B=2FjA2FbboE4TRas6lQ2tf?=
+ =?us-ascii?Q?i3+BnRyoF3it4DLJgPODGbdgR7oCM4CE16tMN1E?=
+ =?us-ascii?Q?6=2F6zH169mWEG+evDGvya7eVGeAem0nIz6hBl8eG?=
+ =?us-ascii?Q?yojQKjg8hyJraCkDYZfyK4uHbPQ33JqjaoO6hDw?=
+ =?us-ascii?Q?PZ5L5Z0vuk?=
+To: Darnell <darnellkeithj@gmail.com>
+X-Entity-ID: CKdAuO5mptLiwvIa81s+Xw==
+X-TUID: Yni8f4Rvqyd8
+
+--de4d5f34ff1ca22bc37c70f09fd586cd9084c5a5dd3ae850c388c17cef27
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Hi, Mike Vestil here!
+
+As many of you are well aware, Mark Ling has been testing Aidan=E2=80=99s
+method for commissions without sales, and have been making just
+over 1k a week in profit (and growing).
+
+But what you don=E2=80=99t know is he has also been developing and using
+some secret AI enhanced software tools=E2=80=A6
+
+=E2=80=A6These tools are helping him drive traffic more easily and faster
+with his method.
+
+Go check this out now:
+
+=3D=3D> Mark's Traffic Software (Secret Advantage) (
+https://click.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6/48hvheh03zedwzfx/a=
+HR0cHM6Ly93d3cuYWZmaWxvcmFtYS5jb20vcmVkaXJlY3QvN2ZpZ3dzMjMtd2VidG9tLW12
+)=E2=80=8B
+
+In the page above you=E2=80=99ll find out how to get your hands on this
+software=E2=80=A6
+
+And you=E2=80=99ll see a bit more about =E2=80=98how=E2=80=99 the traffic i=
+s driven using
+Aidan=E2=80=99s method, and why this turbo charges your potential profits
+from the system.
+
+ALSO=E2=80=A6 Tomorrow, Aidan and Mark are running the 7 Figure Workshop.
+
+Registrations are filling up fast, do not miss this:
+
+=3D> [Register here] 7 Figure Workshop (
+https://click.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6/48hvheh03zedwzfx/a=
+HR0cHM6Ly93d3cuYWZmaWxvcmFtYS5jb20vcmVkaXJlY3QvN2ZpZ3dzMjMtd2VidG9tLW12
+)=E2=80=8B
+
+Here you=E2=80=99ll see Aidan demonstrate on screen exactly how he is
+making over 10k per day with his method (without sales), and how
+to replicate that.
+
+Plus Mark will be making a big announcement on the call (don=E2=80=99t
+miss out on that).
+
+Talk soon.
+
+Mike V
+
+=E2=80=8BUnsubscribe (
+https://unsubscribe.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6 )
+| Update your profile (
+https://preferences.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6 )
+| 1309 Coffeen Ave, Sheridan, WY 82801
+
+=E2=80=8B
+
+(
+https://click.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6/wnh2hghrd9p2m5a7/a=
+HR0cHM6Ly9jb252ZXJ0a2l0LmNvbS9mZWF0dXJlcy9lbWFpbC1tYXJrZXRpbmc_bG1yZWY9UmtC=
+V2dBJnV0bV9jYW1wYWlnbj1wb3dlcmVkYnkmdXRtX2NvbnRlbnQ9ZW1haWwmdXRtX21lZGl1bT1=
+yZWZlcnJhbCZ1dG1fc291cmNlPWR5bmFtaWM=3D
+)
+--de4d5f34ff1ca22bc37c70f09fd586cd9084c5a5dd3ae850c388c17cef27
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF=
+-8"></head>
+<body style=3D"margin:0;padding:0;-webkit-font-smoothing:antialiased;-ms-te=
+xt-size-adjust:100%;-webkit-text-size-adjust:100%">
+<div class=3D"email">
+<div class=3D"spaced-contents">
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Hi, Mike Vesti=
+l here!</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">As many of you=
+ are well aware, Mark Ling has been testing Aidan=E2=80=99s method for comm=
+issions without sales, and have been making just over 1k a week in profit (=
+and growing).</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">But what you d=
+on=E2=80=99t know is he has also been developing and using some secret AI e=
+nhanced software tools=E2=80=A6</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">=E2=80=A6These=
+ tools are helping him drive traffic more easily and faster with his method=
+.</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Go check this =
+out now:</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px"><strong>=3D=3D=
+&gt; </strong><a href=3D"https://click.convertkit-mail2.com/lmu04ggemkimh0z=
+wwwxi6/48hvheh03zedwzfx/aHR0cHM6Ly93d3cuYWZmaWxvcmFtYS5jb20vcmVkaXJlY3QvN2Z=
+pZ3dzMjMtd2VidG9tLW12" target=3D"_blank" rel=3D"noopener noreferrer" style=
+=3D"color:#0875c1" url-id=3D"1513144248"><strong>Mark's Traffic Software (S=
+ecret Advantage)</strong></a><strong>=E2=80=8B</strong></p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">In the page ab=
+ove you=E2=80=99ll find out how to get your hands on this software=E2=80=A6=
+</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">And you=E2=80=
+=99ll see a bit more about =E2=80=98how=E2=80=99 the traffic is driven usin=
+g Aidan=E2=80=99s method, and why this turbo charges your potential profits=
+ from the system.</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">ALSO=E2=80=A6 =
+Tomorrow, Aidan and Mark are running the 7 Figure Workshop.</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Registrations =
+are filling up fast, do not miss this:</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px"><strong>=3D&gt=
+; </strong><a href=3D"https://click.convertkit-mail2.com/lmu04ggemkimh0zwww=
+xi6/48hvheh03zedwzfx/aHR0cHM6Ly93d3cuYWZmaWxvcmFtYS5jb20vcmVkaXJlY3QvN2ZpZ3=
+dzMjMtd2VidG9tLW12" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"=
+color:#0875c1" url-id=3D"1513144248"><strong>[Register here] 7 Figure Works=
+hop</strong></a><strong>=E2=80=8B</strong></p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Here you=E2=80=
+=99ll see Aidan demonstrate on screen exactly how he is making over 10k per=
+ day with his method (without sales), and how to replicate that.</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Plus Mark will=
+ be making a big announcement on the call (don=E2=80=99t miss out on that).=
+ </p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Talk soon.</p>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">Mike V</p>
+</div>
+<div class=3D"email-footer">
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px;text-align:left=
+">=E2=80=8B<a href=3D"https://unsubscribe.convertkit-mail2.com/lmu04ggemkim=
+h0zwwwxi6" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"color:#08=
+75c1"><span style=3D"font-size:12">Unsubscribe</span></a><span style=3D"fon=
+t-size:12"> | </span><a href=3D"https://preferences.convertkit-mail2.com/lm=
+u04ggemkimh0zwwwxi6" target=3D"_blank" rel=3D"noopener noreferrer" style=3D=
+"color:#0875c1"><span style=3D"font-size:12">Update your profile</span></a>=
+<span style=3D"font-size:12"> | 1309 Coffeen Ave, Sheridan, WY 82801</span>=
+</p>
+<div></div>
+<p style=3D"margin-top:0;margin-bottom:6px;font-family:Times New Roman;colo=
+r:#000000;font-size:16px;line-height:1.4;margin-bottom:20px">=E2=80=8B</p>
+</div>
+<div class=3D"built-with" style=3D"display:block;text-align:left;margin-top=
+:30px"><a href=3D"https://click.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6/=
+wnh2hghrd9p2m5a7/aHR0cHM6Ly9jb252ZXJ0a2l0LmNvbS9mZWF0dXJlcy9lbWFpbC1tYXJrZX=
+Rpbmc_bG1yZWY9UmtCV2dBJnV0bV9jYW1wYWlnbj1wb3dlcmVkYnkmdXRtX2NvbnRlbnQ9ZW1ha=
+WwmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fc291cmNlPWR5bmFtaWM=3D" target=3D"_blank=
+" rel=3D"noopener" style=3D"color:#0875c1;display:inline-block;text-decorat=
+ion:none" url-id=3D"1513144249"><img src=3D"https://cdn.convertkit.com/asse=
+ts/light-built-with-badge.png" alt=3D"Built with ConvertKit" style=3D"displ=
+ay:block;height:auto;line-height:100%;outline:none;-webkit-text-decoration:=
+none;text-decoration:none;border:0 none;width:190px;height:36px" width=3D"1=
+90" height=3D"36"></a></div>
+</div>
+<!-- -->
+<img src=3D"https://open.convertkit-mail2.com/lmu04ggemkimh0zwwwxi6" alt=3D=
+"" style=3D"border:0 none;display:block;height:auto;line-height:100%;outlin=
+e:none;-webkit-text-decoration:none;text-decoration:none">
+</body>
+</html>
+
+--de4d5f34ff1ca22bc37c70f09fd586cd9084c5a5dd3ae850c388c17cef27--

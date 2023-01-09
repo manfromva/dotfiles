@@ -1,0 +1,1486 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp3024543mdb;
+        Mon, 9 Jan 2023 06:30:57 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvfpO8SPGHKngAGSVD/+3yUhYDMeQFwii6vbZYJJSgrwEQ2QpEV1wuN3G27LN2Kg1+9FgNO
+X-Received: by 2002:a5b:2ca:0:b0:760:6a3e:d0d6 with SMTP id h10-20020a5b02ca000000b007606a3ed0d6mr54788471ybp.46.1673274657414;
+        Mon, 09 Jan 2023 06:30:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673274657; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AniSy9qTvGvZVg/RPK1Nir38xP7NlHOgJc8rnjG76amSEw1pl6vpfomgbTpFeApOHM
+         W4ZA9fphe9ZK9dCrlkRTp55o6tCX4tkbc6mxw6Dfx8BQxi5WFd4AI6GQ9Pah21gbbY+0
+         8m8EXiIsvRzS5PeUFaH+2YUepdqOJTePu2OZf+Dwnj12YvcetlEPuQZ8xZ3ieI0OH40+
+         ZRM6JFZc//+3lusUNUZ9bnF12AMaUkz/fEfx/uY6q9rTj49NXg0NjSRFb8uKRFl9FXBG
+         qJulg9RQVJ85ORB3EEYBmrLmz2KPqkaHEub02XHNWRAO3DLmEnwYZUY+PLH/RZSO8Fc0
+         1Etg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=7sm4dU4VOgcvjAbQSvX70Si7kO4WL30tr2n1SudjZew=;
+        b=CcVi41vnVkGCnBQ8gnWgJrwDnRoZ6yxXkGh6tj5V2WRlwSCuPZ53NgFz3AHIhYT99z
+         11lXIljHSaWYOotM+UssUthOMuasJr6jKkBrfSxQOQ/e/qQPyLnCG2pC1K2nxXzog7JW
+         7cgUAhiYO8qck7GklEDNMKoiDLBfxTiWLvOJl81k5jy77na0kvyocutmUu8nMX+/l4HP
+         ugDmIe7chntPp1TDHrl9uKcbInhB/OnxtTwHRsgDrwxrTwzsv0wgJ9rIRgZ0ZDG2QDYS
+         zSSTDhpBOr8UzpxR8YDDrSnbclCf5xoOD40KZCur8fgCIbQZjWpgb5BEqKG29nWaVUxf
+         T8hg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notifications.acorns.com header.s=s1 header.b=p89kFrmj;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=vyLNu53c;
+       spf=pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) smtp.mailfrom="bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=acorns.com
+Return-Path: <bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com>
+Received: from xtrwstvn.outbound-mail.sendgrid.net (xtrwstvn.outbound-mail.sendgrid.net. [167.89.103.130])
+        by mx.google.com with ESMTPS id p11-20020a056902114b00b00702359563aesi12155118ybu.225.2023.01.09.06.30.57
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Jan 2023 06:30:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) client-ip=167.89.103.130;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notifications.acorns.com header.s=s1 header.b=p89kFrmj;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=vyLNu53c;
+       spf=pass (google.com: domain of bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com designates 167.89.103.130 as permitted sender) smtp.mailfrom="bounces+5051980-1a51-darnellkeithj=gmail.com@mail.notifications.acorns.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=acorns.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=notifications.acorns.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=7sm4dU4VOgcvjAbQSvX70Si7kO4WL30tr2n1SudjZew=;
+	b=p89kFrmjMxMHOsnGBCXII+7mcv6zVMtWgXOXoqB+uir/ZILlMPwaNrZ4z7CUEC8kJW1c
+	XASPqLMB1l76WWIBwBPSJ9+8D9jrkiA8hz4AGpPPXBPAfWdS1ZDmCH/JsKTXoFQWh73dqd
+	oVP/ZjcNf09FAai5qh782NDToZMe/7Ft54c92S7/4PMb7hQ5RLX2M14m74g9YEfmFG1Fuf
+	pCBA7/U7haf1Njhl4KVS9hJPhPzFCwQ9fg1d7vEREmSOt7UM8Otb8T18G/XxKfJ03Anhim
+	c//UcdwGpzAKR0hyj5lYhtS+x2CyJCGNdTmlpSCW4FwKcNgQG+ivyWzfpKLadmxA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=7sm4dU4VOgcvjAbQSvX70Si7kO4WL30tr2n1SudjZew=;
+	b=vyLNu53cEcSK2svMh+FeQmUguU8foNp4ngfoo0gMsfc2tjLosmD2Ee1rhWxTExgrHfBL
+	L2rDGCh9TMw0rKnmGjdp4YNfKMT+9NlzCiGmjgdog7DxXACBhMjlP+FIjb9q+jdS9LYpUb
+	39eGeoubB/tho0/+T4+RfPbKF9Cr3AadQ=
+Received: by filterdrecv-7d745f857d-5x68j with SMTP id filterdrecv-7d745f857d-5x68j-1-63BC2520-72
+        2023-01-09 14:30:56.421900199 +0000 UTC m=+4548245.217590529
+Received: from NTA1MTk4MA (unknown)
+	by geopod-ismtpd-1-0 (SG) with HTTP
+	id s05NxR79ROqXnECyQn3iXg
+	Mon, 09 Jan 2023 14:30:56.394 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=28a89a15b0d954252f66c7277e6498b67906b68175aaf0c7026460c9f948
+Date: Mon, 09 Jan 2023 14:30:56 +0000 (UTC)
+From: Acorns <info@notifications.acorns.com>
+Mime-Version: 1.0
+Message-ID: <s05NxR79ROqXnECyQn3iXg@geopod-ismtpd-1-0>
+Subject: Looking forward in 2023
+Reply-To: no-reply@mail.acorns.com
+X-Feedback-ID: 5051980:SG
+X-SG-EID: 
+ =?us-ascii?Q?9oXogazVxENkbbkpA84kFcrcCCXQxEzOfkQhAEk4TNBv5MIiJPv1xwR6Bb5=2FQz?=
+ =?us-ascii?Q?vstnMWcF8ercJ8MPMbJPXH1BxRTY+AQmYOXLjiP?=
+ =?us-ascii?Q?uwB7DGskTp1ATalCD9Ev99=2F4pzuq5OlKbdwMJ48?=
+ =?us-ascii?Q?8mLklf4zNf+X8aehrqcqZXX4Pfj+ducAadmLoUj?=
+ =?us-ascii?Q?rgTBNzuutUrX=2FzPtssZrn8Sto+IHwG0lT0CtRV7?=
+ =?us-ascii?Q?jomrmUgiv4xt4BuKT=2F3x=2FzAKOVf7afmuozdavY?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChffV4+ta1IJzRsf64o4JrGaNIdvSzUYSrdq5ga?=
+ =?us-ascii?Q?+tnSCA=2FqZ5SQJsEh3Yxo+tzc0iJbGuXAAUSIRNW?=
+ =?us-ascii?Q?GMq+HDa0nRBft17J=2FT6BQtlRHkTrqv37mzQaAic?=
+ =?us-ascii?Q?jKCO=2FeNbM=2FQFkhZQrt4ZXYkPMcuHIp7en9rxaSy?=
+ =?us-ascii?Q?mz+sFepiUfCsZ4ArLuPzIj3szoKsopafIrTq5M+?=
+ =?us-ascii?Q?Qv8pvxHJ1FHwPHja2zuz22BJ+yqM18iljOfBtg4?=
+ =?us-ascii?Q?irYOs=2F2nDUuJcBliCwG1lfs05mZ5RrAh0K6itrB?=
+ =?us-ascii?Q?DtvNliaO2NoSxzKP37mcll3JTrXB8hnTMceJpfn?=
+ =?us-ascii?Q?FjyHY4i3298V52ZB1LtYB8BA2XrgFpNvEic1HLO?=
+ =?us-ascii?Q?vqmAb+4L8R+vlRCgCJOC4m4tbjKcuZVNHMZ48Sl?=
+ =?us-ascii?Q?ICFPb6WQ3bBYfRMBa+xqrGY0iV=2Fg8xucpV54vkw?= =?us-ascii?Q?=3D?=
+To: darnellkeithj@gmail.com
+X-Entity-ID: nqA0+zgLHg3wHdbEIilxwQ==
+X-TUID: /Re1YabgL4zc
+
+--28a89a15b0d954252f66c7277e6498b67906b68175aaf0c7026460c9f948
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+The markets turned the corner on 2022 last week, after
+encouraging economic data gave investors hope that the Fed will
+slow the pace of future rate hikes.
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcSdf4G-2B-2BO9wEY36uz4W1SjauYMpKoSNuonnCoxykAiR1OCxh_kHUZGGAIbaUxVXIM4tI=
+qucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9K=
+pEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE35=
+7Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2F=
+WZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJ=
+tQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUw=
+F7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2=
+F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZ=
+w4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNH4zpcBQEYLcs-2FLDFcXWJU64nShpV28uE6Gtu-2Fv=
+Ic0JcSjVafOYa3-2F9UENIp-2FiX2F6y-2BhExsTsvaKjZTuC6BbCvuk2-2B4DdTLdEqwrIaY4l=
+KZ8PRcEXlTpzUsRFDlwmchpSrJF4T1bpkTxSnLVM0-2BHeg-3D )              In the Ma=
+rkets
+The markets turned the corner on 2022 last week, after
+encouraging economic data gave investors hope that the Fed will
+slow the pace of future rate hikes. * A combination of solid job
+growth, record-low unemployment, and weak wage inflation fueled
+investors=E2=80=99 optimism.
+* Inflation=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcSdf4G-2B-2BO9wEY36uz4W1SjalnIHSA7RtOpPmnL8aXSz3e3rfSFE2FbWDeASURwzfXmAS=
+8i40t0VHJvHe5uY-2Bw2w-3Dl4av_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLI=
+eztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7t=
+bd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2Fa=
+sdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7=
+N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0U=
+A2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2Ba=
+gwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG=
+-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BH=
+PLFxGNGESGagv4b2i5MkviEisAjOv4HnHzaTpVHYa9-2BhFXjenZ2lzKnp3W8bG0EGyKCorlACc=
+9qW54mqzKXPdc058mPae9MnXSsv6h0hZiEZrUHaXYkxwlfKHNe7WHvu4o148fmXgipQtmAZMCVC=
+V2GFuKio-3D )
+ and interest rates are still hot topics. Previously, the Fed
+had committed to raising rates to between 5.0% and 5.25% by the
+end of 2023.
+What could this mean for investors? Let's dig a little deeper.
+Looking forward in 2023              Last
+year, the markets posted an annual loss for the first time since
+2018, partly because of the Fed=E2=80=99s efforts to cool down inflation.
+
+But remember: market downturns historically don=E2=80=99t last long. *
+Since 1950, the S&P 500 has finished the year higher than it
+started almost 78% of the time!
+Keep your eye on potential silver linings from bonds this year,
+too. * Today, the bond market is offering the highest rate of
+passive income in almost 15 years.
+* If rates go any higher, investors could earn even more from
+bonds in their portfolios.
+By diversifying=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcSdf4G-2B-2BO9wEY36uz4W1SjY2v8MiwhC9i9ZLJah-2FpD7sRJDBFhXzjyWqBLhGGBDmbJ=
+MA-2Fnb0vZGsS3hSruuegMs-3DnPYV_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8T=
+LIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF=
+7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2=
+FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2=
+F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ=
+0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2=
+BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tg=
+PG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2=
+BHPLFxGNOjCVU3GzNiXwMMI-2FH5tJ-2Bst1JBTZBGrslb62LrAmG5wZ2iOhtGfWtSE7rVg7Yju=
+caBqhO53A3jvEdvaoTdz-2Fxmt9vLzKut7XBCs-2B3Yv-2FaMomR20pwmh7zvXC2VVfhvckW3l2=
+hnzxftyRe18oblKh6w-3D )
+ and investing no matter what the market is doing, investors may
+be able to take advantage of these market moments.
+Let=E2=80=99s get started             It=E2=80=99s a new year
+with new opportunities to take control of your financial future.
+
+And while we don=E2=80=99t know what will happen next, history has
+taught us that staying diversified over the long term could help
+you manage volatility and grow your money.
+
+Is investing one of your 2023 resolutions? Let us know your
+money goals for the new year!=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcUiKxoQCuq0mS6b5xBceDUfe4yyQypGmHxg4V053SAETQw39_kHUZGGAIbaUxVXIM4tIqucm=
+yvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJ=
+aQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvx=
+c6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8I=
+YfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh=
+0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3=
+Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qO=
+OtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-=
+2F9u4FkpoHbhVW1VIPs-2BHPLFxGNG50-2FV8arVzKoaJQ4QQCy5FrcBW0EeZ6T4cDA6-2B-2Bx=
+IruQdA59LY6ty-2BwRr-2Bzj-2FDZv1qG64YM3ZqvZIJqeUm2Qh9X3tlzwQac44icHQWvKvhaKK=
+e8BT771AwfPQMD8aWK4PNkNbaHWGTYPjQc-2FlVxino-3D )
+
+Getting started is easy. Acorns will recommend a
+diversified portfolio of ETFs based on your goals and other
+factors.
+
+Make a Recurring Investment!=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FGKx-2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig=
+-3D-3D-lYp_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7=
+EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERG=
+XZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW=
+5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klR=
+tCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72Lt=
+A8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjug=
+ilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Na=
+axm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNDwM5QB4IWtYP=
+Fn51SRN1pf4rY8I-2FBGyUbfLJRpWwzEjBUSaIs-2FfZfLyqAdmDs1Ff2ugYO3vGvoNSfHIdI-2=
+F10VYlGXoKVwaUrDyLkTouq-2Fh8bIZr7i5mMmrhBVWfwgRTSNKcE6oQOxHbtvaOqvHRfFI-3D =
+)
+Market commentary provided by Seth Wunder (Chief Investment
+Officer)
+
+Contributors to this week=E2=80=99s newsletter: Kennedy Reynolds (Chief
+Content & Education Officer), Trevir Nath (Senior Writer), Caelon
+Smith, (Investment Data Analyst), Emily Gadd (Associate Editor),
+and Casey Hollis (Managing Editor).
+
+Instagram=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcaSwdGLdulvKh-2F-2B19yruGFMeNPe4e9P6agS4FhyTa-2Bvwt6tT_kHUZGGAIbaUxVXIM4=
+tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c=
+9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE=
+357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-=
+2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nI=
+TJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOve=
+UwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy=
+-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPv=
+RZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNDchhNWM0CSgqgirD5xeBD06Rv3IW0U3umLzfJrBo=
+Wd8oaFcAZJIRHyb-2BAPwOB0UmrEsZBbGaW16Qg2EmSHxMMDg23cc8f2yKr2Jpts9-2FpodbQdF=
+LnxX3mGttk1KisqyXg3aBXY6oG6v3BIZDcOrmQs-3D )     Sent with love from Acorns
+5300 California Ave. Irvine, CA 92617
+
+This email is a no-reply.
+
+Click here ( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsd=
+a-2Fd0vguHPT6Ccao4XJ-2Bt1tENbZKxundnwCv4IwvAUH5OCbE2WqbAkL59yWlI7c1ktmVXBEV=
+QaBXPauDsoW9kd4p6KN1N7STmMh-2B-2BnJDDE3XM8fw9V7ZO-2BBkxgeyTv7OL7I1f2nlVH9J-=
+2BUWS7KFuBGgTZca7veEbsFrQ4rCJzkm0yHzNsGY9XJKoj3TxKGgZUJN-2F3ZrWoP7phwPXRvfL=
+f-2BhcVUxeZSCu2omcQ6F6ObW3DZQDaZ7JTIMw6cj9mgli7q-2BjZCRJwFL4Cuk9vKOmtWisVs-=
+2BB9HDsApm79gv-2FYWgBdxVxTpAUetAlEokEhRpT2K91n2-2BD2kW2RFY3UYid27O9U-2FvxH-=
+2BKU4aNA4A1EGaDQKQdqgonoXE3sISh4BfwDZMpSour4sfIbmk8KoOG3FPlJgVCF6Zp2Gdo6FG8=
+AttlFWFY4YNwKJzzhbkUsoGSgUQE0hxME4tXIIrzRz-2F8SYL0ZY9JL7ZAF8Xz1-2FK5x-2FOZX=
+JGu2UycEI64xi1BwqWWbejtgqcsDh2RGgbD2Ce5XWPQB1NWj-2BrMfjdQwMS6NPI7td-2FQu7a2=
+-2FENKM9VYnQuzaNVV86PbCJkIDqz9Sa9oQmK7FxcVpz7KiYSc5qR5Ju1pURRxbHr9sUp1axfxe=
+wAQu3Vuw5yXJsxqy4sXrAtHwRzruomARr0iSyIhV4O-2BhB8k0VFFokrAATl2MTFPxT9TQA0fk-=
+2FhrB3LpqSoElLb5-2BTwx-2BU8PJqNlrQ5wM-3DTZ-y_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw=
+0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7=
+DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragK=
+iKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQS=
+XO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0Zbg=
+Ny-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2=
+FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-=
+2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4Fk=
+poHbhVW1VIPs-2BHPLFxGNLkTQtuhBszoCr8GzRNQuAygaUpD8Rd25w0GjaiPGKQNa4RTOYcOvY=
+Zwra544laWsjvkfsbJMXsvkb-2BCsA2bsD-2FdgpHUIl3pI7k0zm19fY1rtS685tjvpq8fJkDYY=
+A7bweDPtqWxN2LHwioFZ7YWOJI-3D ) to manage your
+email preferences or unsubscribe.
+
+Acorns Support
+Have a question? View FAQs or contact our Investor Success team
+from our Support Center ( https://links.notifications.acorns.com/ls/click?u=
+pn=3DOTcLGFsda-2Fd0vguHPT6CccXsFt-2BV3ghFw8zBL-2FYzVEIlMwe663IArKYrZ8Co6che=
+8ish_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC=
+8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0=
+iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2B=
+yq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2B=
+iqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzl=
+ryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXom=
+Dt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YF=
+ogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNJa1kEd-2FwpZ5FMriL=
+SgdeoDgeK5x7qAtkhN-2FyFysaDVuxLTumiRTNlHk9sgUovj0m0WfI7NSfkGrMA1jTUnyMyY5Fn=
+bkZcNh3csosbcHp-2F7DWxb5fNxqIHeVASU1K6dVvjqS7yA1NaEpyLWSn0W1-2FzI-3D ).
+
+View your Monthly Statements by logging in here=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CceH9GBIOlM-2FTcAHl4sXhhP-2FMYvVYuPn8YcVRNpfbdW0SK2xL0LADWTbagsKxVslhxg-3=
+D-3D_j7n_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7Eu=
+eSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZ=
+vsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5b=
+Y-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtC=
+P-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8=
+RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugil=
+LXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naax=
+m8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNL7SMkAUC-2BVWA=
+JkUUPY4DeT2xSWFFHLN3Ve4pwjo-2BZpjalOSRfg3tfx9bOtBSks7vEcv10Ui33QM-2Bn-2BKq-=
+2BIlc00fkMME12HgISgrrhHQuqQGoRnvP5KDr08u-2F9ywvpISFK2i3U8BLFCeMWNpZMquOOI-3=
+D ) and tapping on
+statements.
+
+Important Risk Disclosures
+This information is for informational purposes only and should
+not be considered as investment advice or a recommendation to buy
+or sell any particular security, strategy, or investment product.
+
+No investment strategy and no level of diversification or asset
+allocation can ensure profits or guarantee against losses.
+Investments cannot be made directly in an index. Unmanaged index
+performance does not reflect any fees, expenses, or sales
+charges. Past performance is no guarantee of future results.
+References to bond yields are generalized based on the federal
+funds rate.
+
+Investing involves risk including the loss of principal. Please
+consider, among other important factors, your investment
+objectives, risk tolerance and Acorns=E2=80=99 pricing before investing.
+Investment advisory services offered by Acorns Advisers, LLC
+(Acorns), an SEC-registered investment advisor. Brokerage
+services are provided to clients of Acorns by Acorns Securities,
+LLC, an SEC-registered broker-dealer and member FINRA=20
+( https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHP=
+T6CcbCqRo3jeLHWfvVfvw30ppvKDej0ZlobW3k7vyXc7az9umgm_kHUZGGAIbaUxVXIM4tIqucm=
+yvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJ=
+aQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvx=
+c6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8I=
+YfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh=
+0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3=
+Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qO=
+OtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-=
+2F9u4FkpoHbhVW1VIPs-2BHPLFxGNMSdjMLtMo-2FeYagNr-2Bzp2AC3MDc02cLW2HYgTEd4FpH=
+PXDcN85gFcgWSmiFR85bLyaJkv4YfrhnbRnB288fsRLbHZL4CxJRrOuMBpYVDx8pxRYiQvs0-2F=
+HyMlXZ0ztukA2rOXbj4GMVF7qS4JbFIHg94-3D )/SIPC ( https://links.notifications=
+.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcR4m2DrPOG4gySQKBMnOj6M-3D=
+QVq3_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC=
+8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0=
+iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2B=
+yq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2B=
+iqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzl=
+ryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXom=
+Dt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YF=
+ogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNIR64EZLudfOhaz7pvC=
+aU66NQAQlzfQZA8RqWO9yIBFKZjAvw2hfanasWsKppdtIRSbd72uwLKO95u3xlRSUdeYAO8rQAR=
+qWAnnL3ZlwB839O8IBkjjIdwfH9KUTtyu-2B2gJxNIVyksUa0BstPwNIzRo-3D ).
+
+Acorns, Round-Ups=C2=AE investments, Real-Time Round-Ups=C2=AE
+investments, Invest the Change and the Acorns logo are registered
+trademarks of Acorns Grow Incorporated. All product and company
+names are trademarks=E2=84=A2 or registered=C2=AE trademarks of their
+respective holders. Use of them does not imply any affiliation
+with or endorsement by them. For additional important risks,
+disclosures and information, please visit
+https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6=
+CccXUVJVDe6GhK0mxb8dQARYpZWUrwfDEyvyx0SvWD9VidTm0_kHUZGGAIbaUxVXIM4tIqucmyv=
+Z16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ=
+0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6=
+qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYf=
+nIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0B=
+o0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj=
+0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOt=
+cYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F=
+9u4FkpoHbhVW1VIPs-2BHPLFxGNH1PowMct2xFQbup1xU7RSw0XUTldBPr3Z5-2BlwL6hh9VJ3p=
+jRk-2BRZVJ7WO4nT-2BsZvsWkCin4N8enbQfO0jP9NiBbhwnemFaL-2B-2F-2B4WLhJnWCnAxpw=
+hGL23hYzlohiI0OHED7fiGUNv4nnJ9bbQCMZZZ0-3D
+
+Copyright =C2=A9 2023 Acorns and/or its
+affiliates.
+--28a89a15b0d954252f66c7277e6498b67906b68175aaf0c7026460c9f948
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing=
+: grayscale;">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+	<title>Acorns</title>
+	<meta charset=3D"utf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+=09
+<style>@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/1e98=
+92c0-6927-4412-9874-1b82801ba47a.woff'); font-weight: 400; font-style: norm=
+al;
+}
+@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/f26f=
+addb-86cc-4477-a253-1e1287684336.woff'); font-weight: 500; font-style: norm=
+al;
+}
+@font-face {
+font-family: 'Avenir Next'; src: url('https://sqy7rm.media.zestyio.com/91b5=
+0bbb-9aa1-4d54-9159-ec6f19d14a7c.woff'); font-weight: 600; font-style: norm=
+al;
+}
+@media screen and (max-width: 480px) {
+  a[x-apple-data-detectors] {
+    color: inherit !important; text-decoration: none !important; font-size:=
+ inherit !important; font-family: 'Avenir Next', Helvetica, Arial, sans-ser=
+if !important; font-weight: inherit !important; line-height: inherit !impor=
+tant;
+  }
+  table.responsive-table {
+    width: 100% !important;
+  }
+  div.responsive-table {
+    width: 100% !important;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+  .mobile-strip-padding {
+    padding: 0 !important;
+  }
+  .mobile-strip-margin {
+    margin: 0 !important;
+  }
+  .mobile-strip-border-radius {
+    border-radius: 0 !important;
+  }
+  .mobile-centered {
+    text-align: center !important;
+  }
+  .mobile-block {
+    display: block !important;
+  }
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  .mobile-block-image {
+    display: block !important; float: left !important; width: 100% !importa=
+nt;
+  }
+  .mobile-only-image {
+    display: block !important; max-height: none !important;
+  }
+  .body-padding {
+    padding: 20px 20px 0 !important;
+  }
+  .acorns-logo-white {
+    padding: 20px 0 !important;
+  }
+  .acorns-logo-white > img {
+    width: 88px !important;
+  }
+  .headline {
+    padding: 50px 20px 25px !important; font-size: 25px !important; line-he=
+ight: 30px !important;
+  }
+  .subheadline {
+    padding: 0 20px 15px !important; font-size: 20px !important; line-heigh=
+t: 28px !important;
+  }
+  .value-prop-subheadline {
+    padding-bottom: 20px !important;
+  }
+  .body-copy {
+    padding: 0px 20px 30px !important; font-size: 14px !important; line-hei=
+ght: 1.3 !important;
+  }
+  .body-copy-nopad {
+    padding: 0px 20px 0px !important; font-size: 14px !important; line-heig=
+ht: 1.3 !important;
+  }
+  .value-prop-list {
+    padding: 0 20px 50px !important;
+  }
+  .value-prop-icon-wrapper {
+    vertical-align: top !important;
+  }
+  .value-prop-icon {
+    width: 30px !important; padding-bottom: 0 !important;
+  }
+  .value-prop-copy {
+    padding: 0 0 30px 20px !important;
+  }
+  .value-prop-final-row-copy {
+    padding-bottom: 0 !important;
+  }
+  .centered-cta-wrapper {
+    width: 100% !important; max-width: 290px !important; margin: 0 auto !im=
+portant;
+  }
+  .cta-padding {
+    padding: 0 20px 50px !important;
+  }
+  .cta {
+    font-size: 14px !important; line-height: 46px !important;
+  }
+  .social-icon {
+    padding-top: 30px !important;
+  }
+  #instagram-logo {
+    margin-bottom: -6px !important;
+  }
+  .footer-body {
+    padding: 0 20px 30px !important;
+  }
+  .temporary-padding {
+    padding: 15px 0 15px 0 !important;
+  }
+}
+</style>
+</head>
+<body bgcolor=3D"#FAFAFA" data-gr-ext-installed=3D"" data-new-gr-c-s-check-=
+loaded=3D"14.1067.0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size=
+-adjust: 100%; height: 100% !important; width: 100% !important; text-align:=
+ center !important; box-sizing: border-box; -webkit-font-smoothing: antiali=
+ased; -moz-osx-font-smoothing: grayscale; margin: 0; padding: 0;"><img src=
+=3D"https://links.notifications.acorns.com/wf/open?upn=3DLn6UxEE-2BJWXODIej=
+w9a-2BV0Gl7H-2B0r60Hll-2BibxQXsajFMPGeBcMTu-2Bl5usQFMBwC46AM6lXqMkQz3BO532l=
+h5Dv2IXrv-2BHs-2FL7Pv4nW1Gyzjsu-2FCeXq2kwRgTm3u5TCj4xVE4PvlN1X3nngMrdyix2pt=
+9BqVw8KkI4ty-2BmwmQWH3tGNzBgW7phNH1ZFEgTn2IymwO1KW4v-2FTRjZbO8UwicYk0p05BjM=
+M04LK9lfoS3pF4BB97xNzjd6PnJZGwyE81q1Lj9AvugplLWsC-2B1p3iHE2BzWxmHftZdralHRr=
+gSKhMG6CP6srLwbJHu0BUoIetEmc8Gvn1vVh3ROT6XbhUWP8FK1dyyQKbYzbgRDioyYJeYsdmpV=
+4YzcmzISEd8aV7m507MyXvujLJZ-2FLvfALdqmA5tg84DDhmZ0IcbD4EUiGTjq2j9JX3Ax4b6V4=
+NyOBdqLENl6bhgVnE65KdcShrFVMXb61Q27TNYdUPrD7doggCgvIgprOkQfjN7D0tBik-2FhCCD=
+v8okLksNd6cf19aCjGsnsf6CPmUr5iNYkIvhrnCoeF1d6YJsd7odxMgdNhQUdVh4hOigztziI1S=
+0Fx62vY6t2yIb7BpaICgbmvVAfPV1SWlkXb-2B8KDVY7dC1wrbQnRZ0W8rraSUWAVSANHHtYU5g=
+vaaPwr8Q6lUsmbvdhI-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">The markets turned the corner on 2022 last week, after =
+encouraging economic data gave investors hope that the Fed will slow the pa=
+ce of future rate hikes.
+</div>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=
+=3D"body" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse=
+ !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale;" width=3D"100%">
+	<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;">
+		<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing=
+: grayscale;">
+			<td align=3D"center" bgcolor=3D"#FAFAFA" class=3D"body-padding" style=3D=
+"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Aria=
+l, sans-serif !important; display: block !important; -webkit-font-smoothing=
+: antialiased; -moz-osx-font-smoothing: grayscale; padding: 50px 0 0;">
+			<div align=3D"center" style=3D"-webkit-font-smoothing: antialiased; -moz=
+-osx-font-smoothing: grayscale;">
+		=09
+			<!-- MAIN CONTENT WRAPPER START -->
+			<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"responsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-te=
+xt-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-=
+collapse: collapse !important; -webkit-font-smoothing: antialiased; -moz-os=
+x-font-smoothing: grayscale;" width=3D"680">
+				<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoo=
+thing: grayscale;">
+					<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale;">
+						<td align=3D"center" bgcolor=3D"#FFFFFF" style=3D"-webkit-text-size-a=
+djust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif !impor=
+tant; border-radius: 10px; -webkit-font-smoothing: antialiased; -moz-osx-fo=
+nt-smoothing: grayscale;">
+<!-- MAIN CONTENT START --><!--- HEADER LOGO --->
+						<table style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: colla=
+pse !important; width: 100%; height: 100%; overflow: hidden; border-radius:=
+ 6px 6px 0 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:=
+ grayscale; margin: 0 auto;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td align=3D"center" style=3D"-webkit-text-size-adjust: 100%; -ms-=
+text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-=
+family: 'Avenir Next', Helvetica, Arial, sans-serif; -webkit-font-smoothing=
+: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0;">
+									<table style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: co=
+llapse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale;">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" class=3D"acorns-logo-white" style=3D"-webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, san=
+s-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gray=
+scale; padding: 30px 0;"><img height=3D"auto" src=3D"https://s3.amazonaws.c=
+om/assets.acorns.com/email/2022-03-updated_acorns-logo.png" style=3D"-ms-in=
+terpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; =
+text-decoration: none; vertical-align: top; -webkit-font-smoothing: antiali=
+ased; -moz-osx-font-smoothing: grayscale; border: 0;" width=3D"110"></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--- HEADER LOGO END --->
+                                                     =20
+<!-- FULL WIDTH IMAGE -->
+           <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !i=
+mportant; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gra=
+yscale;">
+                  <tbody style=3D"-webkit-font-smoothing: antialiased; -moz=
+-osx-font-smoothing: grayscale;">
+<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale;">
+                    <td align=3D"center" style=3D"-webkit-text-size-adjust:=
+ 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif !important; =
+color: #ffffff; font-size: 0; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;">
+                      <a href=3D"https://links.notifications.acorns.com/uni=
+/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcSdf4G-2B-2BO9wEY36uz4W1SjauYMpKoSNuo=
+nnCoxykAiR1u9bm_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7wa=
+IudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7=
+yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqq=
+eyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5=
+Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6kno=
+B72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfH=
+lJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc=
+3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNKTIeSZj=
+-2FkRfq-2BcySHUUB0-2Fi-2FZyc8Z4MYNf-2BAbb22ojZQAxJ-2BuV-2F-2F0l2EqpRXDnCuP2=
+ZLi5-2BaL5T-2BMKr-2FSiszRbKx2wLiESl392CArvEZbOI-2B-2FAoJyxXmfDdyKLTMgCmtC2b=
+nsERiuVbj24SUo-2Fu4kU-3D" universal=3D"true" style=3D"-webkit-text-size-adj=
+ust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetic=
+a, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-sm=
+oothing: grayscale;">
+                       <img class=3D"hide-on-mobile" src=3D"https://s3.amaz=
+onaws.com/assets.acorns.com/email/InANutshell_header_with_test_-v2.png" wid=
+th=3D"640" style=3D"width: 80% !important; margin-bottom: 30px; -webkit-fon=
+t-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+                      <!--[if !mso 9]><!-->
+                      <img class=3D"mobile-only-image" src=3D"https://s3.am=
+azonaws.com/assets.acorns.com/email/InANutshell_header_with_test_-v2.png" w=
+idth=3D"100%" style=3D"display: none; max-height: 0px; overflow: hidden; -m=
+s-interpolation-mode: bicubic; height: auto; line-height: 100%; width: 100%=
+; outline: none; text-decoration: none; margin-bottom: 15px; -webkit-font-s=
+moothing: antialiased; -moz-osx-font-smoothing: grayscale; border: 0;">
+                      <!--<![endif]-->
+                 </a>
+</td>
+                 </tr>
+           </tbody>
+</table>
+                                                        =20
+          <!-- FULL WIDTH IMAGE END -->
+         =20
+         <!-- PARAGRAPH SECTION 1 TITLE-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" class=3D"hero_headline" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-se=
+rif; font-size: 22px; color: #74C947; font-weight: 400; -webkit-font-smooth=
+ing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0px 50px 30p=
+x;"><b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothin=
+g: grayscale;">In the Markets</b></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 1 TITLE END-->
+					=09
+						<!-- PARAGRAPH SECTION 1 BULLETS-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td align=3D"left" class=3D"body-copy" style=3D"-webkit-text-size-=
+adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif !impo=
+rtant; color: #191919; font-size: 16px; font-weight: normal; line-height: 2=
+1px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscal=
+e; padding: 0px 50px 30px;">The markets turned the corner on 2022 last week=
+, after encouraging economic data gave investors hope that the Fed will slo=
+w the pace of future rate hikes.=20
+										<ul style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+									<li style=3D"padding-bottom: 1em; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">A combination of solid job growth=
+, record-low unemployment, and weak wage inflation fueled investors=E2=80=
+=99 optimism. </li>
+									<li style=3D"padding-bottom: 1em; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">
+<a href=3D"https://links.notifications.acorns.com/uni/ls/click?upn=3DOTcLGF=
+sda-2Fd0vguHPT6CcSdf4G-2B-2BO9wEY36uz4W1SjalnIHSA7RtOpPmnL8aXSz3e3rfSFE2FbW=
+DeASURwzfXmAS8i40t0VHJvHe5uY-2Bw2w-3Ds2AF_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MR=
+GEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGP=
+U5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKh=
+UqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1=
+j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-=
+2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyV=
+WOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-=
+2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoH=
+bhVW1VIPs-2BHPLFxGNNjgl-2FNNEQgDCQcWJyKmc6TmJtdprmKgIVgL8LCoRVtoUFfJmmRwvbj=
+U7k1-2B8EMgwa8X7H4cRknphqEV660T9clwIprbxuaqOOuMq-2Fg0fnUzAuHZ6F5YcInosUclKf=
+BYCt-2FUK1u475mwW1el46wO58o-3D" universal=3D"true" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', He=
+lvetica, Arial, sans-serif; color: #74c947; text-decoration: underline; -we=
+bkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">Infl=
+ation</a> and interest rates are still hot topics. Previously, the Fed had =
+committed to raising rates to between 5.0% and 5.25% by the end of 2023.</l=
+i>
+									</ul>
+									<b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">What could this mean for investors?</b> Let's dig a lit=
+tle deeper. <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;">
+
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 1 BULLETS END-->
+					=09
+				=09
+						<!-- LINE SPACER-->
+						<hr style=3D"width: 85%; height: 1px; background-color: #cccfcf; opac=
+ity: 0.3; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gra=
+yscale; margin: 0px 0; border: none;">
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;" width=3D"100%">
+						</table>
+						<!-- LINE SPACER END-->
+					=09
+						<!-- PARAGRAPH SECTION 2 TITLE-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" class=3D"hero_headline" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-se=
+rif; font-size: 22px; color: #74C947; font-weight: 400; -webkit-font-smooth=
+ing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 30px 50px;">=
+<b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;">Looking forward in 2023</b></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 2 TITLE END-->
+					=09
+						<!-- PARAGRAPH SECTION 2 BULLETS-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td align=3D"left" class=3D"body-copy" style=3D"-webkit-text-size-=
+adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif !impo=
+rtant; color: #191919; font-size: 16px; font-weight: normal; line-height: 2=
+1px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscal=
+e; padding: 0 50px 30px;">
+Last year, the markets posted an annual loss for the first time since 2018,=
+ partly because of the Fed=E2=80=99s efforts to cool down inflation.<br sty=
+le=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysca=
+le;"><br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale;">
+But remember: market downturns historically don=E2=80=99t last long.
+<ul style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale;">
+									<li style=3D"padding-bottom: 1em; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">Since 1950, the <b style=3D"-webk=
+it-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">S&amp;=
+P 500 has finished the year higher than it started</b> almost 78% of the ti=
+me! </li>
+									</ul>
+									Keep your eye on potential silver linings from bonds this year, to=
+o.
+									<ul style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-sm=
+oothing: grayscale;">
+									<li style=3D"padding-bottom: 1em; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">Today, the bond market is offerin=
+g <b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:=
+ grayscale;">the highest rate of passive income in almost 15 years.</b>  </=
+li>
+									<li style=3D"padding-bottom: 1em; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">If rates go any higher, investors=
+ could earn even more from bonds in their portfolios. </li>
+									</ul>
+
+<a href=3D"https://links.notifications.acorns.com/uni/ls/click?upn=3DOTcLGF=
+sda-2Fd0vguHPT6CcSdf4G-2B-2BO9wEY36uz4W1SjY2v8MiwhC9i9ZLJah-2FpD7sRJDBFhXzj=
+yWqBLhGGBDmbJMA-2Fnb0vZGsS3hSruuegMs-3DQjJc_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0=
+MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7D=
+GPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKi=
+KhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSX=
+O1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgN=
+y-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2F=
+yVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2=
+B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4Fkp=
+oHbhVW1VIPs-2BHPLFxGNMwnl41BczyjlkvQq2QH-2BN3S3TgFGKU-2BcHrq3mV5Rs0MhGleRzJ=
+qwCLgLAlM8Ag65Vhocz3-2BCjgP3eS4FEc9113cF9Ceaf3cqzM5P5JQtef6AKDTzMZZ6xF9cTuO=
+8HV9kfejcucOPpYtWTliwsNBlo8-3D" universal=3D"true" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', He=
+lvetica, Arial, sans-serif; color: #74c947; text-decoration: underline; -we=
+bkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">By d=
+iversifying</a> and investing no matter what the market is doing, investors=
+ may be able to take advantage of these market moments.  <br style=3D"-webk=
+it-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+                 =09
+								</td>
+</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 2 BULLETS END-->
+					=09
+						<!-- LINE SPACER-->
+						<hr style=3D"width: 85%; height: 1px; background-color: #cccfcf; opac=
+ity: 0.3; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gra=
+yscale; margin: 0px 0; border: none;">
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;" width=3D"100%">
+						</table>
+						<!-- LINE SPACER END-->
+					=09
+						<!-- PARAGRAPH SECTION 3 TITLE-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" class=3D"hero_headline" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-se=
+rif; font-size: 22px; color: #74C947; font-weight: 400; -webkit-font-smooth=
+ing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 30px 50px;">=
+<b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;">Let=E2=80=99s get started</b></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 3 TITLE END-->
+					=09
+						<!-- PARAGRAPH SECTION 3 BULLETS-->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td align=3D"left" class=3D"body-copy" style=3D"-webkit-text-size-=
+adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif !impo=
+rtant; color: #191919; font-size: 16px; font-weight: normal; line-height: 2=
+1px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscal=
+e; padding: 0 50px 30px;">It=E2=80=99s a new year with new opportunities to=
+ take control of your financial future.  <br style=3D"-webkit-font-smoothin=
+g: antialiased; -moz-osx-font-smoothing: grayscale;"><br style=3D"-webkit-f=
+ont-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+								=09
+									And while we don=E2=80=99t know what will happen next, history has=
+ taught us that staying diversified over the long term could help you manag=
+e volatility and grow your money. <br style=3D"-webkit-font-smoothing: anti=
+aliased; -moz-osx-font-smoothing: grayscale;"><br style=3D"-webkit-font-smo=
+othing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+                  Is investing one of your 2023 resolutions? <a href=3D"htt=
+ps://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcU=
+iKxoQCuq0mS6b5xBceDUfe4yyQypGmHxg4V053SAETV242_kHUZGGAIbaUxVXIM4tIqucmyvZ16=
+Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQ=
+M7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qra=
+gKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnII=
+QSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0Z=
+bgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy=
+-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYL=
+q-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4=
+FkpoHbhVW1VIPs-2BHPLFxGNH5ZBnGDHDkCymHs0be3sUFTBCw0H8342Rk0qh47XvUDhxZbsGL2=
+kjIP5RVzZDDqtUGL0cuWyqZi6B3qjaURmUofHkPPRmZ6geqRrNr-2BH0lg5dDL0InEi6pVEuT8X=
+ST18CQnQjAjvudiXae6D8ZGFd0-3D" style=3D"-webkit-text-size-adjust: 100%; -ms=
+-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetica, Arial, sans=
+-serif; color: #74C947; text-decoration: underline; -webkit-font-smoothing:=
+ antialiased; -moz-osx-font-smoothing: grayscale;">Let us know your money g=
+oals for the new year! </a><br style=3D"-webkit-font-smoothing: antialiased=
+; -moz-osx-font-smoothing: grayscale;">
+								</td>
+</tr>
+							</tbody>
+						</table>
+						<!-- PARAGRAPH SECTION 3 BULLETS END-->
+					=09
+						<!-- LINE SPACER-->
+                <hr style=3D"width: 85%; height: 1px; background-color: #cc=
+cfcf; opacity: 0.3; -webkit-font-smoothing: antialiased; -moz-osx-font-smoo=
+thing: grayscale; margin: 0px 0; border: none;" class=3D"">
+<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale;"><br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;"><table class=3D"responsive-table" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"-webkit-text-size-a=
+djust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; border-collapse: collapse !important; width: 100%; -webkit-font=
+-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+                    </table>
+                   =20
+						<!-- LINE SPACER END-->
+					=09
+						<!-- TEXT ABOVE CTA -->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" class=3D"text body_text hero-text" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, A=
+rial, sans-serif; color: #191919; font-size: 16px; font-weight: 400; line-h=
+eight: 21px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale; padding: 0 30px;">Getting started is easy. Acorns will recommend=
+ a diversified portfolio of ETFs based on your goals and other factors.
+
+
+</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale;">
+						<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale;">
+						<!-- TEXT ABOVE CTA END -->
+					=09
+				=09
+                           <!-- CENTERED PRIMARY CTA -->
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"widt=
+h: 100% !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoo=
+thing: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td align=3D"center" class=3D"cta-padding" style=3D"-webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; =
+-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; pa=
+dding: 0px 0px 60px;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"c=
+entered-cta-wrapper" style=3D"-webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"center" bgcolor=3D"#74c947" style=3D"border-radius=
+: 100px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gray=
+scale;">
+												<div style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+<!--[if mso]>
+                                                <v:roundrect xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:wor=
+d" href=3D"https://app.acorns.com/invest/core/recurring" universal=3D"true"=
+ style=3D"height:41px;v-text-anchor:middle;width:163px;" arcsize=3D"228%" s=
+troke=3D"f" fillcolor=3D"#74c947">
+                                                   <w:anchorlock/>
+                                                   <center>
+                                                      <![endif]--><a class=
+=3D"cta mobile-full-width" href=3D"https://links.notifications.acorns.com/u=
+ni/ls/click?upn=3DOTcLGFsda-2Fd0vguHPT6CcbLSmaNSvZJlMHxZ7M6pFEJl7SNy-2FGKx-=
+2B-2FM1KV2xvr830N7eTFuTAcFTvL4Iallyig-3D-3DCO5b_kHUZGGAIbaUxVXIM4tIqucmyvZ1=
+6Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0Z=
+QM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qr=
+agKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnI=
+IQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0=
+ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0c=
+y-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcY=
+Lq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u=
+4FkpoHbhVW1VIPs-2BHPLFxGNOcpyr4AIOux7RWqwwj0Nrz7CefPT2HxrB8P4BHT4yjrGUhtw0h=
+QHk1e7O0tkuvGUuEGsBkRW83lv4D7tbOs8uOfI9jDDoxkQtzE8spccaJwc073ptQFlsiLT1ZeUG=
+HyzTx3FcewMA-2B0oL1QpPIvM20-3D" style=3D"background-color: #74c947; border-=
+radius: 100px; color: #ffffff; display: inline-block; font-family: 'Avenir =
+Next', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 600; lin=
+e-height: 58px; text-align: center; text-decoration: none; width: 290px; bo=
+x-sizing: border-box; -webkit-text-size-adjust: none; -webkit-font-smoothin=
+g: antialiased; -moz-osx-font-smoothing: grayscale; padding: 2px 20px 0;" u=
+niversal=3D"true">Make a Recurring Investment! </a> <!--[if mso]>
+                                                   </center>
+                                                </v:roundrect>
+                                                <![endif]-->
+</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table style=3D"height: 0; display: none; -webkit-font-smoothing: ant=
+ialiased; -moz-osx-font-smoothing: grayscale;">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-sm=
+oothing: grayscale;"></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- CENTERED PRIMARY CTA END -->=20
+					=09
+						<!-- TEXT BELOW CTA -->
+
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+												<td align=3D"left" class=3D"body-copy" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif; c=
+olor: #505050; font-size: 13px; font-weight: 400; line-height: 1.72; -webki=
+t-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding:=
+ 0px 30px 10px;">
+<b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;">Market commentary provided by Seth Wunder (Chief Investment Offi=
+cer)
+												<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;">
+												<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;">
+												Contributors to this week=E2=80=99s newsletter:</b> Kennedy Rey=
+nolds (Chief Content &amp; Education Officer), Trevir Nath (Senior Writer),=
+ Caelon Smith, (Investment Data Analyst), Emily Gadd (Associate Editor), an=
+d Casey Hollis (Managing Editor).</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale;">
+						<br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale;">
+						<!-- TEXT BELOW CTA END -->
+						<!-- CLOSING BODY LEAVES IMAGE -->
+                           <table width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-col=
+lapse: collapse !important; -webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale;">
+                              <tr style=3D"-webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">
+                                 <td align=3D"center" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-serif=
+ !important; color: #ffffff; font-size: 0; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;">
+                                    <img class=3D"hide-on-mobile" src=3D"ht=
+tps://s3.amazonaws.com/assets.acorns.com/email/Footer.png" width=3D"640" st=
+yle=3D"width: 100% !important; margin-bottom: 0px; border-radius: 0 0 10px =
+10px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysca=
+le;">
+                                    <!--[if !mso 9]><!-->
+                                    <img class=3D"mobile-only-image" src=3D=
+"https://s3.amazonaws.com/assets.acorns.com/email/Footer.png" width=3D"100%=
+" style=3D"display: none; max-height: 0px; overflow: hidden; -ms-interpolat=
+ion-mode: bicubic; height: auto; line-height: 100%; width: 100%; outline: n=
+one; text-decoration: none; margin-bottom: 0px; border-radius: 0 0 10px 10p=
+x; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;=
+ border: 0;">
+                                    <!--<![endif]-->
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- CLOSING BODY LEAVES IMAGE END -->
+
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"resp=
+onsive-table" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: coll=
+apse !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;" width=3D"100%">
+							<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale;">
+								<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smo=
+othing: grayscale;">
+									<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"f=
+eedback" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse =
+!important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale;" width=3D"100%">
+										<tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+											<tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale;">
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- MAIN CONTENT END --><!-- MAIN CONTENT WRAPPER END -->
+<!-- FOOTER -->
+<!-- FOOTER -->
+<table bgcolor=3D"#FAFAFA" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-c=
+ollapse: collapse !important; width: 100%; -webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;" width=3D"100%">
+  <tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale;">
+    <tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;">
+      <td align=3D"center" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-fam=
+ily: 'Avenir Next', Helvetica, Arial, sans-serif; -webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale; padding: 0;">
+        <table width=3D"612" class=3D"responsive-table" style=3D"-webkit-te=
+xt-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; border-collapse: collapse !important; max-width: 612px=
+; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"=
+>
+          <tbody style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale;">
+            <tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;">
+              <td class=3D"social-icon" align=3D"center" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; font-family: 'Avenir Next', Helvetica, Arial, sans-se=
+rif; padding-bottom: 30px; padding-top: 50px; -webkit-font-smoothing: antia=
+liased; -moz-osx-font-smoothing: grayscale;" valign=3D"middle">
+                <a href=3D"https://links.notifications.acorns.com/ls/click?=
+upn=3DOTcLGFsda-2Fd0vguHPT6CcaSwdGLdulvKh-2F-2B19yruGFMeNPe4e9P6agS4FhyTa-2=
+BvwrC_A_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7Eue=
+SFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZv=
+sY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY=
+-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP=
+-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8R=
+GzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilL=
+XomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm=
+8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNKurgH4gd3fXC3Mx=
+TtTb3YVw6l7THN2ccBdU04V0hjK6NTwYMPgwXXxGR6Qn-2BPLEyibqohqDXF8Ebt3OtGEUSNgUU=
+FcEp5s7evBAg8pFJgNO1VHxqSIHVBUdJcXCXnF-2BJi026niw-2Bmsit-2FSkWGq507Q-3D" st=
+yle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-fam=
+ily: 'Avenir Next', Helvetica, Arial, sans-serif; -webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale;" target=3D"_blank">
+                  <img id=3D"instagram-logo" alt=3D"Instagram" border=3D"0"=
+ height=3D"40" src=3D"https://sqy7rm.media.zestyio.com/ig_2x.png" style=3D"=
+-ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: =
+none; text-decoration: none; -webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale; border: 0;" width=3D"40">
+                </a>
+              </td>
+            </tr>
+            <tr style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale;">
+              <td class=3D"footer-body" align=3D"center" style=3D"-webkit-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-f=
+amily: 'Avenir Next', Helvetica, Arial, sans-serif; -ms-text-size-adjust: 1=
+00%; font-size: 12px; font-weight: 400; line-height: 20px; color: #707474; =
+-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; pa=
+dding: 0 0 50px;">
+                Sent with love from Acorns<br style=3D"-webkit-font-smoothi=
+ng: antialiased; -moz-osx-font-smoothing: grayscale;">
+                5300 California Ave. Irvine, CA 92617<br style=3D"-webkit-f=
+ont-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                This email is a no-reply.<br style=3D"-webkit-font-smoothin=
+g: antialiased; -moz-osx-font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <a href=3D"https://links.notifications.acorns.com/ls/click?=
+upn=3DOTcLGFsda-2Fd0vguHPT6Ccao4XJ-2Bt1tENbZKxundnwCv4IwvAUH5OCbE2WqbAkL59y=
+WlI7c1ktmVXBEVQaBXPauDsoW9kd4p6KN1N7STmMh-2B-2BnJDDE3XM8fw9V7ZO-2BBkxgeyTv7=
+OL7I1f2nlVH9J-2BUWS7KFuBGgTZca7veEbsFrQ4rCJzkm0yHzNsGY9XJKoj3TxKGgZUJN-2F3Z=
+rWoP7phwPXRvfLf-2BhcVUxeZSCu2omcQ6F6ObW3DZQDaZ7JTIMw6cj9mgli7q-2BjZCRJwFL4C=
+uk9vKOmtWisVs-2BB9HDsApm79gv-2FYWgBdxVxTpAUetAlEokEhRpT2K91n2-2BD2kW2RFY3UY=
+id27O9U-2FvxH-2BKU4aNA4A1EGaDQKQdqgonoXE3sISh4BfwDZMpSour4sfIbmk8KoOG3FPlJg=
+VCF6Zp2Gdo6FG8AttlFWFY4YNwKJzzhbkUsoGSgUQE0hxME4tXIIrzRz-2F8SYL0ZY9JL7ZAF8X=
+z1-2FK5x-2FOZXJGu2UycEI64xi1BwqWWbejtgqcsDh2RGgbD2Ce5XWPQB1NWj-2BrMfjdQwMS6=
+NPI7td-2FQu7a2-2FENKM9VYnQuzaNVV86PbCJkIDqz9Sa9oQmK7FxcVpz7KiYSc5qR5Ju1pURR=
+xbHr9sUp1axfxewAQu3Vuw5yXJsxqy4sXrAtHwRzruomARr0iSyIhV4O-2BhB8k0VFFokrAATl2=
+MTFPxT9TQA0fk-2FhrB3LpqSoElLb5-2BTwx-2BU8PJqNlrQ5wM-3DykFf_kHUZGGAIbaUxVXIM=
+4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4=
+c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2B=
+E357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15=
+-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3n=
+ITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOv=
+eUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwF=
+y-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgP=
+vRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNOSyUYFo4TqfLIoXQcSoIOLbZQgcM9avNAhqgajv=
+typ6LTkwNABqjf79rfl-2BbJqnrsF7McR9XyHNE1hXG531351oM4TcKXVv0MxEb4Y6VcBSW7Y2h=
+o738Et8hFA6h3xxj9w2fTOZOXDjPawP4wF3oBI-3D" style=3D"-webkit-text-size-adjus=
+t: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetica,=
+ Arial, sans-serif; color: #707474; -webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale;">
+                  Click here</a> to manage your email preferences or unsubs=
+cribe.<a style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale;"></a>
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale;">Acorns Support</b><br style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale;">
+                Have a question? View FAQs or contact our Investor Success =
+team from our
+                <a href=3D"https://links.notifications.acorns.com/ls/click?=
+upn=3DOTcLGFsda-2Fd0vguHPT6CccXsFt-2BV3ghFw8zBL-2FYzVEIlMwe663IArKYrZ8Co6ch=
+e60kP_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSF=
+C8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY=
+0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2=
+Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2=
+BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGz=
+lryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXo=
+mDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8Y=
+FogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNC2Rcehqg7lQUWtgPp=
+Pn056Pttz0xKEqz2bNuThWBoGLfnf-2B5VCeY3VxehVCCy0EuPJldnbbj6c4xO5LsbtcGa8JNQU=
+w-2Fyo74ZuS16wc85jyZ-2Fu1fzx58tQWuavepUqrxMfsQPk-2Bg6pLMmgrw3lEhfM-3D" styl=
+e=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-famil=
+y: 'Avenir Next', Helvetica, Arial, sans-serif; color: #707474; text-decora=
+tion: underline; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale;">
+                  Support Center</a>.<br style=3D"-webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                View your Monthly Statements by logging in
+                  <a href=3D"https://links.notifications.acorns.com/ls/clic=
+k?upn=3DOTcLGFsda-2Fd0vguHPT6CceH9GBIOlM-2FTcAHl4sXhhP-2FMYvVYuPn8YcVRNpfbd=
+W0SK2xL0LADWTbagsKxVslhxg-3D-3DPHQK_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjcc=
+pvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-=
+2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqB=
+BA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt=
+9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZ=
+DOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-=
+2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj=
+8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1V=
+IPs-2BHPLFxGNHrl7Lj4go-2BkWdVHjyT-2FQ4B0bSEY1web4h2tBeTSUY7ktR3kQydjAxQVosT=
+lUeh9P0MlMdkR5j2XBoxIeq-2BfO-2FiGL-2Br8zIpiL7hLjEhTpCg-2BDGyx80q1kbfizBRffS=
+7-2BOeowoX54e-2B12IHpP93lh4JM-3D" style=3D"-webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; font-family: 'Avenir Next', Helvetica, Arial, s=
+ans-serif; color: #707474; text-decoration: underline; -webkit-font-smoothi=
+ng: antialiased; -moz-osx-font-smoothing: grayscale;">here</a>
+                and tapping on statements.
+
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <b style=3D"-webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale;"><span style=3D"font-size: 13px; -webkit-font-smo=
+othing: antialiased; -moz-osx-font-smoothing: grayscale;">Important Risk Di=
+sclosures</span></b>
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                This information is for informational purposes only and sho=
+uld not be considered as investment advice or a recommendation to buy or se=
+ll any particular security, strategy, or investment product.=20
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                No investment strategy and no level of diversification or a=
+sset allocation can ensure profits or guarantee against losses. Investments=
+ cannot be made directly in an index. Unmanaged index performance does not =
+reflect any fees, expenses, or sales charges. Past performance is no guaran=
+tee of future results. References to bond yields are generalized based on t=
+he federal funds rate.
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <i style=3D"-webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale;"><b style=3D"-webkit-font-smoothing: antialiased;=
+ -moz-osx-font-smoothing: grayscale;">Investing involves risk including the=
+ loss of principal.</b> Please consider, among other important factors, you=
+r investment objectives, risk tolerance and Acorns=E2=80=99 pricing before =
+investing. Investment advisory services offered by Acorns Advisers, LLC (Ac=
+orns), an SEC-registered investment advisor. Brokerage services are provide=
+d to clients of Acorns by Acorns Securities, LLC, an SEC-registered broker-=
+dealer and member <a href=3D"https://links.notifications.acorns.com/ls/clic=
+k?upn=3DOTcLGFsda-2Fd0vguHPT6CcbCqRo3jeLHWfvVfvw30ppvKDej0ZlobW3k7vyXc7az9g=
+yGk_kHUZGGAIbaUxVXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8=
+zRbOOjJpThCHSqASaSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0i=
+qf4SQzc2ZjfysMNKB-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2By=
+q5bNpGO0B66B9u-2Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2Bi=
+qrG6AZcLcg3Kq-2Bld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlr=
+yIhuFGF7TvhyHmKrgdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomD=
+t7WbiVnPNy72nxBovmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFo=
+gpJEN8yXAnEtettxJDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNEN9RD-2FSyzbQ-2FWGP=
+EH79mgVFjgTiiSnTQwqSABhh4shdUyK0qX4YbYvoPAbs5IQ4kujHDml2f20nsN3scsV33PjIWlo=
+kkS6JIE7ILDscaM0yLZk15t5J2LYymkimFN6pMmTznSJI5Zbp3P7DkHWqHdQ-3D" style=3D"-=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Av=
+enir Next', Helvetica, Arial, sans-serif; color: #707474; text-decoration: =
+underline; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gr=
+ayscale;">FINRA</a>/<a href=3D"https://links.notifications.acorns.com/ls/cl=
+ick?upn=3DOTcLGFsda-2Fd0vguHPT6CcR4m2DrPOG4gySQKBMnOj6M-3DqmNx_kHUZGGAIbaUx=
+VXIM4tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqAS=
+aSR4c9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNK=
+B-2BE357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2=
+Fu15-2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2B=
+ld3nITJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKr=
+gdOveUwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBo=
+vmwFy-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettx=
+JDgPvRZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNH-2FV0PFvFdUs3H1KdaF-2B36RAJ-2BUtV1=
+zUQmO1OIwS-2BEuM4AgaRLj2EoxOna2bc5L4srLhcrJ9W3VMwG9Uhyr4ee9xeaxNCKGELY3hlB0=
+NOiNg8mt9-2FuiO1Xp87r-2BH-2BcVySKotdXmMh088dQKsi2Kj0V4-3D" style=3D"-webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir N=
+ext', Helvetica, Arial, sans-serif; color: #707474; text-decoration: underl=
+ine; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscal=
+e;">SIPC</a>.</i>
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                Acorns, Round-Ups=C2=AE investments, Real-Time Round-Ups=C2=
+=AE investments, Invest the Change and the Acorns logo are registered trade=
+marks of Acorns Grow Incorporated. All product and company names are tradem=
+arks=E2=84=A2 or registered=C2=AE trademarks of their respective holders. U=
+se of them does not imply any affiliation with or endorsement by them. For =
+additional important risks, disclosures and information, please visit <a hr=
+ef=3D"https://links.notifications.acorns.com/ls/click?upn=3DOTcLGFsda-2Fd0v=
+guHPT6CccXUVJVDe6GhK0mxb8dQARbWjnnI3HKX1tm8I-2F62lsE4Xlvb_kHUZGGAIbaUxVXIM4=
+tIqucmyvZ16Iw0MRGEFjccpvH8TLIeztm-2FKgD7waIudR7EueSFC8zRbOOjJpThCHSqASaSR4c=
+9KpEyJaQ0ZQM7DGPU5wMX-2FsVF7tbd0TKNevSqvw7yZERGXZvsY0iqf4SQzc2ZjfysMNKB-2BE=
+357Vvxc6qragKiKhUqCPqBBA7-2FasdLOxtCIINSqqeyIvW5bY-2Byq5bNpGO0B66B9u-2Fu15-=
+2FWZ8IYfnIIQSXO1j6-2Bt9Q3-2F7N-2FQBVxQvWt5Z9klRtCP-2BiqrG6AZcLcg3Kq-2Bld3nI=
+TJtQJh0Bo0ZbgNy-2BCNEZDOVKQ0UA2JEccYIW6knoB72LtA8RGzlryIhuFGF7TvhyHmKrgdOve=
+UwF7g3Aj0cy-2FyVWOZKL-2FG-2BagwD2G5XuNZGfHlJjugilLXomDt7WbiVnPNy72nxBovmwFy=
+-2F8qOOtcYLq-2B-2B2nRj8b6tgPG-2F9tnxFXwKOc3H8Naaxm8YFogpJEN8yXAnEtettxJDgPv=
+RZw4R-2F9u4FkpoHbhVW1VIPs-2BHPLFxGNEmOsG-2ByBNBxK64eiKo0VvBP6XHL9A-2BD6gMnm=
+7XiZQ9-2Fvgc6ONkB3fn3q5WjiCENHH5UoaXSh-2Fyr2T0MzOysCaa9nWsmEbtHDCSYDEc8DFcP=
+tX9NuBddrbE3jcE6K4NI40FpEKIwvavWCcefms7ID-2FM-3D" style=3D"-webkit-text-siz=
+e-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Avenir Next', Hel=
+vetica, Arial, sans-serif; color: #707474; text-decoration: underline; -web=
+kit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">https=
+://www.acorns.com/terms/</a>.
+
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                <br style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;">
+                Copyright =C2=A9 2023 Acorns and/or its affiliates.
+              </td>
+            </tr>
+        </tbody>
+        </table>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<!-- FOOTER END -->
+<grammarly-desktop-integration data-grammarly-shadow-root=3D"true" style=3D=
+"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">=
+</grammarly-desktop-integration>
+</body>
+</html>
+
+--28a89a15b0d954252f66c7277e6498b67906b68175aaf0c7026460c9f948--

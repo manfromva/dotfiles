@@ -1,0 +1,227 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2522023mdb;
+        Sun, 8 Jan 2023 11:04:35 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsvwX+GY2M244LnO8xVaJ3BK64HANMLHzxBrU/7vijN92AyNPqJaXPCgAjNZLQOSJE1mgSh
+X-Received: by 2002:ac8:4d42:0:b0:3a8:5d1:aaca with SMTP id x2-20020ac84d42000000b003a805d1aacamr80139494qtv.11.1673204675201;
+        Sun, 08 Jan 2023 11:04:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673204675; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vPBL2ScspBaSDJHv2VovNlVr0JYJdWs3y/PRlrromxHZaQap3hjoxmYK8+1zmx+iB6
+         HToVBIvy3ZsvhpjgFMxFlgbf1d0mM8ifplvlP3rQ2cF6cTbanUZp62RY08dK7ckxf+tG
+         K00sRxnDTxaFVGg3etr71x/3W9eSmicoZX3fy6OLaj+OWs4fSLe/3N5zeTaUeWGULc+Q
+         UEE65PkFYOWEbcO9IW1gA3JOJ6alhRmygwNgepFA/vOQcvXobrV6DL+qS68lECtSV/Ie
+         77KHi53BvDwOgZFcwYuPVWOw9IqU/dZEFd2L14FQkK50WE1y6URn9ISVy1ABTWAlUEw+
+         MBpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe-post:list-unsubscribe:subject:feedback-id
+         :require-recipient-valid-since:x_id:to:from:mime-version:message-id
+         :date:dkim-signature:dkim-signature:dkim-signature;
+        bh=+0mKa6s6e4FrX0WpZRoIU0c6DDushIV5mEt5jQWwoRg=;
+        b=Fsp3efgGXGd/hlQQGXGcZXVjJletHU46liDZ5sTixwCwg9h6SvWGFsn/P6FpFpFQpt
+         0yyP9ApBRIfLbonWIOy59h7JYsahPo2PuslsCd/FFWCHnsib8+9K7LyHeLio78hbRdty
+         7qVfmc/f8kvUld+U95ilOw8JMGkT+RK9hGe0FSyA0iKVj7Mqbv0YQ06OQhq8fnmv7uEm
+         OripucY1F7380DZi9xvnVrxwbTO0Yxhn2FUEvdtKUFOsjK1jSwhmBOpyWv2mveHAEvlA
+         Gp0bqvk6kRgA0tt5uU0IFnc45G1RnCVDyoN+a6DL1eRdbnW/j4T08kSiHz0lipppJjon
+         Kdhw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@aweber.com header.s=aweber_key_a header.b=nfjB5e0f;
+       dkim=pass header.i=@excellence-internet-services-ltd.optin.com header.s=k1 header.b=ehZqZGUQ;
+       dkim=pass header.i=@optin.com header.s=k1 header.b=GurKr5Cu;
+       spf=pass (google.com: domain of zczsjjwctoxmtawshbzmtga07qzg@smtp-coi-g12-033.aweber.com designates 204.194.223.33 as permitted sender) smtp.mailfrom=zCzsjJwctOxMTAwsHBzMtGa07qZG@smtp-coi-g12-033.aweber.com
+Return-Path: <zCzsjJwctOxMTAwsHBzMtGa07qZG@smtp-coi-g12-033.aweber.com>
+Received: from smtp-coi-g12-033.aweber.com (smtp-coi-g12-033.aweber.com. [204.194.223.33])
+        by mx.google.com with ESMTPS id q26-20020a05620a2a5a00b00705b1d4165fsi1131220qkp.676.2023.01.08.11.04.34
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 08 Jan 2023 11:04:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of zczsjjwctoxmtawshbzmtga07qzg@smtp-coi-g12-033.aweber.com designates 204.194.223.33 as permitted sender) client-ip=204.194.223.33;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@aweber.com header.s=aweber_key_a header.b=nfjB5e0f;
+       dkim=pass header.i=@excellence-internet-services-ltd.optin.com header.s=k1 header.b=ehZqZGUQ;
+       dkim=pass header.i=@optin.com header.s=k1 header.b=GurKr5Cu;
+       spf=pass (google.com: domain of zczsjjwctoxmtawshbzmtga07qzg@smtp-coi-g12-033.aweber.com designates 204.194.223.33 as permitted sender) smtp.mailfrom=zCzsjJwctOxMTAwsHBzMtGa07qZG@smtp-coi-g12-033.aweber.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aweber.com;
+	s=aweber_key_a; t=1673204674; x=1674155074;
+	bh=+0mKa6s6e4FrX0WpZRoIU0c6DDushIV5mEt5jQWwoRg=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=nfjB5e0f/iJ1R9/geTQrOSMc1CdwG/xd59LUL9xwgL0RMvpKbOZBPhCL1vr2Ocxxg
+	 VMbs5RcgukfmSKbidXL4BoA9c1GVV8jeMHURwBRpcC4y0b1mM4vNor4QDb0qGDkB3W
+	 YvMAzWcvKLY3k5Xr7VtoSZYEf6eF8mhsvbyIxcOW8XIf/kB6eLUTDGViZx0RoBZQ7+
+	 dXYKTGiJKhRCmWUaubQ0ko4oB0kJbFQDSMp0eOTmtzieM7xaj/Tp5Dt9pMkPta+GHk
+	 2u50+rX6YzDbeX7FXMd5lqFK8HuL/uWO2zFbNNv/ep1hrkgMcMQtp81JkaT5kAzdaj
+	 IF2Q5CgF4Qzfw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=excellence-internet-services-ltd.optin.com; s=k1; t=1673204674;
+	x=1674155074; bh=+0mKa6s6e4FrX0WpZRoIU0c6DDushIV5mEt5jQWwoRg=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=ehZqZGUQa9cKdzvud9KsXyQIIk3YejlonydBj4ACauZo8HFvUWf+J5AMQOd+0R9zd
+	 udGeECj4qMHzcRJdvdqfmfK+AFtWicHvCQayqS1FUTfSNNZrDWQbQGJBKE68aE8ePc
+	 TC5DwUoHnamligf8OPkpekJWYMjhle/p2SHSP5GDUXNvxP6zKa0p6SfMjvQXnzLn5G
+	 FjQkbRD18RxgzGXyhxIIE5k2cGb4p5QsLDss8RTrVVLZ9zXMJLEKvQvdJpKLLT7D/o
+	 0uY2W35vNed9vEVGlo2cTR/W3odRGHz8vBtkrfGlfRHsF0itelJcyo+50bAm0POKL4
+	 wpP7RubuaZVwQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=optin.com; s=k1;
+	t=1673204674; x=1674155074;
+	bh=+0mKa6s6e4FrX0WpZRoIU0c6DDushIV5mEt5jQWwoRg=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=GurKr5CuCpikxa2i5SLqHGMHzLanlhbcmwOPLZt2MGvErN7NpfQOf5MRI5OS+tgLR
+	 S4iE83RLQI9+n9bnUs0+g4CSw0MdS+l3UOO0RIoQFGL7u9zOalcZOCtJ88ss3wQAwL
+	 3v6fefhQRbqg4yB9khzwb1jWzo5ajXGVrRtgeebNuXv3rD4vJrnALOXf2Ucwt6Qly1
+	 mclvKDbSbMZw6HidA6Dneb6evqptfAxx2lpUhVXI/S4F7ac6YGMHdWR63LAgnoZjuc
+	 EJuDU9ohPxklqmGJ9DmaNHNbtPgOzgFWSNrcnZKtrh7IEHOJ2LAwGIFiIpJ1dgMcYG
+	 YqRd0Hp5K5D1g==
+Date: Sun, 08 Jan 2023 19:04:34 +0000
+Message-ID: <AB.D8.18797.2C31BB36@momentum-coi-mta1.prod.aweberint.com>
+Content-Type: multipart/alternative; boundary="===============8741838696553816339=="
+MIME-Version: 1.0
+From: "Dictionary.co.il" <words@dictionary.co.il>
+X-AWMessage: 4263b184-6a70-43dc-8253-60663554097b
+To: "Darnell Keith" <darnellkeithj@gmail.com>
+X_Id: 347198:115229808:darnellkeithj@gmail.com
+Require-Recipient-Valid-Since: darnellkeithj@gmail.com;
+ Mon, 20 Sep 2021 22:59:30 +0000
+Feedback-ID: Aaf6aa862-983e-44bd-9065-94ea4c9efc52:L88ab4b33-d6bb-49be-b4a5-32d8f45fc766:CAMPAIGN-4263b184-6a70-43dc-8253-60663554097b:AWeber
+X-Subscription: Subscribed on 09/20/2021, via Webform, by 24.250.23.189,
+ from https://dictionary.co.il/
+Subject: New Hebrew Word from Dictionary.co.il
+List-Unsubscribe: <https://www.aweber.com/z/r/?zCzsjJwctOxMTAwsHBzMtGa07qZG>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: AWeber Composer 2.78.0
+X-TUID: 5etzoM/jNE3n
+
+--===============8741838696553816339==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Dear Darnell Keith, =
+
+
+Your three hundred ninety-ninth new word is the
+Hebrew word for "pineapple".
+To learn what it is in Hebrew please view the HTML
+version of this email or click here:
+https://clicks.aweber.com/y/ct/?l=3DHh9h0&m=3D3uJn8z9Nqlv1qk9&b=3DUWbzjdoqz=
+B5huVCRWB0FGg
+
+To see the complete Food - Fruit category click here:
+https://clicks.aweber.com/y/ct/?l=3DHh9h0&m=3D3uJn8z9Nqlv1qk9&b=3DkzFmyogtu=
+uZNmdCDbFg9lw
+
+Do you know how to say "champagne" in Hebrew? If
+not find out here:
+https://clicks.aweber.com/y/ct/?l=3DHh9h0&m=3D3uJn8z9Nqlv1qk9&b=3D1FDq_j0v6=
+OlbOw8Y..591Q
+
+
+All the best,
+
+Dictionary.co.il
+
+
+
+
+
+
+
+P.O. Box 34002
+Givat Shaul,  Jerusalem 9134001
+ISRAEL
+Would you like to really jump start your Hebrew studies? At Dictionary.co.i=
+l, we have experienced Hebrew tutors on staff who can teach you (over Zoom,=
+ Skype, Google Meet, etc.) at a time you choose, either one-on-one or as a =
+group.
+
+For more information, or to set up a trial lesson with no obligation, just =
+reply to this email, and we will get back to you promptly.
+
+To unsubscribe or change subscriber options, visit:
+https://www.aweber.com/z/r/?zCzsjJwctOxMTAwsHBzMtGa07qZG
+
+
+--===============8741838696553816339==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Your Three Hundred Ninety-Ninth New Hebrew Word</title>
+</head>
+<body color=3D"#000000" size=3D"2">Dear Darnell Keith, =
+
+<br>
+<br>Here is your three hundred ninety-ninth new Hebrew word: =
+
+<br>
+<br>
+<img  src=3D"http://www.dictionary.co.il/h07/h0705021.gif" alt=3D"pineapple=
+"> =
+
+<br>
+<br>Click here to see <a href=3D"https://clicks.aweber.com/y/ct/?l=3DHh9h0&=
+amp;m=3D3uJn8z9Nqlv1qk9&amp;b=3DkzFmyogtuuZNmdCDbFg9lw">the complete Food -=
+ Fruit category</a>. =
+
+<br>
+<br>Do you know how to say "champagne" in Hebrew? =
+
+<br>If not <a title=3D"" href=3D"https://clicks.aweber.com/y/ct/?l=3DHh9h0&=
+amp;m=3D3uJn8z9Nqlv1qk9&amp;b=3D1FDq_j0v6OlbOw8Y..591Q
+">click here to find out</a>. =
+
+<br>
+
+<br>All the best, =
+
+<br>
+<br><a href=3D"https://clicks.aweber.com/y/ct/?l=3DHh9h0&amp;m=3D3uJn8z9Nql=
+v1qk9&amp;b=3D.TiOiY8Dxya1YIkecsqjHw">Dictionary.co.il </a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>P.O. Box 34002<br>
+Givat Shaul,  Jerusalem 9134001<br>
+ISRAEL =
+
+
+<div>&nbsp;</div><div align=3D"center" id=3D"aweber_container" style=3D"bac=
+kground-color:#ffffff; width:100% !important"><div id=3D"aweber_rem" style=
+=3D"box-sizing:border-box; color:#000000 !important; font-family:Helvetica,=
+Arial,sans-serif !important; font-size:12px !important; line-height:16px; m=
+argin:0px; max-width:600px; padding:0px 8px; width:100%"><!--[if gte mso 9]=
+><table width=3D"600" style=3D"color: #000000;font-family: Helvetica, Arial=
+, sans-serif;font-size: 12px;line-height: 16px;"><tr><td style=3D"padding:8=
+px;"><![endif]--><div class=3D"rem_align" style=3D"text-align:center;"><spa=
+n style=3D"color:#000000 !important">Would you like to really jump start yo=
+ur Hebrew studies? At Dictionary.co.il, we have experienced Hebrew tutors o=
+n staff who can teach you (over Zoom, Skype, Google Meet, etc.) at a time y=
+ou choose, either one-on-one or as a group.<br>
+<br>
+For more information, or to set up a trial lesson with no obligation, just =
+reply to this email, and we will get back to you promptly.</span><br><br><a=
+ href=3D"https://www.aweber.com/z/r/?zCzsjJwctOxMTAwsHBzMtGa07qZG" rel=3D"n=
+oopener noreferrer" style=3D"color: #000000;" target=3D"_blank"><span style=
+=3D"color:#000000 !important">Unsubscribe</span></a> &nbsp; | &nbsp; <a hre=
+f=3D"https://www.aweber.com/z/r/?zCzsjJwctOxMTAwsHBzMtGa07qZG" rel=3D"noope=
+ner noreferrer" style=3D"color: #000000;" target=3D"_blank"><span style=3D"=
+color:#000000 !important">Change&nbsp;Subscriber&nbsp;Options</span></a><br=
+><br></div><!--[if gte mso 9]></td></tr></table><![endif]--></div></div><im=
+g src=3D"https://openrate.aweber.com/y/o/?l=3DHh9h0&m=3D3uJn8z9Nqlv1qk9" wi=
+dth=3D"1" height=3D"1"></body>
+</html>
+
+
+
+--===============8741838696553816339==--

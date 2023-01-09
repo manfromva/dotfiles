@@ -1,0 +1,2621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="network:///" added="2022-12-29T20:14:10.343010Z" modified="2023-01-09T15:19:27.097384Z" visited="2022-12-29T20:14:10.343012Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:19:27.097377Z" count="18"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus.manfromva.com/darnell/" added="2022-12-29T20:14:42.147740Z" modified="2022-12-29T20:14:42.147744Z" visited="2022-12-29T20:14:42.147741Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T20:14:42.147742Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell" added="2022-12-29T20:14:45.962210Z" modified="2023-01-09T15:22:18.889717Z" visited="2022-12-29T20:14:45.962215Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:22:18.889716Z" count="72"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads" added="2022-12-29T20:14:47.185731Z" modified="2023-01-04T17:26:37.859209Z" visited="2022-12-29T20:14:47.185731Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:37.859208Z" count="23"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.screenlayout/screens" added="2022-12-29T20:18:03.680743Z" modified="2022-12-29T20:18:03.680747Z" visited="2022-12-29T20:18:03.680744Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="arandr" exec="&apos;arandr %u&apos;" modified="2022-12-29T20:18:03.680745Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config" added="2022-12-29T20:19:00.626928Z" modified="2023-01-09T01:38:11.219600Z" visited="2022-12-29T20:19:00.626931Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T01:38:11.219598Z" count="64"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm" added="2022-12-29T20:19:03.289487Z" modified="2023-01-09T01:39:23.982812Z" visited="2022-12-29T20:19:03.289489Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T01:39:23.982811Z" count="18"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/req" added="2022-12-29T20:20:10.085487Z" modified="2022-12-31T17:12:03.452084Z" visited="2022-12-29T20:20:10.085487Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:34:47.376367Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:12:03.452082Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.screenlayout/screens.sh" added="2022-12-29T20:35:28.556122Z" modified="2022-12-29T21:21:54.433061Z" visited="2022-12-29T20:35:28.556122Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T21:21:54.433060Z" count="3"/>
+          <bookmark:application name="arandr" exec="&apos;arandr %u&apos;" modified="2022-12-29T21:19:48.531985Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/autostart" added="2022-12-29T20:35:58.548028Z" modified="2023-01-09T01:39:30.201773Z" visited="2022-12-29T20:35:58.548029Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:42:22.398685Z" count="12"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T01:39:30.201770Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="computer:///" added="2022-12-29T20:39:47.899774Z" modified="2022-12-31T16:34:30.835946Z" visited="2022-12-29T20:39:47.899775Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:34:30.835942Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup" added="2022-12-29T20:40:00.763953Z" modified="2022-12-29T22:55:23.367751Z" visited="2022-12-29T20:40:00.763954Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T22:55:23.367748Z" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/herbstluftwm" added="2022-12-29T20:40:05.374244Z" modified="2022-12-29T22:55:25.868353Z" visited="2022-12-29T20:40:05.374245Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T22:55:25.868352Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/herbstluftwm/autostart" added="2022-12-29T20:40:07.650334Z" modified="2022-12-29T23:26:46.035874Z" visited="2022-12-29T20:40:07.650334Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T22:55:28.696813Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T23:26:46.035873Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/herbstluftwm/sxhkd" added="2022-12-29T20:41:50.325500Z" modified="2022-12-29T20:41:53.589061Z" visited="2022-12-29T20:41:50.325501Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T20:41:53.589060Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/sxhkd" added="2022-12-29T20:42:07.083599Z" modified="2022-12-30T01:06:27.059046Z" visited="2022-12-29T20:42:07.083600Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T01:06:27.059045Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Desktop" added="2022-12-29T20:42:28.312068Z" modified="2022-12-29T21:28:22.552021Z" visited="2022-12-29T20:42:28.312068Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:28:22.552020Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/polybar" added="2022-12-29T20:42:53.294658Z" modified="2022-12-29T20:42:53.294663Z" visited="2022-12-29T20:42:53.294659Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T20:42:53.294661Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/polybar/config" added="2022-12-29T20:42:58.982704Z" modified="2022-12-29T20:46:17.250296Z" visited="2022-12-29T20:42:58.982704Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T20:42:58.982705Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T20:46:17.250295Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar" added="2022-12-29T20:43:25.741891Z" modified="2023-01-04T18:16:24.419907Z" visited="2022-12-29T20:43:25.741891Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:16:24.419905Z" count="13"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/nord" added="2022-12-29T20:43:50.912429Z" modified="2022-12-29T20:43:50.912433Z" visited="2022-12-29T20:43:50.912430Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T20:43:50.912432Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/liath" added="2022-12-29T20:44:07.102631Z" modified="2023-01-04T16:35:43.434190Z" visited="2022-12-29T20:44:07.102633Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:35:43.434188Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/liath/launch.sh" added="2022-12-29T20:44:18.547439Z" modified="2023-01-04T16:55:12.898736Z" visited="2022-12-29T20:44:18.547440Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T15:30:15.055754Z" count="4"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:55:12.898734Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/liath/config.ini" added="2022-12-29T20:46:42.172965Z" modified="2023-01-04T16:58:11.053539Z" visited="2022-12-29T20:46:42.172966Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:37:55.301208Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:58:11.053538Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.local" added="2022-12-29T20:50:51.085860Z" modified="2023-01-04T16:38:59.736016Z" visited="2022-12-29T20:50:51.085860Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:38:59.736015Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.local/bin" added="2022-12-29T20:50:55.849127Z" modified="2023-01-04T16:39:00.979074Z" visited="2022-12-29T20:50:55.849127Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:39:00.979073Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/scripts" added="2022-12-29T20:51:38.598737Z" modified="2023-01-04T18:16:25.552674Z" visited="2022-12-29T20:51:38.598737Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:16:25.552672Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/wallpapers" added="2022-12-29T20:52:54.699817Z" modified="2022-12-31T15:29:23.575209Z" visited="2022-12-29T20:52:54.699821Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:29:23.575207Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/liath/modules.ini" added="2022-12-29T21:04:52.400726Z" modified="2023-01-04T16:50:12.316345Z" visited="2022-12-29T21:04:52.400727Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:50:12.316344Z" count="9"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:35:46.880991Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/sxhkd/sxhkdrc" added="2022-12-29T21:08:36.595206Z" modified="2023-01-04T16:55:15.671801Z" visited="2022-12-29T21:08:36.595207Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:55:15.671799Z" count="7"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T01:06:28.723662Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/picom.conf" added="2022-12-29T21:12:52.374550Z" modified="2022-12-31T15:46:27.670743Z" visited="2022-12-29T21:12:52.374552Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:44:56.716705Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:46:27.670741Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/alacritty" added="2022-12-29T21:14:01.670023Z" modified="2022-12-31T16:12:52.863118Z" visited="2022-12-29T21:14:01.670024Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:12:52.863117Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi" added="2022-12-29T21:14:22.891667Z" modified="2023-01-04T16:52:24.685980Z" visited="2022-12-29T21:14:22.891667Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:52:24.685978Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/config.rasi" added="2022-12-29T21:14:24.784942Z" modified="2023-01-04T16:58:14.983896Z" visited="2022-12-29T21:14:24.784942Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:52:26.299382Z" count="4"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:58:14.983894Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/rofi" added="2022-12-29T21:15:19.914713Z" modified="2022-12-29T21:15:19.914716Z" visited="2022-12-29T21:15:19.914714Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:15:19.914715Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/rofi/config.rasi" added="2022-12-29T21:15:23.475225Z" modified="2022-12-29T22:43:31.007028Z" visited="2022-12-29T21:15:23.475225Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:15:23.475226Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T22:43:31.007026Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers" added="2022-12-29T21:22:59.771568Z" modified="2023-01-04T16:52:38.577985Z" visited="2022-12-29T21:22:59.771568Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:52:38.577984Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers/type-5" added="2022-12-29T21:23:01.929007Z" modified="2022-12-29T21:23:01.929010Z" visited="2022-12-29T21:23:01.929007Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:23:01.929008Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/l-dotfiles" added="2022-12-29T21:25:42.754674Z" modified="2022-12-29T21:32:48.494457Z" visited="2022-12-29T21:25:42.754675Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:32:48.494452Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/l-dotfiles/.config" added="2022-12-29T21:25:50.232881Z" modified="2022-12-29T21:25:50.232884Z" visited="2022-12-29T21:25:50.232881Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:25:50.232882Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/l-dotfiles/.config/alacritty" added="2022-12-29T21:25:52.625713Z" modified="2022-12-29T21:26:25.494440Z" visited="2022-12-29T21:25:52.625713Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:26:25.494438Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/alacritty/alacritty.yml" added="2022-12-29T21:26:11.695663Z" modified="2022-12-31T16:05:43.754830Z" visited="2022-12-29T21:26:11.695664Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:31:36.396480Z" count="3"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T16:05:43.754829Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/l-dotfiles/.config/alacritty/alacritty.yml" added="2022-12-29T21:26:27.883652Z" modified="2022-12-29T22:26:57.930208Z" visited="2022-12-29T21:26:27.883652Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:26:27.883653Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T22:26:57.930207Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/l-dotfiles/.config/alacritty/fonts.yml" added="2022-12-29T21:26:43.072381Z" modified="2022-12-29T22:26:55.411003Z" visited="2022-12-29T21:26:43.072382Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:26:43.072383Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T22:26:55.411001Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/alacritty.yml" added="2022-12-29T21:27:19.437254Z" modified="2022-12-29T22:26:56.816715Z" visited="2022-12-29T21:27:19.437254Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:27:19.437255Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T22:26:56.816712Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.themes" added="2022-12-29T21:28:58.411731Z" modified="2022-12-31T17:14:29.234563Z" visited="2022-12-29T21:28:58.411732Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:14:29.234561Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.zshrc" added="2022-12-29T21:32:37.497759Z" modified="2022-12-30T16:51:45.906022Z" visited="2022-12-29T21:32:37.497760Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T21:32:37.497761Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T16:51:45.906020Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ncmpcpp" added="2022-12-29T22:21:54.281205Z" modified="2023-01-08T22:09:47.419424Z" visited="2022-12-29T22:21:54.281205Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:09:47.419420Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ncmpcpp/config" added="2022-12-29T22:21:56.540240Z" modified="2022-12-29T22:26:54.191423Z" visited="2022-12-29T22:21:56.540241Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T22:21:56.540242Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T22:26:54.191422Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/mopidy.conf" added="2022-12-29T22:27:04.718897Z" modified="2023-01-08T22:08:28.257991Z" visited="2022-12-29T22:27:04.718897Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T23:29:19.241022Z" count="3"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:28.257989Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mpd/mpd.conf" added="2022-12-29T22:50:28.792508Z" modified="2022-12-29T23:26:56.739644Z" visited="2022-12-29T22:50:28.792508Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T23:26:56.739643Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/backup/indicator-stickynotes" added="2022-12-29T23:04:15.477669Z" modified="2022-12-29T23:04:15.477672Z" visited="2022-12-29T23:04:15.477669Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="indicator-stickynotes" exec="&apos;indicator-stickynotes %u&apos;" modified="2022-12-29T23:04:15.477670Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.api_keys/YT_API_KEY" added="2022-12-29T23:12:25.485988Z" modified="2022-12-29T23:29:21.602850Z" visited="2022-12-29T23:12:25.485988Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-29T23:29:21.602848Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/" added="2022-12-29T23:35:01.110162Z" modified="2023-01-09T01:31:58.495255Z" visited="2022-12-29T23:35:01.110164Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T01:31:58.495254Z" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/" added="2022-12-29T23:35:04.409182Z" modified="2022-12-30T18:47:56.005451Z" visited="2022-12-29T23:35:04.409183Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:47:56.005450Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/Dotfiles" added="2022-12-29T23:35:05.791014Z" modified="2022-12-30T18:47:57.904943Z" visited="2022-12-29T23:35:05.791017Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:47:57.904941Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/Dotfiles/Projects" added="2022-12-29T23:35:08.801649Z" modified="2022-12-30T18:48:06.130794Z" visited="2022-12-29T23:35:08.801650Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:48:06.130793Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/Dotfiles/Projects/notes" added="2022-12-29T23:35:09.984230Z" modified="2022-12-29T23:35:09.984238Z" visited="2022-12-29T23:35:09.984232Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T23:35:09.984235Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/Dotfiles/git" added="2022-12-29T23:35:18.640257Z" modified="2022-12-30T18:48:00.883815Z" visited="2022-12-29T23:35:18.640258Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:48:00.883814Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/" added="2022-12-29T23:35:43.530062Z" modified="2023-01-07T01:52:45.167883Z" visited="2022-12-29T23:35:43.530063Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-07T01:52:45.167881Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects" added="2022-12-29T23:37:57.456135Z" modified="2023-01-09T15:20:17.150639Z" visited="2022-12-29T23:37:57.456138Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:20:17.150637Z" count="16"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/git" added="2022-12-29T23:52:45.555836Z" modified="2022-12-30T00:32:55.342551Z" visited="2022-12-29T23:52:45.555840Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T00:32:55.342549Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Recovery" added="2022-12-29T23:53:11.588862Z" modified="2022-12-29T23:53:11.588866Z" visited="2022-12-29T23:53:11.588863Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-29T23:53:11.588864Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Projects" added="2022-12-29T23:54:10.729306Z" modified="2022-12-30T15:46:35.644994Z" visited="2022-12-29T23:54:10.729310Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:46:35.644993Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Projects/notes" added="2022-12-29T23:54:23.953102Z" modified="2022-12-30T15:42:48.355443Z" visited="2022-12-29T23:54:23.953103Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:42:48.355441Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Projects/python" added="2022-12-29T23:54:27.990747Z" modified="2022-12-30T15:42:59.660401Z" visited="2022-12-29T23:54:27.990748Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:42:59.660400Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Projects/ansible" added="2022-12-29T23:54:30.541201Z" modified="2022-12-30T15:42:45.240889Z" visited="2022-12-29T23:54:30.541202Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:42:45.240883Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/bare" added="2022-12-29T23:58:16.284035Z" modified="2023-01-09T15:21:22.138079Z" visited="2022-12-29T23:58:16.284036Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:21:22.138074Z" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/bare/config" added="2022-12-29T23:58:28.557052Z" modified="2023-01-09T15:21:33.208790Z" visited="2022-12-29T23:58:28.557053Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:21:33.208788Z" count="4"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T16:23:44.840860Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/git/bare" added="2022-12-30T00:32:57.321237Z" modified="2022-12-30T00:32:57.321241Z" visited="2022-12-30T00:32:57.321237Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T00:32:57.321239Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/git/bare/config" added="2022-12-30T00:33:06.682923Z" modified="2022-12-30T00:41:30.601004Z" visited="2022-12-30T00:33:06.682924Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T00:33:06.682925Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T00:41:30.601002Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/.ssh" added="2022-12-30T00:34:09.982589Z" modified="2022-12-30T15:47:34.431465Z" visited="2022-12-30T00:34:09.982590Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:47:34.431463Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/System%20Volume%20Information" added="2022-12-30T00:34:39.915881Z" modified="2022-12-30T00:34:39.915888Z" visited="2022-12-30T00:34:39.915882Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T00:34:39.915884Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy" added="2022-12-30T00:47:13.070457Z" modified="2023-01-08T22:08:04.209009Z" visited="2022-12-30T00:47:13.070458Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:04.209006Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/jellyfin" added="2022-12-30T00:47:16.528655Z" modified="2023-01-08T22:08:18.115874Z" visited="2022-12-30T00:47:16.528658Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:18.115869Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/http" added="2022-12-30T00:47:18.972516Z" modified="2023-01-08T22:08:15.382338Z" visited="2022-12-30T00:47:18.972523Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:15.382335Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/jellyfin/token" added="2022-12-30T00:47:22.285866Z" modified="2022-12-30T01:13:18.338202Z" visited="2022-12-30T00:47:22.285867Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T00:47:22.285868Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T01:13:18.338200Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="trash:///" added="2022-12-30T02:07:49.838963Z" modified="2022-12-31T16:52:58.526047Z" visited="2022-12-30T02:07:49.838964Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:52:58.526046Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/priv" added="2022-12-30T15:42:08.350347Z" modified="2022-12-30T15:42:08.350351Z" visited="2022-12-30T15:42:08.350348Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:42:08.350349Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT" added="2022-12-30T15:42:30.223964Z" modified="2023-01-04T19:14:21.620662Z" visited="2022-12-30T15:42:30.223965Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:21.620660Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/New%20folder" added="2022-12-30T15:42:32.665557Z" modified="2023-01-04T19:14:44.534407Z" visited="2022-12-30T15:42:32.665558Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:44.534406Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/Projects/Python-Cheat-Sheet.pdf" added="2022-12-30T15:42:55.689198Z" modified="2022-12-30T15:42:55.689203Z" visited="2022-12-30T15:42:55.689198Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:42:55.689199Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/ansible" added="2022-12-30T15:43:17.856303Z" modified="2022-12-30T15:45:18.506114Z" visited="2022-12-30T15:43:17.856304Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:45:18.506113Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/ansible/.git" added="2022-12-30T15:43:27.555316Z" modified="2022-12-30T15:43:27.555322Z" visited="2022-12-30T15:43:27.555318Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:43:27.555320Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/ansible/.git/config" added="2022-12-30T15:43:31.002948Z" modified="2022-12-30T15:43:42.863855Z" visited="2022-12-30T15:43:31.002948Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:43:31.002949Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T15:43:42.863854Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/k3s-ansible" added="2022-12-30T15:44:48.194747Z" modified="2022-12-30T15:44:48.194751Z" visited="2022-12-30T15:44:48.194748Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:44:48.194750Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/dmscripts" added="2022-12-30T15:45:26.857282Z" modified="2022-12-30T15:45:26.857285Z" visited="2022-12-30T15:45:26.857283Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:45:26.857284Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/notes" added="2022-12-30T15:45:46.852257Z" modified="2022-12-31T17:26:30.219554Z" visited="2022-12-30T15:45:46.852258Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:26:30.219547Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/.Trash-1000" added="2022-12-30T15:46:51.546395Z" modified="2022-12-30T15:46:51.546398Z" visited="2022-12-30T15:46:51.546395Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:46:51.546396Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/Comptia/Sec/002%20CompTIA-Security-601-Study-Guide.pdf" added="2022-12-30T15:50:09.160610Z" modified="2023-01-04T18:22:51.457660Z" visited="2022-12-30T15:50:09.160611Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="koodo-reader" exec="&apos;koodo-reader %u&apos;" modified="2022-12-30T15:50:09.160613Z" count="1"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:22:51.457655Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/Comptia/Sec/25886084.pdf" added="2022-12-30T15:50:09.160621Z" modified="2023-01-04T18:22:56.173377Z" visited="2022-12-30T15:50:09.160622Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="koodo-reader" exec="&apos;koodo-reader %u&apos;" modified="2022-12-30T15:50:09.160622Z" count="1"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:22:56.173374Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/notes/Security" added="2022-12-30T15:50:54.221972Z" modified="2022-12-30T15:50:54.221979Z" visited="2022-12-30T15:50:54.221974Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="electron" exec="&apos;electron %u&apos;" modified="2022-12-30T15:50:54.221976Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/vault" added="2022-12-30T15:53:30.352643Z" modified="2022-12-30T15:53:30.352646Z" visited="2022-12-30T15:53:30.352643Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:53:30.352644Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/vault/config" added="2022-12-30T15:54:18.170822Z" modified="2022-12-30T16:23:46.407125Z" visited="2022-12-30T15:54:18.170822Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T15:54:18.170823Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T16:23:46.407124Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ncmpcpp/bindings" added="2022-12-30T16:23:39.721925Z" modified="2023-01-08T22:09:49.713148Z" visited="2022-12-30T16:23:39.721925Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:09:49.713147Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T16:51:51.395611Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.ssh" added="2022-12-30T16:43:04.775417Z" modified="2022-12-30T16:43:04.775422Z" visited="2022-12-30T16:43:04.775418Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T16:43:04.775419Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.zsh/options.zsh" added="2022-12-30T16:48:46.390754Z" modified="2022-12-31T15:52:29.425442Z" visited="2022-12-30T16:48:46.390754Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:52:29.425441Z" count="3"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:43:59.571663Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.zsh/aliases.zsh" added="2022-12-30T16:48:53.629186Z" modified="2022-12-31T15:59:58.987956Z" visited="2022-12-30T16:48:53.629186Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:59:58.987954Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.zsh/prompt.zsh" added="2022-12-30T16:49:16.337665Z" modified="2022-12-31T15:52:27.751892Z" visited="2022-12-30T16:49:16.337665Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:52:27.751890Z" count="3"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:44:13.774955Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/r-backups/Dotfiles/IT" added="2022-12-30T18:48:04.178347Z" modified="2022-12-30T18:48:04.178355Z" visited="2022-12-30T18:48:04.178349Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:48:04.178352Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/" added="2022-12-30T18:48:52.493069Z" modified="2022-12-30T18:48:52.493072Z" visited="2022-12-30T18:48:52.493070Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:48:52.493071Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/backup" added="2022-12-30T18:52:23.198262Z" modified="2022-12-30T18:52:23.198266Z" visited="2022-12-30T18:52:23.198263Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:52:23.198264Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/backup/ytfzf" added="2022-12-30T18:52:25.253526Z" modified="2022-12-30T18:52:25.253529Z" visited="2022-12-30T18:52:25.253526Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:52:25.253527Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ytfzf" added="2022-12-30T18:52:37.669034Z" modified="2022-12-30T18:52:37.669039Z" visited="2022-12-30T18:52:37.669035Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:52:37.669036Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ytfzf/conf.sh" added="2022-12-30T18:52:39.865087Z" modified="2022-12-30T18:52:46.510326Z" visited="2022-12-30T18:52:39.865088Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:52:39.865089Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-30T18:52:46.510325Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/IT" added="2022-12-30T18:53:06.259711Z" modified="2022-12-30T18:53:06.259719Z" visited="2022-12-30T18:53:06.259714Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:06.259716Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/sec" added="2022-12-30T18:53:08.779751Z" modified="2022-12-30T18:53:08.779754Z" visited="2022-12-30T18:53:08.779752Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:08.779752Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/sec/PGP" added="2022-12-30T18:53:11.526034Z" modified="2022-12-30T18:53:11.526037Z" visited="2022-12-30T18:53:11.526034Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:11.526036Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/sec/PGP/Newer" added="2022-12-30T18:53:12.798862Z" modified="2022-12-30T18:53:12.798865Z" visited="2022-12-30T18:53:12.798862Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:12.798863Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/sec/PGP/Older" added="2022-12-30T18:53:17.614601Z" modified="2022-12-30T18:53:17.614604Z" visited="2022-12-30T18:53:17.614602Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:17.614603Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/Storage" added="2022-12-30T18:53:22.628665Z" modified="2022-12-30T18:53:22.628668Z" visited="2022-12-30T18:53:22.628666Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:22.628667Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://asus/darnell/Storage/Darnell" added="2022-12-30T18:53:28.293832Z" modified="2022-12-30T18:53:28.293836Z" visited="2022-12-30T18:53:28.293833Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-30T18:53:28.293834Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/wallpapers" added="2022-12-31T15:29:32.528328Z" modified="2022-12-31T15:29:32.528332Z" visited="2022-12-31T15:29:32.528329Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:29:32.528330Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///" added="2022-12-31T15:31:47.165822Z" modified="2023-01-02T21:45:01.631520Z" visited="2022-12-31T15:31:47.165823Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:01.631516Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache" added="2022-12-31T15:31:49.598885Z" modified="2023-01-04T16:51:37.650781Z" visited="2022-12-31T15:31:49.598886Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:51:37.650780Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal" added="2022-12-31T15:31:53.353381Z" modified="2023-01-04T16:51:40.340984Z" visited="2022-12-31T15:31:53.353382Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:51:40.340983Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/colors" added="2022-12-31T15:31:55.265013Z" modified="2022-12-31T15:31:59.769353Z" visited="2022-12-31T15:31:55.265014Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:31:55.265014Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:31:59.769351Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/colors-kitty.conf" added="2022-12-31T15:32:12.974343Z" modified="2022-12-31T15:48:20.886786Z" visited="2022-12-31T15:32:12.974343Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:32:12.974344Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:48:20.886783Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/colors.yml" added="2022-12-31T15:35:01.295307Z" modified="2022-12-31T15:48:34.532417Z" visited="2022-12-31T15:35:01.295307Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T15:35:01.295309Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:48:34.532414Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.zsh" added="2022-12-31T15:43:55.595279Z" modified="2023-01-09T15:25:21.519160Z" visited="2022-12-31T15:43:55.595281Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T15:25:21.519158Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/alacritty/colorschemes/Horizon_dark.yml" added="2022-12-31T15:47:09.803438Z" modified="2022-12-31T17:14:06.783011Z" visited="2022-12-31T15:47:09.803439Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:14:06.783009Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/wal" added="2022-12-31T15:48:52.541900Z" modified="2022-12-31T16:05:47.272213Z" visited="2022-12-31T15:48:52.541901Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T16:05:47.272211Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/colors-konsole.colorscheme" added="2022-12-31T15:49:16.772949Z" modified="2022-12-31T15:49:49.541946Z" visited="2022-12-31T15:49:16.772950Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T15:49:49.541945Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.cache/wal/colors.sh" added="2022-12-31T16:04:49.078379Z" modified="2022-12-31T16:05:46.206847Z" visited="2022-12-31T16:04:49.078380Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T16:05:46.206845Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles" added="2022-12-31T16:07:45.901845Z" modified="2023-01-04T17:18:52.789181Z" visited="2022-12-31T16:07:45.901848Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:18:52.789180Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config" added="2022-12-31T16:07:47.435957Z" modified="2023-01-04T17:18:54.637241Z" visited="2022-12-31T16:07:47.435958Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:18:54.637238Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/rofi" added="2022-12-31T16:07:49.357806Z" modified="2022-12-31T16:16:51.756135Z" visited="2022-12-31T16:07:49.357808Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:51.756134Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/sxhkd" added="2022-12-31T16:08:01.794351Z" modified="2022-12-31T16:08:01.794355Z" visited="2022-12-31T16:08:01.794352Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:08:01.794353Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/sxhkd/sxhkdrc" added="2022-12-31T16:08:02.920281Z" modified="2022-12-31T17:12:00.838388Z" visited="2022-12-31T16:08:02.920282Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:08:02.920284Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:12:00.838387Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.local" added="2022-12-31T16:10:18.233491Z" modified="2022-12-31T16:16:12.413738Z" visited="2022-12-31T16:10:18.233493Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:12.413736Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.local/bin" added="2022-12-31T16:10:19.047471Z" modified="2022-12-31T16:16:13.185798Z" visited="2022-12-31T16:10:19.047473Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:13.185797Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.local/bin/polybar" added="2022-12-31T16:10:34.608942Z" modified="2022-12-31T16:16:22.479640Z" visited="2022-12-31T16:10:34.608943Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:22.479638Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.local/bin/wifimenu" added="2022-12-31T16:10:40.986606Z" modified="2022-12-31T17:11:59.906185Z" visited="2022-12-31T16:10:40.986608Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:10:40.986609Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:11:59.906183Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/alacritty" added="2022-12-31T16:12:39.783120Z" modified="2022-12-31T16:16:31.597649Z" visited="2022-12-31T16:12:39.783121Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:31.597647Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/alacritty/alacritty" added="2022-12-31T16:13:16.557191Z" modified="2022-12-31T16:13:18.969212Z" visited="2022-12-31T16:13:16.557192Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:13:18.969211Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.github" added="2022-12-31T16:16:07.580310Z" modified="2022-12-31T16:16:07.580317Z" visited="2022-12-31T16:16:07.580312Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:07.580314Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/bspwm" added="2022-12-31T16:16:28.311090Z" modified="2022-12-31T16:16:28.311096Z" visited="2022-12-31T16:16:28.311092Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:28.311093Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/lf" added="2022-12-31T16:16:33.892279Z" modified="2022-12-31T16:16:33.892282Z" visited="2022-12-31T16:16:33.892279Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:33.892280Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/polybar" added="2022-12-31T16:16:39.626583Z" modified="2022-12-31T16:16:39.626586Z" visited="2022-12-31T16:16:39.626584Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:16:39.626585Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/dotfiles/.config/picom" added="2022-12-31T16:17:01.140262Z" modified="2022-12-31T16:17:01.140271Z" visited="2022-12-31T16:17:01.140264Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:17:01.140267Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/picom.conf" added="2022-12-31T16:33:33.545256Z" modified="2023-01-04T17:52:44.120307Z" visited="2022-12-31T16:33:33.545256Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:groups>
+          <bookmark:group>geany</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="geany" exec="&apos;geany %u&apos;" modified="2022-12-31T16:33:33.545257Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:52:44.120306Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config-adt" added="2022-12-31T16:34:02.569216Z" modified="2022-12-31T16:34:25.492299Z" visited="2022-12-31T16:34:02.569217Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:34:25.492296Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.bin" added="2022-12-31T16:34:10.993484Z" modified="2022-12-31T16:34:10.993487Z" visited="2022-12-31T16:34:10.993485Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:34:10.993486Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.themes/Fluent-Dark" added="2022-12-31T16:49:39.468367Z" modified="2022-12-31T16:49:39.468370Z" visited="2022-12-31T16:49:39.468368Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T16:49:39.468369Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers/type-1" added="2022-12-31T17:11:18.707023Z" modified="2023-01-04T16:52:39.659294Z" visited="2022-12-31T17:11:18.707024Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:52:39.659291Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers/type-1/launcher.sh" added="2022-12-31T17:11:20.747362Z" modified="2022-12-31T19:40:00.311981Z" visited="2022-12-31T17:11:20.747366Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:11:20.747368Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T19:40:00.311979Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers/type-1/style-1.rasi" added="2022-12-31T17:11:33.576580Z" modified="2023-01-04T16:58:15.903672Z" visited="2022-12-31T17:11:33.576580Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:58:15.903671Z" count="4"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:52:48.475490Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/launchers/type-1/shared/colors.rasi" added="2022-12-31T17:11:48.685207Z" modified="2022-12-31T17:14:04.068522Z" visited="2022-12-31T17:11:48.685207Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:14:04.068520Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/rofi/colors/onedark.rasi" added="2022-12-31T17:12:44.634144Z" modified="2022-12-31T17:16:16.263799Z" visited="2022-12-31T17:12:44.634145Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:16:16.263797Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.themes/Juno-ocean" added="2022-12-31T17:14:34.536600Z" modified="2022-12-31T17:14:34.536605Z" visited="2022-12-31T17:14:34.536601Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:14:34.536602Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.themes/Juno-ocean/gtk-3.0" added="2022-12-31T17:14:40.597065Z" modified="2022-12-31T17:14:40.597070Z" visited="2022-12-31T17:14:40.597066Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:14:40.597068Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.themes/Juno-ocean/gtk-3.0/gtk.css" added="2022-12-31T17:14:43.403151Z" modified="2022-12-31T17:16:15.443205Z" visited="2022-12-31T17:14:43.403152Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:14:43.403152Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2022-12-31T17:16:15.443204Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/python" added="2022-12-31T17:17:28.639781Z" modified="2023-01-02T02:54:39.653907Z" visited="2022-12-31T17:17:28.639782Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:54:39.653899Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/python/Python-Mosh" added="2022-12-31T17:17:36.446662Z" modified="2023-01-02T02:54:54.053883Z" visited="2022-12-31T17:17:36.446663Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:54:54.053882Z" count="3"/>
+          <bookmark:application name="code" exec="&apos;code %u&apos;" modified="2023-01-02T02:41:13.238793Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/bash" added="2022-12-31T17:17:43.359076Z" modified="2022-12-31T17:32:35.424204Z" visited="2022-12-31T17:17:43.359078Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:17:43.359079Z" count="1"/>
+          <bookmark:application name="code" exec="&apos;code %u&apos;" modified="2022-12-31T17:32:35.424202Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos" added="2022-12-31T17:26:07.192394Z" modified="2023-01-02T21:45:11.073980Z" visited="2022-12-31T17:26:07.192395Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:11.073977Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting" added="2022-12-31T17:26:08.825163Z" modified="2023-01-02T21:45:12.798137Z" visited="2022-12-31T17:26:08.825163Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:12.798134Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script" added="2022-12-31T17:26:10.169492Z" modified="2023-01-02T02:38:44.614968Z" visited="2022-12-31T17:26:10.169513Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:38:44.614966Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/1.%20Course%20Introduction.mp4" added="2022-12-31T17:26:17.189543Z" modified="2022-12-31T17:26:17.189555Z" visited="2022-12-31T17:26:17.189546Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:26:17.189550Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/2.%20Shells%20vs%20Scripts.mp4" added="2022-12-31T17:33:29.661040Z" modified="2022-12-31T17:33:29.661044Z" visited="2022-12-31T17:33:29.661041Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:33:29.661042Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/4.%20Bash%20Script%20Structure%20-%20Part%201%20-%20%20Core%20Components.mp4" added="2022-12-31T17:38:40.565870Z" modified="2022-12-31T17:38:40.565876Z" visited="2022-12-31T17:38:40.565871Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:38:40.565873Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/4.1%20Exit%20Codes.html" added="2022-12-31T17:39:10.435601Z" modified="2022-12-31T17:39:10.435614Z" visited="2022-12-31T17:39:10.435604Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T17:39:10.435609Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/5.%20Bash%20Script%20Structure%20-%20Part%202%20-%20Professional%20Components.mp4" added="2022-12-31T18:04:25.613903Z" modified="2022-12-31T18:04:25.613907Z" visited="2022-12-31T18:04:25.613904Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:04:25.613905Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/6.%20Setting%20up%20Secure%20Script%20Permissions.mp4" added="2022-12-31T18:12:00.783694Z" modified="2022-12-31T18:12:00.783706Z" visited="2022-12-31T18:12:00.783697Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:12:00.783701Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/8.%20Backup%20Script%20-%20%20Project%20Solution.mp4" added="2022-12-31T18:28:02.175302Z" modified="2022-12-31T18:28:02.175305Z" visited="2022-12-31T18:28:02.175303Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:28:02.175304Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/7.1%20Backup%20Script%20Project%20-%20Brief.pdf" added="2022-12-31T18:28:35.880932Z" modified="2022-12-31T18:28:35.880945Z" visited="2022-12-31T18:28:35.880934Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:28:35.880939Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/" added="2022-12-31T18:52:49.883049Z" modified="2023-01-06T23:57:20.507970Z" visited="2022-12-31T18:52:49.883049Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:20.507969Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/bash" added="2022-12-31T18:52:52.918182Z" modified="2022-12-31T18:52:52.918188Z" visited="2022-12-31T18:52:52.918183Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:52:52.918186Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/bash/bash_course" added="2022-12-31T18:52:54.078297Z" modified="2022-12-31T18:52:54.078300Z" visited="2022-12-31T18:52:54.078297Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T18:52:54.078299Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/9.%20Adding%20scripts%20to%20your%20PATH.mp4" added="2022-12-31T19:02:42.369129Z" modified="2022-12-31T19:02:42.369133Z" visited="2022-12-31T19:02:42.369130Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T19:02:42.369131Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/1.%20How%20to%20Build%20a%20Bash%20Script/10.%20Section%20Summary.mp4" added="2022-12-31T19:14:08.453708Z" modified="2022-12-31T19:14:08.453712Z" visited="2022-12-31T19:14:08.453709Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2022-12-31T19:14:08.453710Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/2.%20Variables%20and%20Shell%20Expansions" added="2022-12-31T19:17:29.703529Z" modified="2023-01-02T21:45:14.524862Z" visited="2022-12-31T19:17:29.703530Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:14.524861Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.ssh/id_ed25519.pub" added="2023-01-01T15:13:09.872495Z" modified="2023-01-01T18:30:36.749143Z" visited="2023-01-01T15:13:09.872496Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-publisher"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-01-01T18:30:36.749121Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python" added="2023-01-02T02:32:09.595309Z" modified="2023-01-02T03:00:04.125019Z" visited="2023-01-02T02:32:09.595309Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T03:00:04.125017Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)" added="2023-01-02T02:32:11.702707Z" modified="2023-01-02T03:00:06.612268Z" visited="2023-01-02T02:32:11.702707Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T03:00:06.612266Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/001-1-%20What%20is%20Python.mp4" added="2023-01-02T02:32:16.362260Z" modified="2023-01-02T02:32:16.362264Z" visited="2023-01-02T02:32:16.362261Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:32:16.362262Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/002-2-%20Installing%20Python.mp4" added="2023-01-02T02:32:29.523753Z" modified="2023-01-02T02:32:29.523756Z" visited="2023-01-02T02:32:29.523753Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:32:29.523754Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/004-4-%20Code%20Editors.mp4" added="2023-01-02T02:39:06.446723Z" modified="2023-01-02T02:39:06.446727Z" visited="2023-01-02T02:39:06.446724Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:39:06.446725Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/005-5-%20Your%20First%20Python%20Program.mp4" added="2023-01-02T02:40:36.631827Z" modified="2023-01-02T02:40:36.631831Z" visited="2023-01-02T02:40:36.631828Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:40:36.631829Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/006-6-%20Python%20Extension.mp4" added="2023-01-02T02:44:15.171451Z" modified="2023-01-02T02:44:15.171454Z" visited="2023-01-02T02:44:15.171452Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:44:15.171453Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/007-7-%20Linting%20Python%20Code.mp4" added="2023-01-02T02:47:35.291718Z" modified="2023-01-02T02:47:35.291730Z" visited="2023-01-02T02:47:35.291721Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T02:47:35.291725Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/008-8-%20Formatting%20Python%20Code.mp4" added="2023-01-02T02:53:29.723509Z" modified="2023-01-02T03:00:11.771394Z" visited="2023-01-02T02:53:29.723511Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T03:00:11.771390Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/009-9-%20Running%20Python%20Code.mp4" added="2023-01-02T03:00:57.704815Z" modified="2023-01-02T03:06:19.557975Z" visited="2023-01-02T03:00:57.704816Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T03:06:19.557973Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Python/1-1-%20Getting%20Started%20(32m)/010-10-%20Python%20Implementations.mp4" added="2023-01-02T03:06:49.037891Z" modified="2023-01-02T03:06:49.037894Z" visited="2023-01-02T03:06:49.037891Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T03:06:49.037892Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/bash/bash_course" added="2023-01-02T21:44:57.303632Z" modified="2023-01-02T21:44:57.303636Z" visited="2023-01-02T21:44:57.303633Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="code" exec="&apos;code %u&apos;" modified="2023-01-02T21:44:57.303634Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/2.%20Variables%20and%20Shell%20Expansions/2.%20User-defined%20Variables%20and%20Parameter%20expansion.mp4" added="2023-01-02T21:45:22.268904Z" modified="2023-01-02T21:45:22.268907Z" visited="2023-01-02T21:45:22.268905Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:22.268906Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/2.%20Variables%20and%20Shell%20Expansions/3.%20Shell%20Variables.mp4" added="2023-01-02T21:45:48.223014Z" modified="2023-01-02T21:45:48.223017Z" visited="2023-01-02T21:45:48.223014Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T21:45:48.223015Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/mediashare/Videos/Bash%20Mastery%20The%20Complete%20Guide%20to%20Bash%20Shell%20Scripting/2.%20Variables%20and%20Shell%20Expansions/4.%20Parameter%20Expansion%20Tricks.mp4" added="2023-01-02T22:04:39.626653Z" modified="2023-01-02T22:04:39.626657Z" visited="2023-01-02T22:04:39.626654Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/mp4"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:04:39.626655Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/liath/polybar_arrow.config.ini" added="2023-01-02T22:41:57.377258Z" modified="2023-01-02T22:50:17.360365Z" visited="2023-01-02T22:41:57.377259Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:41:57.377260Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-02T22:50:17.360364Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm" added="2023-01-02T22:43:40.386139Z" modified="2023-01-02T22:59:34.801112Z" visited="2023-01-02T22:43:40.386139Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:34.801108Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/HLWM_themes" added="2023-01-02T22:43:43.176316Z" modified="2023-01-02T22:59:48.991644Z" visited="2023-01-02T22:43:43.176318Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:48.991643Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/HLWM_themes/options" added="2023-01-02T22:43:45.859610Z" modified="2023-01-02T22:43:45.859613Z" visited="2023-01-02T22:43:45.859610Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:43:45.859612Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/polybar_themes" added="2023-01-02T22:43:54.197638Z" modified="2023-01-02T22:59:54.154826Z" visited="2023-01-02T22:43:54.197639Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:54.154824Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/polybar_themes/options" added="2023-01-02T22:43:57.037737Z" modified="2023-01-02T22:43:57.037741Z" visited="2023-01-02T22:43:57.037738Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:43:57.037739Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/panel.sh" added="2023-01-02T22:47:28.462985Z" modified="2023-01-02T22:49:51.220670Z" visited="2023-01-02T22:47:28.462985Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:47:28.462986Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-02T22:49:51.220668Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/polybar_arrow.config.ini" added="2023-01-02T22:49:58.551010Z" modified="2023-01-04T15:29:40.787394Z" visited="2023-01-02T22:49:58.551010Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:49:58.551011Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T15:29:40.787392Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/polybar_themes" added="2023-01-02T22:50:06.279529Z" modified="2023-01-04T15:29:23.424079Z" visited="2023-01-02T22:50:06.279530Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T15:29:23.424078Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/panel.sh" added="2023-01-02T22:56:28.741424Z" modified="2023-01-04T15:29:36.670360Z" visited="2023-01-02T22:56:28.741424Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T15:29:00.902494Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T15:29:36.670359Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/layouts" added="2023-01-02T22:59:51.428470Z" modified="2023-01-02T22:59:51.428475Z" visited="2023-01-02T22:59:51.428471Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:51.428473Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/wallpaper" added="2023-01-02T22:59:56.712618Z" modified="2023-01-02T22:59:56.712621Z" visited="2023-01-02T22:59:56.712619Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:56.712620Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/void-herbstluftwm/updateIcons" added="2023-01-02T22:59:59.308904Z" modified="2023-01-02T22:59:59.308908Z" visited="2023-01-02T22:59:59.308905Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T22:59:59.308906Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/scripts" added="2023-01-02T23:01:54.585871Z" modified="2023-01-02T23:01:54.585884Z" visited="2023-01-02T23:01:54.585875Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-02T23:01:54.585880Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/launch.sh" added="2023-01-04T15:29:56.812024Z" modified="2023-01-04T17:42:23.586373Z" visited="2023-01-04T15:29:56.812024Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:07:46.810246Z" count="3"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:42:23.586372Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/config" added="2023-01-04T15:30:04.156169Z" modified="2023-01-04T17:09:41.699803Z" visited="2023-01-04T15:30:04.156170Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:02:12.152918Z" count="4"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:09:41.699801Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.local/share" added="2023-01-04T16:31:49.847267Z" modified="2023-01-04T16:31:49.847270Z" visited="2023-01-04T16:31:49.847268Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:31:49.847268Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.local/share/mail" added="2023-01-04T16:31:51.303888Z" modified="2023-01-04T16:31:51.303910Z" visited="2023-01-04T16:31:51.303889Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:31:51.303890Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.local/bin/mailcheck.sh" added="2023-01-04T16:32:48.387114Z" modified="2023-01-04T16:50:10.949216Z" visited="2023-01-04T16:32:48.387114Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:32:48.387115Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:50:10.949215Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles" added="2023-01-04T16:46:30.142980Z" modified="2023-01-04T17:26:38.647865Z" visited="2023-01-04T16:46:30.142983Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:38.647864Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config" added="2023-01-04T16:46:34.659533Z" modified="2023-01-04T17:26:39.663643Z" visited="2023-01-04T16:46:34.659534Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:39.663641Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/rofi" added="2023-01-04T16:46:38.803309Z" modified="2023-01-04T16:46:38.803312Z" visited="2023-01-04T16:46:38.803309Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:46:38.803310Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/rofi/config" added="2023-01-04T16:46:40.793657Z" modified="2023-01-04T16:58:12.702940Z" visited="2023-01-04T16:46:40.793658Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T16:46:40.793659Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T16:58:12.702939Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/herbstluftwm" added="2023-01-04T16:55:29.987776Z" modified="2023-01-04T17:19:03.058202Z" visited="2023-01-04T16:55:29.987777Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:19:03.058201Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/polybar" added="2023-01-04T16:55:33.474284Z" modified="2023-01-04T17:26:40.838208Z" visited="2023-01-04T16:55:33.474284Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:40.838207Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/herbstluftwm/autostart" added="2023-01-04T17:00:07.739857Z" modified="2023-01-04T17:29:59.910718Z" visited="2023-01-04T17:00:07.739858Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:19:05.118811Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:29:59.910716Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak" added="2023-01-04T17:04:19.611013Z" modified="2023-01-04T18:15:27.932970Z" visited="2023-01-04T17:04:19.611014Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:15:27.932968Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak/liath" added="2023-01-04T17:04:22.260997Z" modified="2023-01-04T18:10:16.619436Z" visited="2023-01-04T17:04:22.260997Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:10:16.619434Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak/liath/modules.ini" added="2023-01-04T17:04:25.877303Z" modified="2023-01-04T18:20:26.432522Z" visited="2023-01-04T17:04:25.877303Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:10:31.391397Z" count="3"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:20:26.432519Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/polybar/launch.sh" added="2023-01-04T17:08:55.439988Z" modified="2023-01-04T17:12:22.409863Z" visited="2023-01-04T17:08:55.439988Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:08:55.439989Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:12:22.409861Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Downloads/herbstluftwm_dotfiles/.config/polybar/config" added="2023-01-04T17:11:19.388084Z" modified="2023-01-04T17:42:11.260902Z" visited="2023-01-04T17:11:19.388084Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:42.656121Z" count="2"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T17:42:11.260900Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/config.ini" added="2023-01-04T17:12:44.859762Z" modified="2023-01-04T18:20:24.356653Z" visited="2023-01-04T17:12:44.859763Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:12:44.859764Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:20:24.356651Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/scripts" added="2023-01-04T17:26:32.185603Z" modified="2023-01-04T17:26:32.185607Z" visited="2023-01-04T17:26:32.185604Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T17:26:32.185605Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak/liath/config.ini" added="2023-01-04T18:10:19.914889Z" modified="2023-01-04T18:20:18.570572Z" visited="2023-01-04T18:10:19.914890Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:10:19.914891Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:20:18.570570Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak/scripts" added="2023-01-04T18:15:30.976531Z" modified="2023-01-04T18:15:30.976536Z" visited="2023-01-04T18:15:30.976532Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:15:30.976534Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar.bak/scripts/check-all-updates.sh" added="2023-01-04T18:15:46.555175Z" modified="2023-01-04T18:18:12.725046Z" visited="2023-01-04T18:15:46.555175Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:15:46.555176Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:18:12.725043Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/scripts/check-all-updates.sh" added="2023-01-04T18:17:07.019921Z" modified="2023-01-04T18:20:22.681363Z" visited="2023-01-04T18:17:07.019922Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:17:07.019925Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:20:22.681354Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/polybar/scripts/check-arch-updates.sh" added="2023-01-04T18:17:18.008249Z" modified="2023-01-04T18:20:19.810882Z" visited="2023-01-04T18:17:18.008249Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:17:18.008251Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-04T18:20:19.810875Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/CompTIA%20Security+%20SY0-601%20Exam%20Objectives%20(3.0).pdf" added="2023-01-04T18:22:05.811988Z" modified="2023-01-04T18:22:05.811993Z" visited="2023-01-04T18:22:05.811989Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T18:22:05.811990Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/Comptia" added="2023-01-04T18:22:48.549691Z" modified="2023-01-04T19:14:22.825854Z" visited="2023-01-04T18:22:48.549692Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:22.825853Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/Comptia/Sec" added="2023-01-04T18:22:49.902937Z" modified="2023-01-04T19:14:29.895842Z" visited="2023-01-04T18:22:49.902938Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:29.895839Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/Comptia/Network" added="2023-01-04T19:14:23.985700Z" modified="2023-01-04T19:14:23.985704Z" visited="2023-01-04T19:14:23.985701Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:23.985702Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/darnell/storage/IT/New%20folder/comptia-security-sy0-601-exam-objectives-(2-0).pdf" added="2023-01-04T19:14:46.913809Z" modified="2023-01-04T19:14:46.913812Z" visited="2023-01-04T19:14:46.913809Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:14:46.913810Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io" added="2023-01-04T19:33:35.238137Z" modified="2023-01-04T19:33:35.238140Z" visited="2023-01-04T19:33:35.238138Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:35.238139Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files" added="2023-01-04T19:33:39.068717Z" modified="2023-01-04T19:33:39.068723Z" visited="2023-01-04T19:33:39.068720Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:39.068721Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik" added="2023-01-04T19:33:41.453828Z" modified="2023-01-04T19:33:41.453836Z" visited="2023-01-04T19:33:41.453829Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:41.453832Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/heimdall" added="2023-01-04T19:33:43.347572Z" modified="2023-01-04T19:33:43.347575Z" visited="2023-01-04T19:33:43.347572Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:43.347573Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/traefik" added="2023-01-04T19:33:48.103354Z" modified="2023-01-04T19:33:48.103358Z" visited="2023-01-04T19:33:48.103355Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:48.103356Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/traefik/config.yml" added="2023-01-04T19:33:49.747682Z" modified="2023-01-06T23:57:53.831662Z" visited="2023-01-04T19:33:49.747682Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:33:49.747683Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-06T23:57:53.831652Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia" added="2023-01-04T19:35:05.610808Z" modified="2023-01-04T19:35:05.610811Z" visited="2023-01-04T19:35:05.610808Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:35:05.610809Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/configuration.yml" added="2023-01-04T19:35:08.739243Z" modified="2023-01-06T23:57:53.831713Z" visited="2023-01-04T19:35:08.739244Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:35:08.739245Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-06T23:57:53.831710Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/users_database.yml" added="2023-01-04T19:39:21.865768Z" modified="2023-01-06T23:57:53.831729Z" visited="2023-01-04T19:39:21.865768Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-04T19:39:21.865769Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-06T23:57:53.831725Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io" added="2023-01-06T23:57:26.736157Z" modified="2023-01-06T23:57:26.736161Z" visited="2023-01-06T23:57:26.736158Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:26.736159Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files" added="2023-01-06T23:57:28.547641Z" modified="2023-01-06T23:57:28.547645Z" visited="2023-01-06T23:57:28.547642Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:28.547643Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files/authelia-traefik" added="2023-01-06T23:57:31.402502Z" modified="2023-01-06T23:57:31.402505Z" visited="2023-01-06T23:57:31.402503Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:31.402503Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia" added="2023-01-06T23:57:34.108651Z" modified="2023-01-06T23:57:34.108654Z" visited="2023-01-06T23:57:34.108651Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:34.108652Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/docker-compose.yml" added="2023-01-06T23:57:53.565504Z" modified="2023-01-06T23:57:53.565507Z" visited="2023-01-06T23:57:53.565504Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:57:53.565505Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/configuration.yml" added="2023-01-06T23:59:44.951530Z" modified="2023-01-06T23:59:44.951535Z" visited="2023-01-06T23:59:44.951531Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-06T23:59:44.951533Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://nas.local/projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/users_database.yml" added="2023-01-07T00:00:42.477950Z" modified="2023-01-07T00:00:42.477954Z" visited="2023-01-07T00:00:42.477950Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-07T00:00:42.477952Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/Music" added="2023-01-07T01:52:37.098155Z" modified="2023-01-07T01:52:37.098158Z" visited="2023-01-07T01:52:37.098156Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-07T01:52:37.098157Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/user/1000/gvfs/smb-share:server=nas.local,share=projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/users_database.yml" added="2023-01-08T22:03:03.507396Z" modified="2023-01-08T22:03:03.507399Z" visited="2023-01-08T22:03:03.507397Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-08T22:03:03.507398Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/user/1000/gvfs/smb-share:server=nas.local,share=projects/techno-tim.github.io/reference_files/authelia-traefik/authelia/configuration.yml" added="2023-01-08T22:03:03.507408Z" modified="2023-01-08T22:03:03.507411Z" visited="2023-01-08T22:03:03.507408Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-08T22:03:03.507410Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/m3u" added="2023-01-08T22:08:20.877645Z" modified="2023-01-08T22:08:20.877648Z" visited="2023-01-08T22:08:20.877646Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:20.877647Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mopidy/youtube" added="2023-01-08T22:08:22.768666Z" modified="2023-01-08T22:08:22.768668Z" visited="2023-01-08T22:08:22.768666Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:08:22.768667Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/mpd" added="2023-01-08T22:09:37.555228Z" modified="2023-01-08T22:09:37.555235Z" visited="2023-01-08T22:09:37.555231Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:09:37.555233Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/ncmpcpp/bindings_old" added="2023-01-08T22:12:12.047033Z" modified="2023-01-08T22:12:12.047036Z" visited="2023-01-08T22:12:12.047034Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-08T22:12:12.047034Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/darnell/.config/herbstluftwm/session" added="2023-01-09T01:35:59.440006Z" modified="2023-01-09T01:36:21.794236Z" visited="2023-01-09T01:35:59.440007Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2023-01-09T01:35:59.440008Z" count="1"/>
+          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2023-01-09T01:36:21.794235Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

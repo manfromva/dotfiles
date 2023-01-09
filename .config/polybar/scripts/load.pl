@@ -9,4 +9,4 @@ use Capture::Tiny qw(capture);
 my $load = capture { system q{uptime | awk '{print $(NF-2)}'} };
 $load =~ s/\,\s*$//g;
 
-say " $load";
+say " $load";

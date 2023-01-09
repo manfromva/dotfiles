@@ -1,0 +1,511 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp8434183mdb;
+        Wed, 4 Jan 2023 11:53:54 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXuk3dsFg5ABXjK7+O/CKDgkTW/xPbyuBUUD/xH7Cy+Gv2ADChEYrVG6ST6v2xWhUaFOwqwn
+X-Received: by 2002:a05:622a:5c10:b0:3ab:7d29:2f96 with SMTP id gd16-20020a05622a5c1000b003ab7d292f96mr56913332qtb.40.1672862034213;
+        Wed, 04 Jan 2023 11:53:54 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1672862034; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Ffp/XNgCQoO96jPNwOq40SiThGOc5a5NhIHWYHDohQOcT+ReAz1Vo2Mc1rzbIP+r9c
+         Ef9vZxx/95bQQT1/b71y+xS1NsxFicar7Z6eY8HCW1JX4Fap6kHs2PN0omGn0dqQjC7K
+         1zOcjEL42+peh+n61DG5SsulSBC7vBxASiwA8RRsZzazLPACS3kbY+qQLMFalHYQtJIR
+         QLOdHn2wdjoAngMz6StNwe8tsbcIdezlYuxyfADYHOFFfpPSOmfJCb6LAs/Mll5JMcYB
+         Cp7nRRS5TbM9i2+UitGDC6p0ZoYoQzbx4P5q81xmHn7CNnX6OoUBryzK+8IztA06O6zf
+         bCIA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:mime-version:subject:message-id:to:reply-to
+         :from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=pG1mVjelkgLBRmx+LkZjrA1iMqnL0vibbTiNsmb72c8=;
+        b=IjuGKYe8goEkB1e/d25Kp611kEL8JL5eWfe1vxIKSB3rtaEkApBAU+MAt9GHa6baKf
+         lqOqdEfCbbalAcX2evfx9U/GYDrMq8llqR1TFxJvUr9n+6h9cFjCT+mdmhBhNTBCia2v
+         wBqCHZ+PlnG/NL8B0ELPQfs5KyCw2wBLHlJABk6vglxjqhL29+oFQkV9xJcae2qiEny8
+         RH/M2Eyl2A0aYvtkTuKA8Z8Y+q/wbCf4mwOzMZzFy7YyhS7Oo2xaiotkbFm4E7ALrPbp
+         t9Ng+6BoCpRh71STzEcL31HzfZ7JuIbXU4r4QDQL8F/UgDMbdtipbLQX1ncgurn9fE/v
+         4qsA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf08x.hubspotemail.net header.s=hs1 header.b=GlPe7dfn;
+       dkim=pass header.i=@cybernowlabs.com header.s=hs1-21880678 header.b=Xl6QcJk9;
+       spf=pass (google.com: domain of 1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net designates 158.247.18.227 as permitted sender) smtp.mailfrom="1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cybernowlabs.com
+Return-Path: <1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net>
+Received: from bid46q9.bf08x.hubspotemail.net (bid46q9.bf08x.hubspotemail.net. [158.247.18.227])
+        by mx.google.com with ESMTPS id t21-20020ac85895000000b003ab8d13c3a6si14924650qta.409.2023.01.04.11.53.54
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 04 Jan 2023 11:53:54 -0800 (PST)
+Received-SPF: pass (google.com: domain of 1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net designates 158.247.18.227 as permitted sender) client-ip=158.247.18.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf08x.hubspotemail.net header.s=hs1 header.b=GlPe7dfn;
+       dkim=pass header.i=@cybernowlabs.com header.s=hs1-21880678 header.b=Xl6QcJk9;
+       spf=pass (google.com: domain of 1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net designates 158.247.18.227 as permitted sender) smtp.mailfrom="1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cybernowlabs.com
+Received: by 172.16.214.116 with SMTP id avuhcs7ojsp63whu3wqzu1h4daggf8x1fp;
+        Wed, 4 Jan 2023 19:53:53 GMT
+DKIM-Signature: v=1; s=hs1; d=bf08x.hubspotemail.net; 
+        i=@bf08x.hubspotemail.net; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=pG1mVjelkgLBRmx+LkZjrA1iMqnL0vibbTiNsmb72c8=; 
+        b=GlPe7dfnH7Y/gT3nxuno4bZlifnZoDV6ezHSCANh+A7Ha6XuKcXY3hy7W6EdYl
+         oDoCbzgwc9w258p8SDXBgF23JGkIBJbuK5iBFDEZcYGGw68yAaZDOwgpsNgFTdp
+         mILg4KunRWVqokO5YfsEL3GFmXq6PT+ZstvYFpIng2nBGsewLkGg6i3Z/iu0KXn
+         z+rtn3KGfPBTpr7JOBXIeWp6SElqMgAlGOAWeDn3epJ23hA23dtxjZAL0lnOG/F
+         Sd9+LFQPU8Oa0dugD2T2rtgwkEHgEfES7hLFiNE/JxjrktRiZ4Vx9zPXwUvPnDT
+         tiAL+4VBKOo7U+PqqMPxdf7ayVnQ==; q=dns/txt; t=1672862033; 
+        x=1673034833;
+DKIM-Signature: v=1; s=hs1-21880678; d=cybernowlabs.com; 
+        i=@cybernowlabs.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=pG1mVjelkgLBRmx+LkZjrA1iMqnL0vibbTiNsmb72c8=; 
+        b=Xl6QcJk966dTxLiJ20kcAS3MtpLMclyMPLOxQjl1Zzi0h3wtVlY1a2O7j3Y3UH
+         MMiCjnSeKzENVuBIwvGk5iYw8Z1qlhIByHD+lY3WEA3irJ4kFcTNsNjZvYYg8az
+         pWEgkquOeGpR3bsJu3svD017QPcHl7yTzaldDCywMvRDHrYQk13yvbPNwSbW71J
+         Il+soVqxpvA7aA2kWrZL3NtoA7gWtmBQefdGQLD9ytTlIznmtY4fNf7kYGuk37q
+         +53vhSAU+0w87vB1IPhAYIRPW9j4ywVtqFdj7wVqaaEnBHQPjg00qETheTDx1/G
+         TZ6jtlO3SrvltcKT7Vr/jCqk4i3Q==; q=dns/txt; t=1672862033; 
+        x=1673034833;
+Return-Path: <1axb1jtu449o4wuzt4gco1xgrzshhfpo2hmi2m-darnellkeithj=gmail.com@bf08x.hubspotemail.net>
+X-HS-Cid: 1axfultfcns5cmcgq776pjwexxpdp70ymvr8we
+List-Unsubscribe: <mailto:1axdhc1oyep0pbwgy9ng32kdif7ek0dy130tt6-darnellkeithj=gmail.com@bf08x.hubspotemail.net?subject=unsubscribe>
+Date: Wed, 4 Jan 2023 14:53:53 -0500
+From: Gabe Schrade <enrollment@cybernowlabs.com>
+Reply-To: enrollment@cybernowlabs.com
+To: darnellkeithj@gmail.com
+Message-ID: <1672862021437.93cbd275-d51a-4d97-954f-32dceee582d3@bf08x.hubspotemail.net>
+Subject: CyberNow Labs Warm Up Sessions Information
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_16118540_1993084553.1672862033491"
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aena9iw:aid9er5y:aidf:HubSpot
+X-TUID: i2oMqnFyW1CU
+
+------=_Part_16118540_1993084553.1672862033491
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+For those without backgrounds or experience in IT/Cyber, we will begin host=
+ing our complimentary "warm-up" classes beginning...
+
+Warm-Up Sessions Begin Tomorrow!
+
+The time has finally come. Get ready for twenty weeks of action-packed trai=
+ning to prepare you to enter the cybersecurity job market!
+
+For those without backgrounds or experience in IT/Cyber, we will begin host=
+ing our complimentary "warm-up" classes beginning tomorrow, January 5th fro=
+m 7:00 PM - 9:00 PM EDT (see more below).
+
+These sessions are not required, and attendance will not be taken, but we e=
+ncourage all that can to come and participate.
+
+The classes will be conducted live via Zoom.  You can find the link to join=
+ in CyberNow Labs private Slack Channel you received access to after you co=
+mpleted registration for Cohort 13.
+
+The formal cohort Start Date begins on January 14th.  Additional access and=
+ resources will be shared in the days leading up to the Start Date.
+
+Warm-Up Classes Schedule:
+
+- Thursday, January 5th from 7 - 9 PM EDT
+- Tuesday, January 10th from 7 - 9 PM EDT
+- Thursday, January 12th from 7 - 9 PM EDT
+
+If you have any questions about registration, please email enrollment@cyber=
+nowlabs.com or call (703) 740-2909.
+
+Looking forward to seeing everyone tomorrow evening!
+
+CyberNow Labs Team
+
+CyberNow Labs - a National Cyber Group Company, 45305 Catalina Court, Suite=
+ 150, Sterling,VA,20166,United States,703-740-2909
+
+Unsubscribe (https://www.nationalcyber.com/hs/manage-preferences/unsubscrib=
+e-all?languagePreference=3Den&d=3DVnfP4T6-h_p8VT8lCb41RjR-W3XWH3l3R12kkW3_R=
+5921JxwY5MWVvWQVDjZ0VQtJrV5wV4WZN7tQc2kCLSq9W69b5Fn8n-j88W6YMJ1M7TBtCSV1yf0=
+N31gj-JW519H5s6qMZdsW4RFgZx5C3JDF24D3&v=3D3&_hsenc=3Dp2ANqtz-8FBcX4MSviYwc9=
+KXoI6CbivyV43HqaHoDOe4XGxyKwi_Vq_TSDdKGbNfM8pj2PZ9VQj1pYxGM69KQYJ1xkjwPINdM=
+sqA&_hsmi=3D240394884 ) Manage Preferences (https://www.nationalcyber.com/h=
+s/manage-preferences/unsubscribe?languagePreference=3Den&d=3DVnfP4T6-h_p8VT=
+8lCb41RjR-W3XWH3l3R12kkW3_R5921JxwY5MWVvWQVDjZ0VQtJrV5wV4WZN7tQc2kCLSq9W69b=
+5Fn8n-j88W6YMJ1M7TBtCSV1yf0N31gj-JW519H5s6qMZdsW4RFgZx5C3JDF24D3&v=3D3&_hse=
+nc=3Dp2ANqtz-8FBcX4MSviYwc9KXoI6CbivyV43HqaHoDOe4XGxyKwi_Vq_TSDdKGbNfM8pj2P=
+Z9VQj1pYxGM69KQYJ1xkjwPINdMsqA&_hsmi=3D240394884 )
+------=_Part_16118540_1993084553.1672862033491
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+    <title>CyberNow Labs Warm Up Sessions Information</title>
+    <meta property=3D"og:title" content=3D"CyberNow Labs Warm Up Sessions I=
+nformation">
+    <meta name=3D"twitter:title" content=3D"CyberNow Labs Warm Up Sessions =
+Information">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"https://www.nationalcyber.com/-temporary-slug-4836d7f7-3ef1-4911-9=
+976-b31ef1d53f83"><meta name=3D"robots" content=3D"noindex,follow"><!--[if =
+!((mso)|(IE))]><!-- --><style type=3D"text/css">.moz-text-html .hse-column-=
+container{max-width:600px !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-12{max-width:600px !important;width:600px !impo=
+rtant}
+[owa] .hse-column-container{max-width:600px !important;width:600px !importa=
+nt}[owa] .hse-column{display:table-cell;vertical-align:top}
+[owa] .hse-section .hse-size-12{max-width:600px !important;width:600px !imp=
+ortant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-12=
+{max-width:600px !important;width:600px !important}
+}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_ema=
+il_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wid=
+th:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+ul,blockquote{margin:0;padding:1em 40px}}</style><!--<![endif]--><style typ=
+e=3D"text/css">body[data-outlook-cycle] img.stretch-on-mobile,body[data-out=
+look-cycle] .hs_rss_email_entries_table img{height:auto !important;width:10=
+0% !important}
+body[data-outlook-cycle] .hs_padded{padding-left:20px !important;padding-ri=
+ght:20px !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !im=
+portant;font-size:inherit !important;font-family:inherit !important;font-we=
+ight:inherit !important;line-height:inherit !important}
+#outlook a{padding:0}.yshortcuts a{border-bottom:none !important}a{text-dec=
+oration:underline}
+.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass td=
+,.ExternalClass div,.ExternalClass span,.ExternalClass font{line-height:100=
+%}
+p{margin:0}body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-we=
+bkit-font-smoothing:antialiased;moz-osx-font-smoothing:grayscale}</style></=
+head>
+  <body bgcolor=3D"#000000" style=3D"margin:0 !important; padding:0 !import=
+ant; font-family:Verdana, sans-serif; font-size:15px; color:#353454; word-b=
+reak:break-word">
+   =20
+<div id=3D"preview_text" style=3D"display:none!important;font-size:1px;colo=
+r:#000000;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:h=
+idden;">For those without backgrounds or experience in IT/Cyber, we will be=
+gin hosting our complimentary "warm-up" classes beginning...</div>
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+ =20
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#000000"/>
+ =20
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#000000" b=
+gcolor=3D"#000000">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Verdana, sans-=
+serif; font-size:15px; color:#353454; word-break:break-word">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section-0" class=3D"hse-section h=
+se-section-first" style=3D"padding-left:10px; padding-right:10px; padding-t=
+op:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff; padding-top:20px" bgc=
+olor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-top:20px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-0-0-0" class=3D"hs_cos_wrapper hs_cos_wr=
+apper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"left" valign=3D"top" style=3D"border-collapse:coll=
+apse; mso-line-height-rule:exactly; font-family:Verdana, sans-serif; color:=
+#353454; word-break:break-word; text-align:left; padding:10px 20px; font-si=
+ze:0px">
+               =20
+                <img alt=3D"CNL NCGTag-1" src=3D"https://www.nationalcyber.=
+com/hs-fs/hubfs/CNL%20NCGTag-1.jpg?width=3D1120&amp;upscale=3Dtrue&amp;name=
+=3DCNL%20NCGTag-1.jpg" style=3D"outline:none; text-decoration:none; -ms-int=
+erpolation-mode:bicubic; max-width:100%; font-size:16px" width=3D"560" alig=
+n=3D"middle" srcset=3D"https://www.nationalcyber.com/hs-fs/hubfs/CNL%20NCGT=
+ag-1.jpg?upscale=3Dtrue&amp;width=3D1120&amp;upscale=3Dtrue&amp;name=3DCNL%=
+20NCGTag-1.jpg 560w, https://www.nationalcyber.com/hs-fs/hubfs/CNL%20NCGTag=
+-1.jpg?upscale=3Dtrue&amp;width=3D2240&amp;upscale=3Dtrue&amp;name=3DCNL%20=
+NCGTag-1.jpg 1120w" sizes=3D"(max-width: 560px) 100vw, 560px">
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-1" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#FFFFFF; padding-bottom:20px; =
+padding-top:20px" bgcolor=3D"#FFFFFF">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#FFFFFF">
+      <tr style=3D"background-color:#FFFFFF;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:20px; padding-top:=
+20px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-1-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Verdana, sans-serif; font-size:15px; color:#353454; word-break:break-word=
+; padding:10px 20px"><div id=3D"hs_cos_wrapper_module-1-0-0" class=3D"hs_co=
+s_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color:=
+ inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-ty=
+pe=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-=
+1-0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_r=
+ich_text" style=3D"color: inherit; font-size: inherit; line-height: inherit=
+;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><h1 s=
+tyle=3D"margin:0; mso-line-height-rule:exactly; font-size:24px; line-height=
+:175%"><span style=3D"color: #06304c;">Warm-Up Sessions Begin Tomorrow!</sp=
+an></h1>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">The time has fi=
+nally come. Get ready for twenty weeks of action-packed training to prepare=
+ you to enter the cybersecurity job market!</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">For those witho=
+ut backgrounds or experience in IT/Cyber, we will begin hosting our complim=
+entary "warm-up" classes beginning <span style=3D"text-decoration: underlin=
+e;">tomorrow, January 5th from 7:00 PM - 9:00 PM EDT</span> (see more below=
+).&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">These sessions =
+are <span style=3D"text-decoration: underline;">not</span> required, and at=
+tendance will <span style=3D"text-decoration: underline;">not</span> be tak=
+en, but we encourage all that can to come and participate.&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%; font-weight:bol=
+d">The classes will be conducted live via Zoom.&nbsp; You can find the link=
+ to join in CyberNow Labs private Slack Channel you received access to afte=
+r you completed registration for Cohort 13.&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">The formal coho=
+rt Start Date begins on <span style=3D"text-decoration: underline;">January=
+ 14th</span>.&nbsp; Additional access and resources will be shared in the d=
+ays leading up to the Start Date.&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"=
+text-decoration: underline;">Warm-Up Classes Schedule:</span></p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+<li style=3D"mso-line-height-rule:exactly; line-height:200%">Thursday, Janu=
+ary 5th from 7 - 9 PM EDT</li>
+<li style=3D"mso-line-height-rule:exactly; line-height:200%">Tuesday, Janua=
+ry 10th from 7 - 9 PM EDT</li>
+<li style=3D"mso-line-height-rule:exactly; line-height:200%">Thursday, Janu=
+ary 12th from 7 - 9 PM EDT<br><br></li>
+</ul>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">If you have any=
+ questions about registration, please email enrollment@cybernowlabs.com or =
+call (703) 740-2909.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">Looking forward=
+ to seeing everyone tomorrow evening!</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%">CyberNow Labs T=
+eam</p></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-3" class=3D"hse-section hse-section-last" style=3D"pad=
+ding-left:10px; padding-right:10px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#00B392; padding-bottom:50px; =
+padding-top:50px" bgcolor=3D"#00B392">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#00B392">
+      <tr style=3D"background-color:#00B392;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:50px; padding-top:=
+50px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-3-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-3-0-0" class=3D"hs_cos_wrapper hs_cos_wr=
+apper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Verdana, sans-serif; font-size:12px; line-height:135%; color:#234=
+96d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Verdana, sans-serif; font=
+-size:15px; color:#353454; word-break:break-word; text-align:center; margin=
+-bottom:0; line-height:135%; padding:10px 20px">
+                <p style=3D"mso-line-height-rule:exactly">CyberNow Labs - a=
+ National Cyber Group Company, 45305 Catalina Court, Suite 150, Sterling,VA=
+,20166,United States,703-740-2909</p>
+<p style=3D"mso-line-height-rule:exactly"><a href=3D"https://www.nationalcy=
+ber.com/hs/manage-preferences/unsubscribe-all?languagePreference=3Den&amp;d=
+=3DVnfP4T6-h_p8VT8lCb41RjR-W3XWH3l3R12kkW3_R5921JxwY5MWVvWQVDjZ0VQtJrV5wV4W=
+ZN7tQc2kCLSq9W69b5Fn8n-j88W6YMJ1M7TBtCSV1yf0N31gj-JW519H5s6qMZdsW4RFgZx5C3J=
+DF24D3&amp;v=3D3&amp;utm_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_c=
+ontent=3D240394884&amp;_hsenc=3Dp2ANqtz-_4NaJqQeNbqB980t6JYzgJExg3Dn_6sJqiN=
+zfwBNNk2xf5N_VEHy9Xdki1lRCX_OsFm6Bth84yUgKZWJ5lfzM-1rQ1OA&amp;_hsmi=3D24039=
+4884" data-unsubscribe=3D"true" style=3D"color:#00a4bd; mso-line-height-rul=
+e:exactly" data-hs-link-id=3D"0" target=3D"_blank">Unsubscribe</a> <a href=
+=3D"https://www.nationalcyber.com/hs/manage-preferences/unsubscribe?languag=
+ePreference=3Den&amp;d=3DVnfP4T6-h_p8VT8lCb41RjR-W3XWH3l3R12kkW3_R5921JxwY5=
+MWVvWQVDjZ0VQtJrV5wV4WZN7tQc2kCLSq9W69b5Fn8n-j88W6YMJ1M7TBtCSV1yf0N31gj-JW5=
+19H5s6qMZdsW4RFgZx5C3JDF24D3&amp;v=3D3&amp;utm_source=3Dhs_email&amp;utm_me=
+dium=3Demail&amp;utm_content=3D240394884&amp;_hsenc=3Dp2ANqtz-_4NaJqQeNbqB9=
+80t6JYzgJExg3Dn_6sJqiNzfwBNNk2xf5N_VEHy9Xdki1lRCX_OsFm6Bth84yUgKZWJ5lfzM-1r=
+Q1OA&amp;_hsmi=3D240394884" data-unsubscribe=3D"true" style=3D"color:#00a4b=
+d; mso-line-height-rule:exactly" data-hs-link-id=3D"0" target=3D"_blank">Ma=
+nage Preferences</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://www.nationalcyber.com/e3t/Cto/I8+113/d2zZGM04/VWvDMg4jv=
+DjtW5y4FJd83XDTFW7Kkhd54VpfyyW2dmMgN3D7Bf51b2" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!importan=
+t;width:1px!important;border-width:0!important;margin-top:0!important;margi=
+n-bottom:0!important;margin-right:0!important;margin-left:0!important;paddi=
+ng-top:0!important;padding-bottom:0!important;padding-right:0!important;pad=
+ding-left:0!important"></body></html>
+------=_Part_16118540_1993084553.1672862033491--
+

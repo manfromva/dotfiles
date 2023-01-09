@@ -1,0 +1,2122 @@
+Delivered-To: darnellkeithj@gmail.com
+Received: by 2002:a05:7010:c009:b0:319:c8d9:46e9 with SMTP id ja9csp2845215mdb;
+        Mon, 9 Jan 2023 01:13:18 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXty69/1P7KkdCZhAVRxJC5vTMDr5CQ98CkMkWbKREAtz61XLxaM1C5HHHiyeiWJ7Cc+mJq3
+X-Received: by 2002:a05:6a20:6f87:b0:b5:46fa:24e8 with SMTP id gv7-20020a056a206f8700b000b546fa24e8mr17017092pzb.38.1673255598402;
+        Mon, 09 Jan 2023 01:13:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673255598; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pFiEgVPKErVfxHPR3qeC4iYECRJLyc8cCMIAl5yFkE7uklcKW+lTrA7w/zHEdqU45Z
+         qPBbQE0MjnA4+fM+C3gcZ4Vv9xtQTx69h6s+mqNrZKNJXvZX7NyeYi9HIWqnqKTrnirY
+         89lU9/EFftYg1+U8Nva5zpArTJcOE2imOl6jnnMvd2k90iukKsTSh4jiQNWi7cwlUyZ8
+         zFcwoSUN1o2zHZOWLjS8knDJG7XhrjZkGEpnGQt8xwluuQzRB0mt9W1pmGF6jfwL8Cx/
+         qiwxt2aJrubKkoBip5JQ+LBWbL+5kV0UyNyJ69ZQ15hhxVUlS0t9iK+oe8kdyWh33+oW
+         6UDA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=Fd0/USYfVrNr2wuyEdm31BQyBpnrGy87nTk2Zpgrcz4=;
+        b=fKy1tGFvoN5rb9tnmsRozD5AKd3VGlbQ0NBpZzlPXyeO2RqYaS987xtpi5gNb+hxXl
+         1gEEWPgVfsPu7uYhF7l7B+N21WeUmFmq2Aj9azhRJQ005wbf/ridVsKDe09Bl2OTjUZa
+         4CDMq9XC1Qkn+5L+1wi9fpobvk2pP2OsmJGibk4d4vSJND0dR1QosDBPA5M8yYzZST0k
+         QNiodmCwD3Las+RqhLICh5WJcgklolWWjMbxIZDfQkR9V1W/8lR8RJNyO9S+7la3UtzQ
+         /wkqBywvKw00xeaVW7wqUyM6yI+SceDb7NZ4mtEVFUSrw8teoyvE/W4j5O/CfxoG78Qz
+         6wFg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=h3pxjBvW;
+       dkim=pass header.i=@exante.eu header.s=k1 header.b=cliM+Jgw;
+       spf=pass (google.com: domain of bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net designates 148.105.12.228 as permitted sender) smtp.mailfrom=bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=exante.eu
+Return-Path: <bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net>
+Received: from mail228.sea22.mcdlv.net (mail228.sea22.mcdlv.net. [148.105.12.228])
+        by mx.google.com with ESMTPS id f36-20020a635564000000b00478c0ebc7c0si9007521pgm.746.2023.01.09.01.13.18
+        for <darnellkeithj@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 09 Jan 2023 01:13:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net designates 148.105.12.228 as permitted sender) client-ip=148.105.12.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=h3pxjBvW;
+       dkim=pass header.i=@exante.eu header.s=k1 header.b=cliM+Jgw;
+       spf=pass (google.com: domain of bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net designates 148.105.12.228 as permitted sender) smtp.mailfrom=bounce-mc.us5_12331767.485741-806b502d66@mail228.sea22.mcdlv.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=exante.eu
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1673255479; x=1673557879;
+	bh=Fd0/USYfVrNr2wuyEdm31BQyBpnrGy87nTk2Zpgrcz4=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=h3pxjBvWUPdStFTn5bsTwRIw7RYB8XJDOXVC/U072nOY95uRn3WP2mw152QRoAgKz
+	 H2QA8ChVy2OvPbMTx006ahEceRIgGLe9aPBK73f6SS3XOUIO2Z3Zcpmr1q39AgfYSP
+	 29ZKcwDQjF5Y1hZ4BIuISCrlSNPY/EXvJede84eu1g2iZzQuApHnG45YmvDt/WmA/e
+	 xyYsG52/3j33XH8LMU6HS3Ig5gja303TT9pXg0/z6Sbkrn8gZLcCVJXhFuxyxLDqBo
+	 cjhWcAX/g8yCw8T+cJAQ9bz5/+pbRmT1hT23VYYzRoVg0c2cxdcxh+rbckUQ5IMkeT
+	 EWf6HyGukdUVQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=exante.eu; s=k1;
+	t=1673255479; x=1673557879; i=insights@exante.eu;
+	bh=Fd0/USYfVrNr2wuyEdm31BQyBpnrGy87nTk2Zpgrcz4=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=cliM+JgwWoDD0tVoCsDviU901czx7emMsigdIfhAe1VfwzEttoTKR9lYI1ZWK6WC4
+	 90UgKbCwOug7d408RE3Dnz4/dKg8NIN9mB0sLUmxOFqrrGcDIlbfDilpNmjo2AIBCR
+	 AsJKzCBLiv26PWOvOFddmsbgwBia6KJXUwg/BjTo=
+Received: from localhost (localhost [127.0.0.1])
+	by mail228.sea22.mcdlv.net (Mailchimp) with ESMTP id 4Nr7Tz2TxnzGmJG1F
+	for <darnellkeithj@gmail.com>; Mon,  9 Jan 2023 09:11:19 +0000 (GMT)
+Subject: =?utf-8?Q?Will=20lower=20Eurozone=20inflation=20be=20enough=20to=20stop=20ECB=20rate=20hikes=3F?=
+From: =?utf-8?Q?EXANTE?= <insights@exante.eu>
+Reply-To: =?utf-8?Q?EXANTE?= <insights@exante.eu>
+To: =?utf-8?Q?Darnell?= <darnellkeithj@gmail.com>
+Date: Mon,  9 Jan 2023 09:11:18 +0000
+Message-ID: <8418a9b93895768ad0b41e604.806b502d66.20230109091110.eeff6e7f2e.0b0b29ce@mail228.sea22.mcdlv.net>
+X-Mailer: Mailchimp Mailer - **CIDeeff6e7f2e806b502d66**
+X-Campaign: mailchimp8418a9b93895768ad0b41e604.eeff6e7f2e
+X-campaignid: mailchimp8418a9b93895768ad0b41e604.eeff6e7f2e
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=8418a9b93895768ad0b41e604&id=eeff6e7f2e&e=806b502d66
+X-MC-User: 8418a9b93895768ad0b41e604
+Feedback-ID: 12331767:12331767.485741:us5:mc
+List-ID: 8418a9b93895768ad0b41e604mc list <8418a9b93895768ad0b41e604.112414.list-id.mcsv.net>
+X-Accounttype: pd
+List-Unsubscribe: <https://exante.us5.list-manage.com/unsubscribe?u=8418a9b93895768ad0b41e604&id=89232f3587&e=806b502d66&c=eeff6e7f2e>, <mailto:unsubscribe-mc.us5_8418a9b93895768ad0b41e604.eeff6e7f2e-806b502d66@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1217826087"
+MIME-Version: 1.0
+X-TUID: lfdFEOa36Nsr
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1217826087
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+* Eurozone inflation cools
+* Slower wage growth for the US
+* A sharp decline in US services activity
+* Key data to move markets today
+
+The S&P 500 (https://link.exante.eu/#instrument=3DSPY.ARCA&timeframe=3D1da=
+y?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsig=
+hts)   2.3%=2C with all of the 11 sectors of the S&P 500 .
+
+The best performer was Materials=2C  3.44%=2C with Freeport-McMoRan (https=
+://link.exante.eu/#instrument=3DFCX.NYSE&timeframe=3D1day?utm_source=3Ddai=
+ly_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsights)   6.12%=2C Ce=
+lanese Corporation (https://link.exante.eu/#instrument=3DCE.NYSE&timeframe=
+=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddail=
+yinsights)   5.20%=2C and Nucor Corporation (https://link.exante.eu/#instr=
+ument=3DNUE.NYSE&timeframe=3D1day?utm_source=3Ddaily_insights&utm_medium=
+=3Demail&utm_campaign=3Ddailyinsights)   5.02%.
+
+The worst performer was Healthcare=2C  0.89%=2C with PerkinElmer (https://=
+link.exante.eu/#instrument=3DPKI.NYSE&timeframe=3D1day?utm_source=3Ddaily_=
+insights&utm_medium=3Demail&utm_campaign=3Ddailyinsights)   3.80%=2C Agile=
+nt Technologies (https://link.exante.eu/#instrument=3DA.NYSE&timeframe=3D1=
+day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyins=
+ights)   2.92%=2C and Bio-Rad Laboratories (https://link.exante.eu/#instru=
+ment=3DBIO.NYSE&timeframe=3D1day?utm_source=3Ddaily_insights&utm_medium=3D=
+email&utm_campaign=3Ddailyinsights)   2.72%.
+
+
+** Best and worst performers
+------------------------------------------------------------
+
+First Solar (https://link.exante.eu/#instrument=3DFSLR.NASDAQ&timeframe=3D=
+1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyin=
+sights) 7.80%
+Costco Wholesale (https://link.exante.eu/#instrument=3DCOST.NASDAQ&timefra=
+me=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Dda=
+ilyinsights) 7.26%
+Old Dominion Freight Line (https://link.exante.eu/#instrument=3DODFL.NASDA=
+Q&timeframe=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_camp=
+aign=3Ddailyinsights) 6.83%
+
+Baxter International (https://link.exante.eu/#instrument=3DBAX.NYSE&timefr=
+ame=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Dd=
+ailyinsights) 7.84%
+Waters Corporation (https://link.exante.eu/#instrument=3DWAT.NYSE&timefram=
+e=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddai=
+lyinsights) 7.15%
+Thermo Fisher Scientific (https://link.exante.eu/#instrument=3DTMO.NYSE&ti=
+meframe=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=
+=3Ddailyinsights) 3.94%
+
+Of the tech and growth Mega Caps: Alphabet (https://link.exante.eu/#instru=
+ment=3DGOOGL.NASDAQ&timeframe=3D1day?utm_source=3Ddaily_insights&utm_mediu=
+m=3Demail&utm_campaign=3Ddailyinsights)  1.32%=2C Amazon (https://link.exa=
+nte.eu/#instrument=3DAMZN.NASDAQ&timeframe=3D1day?utm_source=3Ddaily_insig=
+hts&utm_medium=3Demail&utm_campaign=3Ddailyinsights)  3.56%=2C Apple (http=
+s://link.exante.eu/#instrument=3DAAPL.NASDAQ&timeframe=3D1day?utm_source=
+=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsights)  3.68%=
+=2C Microsoft (https://link.exante.eu/#instrument=3DMSFT.NASDAQ&timeframe=
+=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddail=
+yinsights)  1.18%=2C Meta Platforms (https://link.exante.eu/#instrument=3D=
+META.NASDAQ&timeframe=3D1day?utm_source=3Ddaily_insights&utm_medium=3Demai=
+l&utm_campaign=3Ddailyinsights)  2.43%=2C and Tesla (https://link.exante.e=
+u/#instrument=3DTSLA.NASDAQ&timeframe=3D1day?utm_source=3Ddaily_insights&u=
+tm_medium=3Demail&utm_campaign=3Ddailyinsights)  2.47%.
+
+
+** Major US indices
+------------------------------------------------------------
+
+The Dow Jones Industrial Average (https://link.exante.eu/#instrument=3DDJI=
+=2EINDEX&timeframe=3Dday?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_=
+campaign=3Ddailyinsights)  2.1%.
+The Nasdaq 100 (https://link.exante.eu/#instrument=3DNDX.INDEX&timeframe=
+=3Dday?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddaily=
+insights)  2.8%.
+
+
+** Major European indices
+------------------------------------------------------------
+
+France CAC 40 (https://link.exante.eu/#instrument=3DFCHI.INDEX&timeframe=
+=3Dday?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddaily=
+insights)  1.5%.
+Germany DAX (https://link.exante.eu/#instrument=3DFDAX.EUREX.U2022&timefra=
+me=3Dday?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddai=
+lyinsights)  1.2%.
+UK FTSE 100 (https://link.exante.eu/#instrument=3DFTSE100.INDEX&timeframe=
+=3Dday?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddaily=
+insights)  0.9%.
+
+
+** Top currency moves
+------------------------------------------------------------
+
+The EUR (https://link.exante.eu/#instrument=3DEUR/USD.E.FX&timeframe=3D1da=
+y?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsig=
+hts)  1.2% to $1.0644.
+The GBP (https://link.exante.eu/#instrument=3DGBP/USD.E.FX&timeframe=3D1da=
+y?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsig=
+hts)  1.6% to $1.2094.
+The YEN (https://link.exante.eu/#instrument=3DUSD/JPY.E.FX&timeframe=3D1da=
+y?utm_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsig=
+hts)  1% to 132.08 per dollar.
+Bitcoin (https://link.exante.eu/#instrument=3DBTC.USD&timeframe=3D1day?utm=
+_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsights)=
+  0.3% to $16=2C900.11.
+Ethereum (https://link.exante.eu/#instrument=3DETH.USD&timeframe=3D1day?ut=
+m_source=3Ddaily_insights&utm_medium=3Demail&utm_campaign=3Ddailyinsights)=
+  1.1% to $1=2C265.83.
+
+Note: As of 4 pm EST 6 January 2023
+
+Is lower than expected Eurozone inflation enough to sway the ECB? Eurozone=
+ inflation may have fallen deeper than anticipated=2C but underlying price=
+ pressures continued to climb. This offers little hope for investors that=
+ the ECB will hold back on rate rises. Annualised inflation fell to 9.2% i=
+n December from 10.1% November. This was below market expectations of 9.7%=
+=2C primarily due to lower energy prices. However=2C core inflation=2C i.e=
+=2E=2C excluding food and energy prices=2C came in at 6.9%=2C up from Novemb=
+er=E2=80=99s 6.6%. The rise in core inflation will likely support the ECB=
+=E2=80=99s hawkish approach. ECB Governing Council member Mario Centeno sa=
+id Friday that=2C =E2=80=9CIn our opinion=2C inflation is more negative fo=
+r the economy than this process of normalising interest rates.=E2=80=9D
+
+Cooler wage growth keeping Fed concerns at bay. Hourly wages increased at=
+ the slowest pace in 16 months despite a continuingly tight labour market.=
+ The latest jobs data report shows 223=2C000 jobs added in December=2C dow=
+n from 256=2C000 in November. Wall Street analysts were anticipating 200=
+=2C000 new jobs in December. The unemployment rate also fell to 3.5% from=
+ 3.6%. US equities ended higher fueled by expectations that the Fed may so=
+ften the pace of its rate hike at its next meeting on 31 January - 1 Febru=
+ary.
+
+US services activity falls to lowest since May 2020 while supply bottlenec=
+ks ease. The ISM Services PMI fell to 49.6 in December=2C dropping below 5=
+0 and indicating contraction in the services sector. Services account for=
+ about two-thirds of US economic activity. The November reading was 56.5.=
+ The lower reading could be due to the harsh winter weather that affected=
+ holiday travel and caused widespread power outages. However=2C on a posit=
+ive note=2C a measure of prices paid by services industries for inputs dro=
+pped to 67.6=2C the lowest since January 2021=2C from 70.0 in November as=
+ supply bottlenecks continued to ease.
+
+
+** Key data to move markets today
+------------------------------------------------------------
+
+Eurozone Unemployment Rate=2C Italian Unemployment Rate.
+
+A speech by Bank of England Chief Economist Huw Pill.
+
+Consumer Credit Change and a speech by Federal Reserve Bank of Atlanta Pre=
+sident Raphael Bostic.
+
+One of EXANTE=E2=80=99s core values is being catalysts for change. We beli=
+eve in the power and beauty technology can bring into our lives. The image=
+ you see at the top of this email is AI generated and will change every da=
+y in response to the data we give it. Stay tuned to see just how creative=
+ and intuitive AI can be.
+
+Ren=C3=A9e Friedman=2C PhD
+Editor-in-Chief=2C EXANTE
+
+DISCLAIMER: While every effort has been made to verify the accuracy of thi=
+s information=2C EXT Ltd. (hereafter known as =E2=80=9CEXANTE=E2=80=9D) ca=
+nnot accept any responsibility or liability for reliance by any person on=
+ this publication or any of the information=2C opinions=2C or conclusions=
+ contained in this publication. The findings and views expressed in this p=
+ublication do not necessarily reflect the views of EXANTE. Any action take=
+n upon the information contained in this publication is strictly at your o=
+wn risk. EXANTE will not be liable for any loss or damage in connection wi=
+th this publication.
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+This email was sent to darnellkeithj@gmail.com (mailto:darnellkeithj@gmail.com)
+why did I get this? (https://exante.us5.list-manage.com/about?u=3D8418a9b9=
+3895768ad0b41e604&id=3D89232f3587&e=3D806b502d66&c=3Deeff6e7f2e)     unsubsc=
+ribe from this list (https://exante.us5.list-manage.com/unsubscribe?u=3D84=
+18a9b93895768ad0b41e604&id=3D89232f3587&e=3D806b502d66&c=3Deeff6e7f2e)     u=
+pdate subscription preferences (https://exante.us5.list-manage.com/profile=
+?u=3D8418a9b93895768ad0b41e604&id=3D89232f3587&e=3D806b502d66&c=3Deeff6e7f2e=
+)
+EXANTE . 28 Oktovriou=2C 365 Vashiotis Seafront Building . Limassol 3107 .=
+ Cyprus
+--_----------=_MCPart_1217826087
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: ANNOUNCE -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Will lower Eurozone inflation be enough to stop ECB rate hi=
+kes?</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:50% 50%;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:21px;
+=09=09=09padding-bottom:21px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#404040;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:50% 50%;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#ffffff n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#ffffff non=
+e no-repeat 50% 50%/cover;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;backgrou=
+nd-image: none;background-repeat: no-repeat;background-position: 50% 50%;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 21px;pad=
+ding-bottom: 21px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:#transparent none no-repeat center/cover;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;background-color: #transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nImageBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-=
+lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 9px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+
+                                        <img align=3D"center" alt=3D"" src=
+=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/images/f70f4a50-90=
+a8-b4c9-9d4e-132ed7c9801a.png" width=3D"564" style=3D"max-width: 1000px;pa=
+dding-bottom: 0;display: inline !important;vertical-align: bottom;border:=
+ 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode=
+: bicubic;" class=3D"mcnImage">
+
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #404040;font-family: Helve=
+tica;font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <div style=3D"text-align: justify;">
+<ul dir=3D"ltr">
+=09<li role=3D"presentation" style=3D"mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Eurozone inflation c=
+ools</li>
+=09<li role=3D"presentation" style=3D"mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Slower wage growth f=
+or the US</li>
+=09<li role=3D"presentation" style=3D"mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">A sharp decline in U=
+S services activity</li>
+=09<li role=3D"presentation" style=3D"mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Key data to move mar=
+kets today</li>
+</ul>
+The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9=
+3895768ad0b41e604&id=3D36fd546833&e=3D806b502d66" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #007C89;font-weight: normal;text-decoration: underline;">S&amp;P 50=
+0</a>&nbsp;<img data-file-id=3D"19877" height=3D"13" src=3D"https://mcuser=
+content.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370c=
+b5da70e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outl=
+ine: none;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D=
+"9"> 2.3%=2C with all of the 11 sectors of the S&amp;P 500 <img data-file-=
+id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8418a9b9389576=
+8ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D"bord=
+er: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-decoration:=
+ none;-ms-interpolation-mode: bicubic;" width=3D"9">.<br>
+<br>
+The best performer was Materials=2C&nbsp;<img data-file-id=3D"19877" heigh=
+t=3D"13" src=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/images=
+/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D"border: 0px;width: 9px=
+;height: 13px;margin: 0px;outline: none;text-decoration: none;-ms-interpol=
+ation-mode: bicubic;" width=3D"9"> 3.44%=2C with <a href=3D"https://exante=
+=2Eus5.list-manage.com/track/click?u=3D8418a9b93895768ad0b41e604&id=3Dde4c43=
+118b&e=3D806b502d66" style=3D"mso-line-height-rule: exactly;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: n=
+ormal;text-decoration: underline;">Freeport-McMoRan</a>&nbsp;<img data-fil=
+e-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8418a9b93895=
+768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D"bo=
+rder: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-decoratio=
+n: none;-ms-interpolation-mode: bicubic;" width=3D"9"> 6.12%=2C <a href=3D=
+"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895768ad0b41e=
+604&id=3D43735324b9&e=3D806b502d66" style=3D"mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89=
+;font-weight: normal;text-decoration: underline;">Celanese Corporation</a>=
+&nbsp;<img data-file-id=3D"19877" height=3D"13" src=3D"https://mcuserconte=
+nt.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da7=
+0e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">=
+ 5.20%=2C and <a href=3D"https://exante.us5.list-manage.com/track/click?u=
+=3D8418a9b93895768ad0b41e604&id=3D4d2ae32371&e=3D806b502d66" style=3D"mso=
+-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;color: #007C89;font-weight: normal;text-decoration: underline;"=
+>Nucor Corporation</a>&nbsp;<img data-file-id=3D"19877" height=3D"13" src=
+=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/images/9219d158-a5=
+f2-e971-7241-5370cb5da70e.png" style=3D"border: 0px;width: 9px;height: 13p=
+x;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode:=
+ bicubic;" width=3D"9"> 5.02%.<br>
+<br>
+The worst performer was Healthcare=2C&nbsp;<img data-file-id=3D"19877" hei=
+ght=3D"13" src=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/imag=
+es/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D"border: 0px;width: 9=
+px;height: 13px;margin: 0px;outline: none;text-decoration: none;-ms-interp=
+olation-mode: bicubic;" width=3D"9"> 0.89%=2C with <a href=3D"https://exan=
+te.us5.list-manage.com/track/click?u=3D8418a9b93895768ad0b41e604&id=3D726d=
+2853e9&e=3D806b502d66" style=3D"mso-line-height-rule: exactly;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight:=
+ normal;text-decoration: underline;">PerkinElmer</a>&nbsp;<img data-file-i=
+d=3D"19881" height=3D"13" src=3D"https://mcusercontent.com/8418a9b93895768=
+ad0b41e604/images/a8fc577a-41c1-aaa3-242d-2f1fde86abb5.png" style=3D"borde=
+r: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-decoration:=
+ none;-ms-interpolation-mode: bicubic;" width=3D"9"> 3.80%=2C <a href=3D"h=
+ttps://exante.us5.list-manage.com/track/click?u=3D8418a9b93895768ad0b41e60=
+4&id=3Db2d90b8bcc&e=3D806b502d66" style=3D"mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;f=
+ont-weight: normal;text-decoration: underline;">Agilent Technologies</a>&n=
+bsp;<img data-file-id=3D"19881" height=3D"13" src=3D"https://mcusercontent=
+=2Ecom/8418a9b93895768ad0b41e604/images/a8fc577a-41c1-aaa3-242d-2f1fde86abb5=
+=2Epng" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: no=
+ne;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9"> 2.=
+92%=2C and <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8=
+418a9b93895768ad0b41e604&id=3Da1352f7db0&e=3D806b502d66" style=3D"mso-lin=
+e-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Bio=
+-Rad Laboratories</a>&nbsp;<img data-file-id=3D"19881" height=3D"13" src=
+=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/images/a8fc577a-41=
+c1-aaa3-242d-2f1fde86abb5.png" style=3D"border: 0px;width: 9px;height: 13p=
+x;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode:=
+ bicubic;" width=3D"9"> 2.72%.</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding: 0px 18px 9px;line-height: 150%;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: brea=
+k-word;color: #404040;font-family: Helvetica;font-size: 14px;text-align: l=
+eft;">
+
+                            <h3 class=3D"null" dir=3D"ltr" style=3D"text-a=
+lign: justify;display: block;margin: 0;padding: 0;color: #444444;font-fami=
+ly: Helvetica;font-size: 22px;font-style: normal;font-weight: bold;line-he=
+ight: 150%;letter-spacing: normal;">Best and worst performers</h3>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" wi=
+dth=3D"60" style=3D"max-width: 60px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <p style=3D"margin: 10px 0;padding: 0;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #404040;font-family: Helvetica;font-size: 14px;line-height: 150%;=
+text-align: left;"><a href=3D"https://exante.us5.list-manage.com/track/cli=
+ck?u=3D8418a9b93895768ad0b41e604&id=3Dd8bfce16ba&e=3D806b502d66" style=3D=
+"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underli=
+ne;">First Solar</a> 7.80%<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3Dc176d1861e&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Costco Wholesa=
+le</a> 7.26%<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3Dfa2d52cfd4&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Old Dominion F=
+reight Line</a> 6.83%</p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/a8fc577a-41c1-aaa3-242d-2f1fde86abb5.png" wi=
+dth=3D"60" style=3D"max-width: 60px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <p style=3D"margin: 10px 0;padding: 0;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #404040;font-family: Helvetica;font-size: 14px;line-height: 150%;=
+text-align: left;"><a href=3D"https://exante.us5.list-manage.com/track/cli=
+ck?u=3D8418a9b93895768ad0b41e604&id=3D20dae38d20&e=3D806b502d66" style=3D=
+"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underli=
+ne;">Baxter International</a> 7.84%<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3De8ca177c18&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Waters Corpora=
+tion</a> 7.15%<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3D02c1ea3c31&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Thermo Fisher=
+ Scientific</a> 3.94%</p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #404040;font-family: Helve=
+tica;font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <p style=3D"text-align: justify;margin: 10px 0=
+;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;color: #404040;font-family: Helvetica;font-size:=
+ 14px;line-height: 150%;">Of the tech and growth Mega Caps: <a href=3D"htt=
+ps://exante.us5.list-manage.com/track/click?u=3D8418a9b93895768ad0b41e604&=
+id=3Da6d5f1638d&e=3D806b502d66" style=3D"mso-line-height-rule: exactly;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;fon=
+t-weight: normal;text-decoration: underline;">Alphabet</a> <img data-file-=
+id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8418a9b9389576=
+8ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D"bord=
+er: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-decoration:=
+ none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;1.32%=2C <a href=
+=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895768ad0b=
+41e604&id=3D1fc954f5d7&e=3D806b502d66" style=3D"mso-line-height-rule: exa=
+ctly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007=
+C89;font-weight: normal;text-decoration: underline;">Amazon</a> <img data-=
+file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8418a9b93=
+895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" style=3D=
+"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-decora=
+tion: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;3.56%=2C <a=
+ href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9389576=
+8ad0b41e604&id=3D9f55c517f3&e=3D806b502d66" style=3D"mso-line-height-rule=
+: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:=
+ #007C89;font-weight: normal;text-decoration: underline;">Apple</a> <img d=
+ata-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8418a=
+9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png" styl=
+e=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;text-de=
+coration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;3.68%=
+=2C <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9=
+3895768ad0b41e604&id=3D7f94a36216&e=3D806b502d66" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #007C89;font-weight: normal;text-decoration: underline;">Microsoft<=
+/a> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent=
+=2Ecom/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e=
+=2Epng" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: no=
+ne;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nb=
+sp;1.18%=2C <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D=
+8418a9b93895768ad0b41e604&id=3Db0d993300a&e=3D806b502d66" style=3D"mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Me=
+ta Platforms</a> <img data-file-id=3D"19877" height=3D"13" src=3D"https://=
+mcusercontent.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241=
+-5370cb5da70e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0p=
+x;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" wi=
+dth=3D"9">&nbsp;2.43%=2C and <a href=3D"https://exante.us5.list-manage.com=
+/track/click?u=3D8418a9b93895768ad0b41e604&id=3D7de33ec8e3&e=3D806b502d66=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoratio=
+n: underline;">Tesla</a> <img data-file-id=3D"19877" height=3D"13" src=3D"=
+https://mcusercontent.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e=
+971-7241-5370cb5da70e.png" style=3D"border: 0px;width: 9px;height: 13px;ma=
+rgin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicu=
+bic;" width=3D"9">&nbsp;2.47%.</p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding: 0px 18px 9px;line-height: 150%;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: brea=
+k-word;color: #404040;font-family: Helvetica;font-size: 14px;text-align: l=
+eft;">
+
+                            <h3 class=3D"null" style=3D"text-align: justif=
+y;display: block;margin: 0;padding: 0;color: #444444;font-family: Helvetic=
+a;font-size: 22px;font-style: normal;font-weight: bold;line-height: 150%;l=
+etter-spacing: normal;"><strong>Major US indices</strong></h3>
+
+<p dir=3D"ltr" style=3D"line-height: 150%;margin: 10px 0;padding: 0;mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #404040;font-family: Helvetica;font-size: 14px;text-align:=
+ left;">The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D=
+8418a9b93895768ad0b41e604&id=3D85153b213c&e=3D806b502d66" style=3D"mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Do=
+w Jones Industrial Average</a> <img data-file-id=3D"19877" height=3D"13" s=
+rc=3D"https://mcusercontent.com/8418a9b93895768ad0b41e604/images/9219d158-=
+a5f2-e971-7241-5370cb5da70e.png" style=3D"border: 0px;width: 9px;height: 1=
+3px;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode=
+: bicubic;" width=3D"9">&nbsp;2.1%.<br>
+The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9=
+3895768ad0b41e604&id=3Dec5b8a115a&e=3D806b502d66" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #007C89;font-weight: normal;text-decoration: underline;">Nasdaq 100=
+</a> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcuserconten=
+t.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70=
+e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: n=
+one;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&n=
+bsp;2.8%.</p>
+
+<h3 class=3D"null" style=3D"text-align: justify;display: block;margin: 0;p=
+adding: 0;color: #444444;font-family: Helvetica;font-size: 22px;font-style=
+: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;"><str=
+ong>Major European indices&nbsp;</strong></h3>
+
+<p dir=3D"ltr" style=3D"line-height: 150%;margin: 10px 0;padding: 0;mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #404040;font-family: Helvetica;font-size: 14px;text-align:=
+ left;">France <a href=3D"https://exante.us5.list-manage.com/track/click?u=
+=3D8418a9b93895768ad0b41e604&id=3Dd7f4542bdc&e=3D806b502d66" style=3D"mso=
+-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;color: #007C89;font-weight: normal;text-decoration: underline;"=
+>CAC 40</a> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcuse=
+rcontent.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370=
+cb5da70e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;out=
+line: none;text-decoration: none;-ms-interpolation-mode: bicubic;" width=
+=3D"9">&nbsp;1.5%.<br>
+Germany <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418=
+a9b93895768ad0b41e604&id=3D903a8b858b&e=3D806b502d66" style=3D"mso-line-h=
+eight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 1=
+00%;color: #007C89;font-weight: normal;text-decoration: underline;">DAX</a=
+> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.c=
+om/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.p=
+ng" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none=
+;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp=
+;1.2%.<br>
+UK <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93=
+895768ad0b41e604&id=3D1b4922cecb&e=3D806b502d66" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #007C89;font-weight: normal;text-decoration: underline;">FTSE 100</a=
+> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.c=
+om/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.p=
+ng" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none=
+;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp=
+;0.9%.</p>
+
+<h3 class=3D"null" style=3D"text-align: justify;display: block;margin: 0;p=
+adding: 0;color: #444444;font-family: Helvetica;font-size: 22px;font-style=
+: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;"><str=
+ong>Top currency moves</strong></h3>
+
+<p dir=3D"ltr" style=3D"line-height: 150%;margin: 10px 0;padding: 0;mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #404040;font-family: Helvetica;font-size: 14px;text-align:=
+ left;">The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D=
+8418a9b93895768ad0b41e604&id=3D7bccb8bde1&e=3D806b502d66" style=3D"mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">EU=
+R</a> <img data-file-id=3D"19877" height=3D"13" src=3D"https://mcuserconte=
+nt.com/8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da7=
+0e.png" style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">=
+&nbsp;1.2% to $1.0644.<br>
+The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9=
+3895768ad0b41e604&id=3D5fd8712be4&e=3D806b502d66" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #007C89;font-weight: normal;text-decoration: underline;">GBP</a> <i=
+mg data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8=
+418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png"=
+ style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;te=
+xt-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;1.=
+6% to $1.2094.<br>
+The <a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b9=
+3895768ad0b41e604&id=3Dcafd131aad&e=3D806b502d66" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #007C89;font-weight: normal;text-decoration: underline;">YEN</a> <i=
+mg data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8=
+418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png"=
+ style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;te=
+xt-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;1%=
+ to 132.08 per dollar.<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3Df50f1b4f1b&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Bitcoin</a> <i=
+mg data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/8=
+418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png"=
+ style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;te=
+xt-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;0.=
+3% to $16=2C900.11.<br>
+<a href=3D"https://exante.us5.list-manage.com/track/click?u=3D8418a9b93895=
+768ad0b41e604&id=3D7fa5fa4a8a&e=3D806b502d66" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #007C89;font-weight: normal;text-decoration: underline;">Ethereum</a> <=
+img data-file-id=3D"19877" height=3D"13" src=3D"https://mcusercontent.com/=
+8418a9b93895768ad0b41e604/images/9219d158-a5f2-e971-7241-5370cb5da70e.png"=
+ style=3D"border: 0px;width: 9px;height: 13px;margin: 0px;outline: none;te=
+xt-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"9">&nbsp;1.=
+1% to $1=2C265.83.</p>
+
+<p style=3D"text-align: justify;line-height: 150%;margin: 10px 0;padding:=
+ 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;color: #404040;font-family: Helvetica;font-size: 14px;"><=
+em><span style=3D"font-weight:400">Note: As of 4&nbsp;pm EST 6&nbsp;Januar=
+y&nbsp;2023</span></em></p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #404040;font-family: Helve=
+tica;font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <p dir=3D"ltr" style=3D"text-align: justify;ma=
+rgin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;color: #404040;font-family: Helvetic=
+a;font-size: 14px;line-height: 150%;"><strong>Is lower than expected Euroz=
+one inflation enough to sway the ECB?</strong> Eurozone inflation may have=
+ fallen deeper than anticipated=2C but underlying price pressures continue=
+d to climb. This offers little hope for investors that the ECB will hold b=
+ack on rate rises. Annualised inflation fell to 9.2% in December from 10.1=
+% November. This was below market expectations of 9.7%=2C primarily due to=
+ lower energy prices. However=2C core inflation=2C i.e.=2C excluding food=
+ and energy prices=2C came in at 6.9%=2C up from November=E2=80=99s 6.6%.=
+ The rise in core inflation will likely support the ECB=E2=80=99s hawkish=
+ approach. ECB Governing Council member Mario Centeno said Friday that=2C=
+ =E2=80=9CIn our opinion=2C inflation is more negative for the economy tha=
+n this process of normalising interest rates.=E2=80=9D<br>
+<br>
+<strong>Cooler wage growth keeping Fed concerns at bay.</strong> Hourly wa=
+ges increased at the slowest pace in 16 months despite a continuingly tigh=
+t labour market. The latest jobs data report shows 223=2C000 jobs added in=
+ December=2C down from 256=2C000 in November. Wall Street analysts were an=
+ticipating 200=2C000 new jobs in December. The unemployment rate also fell=
+ to 3.5% from 3.6%. US equities ended higher fueled by expectations that t=
+he Fed may soften the pace of its rate hike at its next meeting on 31 Janu=
+ary - 1 February.<br>
+<br>
+<strong>US services activity falls to lowest since May 2020 while supply b=
+ottlenecks ease.</strong> The ISM Services PMI fell to 49.6 in December=2C=
+ dropping below 50 and indicating contraction in the services sector. Serv=
+ices account for about two-thirds of US economic activity. The November re=
+ading was 56.5. The lower reading could be due to the harsh winter weather=
+ that affected holiday travel and caused widespread power outages. However=
+=2C on a positive note=2C a measure of prices paid by services industries=
+ for inputs dropped to 67.6=2C the lowest since January 2021=2C from 70.0=
+ in November as supply bottlenecks continued to ease.</p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding: 0px 18px 9px;line-height: 150%;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: brea=
+k-word;color: #404040;font-family: Helvetica;font-size: 14px;text-align: l=
+eft;">
+
+                            <p style=3D"line-height: 150%;margin: 10px 0;p=
+adding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;color: #404040;font-family: Helvetica;font-size: 1=
+4px;text-align: left;"></p><h3 class=3D"null" dir=3D"ltr" style=3D"text-al=
+ign: justify;display: block;margin: 0;padding: 0;color: #444444;font-famil=
+y: Helvetica;font-size: 22px;font-style: normal;font-weight: bold;line-hei=
+ght: 150%;letter-spacing: normal;">Key data to move markets today</h3>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/c1ae7e7a-31e5-4a5b-7561-4b462c850322.png" wi=
+dth=3D"60" style=3D"max-width: 60px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <div style=3D"text-align: justify;"><br>
+Eurozone Unemployment Rate=2C Italian Unemployment Rate.</div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/4775b2d7-ebc7-d88b-ec9d-48de2b15ea5c.png" wi=
+dth=3D"60" style=3D"max-width: 60px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <div style=3D"text-align: justify;"><br>
+A speech by Bank of England Chief Economist Huw Pill. </div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/820b4bf4-0e15-1ef1-7938-7ad723d4b643.png" wi=
+dth=3D"60" style=3D"max-width: 60px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <p div=3D"" style=3D"text-align: justify;margin: 1=
+0px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;color: #404040;font-family: Helvetica;font-=
+size: 14px;line-height: 150%;">Consumer Credit Change and a speech by Fede=
+ral Reserve Bank of Atlanta President Raphael Bostic.</p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #404040;font-family: Helve=
+tica;font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <p style=3D"text-align: justify;margin: 10px 0=
+;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;color: #404040;font-family: Helvetica;font-size:=
+ 14px;line-height: 150%;"><em><span style=3D"font-family:helvetica neue=2C=
+helvetica=2Carial=2Cverdana=2Csans-serif">One of EXANTE=E2=80=99s core val=
+ues is being catalysts for change. We believe in the power and beauty tech=
+nology can bring into our lives. The image you see at the top of this emai=
+l is AI generated and will change every day in response to the data we giv=
+e it. Stay tuned to see just how creative and intuitive AI can be.</span><=
+/em></p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"cen=
+ter" valign=3D"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/841=
+8a9b93895768ad0b41e604/images/afdc205d-300b-74b8-b38f-ce7ea9d82db5.png" wi=
+dth=3D"132" style=3D"max-width: 264px;border-radius: 0%;border: 0;height:=
+ auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;=
+vertical-align: bottom;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #404040;font-family: Helvetica;=
+font-size: 14px;line-height: 150%;text-align: left;">
+                        <br>
+<br>
+<strong>Ren=C3=A9e Friedman</strong>=2C&nbsp;PhD<br>
+Editor-in-Chief=2C EXANTE
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #404040;font-family: Helve=
+tica;font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <div style=3D"text-align: justify;"><br>
+<span style=3D"font-size:12px"><span style=3D"font-family:helvetica neue=
+=2Chelvetica=2Carial=2Cverdana=2Csans-serif">DISCLAIMER: While every effor=
+t has been made to verify the accuracy of this information=2C EXT Ltd. (he=
+reafter known as =E2=80=9CEXANTE=E2=80=9D) cannot accept any responsibilit=
+y or liability for reliance by any person on this publication or any of th=
+e information=2C opinions=2C or conclusions contained in this publication.=
+ The findings and views expressed in this publication do not necessarily r=
+eflect the views of EXANTE. Any action taken upon the information containe=
+d in this publication is strictly at your own risk. EXANTE will not be lia=
+ble for any loss or damage in connection with this publication.</span></sp=
+an></div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#ffffff n=
+one no-repeat 50% 50%/cover;mso-line-height-rule: exactly;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;backgr=
+ound-image: none;background-repeat: no-repeat;background-position: 50% 50%=
+;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;pa=
+dding-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:#333333 none no-repeat center/cover;mso=
+-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;background-color: #333333;background-image: none;background-rep=
+eat: no-repeat;background-position: center;background-size: cover;border-t=
+op: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+                <center>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" id=3D"canspamBarWrapper" style=3D"background-color:#FFFFFF; b=
+order-top:1px solid #E5E5E5;">
+                    <tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddi=
+ng-top:20px; padding-bottom:20px;">
+                            <table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" id=3D"canspamBar">
+                                <tr>
+                                    <td align=3D"center" valign=3D"top" st=
+yle=3D"color:#606060; font-family:Helvetica=2C Arial=2C sans-serif; font-s=
+ize:11px; line-height:150%; padding-right:20px; padding-bottom:5px; paddin=
+g-left:20px; text-align:center;">
+                                        This email was sent to <a href=3D"=
+mailto:darnellkeithj@gmail.com" target=3D"_blank" style=3D"color:#404040 !importa=
+nt;">darnellkeithj@gmail.com</a>
+                                        <br />
+                                        <a href=3D"https://exante.us5.list=
+-manage.com/about?u=3D8418a9b93895768ad0b41e604&id=3D89232f3587&e=3D806b502d66&c=3Deeff6e7f2e" target=3D"_blank" style=3D"color:#404040 !important;"><=
+em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://=
+exante.us5.list-manage.com/unsubscribe?u=3D8418a9b93895768ad0b41e604&id=3D=
+89232f3587&e=3D806b502d66&c=3Deeff6e7f2e" style=3D"color:#404040 !important;=
+">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https:/=
+/exante.us5.list-manage.com/profile?u=3D8418a9b93895768ad0b41e604&id=3D892=
+32f3587&e=3D806b502d66&c=3Deeff6e7f2e" style=3D"color:#404040 !important;">u=
+pdate subscription preferences</a>
+                                        <br />
+                                        EXANTE &middot; 28 Oktovriou=2C 36=
+5 Vashiotis Seafront Building &middot; Limassol 3107 &middot; Cyprus
+                                        <br />
+                                        <br />
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <style type=3D"text/css">
+                    @media only screen and (max-width: 480px){
+                        table#canspamBar td{font-size:14px !important;}
+                        table#canspamBar td a{display:block !important; ma=
+rgin-top:10px !important;}
+                    }
+                </style>
+            </center><img src=3D"https://exante.us5.list-manage.com/track/=
+open.php?u=3D8418a9b93895768ad0b41e604&id=3Deeff6e7f2e&e=3D806b502d66" he=
+ight=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1217826087--

@@ -1,0 +1,68 @@
+Return-Path: <administrator@mail.manfromva.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id GQqiMxiLtmO7VB4Adh2gHA
+	(envelope-from <administrator@mail.manfromva.com>)
+	for <darnell@manfromva.com>; Thu, 05 Jan 2023 03:32:24 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.8 required=5.0 tests=ALL_TRUSTED,DKIM_INVALID,
+	DKIM_SIGNED,HTML_MESSAGE autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+X-Spam-Score: -0.8
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.manfromva.com;
+	s=mail; t=1672907544;
+	bh=qn4h6lKa5hpaocdMNLCYWWDzWr+i7l9aXnX3Hr+a7iU=;
+	h=From:To:Subject:Date:From;
+	b=gux6wfUE9sGsu45WtJbQtAs0iJTeGZQUSmo5kTnTiytLDd/qTxZ8J3OhS5/fWq5D7
+	 YC0oaedUBThpoZtkHzXnRza8RwoYqQkZcIAsyNrK7kiwk+0sftwfNSxM9BrS0rd6ZZ
+	 Ga5I9BHcHAt6/JrDOk4u4viUiSV0y92LeoG2LiVpAirapqabMnYih19RPgX9lb/PjH
+	 pbPK0bzi8FjQabnnPXZhc8wViUABQVAWFf9KQdvZ/uoNT35JofSZZW3y7SFWTaYzuz
+	 GgFrDbb0fbonSvNnzgT9CAsYu2aSGumAjqQDTfcz2qh5qnI/pfv5wyPDQ9KJGXW2KA
+	 5ZMSq39xCi2pw==
+Received: from mail.manfromva.com (localhost [127.0.0.1])
+	by mail.manfromva.com (Postfix) with ESMTP id B39F3BEFF9
+	for <administrator@mail.manfromva.com>; Thu,  5 Jan 2023 03:32:24 -0500 (EST)
+Content-Type: multipart/alternative; boundary="===============3122332825262347206=="
+MIME-Version: 1.0
+From: "mail.manfromva.com" <administrator@mail.manfromva.com>
+To: administrator@mail.manfromva.com
+Subject: [mail.manfromva.com] Status Checks Change Notice
+Message-Id: <20230105083224.B39F3BEFF9@mail.manfromva.com>
+Date: Thu,  5 Jan 2023 03:32:24 -0500 (EST)
+X-TUID: HPOvhv8p96Tu
+
+--===============3122332825262347206==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+U3lzdGVtIC0tIFByZXZpb3VzbHk6Cj09PT09PT09PT09PT09PT09PT09PQrinJMgIFN5c3RlbSBz
+b2Z0d2FyZSBpcyB1cCB0byBkYXRlLgoKU3lzdGVtIC0tIEN1cnJlbnRseToKPT09PT09PT09PT09
+PT09PT09PT0K4pyWICBUaGVyZSBhcmUgNiBzb2Z0d2FyZSBwYWNrYWdlcyB0aGF0IGNhbiBiZSB1
+cGRhdGVkLgogICBweXRob24zLXVwZGF0ZS1tYW5hZ2VyICgxOjIyLjA0LjEwKQogICB1cGRhdGUt
+bWFuYWdlci1jb3JlICgxOjIyLjA0LjEwKQogICBncnViMi1jb21tb24gKDIuMDYtMnVidW50dTcu
+MSkKICAgZ3J1Yi1wYyAoMi4wNi0ydWJ1bnR1Ny4xKQogICBncnViLXBjLWJpbiAoMi4wNi0ydWJ1
+bnR1Ny4xKQogICBncnViLWNvbW1vbiAoMi4wNi0ydWJ1bnR1Ny4xKQ==
+
+--===============3122332825262347206==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+PHByZT5TeXN0ZW0gLS0gUHJldmlvdXNseToKPT09PT09PT09PT09PT09PT09
+PT09CuKckyAgU3lzdGVtIHNvZnR3YXJlIGlzIHVwIHRvIGRhdGUuCgpTeXN0ZW0gLS0gQ3VycmVu
+dGx5Ogo9PT09PT09PT09PT09PT09PT09PQrinJYgIFRoZXJlIGFyZSA2IHNvZnR3YXJlIHBhY2th
+Z2VzIHRoYXQgY2FuIGJlIHVwZGF0ZWQuCiAgIHB5dGhvbjMtdXBkYXRlLW1hbmFnZXIgKDE6MjIu
+MDQuMTApCiAgIHVwZGF0ZS1tYW5hZ2VyLWNvcmUgKDE6MjIuMDQuMTApCiAgIGdydWIyLWNvbW1v
+biAoMi4wNi0ydWJ1bnR1Ny4xKQogICBncnViLXBjICgyLjA2LTJ1YnVudHU3LjEpCiAgIGdydWIt
+cGMtYmluICgyLjA2LTJ1YnVudHU3LjEpCiAgIGdydWItY29tbW9uICgyLjA2LTJ1YnVudHU3LjEp
+PC9wcmU+PC9ib2R5PjwvaHRtbD4=
+
+--===============3122332825262347206==--

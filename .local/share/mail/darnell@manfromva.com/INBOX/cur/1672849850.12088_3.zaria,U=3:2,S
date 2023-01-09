@@ -1,0 +1,94 @@
+Return-Path: <darnellkeithj@gmail.com>
+Delivered-To: darnell@manfromva.com
+Received: from mail.manfromva.com ([127.0.0.1])
+	by mail.manfromva.com with LMTP
+	id 9CbiE0fxpmM+NQEAdh2gHA
+	(envelope-from <darnellkeithj@gmail.com>)
+	for <darnell@manfromva.com>; Sat, 24 Dec 2022 07:32:07 -0500
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on mail.manfromva.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.7 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DMARC_PASS,FREEMAIL_FROM,PYZOR_CHECK,RCVD_IN_DNSWL_NONE,
+	RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	* -0.1 SPF_PASS SPF check passed
+	* -0.1 DMARC_PASS DMARC check passed
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail
+	*      provider
+	*      [darnellkeithj[at]gmail.com]
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	* -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	*      author's domain
+	* -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	* -0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [209.85.219.46 listed in wl.mailspike.net]
+	*  2.0 PYZOR_CHECK Listed in Pyzor
+	*      (https://pyzor.readthedocs.io/en/latest/)
+	* -0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at
+	*      https://www.dnswl.org/, no trust
+	*      [209.85.219.46 listed in list.dnswl.org]
+X-Spam-Score: 1.7
+Authentication-Results: mail.manfromva.com; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: mail.manfromva.com; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: mail.manfromva.com;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=W4rGQzYl;
+	dkim-atps=neutral
+Received: from mail-qv1-f46.google.com (mail-qv1-f46.google.com [209.85.219.46])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mail.manfromva.com (Postfix) with ESMTPS id E6206BF063
+	for <administrator@mail.manfromva.com>; Sat, 24 Dec 2022 07:32:06 -0500 (EST)
+Received: by mail-qv1-f46.google.com with SMTP id h10so4708105qvq.7
+        for <administrator@mail.manfromva.com>; Sat, 24 Dec 2022 04:32:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=to:message-id:subject:date:mime-version:from
+         :content-transfer-encoding:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kJzL84qunELOj6BbWC4EueII2JcPuYVeYtThTybdo1o=;
+        b=W4rGQzYltGG1HQxqeyUiizJDelE6bsJZFiRZIQi0QnCNOqktWCwHkC8tQE/goPxxCa
+         VHtSR1rgk/2d77Z2SyIcUZxWv7q1TxAVVPV9GPSx/RZDVsaiSO4VqjdayF8tWbxQTkVU
+         lJWt35jzTcB9sy0I36vLizjtc3HTu8StAwGrr6H3bGe53xHIP2zqE6rFw2ThgkD6iafq
+         gp9iOqdsnkpnVP3cYzflFGlgdQjvt1a7KD+W2oOeXq5EjwCSEh8qAaMR2eP3OMtXyGEj
+         rYl/FCmF+nhhBl5wmI5fC4/5bcAfZIMkGg0Fsh/zGCzPNADDUlI+0FdQyIZ2ybg07XHt
+         PQPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:message-id:subject:date:mime-version:from
+         :content-transfer-encoding:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=kJzL84qunELOj6BbWC4EueII2JcPuYVeYtThTybdo1o=;
+        b=jn6jGyc7lprSMMx7qrEfaASK7vgFj9zSw+Od2pZ5Dm9L4onSSuLtZaiUpLKlZ3ZenU
+         i7zmBiWSrgxTF/Q555kM/qGRVAsvHnP9aCQiy+yA3yneMzwRVotEQqINjXDbjZvhL8IB
+         6j7l3MjqcXb5+mG679JvtbskdtE71F0kI2nsqhIoXXdFkMfTgRpniPe5vzqddhyIhp7H
+         AhZOgmKQ1oxgMkpbJVVl/FQ/Yk4vYNMkh5924ZBvyo0iJd+dLlqmUJwWVXH0PLFpaJII
+         Eh3lImWGCqFWPOGJTwMriMtPtxcl/VtSKXcfiV3gEY/zaMbyT+8zsC/vh4k15b3vcelo
+         pDmg==
+X-Gm-Message-State: AFqh2kpCGkPxp6yqC9lmX7qK9lhqxXc0rGxrrbP3Mn3DHZDtCHFURnYX
+	tD1pB6H0gL1p+Zpz8GssCZ//eAGA257c5g==
+X-Google-Smtp-Source: AMrXdXtghZsOKuOkikcIC6D+zNRctUY1kB8GbmPPaLDG1fGZwoAQJoSNJtEyPmeoaeldWLwh+WDcIA==
+X-Received: by 2002:a05:6214:4a4e:b0:4c6:f91e:8815 with SMTP id ph14-20020a0562144a4e00b004c6f91e8815mr16442333qvb.19.1671885125773;
+        Sat, 24 Dec 2022 04:32:05 -0800 (PST)
+Received: from smtpclient.apple (ip68-0-214-236.ri.ri.cox.net. [68.0.214.236])
+        by smtp.gmail.com with ESMTPSA id r1-20020a05620a298100b006eeb3165565sm4099020qkp.80.2022.12.24.04.32.05
+        for <administrator@mail.manfromva.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 24 Dec 2022 04:32:05 -0800 (PST)
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+From: Darnell Keith <darnellkeithj@gmail.com>
+Mime-Version: 1.0 (1.0)
+Date: Sat, 24 Dec 2022 07:31:54 -0500
+Subject: Test
+Message-Id: <2C9B9C09-DC62-4070-BEC3-EA3F82ED3739@gmail.com>
+To: "mail. com" <administrator@mail.manfromva.com>
+X-Mailer: iPhone Mail (20C65)
+X-TUID: rQO1LaxwVEMr
+
+Test
+
+Sent from my iPhone
